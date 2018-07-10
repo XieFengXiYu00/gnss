@@ -1,0 +1,178 @@
+ARM GAS  /tmp/ccB70It7.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"hal_lld.c"
+  15              		.section	.text.hal_lld_init,"ax",%progbits
+  16              		.align	1
+  17              		.global	hal_lld_init
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	hal_lld_init, %function
+  21              	hal_lld_init:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 144B     		ldr	r3, .L2
+  26 0002 0021     		movs	r1, #0
+  27 0004 1A69     		ldr	r2, [r3, #16]
+  28 0006 4FF0FF32 		mov	r2, #-1
+  29 000a 1A61     		str	r2, [r3, #16]
+  30 000c 1961     		str	r1, [r3, #16]
+  31 000e D868     		ldr	r0, [r3, #12]
+  32 0010 4CF24F30 		movw	r0, #49999
+  33 0014 DA60     		str	r2, [r3, #12]
+  34 0016 104A     		ldr	r2, .L2+4
+  35 0018 D960     		str	r1, [r3, #12]
+  36 001a 5060     		str	r0, [r2, #4]
+  37 001c 9160     		str	r1, [r2, #8]
+  38 001e 0721     		movs	r1, #7
+  39 0020 1160     		str	r1, [r2]
+  40 0022 0E49     		ldr	r1, .L2+8
+  41 0024 CA68     		ldr	r2, [r1, #12]
+  42 0026 42F08072 		orr	r2, r2, #16777216
+  43 002a CA60     		str	r2, [r1, #12]
+  44 002c 0C49     		ldr	r1, .L2+12
+  45 002e 0A68     		ldr	r2, [r1]
+  46 0030 42F00102 		orr	r2, r2, #1
+  47 0034 0A60     		str	r2, [r1]
+  48 0036 DA69     		ldr	r2, [r3, #28]
+  49 0038 42F08052 		orr	r2, r2, #268435456
+  50 003c DA61     		str	r2, [r3, #28]
+  51 003e DA69     		ldr	r2, [r3, #28]
+  52 0040 42F00062 		orr	r2, r2, #134217728
+  53 0044 DA61     		str	r2, [r3, #28]
+  54 0046 074A     		ldr	r2, .L2+16
+  55 0048 1368     		ldr	r3, [r2]
+  56 004a 43F48073 		orr	r3, r3, #256
+  57 004e 1360     		str	r3, [r2]
+ARM GAS  /tmp/ccB70It7.s 			page 2
+
+
+  58 0050 FFF7FEBF 		b	dmaInit
+  59              	.L3:
+  60              		.align	2
+  61              	.L2:
+  62 0054 00100240 		.word	1073876992
+  63 0058 10E000E0 		.word	-536813552
+  64 005c F0ED00E0 		.word	-536810000
+  65 0060 001000E0 		.word	-536866816
+  66 0064 00700040 		.word	1073770496
+  67              		.size	hal_lld_init, .-hal_lld_init
+  68              		.section	.text.stm32_clock_init,"ax",%progbits
+  69              		.align	1
+  70              		.global	stm32_clock_init
+  71              		.thumb
+  72              		.thumb_func
+  73              		.type	stm32_clock_init, %function
+  74              	stm32_clock_init:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77              		@ link register save eliminated.
+  78 0000 244B     		ldr	r3, .L25
+  79 0002 1A68     		ldr	r2, [r3]
+  80 0004 42F00102 		orr	r2, r2, #1
+  81 0008 1A60     		str	r2, [r3]
+  82              	.L5:
+  83 000a 1968     		ldr	r1, [r3]
+  84 000c 214A     		ldr	r2, .L25
+  85 000e 8907     		lsls	r1, r1, #30
+  86 0010 FBD5     		bpl	.L5
+  87 0012 0021     		movs	r1, #0
+  88 0014 5160     		str	r1, [r2, #4]
+  89 0016 1168     		ldr	r1, [r2]
+  90 0018 01F0F901 		and	r1, r1, #249
+  91 001c 1160     		str	r1, [r2]
+  92              	.L6:
+  93 001e 5A68     		ldr	r2, [r3, #4]
+  94 0020 1C49     		ldr	r1, .L25
+  95 0022 12F00C0F 		tst	r2, #12
+  96 0026 FAD1     		bne	.L6
+  97 0028 0A68     		ldr	r2, [r1]
+  98 002a 42F48032 		orr	r2, r2, #65536
+  99 002e 0A60     		str	r2, [r1]
+ 100              	.L7:
+ 101 0030 1A68     		ldr	r2, [r3]
+ 102 0032 1849     		ldr	r1, .L25
+ 103 0034 9003     		lsls	r0, r2, #14
+ 104 0036 FBD5     		bpl	.L7
+ 105 0038 4A6A     		ldr	r2, [r1, #36]
+ 106 003a 42F00102 		orr	r2, r2, #1
+ 107 003e 4A62     		str	r2, [r1, #36]
+ 108              	.L8:
+ 109 0040 596A     		ldr	r1, [r3, #36]
+ 110 0042 144A     		ldr	r2, .L25
+ 111 0044 8907     		lsls	r1, r1, #30
+ 112 0046 FBD5     		bpl	.L8
+ 113 0048 46F24361 		movw	r1, #26179
+ 114 004c D162     		str	r1, [r2, #44]
+ARM GAS  /tmp/ccB70It7.s 			page 3
+
+
+ 115 004e 1168     		ldr	r1, [r2]
+ 116 0050 41F08051 		orr	r1, r1, #268435456
+ 117 0054 1160     		str	r1, [r2]
+ 118              	.L9:
+ 119 0056 1968     		ldr	r1, [r3]
+ 120 0058 0E4A     		ldr	r2, .L25
+ 121 005a 8800     		lsls	r0, r1, #2
+ 122 005c FBD5     		bpl	.L9
+ 123 005e 5168     		ldr	r1, [r2, #4]
+ 124 0060 41F4C811 		orr	r1, r1, #1638400
+ 125 0064 5160     		str	r1, [r2, #4]
+ 126 0066 1168     		ldr	r1, [r2]
+ 127 0068 41F08071 		orr	r1, r1, #16777216
+ 128 006c 1160     		str	r1, [r2]
+ 129              	.L10:
+ 130 006e 1968     		ldr	r1, [r3]
+ 131 0070 084A     		ldr	r2, .L25
+ 132 0072 8901     		lsls	r1, r1, #6
+ 133 0074 FBD5     		bpl	.L10
+ 134 0076 0849     		ldr	r1, .L25+4
+ 135 0078 1220     		movs	r0, #18
+ 136 007a 5160     		str	r1, [r2, #4]
+ 137 007c 0749     		ldr	r1, .L25+8
+ 138 007e 0860     		str	r0, [r1]
+ 139 0080 5168     		ldr	r1, [r2, #4]
+ 140 0082 41F00201 		orr	r1, r1, #2
+ 141 0086 5160     		str	r1, [r2, #4]
+ 142              	.L11:
+ 143 0088 5A68     		ldr	r2, [r3, #4]
+ 144 008a 02F00C02 		and	r2, r2, #12
+ 145 008e 082A     		cmp	r2, #8
+ 146 0090 FAD1     		bne	.L11
+ 147 0092 7047     		bx	lr
+ 148              	.L26:
+ 149              		.align	2
+ 150              	.L25:
+ 151 0094 00100240 		.word	1073876992
+ 152 0098 0064190B 		.word	186213376
+ 153 009c 00200240 		.word	1073881088
+ 154              		.size	stm32_clock_init, .-stm32_clock_init
+ 155              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccB70It7.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 hal_lld.c
+     /tmp/ccB70It7.s:16     .text.hal_lld_init:0000000000000000 $t
+     /tmp/ccB70It7.s:21     .text.hal_lld_init:0000000000000000 hal_lld_init
+     /tmp/ccB70It7.s:62     .text.hal_lld_init:0000000000000054 $d
+     /tmp/ccB70It7.s:69     .text.stm32_clock_init:0000000000000000 $t
+     /tmp/ccB70It7.s:74     .text.stm32_clock_init:0000000000000000 stm32_clock_init
+     /tmp/ccB70It7.s:151    .text.stm32_clock_init:0000000000000094 $d
+
+UNDEFINED SYMBOLS
+dmaInit

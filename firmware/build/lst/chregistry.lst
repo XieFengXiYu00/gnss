@@ -1,0 +1,120 @@
+ARM GAS  /tmp/cckCKFB4.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chregistry.c"
+  15              		.section	.text.chRegFirstThread,"ax",%progbits
+  16              		.align	1
+  17              		.global	chRegFirstThread
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	chRegFirstThread, %function
+  21              	chRegFirstThread:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 2023     		movs	r3, #32
+  26              	@ 120 "zubax_chibios///chibios/os/kernel/src/chregistry.c" 1
+  27 0002 83F31188 		msr     BASEPRI, r3
+  28              	@ 0 "" 2
+  29              		.thumb
+  30 0006 034B     		ldr	r3, .L2
+  31 0008 1869     		ldr	r0, [r3, #16]
+  32 000a 0023     		movs	r3, #0
+  33              	@ 125 "zubax_chibios///chibios/os/kernel/src/chregistry.c" 1
+  34 000c 83F31188 		msr     BASEPRI, r3
+  35              	@ 0 "" 2
+  36              		.thumb
+  37 0010 7047     		bx	lr
+  38              	.L3:
+  39 0012 00BF     		.align	2
+  40              	.L2:
+  41 0014 00000000 		.word	rlist
+  42              		.size	chRegFirstThread, .-chRegFirstThread
+  43              		.section	.text.chRegNextThread,"ax",%progbits
+  44              		.align	1
+  45              		.global	chRegNextThread
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	chRegNextThread, %function
+  49              	chRegNextThread:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+  53 0000 2023     		movs	r3, #32
+  54              	@ 143 "zubax_chibios///chibios/os/kernel/src/chregistry.c" 1
+  55 0002 83F31188 		msr     BASEPRI, r3
+  56              	@ 0 "" 2
+  57              		.thumb
+ARM GAS  /tmp/cckCKFB4.s 			page 2
+
+
+  58 0006 044B     		ldr	r3, .L6
+  59 0008 0069     		ldr	r0, [r0, #16]
+  60 000a 9842     		cmp	r0, r3
+  61 000c 08BF     		it	eq
+  62 000e 0020     		moveq	r0, #0
+  63 0010 0023     		movs	r3, #0
+  64              	@ 154 "zubax_chibios///chibios/os/kernel/src/chregistry.c" 1
+  65 0012 83F31188 		msr     BASEPRI, r3
+  66              	@ 0 "" 2
+  67              		.thumb
+  68 0016 7047     		bx	lr
+  69              	.L7:
+  70              		.align	2
+  71              	.L6:
+  72 0018 00000000 		.word	rlist
+  73              		.size	chRegNextThread, .-chRegNextThread
+  74              		.global	ch_debug
+  75              		.section	.rodata.ch_debug,"a",%progbits
+  76              		.align	1
+  77              		.type	ch_debug, %object
+  78              		.size	ch_debug, 22
+  79              	ch_debug:
+  80 0000 6D61696E 		.ascii	"main"
+  81 0004 00       		.byte	0
+  82 0005 16       		.byte	22
+  83 0006 8A11     		.short	4490
+  84 0008 04       		.byte	4
+  85 0009 04       		.byte	4
+  86 000a 40       		.byte	64
+  87 000b 08       		.byte	8
+  88 000c 0C       		.byte	12
+  89 000d 10       		.byte	16
+  90 000e 14       		.byte	20
+  91 000f 18       		.byte	24
+  92 0010 00       		.byte	0
+  93 0011 1C       		.byte	28
+  94 0012 1D       		.byte	29
+  95 0013 00       		.byte	0
+  96 0014 1E       		.byte	30
+  97 0015 00       		.byte	0
+  98              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cckCKFB4.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chregistry.c
+     /tmp/cckCKFB4.s:16     .text.chRegFirstThread:0000000000000000 $t
+     /tmp/cckCKFB4.s:21     .text.chRegFirstThread:0000000000000000 chRegFirstThread
+     /tmp/cckCKFB4.s:41     .text.chRegFirstThread:0000000000000014 $d
+     /tmp/cckCKFB4.s:44     .text.chRegNextThread:0000000000000000 $t
+     /tmp/cckCKFB4.s:49     .text.chRegNextThread:0000000000000000 chRegNextThread
+     /tmp/cckCKFB4.s:72     .text.chRegNextThread:0000000000000018 $d
+     /tmp/cckCKFB4.s:79     .rodata.ch_debug:0000000000000000 ch_debug
+     /tmp/cckCKFB4.s:76     .rodata.ch_debug:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+rlist

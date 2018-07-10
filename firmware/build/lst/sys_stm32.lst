@@ -1,0 +1,92 @@
+ARM GAS  /tmp/cc4qVBaB.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"sys_stm32.c"
+  15              		.section	.text.sysEmergencyPrint,"ax",%progbits
+  16              		.align	1
+  17              		.global	sysEmergencyPrint
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	sysEmergencyPrint, %function
+  21              	sysEmergencyPrint:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0138     		subs	r0, r0, #1
+  26              	.L2:
+  27 0002 10F8013F 		ldrb	r3, [r0, #1]!	@ zero_extendqisi2
+  28 0006 33B1     		cbz	r3, .L8
+  29              	.L5:
+  30 0008 034A     		ldr	r2, .L9
+  31 000a 1188     		ldrh	r1, [r2]
+  32 000c 0906     		lsls	r1, r1, #24
+  33 000e FBD5     		bpl	.L5
+  34 0010 9BB2     		uxth	r3, r3
+  35 0012 9380     		strh	r3, [r2, #4]	@ movhi
+  36 0014 F5E7     		b	.L2
+  37              	.L8:
+  38 0016 7047     		bx	lr
+  39              	.L10:
+  40              		.align	2
+  41              	.L9:
+  42 0018 00440040 		.word	1073759232
+  43              		.size	sysEmergencyPrint, .-sysEmergencyPrint
+  44              		.section	.text.sysDisableDebugPort,"ax",%progbits
+  45              		.align	1
+  46              		.global	sysDisableDebugPort
+  47              		.thumb
+  48              		.thumb_func
+  49              		.type	sysDisableDebugPort, %function
+  50              	sysDisableDebugPort:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54              	@ 328 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmFunc.h" 1
+  55 0000 72B6     		cpsid i
+  56              	@ 0 "" 2
+  57              		.thumb
+ARM GAS  /tmp/cc4qVBaB.s 			page 2
+
+
+  58 0002 044A     		ldr	r2, .L12
+  59 0004 5368     		ldr	r3, [r2, #4]
+  60 0006 23F0E063 		bic	r3, r3, #117440512
+  61 000a 43F08063 		orr	r3, r3, #67108864
+  62 000e 5360     		str	r3, [r2, #4]
+  63              	@ 317 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmFunc.h" 1
+  64 0010 62B6     		cpsie i
+  65              	@ 0 "" 2
+  66              		.thumb
+  67 0012 7047     		bx	lr
+  68              	.L13:
+  69              		.align	2
+  70              	.L12:
+  71 0014 00000140 		.word	1073807360
+  72              		.size	sysDisableDebugPort, .-sysDisableDebugPort
+  73              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc4qVBaB.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 sys_stm32.c
+     /tmp/cc4qVBaB.s:16     .text.sysEmergencyPrint:0000000000000000 $t
+     /tmp/cc4qVBaB.s:21     .text.sysEmergencyPrint:0000000000000000 sysEmergencyPrint
+     /tmp/cc4qVBaB.s:42     .text.sysEmergencyPrint:0000000000000018 $d
+     /tmp/cc4qVBaB.s:45     .text.sysDisableDebugPort:0000000000000000 $t
+     /tmp/cc4qVBaB.s:50     .text.sysDisableDebugPort:0000000000000000 sysDisableDebugPort
+     /tmp/cc4qVBaB.s:71     .text.sysDisableDebugPort:0000000000000014 $d
+
+NO UNDEFINED SYMBOLS

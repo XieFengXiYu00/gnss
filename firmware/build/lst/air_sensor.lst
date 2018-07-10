@@ -1,0 +1,2195 @@
+ARM GAS  /tmp/ccVoLO7T.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"air_sensor.cpp"
+  15              		.section	.text._ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev,"axG",%pro
+  16              		.align	1
+  17              		.weak	_ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev, %function
+  21              	_ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  26              		.size	_ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev, .-_ZN6uavcan9Publi
+  27              		.weak	_ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED1Ev
+  28              		.thumb_set _ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED1Ev,_ZN6uavcan9Pub
+  29              		.section	.text._ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev,"axG",%
+  30              		.align	1
+  31              		.weak	_ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev
+  32              		.thumb
+  33              		.thumb_func
+  34              		.type	_ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev, %function
+  35              	_ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 7047     		bx	lr
+  40              		.size	_ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev, .-_ZN6uavcan9Pu
+  41              		.weak	_ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED1Ev
+  42              		.thumb_set _ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED1Ev,_ZN6uavcan9
+  43              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev,"axG",%progbits,_ZN6uavcan22GlobalData
+  44              		.align	1
+  45              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, %function
+  49              	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+  53 0000 7047     		bx	lr
+  54              		.size	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, .-_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  55              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+  56              		.thumb_set _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev,_ZN6uavcan22GlobalDataTypeRegistry5EntryD2
+  57              		.section	.text._ZN6uavcan20StaticTransferBufferILt6EED2Ev,"axG",%progbits,_ZN6uavcan20StaticTransf
+ARM GAS  /tmp/ccVoLO7T.s 			page 2
+
+
+  58              		.align	1
+  59              		.weak	_ZN6uavcan20StaticTransferBufferILt6EED2Ev
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	_ZN6uavcan20StaticTransferBufferILt6EED2Ev, %function
+  63              	_ZN6uavcan20StaticTransferBufferILt6EED2Ev:
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0000 7047     		bx	lr
+  68              		.size	_ZN6uavcan20StaticTransferBufferILt6EED2Ev, .-_ZN6uavcan20StaticTransferBufferILt6EED2Ev
+  69              		.weak	_ZN6uavcan20StaticTransferBufferILt6EED1Ev
+  70              		.thumb_set _ZN6uavcan20StaticTransferBufferILt6EED1Ev,_ZN6uavcan20StaticTransferBufferILt6EED2Ev
+  71              		.section	.text._ZN6uavcan20StaticTransferBufferILt4EED2Ev,"axG",%progbits,_ZN6uavcan20StaticTransf
+  72              		.align	1
+  73              		.weak	_ZN6uavcan20StaticTransferBufferILt4EED2Ev
+  74              		.thumb
+  75              		.thumb_func
+  76              		.type	_ZN6uavcan20StaticTransferBufferILt4EED2Ev, %function
+  77              	_ZN6uavcan20StaticTransferBufferILt4EED2Ev:
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  81 0000 7047     		bx	lr
+  82              		.size	_ZN6uavcan20StaticTransferBufferILt4EED2Ev, .-_ZN6uavcan20StaticTransferBufferILt4EED2Ev
+  83              		.weak	_ZN6uavcan20StaticTransferBufferILt4EED1Ev
+  84              		.thumb_set _ZN6uavcan20StaticTransferBufferILt4EED1Ev,_ZN6uavcan20StaticTransferBufferILt4EED2Ev
+  85              		.section	.text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm,"axG",%progbits,_ZN10chibios_rt1
+  86              		.align	1
+  87              		.weak	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+  88              		.thumb
+  89              		.thumb_func
+  90              		.type	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm, %function
+  91              	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+  95 0002 084B     		ldr	r3, .L7
+  96 0004 0446     		mov	r4, r0
+  97 0006 0D46     		mov	r5, r1
+  98 0008 0091     		str	r1, [sp]
+  99 000a 01F10800 		add	r0, r1, #8
+ 100 000e 4FF4D161 		mov	r1, #1672
+ 101 0012 FFF7FEFF 		bl	chThdCreateStatic
+ 102 0016 6860     		str	r0, [r5, #4]
+ 103 0018 6060     		str	r0, [r4, #4]
+ 104 001a 2046     		mov	r0, r4
+ 105 001c 024B     		ldr	r3, .L7+4
+ 106 001e 2360     		str	r3, [r4]
+ 107 0020 03B0     		add	sp, sp, #12
+ 108              		@ sp needed
+ 109 0022 30BD     		pop	{r4, r5, pc}
+ 110              	.L8:
+ 111              		.align	2
+ 112              	.L7:
+ 113 0024 00000000 		.word	_ZN10chibios_rt10_thd_startEPv
+ 114 0028 08000000 		.word	_ZTVN10chibios_rt15ThreadReferenceE+8
+ARM GAS  /tmp/ccVoLO7T.s 			page 3
+
+
+ 115              		.size	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm, .-_ZN10chibios_rt16BaseStaticThreadILi10
+ 116              		.section	.text._ZN6uavcan20StaticTransferBufferILt6EED0Ev,"axG",%progbits,_ZN6uavcan20StaticTransf
+ 117              		.align	1
+ 118              		.weak	_ZN6uavcan20StaticTransferBufferILt6EED0Ev
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.type	_ZN6uavcan20StaticTransferBufferILt6EED0Ev, %function
+ 122              	_ZN6uavcan20StaticTransferBufferILt6EED0Ev:
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 10B5     		push	{r4, lr}
+ 126 0002 0446     		mov	r4, r0
+ 127 0004 FFF7FEFF 		bl	_ZdlPv
+ 128 0008 2046     		mov	r0, r4
+ 129 000a 10BD     		pop	{r4, pc}
+ 130              		.size	_ZN6uavcan20StaticTransferBufferILt6EED0Ev, .-_ZN6uavcan20StaticTransferBufferILt6EED0Ev
+ 131              		.section	.text._ZN6uavcan20StaticTransferBufferILt4EED0Ev,"axG",%progbits,_ZN6uavcan20StaticTransf
+ 132              		.align	1
+ 133              		.weak	_ZN6uavcan20StaticTransferBufferILt4EED0Ev
+ 134              		.thumb
+ 135              		.thumb_func
+ 136              		.type	_ZN6uavcan20StaticTransferBufferILt4EED0Ev, %function
+ 137              	_ZN6uavcan20StaticTransferBufferILt4EED0Ev:
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 10B5     		push	{r4, lr}
+ 141 0002 0446     		mov	r4, r0
+ 142 0004 FFF7FEFF 		bl	_ZdlPv
+ 143 0008 2046     		mov	r0, r4
+ 144 000a 10BD     		pop	{r4, pc}
+ 145              		.size	_ZN6uavcan20StaticTransferBufferILt4EED0Ev, .-_ZN6uavcan20StaticTransferBufferILt4EED0Ev
+ 146              		.global	__aeabi_fcmpun
+ 147              		.global	__aeabi_fcmpgt
+ 148              		.global	__aeabi_fcmplt
+ 149              		.section	.text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArra
+ 150              		.align	1
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.type	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimiza
+ 154              	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationMod
+ 155              		@ args = 0, pretend = 0, frame = 8
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 158 0002 20F00045 		bic	r5, r0, #-2147483648
+ 159 0006 0446     		mov	r4, r0
+ 160 0008 0E46     		mov	r6, r1
+ 161 000a 2846     		mov	r0, r5
+ 162 000c 1049     		ldr	r1, .L17
+ 163 000e FFF7FEFF 		bl	__aeabi_fcmpun
+ 164 0012 88B9     		cbnz	r0, .L12
+ 165 0014 2846     		mov	r0, r5
+ 166 0016 0E49     		ldr	r1, .L17
+ 167 0018 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 168 001c 60B9     		cbnz	r0, .L12
+ 169 001e 2046     		mov	r0, r4
+ 170 0020 0C49     		ldr	r1, .L17+4
+ 171 0022 FFF7FEFF 		bl	__aeabi_fcmpgt
+ARM GAS  /tmp/ccVoLO7T.s 			page 4
+
+
+ 172 0026 30B9     		cbnz	r0, .L14
+ 173 0028 2046     		mov	r0, r4
+ 174 002a 0B49     		ldr	r1, .L17+8
+ 175 002c FFF7FEFF 		bl	__aeabi_fcmplt
+ 176 0030 10B1     		cbz	r0, .L12
+ 177 0032 094C     		ldr	r4, .L17+8
+ 178 0034 00E0     		b	.L12
+ 179              	.L14:
+ 180 0036 074C     		ldr	r4, .L17+4
+ 181              	.L12:
+ 182 0038 2046     		mov	r0, r4
+ 183 003a FFF7FEFF 		bl	_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf
+ 184 003e 02A9     		add	r1, sp, #8
+ 185 0040 21F8020D 		strh	r0, [r1, #-2]!	@ movhi
+ 186 0044 1022     		movs	r2, #16
+ 187 0046 3046     		mov	r0, r6
+ 188 0048 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 189 004c 02B0     		add	sp, sp, #8
+ 190              		@ sp needed
+ 191 004e 70BD     		pop	{r4, r5, r6, pc}
+ 192              	.L18:
+ 193              		.align	2
+ 194              	.L17:
+ 195 0050 FFFF7F7F 		.word	2139095039
+ 196 0054 00E07F47 		.word	1199562752
+ 197 0058 00E07FC7 		.word	-947920896
+ 198              		.size	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimiza
+ 199              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev,"axG",%progbits,_ZN6uavcan22GlobalData
+ 200              		.align	1
+ 201              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev
+ 202              		.thumb
+ 203              		.thumb_func
+ 204              		.type	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev, %function
+ 205              	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208 0000 30B5     		push	{r4, r5, lr}
+ 209 0002 0022     		movs	r2, #0
+ 210 0004 0549     		ldr	r1, .L20
+ 211 0006 0260     		str	r2, [r0]
+ 212 0008 0024     		movs	r4, #0
+ 213 000a 0025     		movs	r5, #0
+ 214 000c 0275     		strb	r2, [r0, #20]
+ 215 000e 4FF0FF32 		mov	r2, #-1
+ 216 0012 C0E90245 		strd	r4, [r0, #8]
+ 217 0016 0161     		str	r1, [r0, #16]
+ 218 0018 8261     		str	r2, [r0, #24]
+ 219 001a 30BD     		pop	{r4, r5, pc}
+ 220              	.L21:
+ 221              		.align	2
+ 222              	.L20:
+ 223 001c 00000000 		.word	.LC0
+ 224              		.size	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev, .-_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev
+ 225              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 226              		.thumb_set _ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev,_ZN6uavcan22GlobalDataTypeRegistry5EntryC2
+ 227              		.section	.text._ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_,"axG",%pro
+ 228              		.align	1
+ARM GAS  /tmp/ccVoLO7T.s 			page 5
+
+
+ 229              		.weak	_ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_
+ 230              		.thumb
+ 231              		.thumb_func
+ 232              		.type	_ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_, %function
+ 233              	_ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_:
+ 234              		@ args = 0, pretend = 0, frame = 8
+ 235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 236 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 237 0002 0446     		mov	r4, r0
+ 238 0004 1F46     		mov	r7, r3
+ 239 0006 0B68     		ldr	r3, [r1]
+ 240 0008 0846     		mov	r0, r1
+ 241 000a DB68     		ldr	r3, [r3, #12]
+ 242 000c 1546     		mov	r5, r2
+ 243 000e 0E46     		mov	r6, r1
+ 244 0010 9847     		blx	r3
+ 245 0012 D7E90023 		ldrd	r2, [r7]
+ 246 0016 C4E90023 		strd	r2, [r4]
+ 247 001a 4FF6FF72 		movw	r2, #65535
+ 248 001e 104B     		ldr	r3, .L23
+ 249 0020 A275     		strb	r2, [r4, #22]
+ 250 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 251 0024 0830     		adds	r0, r0, #8
+ 252 0026 2373     		strb	r3, [r4, #12]
+ 253 0028 0023     		movs	r3, #0
+ 254 002a 6373     		strb	r3, [r4, #13]
+ 255 002c A382     		strh	r3, [r4, #20]	@ movhi
+ 256 002e E375     		strb	r3, [r4, #23]
+ 257 0030 4FF0FF31 		mov	r1, #-1
+ 258 0034 04F11803 		add	r3, r4, #24
+ 259 0038 A060     		str	r0, [r4, #8]
+ 260 003a 2161     		str	r1, [r4, #16]
+ 261 003c E281     		strh	r2, [r4, #14]	@ movhi
+ 262 003e 95E80300 		ldmia	r5, {r0, r1}
+ 263 0042 83E80300 		stmia	r3, {r0, r1}
+ 264 0046 2662     		str	r6, [r4, #32]
+ 265 0048 95E80300 		ldmia	r5, {r0, r1}
+ 266 004c 8DE80300 		stmia	sp, {r0, r1}
+ 267 0050 2046     		mov	r0, r4
+ 268 0052 6946     		mov	r1, sp
+ 269 0054 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+ 270 0058 2046     		mov	r0, r4
+ 271 005a 03B0     		add	sp, sp, #12
+ 272              		@ sp needed
+ 273 005c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 274              	.L24:
+ 275 005e 00BF     		.align	2
+ 276              	.L23:
+ 277 0060 00000000 		.word	_ZN6uavcan16TransferPriority7DefaultE
+ 278              		.size	_ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_, .-_ZN6uavcan20Gene
+ 279              		.weak	_ZN6uavcan20GenericPublisherBaseC1ERNS_5INodeENS_17MonotonicDurationES3_
+ 280              		.thumb_set _ZN6uavcan20GenericPublisherBaseC1ERNS_5INodeENS_17MonotonicDurationES3_,_ZN6uavcan20Ge
+ 281              		.global	__aeabi_f2uiz
+ 282              		.section	.text._ZN10air_sensor4initEv,"ax",%progbits
+ 283              		.align	1
+ 284              		.global	_ZN10air_sensor4initEv
+ 285              		.thumb
+ARM GAS  /tmp/ccVoLO7T.s 			page 6
+
+
+ 286              		.thumb_func
+ 287              		.type	_ZN10air_sensor4initEv, %function
+ 288              	_ZN10air_sensor4initEv:
+ 289              		@ args = 0, pretend = 0, frame = 8
+ 290              		@ frame_needed = 0, uses_anonymous_args = 0
+ 291 0000 0C4B     		ldr	r3, .L29
+ 292 0002 07B5     		push	{r0, r1, r2, lr}
+ 293 0004 1868     		ldr	r0, [r3]
+ 294 0006 FFF7FEFF 		bl	configGet
+ 295 000a FFF7FEFF 		bl	__aeabi_f2uiz
+ 296 000e 38B1     		cbz	r0, .L26
+ 297 0010 6846     		mov	r0, sp
+ 298 0012 0949     		ldr	r1, .L29+4
+ 299 0014 7522     		movs	r2, #117
+ 300 0016 FFF7FEFF 		bl	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+ 301 001a 03B0     		add	sp, sp, #12
+ 302              		@ sp needed
+ 303 001c 5DF804FB 		ldr	pc, [sp], #4
+ 304              	.L26:
+ 305 0020 0120     		movs	r0, #1
+ 306 0022 FFF7FEFF 		bl	_ZN4node24markComponentInitializedENS_11ComponentIDE
+ 307 0026 0548     		ldr	r0, .L29+8
+ 308 0028 03B0     		add	sp, sp, #12
+ 309              		@ sp needed
+ 310 002a 5DF804EB 		ldr	lr, [sp], #4
+ 311 002e FFF7FEBF 		b	lowsyslog
+ 312              	.L30:
+ 313 0032 00BF     		.align	2
+ 314              	.L29:
+ 315 0034 00000000 		.word	.LANCHOR0
+ 316 0038 00000000 		.word	.LANCHOR1
+ 317 003c 01000000 		.word	.LC1
+ 318              		.size	_ZN10air_sensor4initEv, .-_ZN10air_sensor4initEv
+ 319              		.section	.text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSig
+ 320              		.align	1
+ 321              		.weak	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 322              		.thumb
+ 323              		.thumb_func
+ 324              		.type	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE, 
+ 325              	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:
+ 326              		@ args = 0, pretend = 0, frame = 0
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+ 328 0000 08B5     		push	{r3, lr}
+ 329 0002 03A3     		adr	r3, .L32
+ 330 0004 D3E90023 		ldrd	r2, [r3]
+ 331 0008 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 332 000c 08BD     		pop	{r3, pc}
+ 333              	.L33:
+ 334 000e 00BF     		.align	3
+ 335              	.L32:
+ 336 0010 30598E00 		.word	9328944
+ 337 0014 3EA72094 		.word	-1809799362
+ 338              		.size	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE, 
+ 339              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ 340              		.align	1
+ 341              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 342              		.thumb
+ARM GAS  /tmp/ccVoLO7T.s 			page 7
+
+
+ 343              		.thumb_func
+ 344              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 345              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registratio
+ 346              		@ args = 0, pretend = 0, frame = 40
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 348 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 349 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 350 0004 8BB0     		sub	sp, sp, #44
+ 351 0006 0646     		mov	r6, r0
+ 352 0008 0F46     		mov	r7, r1
+ 353 000a 002B     		cmp	r3, #0
+ 354 000c 4AD1     		bne	.L37
+ 355 000e 304C     		ldr	r4, .L40+32
+ 356 0010 2368     		ldr	r3, [r4]
+ 357 0012 DB07     		lsls	r3, r3, #31
+ 358 0014 09D4     		bmi	.L36
+ 359 0016 2F48     		ldr	r0, .L40+36
+ 360 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 361 001c 0123     		movs	r3, #1
+ 362 001e 2D48     		ldr	r0, .L40+36
+ 363 0020 2D49     		ldr	r1, .L40+40
+ 364 0022 2E4A     		ldr	r2, .L40+44
+ 365 0024 2360     		str	r3, [r4]
+ 366 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 367              	.L36:
+ 368 002a 3046     		mov	r0, r6
+ 369 002c 2949     		ldr	r1, .L40+36
+ 370 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 371 0032 0446     		mov	r4, r0
+ 372 0034 0028     		cmp	r0, #0
+ 373 0036 36D1     		bne	.L35
+ 374 0038 1DA3     		adr	r3, .L40
+ 375 003a D3E90023 		ldrd	r2, [r3]
+ 376 003e 0AAD     		add	r5, sp, #40
+ 377 0040 65E90A23 		strd	r2, [r5, #-40]!
+ 378 0044 1CA3     		adr	r3, .L40+8
+ 379 0046 D3E90023 		ldrd	r2, [r3]
+ 380 004a 2846     		mov	r0, r5
+ 381 004c FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 382 0050 1BA3     		adr	r3, .L40+16
+ 383 0052 D3E90023 		ldrd	r2, [r3]
+ 384 0056 2846     		mov	r0, r5
+ 385 0058 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 386 005c 1AA3     		adr	r3, .L40+24
+ 387 005e D3E90023 		ldrd	r2, [r3]
+ 388 0062 2846     		mov	r0, r5
+ 389 0064 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 390 0068 DDE90023 		ldrd	r2, [sp]
+ 391 006c CDE90423 		strd	r2, [sp, #16]
+ 392 0070 1B4B     		ldr	r3, .L40+48
+ 393 0072 8DF81C40 		strb	r4, [sp, #28]
+ 394 0076 0294     		str	r4, [sp, #8]
+ 395 0078 164C     		ldr	r4, .L40+36
+ 396 007a 0693     		str	r3, [sp, #24]
+ 397 007c 0897     		str	r7, [sp, #32]
+ 398 007e 02AD     		add	r5, sp, #8
+ 399 0080 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ARM GAS  /tmp/ccVoLO7T.s 			page 8
+
+
+ 400 0082 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 401 0084 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 402 0088 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 403 008c 3046     		mov	r0, r6
+ 404 008e A4F11001 		sub	r1, r4, #16
+ 405 0092 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 406 0096 30B9     		cbnz	r0, .L35
+ 407 0098 3046     		mov	r0, r6
+ 408 009a A4F11001 		sub	r1, r4, #16
+ 409 009e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 410 00a2 00E0     		b	.L35
+ 411              	.L37:
+ 412 00a4 0320     		movs	r0, #3
+ 413              	.L35:
+ 414 00a6 0BB0     		add	sp, sp, #44
+ 415              		@ sp needed
+ 416 00a8 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 417              	.L41:
+ 418 00aa 00BFAFF3 		.align	3
+ 418      0080
+ 419              	.L40:
+ 420 00b0 85E65350 		.word	1347675781
+ 421 00b4 99C80DA8 		.word	-1475491687
+ 422 00b8 F1C6A7C1 		.word	-1045969167
+ 423 00bc D068080F 		.word	252209360
+ 424 00c0 A1FE2765 		.word	1697119905
+ 425 00c4 37FD46DD 		.word	-582550217
+ 426 00c8 C4A0F433 		.word	871669956
+ 427 00cc C9C4D50A 		.word	181781705
+ 428 00d0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 429 00d4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 430 00d8 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 431 00dc 00000000 		.word	__dso_handle
+ 432 00e0 16000000 		.word	.LC2
+ 433              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 434              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_
+ 435              		.align	1
+ 436              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 437              		.thumb
+ 438              		.thumb_func
+ 439              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 440              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Registr
+ 441              		@ args = 0, pretend = 0, frame = 40
+ 442              		@ frame_needed = 0, uses_anonymous_args = 0
+ 443 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 444 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 445 0004 8BB0     		sub	sp, sp, #44
+ 446 0006 0646     		mov	r6, r0
+ 447 0008 0F46     		mov	r7, r1
+ 448 000a 002B     		cmp	r3, #0
+ 449 000c 3DD1     		bne	.L45
+ 450 000e 224C     		ldr	r4, .L48+8
+ 451 0010 2368     		ldr	r3, [r4]
+ 452 0012 DB07     		lsls	r3, r3, #31
+ 453 0014 09D4     		bmi	.L44
+ 454 0016 2148     		ldr	r0, .L48+12
+ 455 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ARM GAS  /tmp/ccVoLO7T.s 			page 9
+
+
+ 456 001c 0123     		movs	r3, #1
+ 457 001e 1F48     		ldr	r0, .L48+12
+ 458 0020 1F49     		ldr	r1, .L48+16
+ 459 0022 204A     		ldr	r2, .L48+20
+ 460 0024 2360     		str	r3, [r4]
+ 461 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 462              	.L44:
+ 463 002a 3046     		mov	r0, r6
+ 464 002c 1B49     		ldr	r1, .L48+12
+ 465 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 466 0032 0446     		mov	r4, r0
+ 467 0034 50BB     		cbnz	r0, .L43
+ 468 0036 16A3     		adr	r3, .L48
+ 469 0038 D3E90023 		ldrd	r2, [r3]
+ 470 003c 0AAD     		add	r5, sp, #40
+ 471 003e 65E90A23 		strd	r2, [r5, #-40]!
+ 472 0042 2846     		mov	r0, r5
+ 473 0044 FFF7FEFF 		bl	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 474 0048 2846     		mov	r0, r5
+ 475 004a FFF7FEFF 		bl	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 476 004e DDE90023 		ldrd	r2, [sp]
+ 477 0052 CDE90423 		strd	r2, [sp, #16]
+ 478 0056 144B     		ldr	r3, .L48+24
+ 479 0058 8DF81C40 		strb	r4, [sp, #28]
+ 480 005c 0294     		str	r4, [sp, #8]
+ 481 005e 0F4C     		ldr	r4, .L48+12
+ 482 0060 0693     		str	r3, [sp, #24]
+ 483 0062 0897     		str	r7, [sp, #32]
+ 484 0064 02AD     		add	r5, sp, #8
+ 485 0066 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 486 0068 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 487 006a 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 488 006e 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 489 0072 3046     		mov	r0, r6
+ 490 0074 A4F11001 		sub	r1, r4, #16
+ 491 0078 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 492 007c 30B9     		cbnz	r0, .L43
+ 493 007e 3046     		mov	r0, r6
+ 494 0080 A4F11001 		sub	r1, r4, #16
+ 495 0084 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 496 0088 00E0     		b	.L43
+ 497              	.L45:
+ 498 008a 0320     		movs	r0, #3
+ 499              	.L43:
+ 500 008c 0BB0     		add	sp, sp, #44
+ 501              		@ sp needed
+ 502 008e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 503              	.L49:
+ 504              		.align	3
+ 505              	.L48:
+ 506 0090 FC248DF6 		.word	-158522116
+ 507 0094 C93DC988 		.word	-2000077367
+ 508 0098 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 509 009c 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 510 00a0 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 511 00a4 00000000 		.word	__dso_handle
+ 512 00a8 32000000 		.word	.LC3
+ARM GAS  /tmp/ccVoLO7T.s 			page 10
+
+
+ 513              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 514              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage
+ 515              		.align	1
+ 516              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 517              		.thumb
+ 518              		.thumb_func
+ 519              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 520              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18
+ 521              		@ args = 0, pretend = 0, frame = 40
+ 522              		@ frame_needed = 0, uses_anonymous_args = 0
+ 523 0000 70B5     		push	{r4, r5, r6, lr}
+ 524 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 525 0004 8AB0     		sub	sp, sp, #40
+ 526 0006 0646     		mov	r6, r0
+ 527 0008 0D46     		mov	r5, r1
+ 528 000a 002B     		cmp	r3, #0
+ 529 000c 3DD1     		bne	.L53
+ 530 000e 244C     		ldr	r4, .L56+16
+ 531 0010 2368     		ldr	r3, [r4]
+ 532 0012 DB07     		lsls	r3, r3, #31
+ 533 0014 09D4     		bmi	.L52
+ 534 0016 2348     		ldr	r0, .L56+20
+ 535 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 536 001c 0123     		movs	r3, #1
+ 537 001e 2148     		ldr	r0, .L56+20
+ 538 0020 2149     		ldr	r1, .L56+24
+ 539 0022 224A     		ldr	r2, .L56+28
+ 540 0024 2360     		str	r3, [r4]
+ 541 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 542              	.L52:
+ 543 002a 3046     		mov	r0, r6
+ 544 002c 1D49     		ldr	r1, .L56+20
+ 545 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 546 0032 0446     		mov	r4, r0
+ 547 0034 50BB     		cbnz	r0, .L51
+ 548 0036 16A3     		adr	r3, .L56
+ 549 0038 D3E90023 		ldrd	r2, [r3]
+ 550 003c 0AA8     		add	r0, sp, #40
+ 551 003e 60E90A23 		strd	r2, [r0, #-40]!
+ 552 0042 15A3     		adr	r3, .L56+8
+ 553 0044 D3E90023 		ldrd	r2, [r3]
+ 554 0048 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 555 004c DDE90023 		ldrd	r2, [sp]
+ 556 0050 CDE90423 		strd	r2, [sp, #16]
+ 557 0054 164B     		ldr	r3, .L56+32
+ 558 0056 0294     		str	r4, [sp, #8]
+ 559 0058 0693     		str	r3, [sp, #24]
+ 560 005a 124C     		ldr	r4, .L56+20
+ 561 005c 0123     		movs	r3, #1
+ 562 005e 0895     		str	r5, [sp, #32]
+ 563 0060 8DF81C30 		strb	r3, [sp, #28]
+ 564 0064 02AD     		add	r5, sp, #8
+ 565 0066 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 566 0068 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 567 006a 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 568 006e 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 569 0072 3046     		mov	r0, r6
+ARM GAS  /tmp/ccVoLO7T.s 			page 11
+
+
+ 570 0074 A4F11001 		sub	r1, r4, #16
+ 571 0078 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 572 007c 30B9     		cbnz	r0, .L51
+ 573 007e 3046     		mov	r0, r6
+ 574 0080 A4F11001 		sub	r1, r4, #16
+ 575 0084 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 576 0088 00E0     		b	.L51
+ 577              	.L53:
+ 578 008a 0320     		movs	r0, #3
+ 579              	.L51:
+ 580 008c 0AB0     		add	sp, sp, #40
+ 581              		@ sp needed
+ 582 008e 70BD     		pop	{r4, r5, r6, pc}
+ 583              	.L57:
+ 584              		.align	3
+ 585              	.L56:
+ 586 0090 BA6287D3 		.word	-746102086
+ 587 0094 782B86E9 		.word	-377083016
+ 588 0098 462357AF 		.word	-1353243834
+ 589 009c 41F11B71 		.word	1897656641
+ 590 00a0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 591 00a4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 592 00a8 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 593 00ac 00000000 		.word	__dso_handle
+ 594 00b0 52000000 		.word	.LC4
+ 595              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 596              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStat
+ 597              		.align	1
+ 598              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 599              		.thumb
+ 600              		.thumb_func
+ 601              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 602              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Regis
+ 603              		@ args = 0, pretend = 0, frame = 40
+ 604              		@ frame_needed = 0, uses_anonymous_args = 0
+ 605 0000 70B5     		push	{r4, r5, r6, lr}
+ 606 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 607 0004 8AB0     		sub	sp, sp, #40
+ 608 0006 0646     		mov	r6, r0
+ 609 0008 0D46     		mov	r5, r1
+ 610 000a 002B     		cmp	r3, #0
+ 611 000c 3CD1     		bne	.L61
+ 612 000e 244C     		ldr	r4, .L64+16
+ 613 0010 2368     		ldr	r3, [r4]
+ 614 0012 DB07     		lsls	r3, r3, #31
+ 615 0014 09D4     		bmi	.L60
+ 616 0016 2348     		ldr	r0, .L64+20
+ 617 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 618 001c 0123     		movs	r3, #1
+ 619 001e 2148     		ldr	r0, .L64+20
+ 620 0020 2149     		ldr	r1, .L64+24
+ 621 0022 224A     		ldr	r2, .L64+28
+ 622 0024 2360     		str	r3, [r4]
+ 623 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 624              	.L60:
+ 625 002a 3046     		mov	r0, r6
+ 626 002c 1D49     		ldr	r1, .L64+20
+ARM GAS  /tmp/ccVoLO7T.s 			page 12
+
+
+ 627 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 628 0032 0446     		mov	r4, r0
+ 629 0034 48BB     		cbnz	r0, .L59
+ 630 0036 16A3     		adr	r3, .L64
+ 631 0038 D3E90023 		ldrd	r2, [r3]
+ 632 003c 0AA8     		add	r0, sp, #40
+ 633 003e 60E90A23 		strd	r2, [r0, #-40]!
+ 634 0042 15A3     		adr	r3, .L64+8
+ 635 0044 D3E90023 		ldrd	r2, [r3]
+ 636 0048 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 637 004c DDE90023 		ldrd	r2, [sp]
+ 638 0050 CDE90423 		strd	r2, [sp, #16]
+ 639 0054 164B     		ldr	r3, .L64+32
+ 640 0056 8DF81C40 		strb	r4, [sp, #28]
+ 641 005a 0294     		str	r4, [sp, #8]
+ 642 005c 114C     		ldr	r4, .L64+20
+ 643 005e 0895     		str	r5, [sp, #32]
+ 644 0060 0693     		str	r3, [sp, #24]
+ 645 0062 02AD     		add	r5, sp, #8
+ 646 0064 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 647 0066 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 648 0068 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 649 006c 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 650 0070 3046     		mov	r0, r6
+ 651 0072 A4F11001 		sub	r1, r4, #16
+ 652 0076 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 653 007a 30B9     		cbnz	r0, .L59
+ 654 007c 3046     		mov	r0, r6
+ 655 007e A4F11001 		sub	r1, r4, #16
+ 656 0082 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 657 0086 00E0     		b	.L59
+ 658              	.L61:
+ 659 0088 0320     		movs	r0, #3
+ 660              	.L59:
+ 661 008a 0AB0     		add	sp, sp, #40
+ 662              		@ sp needed
+ 663 008c 70BD     		pop	{r4, r5, r6, pc}
+ 664              	.L65:
+ 665 008e 00BF     		.align	3
+ 666              	.L64:
+ 667 0090 B3611B53 		.word	1394303411
+ 668 0094 54F6C731 		.word	835188308
+ 669 0098 50A34CC4 		.word	-1001610416
+ 670 009c F006B113 		.word	330368752
+ 671 00a0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 672 00a4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 673 00a8 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 674 00ac 00000000 		.word	__dso_handle
+ 675 00b0 73000000 		.word	.LC5
+ 676              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 677              		.section	.text._ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14ge
+ 678              		.align	1
+ 679              		.weak	_ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPubl
+ 680              		.thumb
+ 681              		.thumb_func
+ 682              		.type	_ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPubl
+ 683              	_ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPublishERKS
+ARM GAS  /tmp/ccVoLO7T.s 			page 13
+
+
+ 684              		@ args = 8, pretend = 0, frame = 40
+ 685              		@ frame_needed = 0, uses_anonymous_args = 0
+ 686 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 687 0004 8DB0     		sub	sp, sp, #52
+ 688 0006 9846     		mov	r8, r3
+ 689 0008 0646     		mov	r6, r0
+ 690 000a 0F46     		mov	r7, r1
+ 691 000c 9146     		mov	r9, r2
+ 692 000e FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase8isInitedEv
+ 693 0012 0346     		mov	r3, r0
+ 694 0014 D0B1     		cbz	r0, .L67
+ 695              	.L71:
+ 696 0016 0AAB     		add	r3, sp, #40
+ 697 0018 0893     		str	r3, [sp, #32]
+ 698 001a 0623     		movs	r3, #6
+ 699 001c ADF82430 		strh	r3, [sp, #36]	@ movhi
+ 700 0020 1B4A     		ldr	r2, .L75
+ 701 0022 0023     		movs	r3, #0
+ 702 0024 ADF82630 		strh	r3, [sp, #38]	@ movhi
+ 703 0028 0593     		str	r3, [sp, #20]
+ 704 002a 8DF81830 		strb	r3, [sp, #24]
+ 705 002e 3B68     		ldr	r3, [r7]
+ 706 0030 0792     		str	r2, [sp, #28]
+ 707 0032 07AD     		add	r5, sp, #28
+ 708 0034 04AC     		add	r4, sp, #16
+ 709 0036 02A8     		add	r0, sp, #8
+ 710 0038 03A9     		add	r1, sp, #12
+ 711 003a 2022     		movs	r2, #32
+ 712 003c 0495     		str	r5, [sp, #16]
+ 713 003e 0294     		str	r4, [sp, #8]
+ 714 0040 0393     		str	r3, [sp, #12]
+ 715 0042 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 716 0046 0028     		cmp	r0, #0
+ 717 0048 0BDC     		bgt	.L74
+ 718 004a 07E0     		b	.L68
+ 719              	.L67:
+ 720 004c 3046     		mov	r0, r6
+ 721 004e 0121     		movs	r1, #1
+ 722 0050 104A     		ldr	r2, .L75+4
+ 723 0052 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+ 724 0056 0028     		cmp	r0, #0
+ 725 0058 17DB     		blt	.L70
+ 726 005a DCE7     		b	.L71
+ 727              	.L68:
+ 728 005c 6FF00500 		mvn	r0, #5
+ 729 0060 13E0     		b	.L70
+ 730              	.L74:
+ 731 0062 7868     		ldr	r0, [r7, #4]	@ float
+ 732 0064 02A9     		add	r1, sp, #8
+ 733 0066 FFF7FEFF 		bl	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizatio
+ 734 006a 0028     		cmp	r0, #0
+ 735 006c F6DD     		ble	.L68
+ 736 006e 159B     		ldr	r3, [sp, #84]
+ 737 0070 4A46     		mov	r2, r9
+ 738 0072 93E80300 		ldmia	r3, {r0, r1}
+ 739 0076 149B     		ldr	r3, [sp, #80]
+ 740 0078 84E80300 		stmia	r4, {r0, r1}
+ARM GAS  /tmp/ccVoLO7T.s 			page 14
+
+
+ 741 007c 8DE81800 		stmia	sp, {r3, r4}
+ 742 0080 3046     		mov	r0, r6
+ 743 0082 2946     		mov	r1, r5
+ 744 0084 4346     		mov	r3, r8
+ 745 0086 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferT
+ 746              	.L70:
+ 747 008a 0DB0     		add	sp, sp, #52
+ 748              		@ sp needed
+ 749 008c BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 750              	.L76:
+ 751              		.align	2
+ 752              	.L75:
+ 753 0090 08000000 		.word	_ZTVN6uavcan20StaticTransferBufferILt6EEE+8
+ 754 0094 95000000 		.word	.LC6
+ 755              		.size	_ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPubl
+ 756              		.section	.text._ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E1
+ 757              		.align	1
+ 758              		.weak	_ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericP
+ 759              		.thumb
+ 760              		.thumb_func
+ 761              		.type	_ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericP
+ 762              	_ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericPublishE
+ 763              		@ args = 8, pretend = 0, frame = 40
+ 764              		@ frame_needed = 0, uses_anonymous_args = 0
+ 765 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 766 0004 8CB0     		sub	sp, sp, #48
+ 767 0006 9946     		mov	r9, r3
+ 768 0008 0746     		mov	r7, r0
+ 769 000a 8846     		mov	r8, r1
+ 770 000c 9246     		mov	r10, r2
+ 771 000e FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase8isInitedEv
+ 772 0012 0346     		mov	r3, r0
+ 773 0014 D0B1     		cbz	r0, .L78
+ 774              	.L82:
+ 775 0016 0BAB     		add	r3, sp, #44
+ 776 0018 0CAD     		add	r5, sp, #48
+ 777 001a 04AC     		add	r4, sp, #16
+ 778 001c 0993     		str	r3, [sp, #36]
+ 779 001e 1D4A     		ldr	r2, .L86
+ 780 0020 0423     		movs	r3, #4
+ 781 0022 45F8244D 		str	r4, [r5, #-36]!
+ 782 0026 ADF82830 		strh	r3, [sp, #40]	@ movhi
+ 783 002a 08AE     		add	r6, sp, #32
+ 784 002c 0023     		movs	r3, #0
+ 785 002e D8F80000 		ldr	r0, [r8]	@ float
+ 786 0032 2946     		mov	r1, r5
+ 787 0034 ADF82A30 		strh	r3, [sp, #42]	@ movhi
+ 788 0038 0892     		str	r2, [sp, #32]
+ 789 003a 0496     		str	r6, [sp, #16]
+ 790 003c 0593     		str	r3, [sp, #20]
+ 791 003e 8DF81830 		strb	r3, [sp, #24]
+ 792 0042 FFF7FEFF 		bl	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizatio
+ 793 0046 0028     		cmp	r0, #0
+ 794 0048 0BDC     		bgt	.L85
+ 795 004a 07E0     		b	.L79
+ 796              	.L78:
+ 797 004c 3846     		mov	r0, r7
+ARM GAS  /tmp/ccVoLO7T.s 			page 15
+
+
+ 798 004e 0121     		movs	r1, #1
+ 799 0050 114A     		ldr	r2, .L86+4
+ 800 0052 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+ 801 0056 0028     		cmp	r0, #0
+ 802 0058 18DB     		blt	.L81
+ 803 005a DCE7     		b	.L82
+ 804              	.L79:
+ 805 005c 6FF00500 		mvn	r0, #5
+ 806 0060 14E0     		b	.L81
+ 807              	.L85:
+ 808 0062 D8F80400 		ldr	r0, [r8, #4]	@ float
+ 809 0066 2946     		mov	r1, r5
+ 810 0068 FFF7FEFF 		bl	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizatio
+ 811 006c 0028     		cmp	r0, #0
+ 812 006e F5DD     		ble	.L79
+ 813 0070 159B     		ldr	r3, [sp, #84]
+ 814 0072 5246     		mov	r2, r10
+ 815 0074 93E80300 		ldmia	r3, {r0, r1}
+ 816 0078 149B     		ldr	r3, [sp, #80]
+ 817 007a 84E80300 		stmia	r4, {r0, r1}
+ 818 007e 8DE81800 		stmia	sp, {r3, r4}
+ 819 0082 3846     		mov	r0, r7
+ 820 0084 3146     		mov	r1, r6
+ 821 0086 4B46     		mov	r3, r9
+ 822 0088 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferT
+ 823              	.L81:
+ 824 008c 0CB0     		add	sp, sp, #48
+ 825              		@ sp needed
+ 826 008e BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 827              	.L87:
+ 828 0092 00BF     		.align	2
+ 829              	.L86:
+ 830 0094 08000000 		.word	_ZTVN6uavcan20StaticTransferBufferILt4EEE+8
+ 831 0098 BE000000 		.word	.LC7
+ 832              		.size	_ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericP
+ 833              		.global	__aeabi_i2f
+ 834              		.global	__aeabi_fdiv
+ 835              		.global	__aeabi_fadd
+ 836              		.global	__aeabi_fcmpge
+ 837              		.global	__aeabi_fcmple
+ 838              		.section	.text.startup._ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv,"ax",%progbits
+ 839              		.align	1
+ 840              		.thumb
+ 841              		.thumb_func
+ 842              		.type	_ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv, %function
+ 843              	_ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv:
+ 844              		@ args = 0, pretend = 0, frame = 40
+ 845              		@ frame_needed = 0, uses_anonymous_args = 0
+ 846 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 847 0004 D0F89836 		ldr	r3, [r0, #1688]
+ 848 0008 8DB0     		sub	sp, sp, #52
+ 849 000a 002B     		cmp	r3, #0
+ 850 000c 0446     		mov	r4, r0
+ 851 000e 0EDA     		bge	.L90
+ 852 0010 40F24C40 		movw	r0, #1100
+ 853 0014 FFF7FEFF 		bl	watchdogCreate
+ 854 0018 0028     		cmp	r0, #0
+ARM GAS  /tmp/ccVoLO7T.s 			page 16
+
+
+ 855 001a C4F89806 		str	r0, [r4, #1688]
+ 856 001e 06DA     		bge	.L90
+ 857 0020 9E4A     		ldr	r2, .L133
+ 858 0022 9F4B     		ldr	r3, .L133+4
+ 859 0024 1A60     		str	r2, [r3]
+ 860 0026 FFF7FEFF 		bl	sysHaltHook_
+ 861 002a FFF7FEFF 		bl	port_halt
+ 862              	.L90:
+ 863 002e 9D48     		ldr	r0, .L133+8
+ 864 0030 FFF7FEFF 		bl	_ZN10chibios_rt10BaseThread7setNameEPKc
+ 865 0034 9C4B     		ldr	r3, .L133+12
+ 866 0036 1868     		ldr	r0, [r3]
+ 867 0038 FFF7FEFF 		bl	configGet
+ 868 003c 9B4B     		ldr	r3, .L133+16
+ 869 003e C4F89006 		str	r0, [r4, #1680]	@ float
+ 870 0042 1868     		ldr	r0, [r3]
+ 871 0044 FFF7FEFF 		bl	configGet
+ 872 0048 C4F89406 		str	r0, [r4, #1684]	@ float
+ 873              	.L92:
+ 874 004c FFF7FEFF 		bl	_ZN4node24hasPendingRestartRequestEv
+ 875 0050 0028     		cmp	r0, #0
+ 876 0052 40F01B81 		bne	.L130
+ 877 0056 D4F89806 		ldr	r0, [r4, #1688]
+ 878 005a FFF7FEFF 		bl	watchdogReset
+ 879 005e 9448     		ldr	r0, .L133+20
+ 880 0060 FFF7FEFF 		bl	usleep
+ 881 0064 04F29C68 		addw	r8, r4, #1692
+ 882 0068 D4F89806 		ldr	r0, [r4, #1688]
+ 883 006c FFF7FEFF 		bl	watchdogReset
+ 884 0070 4046     		mov	r0, r8
+ 885 0072 FFF7FEFF 		bl	ms5611Reset
+ 886 0076 08B9     		cbnz	r0, .L93
+ 887 0078 8E48     		ldr	r0, .L133+24
+ 888 007a EFE0     		b	.L129
+ 889              	.L93:
+ 890 007c 4046     		mov	r0, r8
+ 891 007e FFF7FEFF 		bl	ms5611GetProm
+ 892 0082 08B9     		cbnz	r0, .L95
+ 893 0084 8C48     		ldr	r0, .L133+28
+ 894 0086 E9E0     		b	.L129
+ 895              	.L95:
+ 896 0088 0120     		movs	r0, #1
+ 897 008a FFF7FEFF 		bl	_ZN4node24markComponentInitializedENS_11ComponentIDE
+ 898 008e FFF7FEFF 		bl	_ZN10chibios_rt6System7getTimeEv
+ 899 0092 8A4B     		ldr	r3, .L133+32
+ 900 0094 8146     		mov	r9, r0
+ 901 0096 1868     		ldr	r0, [r3]
+ 902 0098 FFF7FEFF 		bl	configGet
+ 903 009c FFF7FEFF 		bl	__aeabi_f2uiz
+ 904 00a0 48F23525 		movw	r5, #33333
+ 905 00a4 A842     		cmp	r0, r5
+ 906 00a6 38BF     		it	cc
+ 907 00a8 2846     		movcc	r0, r5
+ 908 00aa 4FF47A73 		mov	r3, #1000
+ 909 00ae 03FB00F5 		mul	r5, r3, r0
+ 910 00b2 681E     		subs	r0, r5, #1
+ 911 00b4 824D     		ldr	r5, .L133+36
+ARM GAS  /tmp/ccVoLO7T.s 			page 17
+
+
+ 912 00b6 B0FBF5F5 		udiv	r5, r0, r5
+ 913 00ba 6B1C     		adds	r3, r5, #1
+ 914 00bc 0393     		str	r3, [sp, #12]
+ 915              	.L96:
+ 916 00be FFF7FEFF 		bl	_ZN4node24hasPendingRestartRequestEv
+ 917 00c2 0646     		mov	r6, r0
+ 918 00c4 0028     		cmp	r0, #0
+ 919 00c6 40F0BF80 		bne	.L114
+ 920 00ca D4F89806 		ldr	r0, [r4, #1688]
+ 921 00ce FFF7FEFF 		bl	watchdogReset
+ 922 00d2 039B     		ldr	r3, [sp, #12]
+ 923 00d4 4046     		mov	r0, r8
+ 924 00d6 05A9     		add	r1, sp, #20
+ 925 00d8 06AA     		add	r2, sp, #24
+ 926 00da 9944     		add	r9, r9, r3
+ 927 00dc 0596     		str	r6, [sp, #20]
+ 928 00de 0696     		str	r6, [sp, #24]
+ 929 00e0 FFF7FEFF 		bl	ms5611ReadPT
+ 930 00e4 0028     		cmp	r0, #0
+ 931 00e6 00F0AF80 		beq	.L114
+ 932 00ea 0598     		ldr	r0, [sp, #20]
+ 933 00ec FFF7FEFF 		bl	__aeabi_i2f
+ 934 00f0 8246     		mov	r10, r0
+ 935 00f2 0698     		ldr	r0, [sp, #24]
+ 936 00f4 FFF7FEFF 		bl	__aeabi_i2f
+ 937 00f8 7249     		ldr	r1, .L133+40
+ 938 00fa FFF7FEFF 		bl	__aeabi_fdiv
+ 939 00fe 0646     		mov	r6, r0
+ 940 0100 FFF7FEFF 		bl	_ZN4node9isStartedEv
+ 941 0104 0028     		cmp	r0, #0
+ 942 0106 00F08880 		beq	.L105
+ 943 010a 6F4B     		ldr	r3, .L133+44
+ 944 010c 6F4F     		ldr	r7, .L133+48
+ 945 010e 1A68     		ldr	r2, [r3]
+ 946 0110 D007     		lsls	r0, r2, #31
+ 947 0112 5CBF     		itt	pl
+ 948 0114 0122     		movpl	r2, #1
+ 949 0116 1A60     		strpl	r2, [r3]
+ 950 0118 6D4B     		ldr	r3, .L133+52
+ 951 011a D4F89026 		ldr	r2, [r4, #1680]	@ float
+ 952 011e C3F800A0 		str	r10, [r3]	@ float
+ 953 0122 5A60     		str	r2, [r3, #4]	@ float
+ 954 0124 6B4B     		ldr	r3, .L133+56
+ 955 0126 3046     		mov	r0, r6
+ 956 0128 1A68     		ldr	r2, [r3]
+ 957 012a D107     		lsls	r1, r2, #31
+ 958 012c 5CBF     		itt	pl
+ 959 012e 0122     		movpl	r2, #1
+ 960 0130 1A60     		strpl	r2, [r3]
+ 961 0132 6949     		ldr	r1, .L133+60
+ 962 0134 FFF7FEFF 		bl	__aeabi_fadd
+ 963 0138 D4F89436 		ldr	r3, [r4, #1684]	@ float
+ 964 013c 3860     		str	r0, [r7]	@ float
+ 965 013e 07A8     		add	r0, sp, #28
+ 966 0140 7B60     		str	r3, [r7, #4]	@ float
+ 967 0142 FFF7FEFF 		bl	_ZN4node4LockC1Ev
+ 968 0146 FFF7FEFF 		bl	_ZN4node7getNodeEv
+ARM GAS  /tmp/ccVoLO7T.s 			page 18
+
+
+ 969 014a 644F     		ldr	r7, .L133+64
+ 970 014c 8346     		mov	fp, r0
+ 971 014e 3B68     		ldr	r3, [r7]
+ 972 0150 DA07     		lsls	r2, r3, #31
+ 973 0152 14D4     		bmi	.L101
+ 974 0154 624A     		ldr	r2, .L133+68
+ 975 0156 0023     		movs	r3, #0
+ 976 0158 CDE90A23 		strd	r2, [sp, #40]
+ 977 015c 614A     		ldr	r2, .L133+72
+ 978 015e 0023     		movs	r3, #0
+ 979 0160 CDE90823 		strd	r2, [sp, #32]
+ 980 0164 5946     		mov	r1, fp
+ 981 0166 0AAA     		add	r2, sp, #40
+ 982 0168 08AB     		add	r3, sp, #32
+ 983 016a 5F48     		ldr	r0, .L133+76
+ 984 016c FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_
+ 985 0170 0123     		movs	r3, #1
+ 986 0172 5D48     		ldr	r0, .L133+76
+ 987 0174 5D49     		ldr	r1, .L133+80
+ 988 0176 5E4A     		ldr	r2, .L133+84
+ 989 0178 3B60     		str	r3, [r7]
+ 990 017a FFF7FEFF 		bl	__aeabi_atexit
+ 991              	.L101:
+ 992 017e 5D4F     		ldr	r7, .L133+88
+ 993 0180 3B68     		ldr	r3, [r7]
+ 994 0182 DB07     		lsls	r3, r3, #31
+ 995 0184 14D4     		bmi	.L103
+ 996 0186 564A     		ldr	r2, .L133+68
+ 997 0188 0023     		movs	r3, #0
+ 998 018a CDE90A23 		strd	r2, [sp, #40]
+ 999 018e 554A     		ldr	r2, .L133+72
+ 1000 0190 0023     		movs	r3, #0
+ 1001 0192 CDE90823 		strd	r2, [sp, #32]
+ 1002 0196 5946     		mov	r1, fp
+ 1003 0198 0AAA     		add	r2, sp, #40
+ 1004 019a 08AB     		add	r3, sp, #32
+ 1005 019c 5648     		ldr	r0, .L133+92
+ 1006 019e FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_
+ 1007 01a2 0123     		movs	r3, #1
+ 1008 01a4 5448     		ldr	r0, .L133+92
+ 1009 01a6 5549     		ldr	r1, .L133+96
+ 1010 01a8 514A     		ldr	r2, .L133+84
+ 1011 01aa 3B60     		str	r3, [r7]
+ 1012 01ac FFF7FEFF 		bl	__aeabi_atexit
+ 1013              	.L103:
+ 1014 01b0 534F     		ldr	r7, .L133+100
+ 1015 01b2 3B78     		ldrb	r3, [r7]	@ zero_extendqisi2
+ 1016 01b4 8BB9     		cbnz	r3, .L131
+ 1017 01b6 534D     		ldr	r5, .L133+104
+ 1018 01b8 2868     		ldr	r0, [r5]
+ 1019 01ba FFF7FEFF 		bl	configGet
+ 1020 01be FFF7FEFF 		bl	__aeabi_f2uiz
+ 1021 01c2 494B     		ldr	r3, .L133+76
+ 1022 01c4 1873     		strb	r0, [r3, #12]
+ 1023 01c6 2868     		ldr	r0, [r5]
+ 1024 01c8 FFF7FEFF 		bl	configGet
+ 1025 01cc FFF7FEFF 		bl	__aeabi_f2uiz
+ARM GAS  /tmp/ccVoLO7T.s 			page 19
+
+
+ 1026 01d0 494B     		ldr	r3, .L133+92
+ 1027 01d2 1873     		strb	r0, [r3, #12]
+ 1028 01d4 0123     		movs	r3, #1
+ 1029 01d6 3B70     		strb	r3, [r7]
+ 1030 01d8 EAE7     		b	.L103
+ 1031              	.L131:
+ 1032 01da 4B4B     		ldr	r3, .L133+108
+ 1033 01dc 0CAF     		add	r7, sp, #48
+ 1034 01de 93F800B0 		ldrb	fp, [r3]	@ zero_extendqisi2
+ 1035 01e2 0022     		movs	r2, #0
+ 1036 01e4 0023     		movs	r3, #0
+ 1037 01e6 67E90223 		strd	r2, [r7, #-8]!
+ 1038 01ea 0025     		movs	r5, #0
+ 1039 01ec 3849     		ldr	r1, .L133+52
+ 1040 01ee 0222     		movs	r2, #2
+ 1041 01f0 5B46     		mov	r3, fp
+ 1042 01f2 8DE8A000 		stmia	sp, {r5, r7}
+ 1043 01f6 3C48     		ldr	r0, .L133+76
+ 1044 01f8 FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPublish
+ 1045 01fc 0022     		movs	r2, #0
+ 1046 01fe 0023     		movs	r3, #0
+ 1047 0200 CDE90A23 		strd	r2, [sp, #40]
+ 1048 0204 8DE8A000 		stmia	sp, {r5, r7}
+ 1049 0208 3B48     		ldr	r0, .L133+92
+ 1050 020a 3049     		ldr	r1, .L133+48
+ 1051 020c 0222     		movs	r2, #2
+ 1052 020e 5B46     		mov	r3, fp
+ 1053 0210 FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericPubl
+ 1054 0214 0798     		ldr	r0, [sp, #28]
+ 1055 0216 FFF7FEFF 		bl	_ZN12uavcan_stm325Mutex6unlockEv
+ 1056              	.L105:
+ 1057 021a 5046     		mov	r0, r10
+ 1058 021c 3B49     		ldr	r1, .L133+112
+ 1059 021e FFF7FEFF 		bl	__aeabi_fcmpge
+ 1060 0222 70B1     		cbz	r0, .L106
+ 1061 0224 5046     		mov	r0, r10
+ 1062 0226 3A49     		ldr	r1, .L133+116
+ 1063 0228 FFF7FEFF 		bl	__aeabi_fcmple
+ 1064 022c 48B1     		cbz	r0, .L106
+ 1065 022e 3046     		mov	r0, r6
+ 1066 0230 3849     		ldr	r1, .L133+120
+ 1067 0232 FFF7FEFF 		bl	__aeabi_fcmpge
+ 1068 0236 20B1     		cbz	r0, .L106
+ 1069 0238 3046     		mov	r0, r6
+ 1070 023a 3749     		ldr	r1, .L133+124
+ 1071 023c FFF7FEFF 		bl	__aeabi_fcmple
+ 1072 0240 78B9     		cbnz	r0, .L109
+ 1073              	.L106:
+ 1074 0242 0120     		movs	r0, #1
+ 1075 0244 0221     		movs	r1, #2
+ 1076 0246 1BE0     		b	.L128
+ 1077              	.L114:
+ 1078 0248 FFF7FEFF 		bl	_ZN4node24hasPendingRestartRequestEv
+ 1079 024c 0028     		cmp	r0, #0
+ 1080 024e 7FF4FDAE 		bne	.L92
+ 1081 0252 0120     		movs	r0, #1
+ 1082 0254 0221     		movs	r1, #2
+ARM GAS  /tmp/ccVoLO7T.s 			page 20
+
+
+ 1083 0256 FFF7FEFF 		bl	_ZN4node18setComponentHealthENS_11ComponentIDEh
+ 1084 025a 3048     		ldr	r0, .L133+128
+ 1085              	.L129:
+ 1086 025c FFF7FEFF 		bl	lowsyslog
+ 1087 0260 F4E6     		b	.L92
+ 1088              	.L109:
+ 1089 0262 3046     		mov	r0, r6
+ 1090 0264 2E49     		ldr	r1, .L133+132
+ 1091 0266 FFF7FEFF 		bl	__aeabi_fcmpge
+ 1092 026a 20B1     		cbz	r0, .L111
+ 1093 026c 3046     		mov	r0, r6
+ 1094 026e 2D49     		ldr	r1, .L133+136
+ 1095 0270 FFF7FEFF 		bl	__aeabi_fcmple
+ 1096 0274 10B9     		cbnz	r0, .L132
+ 1097              	.L111:
+ 1098 0276 0120     		movs	r0, #1
+ 1099 0278 0146     		mov	r1, r0
+ 1100 027a 01E0     		b	.L128
+ 1101              	.L132:
+ 1102 027c 0120     		movs	r0, #1
+ 1103 027e 0021     		movs	r1, #0
+ 1104              	.L128:
+ 1105 0280 FFF7FEFF 		bl	_ZN4node18setComponentHealthENS_11ComponentIDEh
+ 1106 0284 4846     		mov	r0, r9
+ 1107 0286 FFF7FEFF 		bl	sysSleepUntilChTime
+ 1108 028a 18E7     		b	.L96
+ 1109              	.L130:
+ 1110 028c 2648     		ldr	r0, .L133+140
+ 1111 028e FFF7FEFF 		bl	lowsyslog
+ 1112 0292 0020     		movs	r0, #0
+ 1113 0294 0DB0     		add	sp, sp, #52
+ 1114              		@ sp needed
+ 1115 0296 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1116              	.L134:
+ 1117 029a 00BF     		.align	2
+ 1118              	.L133:
+ 1119 029c EA000000 		.word	.LC8
+ 1120 02a0 00000000 		.word	dbg_panic_msg
+ 1121 02a4 20010000 		.word	.LC9
+ 1122 02a8 00000000 		.word	.LANCHOR2
+ 1123 02ac 00000000 		.word	.LANCHOR3
+ 1124 02b0 20A10700 		.word	500000
+ 1125 02b4 2B010000 		.word	.LC10
+ 1126 02b8 53010000 		.word	.LC11
+ 1127 02bc 00000000 		.word	.LANCHOR0
+ 1128 02c0 40420F00 		.word	1000000
+ 1129 02c4 0000C842 		.word	1120403456
+ 1130 02c8 00000000 		.word	.LANCHOR4
+ 1131 02cc 00000000 		.word	.LANCHOR7
+ 1132 02d0 00000000 		.word	.LANCHOR5
+ 1133 02d4 00000000 		.word	.LANCHOR6
+ 1134 02d8 33938843 		.word	1133024051
+ 1135 02dc 00000000 		.word	.LANCHOR8
+ 1136 02e0 A0860100 		.word	100000
+ 1137 02e4 00879303 		.word	60000000
+ 1138 02e8 00000000 		.word	.LANCHOR9
+ 1139 02ec 00000000 		.word	_ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED1Ev
+ARM GAS  /tmp/ccVoLO7T.s 			page 21
+
+
+ 1140 02f0 00000000 		.word	__dso_handle
+ 1141 02f4 00000000 		.word	.LANCHOR10
+ 1142 02f8 00000000 		.word	.LANCHOR11
+ 1143 02fc 00000000 		.word	_ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED1Ev
+ 1144 0300 00000000 		.word	.LANCHOR13
+ 1145 0304 00000000 		.word	.LANCHOR12
+ 1146 0308 00000000 		.word	_ZN6uavcan6NodeID9BroadcastE
+ 1147 030c 00007A44 		.word	1148846080
+ 1148 0310 0060EA47 		.word	1206542336
+ 1149 0314 000020C2 		.word	-1038090240
+ 1150 0318 0000AA42 		.word	1118437376
+ 1151 031c 7F010000 		.word	.LC12
+ 1152 0320 0000F0C1 		.word	-1041235968
+ 1153 0324 00007042 		.word	1114636288
+ 1154 0328 A2010000 		.word	.LC13
+ 1155              		.size	_ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv, .-_ZN10air_sensor12_GLOBAL__N_115AirS
+ 1156              		.section	.text.startup._GLOBAL__sub_I__ZN10air_sensor4initEv,"ax",%progbits
+ 1157              		.align	1
+ 1158              		.thumb
+ 1159              		.thumb_func
+ 1160              		.type	_GLOBAL__sub_I__ZN10air_sensor4initEv, %function
+ 1161              	_GLOBAL__sub_I__ZN10air_sensor4initEv:
+ 1162              		@ args = 0, pretend = 0, frame = 0
+ 1163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1164 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1165 0002 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1166 0006 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1167 0008 0546     		mov	r5, r0
+ 1168 000a 53BB     		cbnz	r3, .L139
+ 1169 000c 9C4C     		ldr	r4, .L165+32
+ 1170 000e 2368     		ldr	r3, [r4]
+ 1171 0010 D807     		lsls	r0, r3, #31
+ 1172 0012 09D4     		bmi	.L137
+ 1173 0014 9B48     		ldr	r0, .L165+36
+ 1174 0016 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 1175 001a 0123     		movs	r3, #1
+ 1176 001c 9948     		ldr	r0, .L165+36
+ 1177 001e 9A49     		ldr	r1, .L165+40
+ 1178 0020 9A4A     		ldr	r2, .L165+44
+ 1179 0022 2360     		str	r3, [r4]
+ 1180 0024 FFF7FEFF 		bl	__aeabi_atexit
+ 1181              	.L137:
+ 1182 0028 964C     		ldr	r4, .L165+36
+ 1183 002a 2846     		mov	r0, r5
+ 1184 002c 2146     		mov	r1, r4
+ 1185 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1186 0032 A8B9     		cbnz	r0, .L136
+ 1187 0034 8AA3     		adr	r3, .L165
+ 1188 0036 D3E90023 		ldrd	r2, [r3]
+ 1189 003a C4E90223 		strd	r2, [r4, #8]
+ 1190 003e 944B     		ldr	r3, .L165+48
+ 1191 0040 2060     		str	r0, [r4]
+ 1192 0042 2361     		str	r3, [r4, #16]
+ 1193 0044 0123     		movs	r3, #1
+ 1194 0046 2375     		strb	r3, [r4, #20]
+ 1195 0048 40F25513 		movw	r3, #341
+ 1196 004c 2846     		mov	r0, r5
+ARM GAS  /tmp/ccVoLO7T.s 			page 22
+
+
+ 1197 004e A361     		str	r3, [r4, #24]
+ 1198 0050 2146     		mov	r1, r4
+ 1199 0052 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1200 0056 18B9     		cbnz	r0, .L136
+ 1201 0058 2846     		mov	r0, r5
+ 1202 005a 2146     		mov	r1, r4
+ 1203 005c FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1204              	.L136:
+ 1205 0060 10B1     		cbz	r0, .L138
+ 1206              	.L139:
+ 1207 0062 8C48     		ldr	r0, .L165+52
+ 1208 0064 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 1209              	.L138:
+ 1210 0068 0126     		movs	r6, #1
+ 1211 006a FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1212 006e 3146     		mov	r1, r6
+ 1213 0070 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registr
+ 1214 0074 0028     		cmp	r0, #0
+ 1215 0076 F4D1     		bne	.L139
+ 1216 0078 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1217 007c 0221     		movs	r1, #2
+ 1218 007e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Reg
+ 1219 0082 0028     		cmp	r0, #0
+ 1220 0084 EDD1     		bne	.L139
+ 1221 0086 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1222 008a 43F6FF71 		movw	r1, #16383
+ 1223 008e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS
+ 1224 0092 0028     		cmp	r0, #0
+ 1225 0094 E5D1     		bne	.L139
+ 1226 0096 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1227 009a 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1228 009c 0546     		mov	r5, r0
+ 1229 009e 002B     		cmp	r3, #0
+ 1230 00a0 DFD1     		bne	.L139
+ 1231 00a2 7D4C     		ldr	r4, .L165+56
+ 1232 00a4 2368     		ldr	r3, [r4]
+ 1233 00a6 D907     		lsls	r1, r3, #31
+ 1234 00a8 08D4     		bmi	.L144
+ 1235 00aa 7C48     		ldr	r0, .L165+60
+ 1236 00ac FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 1237 00b0 7A48     		ldr	r0, .L165+60
+ 1238 00b2 7549     		ldr	r1, .L165+40
+ 1239 00b4 754A     		ldr	r2, .L165+44
+ 1240 00b6 2660     		str	r6, [r4]
+ 1241 00b8 FFF7FEFF 		bl	__aeabi_atexit
+ 1242              	.L144:
+ 1243 00bc 774C     		ldr	r4, .L165+60
+ 1244 00be 2846     		mov	r0, r5
+ 1245 00c0 2146     		mov	r1, r4
+ 1246 00c2 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1247 00c6 98B9     		cbnz	r0, .L143
+ 1248 00c8 67A3     		adr	r3, .L165+8
+ 1249 00ca D3E90023 		ldrd	r2, [r3]
+ 1250 00ce C4E90223 		strd	r2, [r4, #8]
+ 1251 00d2 734B     		ldr	r3, .L165+64
+ 1252 00d4 2060     		str	r0, [r4]
+ 1253 00d6 2361     		str	r3, [r4, #16]
+ARM GAS  /tmp/ccVoLO7T.s 			page 23
+
+
+ 1254 00d8 0523     		movs	r3, #5
+ 1255 00da 2075     		strb	r0, [r4, #20]
+ 1256 00dc A361     		str	r3, [r4, #24]
+ 1257 00de 2846     		mov	r0, r5
+ 1258 00e0 2146     		mov	r1, r4
+ 1259 00e2 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1260 00e6 18B9     		cbnz	r0, .L143
+ 1261 00e8 2846     		mov	r0, r5
+ 1262 00ea 2146     		mov	r1, r4
+ 1263 00ec FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1264              	.L143:
+ 1265 00f0 0028     		cmp	r0, #0
+ 1266 00f2 B6D1     		bne	.L139
+ 1267 00f4 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1268 00f8 0421     		movs	r1, #4
+ 1269 00fa FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18R
+ 1270 00fe 0028     		cmp	r0, #0
+ 1271 0100 AFD1     		bne	.L139
+ 1272 0102 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1273 0106 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1274 0108 0546     		mov	r5, r0
+ 1275 010a 002B     		cmp	r3, #0
+ 1276 010c A9D1     		bne	.L139
+ 1277 010e 654C     		ldr	r4, .L165+68
+ 1278 0110 2368     		ldr	r3, [r4]
+ 1279 0112 DA07     		lsls	r2, r3, #31
+ 1280 0114 09D4     		bmi	.L148
+ 1281 0116 6448     		ldr	r0, .L165+72
+ 1282 0118 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 1283 011c 0123     		movs	r3, #1
+ 1284 011e 6248     		ldr	r0, .L165+72
+ 1285 0120 5949     		ldr	r1, .L165+40
+ 1286 0122 5A4A     		ldr	r2, .L165+44
+ 1287 0124 2360     		str	r3, [r4]
+ 1288 0126 FFF7FEFF 		bl	__aeabi_atexit
+ 1289              	.L148:
+ 1290 012a 5F4C     		ldr	r4, .L165+72
+ 1291 012c 2846     		mov	r0, r5
+ 1292 012e 2146     		mov	r1, r4
+ 1293 0130 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1294 0134 A8B9     		cbnz	r0, .L147
+ 1295 0136 4EA3     		adr	r3, .L165+16
+ 1296 0138 D3E90023 		ldrd	r2, [r3]
+ 1297 013c C4E90223 		strd	r2, [r4, #8]
+ 1298 0140 5A4B     		ldr	r3, .L165+76
+ 1299 0142 2060     		str	r0, [r4]
+ 1300 0144 2361     		str	r3, [r4, #16]
+ 1301 0146 0123     		movs	r3, #1
+ 1302 0148 2375     		strb	r3, [r4, #20]
+ 1303 014a 40F20443 		movw	r3, #1028
+ 1304 014e 2846     		mov	r0, r5
+ 1305 0150 A361     		str	r3, [r4, #24]
+ 1306 0152 2146     		mov	r1, r4
+ 1307 0154 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1308 0158 18B9     		cbnz	r0, .L147
+ 1309 015a 2846     		mov	r0, r5
+ 1310 015c 2146     		mov	r1, r4
+ARM GAS  /tmp/ccVoLO7T.s 			page 24
+
+
+ 1311 015e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1312              	.L147:
+ 1313 0162 0028     		cmp	r0, #0
+ 1314 0164 7FF47DAF 		bne	.L139
+ 1315 0168 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1316 016c 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1317 016e 0646     		mov	r6, r0
+ 1318 0170 002B     		cmp	r3, #0
+ 1319 0172 7FF476AF 		bne	.L139
+ 1320 0176 4E4C     		ldr	r4, .L165+80
+ 1321 0178 2368     		ldr	r3, [r4]
+ 1322 017a DB07     		lsls	r3, r3, #31
+ 1323 017c 09D4     		bmi	.L151
+ 1324 017e 4D48     		ldr	r0, .L165+84
+ 1325 0180 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 1326 0184 0123     		movs	r3, #1
+ 1327 0186 4B48     		ldr	r0, .L165+84
+ 1328 0188 3F49     		ldr	r1, .L165+40
+ 1329 018a 404A     		ldr	r2, .L165+44
+ 1330 018c 2360     		str	r3, [r4]
+ 1331 018e FFF7FEFF 		bl	__aeabi_atexit
+ 1332              	.L151:
+ 1333 0192 484D     		ldr	r5, .L165+84
+ 1334 0194 3046     		mov	r0, r6
+ 1335 0196 2946     		mov	r1, r5
+ 1336 0198 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1337 019c A8B9     		cbnz	r0, .L164
+ 1338 019e 36A3     		adr	r3, .L165+24
+ 1339 01a0 D3E90023 		ldrd	r2, [r3]
+ 1340 01a4 C5E90223 		strd	r2, [r5, #8]
+ 1341 01a8 434B     		ldr	r3, .L165+88
+ 1342 01aa 2860     		str	r0, [r5]
+ 1343 01ac 2B61     		str	r3, [r5, #16]
+ 1344 01ae 0123     		movs	r3, #1
+ 1345 01b0 2B75     		strb	r3, [r5, #20]
+ 1346 01b2 40F20543 		movw	r3, #1029
+ 1347 01b6 3046     		mov	r0, r6
+ 1348 01b8 AB61     		str	r3, [r5, #24]
+ 1349 01ba 2946     		mov	r1, r5
+ 1350 01bc FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1351 01c0 18B9     		cbnz	r0, .L164
+ 1352 01c2 3046     		mov	r0, r6
+ 1353 01c4 2946     		mov	r1, r5
+ 1354 01c6 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1355              	.L164:
+ 1356 01ca 0446     		mov	r4, r0
+ 1357 01cc 0028     		cmp	r0, #0
+ 1358 01ce 7FF448AF 		bne	.L139
+ 1359 01d2 3A48     		ldr	r0, .L165+92
+ 1360 01d4 3A4B     		ldr	r3, .L165+96
+ 1361 01d6 0026     		movs	r6, #0
+ 1362 01d8 0360     		str	r3, [r0]
+ 1363 01da 3A4B     		ldr	r3, .L165+100
+ 1364 01dc 0125     		movs	r5, #1
+ 1365 01de 4660     		str	r6, [r0, #4]	@ float
+ 1366 01e0 8660     		str	r6, [r0, #8]	@ float
+ 1367 01e2 C360     		str	r3, [r0, #12]	@ float
+ARM GAS  /tmp/ccVoLO7T.s 			page 25
+
+
+ 1368 01e4 0574     		strb	r5, [r0, #16]
+ 1369 01e6 FFF7FEFF 		bl	configRegisterParam_
+ 1370 01ea 3748     		ldr	r0, .L165+104
+ 1371 01ec 374B     		ldr	r3, .L165+108
+ 1372 01ee 8660     		str	r6, [r0, #8]	@ float
+ 1373 01f0 0360     		str	r3, [r0]
+ 1374 01f2 4FF08343 		mov	r3, #1098907648
+ 1375 01f6 4360     		str	r3, [r0, #4]	@ float
+ 1376 01f8 354B     		ldr	r3, .L165+112
+ 1377 01fa 0574     		strb	r5, [r0, #16]
+ 1378 01fc C360     		str	r3, [r0, #12]	@ float
+ 1379 01fe FFF7FEFF 		bl	configRegisterParam_
+ 1380 0202 3448     		ldr	r0, .L165+116
+ 1381 0204 344B     		ldr	r3, .L165+120
+ 1382 0206 354D     		ldr	r5, .L165+124
+ 1383 0208 0360     		str	r3, [r0]
+ 1384 020a 354B     		ldr	r3, .L165+128
+ 1385 020c 4FF07E57 		mov	r7, #1065353216
+ 1386 0210 4560     		str	r5, [r0, #4]	@ float
+ 1387 0212 8760     		str	r7, [r0, #8]	@ float
+ 1388 0214 C360     		str	r3, [r0, #12]	@ float
+ 1389 0216 0474     		strb	r4, [r0, #16]
+ 1390 0218 FFF7FEFF 		bl	configRegisterParam_
+ 1391 021c 3148     		ldr	r0, .L165+132
+ 1392 021e 324B     		ldr	r3, .L165+136
+ 1393 0220 C560     		str	r5, [r0, #12]	@ float
+ 1394 0222 324D     		ldr	r5, .L165+140
+ 1395 0224 0360     		str	r3, [r0]
+ 1396 0226 4FF08143 		mov	r3, #1082130432
+ 1397 022a 4360     		str	r3, [r0, #4]	@ float
+ 1398 022c 8760     		str	r7, [r0, #8]	@ float
+ 1399 022e 0474     		strb	r4, [r0, #16]
+ 1400 0230 FFF7FEFF 		bl	configRegisterParam_
+ 1401 0234 2846     		mov	r0, r5
+ 1402 0236 FFF7FEFF 		bl	_ZN10chibios_rt10BaseThreadC2Ev
+ 1403 023a 2D4B     		ldr	r3, .L165+144
+ 1404 023c 05F29C60 		addw	r0, r5, #1692
+ 1405 0240 2B60     		str	r3, [r5]
+ 1406 0242 4FF0FF33 		mov	r3, #-1
+ 1407 0246 C5F89836 		str	r3, [r5, #1688]
+ 1408 024a 2146     		mov	r1, r4
+ 1409 024c 1022     		movs	r2, #16
+ 1410 024e C5F89066 		str	r6, [r5, #1680]	@ float
+ 1411 0252 C5F89466 		str	r6, [r5, #1684]	@ float
+ 1412 0256 FFF7FEFF 		bl	memset
+ 1413 025a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1414              	.L166:
+ 1415 025c AFF30080 		.align	3
+ 1416              	.L165:
+ 1417 0260 F1C6A7C1 		.word	-1045969167
+ 1418 0264 D068080F 		.word	252209360
+ 1419 0268 F017304A 		.word	1244665840
+ 1420 026c 39059E56 		.word	1453196601
+ 1421 0270 9AC8BD12 		.word	314427546
+ 1422 0274 34C4C7CD 		.word	-842546124
+ 1423 0278 7162D977 		.word	2010735217
+ 1424 027c 642A2749 		.word	1227303524
+ARM GAS  /tmp/ccVoLO7T.s 			page 26
+
+
+ 1425 0280 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1426 0284 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1427 0288 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 1428 028c 00000000 		.word	__dso_handle
+ 1429 0290 C0010000 		.word	.LC14
+ 1430 0294 DB010000 		.word	.LC15
+ 1431 0298 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 1432 029c 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1433 02a0 EB010000 		.word	.LC16
+ 1434 02a4 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressu
+ 1435 02a8 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure
+ 1436 02ac 95000000 		.word	.LC6
+ 1437 02b0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemper
+ 1438 02b4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperat
+ 1439 02b8 BE000000 		.word	.LC7
+ 1440 02bc 00000000 		.word	.LANCHOR0
+ 1441 02c0 07020000 		.word	.LC17
+ 1442 02c4 00247449 		.word	1232348160
+ 1443 02c8 00000000 		.word	.LANCHOR12
+ 1444 02cc 18020000 		.word	.LC18
+ 1445 02d0 0000F841 		.word	1106771968
+ 1446 02d4 00000000 		.word	.LANCHOR2
+ 1447 02d8 29020000 		.word	.LC19
+ 1448 02dc 0000C842 		.word	1120403456
+ 1449 02e0 00007A45 		.word	1165623296
+ 1450 02e4 00000000 		.word	.LANCHOR3
+ 1451 02e8 37020000 		.word	.LC20
+ 1452 02ec 00000000 		.word	.LANCHOR1
+ 1453 02f0 08000000 		.word	.LANCHOR14+8
+ 1454              		.size	_GLOBAL__sub_I__ZN10air_sensor4initEv, .-_GLOBAL__sub_I__ZN10air_sensor4initEv
+ 1455              		.section	.init_array,"aw",%init_array
+ 1456              		.align	2
+ 1457 0000 00000000 		.word	_GLOBAL__sub_I__ZN10air_sensor4initEv(target1)
+ 1458              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperat
+ 1459              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18Static
+ 1460              		.align	3
+ 1461              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperat
+ 1462              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperat
+ 1463              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi
+ 1464 0000 00000000 		.space	32
+ 1464      00000000 
+ 1464      00000000 
+ 1464      00000000 
+ 1464      00000000 
+ 1465              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure
+ 1466              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15Static
+ 1467              		.align	3
+ 1468              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure
+ 1469              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure
+ 1470              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EE
+ 1471 0000 00000000 		.space	32
+ 1471      00000000 
+ 1471      00000000 
+ 1471      00000000 
+ 1471      00000000 
+ 1472              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 1473              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStat
+ARM GAS  /tmp/ccVoLO7T.s 			page 27
+
+
+ 1474              		.align	3
+ 1475              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 1476              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 1477              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Regi
+ 1478 0000 00000000 		.space	32
+ 1478      00000000 
+ 1478      00000000 
+ 1478      00000000 
+ 1478      00000000 
+ 1479              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1480              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEEN
+ 1481              		.align	3
+ 1482              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1483              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1484              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Registrati
+ 1485 0000 00000000 		.space	32
+ 1485      00000000 
+ 1485      00000000 
+ 1485      00000000 
+ 1485      00000000 
+ 1486              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 1487              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage
+ 1488              		.align	3
+ 1489              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 1490              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 1491              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_1
+ 1492 0000 00000000 		.space	32
+ 1492      00000000 
+ 1492      00000000 
+ 1492      00000000 
+ 1492      00000000 
+ 1493              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 1494              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_
+ 1495              		.align	3
+ 1496              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 1497              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 1498              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Regist
+ 1499 0000 00000000 		.space	32
+ 1499      00000000 
+ 1499      00000000 
+ 1499      00000000 
+ 1499      00000000 
+ 1500              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1501              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ 1502              		.align	3
+ 1503              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1504              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1505              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registrati
+ 1506 0000 00000000 		.space	32
+ 1506      00000000 
+ 1506      00000000 
+ 1506      00000000 
+ 1506      00000000 
+ 1507              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1508              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0E
+ 1509              		.align	3
+ 1510              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ARM GAS  /tmp/ccVoLO7T.s 			page 28
+
+
+ 1511              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1512              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Regis
+ 1513 0000 00000000 		.space	32
+ 1513      00000000 
+ 1513      00000000 
+ 1513      00000000 
+ 1513      00000000 
+ 1514              		.weak	_ZTVN6uavcan20StaticTransferBufferILt6EEE
+ 1515              		.section	.rodata._ZTVN6uavcan20StaticTransferBufferILt6EEE,"aG",%progbits,_ZTVN6uavcan20StaticTran
+ 1516              		.align	3
+ 1517              		.type	_ZTVN6uavcan20StaticTransferBufferILt6EEE, %object
+ 1518              		.size	_ZTVN6uavcan20StaticTransferBufferILt6EEE, 24
+ 1519              	_ZTVN6uavcan20StaticTransferBufferILt6EEE:
+ 1520 0000 00000000 		.word	0
+ 1521 0004 00000000 		.word	0
+ 1522 0008 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt6EED1Ev
+ 1523 000c 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt6EED0Ev
+ 1524 0010 00000000 		.word	_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+ 1525 0014 00000000 		.word	_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+ 1526              		.weak	_ZTVN6uavcan20StaticTransferBufferILt4EEE
+ 1527              		.section	.rodata._ZTVN6uavcan20StaticTransferBufferILt4EEE,"aG",%progbits,_ZTVN6uavcan20StaticTran
+ 1528              		.align	3
+ 1529              		.type	_ZTVN6uavcan20StaticTransferBufferILt4EEE, %object
+ 1530              		.size	_ZTVN6uavcan20StaticTransferBufferILt4EEE, 24
+ 1531              	_ZTVN6uavcan20StaticTransferBufferILt4EEE:
+ 1532 0000 00000000 		.word	0
+ 1533 0004 00000000 		.word	0
+ 1534 0008 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt4EED1Ev
+ 1535 000c 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt4EED0Ev
+ 1536 0010 00000000 		.word	_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+ 1537 0014 00000000 		.word	_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+ 1538              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemper
+ 1539              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18Stat
+ 1540              		.align	2
+ 1541              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemper
+ 1542              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemper
+ 1543              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_I
+ 1544 0000 00000000 		.space	4
+ 1545              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressu
+ 1546              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15Stat
+ 1547              		.align	2
+ 1548              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressu
+ 1549              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressu
+ 1550              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0
+ 1551 0000 00000000 		.space	4
+ 1552              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 1553              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportSt
+ 1554              		.align	2
+ 1555              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 1556              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 1557              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Re
+ 1558 0000 00000000 		.space	4
+ 1559              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 1560              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EE
+ 1561              		.align	2
+ 1562              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 1563              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ARM GAS  /tmp/ccVoLO7T.s 			page 29
+
+
+ 1564              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Registra
+ 1565 0000 00000000 		.space	4
+ 1566              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 1567              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessa
+ 1568              		.align	2
+ 1569              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 1570              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 1571              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0
+ 1572 0000 00000000 		.space	4
+ 1573              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 1574              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInf
+ 1575              		.align	2
+ 1576              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 1577              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 1578              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Regi
+ 1579 0000 00000000 		.space	4
+ 1580              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1581              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EE
+ 1582              		.align	2
+ 1583              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1584              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1585              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registra
+ 1586 0000 00000000 		.space	4
+ 1587              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1588              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi
+ 1589              		.align	2
+ 1590              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1591              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1592              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Reg
+ 1593 0000 00000000 		.space	4
+ 1594              		.section	.bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub,"aw"
+ 1595              		.align	2
+ 1596              		.set	.LANCHOR10,. + 0
+ 1597              		.type	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub, %object
+ 1598              		.size	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub, 4
+ 1599              	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub:
+ 1600 0000 00000000 		.space	4
+ 1601              		.section	.bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure,"aw",%nobits
+ 1602              		.align	2
+ 1603              		.set	.LANCHOR5,. + 0
+ 1604              		.type	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure, %object
+ 1605              		.size	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure, 8
+ 1606              	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure:
+ 1607 0000 00000000 		.space	8
+ 1607      00000000 
+ 1608              		.section	.bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79,"aw"
+ 1609              		.set	.LANCHOR13,. + 0
+ 1610              		.type	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79, %object
+ 1611              		.size	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79, 1
+ 1612              	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79:
+ 1613 0000 00       		.space	1
+ 1614              		.section	.rodata._ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE,"a",%progbits
+ 1615              		.align	3
+ 1616              		.set	.LANCHOR14,. + 0
+ 1617              		.type	_ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE, %object
+ 1618              		.size	_ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE, 20
+ 1619              	_ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE:
+ARM GAS  /tmp/ccVoLO7T.s 			page 30
+
+
+ 1620 0000 00000000 		.word	0
+ 1621 0004 00000000 		.word	0
+ 1622 0008 00000000 		.word	_ZN10chibios_rt15ThreadReference4stopEv
+ 1623 000c 00000000 		.word	_ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv
+ 1624 0010 00000000 		.word	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+ 1625              		.section	.bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub,"aw",%nob
+ 1626              		.align	3
+ 1627              		.set	.LANCHOR9,. + 0
+ 1628              		.type	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub, %object
+ 1629              		.size	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub, 40
+ 1630              	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub:
+ 1631 0000 00000000 		.space	40
+ 1631      00000000 
+ 1631      00000000 
+ 1631      00000000 
+ 1631      00000000 
+ 1632              		.section	.bss._ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE,"aw",%nobits
+ 1633              		.align	2
+ 1634              		.set	.LANCHOR3,. + 0
+ 1635              		.type	_ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE, %object
+ 1636              		.size	_ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE, 20
+ 1637              	_ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE:
+ 1638 0000 00000000 		.space	20
+ 1638      00000000 
+ 1638      00000000 
+ 1638      00000000 
+ 1638      00000000 
+ 1639              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 1640              	.LC0:
+ 1641 0000 00       		.ascii	"\000"
+ 1642              	.LC1:
+ 1643 0001 41697220 		.ascii	"Air sensor disabled\012\000"
+ 1643      73656E73 
+ 1643      6F722064 
+ 1643      69736162 
+ 1643      6C65640A 
+ 1644              	.LC2:
+ 1645 0016 75617663 		.ascii	"uavcan.protocol.GetNodeInfo\000"
+ 1645      616E2E70 
+ 1645      726F746F 
+ 1645      636F6C2E 
+ 1645      4765744E 
+ 1646              	.LC3:
+ 1647 0032 75617663 		.ascii	"uavcan.protocol.GetDataTypeInfo\000"
+ 1647      616E2E70 
+ 1647      726F746F 
+ 1647      636F6C2E 
+ 1647      47657444 
+ 1648              	.LC4:
+ 1649 0052 75617663 		.ascii	"uavcan.protocol.debug.LogMessage\000"
+ 1649      616E2E70 
+ 1649      726F746F 
+ 1649      636F6C2E 
+ 1649      64656275 
+ 1650              	.LC5:
+ 1651 0073 75617663 		.ascii	"uavcan.protocol.GetTransportStats\000"
+ 1651      616E2E70 
+ARM GAS  /tmp/ccVoLO7T.s 			page 31
+
+
+ 1651      726F746F 
+ 1651      636F6C2E 
+ 1651      47657454 
+ 1652              	.LC6:
+ 1653 0095 75617663 		.ascii	"uavcan.equipment.air_data.StaticPressure\000"
+ 1653      616E2E65 
+ 1653      71756970 
+ 1653      6D656E74 
+ 1653      2E616972 
+ 1654              	.LC7:
+ 1655 00be 75617663 		.ascii	"uavcan.equipment.air_data.StaticTemperature\000"
+ 1655      616E2E65 
+ 1655      71756970 
+ 1655      6D656E74 
+ 1655      2E616972 
+ 1656              	.LC8:
+ 1657 00ea 7A756261 		.ascii	"zubax_chibios//zubax_chibios/watchdog/watchdog.hpp:"
+ 1657      785F6368 
+ 1657      6962696F 
+ 1657      732F2F7A 
+ 1657      75626178 
+ 1658 011d 333000   		.ascii	"30\000"
+ 1659              	.LC9:
+ 1660 0120 6169725F 		.ascii	"air_sensor\000"
+ 1660      73656E73 
+ 1660      6F7200
+ 1661              	.LC10:
+ 1662 012b 41697220 		.ascii	"Air sensor reset failed, will retry...\012\000"
+ 1662      73656E73 
+ 1662      6F722072 
+ 1662      65736574 
+ 1662      20666169 
+ 1663              	.LC11:
+ 1664 0153 41697220 		.ascii	"Air sensor PROM read failed, will retry...\012\000"
+ 1664      73656E73 
+ 1664      6F722050 
+ 1664      524F4D20 
+ 1664      72656164 
+ 1665              	.LC12:
+ 1666 017f 41697220 		.ascii	"Air sensor is about to restart...\012\000"
+ 1666      73656E73 
+ 1666      6F722069 
+ 1666      73206162 
+ 1666      6F757420 
+ 1667              	.LC13:
+ 1668 01a2 41697220 		.ascii	"Air sensor driver terminated\012\000"
+ 1668      73656E73 
+ 1668      6F722064 
+ 1668      72697665 
+ 1668      72207465 
+ 1669              	.LC14:
+ 1670 01c0 75617663 		.ascii	"uavcan.protocol.NodeStatus\000"
+ 1670      616E2E70 
+ 1670      726F746F 
+ 1670      636F6C2E 
+ 1670      4E6F6465 
+ 1671              	.LC15:
+ARM GAS  /tmp/ccVoLO7T.s 			page 32
+
+
+ 1672 01db 54797065 		.ascii	"Type reg failed\000"
+ 1672      20726567 
+ 1672      20666169 
+ 1672      6C656400 
+ 1673              	.LC16:
+ 1674 01eb 75617663 		.ascii	"uavcan.protocol.RestartNode\000"
+ 1674      616E2E70 
+ 1674      726F746F 
+ 1674      636F6C2E 
+ 1674      52657374 
+ 1675              	.LC17:
+ 1676 0207 75617663 		.ascii	"uavcan.pubp-pres\000"
+ 1676      616E2E70 
+ 1676      7562702D 
+ 1676      70726573 
+ 1676      00
+ 1677              	.LC18:
+ 1678 0218 75617663 		.ascii	"uavcan.prio-pres\000"
+ 1678      616E2E70 
+ 1678      72696F2D 
+ 1678      70726573 
+ 1678      00
+ 1679              	.LC19:
+ 1680 0229 70726573 		.ascii	"pres.variance\000"
+ 1680      2E766172 
+ 1680      69616E63 
+ 1680      6500
+ 1681              	.LC20:
+ 1682 0237 74656D70 		.ascii	"temp.variance\000"
+ 1682      2E766172 
+ 1682      69616E63 
+ 1682      6500
+ 1683              		.section	.bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub,"aw",%
+ 1684              		.align	3
+ 1685              		.set	.LANCHOR11,. + 0
+ 1686              		.type	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub, %object
+ 1687              		.size	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub, 40
+ 1688              	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub:
+ 1689 0000 00000000 		.space	40
+ 1689      00000000 
+ 1689      00000000 
+ 1689      00000000 
+ 1689      00000000 
+ 1690              		.section	.bss._ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE,"aw",%nobits
+ 1691              		.align	2
+ 1692              		.set	.LANCHOR2,. + 0
+ 1693              		.type	_ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE, %object
+ 1694              		.size	_ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE, 20
+ 1695              	_ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE:
+ 1696 0000 00000000 		.space	20
+ 1696      00000000 
+ 1696      00000000 
+ 1696      00000000 
+ 1696      00000000 
+ 1697              		.section	.bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure,"aw",%nobits
+ 1698              		.align	2
+ 1699              		.set	.LANCHOR4,. + 0
+ARM GAS  /tmp/ccVoLO7T.s 			page 33
+
+
+ 1700              		.type	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure, %object
+ 1701              		.size	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure, 4
+ 1702              	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure:
+ 1703 0000 00000000 		.space	4
+ 1704              		.section	.bss._ZN10air_sensor12_GLOBAL__N_1L10param_prioE,"aw",%nobits
+ 1705              		.align	2
+ 1706              		.set	.LANCHOR12,. + 0
+ 1707              		.type	_ZN10air_sensor12_GLOBAL__N_1L10param_prioE, %object
+ 1708              		.size	_ZN10air_sensor12_GLOBAL__N_1L10param_prioE, 20
+ 1709              	_ZN10air_sensor12_GLOBAL__N_1L10param_prioE:
+ 1710 0000 00000000 		.space	20
+ 1710      00000000 
+ 1710      00000000 
+ 1710      00000000 
+ 1710      00000000 
+ 1711              		.section	.bss._ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE,"aw",%nobits
+ 1712              		.align	3
+ 1713              		.set	.LANCHOR1,. + 0
+ 1714              		.type	_ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE, %object
+ 1715              		.size	_ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE, 1712
+ 1716              	_ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE:
+ 1717 0000 00000000 		.space	1712
+ 1717      00000000 
+ 1717      00000000 
+ 1717      00000000 
+ 1717      00000000 
+ 1718              		.section	.bss._ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE,"aw",%nobits
+ 1719              		.align	2
+ 1720              		.set	.LANCHOR0,. + 0
+ 1721              		.type	_ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE, %object
+ 1722              		.size	_ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE, 20
+ 1723              	_ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE:
+ 1724 0000 00000000 		.space	20
+ 1724      00000000 
+ 1724      00000000 
+ 1724      00000000 
+ 1724      00000000 
+ 1725              		.section	.bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature,"aw",%no
+ 1726              		.align	2
+ 1727              		.set	.LANCHOR6,. + 0
+ 1728              		.type	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature, %object
+ 1729              		.size	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature, 4
+ 1730              	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature:
+ 1731 0000 00000000 		.space	4
+ 1732              		.section	.bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub,"aw",%n
+ 1733              		.align	2
+ 1734              		.set	.LANCHOR8,. + 0
+ 1735              		.type	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub, %object
+ 1736              		.size	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub, 4
+ 1737              	_ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub:
+ 1738 0000 00000000 		.space	4
+ 1739              		.section	.bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature,"aw",%nobi
+ 1740              		.align	2
+ 1741              		.set	.LANCHOR7,. + 0
+ 1742              		.type	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature, %object
+ 1743              		.size	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature, 8
+ 1744              	_ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature:
+ARM GAS  /tmp/ccVoLO7T.s 			page 34
+
+
+ 1745 0000 00000000 		.space	8
+ 1745      00000000 
+ 1746              		.hidden	__dso_handle
+ 1747              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccVoLO7T.s 			page 35
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 air_sensor.cpp
+     /tmp/ccVoLO7T.s:16     .text._ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:21     .text._ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev:0000000000000000 _ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev
+     /tmp/ccVoLO7T.s:21     .text._ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev:0000000000000000 _ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED1Ev
+     /tmp/ccVoLO7T.s:30     .text._ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:35     .text._ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev:0000000000000000 _ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev
+     /tmp/ccVoLO7T.s:35     .text._ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev:0000000000000000 _ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED1Ev
+     /tmp/ccVoLO7T.s:44     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:49     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+     /tmp/ccVoLO7T.s:49     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+     /tmp/ccVoLO7T.s:58     .text._ZN6uavcan20StaticTransferBufferILt6EED2Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:63     .text._ZN6uavcan20StaticTransferBufferILt6EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt6EED2Ev
+     /tmp/ccVoLO7T.s:63     .text._ZN6uavcan20StaticTransferBufferILt6EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt6EED1Ev
+     /tmp/ccVoLO7T.s:72     .text._ZN6uavcan20StaticTransferBufferILt4EED2Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:77     .text._ZN6uavcan20StaticTransferBufferILt4EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt4EED2Ev
+     /tmp/ccVoLO7T.s:77     .text._ZN6uavcan20StaticTransferBufferILt4EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt4EED1Ev
+     /tmp/ccVoLO7T.s:86     .text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:0000000000000000 $t
+     /tmp/ccVoLO7T.s:91     .text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:0000000000000000 _ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+     /tmp/ccVoLO7T.s:113    .text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:0000000000000024 $d
+     /tmp/ccVoLO7T.s:117    .text._ZN6uavcan20StaticTransferBufferILt6EED0Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:122    .text._ZN6uavcan20StaticTransferBufferILt6EED0Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt6EED0Ev
+     /tmp/ccVoLO7T.s:132    .text._ZN6uavcan20StaticTransferBufferILt4EED0Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:137    .text._ZN6uavcan20StaticTransferBufferILt4EED0Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt4EED0Ev
+     /tmp/ccVoLO7T.s:150    .text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.33:0000000000000000 $t
+     /tmp/ccVoLO7T.s:154    .text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.33:0000000000000000 _ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.33
+     /tmp/ccVoLO7T.s:195    .text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.33:0000000000000050 $d
+     /tmp/ccVoLO7T.s:200    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:0000000000000000 $t
+     /tmp/ccVoLO7T.s:205    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev
+     /tmp/ccVoLO7T.s:223    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:000000000000001c $d
+     /tmp/ccVoLO7T.s:205    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+     /tmp/ccVoLO7T.s:228    .text._ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_:0000000000000000 $t
+     /tmp/ccVoLO7T.s:233    .text._ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_:0000000000000000 _ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_
+     /tmp/ccVoLO7T.s:277    .text._ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_:0000000000000060 $d
+     /tmp/ccVoLO7T.s:233    .text._ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_:0000000000000000 _ZN6uavcan20GenericPublisherBaseC1ERNS_5INodeENS_17MonotonicDurationES3_
+     /tmp/ccVoLO7T.s:283    .text._ZN10air_sensor4initEv:0000000000000000 $t
+     /tmp/ccVoLO7T.s:288    .text._ZN10air_sensor4initEv:0000000000000000 _ZN10air_sensor4initEv
+     /tmp/ccVoLO7T.s:315    .text._ZN10air_sensor4initEv:0000000000000034 $d
+     /tmp/ccVoLO7T.s:320    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000000 $t
+     /tmp/ccVoLO7T.s:325    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000000 _ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+     /tmp/ccVoLO7T.s:336    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000010 $d
+     /tmp/ccVoLO7T.s:340    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccVoLO7T.s:345    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccVoLO7T.s:420    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:00000000000000b0 $d
+     /tmp/ccVoLO7T.s:1585   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1505   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:435    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccVoLO7T.s:440    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccVoLO7T.s:506    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000090 $d
+     /tmp/ccVoLO7T.s:1578   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1498   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:515    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccVoLO7T.s:520    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccVoLO7T.s:586    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000090 $d
+     /tmp/ccVoLO7T.s:1571   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1491   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:597    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+ARM GAS  /tmp/ccVoLO7T.s 			page 36
+
+
+     /tmp/ccVoLO7T.s:602    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccVoLO7T.s:667    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000090 $d
+     /tmp/ccVoLO7T.s:1557   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1477   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:678    .text._ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccVoLO7T.s:683    .text._ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+     /tmp/ccVoLO7T.s:753    .text._ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000090 $d
+     /tmp/ccVoLO7T.s:1519   .rodata._ZTVN6uavcan20StaticTransferBufferILt6EEE:0000000000000000 _ZTVN6uavcan20StaticTransferBufferILt6EEE
+     /tmp/ccVoLO7T.s:757    .text._ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccVoLO7T.s:762    .text._ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+     /tmp/ccVoLO7T.s:830    .text._ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000094 $d
+     /tmp/ccVoLO7T.s:1531   .rodata._ZTVN6uavcan20StaticTransferBufferILt4EEE:0000000000000000 _ZTVN6uavcan20StaticTransferBufferILt4EEE
+     /tmp/ccVoLO7T.s:839    .text.startup._ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv:0000000000000000 $t
+     /tmp/ccVoLO7T.s:843    .text.startup._ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv:0000000000000000 _ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv
+     /tmp/ccVoLO7T.s:1119   .text.startup._ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv:000000000000029c $d
+     /tmp/ccVoLO7T.s:1157   .text.startup._GLOBAL__sub_I__ZN10air_sensor4initEv:0000000000000000 $t
+     /tmp/ccVoLO7T.s:1161   .text.startup._GLOBAL__sub_I__ZN10air_sensor4initEv:0000000000000000 _GLOBAL__sub_I__ZN10air_sensor4initEv
+     /tmp/ccVoLO7T.s:1417   .text.startup._GLOBAL__sub_I__ZN10air_sensor4initEv:0000000000000260 $d
+     /tmp/ccVoLO7T.s:1592   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1512   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1564   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1484   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1550   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1470   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1543   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1463   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccVoLO7T.s:1456   .init_array:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1460   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1467   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1474   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1481   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1488   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1495   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1502   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1509   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1516   .rodata._ZTVN6uavcan20StaticTransferBufferILt6EEE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1528   .rodata._ZTVN6uavcan20StaticTransferBufferILt4EEE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1540   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1547   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1554   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1561   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1568   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1575   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1582   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1589   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1595   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1599   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub:0000000000000000 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub
+     /tmp/ccVoLO7T.s:1602   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1606   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure:0000000000000000 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure
+     /tmp/ccVoLO7T.s:1612   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79:0000000000000000 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79
+     /tmp/ccVoLO7T.s:1613   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1615   .rodata._ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1619   .rodata._ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE:0000000000000000 _ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE
+     /tmp/ccVoLO7T.s:1626   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1630   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub:0000000000000000 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub
+     /tmp/ccVoLO7T.s:1633   .bss._ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1637   .bss._ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE:0000000000000000 _ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE
+ARM GAS  /tmp/ccVoLO7T.s 			page 37
+
+
+     /tmp/ccVoLO7T.s:1684   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1688   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub:0000000000000000 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub
+     /tmp/ccVoLO7T.s:1691   .bss._ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1695   .bss._ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE:0000000000000000 _ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE
+     /tmp/ccVoLO7T.s:1698   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1702   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure:0000000000000000 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure
+     /tmp/ccVoLO7T.s:1705   .bss._ZN10air_sensor12_GLOBAL__N_1L10param_prioE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1709   .bss._ZN10air_sensor12_GLOBAL__N_1L10param_prioE:0000000000000000 _ZN10air_sensor12_GLOBAL__N_1L10param_prioE
+     /tmp/ccVoLO7T.s:1712   .bss._ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1716   .bss._ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE:0000000000000000 _ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE
+     /tmp/ccVoLO7T.s:1719   .bss._ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1723   .bss._ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE:0000000000000000 _ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE
+     /tmp/ccVoLO7T.s:1726   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1730   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature:0000000000000000 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature
+     /tmp/ccVoLO7T.s:1733   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1737   .bss._ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub:0000000000000000 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub
+     /tmp/ccVoLO7T.s:1740   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature:0000000000000000 $d
+     /tmp/ccVoLO7T.s:1744   .bss._ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature:0000000000000000 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature
+                           .group:0000000000000000 _ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED5Ev
+                           .group:0000000000000000 _ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED5Ev
+                           .group:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD5Ev
+                           .group:0000000000000000 _ZN6uavcan20StaticTransferBufferILt6EED5Ev
+                           .group:0000000000000000 _ZN6uavcan20StaticTransferBufferILt4EED5Ev
+                           .group:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryC5Ev
+                           .group:0000000000000000 _ZN6uavcan20GenericPublisherBaseC5ERNS_5INodeENS_17MonotonicDurationES3_
+
+UNDEFINED SYMBOLS
+chThdCreateStatic
+_ZN10chibios_rt10_thd_startEPv
+_ZTVN10chibios_rt15ThreadReferenceE
+_ZdlPv
+__aeabi_fcmpun
+__aeabi_fcmpgt
+__aeabi_fcmplt
+_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf
+_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+_ZN6uavcan16TransferPriority7DefaultE
+__aeabi_f2uiz
+configGet
+_ZN4node24markComponentInitializedENS_11ComponentIDE
+lowsyslog
+_ZN6uavcan17DataTypeSignature6extendES0_
+__aeabi_atexit
+_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+__dso_handle
+_ZNK6uavcan20GenericPublisherBase8isInitedEv
+_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+__aeabi_i2f
+__aeabi_fdiv
+__aeabi_fadd
+__aeabi_fcmpge
+__aeabi_fcmple
+watchdogCreate
+sysHaltHook_
+ARM GAS  /tmp/ccVoLO7T.s 			page 38
+
+
+port_halt
+_ZN10chibios_rt10BaseThread7setNameEPKc
+_ZN4node24hasPendingRestartRequestEv
+watchdogReset
+usleep
+ms5611Reset
+ms5611GetProm
+_ZN10chibios_rt6System7getTimeEv
+ms5611ReadPT
+_ZN4node9isStartedEv
+_ZN4node4LockC1Ev
+_ZN4node7getNodeEv
+_ZN12uavcan_stm325Mutex6unlockEv
+_ZN4node18setComponentHealthENS_11ComponentIDEh
+sysSleepUntilChTime
+dbg_panic_msg
+_ZN6uavcan6NodeID9BroadcastE
+_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+_ZN6uavcan16handleFatalErrorEPKc
+configRegisterParam_
+_ZN10chibios_rt10BaseThreadC2Ev
+memset
+_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+_ZN10chibios_rt15ThreadReference4stopEv

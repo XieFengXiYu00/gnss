@@ -1,0 +1,217 @@
+ARM GAS  /tmp/ccZJjn2n.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chsys.c"
+  15              		.section	.text._idle_thread,"ax",%progbits
+  16              		.align	1
+  17              		.global	_idle_thread
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_idle_thread, %function
+  21              	_idle_thread:
+  22              		@ Volatile: function does not return.
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 024B     		ldr	r3, .L4
+  27 0002 034A     		ldr	r2, .L4+4
+  28 0004 9B69     		ldr	r3, [r3, #24]
+  29 0006 9A61     		str	r2, [r3, #24]
+  30              	.L2:
+  31              	@ 66 "zubax_chibios///chibios/os/kernel/src/chsys.c" 1
+  32 0008 30BF     		wfi
+  33              	@ 0 "" 2
+  34              		.thumb
+  35 000a FDE7     		b	.L2
+  36              	.L5:
+  37              		.align	2
+  38              	.L4:
+  39 000c 00000000 		.word	rlist
+  40 0010 00000000 		.word	.LC0
+  41              		.size	_idle_thread, .-_idle_thread
+  42              		.section	.text.chSysInit,"ax",%progbits
+  43              		.align	1
+  44              		.global	chSysInit
+  45              		.thumb
+  46              		.thumb_func
+  47              		.type	chSysInit, %function
+  48              	chSysInit:
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51 0000 07B5     		push	{r0, r1, r2, lr}
+  52 0002 FFF7FEFF 		bl	_port_init
+  53 0006 FFF7FEFF 		bl	_scheduler_init
+  54 000a FFF7FEFF 		bl	_vt_init
+  55 000e FFF7FEFF 		bl	_core_init
+  56 0012 FFF7FEFF 		bl	_heap_init
+  57 0016 4021     		movs	r1, #64
+ARM GAS  /tmp/ccZJjn2n.s 			page 2
+
+
+  58 0018 0B48     		ldr	r0, .L7
+  59 001a FFF7FEFF 		bl	_thread_init
+  60 001e 0B49     		ldr	r1, .L7+4
+  61 0020 0122     		movs	r2, #1
+  62 0022 8861     		str	r0, [r1, #24]
+  63 0024 0277     		strb	r2, [r0, #28]
+  64 0026 0023     		movs	r3, #0
+  65              	@ 111 "zubax_chibios///chibios/os/kernel/src/chsys.c" 1
+  66 0028 83F31188 		msr     BASEPRI, r3                    
+  67 002c 62B6     		cpsie   i
+  68              	@ 0 "" 2
+  69              		.thumb
+  70 002e 0848     		ldr	r0, .L7+8
+  71 0030 8969     		ldr	r1, [r1, #24]
+  72 0032 8861     		str	r0, [r1, #24]
+  73 0034 0093     		str	r3, [sp]
+  74 0036 4FF43271 		mov	r1, #712
+  75 003a 064B     		ldr	r3, .L7+12
+  76 003c 0648     		ldr	r0, .L7+16
+  77 003e FFF7FEFF 		bl	chThdCreateStatic
+  78 0042 03B0     		add	sp, sp, #12
+  79              		@ sp needed
+  80 0044 5DF804FB 		ldr	pc, [sp], #4
+  81              	.L8:
+  82              		.align	2
+  83              	.L7:
+  84 0048 00000000 		.word	.LANCHOR0
+  85 004c 00000000 		.word	rlist
+  86 0050 00000000 		.word	ch_debug
+  87 0054 00000000 		.word	_idle_thread
+  88 0058 00000000 		.word	.LANCHOR1
+  89              		.size	chSysInit, .-chSysInit
+  90              		.section	.text.chSysTimerHandlerI,"ax",%progbits
+  91              		.align	1
+  92              		.global	chSysTimerHandlerI
+  93              		.thumb
+  94              		.thumb_func
+  95              		.type	chSysTimerHandlerI, %function
+  96              	chSysTimerHandlerI:
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 0000 38B5     		push	{r3, r4, r5, lr}
+ 100 0002 114B     		ldr	r3, .L18
+ 101 0004 9A69     		ldr	r2, [r3, #24]
+ 102 0006 937F     		ldrb	r3, [r2, #30]	@ zero_extendqisi2
+ 103 0008 0BB1     		cbz	r3, .L10
+ 104 000a 013B     		subs	r3, r3, #1
+ 105 000c 9377     		strb	r3, [r2, #30]
+ 106              	.L10:
+ 107 000e 0F4B     		ldr	r3, .L18+4
+ 108 0010 DA68     		ldr	r2, [r3, #12]
+ 109 0012 1C46     		mov	r4, r3
+ 110 0014 0132     		adds	r2, r2, #1
+ 111 0016 DA60     		str	r2, [r3, #12]
+ 112 0018 1A68     		ldr	r2, [r3]
+ 113 001a 9A42     		cmp	r2, r3
+ 114 001c 13D0     		beq	.L9
+ARM GAS  /tmp/ccZJjn2n.s 			page 3
+
+
+ 115 001e 9368     		ldr	r3, [r2, #8]
+ 116 0020 013B     		subs	r3, r3, #1
+ 117 0022 9360     		str	r3, [r2, #8]
+ 118              	.L12:
+ 119 0024 2268     		ldr	r2, [r4]
+ 120 0026 0949     		ldr	r1, .L18+4
+ 121 0028 9368     		ldr	r3, [r2, #8]
+ 122 002a 63B9     		cbnz	r3, .L9
+ 123 002c 1068     		ldr	r0, [r2]
+ 124 002e D568     		ldr	r5, [r2, #12]
+ 125 0030 0860     		str	r0, [r1]
+ 126 0032 D360     		str	r3, [r2, #12]
+ 127 0034 4160     		str	r1, [r0, #4]
+ 128              	@ 150 "zubax_chibios///chibios/os/kernel/src/chsys.c" 1
+ 129 0036 83F31188 		msr     BASEPRI, r3
+ 130              	@ 0 "" 2
+ 131              		.thumb
+ 132 003a 1069     		ldr	r0, [r2, #16]
+ 133 003c A847     		blx	r5
+ 134 003e 2023     		movs	r3, #32
+ 135              	@ 150 "zubax_chibios///chibios/os/kernel/src/chsys.c" 1
+ 136 0040 83F31188 		msr     BASEPRI, r3
+ 137              	@ 0 "" 2
+ 138              		.thumb
+ 139 0044 EEE7     		b	.L12
+ 140              	.L9:
+ 141 0046 38BD     		pop	{r3, r4, r5, pc}
+ 142              	.L19:
+ 143              		.align	2
+ 144              	.L18:
+ 145 0048 00000000 		.word	rlist
+ 146 004c 00000000 		.word	vtlist
+ 147              		.size	chSysTimerHandlerI, .-chSysTimerHandlerI
+ 148              		.global	_idle_thread_wa
+ 149              		.section	.bss.mainthread.4660,"aw",%nobits
+ 150              		.align	2
+ 151              		.set	.LANCHOR0,. + 0
+ 152              		.type	mainthread.4660, %object
+ 153              		.size	mainthread.4660, 64
+ 154              	mainthread.4660:
+ 155 0000 00000000 		.space	64
+ 155      00000000 
+ 155      00000000 
+ 155      00000000 
+ 155      00000000 
+ 156              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 157              	.LC0:
+ 158 0000 69646C65 		.ascii	"idle\000"
+ 158      00
+ 159              		.section	.bss._idle_thread_wa,"aw",%nobits
+ 160              		.align	3
+ 161              		.set	.LANCHOR1,. + 0
+ 162              		.type	_idle_thread_wa, %object
+ 163              		.size	_idle_thread_wa, 712
+ 164              	_idle_thread_wa:
+ 165 0000 00000000 		.space	712
+ 165      00000000 
+ARM GAS  /tmp/ccZJjn2n.s 			page 4
+
+
+ 165      00000000 
+ 165      00000000 
+ 165      00000000 
+ 166              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccZJjn2n.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chsys.c
+     /tmp/ccZJjn2n.s:16     .text._idle_thread:0000000000000000 $t
+     /tmp/ccZJjn2n.s:21     .text._idle_thread:0000000000000000 _idle_thread
+     /tmp/ccZJjn2n.s:39     .text._idle_thread:000000000000000c $d
+     /tmp/ccZJjn2n.s:43     .text.chSysInit:0000000000000000 $t
+     /tmp/ccZJjn2n.s:48     .text.chSysInit:0000000000000000 chSysInit
+     /tmp/ccZJjn2n.s:84     .text.chSysInit:0000000000000048 $d
+     /tmp/ccZJjn2n.s:91     .text.chSysTimerHandlerI:0000000000000000 $t
+     /tmp/ccZJjn2n.s:96     .text.chSysTimerHandlerI:0000000000000000 chSysTimerHandlerI
+     /tmp/ccZJjn2n.s:145    .text.chSysTimerHandlerI:0000000000000048 $d
+     /tmp/ccZJjn2n.s:164    .bss._idle_thread_wa:0000000000000000 _idle_thread_wa
+     /tmp/ccZJjn2n.s:150    .bss.mainthread.4660:0000000000000000 $d
+     /tmp/ccZJjn2n.s:154    .bss.mainthread.4660:0000000000000000 mainthread.4660
+     /tmp/ccZJjn2n.s:160    .bss._idle_thread_wa:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+rlist
+_port_init
+_scheduler_init
+_vt_init
+_core_init
+_heap_init
+_thread_init
+chThdCreateStatic
+ch_debug
+vtlist

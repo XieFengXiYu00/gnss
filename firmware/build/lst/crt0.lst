@@ -1,0 +1,193 @@
+ARM GAS  /tmp/ccZh1SvT.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"crt0.c"
+  15              		.section	.text.__early_init,"ax",%progbits
+  16              		.align	1
+  17              		.weak	__early_init
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	__early_init, %function
+  21              	__early_init:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  26              		.size	__early_init, .-__early_init
+  27              		.section	.text.__late_init,"ax",%progbits
+  28              		.align	1
+  29              		.weak	__late_init
+  30              		.thumb
+  31              		.thumb_func
+  32              		.type	__late_init, %function
+  33              	__late_init:
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		@ link register save eliminated.
+  37 0000 7047     		bx	lr
+  38              		.size	__late_init, .-__late_init
+  39              		.section	.text._default_exit,"ax",%progbits
+  40              		.align	1
+  41              		.weak	_default_exit
+  42              		.thumb
+  43              		.thumb_func
+  44              		.type	_default_exit, %function
+  45              	_default_exit:
+  46              		@ Naked Function: prologue and epilogue provided by programmer.
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49              	.L4:
+  50 0000 FEE7     		b	.L4
+  51              		.size	_default_exit, .-_default_exit
+  52              		.section	.text.ResetHandler,"ax",%progbits
+  53              		.align	1
+  54              		.global	ResetHandler
+  55              		.thumb
+  56              		.thumb_func
+  57              		.type	ResetHandler, %function
+ARM GAS  /tmp/ccZh1SvT.s 			page 2
+
+
+  58              	ResetHandler:
+  59              		@ Naked Function: prologue and epilogue provided by programmer.
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              	@ 274 "zubax_chibios///chibios/os/ports/GCC/ARMCMx/crt0.c" 1
+  63 0000 72B6     		cpsid   i
+  64              	@ 0 "" 2
+  65              		.thumb
+  66 0002 214B     		ldr	r3, .L25
+  67              	@ 276 "zubax_chibios///chibios/os/ports/GCC/ARMCMx/crt0.c" 1
+  68 0004 83F30988 		msr     PSP, r3
+  69              	@ 0 "" 2
+  70              		.thumb
+  71 0008 0222     		movs	r2, #2
+  72              	@ 296 "zubax_chibios///chibios/os/ports/GCC/ARMCMx/crt0.c" 1
+  73 000a 82F31488 		msr     CONTROL, r2
+  74              	@ 0 "" 2
+  75              	@ 297 "zubax_chibios///chibios/os/ports/GCC/ARMCMx/crt0.c" 1
+  76 000e BFF36F8F 		isb
+  77              	@ 0 "" 2
+  78              		.thumb
+  79 0012 1E4A     		ldr	r2, .L25+4
+  80              	.L6:
+  81 0014 1E49     		ldr	r1, .L25+8
+  82 0016 8A42     		cmp	r2, r1
+  83 0018 04D2     		bcs	.L19
+  84 001a 4FF05531 		mov	r1, #1431655765
+  85 001e 42F8041B 		str	r1, [r2], #4
+  86 0022 F7E7     		b	.L6
+  87              	.L19:
+  88 0024 1B4A     		ldr	r2, .L25+12
+  89              	.L8:
+  90 0026 9A42     		cmp	r2, r3
+  91 0028 04D2     		bcs	.L20
+  92 002a 4FF05531 		mov	r1, #1431655765
+  93 002e 42F8041B 		str	r1, [r2], #4
+  94 0032 F8E7     		b	.L8
+  95              	.L20:
+  96 0034 FFF7FEFF 		bl	__early_init
+  97 0038 174A     		ldr	r2, .L25+16
+  98 003a 184B     		ldr	r3, .L25+20
+  99              	.L10:
+ 100 003c 1849     		ldr	r1, .L25+24
+ 101 003e 8B42     		cmp	r3, r1
+ 102 0040 04D2     		bcs	.L21
+ 103 0042 52F8041F 		ldr	r1, [r2, #4]!
+ 104 0046 43F8041B 		str	r1, [r3], #4
+ 105 004a F7E7     		b	.L10
+ 106              	.L21:
+ 107 004c 154B     		ldr	r3, .L25+28
+ 108              	.L12:
+ 109 004e 164A     		ldr	r2, .L25+32
+ 110 0050 9342     		cmp	r3, r2
+ 111 0052 03D2     		bcs	.L22
+ 112 0054 0022     		movs	r2, #0
+ 113 0056 43F8042B 		str	r2, [r3], #4
+ 114 005a F8E7     		b	.L12
+ARM GAS  /tmp/ccZh1SvT.s 			page 3
+
+
+ 115              	.L22:
+ 116 005c FFF7FEFF 		bl	__late_init
+ 117 0060 124C     		ldr	r4, .L25+36
+ 118              	.L14:
+ 119 0062 134B     		ldr	r3, .L25+40
+ 120 0064 9C42     		cmp	r4, r3
+ 121 0066 03D2     		bcs	.L23
+ 122 0068 54F8043B 		ldr	r3, [r4], #4
+ 123 006c 9847     		blx	r3
+ 124 006e F8E7     		b	.L14
+ 125              	.L23:
+ 126 0070 FFF7FEFF 		bl	main
+ 127 0074 0F4C     		ldr	r4, .L25+44
+ 128              	.L16:
+ 129 0076 104B     		ldr	r3, .L25+48
+ 130 0078 9C42     		cmp	r4, r3
+ 131 007a 03D2     		bcs	.L24
+ 132 007c 54F8043B 		ldr	r3, [r4], #4
+ 133 0080 9847     		blx	r3
+ 134 0082 F8E7     		b	.L16
+ 135              	.L24:
+ 136 0084 FFF7FEFF 		bl	_default_exit
+ 137              	.L26:
+ 138              		.align	2
+ 139              	.L25:
+ 140 0088 00000000 		.word	__process_stack_end__
+ 141 008c 00000000 		.word	__main_stack_base__
+ 142 0090 00000000 		.word	__main_stack_end__
+ 143 0094 00000000 		.word	__process_stack_base__
+ 144 0098 FCFFFFFF 		.word	_textdata-4
+ 145 009c 00000000 		.word	_data
+ 146 00a0 00000000 		.word	_edata
+ 147 00a4 00000000 		.word	_bss_start
+ 148 00a8 00000000 		.word	_bss_end
+ 149 00ac 00000000 		.word	__init_array_start
+ 150 00b0 00000000 		.word	__init_array_end
+ 151 00b4 00000000 		.word	__fini_array_start
+ 152 00b8 00000000 		.word	__fini_array_end
+ 153              		.size	ResetHandler, .-ResetHandler
+ 154              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccZh1SvT.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 crt0.c
+     /tmp/ccZh1SvT.s:16     .text.__early_init:0000000000000000 $t
+     /tmp/ccZh1SvT.s:21     .text.__early_init:0000000000000000 __early_init
+     /tmp/ccZh1SvT.s:28     .text.__late_init:0000000000000000 $t
+     /tmp/ccZh1SvT.s:33     .text.__late_init:0000000000000000 __late_init
+     /tmp/ccZh1SvT.s:40     .text._default_exit:0000000000000000 $t
+     /tmp/ccZh1SvT.s:45     .text._default_exit:0000000000000000 _default_exit
+     /tmp/ccZh1SvT.s:53     .text.ResetHandler:0000000000000000 $t
+     /tmp/ccZh1SvT.s:58     .text.ResetHandler:0000000000000000 ResetHandler
+     /tmp/ccZh1SvT.s:140    .text.ResetHandler:0000000000000088 $d
+
+UNDEFINED SYMBOLS
+main
+__process_stack_end__
+__main_stack_base__
+__main_stack_end__
+__process_stack_base__
+_textdata
+_data
+_edata
+_bss_start
+_bss_end
+__init_array_start
+__init_array_end
+__fini_array_start
+__fini_array_end

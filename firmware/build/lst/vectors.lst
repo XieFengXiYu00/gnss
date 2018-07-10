@@ -1,0 +1,396 @@
+ARM GAS  /tmp/ccDimbMY.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"vectors.c"
+  15              		.section	.text._unhandled_exception,"ax",%progbits
+  16              		.align	1
+  17              		.global	_unhandled_exception
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_unhandled_exception, %function
+  21              	_unhandled_exception:
+  22              		@ Naked Function: prologue and epilogue provided by programmer.
+  23              		@ Volatile: function does not return.
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              	.L2:
+  27 0000 FEE7     		b	.L2
+  28              		.size	_unhandled_exception, .-_unhandled_exception
+  29              		.weak	NMIVector
+  30              		.thumb_set NMIVector,_unhandled_exception
+  31              		.weak	HardFaultVector
+  32              		.thumb_set HardFaultVector,_unhandled_exception
+  33              		.weak	MemManageVector
+  34              		.thumb_set MemManageVector,_unhandled_exception
+  35              		.weak	BusFaultVector
+  36              		.thumb_set BusFaultVector,_unhandled_exception
+  37              		.weak	UsageFaultVector
+  38              		.thumb_set UsageFaultVector,_unhandled_exception
+  39              		.weak	Vector1C
+  40              		.thumb_set Vector1C,_unhandled_exception
+  41              		.weak	Vector20
+  42              		.thumb_set Vector20,_unhandled_exception
+  43              		.weak	Vector24
+  44              		.thumb_set Vector24,_unhandled_exception
+  45              		.weak	Vector28
+  46              		.thumb_set Vector28,_unhandled_exception
+  47              		.weak	SVCallVector
+  48              		.thumb_set SVCallVector,_unhandled_exception
+  49              		.weak	DebugMonitorVector
+  50              		.thumb_set DebugMonitorVector,_unhandled_exception
+  51              		.weak	Vector34
+  52              		.thumb_set Vector34,_unhandled_exception
+  53              		.weak	PendSVVector
+  54              		.thumb_set PendSVVector,_unhandled_exception
+  55              		.weak	SysTickVector
+  56              		.thumb_set SysTickVector,_unhandled_exception
+  57              		.weak	Vector40
+ARM GAS  /tmp/ccDimbMY.s 			page 2
+
+
+  58              		.thumb_set Vector40,_unhandled_exception
+  59              		.weak	Vector44
+  60              		.thumb_set Vector44,_unhandled_exception
+  61              		.weak	Vector48
+  62              		.thumb_set Vector48,_unhandled_exception
+  63              		.weak	Vector4C
+  64              		.thumb_set Vector4C,_unhandled_exception
+  65              		.weak	Vector50
+  66              		.thumb_set Vector50,_unhandled_exception
+  67              		.weak	Vector54
+  68              		.thumb_set Vector54,_unhandled_exception
+  69              		.weak	Vector58
+  70              		.thumb_set Vector58,_unhandled_exception
+  71              		.weak	Vector5C
+  72              		.thumb_set Vector5C,_unhandled_exception
+  73              		.weak	Vector60
+  74              		.thumb_set Vector60,_unhandled_exception
+  75              		.weak	Vector64
+  76              		.thumb_set Vector64,_unhandled_exception
+  77              		.weak	Vector68
+  78              		.thumb_set Vector68,_unhandled_exception
+  79              		.weak	Vector6C
+  80              		.thumb_set Vector6C,_unhandled_exception
+  81              		.weak	Vector70
+  82              		.thumb_set Vector70,_unhandled_exception
+  83              		.weak	Vector74
+  84              		.thumb_set Vector74,_unhandled_exception
+  85              		.weak	Vector78
+  86              		.thumb_set Vector78,_unhandled_exception
+  87              		.weak	Vector7C
+  88              		.thumb_set Vector7C,_unhandled_exception
+  89              		.weak	Vector80
+  90              		.thumb_set Vector80,_unhandled_exception
+  91              		.weak	Vector84
+  92              		.thumb_set Vector84,_unhandled_exception
+  93              		.weak	Vector88
+  94              		.thumb_set Vector88,_unhandled_exception
+  95              		.weak	Vector8C
+  96              		.thumb_set Vector8C,_unhandled_exception
+  97              		.weak	Vector90
+  98              		.thumb_set Vector90,_unhandled_exception
+  99              		.weak	Vector94
+ 100              		.thumb_set Vector94,_unhandled_exception
+ 101              		.weak	Vector98
+ 102              		.thumb_set Vector98,_unhandled_exception
+ 103              		.weak	Vector9C
+ 104              		.thumb_set Vector9C,_unhandled_exception
+ 105              		.weak	VectorA0
+ 106              		.thumb_set VectorA0,_unhandled_exception
+ 107              		.weak	VectorA4
+ 108              		.thumb_set VectorA4,_unhandled_exception
+ 109              		.weak	VectorA8
+ 110              		.thumb_set VectorA8,_unhandled_exception
+ 111              		.weak	VectorAC
+ 112              		.thumb_set VectorAC,_unhandled_exception
+ 113              		.weak	VectorB0
+ 114              		.thumb_set VectorB0,_unhandled_exception
+ARM GAS  /tmp/ccDimbMY.s 			page 3
+
+
+ 115              		.weak	VectorB4
+ 116              		.thumb_set VectorB4,_unhandled_exception
+ 117              		.weak	VectorB8
+ 118              		.thumb_set VectorB8,_unhandled_exception
+ 119              		.weak	VectorBC
+ 120              		.thumb_set VectorBC,_unhandled_exception
+ 121              		.weak	VectorC0
+ 122              		.thumb_set VectorC0,_unhandled_exception
+ 123              		.weak	VectorC4
+ 124              		.thumb_set VectorC4,_unhandled_exception
+ 125              		.weak	VectorC8
+ 126              		.thumb_set VectorC8,_unhandled_exception
+ 127              		.weak	VectorCC
+ 128              		.thumb_set VectorCC,_unhandled_exception
+ 129              		.weak	VectorD0
+ 130              		.thumb_set VectorD0,_unhandled_exception
+ 131              		.weak	VectorD4
+ 132              		.thumb_set VectorD4,_unhandled_exception
+ 133              		.weak	VectorD8
+ 134              		.thumb_set VectorD8,_unhandled_exception
+ 135              		.weak	VectorDC
+ 136              		.thumb_set VectorDC,_unhandled_exception
+ 137              		.weak	VectorE0
+ 138              		.thumb_set VectorE0,_unhandled_exception
+ 139              		.weak	VectorE4
+ 140              		.thumb_set VectorE4,_unhandled_exception
+ 141              		.weak	VectorE8
+ 142              		.thumb_set VectorE8,_unhandled_exception
+ 143              		.weak	VectorEC
+ 144              		.thumb_set VectorEC,_unhandled_exception
+ 145              		.weak	VectorF0
+ 146              		.thumb_set VectorF0,_unhandled_exception
+ 147              		.weak	VectorF4
+ 148              		.thumb_set VectorF4,_unhandled_exception
+ 149              		.weak	VectorF8
+ 150              		.thumb_set VectorF8,_unhandled_exception
+ 151              		.weak	VectorFC
+ 152              		.thumb_set VectorFC,_unhandled_exception
+ 153              		.weak	Vector100
+ 154              		.thumb_set Vector100,_unhandled_exception
+ 155              		.weak	Vector104
+ 156              		.thumb_set Vector104,_unhandled_exception
+ 157              		.weak	Vector108
+ 158              		.thumb_set Vector108,_unhandled_exception
+ 159              		.weak	Vector10C
+ 160              		.thumb_set Vector10C,_unhandled_exception
+ 161              		.weak	Vector110
+ 162              		.thumb_set Vector110,_unhandled_exception
+ 163              		.weak	Vector114
+ 164              		.thumb_set Vector114,_unhandled_exception
+ 165              		.weak	Vector118
+ 166              		.thumb_set Vector118,_unhandled_exception
+ 167              		.weak	Vector11C
+ 168              		.thumb_set Vector11C,_unhandled_exception
+ 169              		.weak	Vector120
+ 170              		.thumb_set Vector120,_unhandled_exception
+ 171              		.weak	Vector124
+ARM GAS  /tmp/ccDimbMY.s 			page 4
+
+
+ 172              		.thumb_set Vector124,_unhandled_exception
+ 173              		.weak	Vector128
+ 174              		.thumb_set Vector128,_unhandled_exception
+ 175              		.weak	Vector12C
+ 176              		.thumb_set Vector12C,_unhandled_exception
+ 177              		.weak	Vector130
+ 178              		.thumb_set Vector130,_unhandled_exception
+ 179              		.weak	Vector134
+ 180              		.thumb_set Vector134,_unhandled_exception
+ 181              		.weak	Vector138
+ 182              		.thumb_set Vector138,_unhandled_exception
+ 183              		.weak	Vector13C
+ 184              		.thumb_set Vector13C,_unhandled_exception
+ 185              		.weak	Vector140
+ 186              		.thumb_set Vector140,_unhandled_exception
+ 187              		.weak	Vector144
+ 188              		.thumb_set Vector144,_unhandled_exception
+ 189              		.weak	Vector148
+ 190              		.thumb_set Vector148,_unhandled_exception
+ 191              		.weak	Vector14C
+ 192              		.thumb_set Vector14C,_unhandled_exception
+ 193              		.global	_vectors
+ 194              		.section	vectors,"aw",%progbits
+ 195              		.align	2
+ 196              		.type	_vectors, %object
+ 197              		.size	_vectors, 336
+ 198              	_vectors:
+ 199 0000 00000000 		.word	__main_stack_end__
+ 200 0004 00000000 		.word	ResetHandler
+ 201 0008 00000000 		.word	NMIVector
+ 202 000c 00000000 		.word	HardFaultVector
+ 203 0010 00000000 		.word	MemManageVector
+ 204 0014 00000000 		.word	BusFaultVector
+ 205 0018 00000000 		.word	UsageFaultVector
+ 206 001c 00000000 		.word	Vector1C
+ 207 0020 00000000 		.word	Vector20
+ 208 0024 00000000 		.word	Vector24
+ 209 0028 00000000 		.word	Vector28
+ 210 002c 00000000 		.word	SVCallVector
+ 211 0030 00000000 		.word	DebugMonitorVector
+ 212 0034 00000000 		.word	Vector34
+ 213 0038 00000000 		.word	PendSVVector
+ 214 003c 00000000 		.word	SysTickVector
+ 215 0040 00000000 		.word	Vector40
+ 216 0044 00000000 		.word	Vector44
+ 217 0048 00000000 		.word	Vector48
+ 218 004c 00000000 		.word	Vector4C
+ 219 0050 00000000 		.word	Vector50
+ 220 0054 00000000 		.word	Vector54
+ 221 0058 00000000 		.word	Vector58
+ 222 005c 00000000 		.word	Vector5C
+ 223 0060 00000000 		.word	Vector60
+ 224 0064 00000000 		.word	Vector64
+ 225 0068 00000000 		.word	Vector68
+ 226 006c 00000000 		.word	Vector6C
+ 227 0070 00000000 		.word	Vector70
+ 228 0074 00000000 		.word	Vector74
+ARM GAS  /tmp/ccDimbMY.s 			page 5
+
+
+ 229 0078 00000000 		.word	Vector78
+ 230 007c 00000000 		.word	Vector7C
+ 231 0080 00000000 		.word	Vector80
+ 232 0084 00000000 		.word	Vector84
+ 233 0088 00000000 		.word	Vector88
+ 234 008c 00000000 		.word	Vector8C
+ 235 0090 00000000 		.word	Vector90
+ 236 0094 00000000 		.word	Vector94
+ 237 0098 00000000 		.word	Vector98
+ 238 009c 00000000 		.word	Vector9C
+ 239 00a0 00000000 		.word	VectorA0
+ 240 00a4 00000000 		.word	VectorA4
+ 241 00a8 00000000 		.word	VectorA8
+ 242 00ac 00000000 		.word	VectorAC
+ 243 00b0 00000000 		.word	VectorB0
+ 244 00b4 00000000 		.word	VectorB4
+ 245 00b8 00000000 		.word	VectorB8
+ 246 00bc 00000000 		.word	VectorBC
+ 247 00c0 00000000 		.word	VectorC0
+ 248 00c4 00000000 		.word	VectorC4
+ 249 00c8 00000000 		.word	VectorC8
+ 250 00cc 00000000 		.word	VectorCC
+ 251 00d0 00000000 		.word	VectorD0
+ 252 00d4 00000000 		.word	VectorD4
+ 253 00d8 00000000 		.word	VectorD8
+ 254 00dc 00000000 		.word	VectorDC
+ 255 00e0 00000000 		.word	VectorE0
+ 256 00e4 00000000 		.word	VectorE4
+ 257 00e8 00000000 		.word	VectorE8
+ 258 00ec 00000000 		.word	VectorEC
+ 259 00f0 00000000 		.word	VectorF0
+ 260 00f4 00000000 		.word	VectorF4
+ 261 00f8 00000000 		.word	VectorF8
+ 262 00fc 00000000 		.word	VectorFC
+ 263 0100 00000000 		.word	Vector100
+ 264 0104 00000000 		.word	Vector104
+ 265 0108 00000000 		.word	Vector108
+ 266 010c 00000000 		.word	Vector10C
+ 267 0110 00000000 		.word	Vector110
+ 268 0114 00000000 		.word	Vector114
+ 269 0118 00000000 		.word	Vector118
+ 270 011c 00000000 		.word	Vector11C
+ 271 0120 00000000 		.word	Vector120
+ 272 0124 00000000 		.word	Vector124
+ 273 0128 00000000 		.word	Vector128
+ 274 012c 00000000 		.word	Vector12C
+ 275 0130 00000000 		.word	Vector130
+ 276 0134 00000000 		.word	Vector134
+ 277 0138 00000000 		.word	Vector138
+ 278 013c 00000000 		.word	Vector13C
+ 279 0140 00000000 		.word	Vector140
+ 280 0144 00000000 		.word	Vector144
+ 281 0148 00000000 		.word	Vector148
+ 282 014c 00000000 		.word	Vector14C
+ 283              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccDimbMY.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 vectors.c
+     /tmp/ccDimbMY.s:16     .text._unhandled_exception:0000000000000000 $t
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 _unhandled_exception
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 NMIVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 HardFaultVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 MemManageVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 BusFaultVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 UsageFaultVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector1C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector20
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector24
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector28
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 SVCallVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 DebugMonitorVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector34
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 PendSVVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 SysTickVector
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector40
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector44
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector48
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector4C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector50
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector54
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector58
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector5C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector60
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector64
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector68
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector6C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector70
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector74
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector78
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector7C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector80
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector84
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector88
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector8C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector90
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector94
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector98
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector9C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorA0
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorA4
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorA8
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorAC
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorB0
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorB4
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorB8
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorBC
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorC0
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorC4
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorC8
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorCC
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorD0
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorD4
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorD8
+ARM GAS  /tmp/ccDimbMY.s 			page 7
+
+
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorDC
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorE0
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorE4
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorE8
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorEC
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorF0
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorF4
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorF8
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 VectorFC
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector100
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector104
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector108
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector10C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector110
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector114
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector118
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector11C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector120
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector124
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector128
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector12C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector130
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector134
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector138
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector13C
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector140
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector144
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector148
+     /tmp/ccDimbMY.s:21     .text._unhandled_exception:0000000000000000 Vector14C
+     /tmp/ccDimbMY.s:198    vectors:0000000000000000 _vectors
+     /tmp/ccDimbMY.s:195    vectors:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+__main_stack_end__
+ResetHandler

@@ -1,0 +1,496 @@
+ARM GAS  /tmp/cc5CXX7O.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"sys.c"
+  15              		.section	.text.sysApplicationHaltHook,"ax",%progbits
+  16              		.align	1
+  17              		.weak	sysApplicationHaltHook
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	sysApplicationHaltHook, %function
+  21              	sysApplicationHaltHook:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  26              		.size	sysApplicationHaltHook, .-sysApplicationHaltHook
+  27              		.section	.text.sysHaltHook_,"ax",%progbits
+  28              		.align	1
+  29              		.global	sysHaltHook_
+  30              		.thumb
+  31              		.thumb_func
+  32              		.type	sysHaltHook_, %function
+  33              	sysHaltHook_:
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36 0000 08B5     		push	{r3, lr}
+  37 0002 FFF7FEFF 		bl	sysApplicationHaltHook
+  38              	@ 31 "zubax_chibios///zubax_chibios/sys/sys.c" 1
+  39 0006 72B6     		cpsid   i
+  40              	@ 0 "" 2
+  41              		.thumb
+  42 0008 0D48     		ldr	r0, .L19
+  43 000a FFF7FEFF 		bl	sysEmergencyPrint
+  44 000e 0D4B     		ldr	r3, .L19+4
+  45 0010 9B69     		ldr	r3, [r3, #24]
+  46 0012 1BB1     		cbz	r3, .L3
+  47 0014 9869     		ldr	r0, [r3, #24]
+  48 0016 08B1     		cbz	r0, .L3
+  49 0018 FFF7FEFF 		bl	sysEmergencyPrint
+  50              	.L3:
+  51 001c 0A48     		ldr	r0, .L19+8
+  52 001e FFF7FEFF 		bl	sysEmergencyPrint
+  53 0022 0A4B     		ldr	r3, .L19+12
+  54 0024 1868     		ldr	r0, [r3]
+  55 0026 08B1     		cbz	r0, .L4
+  56 0028 FFF7FEFF 		bl	sysEmergencyPrint
+  57              	.L4:
+ARM GAS  /tmp/cc5CXX7O.s 			page 2
+
+
+  58 002c 0848     		ldr	r0, .L19+16
+  59 002e FFF7FEFF 		bl	sysEmergencyPrint
+  60 0032 084B     		ldr	r3, .L19+20
+  61 0034 1B68     		ldr	r3, [r3]
+  62 0036 DB07     		lsls	r3, r3, #31
+  63 0038 00D5     		bpl	.L2
+  64              	@ 49 "zubax_chibios///zubax_chibios/sys/sys.c" 1
+  65 003a 00BE     		bkpt #0
+  66              	
+  67              	@ 0 "" 2
+  68              		.thumb
+  69              	.L2:
+  70 003c 08BD     		pop	{r3, pc}
+  71              	.L20:
+  72 003e 00BF     		.align	2
+  73              	.L19:
+  74 0040 00000000 		.word	.LC0
+  75 0044 00000000 		.word	rlist
+  76 0048 09000000 		.word	.LC1
+  77 004c 00000000 		.word	.LANCHOR0
+  78 0050 0C000000 		.word	.LC2
+  79 0054 F0ED00E0 		.word	-536810000
+  80              		.size	sysHaltHook_, .-sysHaltHook_
+  81              		.section	.text.sysPanic,"ax",%progbits
+  82              		.align	1
+  83              		.global	sysPanic
+  84              		.thumb
+  85              		.thumb_func
+  86              		.type	sysPanic, %function
+  87              	sysPanic:
+  88              		@ Volatile: function does not return.
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91 0000 08B5     		push	{r3, lr}
+  92 0002 034B     		ldr	r3, .L23
+  93 0004 1860     		str	r0, [r3]
+  94 0006 FFF7FEFF 		bl	sysHaltHook_
+  95 000a FFF7FEFF 		bl	port_halt
+  96              	.L22:
+  97 000e FEE7     		b	.L22
+  98              	.L24:
+  99              		.align	2
+ 100              	.L23:
+ 101 0010 00000000 		.word	.LANCHOR0
+ 102              		.size	sysPanic, .-sysPanic
+ 103              		.section	.text.sysSleepUntilChTime,"ax",%progbits
+ 104              		.align	1
+ 105              		.global	sysSleepUntilChTime
+ 106              		.thumb
+ 107              		.thumb_func
+ 108              		.type	sysSleepUntilChTime, %function
+ 109              	sysSleepUntilChTime:
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112 0000 10B5     		push	{r4, lr}
+ 113 0002 2023     		movs	r3, #32
+ 114              	@ 66 "zubax_chibios///zubax_chibios/sys/sys.c" 1
+ARM GAS  /tmp/cc5CXX7O.s 			page 3
+
+
+ 115 0004 83F31188 		msr     BASEPRI, r3
+ 116              	@ 0 "" 2
+ 117              		.thumb
+ 118 0008 0B4B     		ldr	r3, .L28
+ 119 000a DC68     		ldr	r4, [r3, #12]
+ 120 000c 041B     		subs	r4, r0, r4
+ 121 000e 002C     		cmp	r4, #0
+ 122 0010 03DD     		ble	.L26
+ 123 0012 0620     		movs	r0, #6
+ 124 0014 2146     		mov	r1, r4
+ 125 0016 FFF7FEFF 		bl	chSchGoSleepTimeoutS
+ 126              	.L26:
+ 127 001a 0023     		movs	r3, #0
+ 128              	@ 72 "zubax_chibios///zubax_chibios/sys/sys.c" 1
+ 129 001c 83F31188 		msr     BASEPRI, r3
+ 130              	@ 0 "" 2
+ 131              		.thumb
+ 132 0020 9C42     		cmp	r4, r3
+ 133 0022 08DA     		bge	.L25
+ 134 0024 054B     		ldr	r3, .L28+4
+ 135 0026 2246     		mov	r2, r4
+ 136 0028 BDE81040 		pop	{r4, lr}
+ 137 002c 9B69     		ldr	r3, [r3, #24]
+ 138 002e 0448     		ldr	r0, .L28+8
+ 139 0030 9969     		ldr	r1, [r3, #24]
+ 140 0032 FFF7FEBF 		b	lowsyslog
+ 141              	.L25:
+ 142 0036 10BD     		pop	{r4, pc}
+ 143              	.L29:
+ 144              		.align	2
+ 145              	.L28:
+ 146 0038 00000000 		.word	vtlist
+ 147 003c 00000000 		.word	rlist
+ 148 0040 0E000000 		.word	.LC3
+ 149              		.size	sysSleepUntilChTime, .-sysSleepUntilChTime
+ 150              		.section	.text.itoa,"ax",%progbits
+ 151              		.align	1
+ 152              		.global	itoa
+ 153              		.thumb
+ 154              		.thumb_func
+ 155              		.type	itoa, %function
+ 156              	itoa:
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159 0000 70B5     		push	{r4, r5, r6, lr}
+ 160 0002 0C46     		mov	r4, r1
+ 161 0004 80EAE071 		eor	r1, r0, r0, asr #31
+ 162 0008 A1EBE071 		sub	r1, r1, r0, asr #31
+ 163 000c 661E     		subs	r6, r4, #1
+ 164 000e 0023     		movs	r3, #0
+ 165              	.L31:
+ 166 0010 0A22     		movs	r2, #10
+ 167 0012 91FBF2F5 		sdiv	r5, r1, r2
+ 168 0016 02FB1512 		mls	r2, r2, r5, r1
+ 169 001a 3032     		adds	r2, r2, #48
+ 170 001c 0133     		adds	r3, r3, #1
+ 171 001e 06F8012F 		strb	r2, [r6, #1]!
+ARM GAS  /tmp/cc5CXX7O.s 			page 4
+
+
+ 172 0022 2946     		mov	r1, r5
+ 173 0024 002D     		cmp	r5, #0
+ 174 0026 F3D1     		bne	.L31
+ 175 0028 1A46     		mov	r2, r3
+ 176 002a 0028     		cmp	r0, #0
+ 177 002c BCBF     		itt	lt
+ 178 002e 0133     		addlt	r3, r3, #1
+ 179 0030 2D21     		movlt	r1, #45
+ 180 0032 4FF00005 		mov	r5, #0
+ 181 0036 B8BF     		it	lt
+ 182 0038 A154     		strblt	r1, [r4, r2]
+ 183 003a 2046     		mov	r0, r4
+ 184 003c E554     		strb	r5, [r4, r3]
+ 185 003e FFF7FEFF 		bl	strlen
+ 186 0042 2B46     		mov	r3, r5
+ 187 0044 0138     		subs	r0, r0, #1
+ 188              	.L33:
+ 189 0046 8342     		cmp	r3, r0
+ 190 0048 06DA     		bge	.L36
+ 191 004a E25C     		ldrb	r2, [r4, r3]	@ zero_extendqisi2
+ 192 004c 215C     		ldrb	r1, [r4, r0]	@ zero_extendqisi2
+ 193 004e E154     		strb	r1, [r4, r3]
+ 194 0050 2254     		strb	r2, [r4, r0]
+ 195 0052 0133     		adds	r3, r3, #1
+ 196 0054 0138     		subs	r0, r0, #1
+ 197 0056 F6E7     		b	.L33
+ 198              	.L36:
+ 199 0058 2046     		mov	r0, r4
+ 200 005a 70BD     		pop	{r4, r5, r6, pc}
+ 201              		.size	itoa, .-itoa
+ 202              		.section	.text.__assert_func,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	__assert_func
+ 205              		.thumb
+ 206              		.thumb_func
+ 207              		.type	__assert_func, %function
+ 208              	__assert_func:
+ 209              		@ Volatile: function does not return.
+ 210              		@ args = 0, pretend = 0, frame = 272
+ 211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 212 0000 80B5     		push	{r7, lr}
+ 213 0002 0446     		mov	r4, r0
+ 214 0004 C4B0     		sub	sp, sp, #272
+ 215 0006 9046     		mov	r8, r2
+ 216 0008 1F46     		mov	r7, r3
+ 217              	@ 121 "zubax_chibios///zubax_chibios/sys/sys.c" 1
+ 218 000a 72B6     		cpsid   i
+ 219              	@ 0 "" 2
+ 220              		.thumb
+ 221 000c 04AE     		add	r6, sp, #16
+ 222 000e 0846     		mov	r0, r1
+ 223 0010 0DF10501 		add	r1, sp, #5
+ 224 0014 FFF7FEFF 		bl	itoa
+ 225 0018 4FF48072 		mov	r2, #256
+ 226 001c 2146     		mov	r1, r4
+ 227 001e 3046     		mov	r0, r6
+ 228 0020 FFF7FEFF 		bl	strncpy
+ARM GAS  /tmp/cc5CXX7O.s 			page 5
+
+
+ 229 0024 2046     		mov	r0, r4
+ 230 0026 FFF7FEFF 		bl	strlen
+ 231 002a 0546     		mov	r5, r0
+ 232 002c FF2D     		cmp	r5, #255
+ 233 002e 94BF     		ite	ls
+ 234 0030 C5F58072 		rsbls	r2, r5, #256
+ 235 0034 0022     		movhi	r2, #0
+ 236 0036 6C1C     		adds	r4, r5, #1
+ 237 0038 2449     		ldr	r1, .L55
+ 238 003a 3018     		adds	r0, r6, r0
+ 239 003c FFF7FEFF 		bl	strncpy
+ 240 0040 FF2C     		cmp	r4, #255
+ 241 0042 06EB0400 		add	r0, r6, r4
+ 242 0046 94BF     		ite	ls
+ 243 0048 C5F1FF02 		rsbls	r2, r5, #255
+ 244 004c 0022     		movhi	r2, #0
+ 245 004e 0DF10501 		add	r1, sp, #5
+ 246 0052 FFF7FEFF 		bl	strncpy
+ 247 0056 0DF10500 		add	r0, sp, #5
+ 248 005a FFF7FEFF 		bl	strlen
+ 249 005e 0444     		add	r4, r4, r0
+ 250 0060 B8F1000F 		cmp	r8, #0
+ 251 0064 16D0     		beq	.L40
+ 252 0066 FF2C     		cmp	r4, #255
+ 253 0068 94BF     		ite	ls
+ 254 006a C4F58072 		rsbls	r2, r4, #256
+ 255 006e 0022     		movhi	r2, #0
+ 256 0070 651C     		adds	r5, r4, #1
+ 257 0072 3019     		adds	r0, r6, r4
+ 258 0074 1649     		ldr	r1, .L55+4
+ 259 0076 FFF7FEFF 		bl	strncpy
+ 260 007a FF2D     		cmp	r5, #255
+ 261 007c 94BF     		ite	ls
+ 262 007e C4F1FF02 		rsbls	r2, r4, #255
+ 263 0082 0022     		movhi	r2, #0
+ 264 0084 4146     		mov	r1, r8
+ 265 0086 7019     		adds	r0, r6, r5
+ 266 0088 FFF7FEFF 		bl	strncpy
+ 267 008c 4046     		mov	r0, r8
+ 268 008e FFF7FEFF 		bl	strlen
+ 269 0092 4419     		adds	r4, r0, r5
+ 270              	.L40:
+ 271 0094 FF2C     		cmp	r4, #255
+ 272 0096 94BF     		ite	ls
+ 273 0098 C4F58072 		rsbls	r2, r4, #256
+ 274 009c 0022     		movhi	r2, #0
+ 275 009e 0D49     		ldr	r1, .L55+8
+ 276 00a0 3019     		adds	r0, r6, r4
+ 277 00a2 FFF7FEFF 		bl	strncpy
+ 278 00a6 A31C     		adds	r3, r4, #2
+ 279 00a8 FF2B     		cmp	r3, #255
+ 280 00aa 06EB0300 		add	r0, r6, r3
+ 281 00ae 94BF     		ite	ls
+ 282 00b0 C4F1FE02 		rsbls	r2, r4, #254
+ 283 00b4 0022     		movhi	r2, #0
+ 284 00b6 3946     		mov	r1, r7
+ 285 00b8 FFF7FEFF 		bl	strncpy
+ARM GAS  /tmp/cc5CXX7O.s 			page 6
+
+
+ 286 00bc 064B     		ldr	r3, .L55+12
+ 287 00be 1E60     		str	r6, [r3]
+ 288 00c0 FFF7FEFF 		bl	sysHaltHook_
+ 289 00c4 FFF7FEFF 		bl	port_halt
+ 290              	.L45:
+ 291 00c8 FEE7     		b	.L45
+ 292              	.L56:
+ 293 00ca 00BF     		.align	2
+ 294              	.L55:
+ 295 00cc 1D000000 		.word	.LC4
+ 296 00d0 1F000000 		.word	.LC5
+ 297 00d4 21000000 		.word	.LC6
+ 298 00d8 00000000 		.word	.LANCHOR0
+ 299              		.size	__assert_func, .-__assert_func
+ 300              		.section	.text._exit,"ax",%progbits
+ 301              		.align	1
+ 302              		.global	_exit
+ 303              		.thumb
+ 304              		.thumb_func
+ 305              		.type	_exit, %function
+ 306              	_exit:
+ 307              		@ Volatile: function does not return.
+ 308              		@ args = 0, pretend = 0, frame = 0
+ 309              		@ frame_needed = 0, uses_anonymous_args = 0
+ 310 0000 08B5     		push	{r3, lr}
+ 311 0002 FFF7FEFF 		bl	sysHaltHook_
+ 312 0006 FFF7FEFF 		bl	port_halt
+ 313              	.L58:
+ 314 000a FEE7     		b	.L58
+ 315              		.size	_exit, .-_exit
+ 316              		.section	.text._getpid,"ax",%progbits
+ 317              		.align	1
+ 318              		.global	_getpid
+ 319              		.thumb
+ 320              		.thumb_func
+ 321              		.type	_getpid, %function
+ 322              	_getpid:
+ 323              		@ args = 0, pretend = 0, frame = 0
+ 324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 325              		@ link register save eliminated.
+ 326 0000 0120     		movs	r0, #1
+ 327 0002 7047     		bx	lr
+ 328              		.size	_getpid, .-_getpid
+ 329              		.section	.text._kill,"ax",%progbits
+ 330              		.align	1
+ 331              		.global	_kill
+ 332              		.thumb
+ 333              		.thumb_func
+ 334              		.type	_kill, %function
+ 335              	_kill:
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339 0000 7047     		bx	lr
+ 340              		.size	_kill, .-_kill
+ 341              		.section	.text.usleep,"ax",%progbits
+ 342              		.align	1
+ARM GAS  /tmp/cc5CXX7O.s 			page 7
+
+
+ 343              		.global	usleep
+ 344              		.thumb
+ 345              		.thumb_func
+ 346              		.type	usleep, %function
+ 347              	usleep:
+ 348              		@ args = 0, pretend = 0, frame = 0
+ 349              		@ frame_needed = 0, uses_anonymous_args = 0
+ 350 0000 08B5     		push	{r3, lr}
+ 351 0002 4FF47A73 		mov	r3, #1000
+ 352 0006 5843     		muls	r0, r3, r0
+ 353 0008 044B     		ldr	r3, .L62
+ 354 000a 0138     		subs	r0, r0, #1
+ 355 000c B0FBF3F0 		udiv	r0, r0, r3
+ 356 0010 0130     		adds	r0, r0, #1
+ 357 0012 FFF7FEFF 		bl	chThdSleep
+ 358 0016 0020     		movs	r0, #0
+ 359 0018 08BD     		pop	{r3, pc}
+ 360              	.L63:
+ 361 001a 00BF     		.align	2
+ 362              	.L62:
+ 363 001c 40420F00 		.word	1000000
+ 364              		.size	usleep, .-usleep
+ 365              		.section	.text.sleep,"ax",%progbits
+ 366              		.align	1
+ 367              		.global	sleep
+ 368              		.thumb
+ 369              		.thumb_func
+ 370              		.type	sleep, %function
+ 371              	sleep:
+ 372              		@ args = 0, pretend = 0, frame = 0
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374 0000 08B5     		push	{r3, lr}
+ 375 0002 4FF47A73 		mov	r3, #1000
+ 376 0006 5843     		muls	r0, r3, r0
+ 377 0008 FFF7FEFF 		bl	chThdSleep
+ 378 000c 0020     		movs	r0, #0
+ 379 000e 08BD     		pop	{r3, pc}
+ 380              		.size	sleep, .-sleep
+ 381              		.global	dbg_panic_msg
+ 382              		.weak	__errno
+ 383              		.weak	__dso_handle
+ 384              		.section	.bss.__dso_handle,"aw",%nobits
+ 385              		.align	2
+ 386              		.type	__dso_handle, %object
+ 387              		.size	__dso_handle, 4
+ 388              	__dso_handle:
+ 389 0000 00000000 		.space	4
+ 390              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 391              	.LC0:
+ 392 0000 0A50414E 		.ascii	"\012PANIC [\000"
+ 392      4943205B 
+ 392      00
+ 393              	.LC1:
+ 394 0009 5D2000   		.ascii	"] \000"
+ 395              	.LC2:
+ 396 000c 0A00     		.ascii	"\012\000"
+ 397              	.LC3:
+ARM GAS  /tmp/cc5CXX7O.s 			page 8
+
+
+ 398 000e 25733A20 		.ascii	"%s: Lag %d ts\012\000"
+ 398      4C616720 
+ 398      25642074 
+ 398      730A00
+ 399              	.LC4:
+ 400 001d 3A00     		.ascii	":\000"
+ 401              	.LC5:
+ 402 001f 2000     		.ascii	" \000"
+ 403              	.LC6:
+ 404 0021 3A2000   		.ascii	": \000"
+ 405              		.section	.bss.dbg_panic_msg,"aw",%nobits
+ 406              		.align	2
+ 407              		.set	.LANCHOR0,. + 0
+ 408              		.type	dbg_panic_msg, %object
+ 409              		.size	dbg_panic_msg, 4
+ 410              	dbg_panic_msg:
+ 411 0000 00000000 		.space	4
+ 412              		.section	.bss.__errno,"aw",%nobits
+ 413              		.align	2
+ 414              		.type	__errno, %object
+ 415              		.size	__errno, 4
+ 416              	__errno:
+ 417 0000 00000000 		.space	4
+ 418              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc5CXX7O.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 sys.c
+     /tmp/cc5CXX7O.s:16     .text.sysApplicationHaltHook:0000000000000000 $t
+     /tmp/cc5CXX7O.s:21     .text.sysApplicationHaltHook:0000000000000000 sysApplicationHaltHook
+     /tmp/cc5CXX7O.s:28     .text.sysHaltHook_:0000000000000000 $t
+     /tmp/cc5CXX7O.s:33     .text.sysHaltHook_:0000000000000000 sysHaltHook_
+     /tmp/cc5CXX7O.s:74     .text.sysHaltHook_:0000000000000040 $d
+     /tmp/cc5CXX7O.s:82     .text.sysPanic:0000000000000000 $t
+     /tmp/cc5CXX7O.s:87     .text.sysPanic:0000000000000000 sysPanic
+     /tmp/cc5CXX7O.s:101    .text.sysPanic:0000000000000010 $d
+     /tmp/cc5CXX7O.s:104    .text.sysSleepUntilChTime:0000000000000000 $t
+     /tmp/cc5CXX7O.s:109    .text.sysSleepUntilChTime:0000000000000000 sysSleepUntilChTime
+     /tmp/cc5CXX7O.s:146    .text.sysSleepUntilChTime:0000000000000038 $d
+     /tmp/cc5CXX7O.s:151    .text.itoa:0000000000000000 $t
+     /tmp/cc5CXX7O.s:156    .text.itoa:0000000000000000 itoa
+     /tmp/cc5CXX7O.s:203    .text.__assert_func:0000000000000000 $t
+     /tmp/cc5CXX7O.s:208    .text.__assert_func:0000000000000000 __assert_func
+     /tmp/cc5CXX7O.s:295    .text.__assert_func:00000000000000cc $d
+     /tmp/cc5CXX7O.s:301    .text._exit:0000000000000000 $t
+     /tmp/cc5CXX7O.s:306    .text._exit:0000000000000000 _exit
+     /tmp/cc5CXX7O.s:317    .text._getpid:0000000000000000 $t
+     /tmp/cc5CXX7O.s:322    .text._getpid:0000000000000000 _getpid
+     /tmp/cc5CXX7O.s:330    .text._kill:0000000000000000 $t
+     /tmp/cc5CXX7O.s:335    .text._kill:0000000000000000 _kill
+     /tmp/cc5CXX7O.s:342    .text.usleep:0000000000000000 $t
+     /tmp/cc5CXX7O.s:347    .text.usleep:0000000000000000 usleep
+     /tmp/cc5CXX7O.s:363    .text.usleep:000000000000001c $d
+     /tmp/cc5CXX7O.s:366    .text.sleep:0000000000000000 $t
+     /tmp/cc5CXX7O.s:371    .text.sleep:0000000000000000 sleep
+     /tmp/cc5CXX7O.s:410    .bss.dbg_panic_msg:0000000000000000 dbg_panic_msg
+     /tmp/cc5CXX7O.s:416    .bss.__errno:0000000000000000 __errno
+     /tmp/cc5CXX7O.s:388    .bss.__dso_handle:0000000000000000 __dso_handle
+     /tmp/cc5CXX7O.s:385    .bss.__dso_handle:0000000000000000 $d
+     /tmp/cc5CXX7O.s:406    .bss.dbg_panic_msg:0000000000000000 $d
+     /tmp/cc5CXX7O.s:413    .bss.__errno:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+sysEmergencyPrint
+rlist
+port_halt
+chSchGoSleepTimeoutS
+lowsyslog
+vtlist
+strlen
+strncpy
+chThdSleep

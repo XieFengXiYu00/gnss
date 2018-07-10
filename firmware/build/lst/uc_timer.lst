@@ -1,0 +1,196 @@
+ARM GAS  /tmp/cc6H4Mdh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_timer.cpp"
+  15              		.section	.text._ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE, %function
+  21              	_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE:
+  22              		@ args = 0, pretend = 0, frame = 16
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  25 0002 D0E90623 		ldrd	r2, [r0, #24]
+  26 0006 D0E90267 		ldrd	r6, [r0, #8]
+  27 000a 0D46     		mov	r5, r1
+  28 000c 6FF00041 		mvn	r1, #-2147483648
+  29 0010 0446     		mov	r4, r0
+  30 0012 8B42     		cmp	r3, r1
+  31 0014 4FF0FF30 		mov	r0, #-1
+  32 0018 08BF     		it	eq
+  33 001a 8242     		cmpeq	r2, r0
+  34 001c 85B0     		sub	sp, sp, #20
+  35 001e 21D0     		beq	.L2
+  36 0020 002A     		cmp	r2, #0
+  37 0022 73F10001 		sbcs	r1, r3, #0
+  38 0026 09DA     		bge	.L3
+  39 0028 5042     		rsbs	r0, r2, #0
+  40 002a 63EB4301 		sbc	r1, r3, r3, lsl #1
+  41 002e 8F42     		cmp	r7, r1
+  42 0030 08BF     		it	eq
+  43 0032 8642     		cmpeq	r6, r0
+  44 0034 0ED2     		bcs	.L4
+  45 0036 0022     		movs	r2, #0
+  46 0038 0023     		movs	r3, #0
+  47 003a 0DE0     		b	.L6
+  48              	.L3:
+  49 003c B018     		adds	r0, r6, r2
+  50 003e 47EB0301 		adc	r1, r7, r3
+  51 0042 B942     		cmp	r1, r7
+  52 0044 08BF     		it	eq
+  53 0046 B042     		cmpeq	r0, r6
+  54 0048 04D2     		bcs	.L4
+  55 004a 4FF0FF32 		mov	r2, #-1
+  56 004e 4FF0FF33 		mov	r3, #-1
+  57 0052 01E0     		b	.L6
+ARM GAS  /tmp/cc6H4Mdh.s 			page 2
+
+
+  58              	.L4:
+  59 0054 9219     		adds	r2, r2, r6
+  60 0056 7B41     		adcs	r3, r3, r7
+  61              	.L6:
+  62 0058 2046     		mov	r0, r4
+  63 005a 6946     		mov	r1, sp
+  64 005c CDE90023 		strd	r2, [sp]
+  65 0060 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+  66              	.L2:
+  67 0064 D5E90001 		ldrd	r0, [r5]
+  68 0068 2368     		ldr	r3, [r4]
+  69 006a DB68     		ldr	r3, [r3, #12]
+  70 006c CDE90201 		strd	r0, [sp, #8]
+  71 0070 CDE90067 		strd	r6, [sp]
+  72 0074 2046     		mov	r0, r4
+  73 0076 6946     		mov	r1, sp
+  74 0078 9847     		blx	r3
+  75 007a 05B0     		add	sp, sp, #20
+  76              		@ sp needed
+  77 007c F0BD     		pop	{r4, r5, r6, r7, pc}
+  78              		.size	_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE, .-_ZN6uavcan9TimerBase14handleDead
+  79              		.section	.text._ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE,"ax",%progbits
+  80              		.align	1
+  81              		.global	_ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE
+  82              		.thumb
+  83              		.thumb_func
+  84              		.type	_ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE, %function
+  85              	_ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE:
+  86              		@ args = 0, pretend = 0, frame = 8
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+  89 0002 0446     		mov	r4, r0
+  90 0004 0D46     		mov	r5, r1
+  91 0006 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+  92 000a 4FF0FF32 		mov	r2, #-1
+  93 000e 6FF00043 		mvn	r3, #-2147483648
+  94 0012 C4E90623 		strd	r2, [r4, #24]
+  95 0016 95E80300 		ldmia	r5, {r0, r1}
+  96 001a 8DE80300 		stmia	sp, {r0, r1}
+  97 001e 2046     		mov	r0, r4
+  98 0020 6946     		mov	r1, sp
+  99 0022 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+ 100 0026 03B0     		add	sp, sp, #12
+ 101              		@ sp needed
+ 102 0028 30BD     		pop	{r4, r5, pc}
+ 103              		.size	_ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE, .-_ZN6uavcan9TimerBase24
+ 104              		.section	.text._ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	_ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	_ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE, %function
+ 110              	_ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE:
+ 111              		@ args = 0, pretend = 0, frame = 8
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 114 0002 0446     		mov	r4, r0
+ARM GAS  /tmp/cc6H4Mdh.s 			page 3
+
+
+ 115 0004 0D46     		mov	r5, r1
+ 116 0006 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+ 117 000a 4FF0FF32 		mov	r2, #-1
+ 118 000e 6FF00043 		mvn	r3, #-2147483648
+ 119 0012 C4E90623 		strd	r2, [r4, #24]
+ 120 0016 95E80300 		ldmia	r5, {r0, r1}
+ 121 001a 8DE80300 		stmia	sp, {r0, r1}
+ 122 001e 2046     		mov	r0, r4
+ 123 0020 6946     		mov	r1, sp
+ 124 0022 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE
+ 125 0026 03B0     		add	sp, sp, #12
+ 126              		@ sp needed
+ 127 0028 30BD     		pop	{r4, r5, pc}
+ 128              		.size	_ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE, .-_ZN6uavcan9TimerBase2
+ 129              		.section	.text._ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE,"ax",%progbits
+ 130              		.align	1
+ 131              		.global	_ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.type	_ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE, %function
+ 135              	_ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE:
+ 136              		@ args = 0, pretend = 0, frame = 8
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 139 0002 0546     		mov	r5, r0
+ 140 0004 0C46     		mov	r4, r1
+ 141 0006 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+ 142 000a 94E80300 		ldmia	r4, {r0, r1}
+ 143 000e 05F11803 		add	r3, r5, #24
+ 144 0012 83E80300 		stmia	r3, {r0, r1}
+ 145 0016 94E80300 		ldmia	r4, {r0, r1}
+ 146 001a 8DE80300 		stmia	sp, {r0, r1}
+ 147 001e 2846     		mov	r0, r5
+ 148 0020 6946     		mov	r1, sp
+ 149 0022 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE
+ 150 0026 03B0     		add	sp, sp, #12
+ 151              		@ sp needed
+ 152 0028 30BD     		pop	{r4, r5, pc}
+ 153              		.size	_ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE, .-_ZN6uavcan9TimerBase13startPe
+ 154              		.global	_ZTVN6uavcan9TimerBaseE
+ 155              		.section	.rodata._ZTVN6uavcan9TimerBaseE,"a",%progbits
+ 156              		.align	3
+ 157              		.type	_ZTVN6uavcan9TimerBaseE, %object
+ 158              		.size	_ZTVN6uavcan9TimerBaseE, 24
+ 159              	_ZTVN6uavcan9TimerBaseE:
+ 160 0000 00000000 		.word	0
+ 161 0004 00000000 		.word	0
+ 162 0008 00000000 		.word	0
+ 163 000c 00000000 		.word	0
+ 164 0010 00000000 		.word	_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE
+ 165 0014 00000000 		.word	__cxa_pure_virtual
+ 166              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc6H4Mdh.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_timer.cpp
+     /tmp/cc6H4Mdh.s:16     .text._ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/cc6H4Mdh.s:21     .text._ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE
+     /tmp/cc6H4Mdh.s:80     .text._ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/cc6H4Mdh.s:85     .text._ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan9TimerBase24startOneShotWithDeadlineENS_13MonotonicTimeE
+     /tmp/cc6H4Mdh.s:105    .text._ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE:0000000000000000 $t
+     /tmp/cc6H4Mdh.s:110    .text._ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE:0000000000000000 _ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE
+     /tmp/cc6H4Mdh.s:130    .text._ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE:0000000000000000 $t
+     /tmp/cc6H4Mdh.s:135    .text._ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE:0000000000000000 _ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE
+     /tmp/cc6H4Mdh.s:159    .rodata._ZTVN6uavcan9TimerBaseE:0000000000000000 _ZTVN6uavcan9TimerBaseE
+     /tmp/cc6H4Mdh.s:156    .rodata._ZTVN6uavcan9TimerBaseE:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+_ZN6uavcan15DeadlineHandler4stopEv
+_ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE
+__cxa_pure_virtual

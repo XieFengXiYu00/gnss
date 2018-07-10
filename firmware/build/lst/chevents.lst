@@ -1,0 +1,714 @@
+ARM GAS  /tmp/ccOj4CPB.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chevents.c"
+  15              		.section	.text.chEvtRegisterMask,"ax",%progbits
+  16              		.align	1
+  17              		.global	chEvtRegisterMask
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	chEvtRegisterMask, %function
+  21              	chEvtRegisterMask:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 2023     		movs	r3, #32
+  26              	@ 89 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+  27 0002 83F31188 		msr     BASEPRI, r3
+  28              	@ 0 "" 2
+  29              		.thumb
+  30 0006 0368     		ldr	r3, [r0]
+  31 0008 0B60     		str	r3, [r1]
+  32 000a 054B     		ldr	r3, .L2
+  33 000c 0160     		str	r1, [r0]
+  34 000e 9B69     		ldr	r3, [r3, #24]
+  35 0010 8A60     		str	r2, [r1, #8]
+  36 0012 4B60     		str	r3, [r1, #4]
+  37 0014 0023     		movs	r3, #0
+  38 0016 CB60     		str	r3, [r1, #12]
+  39              	@ 95 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+  40 0018 83F31188 		msr     BASEPRI, r3
+  41              	@ 0 "" 2
+  42              		.thumb
+  43 001c 7047     		bx	lr
+  44              	.L3:
+  45 001e 00BF     		.align	2
+  46              	.L2:
+  47 0020 00000000 		.word	rlist
+  48              		.size	chEvtRegisterMask, .-chEvtRegisterMask
+  49              		.section	.text.chEvtUnregister,"ax",%progbits
+  50              		.align	1
+  51              		.global	chEvtUnregister
+  52              		.thumb
+  53              		.thumb_func
+  54              		.type	chEvtUnregister, %function
+  55              	chEvtUnregister:
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccOj4CPB.s 			page 2
+
+
+  58              		@ link register save eliminated.
+  59 0000 2023     		movs	r3, #32
+  60              	@ 117 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+  61 0002 83F31188 		msr     BASEPRI, r3
+  62              	@ 0 "" 2
+  63              		.thumb
+  64 0006 0246     		mov	r2, r0
+  65              	.L5:
+  66 0008 1368     		ldr	r3, [r2]
+  67 000a 8342     		cmp	r3, r0
+  68 000c 06D0     		beq	.L6
+  69 000e 8B42     		cmp	r3, r1
+  70 0010 02D1     		bne	.L8
+  71 0012 0B68     		ldr	r3, [r1]
+  72 0014 1360     		str	r3, [r2]
+  73 0016 01E0     		b	.L6
+  74              	.L8:
+  75 0018 1A46     		mov	r2, r3
+  76 001a F5E7     		b	.L5
+  77              	.L6:
+  78 001c 0023     		movs	r3, #0
+  79              	@ 125 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+  80 001e 83F31188 		msr     BASEPRI, r3
+  81              	@ 0 "" 2
+  82              		.thumb
+  83 0022 7047     		bx	lr
+  84              		.size	chEvtUnregister, .-chEvtUnregister
+  85              		.section	.text.chEvtGetAndClearEvents,"ax",%progbits
+  86              		.align	1
+  87              		.global	chEvtGetAndClearEvents
+  88              		.thumb
+  89              		.thumb_func
+  90              		.type	chEvtGetAndClearEvents, %function
+  91              	chEvtGetAndClearEvents:
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              		@ link register save eliminated.
+  95 0000 2023     		movs	r3, #32
+  96              	@ 139 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+  97 0002 83F31188 		msr     BASEPRI, r3
+  98              	@ 0 "" 2
+  99              		.thumb
+ 100 0006 054B     		ldr	r3, .L11
+ 101 0008 9B69     		ldr	r3, [r3, #24]
+ 102 000a 5A6B     		ldr	r2, [r3, #52]
+ 103 000c 22EA0001 		bic	r1, r2, r0
+ 104 0010 5963     		str	r1, [r3, #52]
+ 105 0012 0023     		movs	r3, #0
+ 106              	@ 144 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 107 0014 83F31188 		msr     BASEPRI, r3
+ 108              	@ 0 "" 2
+ 109              		.thumb
+ 110 0018 1040     		ands	r0, r0, r2
+ 111 001a 7047     		bx	lr
+ 112              	.L12:
+ 113              		.align	2
+ 114              	.L11:
+ARM GAS  /tmp/ccOj4CPB.s 			page 3
+
+
+ 115 001c 00000000 		.word	rlist
+ 116              		.size	chEvtGetAndClearEvents, .-chEvtGetAndClearEvents
+ 117              		.section	.text.chEvtAddEvents,"ax",%progbits
+ 118              		.align	1
+ 119              		.global	chEvtAddEvents
+ 120              		.thumb
+ 121              		.thumb_func
+ 122              		.type	chEvtAddEvents, %function
+ 123              	chEvtAddEvents:
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+ 127 0000 2023     		movs	r3, #32
+ 128              	@ 159 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 129 0002 83F31188 		msr     BASEPRI, r3
+ 130              	@ 0 "" 2
+ 131              		.thumb
+ 132 0006 044B     		ldr	r3, .L14
+ 133 0008 9A69     		ldr	r2, [r3, #24]
+ 134 000a 536B     		ldr	r3, [r2, #52]
+ 135 000c 1843     		orrs	r0, r0, r3
+ 136 000e 5063     		str	r0, [r2, #52]
+ 137 0010 0023     		movs	r3, #0
+ 138              	@ 163 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 139 0012 83F31188 		msr     BASEPRI, r3
+ 140              	@ 0 "" 2
+ 141              		.thumb
+ 142 0016 7047     		bx	lr
+ 143              	.L15:
+ 144              		.align	2
+ 145              	.L14:
+ 146 0018 00000000 		.word	rlist
+ 147              		.size	chEvtAddEvents, .-chEvtAddEvents
+ 148              		.section	.text.chEvtGetAndClearFlags,"ax",%progbits
+ 149              		.align	1
+ 150              		.global	chEvtGetAndClearFlags
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.type	chEvtGetAndClearFlags, %function
+ 154              	chEvtGetAndClearFlags:
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              		@ link register save eliminated.
+ 158 0000 0246     		mov	r2, r0
+ 159 0002 2023     		movs	r3, #32
+ 160              	@ 212 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 161 0004 83F31188 		msr     BASEPRI, r3
+ 162              	@ 0 "" 2
+ 163              		.thumb
+ 164 0008 0023     		movs	r3, #0
+ 165 000a C068     		ldr	r0, [r0, #12]
+ 166 000c D360     		str	r3, [r2, #12]
+ 167              	@ 217 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 168 000e 83F31188 		msr     BASEPRI, r3
+ 169              	@ 0 "" 2
+ 170              		.thumb
+ 171 0012 7047     		bx	lr
+ARM GAS  /tmp/ccOj4CPB.s 			page 4
+
+
+ 172              		.size	chEvtGetAndClearFlags, .-chEvtGetAndClearFlags
+ 173              		.section	.text.chEvtSignalI,"ax",%progbits
+ 174              		.align	1
+ 175              		.global	chEvtSignalI
+ 176              		.thumb
+ 177              		.thumb_func
+ 178              		.type	chEvtSignalI, %function
+ 179              	chEvtSignalI:
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182 0000 08B5     		push	{r3, lr}
+ 183 0002 436B     		ldr	r3, [r0, #52]
+ 184 0004 1943     		orrs	r1, r1, r3
+ 185 0006 037F     		ldrb	r3, [r0, #28]	@ zero_extendqisi2
+ 186 0008 4163     		str	r1, [r0, #52]
+ 187 000a 082B     		cmp	r3, #8
+ 188 000c 03D1     		bne	.L18
+ 189 000e 036A     		ldr	r3, [r0, #32]
+ 190 0010 1942     		tst	r1, r3
+ 191 0012 06D1     		bne	.L19
+ 192 0014 08BD     		pop	{r3, pc}
+ 193              	.L18:
+ 194 0016 092B     		cmp	r3, #9
+ 195 0018 07D1     		bne	.L17
+ 196 001a 036A     		ldr	r3, [r0, #32]
+ 197 001c 1940     		ands	r1, r1, r3
+ 198 001e 9942     		cmp	r1, r3
+ 199 0020 03D1     		bne	.L17
+ 200              	.L19:
+ 201 0022 FFF7FEFF 		bl	chSchReadyI
+ 202 0026 0023     		movs	r3, #0
+ 203 0028 0362     		str	r3, [r0, #32]
+ 204              	.L17:
+ 205 002a 08BD     		pop	{r3, pc}
+ 206              		.size	chEvtSignalI, .-chEvtSignalI
+ 207              		.section	.text.chEvtBroadcastFlagsI,"ax",%progbits
+ 208              		.align	1
+ 209              		.global	chEvtBroadcastFlagsI
+ 210              		.thumb
+ 211              		.thumb_func
+ 212              		.type	chEvtBroadcastFlagsI, %function
+ 213              	chEvtBroadcastFlagsI:
+ 214              		@ args = 0, pretend = 0, frame = 0
+ 215              		@ frame_needed = 0, uses_anonymous_args = 0
+ 216 0000 70B5     		push	{r4, r5, r6, lr}
+ 217 0002 0546     		mov	r5, r0
+ 218 0004 0E46     		mov	r6, r1
+ 219 0006 0468     		ldr	r4, [r0]
+ 220              	.L22:
+ 221 0008 AC42     		cmp	r4, r5
+ 222 000a 08D0     		beq	.L24
+ 223 000c E368     		ldr	r3, [r4, #12]
+ 224 000e 6068     		ldr	r0, [r4, #4]
+ 225 0010 3343     		orrs	r3, r3, r6
+ 226 0012 E360     		str	r3, [r4, #12]
+ 227 0014 A168     		ldr	r1, [r4, #8]
+ 228 0016 FFF7FEFF 		bl	chEvtSignalI
+ARM GAS  /tmp/ccOj4CPB.s 			page 5
+
+
+ 229 001a 2468     		ldr	r4, [r4]
+ 230 001c F4E7     		b	.L22
+ 231              	.L24:
+ 232 001e 70BD     		pop	{r4, r5, r6, pc}
+ 233              		.size	chEvtBroadcastFlagsI, .-chEvtBroadcastFlagsI
+ 234              		.section	.text.chEvtSignal,"ax",%progbits
+ 235              		.align	1
+ 236              		.global	chEvtSignal
+ 237              		.thumb
+ 238              		.thumb_func
+ 239              		.type	chEvtSignal, %function
+ 240              	chEvtSignal:
+ 241              		@ args = 0, pretend = 0, frame = 0
+ 242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243 0000 08B5     		push	{r3, lr}
+ 244 0002 2023     		movs	r3, #32
+ 245              	@ 233 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 246 0004 83F31188 		msr     BASEPRI, r3
+ 247              	@ 0 "" 2
+ 248              		.thumb
+ 249 0008 FFF7FEFF 		bl	chEvtSignalI
+ 250 000c FFF7FEFF 		bl	chSchRescheduleS
+ 251 0010 0023     		movs	r3, #0
+ 252              	@ 236 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 253 0012 83F31188 		msr     BASEPRI, r3
+ 254              	@ 0 "" 2
+ 255              		.thumb
+ 256 0016 08BD     		pop	{r3, pc}
+ 257              		.size	chEvtSignal, .-chEvtSignal
+ 258              		.section	.text.chEvtBroadcastFlags,"ax",%progbits
+ 259              		.align	1
+ 260              		.global	chEvtBroadcastFlags
+ 261              		.thumb
+ 262              		.thumb_func
+ 263              		.type	chEvtBroadcastFlags, %function
+ 264              	chEvtBroadcastFlags:
+ 265              		@ args = 0, pretend = 0, frame = 0
+ 266              		@ frame_needed = 0, uses_anonymous_args = 0
+ 267 0000 08B5     		push	{r3, lr}
+ 268 0002 2023     		movs	r3, #32
+ 269              	@ 280 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 270 0004 83F31188 		msr     BASEPRI, r3
+ 271              	@ 0 "" 2
+ 272              		.thumb
+ 273 0008 FFF7FEFF 		bl	chEvtBroadcastFlagsI
+ 274 000c FFF7FEFF 		bl	chSchRescheduleS
+ 275 0010 0023     		movs	r3, #0
+ 276              	@ 283 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 277 0012 83F31188 		msr     BASEPRI, r3
+ 278              	@ 0 "" 2
+ 279              		.thumb
+ 280 0016 08BD     		pop	{r3, pc}
+ 281              		.size	chEvtBroadcastFlags, .-chEvtBroadcastFlags
+ 282              		.section	.text.chEvtGetAndClearFlagsI,"ax",%progbits
+ 283              		.align	1
+ 284              		.global	chEvtGetAndClearFlagsI
+ 285              		.thumb
+ARM GAS  /tmp/ccOj4CPB.s 			page 6
+
+
+ 286              		.thumb_func
+ 287              		.type	chEvtGetAndClearFlagsI, %function
+ 288              	chEvtGetAndClearFlagsI:
+ 289              		@ args = 0, pretend = 0, frame = 0
+ 290              		@ frame_needed = 0, uses_anonymous_args = 0
+ 291              		@ link register save eliminated.
+ 292 0000 0346     		mov	r3, r0
+ 293 0002 0022     		movs	r2, #0
+ 294 0004 C068     		ldr	r0, [r0, #12]
+ 295 0006 DA60     		str	r2, [r3, #12]
+ 296 0008 7047     		bx	lr
+ 297              		.size	chEvtGetAndClearFlagsI, .-chEvtGetAndClearFlagsI
+ 298              		.section	.text.chEvtDispatch,"ax",%progbits
+ 299              		.align	1
+ 300              		.global	chEvtDispatch
+ 301              		.thumb
+ 302              		.thumb_func
+ 303              		.type	chEvtDispatch, %function
+ 304              	chEvtDispatch:
+ 305              		@ args = 0, pretend = 0, frame = 0
+ 306              		@ frame_needed = 0, uses_anonymous_args = 0
+ 307 0000 70B5     		push	{r4, r5, r6, lr}
+ 308 0002 0646     		mov	r6, r0
+ 309 0004 0D46     		mov	r5, r1
+ 310 0006 0024     		movs	r4, #0
+ 311              	.L29:
+ 312 0008 5DB1     		cbz	r5, .L35
+ 313 000a 0123     		movs	r3, #1
+ 314 000c A340     		lsls	r3, r3, r4
+ 315 000e 2B42     		tst	r3, r5
+ 316 0010 05D0     		beq	.L30
+ 317 0012 25EA0305 		bic	r5, r5, r3
+ 318 0016 2046     		mov	r0, r4
+ 319 0018 56F82430 		ldr	r3, [r6, r4, lsl #2]
+ 320 001c 9847     		blx	r3
+ 321              	.L30:
+ 322 001e 0134     		adds	r4, r4, #1
+ 323 0020 F2E7     		b	.L29
+ 324              	.L35:
+ 325 0022 70BD     		pop	{r4, r5, r6, pc}
+ 326              		.size	chEvtDispatch, .-chEvtDispatch
+ 327              		.section	.text.chEvtWaitOne,"ax",%progbits
+ 328              		.align	1
+ 329              		.global	chEvtWaitOne
+ 330              		.thumb
+ 331              		.thumb_func
+ 332              		.type	chEvtWaitOne, %function
+ 333              	chEvtWaitOne:
+ 334              		@ args = 0, pretend = 0, frame = 0
+ 335              		@ frame_needed = 0, uses_anonymous_args = 0
+ 336 0000 38B5     		push	{r3, r4, r5, lr}
+ 337 0002 0C4B     		ldr	r3, .L38
+ 338 0004 0546     		mov	r5, r0
+ 339 0006 9C69     		ldr	r4, [r3, #24]
+ 340 0008 2023     		movs	r3, #32
+ 341              	@ 354 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 342 000a 83F31188 		msr     BASEPRI, r3
+ARM GAS  /tmp/ccOj4CPB.s 			page 7
+
+
+ 343              	@ 0 "" 2
+ 344              		.thumb
+ 345 000e 636B     		ldr	r3, [r4, #52]
+ 346 0010 0340     		ands	r3, r0, r3
+ 347 0012 05D1     		bne	.L37
+ 348 0014 2062     		str	r0, [r4, #32]
+ 349 0016 0820     		movs	r0, #8
+ 350 0018 FFF7FEFF 		bl	chSchGoSleepS
+ 351 001c 636B     		ldr	r3, [r4, #52]
+ 352 001e 2B40     		ands	r3, r3, r5
+ 353              	.L37:
+ 354 0020 5842     		negs	r0, r3
+ 355 0022 1840     		ands	r0, r0, r3
+ 356 0024 636B     		ldr	r3, [r4, #52]
+ 357 0026 23EA0003 		bic	r3, r3, r0
+ 358 002a 6363     		str	r3, [r4, #52]
+ 359 002c 0023     		movs	r3, #0
+ 360              	@ 364 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 361 002e 83F31188 		msr     BASEPRI, r3
+ 362              	@ 0 "" 2
+ 363              		.thumb
+ 364 0032 38BD     		pop	{r3, r4, r5, pc}
+ 365              	.L39:
+ 366              		.align	2
+ 367              	.L38:
+ 368 0034 00000000 		.word	rlist
+ 369              		.size	chEvtWaitOne, .-chEvtWaitOne
+ 370              		.section	.text.chEvtWaitAny,"ax",%progbits
+ 371              		.align	1
+ 372              		.global	chEvtWaitAny
+ 373              		.thumb
+ 374              		.thumb_func
+ 375              		.type	chEvtWaitAny, %function
+ 376              	chEvtWaitAny:
+ 377              		@ args = 0, pretend = 0, frame = 0
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379 0000 38B5     		push	{r3, r4, r5, lr}
+ 380 0002 0B4B     		ldr	r3, .L42
+ 381 0004 0546     		mov	r5, r0
+ 382 0006 9C69     		ldr	r4, [r3, #24]
+ 383 0008 2023     		movs	r3, #32
+ 384              	@ 383 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 385 000a 83F31188 		msr     BASEPRI, r3
+ 386              	@ 0 "" 2
+ 387              		.thumb
+ 388 000e 606B     		ldr	r0, [r4, #52]
+ 389 0010 2840     		ands	r0, r5, r0
+ 390 0012 05D1     		bne	.L41
+ 391 0014 0820     		movs	r0, #8
+ 392 0016 2562     		str	r5, [r4, #32]
+ 393 0018 FFF7FEFF 		bl	chSchGoSleepS
+ 394 001c 606B     		ldr	r0, [r4, #52]
+ 395 001e 2840     		ands	r0, r0, r5
+ 396              	.L41:
+ 397 0020 636B     		ldr	r3, [r4, #52]
+ 398 0022 23EA0003 		bic	r3, r3, r0
+ 399 0026 6363     		str	r3, [r4, #52]
+ARM GAS  /tmp/ccOj4CPB.s 			page 8
+
+
+ 400 0028 0023     		movs	r3, #0
+ 401              	@ 392 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 402 002a 83F31188 		msr     BASEPRI, r3
+ 403              	@ 0 "" 2
+ 404              		.thumb
+ 405 002e 38BD     		pop	{r3, r4, r5, pc}
+ 406              	.L43:
+ 407              		.align	2
+ 408              	.L42:
+ 409 0030 00000000 		.word	rlist
+ 410              		.size	chEvtWaitAny, .-chEvtWaitAny
+ 411              		.section	.text.chEvtWaitAll,"ax",%progbits
+ 412              		.align	1
+ 413              		.global	chEvtWaitAll
+ 414              		.thumb
+ 415              		.thumb_func
+ 416              		.type	chEvtWaitAll, %function
+ 417              	chEvtWaitAll:
+ 418              		@ args = 0, pretend = 0, frame = 0
+ 419              		@ frame_needed = 0, uses_anonymous_args = 0
+ 420 0000 38B5     		push	{r3, r4, r5, lr}
+ 421 0002 0B4B     		ldr	r3, .L46
+ 422 0004 0446     		mov	r4, r0
+ 423 0006 9D69     		ldr	r5, [r3, #24]
+ 424 0008 2023     		movs	r3, #32
+ 425              	@ 410 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 426 000a 83F31188 		msr     BASEPRI, r3
+ 427              	@ 0 "" 2
+ 428              		.thumb
+ 429 000e 6B6B     		ldr	r3, [r5, #52]
+ 430 0010 0340     		ands	r3, r3, r0
+ 431 0012 8342     		cmp	r3, r0
+ 432 0014 03D0     		beq	.L45
+ 433 0016 2862     		str	r0, [r5, #32]
+ 434 0018 0920     		movs	r0, #9
+ 435 001a FFF7FEFF 		bl	chSchGoSleepS
+ 436              	.L45:
+ 437 001e 6B6B     		ldr	r3, [r5, #52]
+ 438 0020 23EA0403 		bic	r3, r3, r4
+ 439 0024 6B63     		str	r3, [r5, #52]
+ 440 0026 0023     		movs	r3, #0
+ 441              	@ 418 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 442 0028 83F31188 		msr     BASEPRI, r3
+ 443              	@ 0 "" 2
+ 444              		.thumb
+ 445 002c 2046     		mov	r0, r4
+ 446 002e 38BD     		pop	{r3, r4, r5, pc}
+ 447              	.L47:
+ 448              		.align	2
+ 449              	.L46:
+ 450 0030 00000000 		.word	rlist
+ 451              		.size	chEvtWaitAll, .-chEvtWaitAll
+ 452              		.section	.text.chEvtWaitOneTimeout,"ax",%progbits
+ 453              		.align	1
+ 454              		.global	chEvtWaitOneTimeout
+ 455              		.thumb
+ 456              		.thumb_func
+ARM GAS  /tmp/ccOj4CPB.s 			page 9
+
+
+ 457              		.type	chEvtWaitOneTimeout, %function
+ 458              	chEvtWaitOneTimeout:
+ 459              		@ args = 0, pretend = 0, frame = 0
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+ 461 0000 124B     		ldr	r3, .L54
+ 462 0002 70B5     		push	{r4, r5, r6, lr}
+ 463 0004 9D69     		ldr	r5, [r3, #24]
+ 464 0006 0646     		mov	r6, r0
+ 465 0008 2023     		movs	r3, #32
+ 466              	@ 450 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 467 000a 83F31188 		msr     BASEPRI, r3
+ 468              	@ 0 "" 2
+ 469              		.thumb
+ 470 000e 6C6B     		ldr	r4, [r5, #52]
+ 471 0010 0440     		ands	r4, r0, r4
+ 472 0012 0ED1     		bne	.L49
+ 473 0014 09B9     		cbnz	r1, .L50
+ 474 0016 0B46     		mov	r3, r1
+ 475 0018 06E0     		b	.L53
+ 476              	.L50:
+ 477 001a 2862     		str	r0, [r5, #32]
+ 478 001c 0820     		movs	r0, #8
+ 479 001e FFF7FEFF 		bl	chSchGoSleepTimeoutS
+ 480 0022 0028     		cmp	r0, #0
+ 481 0024 03DA     		bge	.L52
+ 482 0026 2346     		mov	r3, r4
+ 483              	.L53:
+ 484              	@ 459 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 485 0028 83F31188 		msr     BASEPRI, r3
+ 486              	@ 0 "" 2
+ 487              		.thumb
+ 488 002c 0BE0     		b	.L51
+ 489              	.L52:
+ 490 002e 6C6B     		ldr	r4, [r5, #52]
+ 491 0030 3440     		ands	r4, r4, r6
+ 492              	.L49:
+ 493 0032 6342     		negs	r3, r4
+ 494 0034 1C40     		ands	r4, r4, r3
+ 495 0036 6B6B     		ldr	r3, [r5, #52]
+ 496 0038 23EA0403 		bic	r3, r3, r4
+ 497 003c 6B63     		str	r3, [r5, #52]
+ 498 003e 0023     		movs	r3, #0
+ 499              	@ 467 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 500 0040 83F31188 		msr     BASEPRI, r3
+ 501              	@ 0 "" 2
+ 502              		.thumb
+ 503 0044 2346     		mov	r3, r4
+ 504              	.L51:
+ 505 0046 1846     		mov	r0, r3
+ 506 0048 70BD     		pop	{r4, r5, r6, pc}
+ 507              	.L55:
+ 508 004a 00BF     		.align	2
+ 509              	.L54:
+ 510 004c 00000000 		.word	rlist
+ 511              		.size	chEvtWaitOneTimeout, .-chEvtWaitOneTimeout
+ 512              		.section	.text.chEvtWaitAnyTimeout,"ax",%progbits
+ 513              		.align	1
+ARM GAS  /tmp/ccOj4CPB.s 			page 10
+
+
+ 514              		.global	chEvtWaitAnyTimeout
+ 515              		.thumb
+ 516              		.thumb_func
+ 517              		.type	chEvtWaitAnyTimeout, %function
+ 518              	chEvtWaitAnyTimeout:
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521 0000 114B     		ldr	r3, .L62
+ 522 0002 70B5     		push	{r4, r5, r6, lr}
+ 523 0004 9D69     		ldr	r5, [r3, #24]
+ 524 0006 0646     		mov	r6, r0
+ 525 0008 2023     		movs	r3, #32
+ 526              	@ 493 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 527 000a 83F31188 		msr     BASEPRI, r3
+ 528              	@ 0 "" 2
+ 529              		.thumb
+ 530 000e 6C6B     		ldr	r4, [r5, #52]
+ 531 0010 0440     		ands	r4, r0, r4
+ 532 0012 0ED1     		bne	.L57
+ 533 0014 09B9     		cbnz	r1, .L58
+ 534 0016 0B46     		mov	r3, r1
+ 535 0018 06E0     		b	.L61
+ 536              	.L58:
+ 537 001a 2862     		str	r0, [r5, #32]
+ 538 001c 0820     		movs	r0, #8
+ 539 001e FFF7FEFF 		bl	chSchGoSleepTimeoutS
+ 540 0022 0028     		cmp	r0, #0
+ 541 0024 03DA     		bge	.L60
+ 542 0026 2346     		mov	r3, r4
+ 543              	.L61:
+ 544              	@ 502 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 545 0028 83F31188 		msr     BASEPRI, r3
+ 546              	@ 0 "" 2
+ 547              		.thumb
+ 548 002c 09E0     		b	.L59
+ 549              	.L60:
+ 550 002e 6C6B     		ldr	r4, [r5, #52]
+ 551 0030 3440     		ands	r4, r4, r6
+ 552              	.L57:
+ 553 0032 6B6B     		ldr	r3, [r5, #52]
+ 554 0034 23EA0403 		bic	r3, r3, r4
+ 555 0038 6B63     		str	r3, [r5, #52]
+ 556 003a 0023     		movs	r3, #0
+ 557              	@ 509 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 558 003c 83F31188 		msr     BASEPRI, r3
+ 559              	@ 0 "" 2
+ 560              		.thumb
+ 561 0040 2346     		mov	r3, r4
+ 562              	.L59:
+ 563 0042 1846     		mov	r0, r3
+ 564 0044 70BD     		pop	{r4, r5, r6, pc}
+ 565              	.L63:
+ 566 0046 00BF     		.align	2
+ 567              	.L62:
+ 568 0048 00000000 		.word	rlist
+ 569              		.size	chEvtWaitAnyTimeout, .-chEvtWaitAnyTimeout
+ 570              		.section	.text.chEvtWaitAllTimeout,"ax",%progbits
+ARM GAS  /tmp/ccOj4CPB.s 			page 11
+
+
+ 571              		.align	1
+ 572              		.global	chEvtWaitAllTimeout
+ 573              		.thumb
+ 574              		.thumb_func
+ 575              		.type	chEvtWaitAllTimeout, %function
+ 576              	chEvtWaitAllTimeout:
+ 577              		@ args = 0, pretend = 0, frame = 0
+ 578              		@ frame_needed = 0, uses_anonymous_args = 0
+ 579 0000 38B5     		push	{r3, r4, r5, lr}
+ 580 0002 104B     		ldr	r3, .L69
+ 581 0004 0446     		mov	r4, r0
+ 582 0006 9D69     		ldr	r5, [r3, #24]
+ 583 0008 2023     		movs	r3, #32
+ 584              	@ 533 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 585 000a 83F31188 		msr     BASEPRI, r3
+ 586              	@ 0 "" 2
+ 587              		.thumb
+ 588 000e 6B6B     		ldr	r3, [r5, #52]
+ 589 0010 0340     		ands	r3, r3, r0
+ 590 0012 8342     		cmp	r3, r0
+ 591 0014 0CD0     		beq	.L65
+ 592 0016 09B9     		cbnz	r1, .L66
+ 593 0018 0B46     		mov	r3, r1
+ 594 001a 06E0     		b	.L68
+ 595              	.L66:
+ 596 001c 2862     		str	r0, [r5, #32]
+ 597 001e 0920     		movs	r0, #9
+ 598 0020 FFF7FEFF 		bl	chSchGoSleepTimeoutS
+ 599 0024 0028     		cmp	r0, #0
+ 600 0026 03DA     		bge	.L65
+ 601 0028 0023     		movs	r3, #0
+ 602              	.L68:
+ 603              	@ 542 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 604 002a 83F31188 		msr     BASEPRI, r3
+ 605              	@ 0 "" 2
+ 606              		.thumb
+ 607 002e 07E0     		b	.L67
+ 608              	.L65:
+ 609 0030 6B6B     		ldr	r3, [r5, #52]
+ 610 0032 23EA0403 		bic	r3, r3, r4
+ 611 0036 6B63     		str	r3, [r5, #52]
+ 612 0038 0023     		movs	r3, #0
+ 613              	@ 548 "zubax_chibios///chibios/os/kernel/src/chevents.c" 1
+ 614 003a 83F31188 		msr     BASEPRI, r3
+ 615              	@ 0 "" 2
+ 616              		.thumb
+ 617 003e 2346     		mov	r3, r4
+ 618              	.L67:
+ 619 0040 1846     		mov	r0, r3
+ 620 0042 38BD     		pop	{r3, r4, r5, pc}
+ 621              	.L70:
+ 622              		.align	2
+ 623              	.L69:
+ 624 0044 00000000 		.word	rlist
+ 625              		.size	chEvtWaitAllTimeout, .-chEvtWaitAllTimeout
+ 626              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccOj4CPB.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chevents.c
+     /tmp/ccOj4CPB.s:16     .text.chEvtRegisterMask:0000000000000000 $t
+     /tmp/ccOj4CPB.s:21     .text.chEvtRegisterMask:0000000000000000 chEvtRegisterMask
+     /tmp/ccOj4CPB.s:47     .text.chEvtRegisterMask:0000000000000020 $d
+     /tmp/ccOj4CPB.s:50     .text.chEvtUnregister:0000000000000000 $t
+     /tmp/ccOj4CPB.s:55     .text.chEvtUnregister:0000000000000000 chEvtUnregister
+     /tmp/ccOj4CPB.s:86     .text.chEvtGetAndClearEvents:0000000000000000 $t
+     /tmp/ccOj4CPB.s:91     .text.chEvtGetAndClearEvents:0000000000000000 chEvtGetAndClearEvents
+     /tmp/ccOj4CPB.s:115    .text.chEvtGetAndClearEvents:000000000000001c $d
+     /tmp/ccOj4CPB.s:118    .text.chEvtAddEvents:0000000000000000 $t
+     /tmp/ccOj4CPB.s:123    .text.chEvtAddEvents:0000000000000000 chEvtAddEvents
+     /tmp/ccOj4CPB.s:146    .text.chEvtAddEvents:0000000000000018 $d
+     /tmp/ccOj4CPB.s:149    .text.chEvtGetAndClearFlags:0000000000000000 $t
+     /tmp/ccOj4CPB.s:154    .text.chEvtGetAndClearFlags:0000000000000000 chEvtGetAndClearFlags
+     /tmp/ccOj4CPB.s:174    .text.chEvtSignalI:0000000000000000 $t
+     /tmp/ccOj4CPB.s:179    .text.chEvtSignalI:0000000000000000 chEvtSignalI
+     /tmp/ccOj4CPB.s:208    .text.chEvtBroadcastFlagsI:0000000000000000 $t
+     /tmp/ccOj4CPB.s:213    .text.chEvtBroadcastFlagsI:0000000000000000 chEvtBroadcastFlagsI
+     /tmp/ccOj4CPB.s:235    .text.chEvtSignal:0000000000000000 $t
+     /tmp/ccOj4CPB.s:240    .text.chEvtSignal:0000000000000000 chEvtSignal
+     /tmp/ccOj4CPB.s:259    .text.chEvtBroadcastFlags:0000000000000000 $t
+     /tmp/ccOj4CPB.s:264    .text.chEvtBroadcastFlags:0000000000000000 chEvtBroadcastFlags
+     /tmp/ccOj4CPB.s:283    .text.chEvtGetAndClearFlagsI:0000000000000000 $t
+     /tmp/ccOj4CPB.s:288    .text.chEvtGetAndClearFlagsI:0000000000000000 chEvtGetAndClearFlagsI
+     /tmp/ccOj4CPB.s:299    .text.chEvtDispatch:0000000000000000 $t
+     /tmp/ccOj4CPB.s:304    .text.chEvtDispatch:0000000000000000 chEvtDispatch
+     /tmp/ccOj4CPB.s:328    .text.chEvtWaitOne:0000000000000000 $t
+     /tmp/ccOj4CPB.s:333    .text.chEvtWaitOne:0000000000000000 chEvtWaitOne
+     /tmp/ccOj4CPB.s:368    .text.chEvtWaitOne:0000000000000034 $d
+     /tmp/ccOj4CPB.s:371    .text.chEvtWaitAny:0000000000000000 $t
+     /tmp/ccOj4CPB.s:376    .text.chEvtWaitAny:0000000000000000 chEvtWaitAny
+     /tmp/ccOj4CPB.s:409    .text.chEvtWaitAny:0000000000000030 $d
+     /tmp/ccOj4CPB.s:412    .text.chEvtWaitAll:0000000000000000 $t
+     /tmp/ccOj4CPB.s:417    .text.chEvtWaitAll:0000000000000000 chEvtWaitAll
+     /tmp/ccOj4CPB.s:450    .text.chEvtWaitAll:0000000000000030 $d
+     /tmp/ccOj4CPB.s:453    .text.chEvtWaitOneTimeout:0000000000000000 $t
+     /tmp/ccOj4CPB.s:458    .text.chEvtWaitOneTimeout:0000000000000000 chEvtWaitOneTimeout
+     /tmp/ccOj4CPB.s:510    .text.chEvtWaitOneTimeout:000000000000004c $d
+     /tmp/ccOj4CPB.s:513    .text.chEvtWaitAnyTimeout:0000000000000000 $t
+     /tmp/ccOj4CPB.s:518    .text.chEvtWaitAnyTimeout:0000000000000000 chEvtWaitAnyTimeout
+     /tmp/ccOj4CPB.s:568    .text.chEvtWaitAnyTimeout:0000000000000048 $d
+     /tmp/ccOj4CPB.s:571    .text.chEvtWaitAllTimeout:0000000000000000 $t
+     /tmp/ccOj4CPB.s:576    .text.chEvtWaitAllTimeout:0000000000000000 chEvtWaitAllTimeout
+     /tmp/ccOj4CPB.s:624    .text.chEvtWaitAllTimeout:0000000000000044 $d
+
+UNDEFINED SYMBOLS
+rlist
+chSchReadyI
+chSchRescheduleS
+chSchGoSleepS
+chSchGoSleepTimeoutS

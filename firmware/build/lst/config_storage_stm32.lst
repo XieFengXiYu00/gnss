@@ -1,0 +1,281 @@
+ARM GAS  /tmp/ccEjxy3m.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"config_storage_stm32.c"
+  15              		.section	.text.waitReady,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	waitReady, %function
+  20              	waitReady:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24              	.L2:
+  25 0000 044B     		ldr	r3, .L5
+  26 0002 DA68     		ldr	r2, [r3, #12]
+  27 0004 D207     		lsls	r2, r2, #31
+  28 0006 FBD4     		bmi	.L2
+  29 0008 DA68     		ldr	r2, [r3, #12]
+  30 000a 42F02002 		orr	r2, r2, #32
+  31 000e DA60     		str	r2, [r3, #12]
+  32 0010 7047     		bx	lr
+  33              	.L6:
+  34 0012 00BF     		.align	2
+  35              	.L5:
+  36 0014 00200240 		.word	1073881088
+  37              		.size	waitReady, .-waitReady
+  38              		.section	.text.prologue,"ax",%progbits
+  39              		.align	1
+  40              		.thumb
+  41              		.thumb_func
+  42              		.type	prologue, %function
+  43              	prologue:
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 0, uses_anonymous_args = 0
+  46 0000 08B5     		push	{r3, lr}
+  47 0002 2023     		movs	r3, #32
+  48              	@ 53 "zubax_chibios///zubax_chibios/config/config_storage_stm32.c" 1
+  49 0004 83F31188 		msr     BASEPRI, r3
+  50              	@ 0 "" 2
+  51              		.thumb
+  52 0008 FFF7FEFF 		bl	waitReady
+  53 000c 074B     		ldr	r3, .L12
+  54 000e 1A69     		ldr	r2, [r3, #16]
+  55 0010 1206     		lsls	r2, r2, #24
+  56 0012 41BF     		itttt	mi
+  57 0014 064A     		ldrmi	r2, .L12+4
+ARM GAS  /tmp/ccEjxy3m.s 			page 2
+
+
+  58 0016 5A60     		strmi	r2, [r3, #4]
+  59 0018 02F18832 		addmi	r2, r2, #-2004318072
+  60 001c 5A60     		strmi	r2, [r3, #4]
+  61 001e DA68     		ldr	r2, [r3, #12]
+  62 0020 42F03402 		orr	r2, r2, #52
+  63 0024 DA60     		str	r2, [r3, #12]
+  64 0026 0022     		movs	r2, #0
+  65 0028 1A61     		str	r2, [r3, #16]
+  66 002a 08BD     		pop	{r3, pc}
+  67              	.L13:
+  68              		.align	2
+  69              	.L12:
+  70 002c 00200240 		.word	1073881088
+  71 0030 23016745 		.word	1164378403
+  72              		.size	prologue, .-prologue
+  73              		.section	.text.configStorageRead,"ax",%progbits
+  74              		.align	1
+  75              		.global	configStorageRead
+  76              		.thumb
+  77              		.thumb_func
+  78              		.type	configStorageRead, %function
+  79              	configStorageRead:
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82 0000 10B5     		push	{r4, lr}
+  83 0002 0346     		mov	r3, r0
+  84 0004 1446     		mov	r4, r2
+  85 0006 81B1     		cbz	r1, .L17
+  86 0008 0444     		add	r4, r4, r0
+  87 000a B4F5006F 		cmp	r4, #2048
+  88 000e 0CD8     		bhi	.L17
+  89 0010 0748     		ldr	r0, .L18
+  90 0012 0088     		ldrh	r0, [r0]
+  91 0014 03EB8023 		add	r3, r3, r0, lsl #10
+  92 0018 0846     		mov	r0, r1
+  93 001a 03F1FF61 		add	r1, r3, #133693440
+  94 001e 01F5FF21 		add	r1, r1, #522240
+  95 0022 FFF7FEFF 		bl	memcpy
+  96 0026 0020     		movs	r0, #0
+  97 0028 10BD     		pop	{r4, pc}
+  98              	.L17:
+  99 002a 6FF01500 		mvn	r0, #21
+ 100 002e 10BD     		pop	{r4, pc}
+ 101              	.L19:
+ 102              		.align	2
+ 103              	.L18:
+ 104 0030 E0F7FF1F 		.word	536868832
+ 105              		.size	configStorageRead, .-configStorageRead
+ 106              		.section	.text.configStorageWrite,"ax",%progbits
+ 107              		.align	1
+ 108              		.global	configStorageWrite
+ 109              		.thumb
+ 110              		.thumb_func
+ 111              		.type	configStorageWrite, %function
+ 112              	configStorageWrite:
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccEjxy3m.s 			page 3
+
+
+ 115 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 116 0004 0546     		mov	r5, r0
+ 117 0006 1746     		mov	r7, r2
+ 118 0008 0E46     		mov	r6, r1
+ 119 000a 0029     		cmp	r1, #0
+ 120 000c 45D0     		beq	.L28
+ 121 000e 8318     		adds	r3, r0, r2
+ 122 0010 B3F5006F 		cmp	r3, #2048
+ 123 0014 41D8     		bhi	.L28
+ 124 0016 CB07     		lsls	r3, r1, #31
+ 125 0018 03D5     		bpl	.L22
+ 126              	.L26:
+ 127 001a 6FF00400 		mvn	r0, #4
+ 128 001e BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 129              	.L22:
+ 130 0022 B246     		mov	r10, r6
+ 131 0024 4FEA5208 		lsr	r8, r2, #1
+ 132 0028 B2EB480F 		cmp	r2, r8, lsl #1
+ 133 002c 88BF     		it	hi
+ 134 002e 08F10108 		addhi	r8, r8, #1
+ 135 0032 FFF7FEFF 		bl	prologue
+ 136 0036 1B4B     		ldr	r3, .L30
+ 137 0038 0122     		movs	r2, #1
+ 138 003a 1A61     		str	r2, [r3, #16]
+ 139 003c 1A4B     		ldr	r3, .L30+4
+ 140 003e 4FF00009 		mov	r9, #0
+ 141 0042 1C88     		ldrh	r4, [r3]
+ 142 0044 05EB8424 		add	r4, r5, r4, lsl #10
+ 143 0048 04F1FF64 		add	r4, r4, #133693440
+ 144 004c 04F5FF24 		add	r4, r4, #522240
+ 145              	.L24:
+ 146 0050 A31B     		subs	r3, r4, r6
+ 147 0052 C145     		cmp	r9, r8
+ 148 0054 5344     		add	r3, r3, r10
+ 149 0056 07D0     		beq	.L29
+ 150 0058 3AF8022B 		ldrh	r2, [r10], #2
+ 151 005c 09F10109 		add	r9, r9, #1
+ 152 0060 1A80     		strh	r2, [r3]	@ movhi
+ 153 0062 FFF7FEFF 		bl	waitReady
+ 154 0066 F3E7     		b	.L24
+ 155              	.L29:
+ 156 0068 FFF7FEFF 		bl	waitReady
+ 157 006c 0D4A     		ldr	r2, .L30
+ 158 006e 0023     		movs	r3, #0
+ 159 0070 8021     		movs	r1, #128
+ 160 0072 1361     		str	r3, [r2, #16]
+ 161 0074 1161     		str	r1, [r2, #16]
+ 162              	@ 66 "zubax_chibios///zubax_chibios/config/config_storage_stm32.c" 1
+ 163 0076 83F31188 		msr     BASEPRI, r3
+ 164              	@ 0 "" 2
+ 165              		.thumb
+ 166 007a 0B4B     		ldr	r3, .L30+4
+ 167 007c 3046     		mov	r0, r6
+ 168 007e 1988     		ldrh	r1, [r3]
+ 169 0080 3A46     		mov	r2, r7
+ 170 0082 05EB8121 		add	r1, r5, r1, lsl #10
+ 171 0086 01F1FF61 		add	r1, r1, #133693440
+ARM GAS  /tmp/ccEjxy3m.s 			page 4
+
+
+ 172 008a 01F5FF21 		add	r1, r1, #522240
+ 173 008e FFF7FEFF 		bl	memcmp
+ 174 0092 0028     		cmp	r0, #0
+ 175 0094 C1D1     		bne	.L26
+ 176 0096 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 177              	.L28:
+ 178 009a 6FF01500 		mvn	r0, #21
+ 179 009e BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 180              	.L31:
+ 181 00a2 00BF     		.align	2
+ 182              	.L30:
+ 183 00a4 00200240 		.word	1073881088
+ 184 00a8 E0F7FF1F 		.word	536868832
+ 185              		.size	configStorageWrite, .-configStorageWrite
+ 186              		.section	.text.configStorageErase,"ax",%progbits
+ 187              		.align	1
+ 188              		.global	configStorageErase
+ 189              		.thumb
+ 190              		.thumb_func
+ 191              		.type	configStorageErase, %function
+ 192              	configStorageErase:
+ 193              		@ args = 0, pretend = 0, frame = 0
+ 194              		@ frame_needed = 0, uses_anonymous_args = 0
+ 195 0000 38B5     		push	{r3, r4, r5, lr}
+ 196 0002 174C     		ldr	r4, .L37
+ 197 0004 174D     		ldr	r5, .L37+4
+ 198 0006 FFF7FEFF 		bl	prologue
+ 199 000a 0223     		movs	r3, #2
+ 200 000c 2361     		str	r3, [r4, #16]
+ 201 000e 2B88     		ldrh	r3, [r5]
+ 202 0010 9B02     		lsls	r3, r3, #10
+ 203 0012 03F1FF63 		add	r3, r3, #133693440
+ 204 0016 03F5FF23 		add	r3, r3, #522240
+ 205 001a 6361     		str	r3, [r4, #20]
+ 206 001c 2369     		ldr	r3, [r4, #16]
+ 207 001e 43F04003 		orr	r3, r3, #64
+ 208 0022 2361     		str	r3, [r4, #16]
+ 209 0024 FFF7FEFF 		bl	waitReady
+ 210 0028 0023     		movs	r3, #0
+ 211 002a 8022     		movs	r2, #128
+ 212 002c 2361     		str	r3, [r4, #16]
+ 213 002e 2261     		str	r2, [r4, #16]
+ 214              	@ 66 "zubax_chibios///zubax_chibios/config/config_storage_stm32.c" 1
+ 215 0030 83F31188 		msr     BASEPRI, r3
+ 216              	@ 0 "" 2
+ 217              		.thumb
+ 218 0034 2B88     		ldrh	r3, [r5]
+ 219 0036 6FF40061 		mvn	r1, #2048
+ 220 003a 9B02     		lsls	r3, r3, #10
+ 221 003c 03F10062 		add	r2, r3, #134217728
+ 222 0040 03F10063 		add	r3, r3, #134217728
+ 223 0044 0A44     		add	r2, r2, r1
+ 224 0046 013B     		subs	r3, r3, #1
+ 225              	.L34:
+ 226 0048 12F8011F 		ldrb	r1, [r2, #1]!	@ zero_extendqisi2
+ 227 004c FF29     		cmp	r1, #255
+ 228 004e 03D1     		bne	.L35
+ARM GAS  /tmp/ccEjxy3m.s 			page 5
+
+
+ 229 0050 9A42     		cmp	r2, r3
+ 230 0052 F9D1     		bne	.L34
+ 231 0054 0020     		movs	r0, #0
+ 232 0056 38BD     		pop	{r3, r4, r5, pc}
+ 233              	.L35:
+ 234 0058 6FF00400 		mvn	r0, #4
+ 235 005c 38BD     		pop	{r3, r4, r5, pc}
+ 236              	.L38:
+ 237 005e 00BF     		.align	2
+ 238              	.L37:
+ 239 0060 00200240 		.word	1073881088
+ 240 0064 E0F7FF1F 		.word	536868832
+ 241              		.size	configStorageErase, .-configStorageErase
+ 242              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccEjxy3m.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 config_storage_stm32.c
+     /tmp/ccEjxy3m.s:16     .text.waitReady:0000000000000000 $t
+     /tmp/ccEjxy3m.s:20     .text.waitReady:0000000000000000 waitReady
+     /tmp/ccEjxy3m.s:36     .text.waitReady:0000000000000014 $d
+     /tmp/ccEjxy3m.s:39     .text.prologue:0000000000000000 $t
+     /tmp/ccEjxy3m.s:43     .text.prologue:0000000000000000 prologue
+     /tmp/ccEjxy3m.s:70     .text.prologue:000000000000002c $d
+     /tmp/ccEjxy3m.s:74     .text.configStorageRead:0000000000000000 $t
+     /tmp/ccEjxy3m.s:79     .text.configStorageRead:0000000000000000 configStorageRead
+     /tmp/ccEjxy3m.s:104    .text.configStorageRead:0000000000000030 $d
+     /tmp/ccEjxy3m.s:107    .text.configStorageWrite:0000000000000000 $t
+     /tmp/ccEjxy3m.s:112    .text.configStorageWrite:0000000000000000 configStorageWrite
+     /tmp/ccEjxy3m.s:183    .text.configStorageWrite:00000000000000a4 $d
+     /tmp/ccEjxy3m.s:187    .text.configStorageErase:0000000000000000 $t
+     /tmp/ccEjxy3m.s:192    .text.configStorageErase:0000000000000000 configStorageErase
+     /tmp/ccEjxy3m.s:239    .text.configStorageErase:0000000000000060 $d
+
+UNDEFINED SYMBOLS
+memcpy
+memcmp

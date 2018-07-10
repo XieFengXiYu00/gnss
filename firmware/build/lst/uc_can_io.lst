@@ -1,0 +1,1194 @@
+ARM GAS  /tmp/ccWskVMA.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_can_io.cpp"
+  15              		.section	.text._ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3,"ax",%pr
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3, %function
+  20              	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 08B5     		push	{r3, lr}
+  24 0002 10B9     		cbnz	r0, .L1
+  25 0004 0148     		ldr	r0, .L4
+  26 0006 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+  27              	.L1:
+  28 000a 08BD     		pop	{r3, pc}
+  29              	.L5:
+  30              		.align	2
+  31              	.L4:
+  32 000c 00000000 		.word	.LC0
+  33              		.size	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3, .-_ZNK6uavcan15L
+  34              		.section	.text._ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE,"ax",%progbits
+  35              		.align	1
+  36              		.global	_ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE
+  37              		.thumb
+  38              		.thumb_func
+  39              		.type	_ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE, %function
+  40              	_ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE:
+  41              		@ args = 0, pretend = 0, frame = 0
+  42              		@ frame_needed = 0, uses_anonymous_args = 0
+  43 0000 0368     		ldr	r3, [r0]
+  44 0002 10B5     		push	{r4, lr}
+  45 0004 0446     		mov	r4, r0
+  46 0006 33B1     		cbz	r3, .L6
+  47 0008 0A68     		ldr	r2, [r1]
+  48 000a 0846     		mov	r0, r1
+  49 000c D268     		ldr	r2, [r2, #12]
+  50 000e 1946     		mov	r1, r3
+  51 0010 9047     		blx	r2
+  52 0012 0023     		movs	r3, #0
+  53 0014 2360     		str	r3, [r4]
+  54              	.L6:
+  55 0016 10BD     		pop	{r4, pc}
+  56              		.size	_ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE, .-_ZN6uavcan10CanTxQueue5En
+  57              		.section	.text._ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE,"ax",%progbit
+ARM GAS  /tmp/ccWskVMA.s 			page 2
+
+
+  58              		.align	1
+  59              		.global	_ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	_ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE, %function
+  63              	_ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE:
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+  68 0004 9342     		cmp	r3, r2
+  69 0006 02D1     		bne	.L15
+  70 0008 1030     		adds	r0, r0, #16
+  71 000a FFF7FEBF 		b	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+  72              	.L15:
+  73 000e 8CBF     		ite	hi
+  74 0010 0120     		movhi	r0, #1
+  75 0012 0020     		movls	r0, #0
+  76 0014 7047     		bx	lr
+  77              		.size	_ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE, .-_ZNK6uavcan10CanTxQ
+  78              		.section	.text._ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE,"ax",%progbits
+  79              		.align	1
+  80              		.global	_ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE
+  81              		.thumb
+  82              		.thumb_func
+  83              		.type	_ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE, %function
+  84              	_ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE:
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87              		@ link register save eliminated.
+  88 0000 0346     		mov	r3, r0
+  89 0002 90F82000 		ldrb	r0, [r0, #32]	@ zero_extendqisi2
+  90 0006 9042     		cmp	r0, r2
+  91 0008 04D1     		bne	.L20
+  92 000a 0846     		mov	r0, r1
+  93 000c 03F11001 		add	r1, r3, #16
+  94 0010 FFF7FEBF 		b	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+  95              	.L20:
+  96 0014 34BF     		ite	cc
+  97 0016 0120     		movcc	r0, #1
+  98 0018 0020     		movcs	r0, #0
+  99 001a 7047     		bx	lr
+ 100              		.size	_ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE, .-_ZNK6uavcan10CanTxQu
+ 101              		.section	.text._ZN6uavcan10CanTxQueue21registerRejectedFrameEv,"ax",%progbits
+ 102              		.align	1
+ 103              		.global	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv
+ 104              		.thumb
+ 105              		.thumb_func
+ 106              		.type	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv, %function
+ 107              	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv:
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110              		@ link register save eliminated.
+ 111 0000 4369     		ldr	r3, [r0, #20]
+ 112 0002 5A1C     		adds	r2, r3, #1
+ 113 0004 1CBF     		itt	ne
+ 114 0006 0133     		addne	r3, r3, #1
+ARM GAS  /tmp/ccWskVMA.s 			page 3
+
+
+ 115 0008 4361     		strne	r3, [r0, #20]
+ 116 000a 7047     		bx	lr
+ 117              		.size	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv, .-_ZN6uavcan10CanTxQueue21registerRejectedF
+ 118              		.section	.text._ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	_ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv
+ 121              		.thumb
+ 122              		.thumb_func
+ 123              		.type	_ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv, %function
+ 124              	_ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv:
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              		@ link register save eliminated.
+ 128 0000 0068     		ldr	r0, [r0]
+ 129 0002 00B1     		cbz	r0, .L27
+ 130 0004 1030     		adds	r0, r0, #16
+ 131              	.L27:
+ 132 0006 7047     		bx	lr
+ 133              		.size	_ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv, .-_ZNK6uavcan10CanTxQueue26getTopPrio
+ 134              		.section	.text._ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE,"ax",%progbits
+ 135              		.align	1
+ 136              		.global	_ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.type	_ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE, %function
+ 140              	_ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE:
+ 141              		@ args = 0, pretend = 0, frame = 0
+ 142              		@ frame_needed = 0, uses_anonymous_args = 0
+ 143 0000 08B5     		push	{r3, lr}
+ 144 0002 0368     		ldr	r3, [r0]
+ 145 0004 43B1     		cbz	r3, .L31
+ 146 0006 0846     		mov	r0, r1
+ 147 0008 03F11001 		add	r1, r3, #16
+ 148 000c FFF7FEFF 		bl	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+ 149 0010 80F00100 		eor	r0, r0, #1
+ 150 0014 C0B2     		uxtb	r0, r0
+ 151 0016 08BD     		pop	{r3, pc}
+ 152              	.L31:
+ 153 0018 1846     		mov	r0, r3
+ 154 001a 08BD     		pop	{r3, pc}
+ 155              		.size	_ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE, .-_ZNK6uavcan10CanTxQueue
+ 156              		.section	.text._ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt,"ax",%pr
+ 157              		.align	1
+ 158              		.global	_ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt
+ 159              		.thumb
+ 160              		.thumb_func
+ 161              		.type	_ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt, %function
+ 162              	_ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt:
+ 163              		@ args = 4, pretend = 0, frame = 8
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165 0000 2DE9F341 		push	{r0, r1, r4, r5, r6, r7, r8, lr}
+ 166 0004 0446     		mov	r4, r0
+ 167 0006 0068     		ldr	r0, [r0]
+ 168 0008 1E46     		mov	r6, r3
+ 169 000a 0368     		ldr	r3, [r0]
+ 170 000c 0F46     		mov	r7, r1
+ 171 000e 9B68     		ldr	r3, [r3, #8]
+ARM GAS  /tmp/ccWskVMA.s 			page 4
+
+
+ 172 0010 9046     		mov	r8, r2
+ 173 0012 9847     		blx	r3
+ 174 0014 0546     		mov	r5, r0
+ 175 0016 C0B1     		cbz	r0, .L34
+ 176 0018 0368     		ldr	r3, [r0]
+ 177 001a 6A46     		mov	r2, sp
+ 178 001c 96E80300 		ldmia	r6, {r0, r1}
+ 179 0020 D3F808C0 		ldr	ip, [r3, #8]
+ 180 0024 8DE80300 		stmia	sp, {r0, r1}
+ 181 0028 BDF82030 		ldrh	r3, [sp, #32]
+ 182 002c 2846     		mov	r0, r5
+ 183 002e 4146     		mov	r1, r8
+ 184 0030 E047     		blx	ip
+ 185 0032 0028     		cmp	r0, #0
+ 186 0034 0BDD     		ble	.L33
+ 187 0036 04EB0714 		add	r4, r4, r7, lsl #4
+ 188 003a D4E91823 		ldrd	r2, [r4, #96]
+ 189 003e 1218     		adds	r2, r2, r0
+ 190 0040 43F10003 		adc	r3, r3, #0
+ 191 0044 C4E91823 		strd	r2, [r4, #96]
+ 192 0048 01E0     		b	.L33
+ 193              	.L34:
+ 194 004a 6FF00900 		mvn	r0, #9
+ 195              	.L33:
+ 196 004e 02B0     		add	sp, sp, #8
+ 197              		@ sp needed
+ 198 0050 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 199              		.size	_ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt, .-_ZN6uavcan12Ca
+ 200              		.section	.text._ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13M
+ 201              		.align	1
+ 202              		.global	_ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13Monotoni
+ 203              		.thumb
+ 204              		.thumb_func
+ 205              		.type	_ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicT
+ 206              	_ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicTimeE:
+ 207              		@ args = 0, pretend = 0, frame = 8
+ 208              		@ frame_needed = 0, uses_anonymous_args = 0
+ 209 0000 2DE9F341 		push	{r0, r1, r4, r5, r6, r7, r8, lr}
+ 210 0004 0C46     		mov	r4, r1
+ 211 0006 0668     		ldr	r6, [r0]
+ 212 0008 91F80080 		ldrb	r8, [r1]	@ zero_extendqisi2
+ 213 000c 4F78     		ldrb	r7, [r1, #1]	@ zero_extendqisi2
+ 214 000e 3168     		ldr	r1, [r6]
+ 215 0010 D1F814C0 		ldr	ip, [r1, #20]
+ 216 0014 93E80300 		ldmia	r3, {r0, r1}
+ 217 0018 6B46     		mov	r3, sp
+ 218 001a 8DE80300 		stmia	sp, {r0, r1}
+ 219 001e 3046     		mov	r0, r6
+ 220 0020 2146     		mov	r1, r4
+ 221 0022 E047     		blx	ip
+ 222 0024 0028     		cmp	r0, #0
+ 223 0026 A9BF     		itett	ge
+ 224 0028 2378     		ldrbge	r3, [r4]	@ zero_extendqisi2
+ 225 002a 6FF00300 		mvnlt	r0, #3
+ 226 002e 08EA0303 		andge	r3, r8, r3
+ 227 0032 2370     		strbge	r3, [r4]
+ 228 0034 A2BF     		ittt	ge
+ARM GAS  /tmp/ccWskVMA.s 			page 5
+
+
+ 229 0036 6378     		ldrbge	r3, [r4, #1]	@ zero_extendqisi2
+ 230 0038 3B40     		andge	r3, r3, r7
+ 231 003a 6370     		strbge	r3, [r4, #1]
+ 232 003c 02B0     		add	sp, sp, #8
+ 233              		@ sp needed
+ 234 003e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 235              		.size	_ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicT
+ 236              		.section	.text._ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClock
+ 237              		.align	1
+ 238              		.global	_ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj
+ 239              		.thumb
+ 240              		.thumb_func
+ 241              		.type	_ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj, %func
+ 242              	_ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj:
+ 243              		@ args = 4, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245 0000 2DE9F04D 		push	{r4, r5, r6, r7, r8, r10, fp, lr}
+ 246 0004 1F46     		mov	r7, r3
+ 247 0006 00F10804 		add	r4, r0, #8
+ 248 000a 0546     		mov	r5, r0
+ 249 000c 9046     		mov	r8, r2
+ 250 000e 2346     		mov	r3, r4
+ 251 0010 80E88200 		stmia	r0, {r1, r7}
+ 252 0014 089E     		ldr	r6, [sp, #32]
+ 253 0016 00F15C0E 		add	lr, r0, #92
+ 254              	.L42:
+ 255 001a 1A46     		mov	r2, r3
+ 256 001c 0020     		movs	r0, #0
+ 257 001e 42F8180F 		str	r0, [r2, #24]!
+ 258 0022 1846     		mov	r0, r3
+ 259              	.L40:
+ 260 0024 9042     		cmp	r0, r2
+ 261 0026 04D0     		beq	.L53
+ 262 0028 4FF0000C 		mov	ip, #0
+ 263 002c 00F801CB 		strb	ip, [r0], #1
+ 264 0030 F8E7     		b	.L40
+ 265              	.L53:
+ 266 0032 1C33     		adds	r3, r3, #28
+ 267 0034 7345     		cmp	r3, lr
+ 268 0036 F0D1     		bne	.L42
+ 269 0038 05F17003 		add	r3, r5, #112
+ 270 003c 05F1A002 		add	r2, r5, #160
+ 271              	.L43:
+ 272 0040 4FF0000A 		mov	r10, #0
+ 273 0044 4FF0000B 		mov	fp, #0
+ 274 0048 43E904AB 		strd	r10, [r3, #-16]
+ 275 004c 43E902AB 		strd	r10, [r3, #-8]
+ 276 0050 1033     		adds	r3, r3, #16
+ 277 0052 9342     		cmp	r3, r2
+ 278 0054 F4D1     		bne	.L43
+ 279 0056 0B68     		ldr	r3, [r1]
+ 280 0058 0846     		mov	r0, r1
+ 281 005a 1B69     		ldr	r3, [r3, #16]
+ 282 005c 9847     		blx	r3
+ 283 005e 85F89000 		strb	r0, [r5, #144]
+ 284 0062 0138     		subs	r0, r0, #1
+ 285 0064 0228     		cmp	r0, #2
+ARM GAS  /tmp/ccWskVMA.s 			page 6
+
+
+ 286 0066 01D9     		bls	.L44
+ 287 0068 1748     		ldr	r0, .L55
+ 288 006a 27E0     		b	.L52
+ 289              	.L44:
+ 290 006c 56B9     		cbnz	r6, .L45
+ 291 006e D8F80030 		ldr	r3, [r8]
+ 292 0072 4046     		mov	r0, r8
+ 293 0074 1B69     		ldr	r3, [r3, #16]
+ 294 0076 9847     		blx	r3
+ 295 0078 95F89060 		ldrb	r6, [r5, #144]	@ zero_extendqisi2
+ 296 007c 0136     		adds	r6, r6, #1
+ 297 007e B0FBF6F0 		udiv	r0, r0, r6
+ 298 0082 461C     		adds	r6, r0, #1
+ 299              	.L45:
+ 300 0084 2346     		mov	r3, r4
+ 301 0086 0021     		movs	r1, #0
+ 302 0088 10E0     		b	.L46
+ 303              	.L47:
+ 304 008a 1048     		ldr	r0, .L55+4
+ 305 008c 1A60     		str	r2, [r3]
+ 306 008e 5860     		str	r0, [r3, #4]
+ 307 0090 4FF6FF70 		movw	r0, #65535
+ 308 0094 B042     		cmp	r0, r6
+ 309 0096 28BF     		it	cs
+ 310 0098 3046     		movcs	r0, r6
+ 311 009a C3F80880 		str	r8, [r3, #8]
+ 312 009e 9881     		strh	r0, [r3, #12]	@ movhi
+ 313 00a0 DA81     		strh	r2, [r3, #14]	@ movhi
+ 314 00a2 1F61     		str	r7, [r3, #16]
+ 315 00a4 5A61     		str	r2, [r3, #20]
+ 316 00a6 9B61     		str	r3, [r3, #24]
+ 317 00a8 0131     		adds	r1, r1, #1
+ 318 00aa 1C33     		adds	r3, r3, #28
+ 319              	.L46:
+ 320 00ac 95F89020 		ldrb	r2, [r5, #144]	@ zero_extendqisi2
+ 321 00b0 9142     		cmp	r1, r2
+ 322 00b2 05DA     		bge	.L54
+ 323 00b4 9A69     		ldr	r2, [r3, #24]
+ 324 00b6 002A     		cmp	r2, #0
+ 325 00b8 E7D0     		beq	.L47
+ 326 00ba 0548     		ldr	r0, .L55+8
+ 327              	.L52:
+ 328 00bc FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 329              	.L54:
+ 330 00c0 2846     		mov	r0, r5
+ 331 00c2 BDE8F08D 		pop	{r4, r5, r6, r7, r8, r10, fp, pc}
+ 332              	.L56:
+ 333 00c6 00BF     		.align	2
+ 334              	.L55:
+ 335 00c8 13000000 		.word	.LC1
+ 336 00cc 08000000 		.word	_ZTVN6uavcan20LimitedPoolAllocatorE+8
+ 337 00d0 00000000 		.word	.LC0
+ 338              		.size	_ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj, .-_ZN
+ 339              		.global	_ZN6uavcan12CanIOManagerC1ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj
+ 340              		.thumb_set _ZN6uavcan12CanIOManagerC1ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj,_
+ 341              		.section	.text._ZNK6uavcan12CanIOManager17makePendingTxMaskEv,"ax",%progbits
+ 342              		.align	1
+ARM GAS  /tmp/ccWskVMA.s 			page 7
+
+
+ 343              		.global	_ZNK6uavcan12CanIOManager17makePendingTxMaskEv
+ 344              		.thumb
+ 345              		.thumb_func
+ 346              		.type	_ZNK6uavcan12CanIOManager17makePendingTxMaskEv, %function
+ 347              	_ZNK6uavcan12CanIOManager17makePendingTxMaskEv:
+ 348              		@ args = 0, pretend = 0, frame = 0
+ 349              		@ frame_needed = 0, uses_anonymous_args = 0
+ 350 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 351 0004 0024     		movs	r4, #0
+ 352 0006 0646     		mov	r6, r0
+ 353 0008 2546     		mov	r5, r4
+ 354 000a 90F89080 		ldrb	r8, [r0, #144]	@ zero_extendqisi2
+ 355              	.L58:
+ 356 000e E3B2     		uxtb	r3, r4
+ 357 0010 4345     		cmp	r3, r8
+ 358 0012 0ED2     		bcs	.L64
+ 359 0014 1C23     		movs	r3, #28
+ 360 0016 03FB0463 		mla	r3, r3, r4, r6
+ 361 001a 1F6A     		ldr	r7, [r3, #32]
+ 362 001c 3846     		mov	r0, r7
+ 363 001e FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 364 0022 3B68     		ldr	r3, [r7]
+ 365 0024 1BB1     		cbz	r3, .L59
+ 366 0026 0123     		movs	r3, #1
+ 367 0028 A340     		lsls	r3, r3, r4
+ 368 002a 1D43     		orrs	r5, r5, r3
+ 369 002c EDB2     		uxtb	r5, r5
+ 370              	.L59:
+ 371 002e 0134     		adds	r4, r4, #1
+ 372 0030 EDE7     		b	.L58
+ 373              	.L64:
+ 374 0032 2846     		mov	r0, r5
+ 375 0034 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 376              		.size	_ZNK6uavcan12CanIOManager17makePendingTxMaskEv, .-_ZNK6uavcan12CanIOManager17makePendingTxMa
+ 377              		.section	.text._ZNK6uavcan12CanIOManager20getIfacePerfCountersEh,"ax",%progbits
+ 378              		.align	1
+ 379              		.global	_ZNK6uavcan12CanIOManager20getIfacePerfCountersEh
+ 380              		.thumb
+ 381              		.thumb_func
+ 382              		.type	_ZNK6uavcan12CanIOManager20getIfacePerfCountersEh, %function
+ 383              	_ZNK6uavcan12CanIOManager20getIfacePerfCountersEh:
+ 384              		@ args = 0, pretend = 0, frame = 0
+ 385              		@ frame_needed = 0, uses_anonymous_args = 0
+ 386 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 387 0004 0446     		mov	r4, r0
+ 388 0006 0868     		ldr	r0, [r1]
+ 389 0008 0D46     		mov	r5, r1
+ 390 000a 0368     		ldr	r3, [r0]
+ 391 000c 1146     		mov	r1, r2
+ 392 000e 9B68     		ldr	r3, [r3, #8]
+ 393 0010 9046     		mov	r8, r2
+ 394 0012 9847     		blx	r3
+ 395 0014 10B1     		cbz	r0, .L66
+ 396 0016 B8F1020F 		cmp	r8, #2
+ 397 001a 08D9     		bls	.L67
+ 398              	.L66:
+ 399 001c 0022     		movs	r2, #0
+ARM GAS  /tmp/ccWskVMA.s 			page 8
+
+
+ 400 001e 0023     		movs	r3, #0
+ 401 0020 C4E90023 		strd	r2, [r4]
+ 402 0024 C4E90223 		strd	r2, [r4, #8]
+ 403 0028 C4E90423 		strd	r2, [r4, #16]
+ 404 002c 1DE0     		b	.L65
+ 405              	.L67:
+ 406 002e 0368     		ldr	r3, [r0]
+ 407 0030 9B69     		ldr	r3, [r3, #24]
+ 408 0032 9847     		blx	r3
+ 409 0034 0646     		mov	r6, r0
+ 410 0036 0F46     		mov	r7, r1
+ 411 0038 1C23     		movs	r3, #28
+ 412 003a 03FB0853 		mla	r3, r3, r8, r5
+ 413 003e D3F82090 		ldr	r9, [r3, #32]
+ 414 0042 4846     		mov	r0, r9
+ 415 0044 FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 416 0048 D9F81430 		ldr	r3, [r9, #20]
+ 417 004c F018     		adds	r0, r6, r3
+ 418 004e 47F10001 		adc	r1, r7, #0
+ 419 0052 05EB0813 		add	r3, r5, r8, lsl #4
+ 420 0056 D3E91A67 		ldrd	r6, [r3, #104]
+ 421 005a C4E90401 		strd	r0, [r4, #16]
+ 422 005e D3E91823 		ldrd	r2, [r3, #96]
+ 423 0062 C4E90267 		strd	r6, [r4, #8]
+ 424 0066 C4E90023 		strd	r2, [r4]
+ 425              	.L65:
+ 426 006a 2046     		mov	r0, r4
+ 427 006c BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 428              		.size	_ZNK6uavcan12CanIOManager20getIfacePerfCountersEh, .-_ZNK6uavcan12CanIOManager20getIfacePerf
+ 429              		.section	.text._ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_,"axG",%progbits,_ZN
+ 430              		.align	1
+ 431              		.weak	_ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_
+ 432              		.thumb
+ 433              		.thumb_func
+ 434              		.type	_ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_, %function
+ 435              	_ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_:
+ 436              		@ args = 0, pretend = 0, frame = 0
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438              		@ link register save eliminated.
+ 439 0000 0368     		ldr	r3, [r0]
+ 440 0002 6BB1     		cbz	r3, .L72
+ 441 0004 61B1     		cbz	r1, .L72
+ 442 0006 8B42     		cmp	r3, r1
+ 443 0008 03D1     		bne	.L75
+ 444 000a 1B68     		ldr	r3, [r3]
+ 445 000c 0360     		str	r3, [r0]
+ 446 000e 7047     		bx	lr
+ 447              	.L77:
+ 448 0010 1346     		mov	r3, r2
+ 449              	.L75:
+ 450 0012 1A68     		ldr	r2, [r3]
+ 451 0014 22B1     		cbz	r2, .L72
+ 452 0016 8A42     		cmp	r2, r1
+ 453 0018 FAD1     		bne	.L77
+ 454 001a 0A68     		ldr	r2, [r1]
+ 455 001c 1A60     		str	r2, [r3]
+ 456 001e 7047     		bx	lr
+ARM GAS  /tmp/ccWskVMA.s 			page 9
+
+
+ 457              	.L72:
+ 458 0020 7047     		bx	lr
+ 459              		.size	_ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_, .-_ZN6uavcan14LinkedListRoo
+ 460              		.section	.text._ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE,"ax",%progbits
+ 461              		.align	1
+ 462              		.global	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+ 463              		.thumb
+ 464              		.thumb_func
+ 465              		.type	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE, %function
+ 466              	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE:
+ 467              		@ args = 0, pretend = 0, frame = 0
+ 468              		@ frame_needed = 0, uses_anonymous_args = 0
+ 469 0000 38B5     		push	{r3, r4, r5, lr}
+ 470 0002 0C46     		mov	r4, r1
+ 471 0004 0968     		ldr	r1, [r1]
+ 472 0006 0546     		mov	r5, r0
+ 473 0008 39B1     		cbz	r1, .L84
+ 474 000a FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_
+ 475 000e 2046     		mov	r0, r4
+ 476 0010 291D     		adds	r1, r5, #4
+ 477 0012 BDE83840 		pop	{r3, r4, r5, lr}
+ 478 0016 FFF7FEBF 		b	_ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE
+ 479              	.L84:
+ 480 001a 38BD     		pop	{r3, r4, r5, pc}
+ 481              		.size	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE, .-_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+ 482              		.section	.text._ZN6uavcan10CanTxQueueD2Ev,"ax",%progbits
+ 483              		.align	1
+ 484              		.global	_ZN6uavcan10CanTxQueueD2Ev
+ 485              		.thumb
+ 486              		.thumb_func
+ 487              		.type	_ZN6uavcan10CanTxQueueD2Ev, %function
+ 488              	_ZN6uavcan10CanTxQueueD2Ev:
+ 489              		@ args = 0, pretend = 0, frame = 8
+ 490              		@ frame_needed = 0, uses_anonymous_args = 0
+ 491 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 492 0002 0446     		mov	r4, r0
+ 493 0004 0368     		ldr	r3, [r0]
+ 494 0006 0193     		str	r3, [sp, #4]
+ 495              	.L87:
+ 496 0008 019B     		ldr	r3, [sp, #4]
+ 497 000a 33B1     		cbz	r3, .L89
+ 498 000c 1D68     		ldr	r5, [r3]
+ 499 000e 2046     		mov	r0, r4
+ 500 0010 01A9     		add	r1, sp, #4
+ 501 0012 FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+ 502 0016 0195     		str	r5, [sp, #4]
+ 503 0018 F6E7     		b	.L87
+ 504              	.L89:
+ 505 001a 2046     		mov	r0, r4
+ 506 001c 03B0     		add	sp, sp, #12
+ 507              		@ sp needed
+ 508 001e 30BD     		pop	{r4, r5, pc}
+ 509              		.size	_ZN6uavcan10CanTxQueueD2Ev, .-_ZN6uavcan10CanTxQueueD2Ev
+ 510              		.global	_ZN6uavcan10CanTxQueueD1Ev
+ 511              		.thumb_set _ZN6uavcan10CanTxQueueD1Ev,_ZN6uavcan10CanTxQueueD2Ev
+ 512              		.section	.text._ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt,"ax",%prog
+ 513              		.align	1
+ARM GAS  /tmp/ccWskVMA.s 			page 10
+
+
+ 514              		.global	_ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt
+ 515              		.thumb
+ 516              		.thumb_func
+ 517              		.type	_ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt, %function
+ 518              	_ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt:
+ 519              		@ args = 4, pretend = 0, frame = 16
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 522 0004 1646     		mov	r6, r2
+ 523 0006 0D46     		mov	r5, r1
+ 524 0008 0169     		ldr	r1, [r0, #16]
+ 525 000a 1F46     		mov	r7, r3
+ 526 000c 0B68     		ldr	r3, [r1]
+ 527 000e 85B0     		sub	sp, sp, #20
+ 528 0010 9B68     		ldr	r3, [r3, #8]
+ 529 0012 0446     		mov	r4, r0
+ 530 0014 02A8     		add	r0, sp, #8
+ 531 0016 9847     		blx	r3
+ 532 0018 D6E90023 		ldrd	r2, [r6]
+ 533 001c DDE90201 		ldrd	r0, [sp, #8]
+ 534 0020 9942     		cmp	r1, r3
+ 535 0022 08BF     		it	eq
+ 536 0024 9042     		cmpeq	r0, r2
+ 537 0026 03D3     		bcc	.L91
+ 538 0028 2046     		mov	r0, r4
+ 539 002a FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv
+ 540 002e 74E0     		b	.L90
+ 541              	.L91:
+ 542 0030 04F10409 		add	r9, r4, #4
+ 543 0034 4846     		mov	r0, r9
+ 544 0036 2821     		movs	r1, #40
+ 545 0038 FFF7FEFF 		bl	_ZN6uavcan20LimitedPoolAllocator8allocateEj
+ 546 003c 8046     		mov	r8, r0
+ 547 003e 0028     		cmp	r0, #0
+ 548 0040 46D1     		bne	.L123
+ 549 0042 2368     		ldr	r3, [r4]
+ 550 0044 0193     		str	r3, [sp, #4]
+ 551              	.L94:
+ 552 0046 019B     		ldr	r3, [sp, #4]
+ 553 0048 9BB1     		cbz	r3, .L127
+ 554 004a D3E90201 		ldrd	r0, [r3, #8]
+ 555 004e D3F80080 		ldr	r8, [r3]
+ 556 0052 DDE90223 		ldrd	r2, [sp, #8]
+ 557 0056 9942     		cmp	r1, r3
+ 558 0058 08BF     		it	eq
+ 559 005a 9042     		cmpeq	r0, r2
+ 560 005c 06D2     		bcs	.L95
+ 561 005e 2046     		mov	r0, r4
+ 562 0060 FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv
+ 563 0064 2046     		mov	r0, r4
+ 564 0066 01A9     		add	r1, sp, #4
+ 565 0068 FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+ 566              	.L95:
+ 567 006c CDF80480 		str	r8, [sp, #4]
+ 568 0070 E9E7     		b	.L94
+ 569              	.L127:
+ 570 0072 4846     		mov	r0, r9
+ARM GAS  /tmp/ccWskVMA.s 			page 11
+
+
+ 571 0074 2821     		movs	r1, #40
+ 572 0076 FFF7FEFF 		bl	_ZN6uavcan20LimitedPoolAllocator8allocateEj
+ 573 007a 8046     		mov	r8, r0
+ 574 007c 40BB     		cbnz	r0, .L123
+ 575 007e 2046     		mov	r0, r4
+ 576 0080 FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv
+ 577 0084 D4F80080 		ldr	r8, [r4]
+ 578 0088 B8F1000F 		cmp	r8, #0
+ 579 008c 45D0     		beq	.L90
+ 580 008e CDF80480 		str	r8, [sp, #4]
+ 581              	.L99:
+ 582 0092 0198     		ldr	r0, [sp, #4]
+ 583 0094 08F11001 		add	r1, r8, #16
+ 584 0098 98F82020 		ldrb	r2, [r8, #32]	@ zero_extendqisi2
+ 585 009c FFF7FEFF 		bl	_ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE
+ 586 00a0 08B1     		cbz	r0, .L98
+ 587 00a2 CDF80480 		str	r8, [sp, #4]
+ 588              	.L98:
+ 589 00a6 D8F80080 		ldr	r8, [r8]
+ 590 00aa B8F1000F 		cmp	r8, #0
+ 591 00ae F0D1     		bne	.L99
+ 592 00b0 0198     		ldr	r0, [sp, #4]
+ 593 00b2 2946     		mov	r1, r5
+ 594 00b4 3A46     		mov	r2, r7
+ 595 00b6 FFF7FEFF 		bl	_ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE
+ 596 00ba 70BB     		cbnz	r0, .L90
+ 597 00bc 2046     		mov	r0, r4
+ 598 00be 01A9     		add	r1, sp, #4
+ 599 00c0 FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+ 600 00c4 4846     		mov	r0, r9
+ 601 00c6 2821     		movs	r1, #40
+ 602 00c8 FFF7FEFF 		bl	_ZN6uavcan20LimitedPoolAllocator8allocateEj
+ 603 00cc 8046     		mov	r8, r0
+ 604 00ce 20B3     		cbz	r0, .L90
+ 605              	.L123:
+ 606 00d0 D6E90023 		ldrd	r2, [r6]
+ 607 00d4 C8E90223 		strd	r2, [r8, #8]
+ 608 00d8 0021     		movs	r1, #0
+ 609 00da C8F80010 		str	r1, [r8]
+ 610 00de 08F11006 		add	r6, r8, #16
+ 611 00e2 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 612 00e6 86E80F00 		stmia	r6, {r0, r1, r2, r3}
+ 613 00ea BDF83030 		ldrh	r3, [sp, #48]
+ 614 00ee 88F82070 		strb	r7, [r8, #32]
+ 615 00f2 A8F82230 		strh	r3, [r8, #34]	@ movhi
+ 616 00f6 2046     		mov	r0, r4
+ 617 00f8 4146     		mov	r1, r8
+ 618 00fa FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_
+ 619              	.L126:
+ 620 00fe 2168     		ldr	r1, [r4]
+ 621 0100 31B1     		cbz	r1, .L101
+ 622 0102 2846     		mov	r0, r5
+ 623 0104 1031     		adds	r1, r1, #16
+ 624 0106 FFF7FEFF 		bl	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+ 625 010a 08B9     		cbnz	r0, .L101
+ 626 010c 2468     		ldr	r4, [r4]
+ 627 010e F6E7     		b	.L126
+ARM GAS  /tmp/ccWskVMA.s 			page 12
+
+
+ 628              	.L101:
+ 629 0110 2368     		ldr	r3, [r4]
+ 630 0112 C8F80030 		str	r3, [r8]
+ 631 0116 C4F80080 		str	r8, [r4]
+ 632              	.L90:
+ 633 011a 05B0     		add	sp, sp, #20
+ 634              		@ sp needed
+ 635 011c BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 636              		.size	_ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt, .-_ZN6uavcan10CanT
+ 637              		.section	.text._ZN6uavcan10CanTxQueue4peekEv,"ax",%progbits
+ 638              		.align	1
+ 639              		.global	_ZN6uavcan10CanTxQueue4peekEv
+ 640              		.thumb
+ 641              		.thumb_func
+ 642              		.type	_ZN6uavcan10CanTxQueue4peekEv, %function
+ 643              	_ZN6uavcan10CanTxQueue4peekEv:
+ 644              		@ args = 0, pretend = 0, frame = 16
+ 645              		@ frame_needed = 0, uses_anonymous_args = 0
+ 646 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 647 0002 0646     		mov	r6, r0
+ 648 0004 0169     		ldr	r1, [r0, #16]
+ 649 0006 02A8     		add	r0, sp, #8
+ 650 0008 0B68     		ldr	r3, [r1]
+ 651 000a 9B68     		ldr	r3, [r3, #8]
+ 652 000c 9847     		blx	r3
+ 653 000e 3368     		ldr	r3, [r6]
+ 654 0010 0193     		str	r3, [sp, #4]
+ 655              	.L129:
+ 656 0012 0198     		ldr	r0, [sp, #4]
+ 657 0014 88B1     		cbz	r0, .L130
+ 658 0016 D0E90245 		ldrd	r4, [r0, #8]
+ 659 001a DDE90223 		ldrd	r2, [sp, #8]
+ 660 001e 9D42     		cmp	r5, r3
+ 661 0020 08BF     		it	eq
+ 662 0022 9442     		cmpeq	r4, r2
+ 663 0024 09D2     		bcs	.L130
+ 664 0026 0468     		ldr	r4, [r0]
+ 665 0028 3046     		mov	r0, r6
+ 666 002a FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue21registerRejectedFrameEv
+ 667 002e 3046     		mov	r0, r6
+ 668 0030 01A9     		add	r1, sp, #4
+ 669 0032 FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+ 670 0036 0194     		str	r4, [sp, #4]
+ 671 0038 EBE7     		b	.L129
+ 672              	.L130:
+ 673 003a 04B0     		add	sp, sp, #16
+ 674              		@ sp needed
+ 675 003c 70BD     		pop	{r4, r5, r6, pc}
+ 676              		.size	_ZN6uavcan10CanTxQueue4peekEv, .-_ZN6uavcan10CanTxQueue4peekEv
+ 677              		.section	.text._ZN6uavcan12CanIOManager15sendFromTxQueueEh,"ax",%progbits
+ 678              		.align	1
+ 679              		.global	_ZN6uavcan12CanIOManager15sendFromTxQueueEh
+ 680              		.thumb
+ 681              		.thumb_func
+ 682              		.type	_ZN6uavcan12CanIOManager15sendFromTxQueueEh, %function
+ 683              	_ZN6uavcan12CanIOManager15sendFromTxQueueEh:
+ 684              		@ args = 0, pretend = 0, frame = 16
+ARM GAS  /tmp/ccWskVMA.s 			page 13
+
+
+ 685              		@ frame_needed = 0, uses_anonymous_args = 0
+ 686 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 687 0002 1C25     		movs	r5, #28
+ 688 0004 05FB0105 		mla	r5, r5, r1, r0
+ 689 0008 2F6A     		ldr	r7, [r5, #32]
+ 690 000a 87B0     		sub	sp, sp, #28
+ 691 000c 0646     		mov	r6, r0
+ 692 000e 3846     		mov	r0, r7
+ 693 0010 0C46     		mov	r4, r1
+ 694 0012 FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 695 0016 3846     		mov	r0, r7
+ 696 0018 FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue4peekEv
+ 697 001c 0835     		adds	r5, r5, #8
+ 698 001e 0246     		mov	r2, r0
+ 699 0020 0390     		str	r0, [sp, #12]
+ 700 0022 B8B1     		cbz	r0, .L134
+ 701 0024 04AB     		add	r3, sp, #16
+ 702 0026 00F10801 		add	r1, r0, #8
+ 703 002a 03C9     		ldmia	r1, {r0, r1}
+ 704 002c 83E80300 		stmia	r3, {r0, r1}
+ 705 0030 518C     		ldrh	r1, [r2, #34]
+ 706 0032 3046     		mov	r0, r6
+ 707 0034 0091     		str	r1, [sp]
+ 708 0036 1032     		adds	r2, r2, #16
+ 709 0038 2146     		mov	r1, r4
+ 710 003a FFF7FEFF 		bl	_ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt
+ 711 003e 041E     		subs	r4, r0, #0
+ 712 0040 09DD     		ble	.L135
+ 713 0042 AD69     		ldr	r5, [r5, #24]
+ 714 0044 2846     		mov	r0, r5
+ 715 0046 FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 716 004a 2846     		mov	r0, r5
+ 717 004c 03A9     		add	r1, sp, #12
+ 718 004e FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+ 719 0052 00E0     		b	.L135
+ 720              	.L134:
+ 721 0054 00E0     		b	.L133
+ 722              	.L135:
+ 723 0056 2046     		mov	r0, r4
+ 724              	.L133:
+ 725 0058 07B0     		add	sp, sp, #28
+ 726              		@ sp needed
+ 727 005a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 728              		.size	_ZN6uavcan12CanIOManager15sendFromTxQueueEh, .-_ZN6uavcan12CanIOManager15sendFromTxQueueEh
+ 729              		.section	.text._ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt,"ax",%progb
+ 730              		.align	1
+ 731              		.global	_ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt
+ 732              		.thumb
+ 733              		.thumb_func
+ 734              		.type	_ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt, %function
+ 735              	_ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt:
+ 736              		@ args = 0, pretend = 0, frame = 40
+ 737              		@ frame_needed = 0, uses_anonymous_args = 0
+ 738 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 739 0004 0446     		mov	r4, r0
+ 740 0006 0E46     		mov	r6, r1
+ 741 0008 1746     		mov	r7, r2
+ARM GAS  /tmp/ccWskVMA.s 			page 14
+
+
+ 742 000a 90F89050 		ldrb	r5, [r0, #144]	@ zero_extendqisi2
+ 743 000e 9846     		mov	r8, r3
+ 744 0010 0123     		movs	r3, #1
+ 745 0012 AB40     		lsls	r3, r3, r5
+ 746 0014 013B     		subs	r3, r3, #1
+ 747 0016 8DB0     		sub	sp, sp, #52
+ 748 0018 DBB2     		uxtb	r3, r3
+ 749 001a 0393     		str	r3, [sp, #12]
+ 750              	.L151:
+ 751 001c 4FF00009 		mov	r9, #0
+ 752 0020 2046     		mov	r0, r4
+ 753 0022 8DF81690 		strb	r9, [sp, #22]
+ 754 0026 8DF81790 		strb	r9, [sp, #23]
+ 755 002a FFF7FEFF 		bl	_ZNK6uavcan12CanIOManager17makePendingTxMaskEv
+ 756 002e 0DF1200A 		add	r10, sp, #32
+ 757 0032 9DF80C30 		ldrb	r3, [sp, #12]	@ zero_extendqisi2
+ 758 0036 8DF81700 		strb	r0, [sp, #23]
+ 759 003a 4946     		mov	r1, r9
+ 760 003c 5046     		mov	r0, r10
+ 761 003e 0C22     		movs	r2, #12
+ 762 0040 8DF81630 		strb	r3, [sp, #22]
+ 763 0044 FFF7FEFF 		bl	memset
+ 764              	.L137:
+ 765 0048 A945     		cmp	r9, r5
+ 766 004a 10DA     		bge	.L170
+ 767 004c 1C23     		movs	r3, #28
+ 768 004e 03FB0943 		mla	r3, r3, r9, r4
+ 769 0052 D3F820B0 		ldr	fp, [r3, #32]
+ 770 0056 5846     		mov	r0, fp
+ 771 0058 FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 772 005c DBF80030 		ldr	r3, [fp]
+ 773 0060 03B1     		cbz	r3, .L156
+ 774 0062 1033     		adds	r3, r3, #16
+ 775              	.L156:
+ 776 0064 4AF82930 		str	r3, [r10, r9, lsl #2]
+ 777 0068 09F10109 		add	r9, r9, #1
+ 778 006c ECE7     		b	.L137
+ 779              	.L170:
+ 780 006e 06AB     		add	r3, sp, #24
+ 781 0070 97E80300 		ldmia	r7, {r0, r1}
+ 782 0074 5246     		mov	r2, r10
+ 783 0076 83E80300 		stmia	r3, {r0, r1}
+ 784 007a 2046     		mov	r0, r4
+ 785 007c 0DF11601 		add	r1, sp, #22
+ 786 0080 FFF7FEFF 		bl	_ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicTime
+ 787 0084 0028     		cmp	r0, #0
+ 788 0086 56DB     		blt	.L155
+ 789 0088 4FF00009 		mov	r9, #0
+ 790              	.L142:
+ 791 008c 5FFA89F1 		uxtb	r1, r9
+ 792 0090 A942     		cmp	r1, r5
+ 793 0092 0BD2     		bcs	.L171
+ 794 0094 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ 795 0098 43FA09F3 		asr	r3, r3, r9
+ 796 009c D807     		lsls	r0, r3, #31
+ 797 009e 02D5     		bpl	.L143
+ 798 00a0 2046     		mov	r0, r4
+ARM GAS  /tmp/ccWskVMA.s 			page 15
+
+
+ 799 00a2 FFF7FEFF 		bl	_ZN6uavcan12CanIOManager15sendFromTxQueueEh
+ 800              	.L143:
+ 801 00a6 09F10109 		add	r9, r9, #1
+ 802 00aa EFE7     		b	.L142
+ 803              	.L171:
+ 804 00ac 4FF00009 		mov	r9, #0
+ 805              	.L145:
+ 806 00b0 5FFA89FB 		uxtb	fp, r9
+ 807 00b4 AB45     		cmp	fp, r5
+ 808 00b6 2ED2     		bcs	.L172
+ 809 00b8 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 810 00bc 43FA09F3 		asr	r3, r3, r9
+ 811 00c0 DA07     		lsls	r2, r3, #31
+ 812 00c2 25D5     		bpl	.L157
+ 813 00c4 2068     		ldr	r0, [r4]
+ 814 00c6 5946     		mov	r1, fp
+ 815 00c8 0368     		ldr	r3, [r0]
+ 816 00ca 9B68     		ldr	r3, [r3, #8]
+ 817 00cc 9847     		blx	r3
+ 818 00ce F8B1     		cbz	r0, .L157
+ 819 00d0 0368     		ldr	r3, [r0]
+ 820 00d2 CDF80080 		str	r8, [sp]
+ 821 00d6 D3F80CC0 		ldr	ip, [r3, #12]
+ 822 00da 3146     		mov	r1, r6
+ 823 00dc 06F11002 		add	r2, r6, #16
+ 824 00e0 06F11803 		add	r3, r6, #24
+ 825 00e4 E047     		blx	ip
+ 826 00e6 0028     		cmp	r0, #0
+ 827 00e8 12D0     		beq	.L157
+ 828 00ea 86F820B0 		strb	fp, [r6, #32]
+ 829 00ee 0DDD     		ble	.L147
+ 830 00f0 B8F80030 		ldrh	r3, [r8]
+ 831 00f4 DB07     		lsls	r3, r3, #31
+ 832 00f6 20D4     		bmi	.L152
+ 833 00f8 04EB0914 		add	r4, r4, r9, lsl #4
+ 834 00fc D4E91A23 		ldrd	r2, [r4, #104]
+ 835 0100 0132     		adds	r2, r2, #1
+ 836 0102 43F10003 		adc	r3, r3, #0
+ 837 0106 C4E91A23 		strd	r2, [r4, #104]
+ 838 010a 16E0     		b	.L152
+ 839              	.L147:
+ 840 010c 13D1     		bne	.L155
+ 841 010e 14E0     		b	.L152
+ 842              	.L157:
+ 843 0110 09F10109 		add	r9, r9, #1
+ 844 0114 CCE7     		b	.L145
+ 845              	.L172:
+ 846 0116 6168     		ldr	r1, [r4, #4]
+ 847 0118 5046     		mov	r0, r10
+ 848 011a 0B68     		ldr	r3, [r1]
+ 849 011c 9B68     		ldr	r3, [r3, #8]
+ 850 011e 9847     		blx	r3
+ 851 0120 D7E90023 		ldrd	r2, [r7]
+ 852 0124 DDE90801 		ldrd	r0, [sp, #32]
+ 853 0128 9942     		cmp	r1, r3
+ 854 012a 08BF     		it	eq
+ 855 012c 9042     		cmpeq	r0, r2
+ARM GAS  /tmp/ccWskVMA.s 			page 16
+
+
+ 856 012e FFF475AF 		bcc	.L151
+ 857 0132 0020     		movs	r0, #0
+ 858 0134 01E0     		b	.L152
+ 859              	.L155:
+ 860 0136 6FF00300 		mvn	r0, #3
+ 861              	.L152:
+ 862 013a 0DB0     		add	sp, sp, #52
+ 863              		@ sp needed
+ 864 013c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 865              		.size	_ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt, .-_ZN6uavcan12CanIO
+ 866              		.section	.text._ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue
+ 867              		.align	1
+ 868              		.global	_ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt
+ 869              		.thumb
+ 870              		.thumb_func
+ 871              		.type	_ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt, %
+ 872              	_ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt:
+ 873              		@ args = 12, pretend = 0, frame = 56
+ 874              		@ frame_needed = 0, uses_anonymous_args = 0
+ 875 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 876 0004 9146     		mov	r9, r2
+ 877 0006 1E46     		mov	r6, r3
+ 878 0008 91B0     		sub	sp, sp, #68
+ 879 000a 9DF86C30 		ldrb	r3, [sp, #108]	@ zero_extendqisi2
+ 880 000e 90F890A0 		ldrb	r10, [r0, #144]	@ zero_extendqisi2
+ 881 0012 0593     		str	r3, [sp, #20]
+ 882 0014 0125     		movs	r5, #1
+ 883 0016 BDF87030 		ldrh	r3, [sp, #112]
+ 884 001a 05FA0AF5 		lsl	r5, r5, r10
+ 885 001e 0493     		str	r3, [sp, #16]
+ 886 0020 6B1E     		subs	r3, r5, #1
+ 887 0022 9DF86850 		ldrb	r5, [sp, #104]	@ zero_extendqisi2
+ 888 0026 0446     		mov	r4, r0
+ 889 0028 8846     		mov	r8, r1
+ 890 002a D9E90001 		ldrd	r0, [r9]
+ 891 002e 1D40     		ands	r5, r5, r3
+ 892 0030 D6E90023 		ldrd	r2, [r6]
+ 893 0034 9942     		cmp	r1, r3
+ 894 0036 08BF     		it	eq
+ 895 0038 9042     		cmpeq	r0, r2
+ 896 003a 3CBF     		itt	cc
+ 897 003c 99E80300 		ldmiacc	r9, {r0, r1}
+ 898 0040 86E80300 		stmiacc	r6, {r0, r1}
+ 899 0044 0023     		movs	r3, #0
+ 900 0046 0393     		str	r3, [sp, #12]
+ 901              	.L175:
+ 902 0048 002D     		cmp	r5, #0
+ 903 004a 00F0BC80 		beq	.L176
+ 904 004e 4FF0000B 		mov	fp, #0
+ 905 0052 2046     		mov	r0, r4
+ 906 0054 8DF826B0 		strb	fp, [sp, #38]
+ 907 0058 8DF827B0 		strb	fp, [sp, #39]
+ 908 005c FFF7FEFF 		bl	_ZNK6uavcan12CanIOManager17makePendingTxMaskEv
+ 909 0060 0CAF     		add	r7, sp, #48
+ 910 0062 2843     		orrs	r0, r0, r5
+ 911 0064 8DF82700 		strb	r0, [sp, #39]
+ 912 0068 5946     		mov	r1, fp
+ARM GAS  /tmp/ccWskVMA.s 			page 17
+
+
+ 913 006a 3846     		mov	r0, r7
+ 914 006c 0C22     		movs	r2, #12
+ 915 006e FFF7FEFF 		bl	memset
+ 916              	.L177:
+ 917 0072 D345     		cmp	fp, r10
+ 918 0074 1DDA     		bge	.L221
+ 919 0076 1C22     		movs	r2, #28
+ 920 0078 02FB0B42 		mla	r2, r2, fp, r4
+ 921 007c 126A     		ldr	r2, [r2, #32]
+ 922 007e 1046     		mov	r0, r2
+ 923 0080 0692     		str	r2, [sp, #24]
+ 924 0082 FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 925 0086 45FA0BF1 		asr	r1, r5, fp
+ 926 008a 11F0010F 		tst	r1, #1
+ 927 008e 069A     		ldr	r2, [sp, #24]
+ 928 0090 07D0     		beq	.L178
+ 929 0092 1046     		mov	r0, r2
+ 930 0094 4146     		mov	r1, r8
+ 931 0096 FFF7FEFF 		bl	_ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE
+ 932 009a 069A     		ldr	r2, [sp, #24]
+ 933 009c 08B9     		cbnz	r0, .L178
+ 934 009e 4246     		mov	r2, r8
+ 935 00a0 02E0     		b	.L181
+ 936              	.L178:
+ 937 00a2 1268     		ldr	r2, [r2]
+ 938 00a4 02B1     		cbz	r2, .L181
+ 939 00a6 1032     		adds	r2, r2, #16
+ 940              	.L181:
+ 941 00a8 47F82B20 		str	r2, [r7, fp, lsl #2]
+ 942 00ac 0BF1010B 		add	fp, fp, #1
+ 943 00b0 DFE7     		b	.L177
+ 944              	.L221:
+ 945 00b2 0AAB     		add	r3, sp, #40
+ 946 00b4 96E80300 		ldmia	r6, {r0, r1}
+ 947 00b8 3A46     		mov	r2, r7
+ 948 00ba 83E80300 		stmia	r3, {r0, r1}
+ 949 00be 2046     		mov	r0, r4
+ 950 00c0 0DF12601 		add	r1, sp, #38
+ 951 00c4 FFF7FEFF 		bl	_ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicTime
+ 952 00c8 0028     		cmp	r0, #0
+ 953 00ca 02DA     		bge	.L183
+ 954 00cc 6FF00300 		mvn	r0, #3
+ 955 00d0 7AE0     		b	.L184
+ 956              	.L183:
+ 957 00d2 4FF0000B 		mov	fp, #0
+ 958              	.L185:
+ 959 00d6 5FFA8BF2 		uxtb	r2, fp
+ 960 00da 5245     		cmp	r2, r10
+ 961 00dc 42D2     		bcs	.L222
+ 962 00de 9DF82730 		ldrb	r3, [sp, #39]	@ zero_extendqisi2
+ 963 00e2 43FA0BF3 		asr	r3, r3, fp
+ 964 00e6 D807     		lsls	r0, r3, #31
+ 965 00e8 39D5     		bpl	.L186
+ 966 00ea 45FA0BF3 		asr	r3, r5, fp
+ 967 00ee D907     		lsls	r1, r3, #31
+ 968 00f0 2CD5     		bpl	.L187
+ 969 00f2 1C23     		movs	r3, #28
+ARM GAS  /tmp/ccWskVMA.s 			page 18
+
+
+ 970 00f4 03FB0B43 		mla	r3, r3, fp, r4
+ 971 00f8 1B6A     		ldr	r3, [r3, #32]
+ 972 00fa 0792     		str	r2, [sp, #28]
+ 973 00fc 1846     		mov	r0, r3
+ 974 00fe 0693     		str	r3, [sp, #24]
+ 975 0100 FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 976 0104 069B     		ldr	r3, [sp, #24]
+ 977 0106 4146     		mov	r1, r8
+ 978 0108 1846     		mov	r0, r3
+ 979 010a FFF7FEFF 		bl	_ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE
+ 980 010e 079A     		ldr	r2, [sp, #28]
+ 981 0110 98B9     		cbnz	r0, .L188
+ 982              	.L190:
+ 983 0112 99E80300 		ldmia	r9, {r0, r1}
+ 984 0116 0CAB     		add	r3, sp, #48
+ 985 0118 83E80300 		stmia	r3, {r0, r1}
+ 986 011c 0499     		ldr	r1, [sp, #16]
+ 987 011e 2046     		mov	r0, r4
+ 988 0120 0091     		str	r1, [sp]
+ 989 0122 1146     		mov	r1, r2
+ 990 0124 4246     		mov	r2, r8
+ 991 0126 FFF7FEFF 		bl	_ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt
+ 992 012a 0028     		cmp	r0, #0
+ 993 012c 17DD     		ble	.L186
+ 994 012e 0123     		movs	r3, #1
+ 995 0130 03FA0BF3 		lsl	r3, r3, fp
+ 996 0134 25EA0305 		bic	r5, r5, r3
+ 997 0138 0EE0     		b	.L201
+ 998              	.L188:
+ 999 013a 1146     		mov	r1, r2
+ 1000 013c 2046     		mov	r0, r4
+ 1001 013e 0692     		str	r2, [sp, #24]
+ 1002 0140 FFF7FEFF 		bl	_ZN6uavcan12CanIOManager15sendFromTxQueueEh
+ 1003 0144 0028     		cmp	r0, #0
+ 1004 0146 069A     		ldr	r2, [sp, #24]
+ 1005 0148 06DC     		bgt	.L201
+ 1006 014a E2E7     		b	.L190
+ 1007              	.L187:
+ 1008 014c 2046     		mov	r0, r4
+ 1009 014e 1146     		mov	r1, r2
+ 1010 0150 FFF7FEFF 		bl	_ZN6uavcan12CanIOManager15sendFromTxQueueEh
+ 1011 0154 0028     		cmp	r0, #0
+ 1012 0156 02DD     		ble	.L186
+ 1013              	.L201:
+ 1014 0158 039B     		ldr	r3, [sp, #12]
+ 1015 015a 0133     		adds	r3, r3, #1
+ 1016 015c 0393     		str	r3, [sp, #12]
+ 1017              	.L186:
+ 1018 015e 0BF1010B 		add	fp, fp, #1
+ 1019 0162 B8E7     		b	.L185
+ 1020              	.L222:
+ 1021 0164 6168     		ldr	r1, [r4, #4]
+ 1022 0166 3846     		mov	r0, r7
+ 1023 0168 0B68     		ldr	r3, [r1]
+ 1024 016a 9B68     		ldr	r3, [r3, #8]
+ 1025 016c 9847     		blx	r3
+ 1026 016e D6E90023 		ldrd	r2, [r6]
+ARM GAS  /tmp/ccWskVMA.s 			page 19
+
+
+ 1027 0172 DDE90C01 		ldrd	r0, [sp, #48]
+ 1028 0176 9942     		cmp	r1, r3
+ 1029 0178 08BF     		it	eq
+ 1030 017a 9042     		cmpeq	r0, r2
+ 1031 017c 2CBF     		ite	cs
+ 1032 017e 0123     		movcs	r3, #1
+ 1033 0180 0023     		movcc	r3, #0
+ 1034 0182 002B     		cmp	r3, #0
+ 1035 0184 3FF460AF 		beq	.L175
+ 1036 0188 0026     		movs	r6, #0
+ 1037              	.L195:
+ 1038 018a F3B2     		uxtb	r3, r6
+ 1039 018c 5345     		cmp	r3, r10
+ 1040 018e 1AD2     		bcs	.L176
+ 1041 0190 45FA06F3 		asr	r3, r5, r6
+ 1042 0194 DB07     		lsls	r3, r3, #31
+ 1043 0196 14D5     		bpl	.L198
+ 1044 0198 1C23     		movs	r3, #28
+ 1045 019a 03FB0643 		mla	r3, r3, r6, r4
+ 1046 019e 1B6A     		ldr	r3, [r3, #32]
+ 1047 01a0 1846     		mov	r0, r3
+ 1048 01a2 0693     		str	r3, [sp, #24]
+ 1049 01a4 FFF7FEFF 		bl	_ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+ 1050 01a8 99E80300 		ldmia	r9, {r0, r1}
+ 1051 01ac 049B     		ldr	r3, [sp, #16]
+ 1052 01ae 87E80300 		stmia	r7, {r0, r1}
+ 1053 01b2 0093     		str	r3, [sp]
+ 1054 01b4 069B     		ldr	r3, [sp, #24]
+ 1055 01b6 4146     		mov	r1, r8
+ 1056 01b8 1846     		mov	r0, r3
+ 1057 01ba 3A46     		mov	r2, r7
+ 1058 01bc 059B     		ldr	r3, [sp, #20]
+ 1059 01be FFF7FEFF 		bl	_ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt
+ 1060              	.L198:
+ 1061 01c2 0136     		adds	r6, r6, #1
+ 1062 01c4 E1E7     		b	.L195
+ 1063              	.L176:
+ 1064 01c6 0398     		ldr	r0, [sp, #12]
+ 1065              	.L184:
+ 1066 01c8 11B0     		add	sp, sp, #68
+ 1067              		@ sp needed
+ 1068 01ca BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1069              		.size	_ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt, .
+ 1070              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 1071              	.LC0:
+ 1072 0000 4C617A79 		.ascii	"LazyConstructor<T>\000"
+ 1072      436F6E73 
+ 1072      74727563 
+ 1072      746F723C 
+ 1072      543E00
+ 1073              	.LC1:
+ 1074 0013 4E756D20 		.ascii	"Num ifaces\000"
+ 1074      69666163 
+ 1074      657300
+ 1075              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccWskVMA.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_can_io.cpp
+     /tmp/ccWskVMA.s:16     .text._ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3:0000000000000000 $t
+     /tmp/ccWskVMA.s:20     .text._ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3:0000000000000000 _ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+     /tmp/ccWskVMA.s:32     .text._ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3:000000000000000c $d
+     /tmp/ccWskVMA.s:35     .text._ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE:0000000000000000 $t
+     /tmp/ccWskVMA.s:40     .text._ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE:0000000000000000 _ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE
+     /tmp/ccWskVMA.s:58     .text._ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE:0000000000000000 $t
+     /tmp/ccWskVMA.s:63     .text._ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE:0000000000000000 _ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE
+     /tmp/ccWskVMA.s:79     .text._ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE:0000000000000000 $t
+     /tmp/ccWskVMA.s:84     .text._ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE:0000000000000000 _ZNK6uavcan10CanTxQueue5Entry12qosLowerThanERKNS_8CanFrameENS0_3QosE
+     /tmp/ccWskVMA.s:102    .text._ZN6uavcan10CanTxQueue21registerRejectedFrameEv:0000000000000000 $t
+     /tmp/ccWskVMA.s:107    .text._ZN6uavcan10CanTxQueue21registerRejectedFrameEv:0000000000000000 _ZN6uavcan10CanTxQueue21registerRejectedFrameEv
+     /tmp/ccWskVMA.s:119    .text._ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv:0000000000000000 $t
+     /tmp/ccWskVMA.s:124    .text._ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv:0000000000000000 _ZNK6uavcan10CanTxQueue26getTopPriorityPendingFrameEv
+     /tmp/ccWskVMA.s:135    .text._ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE:0000000000000000 $t
+     /tmp/ccWskVMA.s:140    .text._ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE:0000000000000000 _ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE
+     /tmp/ccWskVMA.s:157    .text._ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt:0000000000000000 $t
+     /tmp/ccWskVMA.s:162    .text._ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt:0000000000000000 _ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt
+     /tmp/ccWskVMA.s:201    .text._ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccWskVMA.s:206    .text._ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicTimeE
+     /tmp/ccWskVMA.s:237    .text._ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj:0000000000000000 $t
+     /tmp/ccWskVMA.s:242    .text._ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj:0000000000000000 _ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj
+     /tmp/ccWskVMA.s:335    .text._ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj:00000000000000c8 $d
+     /tmp/ccWskVMA.s:242    .text._ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj:0000000000000000 _ZN6uavcan12CanIOManagerC1ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj
+     /tmp/ccWskVMA.s:342    .text._ZNK6uavcan12CanIOManager17makePendingTxMaskEv:0000000000000000 $t
+     /tmp/ccWskVMA.s:347    .text._ZNK6uavcan12CanIOManager17makePendingTxMaskEv:0000000000000000 _ZNK6uavcan12CanIOManager17makePendingTxMaskEv
+     /tmp/ccWskVMA.s:378    .text._ZNK6uavcan12CanIOManager20getIfacePerfCountersEh:0000000000000000 $t
+     /tmp/ccWskVMA.s:383    .text._ZNK6uavcan12CanIOManager20getIfacePerfCountersEh:0000000000000000 _ZNK6uavcan12CanIOManager20getIfacePerfCountersEh
+     /tmp/ccWskVMA.s:430    .text._ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_:0000000000000000 $t
+     /tmp/ccWskVMA.s:435    .text._ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_:0000000000000000 _ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_
+     /tmp/ccWskVMA.s:461    .text._ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE:0000000000000000 $t
+     /tmp/ccWskVMA.s:466    .text._ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE:0000000000000000 _ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+     /tmp/ccWskVMA.s:483    .text._ZN6uavcan10CanTxQueueD2Ev:0000000000000000 $t
+     /tmp/ccWskVMA.s:488    .text._ZN6uavcan10CanTxQueueD2Ev:0000000000000000 _ZN6uavcan10CanTxQueueD2Ev
+     /tmp/ccWskVMA.s:488    .text._ZN6uavcan10CanTxQueueD2Ev:0000000000000000 _ZN6uavcan10CanTxQueueD1Ev
+     /tmp/ccWskVMA.s:513    .text._ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt:0000000000000000 $t
+     /tmp/ccWskVMA.s:518    .text._ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt:0000000000000000 _ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt
+     /tmp/ccWskVMA.s:638    .text._ZN6uavcan10CanTxQueue4peekEv:0000000000000000 $t
+     /tmp/ccWskVMA.s:643    .text._ZN6uavcan10CanTxQueue4peekEv:0000000000000000 _ZN6uavcan10CanTxQueue4peekEv
+     /tmp/ccWskVMA.s:678    .text._ZN6uavcan12CanIOManager15sendFromTxQueueEh:0000000000000000 $t
+     /tmp/ccWskVMA.s:683    .text._ZN6uavcan12CanIOManager15sendFromTxQueueEh:0000000000000000 _ZN6uavcan12CanIOManager15sendFromTxQueueEh
+     /tmp/ccWskVMA.s:730    .text._ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt:0000000000000000 $t
+     /tmp/ccWskVMA.s:735    .text._ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt:0000000000000000 _ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt
+     /tmp/ccWskVMA.s:867    .text._ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt:0000000000000000 $t
+     /tmp/ccWskVMA.s:872    .text._ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt:0000000000000000 _ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt
+
+UNDEFINED SYMBOLS
+_ZN6uavcan16handleFatalErrorEPKc
+_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+_ZTVN6uavcan20LimitedPoolAllocatorE
+_ZN6uavcan20LimitedPoolAllocator8allocateEj
+memset

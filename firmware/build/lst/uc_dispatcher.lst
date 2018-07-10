@@ -1,0 +1,1055 @@
+ARM GAS  /tmp/ccQmEJnO.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_dispatcher.cpp"
+  15              		.section	.text._ZN6uavcan8CanFrameC2Ev,"axG",%progbits,_ZN6uavcan8CanFrameC5Ev,comdat
+  16              		.align	1
+  17              		.weak	_ZN6uavcan8CanFrameC2Ev
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan8CanFrameC2Ev, %function
+  21              	_ZN6uavcan8CanFrameC2Ev:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0023     		movs	r3, #0
+  26 0002 0360     		str	r3, [r0]
+  27 0004 0373     		strb	r3, [r0, #12]
+  28 0006 00F10C02 		add	r2, r0, #12
+  29 000a 031D     		adds	r3, r0, #4
+  30              	.L2:
+  31 000c 9342     		cmp	r3, r2
+  32 000e 03D0     		beq	.L5
+  33 0010 0021     		movs	r1, #0
+  34 0012 03F8011B 		strb	r1, [r3], #1
+  35 0016 F9E7     		b	.L2
+  36              	.L5:
+  37 0018 7047     		bx	lr
+  38              		.size	_ZN6uavcan8CanFrameC2Ev, .-_ZN6uavcan8CanFrameC2Ev
+  39              		.weak	_ZN6uavcan8CanFrameC1Ev
+  40              		.thumb_set _ZN6uavcan8CanFrameC1Ev,_ZN6uavcan8CanFrameC2Ev
+  41              		.section	.text._ZN6uavcan7RxFrameC2Ev,"axG",%progbits,_ZN6uavcan7RxFrameC5Ev,comdat
+  42              		.align	1
+  43              		.weak	_ZN6uavcan7RxFrameC2Ev
+  44              		.thumb
+  45              		.thumb_func
+  46              		.type	_ZN6uavcan7RxFrameC2Ev, %function
+  47              	_ZN6uavcan7RxFrameC2Ev:
+  48              		@ args = 0, pretend = 0, frame = 0
+  49              		@ frame_needed = 0, uses_anonymous_args = 0
+  50 0000 30B5     		push	{r4, r5, lr}
+  51 0002 0322     		movs	r2, #3
+  52 0004 4FF0FF34 		mov	r4, #-1
+  53 0008 FF21     		movs	r1, #255
+  54 000a 0025     		movs	r5, #0
+  55 000c 0272     		strb	r2, [r0, #8]
+  56 000e C460     		str	r4, [r0, #12]
+  57 0010 0022     		movs	r2, #0
+ARM GAS  /tmp/ccQmEJnO.s 			page 2
+
+
+  58 0012 0475     		strb	r4, [r0, #20]
+  59 0014 0024     		movs	r4, #0
+  60 0016 C171     		strb	r1, [r0, #7]
+  61 0018 0261     		str	r2, [r0, #16]
+  62 001a 4175     		strb	r1, [r0, #21]
+  63 001c 8275     		strb	r2, [r0, #22]
+  64 001e C275     		strb	r2, [r0, #23]
+  65 0020 0276     		strb	r2, [r0, #24]
+  66 0022 4276     		strb	r2, [r0, #25]
+  67 0024 C0E90845 		strd	r4, [r0, #32]
+  68 0028 C0E90A45 		strd	r4, [r0, #40]
+  69 002c 80F83020 		strb	r2, [r0, #48]
+  70 0030 30BD     		pop	{r4, r5, pc}
+  71              		.size	_ZN6uavcan7RxFrameC2Ev, .-_ZN6uavcan7RxFrameC2Ev
+  72              		.weak	_ZN6uavcan7RxFrameC1Ev
+  73              		.thumb_set _ZN6uavcan7RxFrameC1Ev,_ZN6uavcan7RxFrameC2Ev
+  74              		.section	.text._ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBa
+  75              		.align	1
+  76              		.global	_ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE
+  77              		.thumb
+  78              		.thumb_func
+  79              		.type	_ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE, %fun
+  80              	_ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE:
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84 0000 0068     		ldr	r0, [r0]
+  85              	.L8:
+  86 0002 18B1     		cbz	r0, .L12
+  87 0004 8842     		cmp	r0, r1
+  88 0006 02D0     		beq	.L11
+  89 0008 4068     		ldr	r0, [r0, #4]
+  90 000a FAE7     		b	.L8
+  91              	.L12:
+  92 000c 7047     		bx	lr
+  93              	.L11:
+  94 000e 0120     		movs	r0, #1
+  95 0010 7047     		bx	lr
+  96              		.size	_ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE, .-_Z
+  97              		.section	.text._ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv,"ax",%progbits
+  98              		.align	1
+  99              		.global	_ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.type	_ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv, %function
+ 103              	_ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv:
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              		@ link register save eliminated.
+ 107 0000 0146     		mov	r1, r0
+ 108 0002 8068     		ldr	r0, [r0, #8]
+ 109 0004 D430     		adds	r0, r0, #212
+ 110 0006 FFF7FEBF 		b	_ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE
+ 111              		.size	_ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv, .-_ZNK6uavcan25LoopbackFrameListenerB
+ 112              		.section	.text._ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE,"ax",%prog
+ 113              		.align	1
+ 114              		.global	_ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE
+ARM GAS  /tmp/ccQmEJnO.s 			page 3
+
+
+ 115              		.thumb
+ 116              		.thumb_func
+ 117              		.type	_ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE, %function
+ 118              	_ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE:
+ 119              		@ args = 0, pretend = 0, frame = 0
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121 0000 38B5     		push	{r3, r4, r5, lr}
+ 122 0002 0C46     		mov	r4, r1
+ 123 0004 0068     		ldr	r0, [r0]
+ 124              	.L15:
+ 125 0006 30B1     		cbz	r0, .L17
+ 126 0008 90E82800 		ldmia	r0, {r3, r5}
+ 127 000c 2146     		mov	r1, r4
+ 128 000e 9B68     		ldr	r3, [r3, #8]
+ 129 0010 9847     		blx	r3
+ 130 0012 2846     		mov	r0, r5
+ 131 0014 F7E7     		b	.L15
+ 132              	.L17:
+ 133 0016 38BD     		pop	{r3, r4, r5, pc}
+ 134              		.size	_ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE, .-_ZN6uavcan29Loop
+ 135              		.section	.text._ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	_ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE
+ 138              		.thumb
+ 139              		.thumb_func
+ 140              		.type	_ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE, %function
+ 141              	_ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE:
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 145 0000 0068     		ldr	r0, [r0]
+ 146              	.L19:
+ 147 0002 28B1     		cbz	r0, .L23
+ 148 0004 8368     		ldr	r3, [r0, #8]
+ 149 0006 1B69     		ldr	r3, [r3, #16]
+ 150 0008 8B42     		cmp	r3, r1
+ 151 000a 02D0     		beq	.L22
+ 152 000c 4068     		ldr	r0, [r0, #4]
+ 153 000e F8E7     		b	.L19
+ 154              	.L23:
+ 155 0010 7047     		bx	lr
+ 156              	.L22:
+ 157 0012 0120     		movs	r0, #1
+ 158 0014 7047     		bx	lr
+ 159              		.size	_ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE, .-_ZNK6uavcan10Dispatcher
+ 160              		.section	.text._ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE,"ax",%progbits
+ 161              		.align	1
+ 162              		.global	_ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE
+ 163              		.thumb
+ 164              		.thumb_func
+ 165              		.type	_ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE, %function
+ 166              	_ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE:
+ 167              		@ args = 0, pretend = 0, frame = 8
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 170 0002 0C46     		mov	r4, r1
+ 171 0004 0368     		ldr	r3, [r0]
+ARM GAS  /tmp/ccQmEJnO.s 			page 4
+
+
+ 172              	.L25:
+ 173 0006 53B1     		cbz	r3, .L27
+ 174 0008 94E80300 		ldmia	r4, {r0, r1}
+ 175 000c 5D68     		ldr	r5, [r3, #4]
+ 176 000e 8DE80300 		stmia	sp, {r0, r1}
+ 177 0012 1846     		mov	r0, r3
+ 178 0014 6946     		mov	r1, sp
+ 179 0016 FFF7FEFF 		bl	_ZN6uavcan16TransferListener7cleanupENS_13MonotonicTimeE
+ 180 001a 2B46     		mov	r3, r5
+ 181 001c F3E7     		b	.L25
+ 182              	.L27:
+ 183 001e 03B0     		add	sp, sp, #12
+ 184              		@ sp needed
+ 185 0020 30BD     		pop	{r4, r5, pc}
+ 186              		.size	_ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE, .-_ZN6uavcan10Dispatch
+ 187              		.section	.text._ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	_ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE
+ 190              		.thumb
+ 191              		.thumb_func
+ 192              		.type	_ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE, %function
+ 193              	_ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE:
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196 0000 38B5     		push	{r3, r4, r5, lr}
+ 197 0002 0C46     		mov	r4, r1
+ 198 0004 0068     		ldr	r0, [r0]
+ 199              	.L29:
+ 200 0006 68B1     		cbz	r0, .L28
+ 201 0008 8368     		ldr	r3, [r0, #8]
+ 202 000a 4568     		ldr	r5, [r0, #4]
+ 203 000c 1A69     		ldr	r2, [r3, #16]
+ 204 000e E368     		ldr	r3, [r4, #12]
+ 205 0010 9A42     		cmp	r2, r3
+ 206 0012 04D1     		bne	.L30
+ 207 0014 0368     		ldr	r3, [r0]
+ 208 0016 2146     		mov	r1, r4
+ 209 0018 DB68     		ldr	r3, [r3, #12]
+ 210 001a 9847     		blx	r3
+ 211 001c 00E0     		b	.L31
+ 212              	.L30:
+ 213 001e 01D3     		bcc	.L28
+ 214              	.L31:
+ 215 0020 2846     		mov	r0, r5
+ 216 0022 F0E7     		b	.L29
+ 217              	.L28:
+ 218 0024 38BD     		pop	{r3, r4, r5, pc}
+ 219              		.size	_ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE, .-_ZN6uavcan10Dispatch
+ 220              		.section	.text._ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE,"ax",%progbits
+ 221              		.align	1
+ 222              		.global	_ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE
+ 223              		.thumb
+ 224              		.thumb_func
+ 225              		.type	_ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE, %function
+ 226              	_ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE:
+ 227              		@ args = 0, pretend = 0, frame = 56
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccQmEJnO.s 			page 5
+
+
+ 229 0000 30B5     		push	{r4, r5, lr}
+ 230 0002 0D46     		mov	r5, r1
+ 231 0004 8FB0     		sub	sp, sp, #60
+ 232 0006 0446     		mov	r4, r0
+ 233 0008 6846     		mov	r0, sp
+ 234 000a FFF7FEFF 		bl	_ZN6uavcan7RxFrameC1Ev
+ 235 000e 6846     		mov	r0, sp
+ 236 0010 2946     		mov	r1, r5
+ 237 0012 FFF7FEFF 		bl	_ZN6uavcan7RxFrame5parseERKNS_10CanRxFrameE
+ 238 0016 E0B1     		cbz	r0, .L34
+ 239 0018 0F4A     		ldr	r2, .L48
+ 240 001a 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+ 241 001e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 242 0020 9A42     		cmp	r2, r3
+ 243 0022 03D0     		beq	.L36
+ 244 0024 94F8DC20 		ldrb	r2, [r4, #220]	@ zero_extendqisi2
+ 245 0028 9A42     		cmp	r2, r3
+ 246 002a 12D1     		bne	.L34
+ 247              	.L36:
+ 248 002c 9DF80830 		ldrb	r3, [sp, #8]	@ zero_extendqisi2
+ 249 0030 012B     		cmp	r3, #1
+ 250 0032 0AD1     		bne	.L46
+ 251 0034 04F1CC00 		add	r0, r4, #204
+ 252 0038 03E0     		b	.L45
+ 253              	.L47:
+ 254 003a 022B     		cmp	r3, #2
+ 255 003c 09D1     		bne	.L34
+ 256 003e 04F1C800 		add	r0, r4, #200
+ 257              	.L45:
+ 258 0042 6946     		mov	r1, sp
+ 259 0044 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE
+ 260 0048 03E0     		b	.L34
+ 261              	.L46:
+ 262 004a F6D2     		bcs	.L47
+ 263 004c 04F1D000 		add	r0, r4, #208
+ 264 0050 F7E7     		b	.L45
+ 265              	.L34:
+ 266 0052 0FB0     		add	sp, sp, #60
+ 267              		@ sp needed
+ 268 0054 30BD     		pop	{r4, r5, pc}
+ 269              	.L49:
+ 270 0056 00BF     		.align	2
+ 271              	.L48:
+ 272 0058 00000000 		.word	_ZN6uavcan6NodeID9BroadcastE
+ 273              		.size	_ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE, .-_ZN6uavcan10Dispatcher11handleFram
+ 274              		.section	.text._ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE,"ax",%progbits
+ 275              		.align	1
+ 276              		.global	_ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.type	_ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE, %function
+ 280              	_ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE:
+ 281              		@ args = 0, pretend = 0, frame = 56
+ 282              		@ frame_needed = 0, uses_anonymous_args = 0
+ 283 0000 30B5     		push	{r4, r5, lr}
+ 284 0002 0D46     		mov	r5, r1
+ 285 0004 8FB0     		sub	sp, sp, #60
+ARM GAS  /tmp/ccQmEJnO.s 			page 6
+
+
+ 286 0006 0446     		mov	r4, r0
+ 287 0008 6846     		mov	r0, sp
+ 288 000a FFF7FEFF 		bl	_ZN6uavcan7RxFrameC1Ev
+ 289 000e 6846     		mov	r0, sp
+ 290 0010 2946     		mov	r1, r5
+ 291 0012 FFF7FEFF 		bl	_ZN6uavcan7RxFrame5parseERKNS_10CanRxFrameE
+ 292 0016 20B1     		cbz	r0, .L50
+ 293 0018 04F1D400 		add	r0, r4, #212
+ 294 001c 6946     		mov	r1, sp
+ 295 001e FFF7FEFF 		bl	_ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE
+ 296              	.L50:
+ 297 0022 0FB0     		add	sp, sp, #60
+ 298              		@ sp needed
+ 299 0024 30BD     		pop	{r4, r5, pc}
+ 300              		.size	_ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE, .-_ZN6uavcan10Dispatcher19ha
+ 301              		.section	.text._ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt,"ax",%progbits
+ 302              		.align	1
+ 303              		.global	_ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt
+ 304              		.thumb
+ 305              		.thumb_func
+ 306              		.type	_ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt, %function
+ 307              	_ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt:
+ 308              		@ args = 0, pretend = 0, frame = 0
+ 309              		@ frame_needed = 0, uses_anonymous_args = 0
+ 310              		@ link register save eliminated.
+ 311 0000 D0F8D800 		ldr	r0, [r0, #216]
+ 312 0004 10B1     		cbz	r0, .L56
+ 313 0006 0368     		ldr	r3, [r0]
+ 314 0008 9B68     		ldr	r3, [r3, #8]
+ 315 000a 1847     		bx	r3	@ indirect register sibling call
+ 316              	.L56:
+ 317 000c 7047     		bx	lr
+ 318              		.size	_ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt, .-_ZN6uavcan10Dispatcher2
+ 319              		.section	.text._ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE,"ax",%progbits
+ 320              		.align	1
+ 321              		.global	_ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE
+ 322              		.thumb
+ 323              		.thumb_func
+ 324              		.type	_ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE, %function
+ 325              	_ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE:
+ 326              		@ args = 0, pretend = 0, frame = 56
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+ 328 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 329 0002 0546     		mov	r5, r0
+ 330 0004 0E46     		mov	r6, r1
+ 331 0006 8FB0     		sub	sp, sp, #60
+ 332 0008 0024     		movs	r4, #0
+ 333              	.L64:
+ 334 000a 0027     		movs	r7, #0
+ 335 000c 04A8     		add	r0, sp, #16
+ 336 000e ADF80670 		strh	r7, [sp, #6]	@ movhi
+ 337 0012 FFF7FEFF 		bl	_ZN6uavcan8CanFrameC2Ev
+ 338 0016 96E80300 		ldmia	r6, {r0, r1}
+ 339 001a 0022     		movs	r2, #0
+ 340 001c 0023     		movs	r3, #0
+ 341 001e CDE90823 		strd	r2, [sp, #32]
+ 342 0022 CDE90A23 		strd	r2, [sp, #40]
+ARM GAS  /tmp/ccQmEJnO.s 			page 7
+
+
+ 343 0026 02AA     		add	r2, sp, #8
+ 344 0028 82E80300 		stmia	r2, {r0, r1}
+ 345 002c 0DF10603 		add	r3, sp, #6
+ 346 0030 05F10800 		add	r0, r5, #8
+ 347 0034 04A9     		add	r1, sp, #16
+ 348 0036 8DF83070 		strb	r7, [sp, #48]
+ 349 003a FFF7FEFF 		bl	_ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt
+ 350 003e 0028     		cmp	r0, #0
+ 351 0040 23DB     		blt	.L60
+ 352 0042 13D0     		beq	.L61
+ 353 0044 BDF80630 		ldrh	r3, [sp, #6]
+ 354 0048 DB07     		lsls	r3, r3, #31
+ 355 004a 04D5     		bpl	.L62
+ 356 004c 2846     		mov	r0, r5
+ 357 004e 04A9     		add	r1, sp, #16
+ 358 0050 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE
+ 359 0054 04E0     		b	.L63
+ 360              	.L62:
+ 361 0056 2846     		mov	r0, r5
+ 362 0058 04A9     		add	r1, sp, #16
+ 363 005a 0134     		adds	r4, r4, #1
+ 364 005c FFF7FEFF 		bl	_ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE
+ 365              	.L63:
+ 366 0060 2846     		mov	r0, r5
+ 367 0062 04A9     		add	r1, sp, #16
+ 368 0064 BDF80620 		ldrh	r2, [sp, #6]
+ 369 0068 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt
+ 370              	.L61:
+ 371 006c D5F8A010 		ldr	r1, [r5, #160]
+ 372 0070 04A8     		add	r0, sp, #16
+ 373 0072 0B68     		ldr	r3, [r1]
+ 374 0074 9B68     		ldr	r3, [r3, #8]
+ 375 0076 9847     		blx	r3
+ 376 0078 D6E90023 		ldrd	r2, [r6]
+ 377 007c DDE90401 		ldrd	r0, [sp, #16]
+ 378 0080 9942     		cmp	r1, r3
+ 379 0082 08BF     		it	eq
+ 380 0084 9042     		cmpeq	r0, r2
+ 381 0086 C0D3     		bcc	.L64
+ 382 0088 2046     		mov	r0, r4
+ 383              	.L60:
+ 384 008a 0FB0     		add	sp, sp, #60
+ 385              		@ sp needed
+ 386 008c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 387              		.size	_ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE, .-_ZN6uavcan10Dispatcher4spinENS_13Monotoni
+ 388              		.section	.text._ZN6uavcan10Dispatcher8spinOnceEv,"ax",%progbits
+ 389              		.align	1
+ 390              		.global	_ZN6uavcan10Dispatcher8spinOnceEv
+ 391              		.thumb
+ 392              		.thumb_func
+ 393              		.type	_ZN6uavcan10Dispatcher8spinOnceEv, %function
+ 394              	_ZN6uavcan10Dispatcher8spinOnceEv:
+ 395              		@ args = 0, pretend = 0, frame = 56
+ 396              		@ frame_needed = 0, uses_anonymous_args = 0
+ 397 0000 70B5     		push	{r4, r5, r6, lr}
+ 398 0002 0546     		mov	r5, r0
+ 399 0004 8EB0     		sub	sp, sp, #56
+ARM GAS  /tmp/ccQmEJnO.s 			page 8
+
+
+ 400 0006 0024     		movs	r4, #0
+ 401              	.L72:
+ 402 0008 0026     		movs	r6, #0
+ 403 000a 04A8     		add	r0, sp, #16
+ 404 000c ADF80660 		strh	r6, [sp, #6]	@ movhi
+ 405 0010 FFF7FEFF 		bl	_ZN6uavcan8CanFrameC2Ev
+ 406 0014 0020     		movs	r0, #0
+ 407 0016 0021     		movs	r1, #0
+ 408 0018 0EAA     		add	r2, sp, #56
+ 409 001a CDE90801 		strd	r0, [sp, #32]
+ 410 001e CDE90A01 		strd	r0, [sp, #40]
+ 411 0022 62E90C01 		strd	r0, [r2, #-48]!
+ 412 0026 0DF10603 		add	r3, sp, #6
+ 413 002a 05F10800 		add	r0, r5, #8
+ 414 002e 04A9     		add	r1, sp, #16
+ 415 0030 8DF83060 		strb	r6, [sp, #48]
+ 416 0034 FFF7FEFF 		bl	_ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt
+ 417 0038 0028     		cmp	r0, #0
+ 418 003a 16DB     		blt	.L68
+ 419 003c 14D0     		beq	.L69
+ 420 003e BDF80630 		ldrh	r3, [sp, #6]
+ 421 0042 DB07     		lsls	r3, r3, #31
+ 422 0044 04D5     		bpl	.L70
+ 423 0046 2846     		mov	r0, r5
+ 424 0048 04A9     		add	r1, sp, #16
+ 425 004a FFF7FEFF 		bl	_ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE
+ 426 004e 04E0     		b	.L71
+ 427              	.L70:
+ 428 0050 2846     		mov	r0, r5
+ 429 0052 04A9     		add	r1, sp, #16
+ 430 0054 0134     		adds	r4, r4, #1
+ 431 0056 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE
+ 432              	.L71:
+ 433 005a 2846     		mov	r0, r5
+ 434 005c 04A9     		add	r1, sp, #16
+ 435 005e BDF80620 		ldrh	r2, [sp, #6]
+ 436 0062 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt
+ 437 0066 CFE7     		b	.L72
+ 438              	.L69:
+ 439 0068 2046     		mov	r0, r4
+ 440              	.L68:
+ 441 006a 0EB0     		add	sp, sp, #56
+ 442              		@ sp needed
+ 443 006c 70BD     		pop	{r4, r5, r6, pc}
+ 444              		.size	_ZN6uavcan10Dispatcher8spinOnceEv, .-_ZN6uavcan10Dispatcher8spinOnceEv
+ 445              		.section	.text._ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEt
+ 446              		.align	1
+ 447              		.global	_ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth
+ 448              		.thumb
+ 449              		.thumb_func
+ 450              		.type	_ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth, %funct
+ 451              	_ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth:
+ 452              		@ args = 12, pretend = 0, frame = 32
+ 453              		@ frame_needed = 0, uses_anonymous_args = 0
+ 454 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 455 0002 1646     		mov	r6, r2
+ 456 0004 1D46     		mov	r5, r3
+ARM GAS  /tmp/ccQmEJnO.s 			page 9
+
+
+ 457 0006 0A7D     		ldrb	r2, [r1, #20]	@ zero_extendqisi2
+ 458 0008 90F8DC30 		ldrb	r3, [r0, #220]	@ zero_extendqisi2
+ 459 000c 8DB0     		sub	sp, sp, #52
+ 460 000e 9A42     		cmp	r2, r3
+ 461 0010 0446     		mov	r4, r0
+ 462 0012 0F46     		mov	r7, r1
+ 463 0014 02D0     		beq	.L74
+ 464              	.L76:
+ 465 0016 6FF00900 		mvn	r0, #9
+ 466 001a 20E0     		b	.L75
+ 467              	.L74:
+ 468 001c 08A8     		add	r0, sp, #32
+ 469 001e FFF7FEFF 		bl	_ZN6uavcan8CanFrameC1Ev
+ 470 0022 3846     		mov	r0, r7
+ 471 0024 08A9     		add	r1, sp, #32
+ 472 0026 FFF7FEFF 		bl	_ZNK6uavcan5Frame7compileERNS_8CanFrameE
+ 473 002a 0028     		cmp	r0, #0
+ 474 002c F3D0     		beq	.L76
+ 475 002e 96E80300 		ldmia	r6, {r0, r1}
+ 476 0032 04AA     		add	r2, sp, #16
+ 477 0034 06AB     		add	r3, sp, #24
+ 478 0036 82E80300 		stmia	r2, {r0, r1}
+ 479 003a 95E80300 		ldmia	r5, {r0, r1}
+ 480 003e 83E80300 		stmia	r3, {r0, r1}
+ 481 0042 9DF85010 		ldrb	r1, [sp, #80]	@ zero_extendqisi2
+ 482 0046 04F10800 		add	r0, r4, #8
+ 483 004a 0091     		str	r1, [sp]
+ 484 004c 9DF84810 		ldrb	r1, [sp, #72]	@ zero_extendqisi2
+ 485 0050 0191     		str	r1, [sp, #4]
+ 486 0052 BDF84C10 		ldrh	r1, [sp, #76]
+ 487 0056 0291     		str	r1, [sp, #8]
+ 488 0058 08A9     		add	r1, sp, #32
+ 489 005a FFF7FEFF 		bl	_ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt
+ 490              	.L75:
+ 491 005e 0DB0     		add	sp, sp, #52
+ 492              		@ sp needed
+ 493 0060 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 494              		.size	_ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth, .-_ZN6
+ 495              		.section	.text._ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE,"ax",%progbits
+ 496              		.align	1
+ 497              		.global	_ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE
+ 498              		.thumb
+ 499              		.thumb_func
+ 500              		.type	_ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE, %function
+ 501              	_ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE:
+ 502              		@ args = 0, pretend = 0, frame = 8
+ 503              		@ frame_needed = 0, uses_anonymous_args = 0
+ 504 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 505 0002 0646     		mov	r6, r0
+ 506 0004 0D46     		mov	r5, r1
+ 507 0006 03C9     		ldmia	r1, {r0, r1}
+ 508 0008 8DE80300 		stmia	sp, {r0, r1}
+ 509 000c 06F1A400 		add	r0, r6, #164
+ 510 0010 6946     		mov	r1, sp
+ 511 0012 FFF7FEFF 		bl	_ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE
+ 512 0016 95E80300 		ldmia	r5, {r0, r1}
+ 513 001a 8DE80300 		stmia	sp, {r0, r1}
+ARM GAS  /tmp/ccQmEJnO.s 			page 10
+
+
+ 514 001e 06F1C800 		add	r0, r6, #200
+ 515 0022 6946     		mov	r1, sp
+ 516 0024 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE
+ 517 0028 95E80300 		ldmia	r5, {r0, r1}
+ 518 002c 8DE80300 		stmia	sp, {r0, r1}
+ 519 0030 06F1CC00 		add	r0, r6, #204
+ 520 0034 6946     		mov	r1, sp
+ 521 0036 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE
+ 522 003a 95E80300 		ldmia	r5, {r0, r1}
+ 523 003e 8DE80300 		stmia	sp, {r0, r1}
+ 524 0042 06F1D000 		add	r0, r6, #208
+ 525 0046 6946     		mov	r1, sp
+ 526 0048 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE
+ 527 004c 02B0     		add	sp, sp, #8
+ 528              		@ sp needed
+ 529 004e 70BD     		pop	{r4, r5, r6, pc}
+ 530              		.size	_ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE, .-_ZN6uavcan10Dispatcher7cleanupENS_13Mo
+ 531              		.section	.text._ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE,"ax",%progbits
+ 532              		.align	1
+ 533              		.global	_ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE
+ 534              		.thumb
+ 535              		.thumb_func
+ 536              		.type	_ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE, %function
+ 537              	_ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE:
+ 538              		@ args = 0, pretend = 0, frame = 0
+ 539              		@ frame_needed = 0, uses_anonymous_args = 0
+ 540              		@ link register save eliminated.
+ 541 0000 C830     		adds	r0, r0, #200
+ 542 0002 FFF7FEBF 		b	_ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE
+ 543              		.size	_ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE, .-_ZNK6uavcan10Dispatcher13hasSubsc
+ 544              		.section	.text._ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE,"ax",%progbits
+ 545              		.align	1
+ 546              		.global	_ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE
+ 547              		.thumb
+ 548              		.thumb_func
+ 549              		.type	_ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE, %function
+ 550              	_ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE:
+ 551              		@ args = 0, pretend = 0, frame = 0
+ 552              		@ frame_needed = 0, uses_anonymous_args = 0
+ 553              		@ link register save eliminated.
+ 554 0000 A430     		adds	r0, r0, #164
+ 555 0002 0222     		movs	r2, #2
+ 556 0004 FFF7FEBF 		b	_ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE
+ 557              		.size	_ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE, .-_ZNK6uavcan10Dispatcher12hasPublis
+ 558              		.section	.text._ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE,"ax",%progbits
+ 559              		.align	1
+ 560              		.global	_ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE
+ 561              		.thumb
+ 562              		.thumb_func
+ 563              		.type	_ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE, %function
+ 564              	_ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE:
+ 565              		@ args = 0, pretend = 0, frame = 0
+ 566              		@ frame_needed = 0, uses_anonymous_args = 0
+ 567              		@ link register save eliminated.
+ 568 0000 CC30     		adds	r0, r0, #204
+ 569 0002 FFF7FEBF 		b	_ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE
+ 570              		.size	_ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE, .-_ZNK6uavcan10Dispatcher9hasServerENS_1
+ARM GAS  /tmp/ccQmEJnO.s 			page 11
+
+
+ 571              		.section	.text._ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE,"ax",%progbits
+ 572              		.align	1
+ 573              		.global	_ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE
+ 574              		.thumb
+ 575              		.thumb_func
+ 576              		.type	_ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE, %function
+ 577              	_ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE:
+ 578              		@ args = 0, pretend = 0, frame = 0
+ 579              		@ frame_needed = 0, uses_anonymous_args = 0
+ 580              		@ link register save eliminated.
+ 581 0000 90F8DD30 		ldrb	r3, [r0, #221]	@ zero_extendqisi2
+ 582 0004 33B9     		cbnz	r3, .L86
+ 583 0006 0123     		movs	r3, #1
+ 584 0008 80F8DC10 		strb	r1, [r0, #220]
+ 585 000c 80F8DD30 		strb	r3, [r0, #221]
+ 586 0010 1846     		mov	r0, r3
+ 587 0012 7047     		bx	lr
+ 588              	.L86:
+ 589 0014 0020     		movs	r0, #0
+ 590 0016 7047     		bx	lr
+ 591              		.size	_ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE, .-_ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE
+ 592              		.section	.text._ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_,"axG",%pro
+ 593              		.align	1
+ 594              		.weak	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_
+ 595              		.thumb
+ 596              		.thumb_func
+ 597              		.type	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_, %function
+ 598              	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_:
+ 599              		@ args = 0, pretend = 0, frame = 0
+ 600              		@ frame_needed = 0, uses_anonymous_args = 0
+ 601              		@ link register save eliminated.
+ 602 0000 0368     		ldr	r3, [r0]
+ 603 0002 6BB1     		cbz	r3, .L87
+ 604 0004 61B1     		cbz	r1, .L87
+ 605 0006 8B42     		cmp	r3, r1
+ 606 0008 03D1     		bne	.L90
+ 607 000a 5B68     		ldr	r3, [r3, #4]
+ 608 000c 0360     		str	r3, [r0]
+ 609 000e 7047     		bx	lr
+ 610              	.L92:
+ 611 0010 1346     		mov	r3, r2
+ 612              	.L90:
+ 613 0012 5A68     		ldr	r2, [r3, #4]
+ 614 0014 22B1     		cbz	r2, .L87
+ 615 0016 8A42     		cmp	r2, r1
+ 616 0018 FAD1     		bne	.L92
+ 617 001a 4A68     		ldr	r2, [r1, #4]
+ 618 001c 5A60     		str	r2, [r3, #4]
+ 619 001e 7047     		bx	lr
+ 620              	.L87:
+ 621 0020 7047     		bx	lr
+ 622              		.size	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_, .-_ZN6uavcan14Link
+ 623              		.section	.text._ZN6uavcan25LoopbackFrameListenerBase14startListeningEv,"ax",%progbits
+ 624              		.align	1
+ 625              		.global	_ZN6uavcan25LoopbackFrameListenerBase14startListeningEv
+ 626              		.thumb
+ 627              		.thumb_func
+ARM GAS  /tmp/ccQmEJnO.s 			page 12
+
+
+ 628              		.type	_ZN6uavcan25LoopbackFrameListenerBase14startListeningEv, %function
+ 629              	_ZN6uavcan25LoopbackFrameListenerBase14startListeningEv:
+ 630              		@ args = 0, pretend = 0, frame = 0
+ 631              		@ frame_needed = 0, uses_anonymous_args = 0
+ 632 0000 38B5     		push	{r3, r4, r5, lr}
+ 633 0002 0446     		mov	r4, r0
+ 634 0004 8568     		ldr	r5, [r0, #8]
+ 635 0006 2146     		mov	r1, r4
+ 636 0008 05F1D400 		add	r0, r5, #212
+ 637 000c FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_
+ 638 0010 D5F8D430 		ldr	r3, [r5, #212]
+ 639 0014 6360     		str	r3, [r4, #4]
+ 640 0016 C5F8D440 		str	r4, [r5, #212]
+ 641 001a 38BD     		pop	{r3, r4, r5, pc}
+ 642              		.size	_ZN6uavcan25LoopbackFrameListenerBase14startListeningEv, .-_ZN6uavcan25LoopbackFrameListener
+ 643              		.section	.text._ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE,"
+ 644              		.align	1
+ 645              		.global	_ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE
+ 646              		.thumb
+ 647              		.thumb_func
+ 648              		.type	_ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE, %function
+ 649              	_ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE:
+ 650              		@ args = 0, pretend = 0, frame = 0
+ 651              		@ frame_needed = 0, uses_anonymous_args = 0
+ 652 0000 08B5     		push	{r3, lr}
+ 653 0002 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_
+ 654 0006 08BD     		pop	{r3, pc}
+ 655              		.size	_ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE, .-_ZN6uav
+ 656              		.section	.text._ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv,"ax",%progbits
+ 657              		.align	1
+ 658              		.global	_ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv
+ 659              		.thumb
+ 660              		.thumb_func
+ 661              		.type	_ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv, %function
+ 662              	_ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv:
+ 663              		@ args = 0, pretend = 0, frame = 0
+ 664              		@ frame_needed = 0, uses_anonymous_args = 0
+ 665 0000 08B5     		push	{r3, lr}
+ 666 0002 0146     		mov	r1, r0
+ 667 0004 8068     		ldr	r0, [r0, #8]
+ 668 0006 D430     		adds	r0, r0, #212
+ 669 0008 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_
+ 670 000c 08BD     		pop	{r3, pc}
+ 671              		.size	_ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv, .-_ZN6uavcan25LoopbackFrameListenerB
+ 672              		.section	.text._ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE,"ax"
+ 673              		.align	1
+ 674              		.global	_ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE
+ 675              		.thumb
+ 676              		.thumb_func
+ 677              		.type	_ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE, %function
+ 678              	_ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE:
+ 679              		@ args = 0, pretend = 0, frame = 0
+ 680              		@ frame_needed = 0, uses_anonymous_args = 0
+ 681 0000 38B5     		push	{r3, r4, r5, lr}
+ 682 0002 0446     		mov	r4, r0
+ 683 0004 0D46     		mov	r5, r1
+ 684 0006 21B1     		cbz	r1, .L102
+ARM GAS  /tmp/ccQmEJnO.s 			page 13
+
+
+ 685 0008 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_
+ 686 000c 2368     		ldr	r3, [r4]
+ 687 000e 6B60     		str	r3, [r5, #4]
+ 688 0010 2560     		str	r5, [r4]
+ 689              	.L102:
+ 690 0012 38BD     		pop	{r3, r4, r5, pc}
+ 691              		.size	_ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE, .-_ZN6uavcan
+ 692              		.section	.text._ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_,"axG",%progbits,_ZN
+ 693              		.align	1
+ 694              		.weak	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+ 695              		.thumb
+ 696              		.thumb_func
+ 697              		.type	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_, %function
+ 698              	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_:
+ 699              		@ args = 0, pretend = 0, frame = 0
+ 700              		@ frame_needed = 0, uses_anonymous_args = 0
+ 701              		@ link register save eliminated.
+ 702 0000 0368     		ldr	r3, [r0]
+ 703 0002 6BB1     		cbz	r3, .L107
+ 704 0004 61B1     		cbz	r1, .L107
+ 705 0006 8B42     		cmp	r3, r1
+ 706 0008 03D1     		bne	.L110
+ 707 000a 5B68     		ldr	r3, [r3, #4]
+ 708 000c 0360     		str	r3, [r0]
+ 709 000e 7047     		bx	lr
+ 710              	.L112:
+ 711 0010 1346     		mov	r3, r2
+ 712              	.L110:
+ 713 0012 5A68     		ldr	r2, [r3, #4]
+ 714 0014 22B1     		cbz	r2, .L107
+ 715 0016 8A42     		cmp	r2, r1
+ 716 0018 FAD1     		bne	.L112
+ 717 001a 4A68     		ldr	r2, [r1, #4]
+ 718 001c 5A60     		str	r2, [r3, #4]
+ 719 001e 7047     		bx	lr
+ 720              	.L107:
+ 721 0020 7047     		bx	lr
+ 722              		.size	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_, .-_ZN6uavcan14LinkedListRoo
+ 723              		.section	.text._ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16L
+ 724              		.align	1
+ 725              		.weak	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRe
+ 726              		.thumb
+ 727              		.thumb_func
+ 728              		.type	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRe
+ 729              	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegistry2
+ 730              		@ args = 0, pretend = 0, frame = 0
+ 731              		@ frame_needed = 0, uses_anonymous_args = 0
+ 732 0000 70B5     		push	{r4, r5, r6, lr}
+ 733 0002 0546     		mov	r5, r0
+ 734 0004 1646     		mov	r6, r2
+ 735 0006 0C46     		mov	r4, r1
+ 736 0008 A1B1     		cbz	r1, .L119
+ 737 000a FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+ 738 000e 2B68     		ldr	r3, [r5]
+ 739 0010 73B1     		cbz	r3, .L121
+ 740 0012 9A68     		ldr	r2, [r3, #8]
+ 741 0014 1269     		ldr	r2, [r2, #16]
+ARM GAS  /tmp/ccQmEJnO.s 			page 14
+
+
+ 742 0016 9642     		cmp	r6, r2
+ 743 0018 0AD8     		bhi	.L121
+ 744              	.L124:
+ 745 001a 5968     		ldr	r1, [r3, #4]
+ 746 001c 29B1     		cbz	r1, .L123
+ 747 001e 8A68     		ldr	r2, [r1, #8]
+ 748 0020 1269     		ldr	r2, [r2, #16]
+ 749 0022 9642     		cmp	r6, r2
+ 750 0024 01D8     		bhi	.L123
+ 751 0026 0B46     		mov	r3, r1
+ 752 0028 F7E7     		b	.L124
+ 753              	.L123:
+ 754 002a 6160     		str	r1, [r4, #4]
+ 755 002c 5C60     		str	r4, [r3, #4]
+ 756 002e 70BD     		pop	{r4, r5, r6, pc}
+ 757              	.L121:
+ 758 0030 6360     		str	r3, [r4, #4]
+ 759 0032 2C60     		str	r4, [r5]
+ 760              	.L119:
+ 761 0034 70BD     		pop	{r4, r5, r6, pc}
+ 762              		.size	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRe
+ 763              		.section	.text._ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE,"ax"
+ 764              		.align	1
+ 765              		.global	_ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE
+ 766              		.thumb
+ 767              		.thumb_func
+ 768              		.type	_ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE, %function
+ 769              	_ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE:
+ 770              		@ args = 0, pretend = 0, frame = 0
+ 771              		@ frame_needed = 0, uses_anonymous_args = 0
+ 772 0000 38B5     		push	{r3, r4, r5, lr}
+ 773 0002 8C68     		ldr	r4, [r1, #8]
+ 774 0004 42B9     		cbnz	r2, .L133
+ 775 0006 0368     		ldr	r3, [r0]
+ 776              	.L134:
+ 777 0008 33B1     		cbz	r3, .L133
+ 778 000a 9A68     		ldr	r2, [r3, #8]
+ 779 000c 1569     		ldr	r5, [r2, #16]
+ 780 000e 2269     		ldr	r2, [r4, #16]
+ 781 0010 9542     		cmp	r5, r2
+ 782 0012 06D0     		beq	.L137
+ 783 0014 5B68     		ldr	r3, [r3, #4]
+ 784 0016 F7E7     		b	.L134
+ 785              	.L133:
+ 786 0018 2269     		ldr	r2, [r4, #16]
+ 787 001a FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegis
+ 788 001e 0120     		movs	r0, #1
+ 789 0020 38BD     		pop	{r3, r4, r5, pc}
+ 790              	.L137:
+ 791 0022 0020     		movs	r0, #0
+ 792 0024 38BD     		pop	{r3, r4, r5, pc}
+ 793              		.size	_ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE, .-_ZN6uavcan
+ 794              		.section	.text._ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE,"ax"
+ 795              		.align	1
+ 796              		.global	_ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE
+ 797              		.thumb
+ 798              		.thumb_func
+ARM GAS  /tmp/ccQmEJnO.s 			page 15
+
+
+ 799              		.type	_ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE, %function
+ 800              	_ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE:
+ 801              		@ args = 0, pretend = 0, frame = 0
+ 802              		@ frame_needed = 0, uses_anonymous_args = 0
+ 803              		@ link register save eliminated.
+ 804 0000 8B68     		ldr	r3, [r1, #8]
+ 805 0002 1A7B     		ldrb	r2, [r3, #12]	@ zero_extendqisi2
+ 806 0004 12B9     		cbnz	r2, .L139
+ 807 0006 CC30     		adds	r0, r0, #204
+ 808 0008 FFF7FEBF 		b	_ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE
+ 809              	.L139:
+ 810 000c 0020     		movs	r0, #0
+ 811 000e 7047     		bx	lr
+ 812              		.size	_ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE, .-_ZN6uavcan
+ 813              		.section	.text._ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE,"ax
+ 814              		.align	1
+ 815              		.global	_ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE
+ 816              		.thumb
+ 817              		.thumb_func
+ 818              		.type	_ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE, %function
+ 819              	_ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE:
+ 820              		@ args = 0, pretend = 0, frame = 0
+ 821              		@ frame_needed = 0, uses_anonymous_args = 0
+ 822 0000 08B5     		push	{r3, lr}
+ 823 0002 8B68     		ldr	r3, [r1, #8]
+ 824 0004 1A7B     		ldrb	r2, [r3, #12]	@ zero_extendqisi2
+ 825 0006 2AB9     		cbnz	r2, .L142
+ 826 0008 D030     		adds	r0, r0, #208
+ 827 000a 1A69     		ldr	r2, [r3, #16]
+ 828 000c FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegis
+ 829 0010 0120     		movs	r0, #1
+ 830 0012 08BD     		pop	{r3, pc}
+ 831              	.L142:
+ 832 0014 0020     		movs	r0, #0
+ 833 0016 08BD     		pop	{r3, pc}
+ 834              		.size	_ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE, .-_ZN6uavca
+ 835              		.section	.text._ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE,"ax",%progb
+ 836              		.align	1
+ 837              		.global	_ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE
+ 838              		.thumb
+ 839              		.thumb_func
+ 840              		.type	_ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE, %function
+ 841              	_ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE:
+ 842              		@ args = 0, pretend = 0, frame = 0
+ 843              		@ frame_needed = 0, uses_anonymous_args = 0
+ 844 0000 8B68     		ldr	r3, [r1, #8]
+ 845 0002 10B5     		push	{r4, lr}
+ 846 0004 1C7B     		ldrb	r4, [r3, #12]	@ zero_extendqisi2
+ 847 0006 012C     		cmp	r4, #1
+ 848 0008 05D1     		bne	.L145
+ 849 000a C830     		adds	r0, r0, #200
+ 850 000c 1A69     		ldr	r2, [r3, #16]
+ 851 000e FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegis
+ 852 0012 2046     		mov	r0, r4
+ 853 0014 10BD     		pop	{r4, pc}
+ 854              	.L145:
+ 855 0016 0020     		movs	r0, #0
+ARM GAS  /tmp/ccQmEJnO.s 			page 16
+
+
+ 856 0018 10BD     		pop	{r4, pc}
+ 857              		.size	_ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE, .-_ZN6uavcan10Dispa
+ 858              		.section	.text._ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE,"ax",%progb
+ 859              		.align	1
+ 860              		.global	_ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE
+ 861              		.thumb
+ 862              		.thumb_func
+ 863              		.type	_ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE, %function
+ 864              	_ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE:
+ 865              		@ args = 0, pretend = 0, frame = 0
+ 866              		@ frame_needed = 0, uses_anonymous_args = 0
+ 867 0000 08B5     		push	{r3, lr}
+ 868 0002 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+ 869 0006 08BD     		pop	{r3, pc}
+ 870              		.size	_ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE, .-_ZN6uavcan10Dispa
+ 871              		.section	.text._ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE,"ax",%pro
+ 872              		.align	1
+ 873              		.global	_ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE
+ 874              		.thumb
+ 875              		.thumb_func
+ 876              		.type	_ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE, %function
+ 877              	_ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE:
+ 878              		@ args = 0, pretend = 0, frame = 0
+ 879              		@ frame_needed = 0, uses_anonymous_args = 0
+ 880 0000 08B5     		push	{r3, lr}
+ 881 0002 C830     		adds	r0, r0, #200
+ 882 0004 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+ 883 0008 08BD     		pop	{r3, pc}
+ 884              		.size	_ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE, .-_ZN6uavcan10Dis
+ 885              		.section	.text._ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE,"a
+ 886              		.align	1
+ 887              		.global	_ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE
+ 888              		.thumb
+ 889              		.thumb_func
+ 890              		.type	_ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE, %function
+ 891              	_ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE:
+ 892              		@ args = 0, pretend = 0, frame = 0
+ 893              		@ frame_needed = 0, uses_anonymous_args = 0
+ 894 0000 08B5     		push	{r3, lr}
+ 895 0002 CC30     		adds	r0, r0, #204
+ 896 0004 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+ 897 0008 08BD     		pop	{r3, pc}
+ 898              		.size	_ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE, .-_ZN6uavc
+ 899              		.section	.text._ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE,"
+ 900              		.align	1
+ 901              		.global	_ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE
+ 902              		.thumb
+ 903              		.thumb_func
+ 904              		.type	_ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE, %function
+ 905              	_ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE:
+ 906              		@ args = 0, pretend = 0, frame = 0
+ 907              		@ frame_needed = 0, uses_anonymous_args = 0
+ 908 0000 08B5     		push	{r3, lr}
+ 909 0002 D030     		adds	r0, r0, #208
+ 910 0004 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+ 911 0008 08BD     		pop	{r3, pc}
+ 912              		.size	_ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE, .-_ZN6uav
+ARM GAS  /tmp/ccQmEJnO.s 			page 17
+
+
+ 913              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccQmEJnO.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_dispatcher.cpp
+     /tmp/ccQmEJnO.s:16     .text._ZN6uavcan8CanFrameC2Ev:0000000000000000 $t
+     /tmp/ccQmEJnO.s:21     .text._ZN6uavcan8CanFrameC2Ev:0000000000000000 _ZN6uavcan8CanFrameC2Ev
+     /tmp/ccQmEJnO.s:21     .text._ZN6uavcan8CanFrameC2Ev:0000000000000000 _ZN6uavcan8CanFrameC1Ev
+     /tmp/ccQmEJnO.s:42     .text._ZN6uavcan7RxFrameC2Ev:0000000000000000 $t
+     /tmp/ccQmEJnO.s:47     .text._ZN6uavcan7RxFrameC2Ev:0000000000000000 _ZN6uavcan7RxFrameC2Ev
+     /tmp/ccQmEJnO.s:47     .text._ZN6uavcan7RxFrameC2Ev:0000000000000000 _ZN6uavcan7RxFrameC1Ev
+     /tmp/ccQmEJnO.s:75     .text._ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:80     .text._ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE:0000000000000000 _ZNK6uavcan29LoopbackFrameListenerRegistry9doesExistEPKNS_25LoopbackFrameListenerBaseE
+     /tmp/ccQmEJnO.s:98     .text._ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv:0000000000000000 $t
+     /tmp/ccQmEJnO.s:103    .text._ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv:0000000000000000 _ZNK6uavcan25LoopbackFrameListenerBase11isListeningEv
+     /tmp/ccQmEJnO.s:113    .text._ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:118    .text._ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE:0000000000000000 _ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE
+     /tmp/ccQmEJnO.s:136    .text._ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:141    .text._ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE:0000000000000000 _ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE
+     /tmp/ccQmEJnO.s:161    .text._ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:166    .text._ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE
+     /tmp/ccQmEJnO.s:188    .text._ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:193    .text._ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE:0000000000000000 _ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE
+     /tmp/ccQmEJnO.s:221    .text._ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:226    .text._ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE:0000000000000000 _ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE
+     /tmp/ccQmEJnO.s:272    .text._ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE:0000000000000058 $d
+     /tmp/ccQmEJnO.s:275    .text._ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:280    .text._ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE:0000000000000000 _ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE
+     /tmp/ccQmEJnO.s:302    .text._ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt:0000000000000000 $t
+     /tmp/ccQmEJnO.s:307    .text._ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt:0000000000000000 _ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt
+     /tmp/ccQmEJnO.s:320    .text._ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:325    .text._ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE
+     /tmp/ccQmEJnO.s:389    .text._ZN6uavcan10Dispatcher8spinOnceEv:0000000000000000 $t
+     /tmp/ccQmEJnO.s:394    .text._ZN6uavcan10Dispatcher8spinOnceEv:0000000000000000 _ZN6uavcan10Dispatcher8spinOnceEv
+     /tmp/ccQmEJnO.s:446    .text._ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth:0000000000000000 $t
+     /tmp/ccQmEJnO.s:451    .text._ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth:0000000000000000 _ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth
+     /tmp/ccQmEJnO.s:496    .text._ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:501    .text._ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE
+     /tmp/ccQmEJnO.s:532    .text._ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:537    .text._ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE:0000000000000000 _ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE
+     /tmp/ccQmEJnO.s:545    .text._ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:550    .text._ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE:0000000000000000 _ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE
+     /tmp/ccQmEJnO.s:559    .text._ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:564    .text._ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE:0000000000000000 _ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE
+     /tmp/ccQmEJnO.s:572    .text._ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:577    .text._ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE:0000000000000000 _ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE
+     /tmp/ccQmEJnO.s:593    .text._ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_:0000000000000000 $t
+     /tmp/ccQmEJnO.s:598    .text._ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_:0000000000000000 _ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_
+     /tmp/ccQmEJnO.s:624    .text._ZN6uavcan25LoopbackFrameListenerBase14startListeningEv:0000000000000000 $t
+     /tmp/ccQmEJnO.s:629    .text._ZN6uavcan25LoopbackFrameListenerBase14startListeningEv:0000000000000000 _ZN6uavcan25LoopbackFrameListenerBase14startListeningEv
+     /tmp/ccQmEJnO.s:644    .text._ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:649    .text._ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE:0000000000000000 _ZN6uavcan29LoopbackFrameListenerRegistry6removeEPNS_25LoopbackFrameListenerBaseE
+     /tmp/ccQmEJnO.s:657    .text._ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv:0000000000000000 $t
+     /tmp/ccQmEJnO.s:662    .text._ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv:0000000000000000 _ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv
+     /tmp/ccQmEJnO.s:673    .text._ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:678    .text._ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE:0000000000000000 _ZN6uavcan29LoopbackFrameListenerRegistry3addEPNS_25LoopbackFrameListenerBaseE
+     /tmp/ccQmEJnO.s:693    .text._ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_:0000000000000000 $t
+     /tmp/ccQmEJnO.s:698    .text._ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_:0000000000000000 _ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+     /tmp/ccQmEJnO.s:724    .text._ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegistry29DataTypeIDInsertionComparatorEEEvPS1_T_:0000000000000000 $t
+     /tmp/ccQmEJnO.s:729    .text._ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegistry29DataTypeIDInsertionComparatorEEEvPS1_T_:0000000000000000 _ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegistry29DataTypeIDInsertionComparatorEEEvPS1_T_
+ARM GAS  /tmp/ccQmEJnO.s 			page 19
+
+
+     /tmp/ccQmEJnO.s:764    .text._ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:769    .text._ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE:0000000000000000 _ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE
+     /tmp/ccQmEJnO.s:795    .text._ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:800    .text._ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE
+     /tmp/ccQmEJnO.s:814    .text._ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:819    .text._ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan10Dispatcher31registerServiceResponseListenerEPNS_16TransferListenerE
+     /tmp/ccQmEJnO.s:836    .text._ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:841    .text._ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE
+     /tmp/ccQmEJnO.s:859    .text._ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:864    .text._ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan10Dispatcher16ListenerRegistry6removeEPNS_16TransferListenerE
+     /tmp/ccQmEJnO.s:872    .text._ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:877    .text._ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE
+     /tmp/ccQmEJnO.s:886    .text._ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:891    .text._ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE
+     /tmp/ccQmEJnO.s:900    .text._ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/ccQmEJnO.s:905    .text._ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE
+                           .group:0000000000000000 _ZN6uavcan8CanFrameC5Ev
+                           .group:0000000000000000 _ZN6uavcan7RxFrameC5Ev
+
+UNDEFINED SYMBOLS
+_ZN6uavcan16TransferListener7cleanupENS_13MonotonicTimeE
+_ZN6uavcan7RxFrame5parseERKNS_10CanRxFrameE
+_ZN6uavcan6NodeID9BroadcastE
+_ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt
+_ZNK6uavcan5Frame7compileERNS_8CanFrameE
+_ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt
+_ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE
+_ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE

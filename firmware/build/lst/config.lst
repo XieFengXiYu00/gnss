@@ -1,0 +1,1048 @@
+ARM GAS  /tmp/ccxYfZxo.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"config.c"
+  15              		.section	.text.indexByName,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	indexByName, %function
+  20              	indexByName:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 70B5     		push	{r4, r5, r6, lr}
+  24 0002 0546     		mov	r5, r0
+  25 0004 70B1     		cbz	r0, .L5
+  26 0006 0A4B     		ldr	r3, .L8
+  27 0008 0024     		movs	r4, #0
+  28 000a 1E68     		ldr	r6, [r3]
+  29              	.L3:
+  30 000c B442     		cmp	r4, r6
+  31 000e 09DA     		bge	.L5
+  32 0010 084B     		ldr	r3, .L8+4
+  33 0012 2946     		mov	r1, r5
+  34 0014 53F82430 		ldr	r3, [r3, r4, lsl #2]
+  35 0018 1868     		ldr	r0, [r3]
+  36 001a FFF7FEFF 		bl	strcmp
+  37 001e 20B1     		cbz	r0, .L6
+  38 0020 0134     		adds	r4, r4, #1
+  39 0022 F3E7     		b	.L3
+  40              	.L5:
+  41 0024 4FF0FF30 		mov	r0, #-1
+  42 0028 70BD     		pop	{r4, r5, r6, pc}
+  43              	.L6:
+  44 002a 2046     		mov	r0, r4
+  45 002c 70BD     		pop	{r4, r5, r6, pc}
+  46              	.L9:
+  47 002e 00BF     		.align	2
+  48              	.L8:
+  49 0030 00000000 		.word	.LANCHOR0
+  50 0034 00000000 		.word	.LANCHOR1
+  51              		.size	indexByName, .-indexByName
+  52              		.section	.text.reinitializeDefaults,"ax",%progbits
+  53              		.align	1
+  54              		.thumb
+  55              		.thumb_func
+  56              		.type	reinitializeDefaults, %function
+  57              	reinitializeDefaults:
+ARM GAS  /tmp/ccxYfZxo.s 			page 2
+
+
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 08B5     		push	{r3, lr}
+  61 0002 0146     		mov	r1, r0
+  62 0004 0848     		ldr	r0, .L14
+  63 0006 FFF7FEFF 		bl	lowsyslog
+  64 000a 084B     		ldr	r3, .L14+4
+  65 000c 1A68     		ldr	r2, [r3]
+  66 000e 0023     		movs	r3, #0
+  67              	.L11:
+  68 0010 9342     		cmp	r3, r2
+  69 0012 08DA     		bge	.L13
+  70 0014 0649     		ldr	r1, .L14+8
+  71 0016 51F82310 		ldr	r1, [r1, r3, lsl #2]
+  72 001a 4868     		ldr	r0, [r1, #4]	@ float
+  73 001c 0549     		ldr	r1, .L14+12
+  74 001e 41F82300 		str	r0, [r1, r3, lsl #2]	@ float
+  75 0022 0133     		adds	r3, r3, #1
+  76 0024 F4E7     		b	.L11
+  77              	.L13:
+  78 0026 08BD     		pop	{r3, pc}
+  79              	.L15:
+  80              		.align	2
+  81              	.L14:
+  82 0028 00000000 		.word	.LC0
+  83 002c 00000000 		.word	.LANCHOR0
+  84 0030 00000000 		.word	.LANCHOR1
+  85 0034 00000000 		.word	.LANCHOR2
+  86              		.size	reinitializeDefaults, .-reinitializeDefaults
+  87              		.global	__aeabi_fcmpeq
+  88              		.global	__aeabi_f2iz
+  89              		.global	__aeabi_i2f
+  90              		.global	__aeabi_fcmpgt
+  91              		.global	__aeabi_fcmplt
+  92              		.section	.text.isValid,"ax",%progbits
+  93              		.align	1
+  94              		.thumb
+  95              		.thumb_func
+  96              		.type	isValid, %function
+  97              	isValid:
+  98              		@ args = 0, pretend = 0, frame = 8
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 101 0002 0646     		mov	r6, r0
+ 102 0004 0846     		mov	r0, r1
+ 103 0006 0D46     		mov	r5, r1
+ 104 0008 FFF7FEFF 		bl	__fpclassifyf
+ 105 000c 0128     		cmp	r0, #1
+ 106 000e 32D9     		bls	.L32
+ 107 0010 337C     		ldrb	r3, [r6, #16]	@ zero_extendqisi2
+ 108 0012 012B     		cmp	r3, #1
+ 109 0014 12D0     		beq	.L19
+ 110 0016 1DD3     		bcc	.L20
+ 111 0018 022B     		cmp	r3, #2
+ 112 001a 2CD1     		bne	.L32
+ 113 001c 2846     		mov	r0, r5
+ 114 001e 0021     		movs	r1, #0
+ARM GAS  /tmp/ccxYfZxo.s 			page 3
+
+
+ 115 0020 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 116 0024 48BB     		cbnz	r0, .L33
+ 117 0026 2846     		mov	r0, r5
+ 118 0028 4FF07E51 		mov	r1, #1065353216
+ 119 002c 4FF00104 		mov	r4, #1
+ 120 0030 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 121 0034 00B9     		cbnz	r0, .L23
+ 122 0036 0446     		mov	r4, r0
+ 123              	.L23:
+ 124 0038 E0B2     		uxtb	r0, r4
+ 125 003a 1FE0     		b	.L18
+ 126              	.L19:
+ 127 003c 2846     		mov	r0, r5
+ 128 003e FFF7FEFF 		bl	__aeabi_f2iz
+ 129 0042 0190     		str	r0, [sp, #4]
+ 130 0044 0198     		ldr	r0, [sp, #4]
+ 131 0046 FFF7FEFF 		bl	__aeabi_i2f
+ 132 004a 0146     		mov	r1, r0
+ 133 004c 2846     		mov	r0, r5
+ 134 004e FFF7FEFF 		bl	__aeabi_fcmpeq
+ 135 0052 80B1     		cbz	r0, .L32
+ 136              	.L20:
+ 137 0054 2846     		mov	r0, r5
+ 138 0056 F168     		ldr	r1, [r6, #12]	@ float
+ 139 0058 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 140 005c 58B9     		cbnz	r0, .L32
+ 141 005e 2846     		mov	r0, r5
+ 142 0060 B168     		ldr	r1, [r6, #8]	@ float
+ 143 0062 4FF00104 		mov	r4, #1
+ 144 0066 FFF7FEFF 		bl	__aeabi_fcmplt
+ 145 006a 00B9     		cbnz	r0, .L25
+ 146 006c 0446     		mov	r4, r0
+ 147              	.L25:
+ 148 006e 84F00100 		eor	r0, r4, #1
+ 149 0072 C0B2     		uxtb	r0, r0
+ 150 0074 02E0     		b	.L18
+ 151              	.L32:
+ 152 0076 0020     		movs	r0, #0
+ 153 0078 00E0     		b	.L18
+ 154              	.L33:
+ 155 007a 0120     		movs	r0, #1
+ 156              	.L18:
+ 157 007c 02B0     		add	sp, sp, #8
+ 158              		@ sp needed
+ 159 007e 70BD     		pop	{r4, r5, r6, pc}
+ 160              		.size	isValid, .-isValid
+ 161              		.section	.text.crc32.constprop.1,"ax",%progbits
+ 162              		.align	1
+ 163              		.thumb
+ 164              		.thumb_func
+ 165              		.type	crc32.constprop.1, %function
+ 166              	crc32.constprop.1:
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169 0000 0022     		movs	r2, #0
+ 170 0002 1346     		mov	r3, r2
+ 171 0004 30B5     		push	{r4, r5, lr}
+ARM GAS  /tmp/ccxYfZxo.s 			page 4
+
+
+ 172              	.L35:
+ 173 0006 8242     		cmp	r2, r0
+ 174 0008 0DDA     		bge	.L39
+ 175 000a 0849     		ldr	r1, .L40
+ 176 000c 515C     		ldrb	r1, [r2, r1]	@ zero_extendqisi2
+ 177 000e 4B40     		eors	r3, r3, r1
+ 178 0010 0821     		movs	r1, #8
+ 179              	.L36:
+ 180 0012 074C     		ldr	r4, .L40+4
+ 181 0014 43F30005 		sbfx	r5, r3, #0, #1
+ 182 0018 2C40     		ands	r4, r4, r5
+ 183 001a 0139     		subs	r1, r1, #1
+ 184 001c 84EA5303 		eor	r3, r4, r3, lsr #1
+ 185 0020 F7D1     		bne	.L36
+ 186 0022 0132     		adds	r2, r2, #1
+ 187 0024 EFE7     		b	.L35
+ 188              	.L39:
+ 189 0026 1846     		mov	r0, r3
+ 190 0028 30BD     		pop	{r4, r5, pc}
+ 191              	.L41:
+ 192 002a 00BF     		.align	2
+ 193              	.L40:
+ 194 002c 00000000 		.word	.LANCHOR2
+ 195 0030 2083B8ED 		.word	-306674912
+ 196              		.size	crc32.constprop.1, .-crc32.constprop.1
+ 197              		.section	.text.configRegisterParam_,"ax",%progbits
+ 198              		.align	1
+ 199              		.global	configRegisterParam_
+ 200              		.thumb
+ 201              		.thumb_func
+ 202              		.type	configRegisterParam_, %function
+ 203              	configRegisterParam_:
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 207 0002 364B     		ldr	r3, .L68
+ 208 0004 0446     		mov	r4, r0
+ 209 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 210 0008 002B     		cmp	r3, #0
+ 211 000a 65D1     		bne	.L42
+ 212 000c 0028     		cmp	r0, #0
+ 213 000e 5BD0     		beq	.L44
+ 214 0010 0368     		ldr	r3, [r0]
+ 215 0012 002B     		cmp	r3, #0
+ 216 0014 58D0     		beq	.L44
+ 217              	.L55:
+ 218 0016 324E     		ldr	r6, .L68+4
+ 219 0018 3368     		ldr	r3, [r6]
+ 220 001a 272B     		cmp	r3, #39
+ 221 001c 06DD     		ble	.L45
+ 222 001e 314A     		ldr	r2, .L68+8
+ 223 0020 314B     		ldr	r3, .L68+12
+ 224 0022 1A60     		str	r2, [r3]
+ 225 0024 FFF7FEFF 		bl	sysHaltHook_
+ 226 0028 FFF7FEFF 		bl	port_halt
+ 227              	.L45:
+ 228 002c 2046     		mov	r0, r4
+ARM GAS  /tmp/ccxYfZxo.s 			page 5
+
+
+ 229 002e 6168     		ldr	r1, [r4, #4]	@ float
+ 230 0030 FFF7FEFF 		bl	isValid
+ 231 0034 30B9     		cbnz	r0, .L46
+ 232 0036 2D4A     		ldr	r2, .L68+16
+ 233 0038 2B4B     		ldr	r3, .L68+12
+ 234 003a 1A60     		str	r2, [r3]
+ 235 003c FFF7FEFF 		bl	sysHaltHook_
+ 236 0040 FFF7FEFF 		bl	port_halt
+ 237              	.L46:
+ 238 0044 2068     		ldr	r0, [r4]
+ 239 0046 FFF7FEFF 		bl	indexByName
+ 240 004a 0028     		cmp	r0, #0
+ 241 004c 06DB     		blt	.L47
+ 242 004e 284A     		ldr	r2, .L68+20
+ 243 0050 254B     		ldr	r3, .L68+12
+ 244 0052 1A60     		str	r2, [r3]
+ 245 0054 FFF7FEFF 		bl	sysHaltHook_
+ 246 0058 FFF7FEFF 		bl	port_halt
+ 247              	.L47:
+ 248 005c 3568     		ldr	r5, [r6]
+ 249 005e 6B1C     		adds	r3, r5, #1
+ 250 0060 3360     		str	r3, [r6]
+ 251 0062 244B     		ldr	r3, .L68+24
+ 252 0064 53F82520 		ldr	r2, [r3, r5, lsl #2]
+ 253 0068 1F46     		mov	r7, r3
+ 254 006a 32B1     		cbz	r2, .L48
+ 255 006c 224A     		ldr	r2, .L68+28
+ 256 006e 1E4B     		ldr	r3, .L68+12
+ 257 0070 1A60     		str	r2, [r3]
+ 258 0072 FFF7FEFF 		bl	sysHaltHook_
+ 259 0076 FFF7FEFF 		bl	port_halt
+ 260              	.L48:
+ 261 007a 204E     		ldr	r6, .L68+32
+ 262 007c 0021     		movs	r1, #0
+ 263 007e 56F82500 		ldr	r0, [r6, r5, lsl #2]	@ float
+ 264 0082 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 265 0086 30B9     		cbnz	r0, .L49
+ 266 0088 1D4A     		ldr	r2, .L68+36
+ 267 008a 174B     		ldr	r3, .L68+12
+ 268 008c 1A60     		str	r2, [r3]
+ 269 008e FFF7FEFF 		bl	sysHaltHook_
+ 270 0092 FFF7FEFF 		bl	port_halt
+ 271              	.L49:
+ 272 0096 47F82540 		str	r4, [r7, r5, lsl #2]
+ 273 009a 6368     		ldr	r3, [r4, #4]	@ float
+ 274 009c 2268     		ldr	r2, [r4]
+ 275 009e 46F82530 		str	r3, [r6, r5, lsl #2]	@ float
+ 276 00a2 013A     		subs	r2, r2, #1
+ 277              	.L51:
+ 278 00a4 12F8011F 		ldrb	r1, [r2, #1]!	@ zero_extendqisi2
+ 279 00a8 69B1     		cbz	r1, .L67
+ 280 00aa 164C     		ldr	r4, .L68+40
+ 281 00ac 2368     		ldr	r3, [r4]
+ 282 00ae 4B40     		eors	r3, r3, r1
+ 283 00b0 0821     		movs	r1, #8
+ 284              	.L52:
+ 285 00b2 1548     		ldr	r0, .L68+44
+ARM GAS  /tmp/ccxYfZxo.s 			page 6
+
+
+ 286 00b4 43F30005 		sbfx	r5, r3, #0, #1
+ 287 00b8 2840     		ands	r0, r0, r5
+ 288 00ba 0139     		subs	r1, r1, #1
+ 289 00bc 80EA5303 		eor	r3, r0, r3, lsr #1
+ 290 00c0 F7D1     		bne	.L52
+ 291 00c2 2360     		str	r3, [r4]
+ 292 00c4 EEE7     		b	.L51
+ 293              	.L67:
+ 294 00c6 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 295              	.L44:
+ 296 00c8 104A     		ldr	r2, .L68+48
+ 297 00ca 074B     		ldr	r3, .L68+12
+ 298 00cc 1A60     		str	r2, [r3]
+ 299 00ce FFF7FEFF 		bl	sysHaltHook_
+ 300 00d2 FFF7FEFF 		bl	port_halt
+ 301 00d6 9EE7     		b	.L55
+ 302              	.L42:
+ 303 00d8 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 304              	.L69:
+ 305 00da 00BF     		.align	2
+ 306              	.L68:
+ 307 00dc 00000000 		.word	.LANCHOR3
+ 308 00e0 00000000 		.word	.LANCHOR0
+ 309 00e4 24000000 		.word	.LC1
+ 310 00e8 00000000 		.word	dbg_panic_msg
+ 311 00ec 56000000 		.word	.LC2
+ 312 00f0 88000000 		.word	.LC3
+ 313 00f4 00000000 		.word	.LANCHOR1
+ 314 00f8 BA000000 		.word	.LC4
+ 315 00fc 00000000 		.word	.LANCHOR2
+ 316 0100 EC000000 		.word	.LC5
+ 317 0104 00000000 		.word	.LANCHOR4
+ 318 0108 2083B8ED 		.word	-306674912
+ 319 010c 1E010000 		.word	.LC6
+ 320              		.size	configRegisterParam_, .-configRegisterParam_
+ 321              		.global	__aeabi_f2d
+ 322              		.section	.text.configInit,"ax",%progbits
+ 323              		.align	1
+ 324              		.global	configInit
+ 325              		.thumb
+ 326              		.thumb_func
+ 327              		.type	configInit, %function
+ 328              	configInit:
+ 329              		@ args = 0, pretend = 0, frame = 8
+ 330              		@ frame_needed = 0, uses_anonymous_args = 0
+ 331 0000 2DE9FF47 		push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, lr}
+ 332 0004 3E4D     		ldr	r5, .L86
+ 333 0006 2B68     		ldr	r3, [r5]
+ 334 0008 282B     		cmp	r3, #40
+ 335 000a 06DD     		ble	.L71
+ 336 000c 3D4A     		ldr	r2, .L86+4
+ 337 000e 3E4B     		ldr	r3, .L86+8
+ 338 0010 1A60     		str	r2, [r3]
+ 339 0012 FFF7FEFF 		bl	sysHaltHook_
+ 340 0016 FFF7FEFF 		bl	port_halt
+ 341              	.L71:
+ 342 001a 3C4B     		ldr	r3, .L86+12
+ARM GAS  /tmp/ccxYfZxo.s 			page 7
+
+
+ 343 001c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 344 001e 1C46     		mov	r4, r3
+ 345 0020 32B1     		cbz	r2, .L72
+ 346 0022 3B4A     		ldr	r2, .L86+16
+ 347 0024 384B     		ldr	r3, .L86+8
+ 348 0026 1A60     		str	r2, [r3]
+ 349 0028 FFF7FEFF 		bl	sysHaltHook_
+ 350 002c FFF7FEFF 		bl	port_halt
+ 351              	.L72:
+ 352 0030 0123     		movs	r3, #1
+ 353 0032 3848     		ldr	r0, .L86+20
+ 354 0034 2370     		strb	r3, [r4]
+ 355 0036 FFF7FEFF 		bl	chMtxInit
+ 356 003a 374B     		ldr	r3, .L86+24
+ 357 003c 04A9     		add	r1, sp, #16
+ 358 003e 41F8083D 		str	r3, [r1, #-8]!
+ 359 0042 0020     		movs	r0, #0
+ 360 0044 0422     		movs	r2, #4
+ 361 0046 FFF7FEFF 		bl	configStorageRead
+ 362 004a 0446     		mov	r4, r0
+ 363 004c 0028     		cmp	r0, #0
+ 364 004e 50D1     		bne	.L73
+ 365 0050 324B     		ldr	r3, .L86+28
+ 366 0052 029A     		ldr	r2, [sp, #8]
+ 367 0054 1B68     		ldr	r3, [r3]
+ 368 0056 9A42     		cmp	r2, r3
+ 369 0058 49D1     		bne	.L74
+ 370 005a 2E68     		ldr	r6, [r5]
+ 371 005c 0820     		movs	r0, #8
+ 372 005e B600     		lsls	r6, r6, #2
+ 373 0060 2F49     		ldr	r1, .L86+32
+ 374 0062 3246     		mov	r2, r6
+ 375 0064 FFF7FEFF 		bl	configStorageRead
+ 376 0068 0446     		mov	r4, r0
+ 377 006a 0028     		cmp	r0, #0
+ 378 006c 41D1     		bne	.L73
+ 379 006e 3046     		mov	r0, r6
+ 380 0070 FFF7FEFF 		bl	crc32.constprop.1
+ 381 0074 04A9     		add	r1, sp, #16
+ 382 0076 0646     		mov	r6, r0
+ 383 0078 0420     		movs	r0, #4
+ 384 007a 41F8044D 		str	r4, [r1, #-4]!
+ 385 007e 0246     		mov	r2, r0
+ 386 0080 FFF7FEFF 		bl	configStorageRead
+ 387 0084 0446     		mov	r4, r0
+ 388 0086 0028     		cmp	r0, #0
+ 389 0088 33D1     		bne	.L73
+ 390 008a 039B     		ldr	r3, [sp, #12]
+ 391 008c 9E42     		cmp	r6, r3
+ 392 008e 29D1     		bne	.L76
+ 393 0090 1B4B     		ldr	r3, .L86
+ 394 0092 2448     		ldr	r0, .L86+36
+ 395 0094 1968     		ldr	r1, [r3]
+ 396 0096 FFF7FEFF 		bl	lowsyslog
+ 397 009a 234F     		ldr	r7, .L86+40
+ 398 009c 234E     		ldr	r6, .L86+44
+ 399              	.L77:
+ARM GAS  /tmp/ccxYfZxo.s 			page 8
+
+
+ 400 009e 2B68     		ldr	r3, [r5]
+ 401 00a0 9C42     		cmp	r4, r3
+ 402 00a2 22DA     		bge	.L80
+ 403 00a4 57F8040F 		ldr	r0, [r7, #4]!
+ 404 00a8 56F8041F 		ldr	r1, [r6, #4]!	@ float
+ 405 00ac FFF7FEFF 		bl	isValid
+ 406 00b0 B0B9     		cbnz	r0, .L78
+ 407 00b2 3068     		ldr	r0, [r6]	@ float
+ 408 00b4 FFF7FEFF 		bl	__aeabi_f2d
+ 409 00b8 D7F800A0 		ldr	r10, [r7]
+ 410 00bc 8046     		mov	r8, r0
+ 411 00be DAF80400 		ldr	r0, [r10, #4]	@ float
+ 412 00c2 8946     		mov	r9, r1
+ 413 00c4 FFF7FEFF 		bl	__aeabi_f2d
+ 414 00c8 CDE90001 		strd	r0, [sp]
+ 415 00cc 4B46     		mov	r3, r9
+ 416 00ce 1848     		ldr	r0, .L86+48
+ 417 00d0 DAF80010 		ldr	r1, [r10]
+ 418 00d4 4246     		mov	r2, r8
+ 419 00d6 FFF7FEFF 		bl	lowsyslog
+ 420 00da 3B68     		ldr	r3, [r7]
+ 421 00dc 5B68     		ldr	r3, [r3, #4]	@ float
+ 422 00de 3360     		str	r3, [r6]	@ float
+ 423              	.L78:
+ 424 00e0 0134     		adds	r4, r4, #1
+ 425 00e2 DCE7     		b	.L77
+ 426              	.L76:
+ 427 00e4 1348     		ldr	r0, .L86+52
+ 428              	.L85:
+ 429 00e6 FFF7FEFF 		bl	reinitializeDefaults
+ 430              	.L80:
+ 431 00ea 0020     		movs	r0, #0
+ 432 00ec 05E0     		b	.L81
+ 433              	.L74:
+ 434 00ee 1248     		ldr	r0, .L86+56
+ 435 00f0 F9E7     		b	.L85
+ 436              	.L73:
+ 437 00f2 1248     		ldr	r0, .L86+60
+ 438 00f4 FFF7FEFF 		bl	reinitializeDefaults
+ 439 00f8 2046     		mov	r0, r4
+ 440              	.L81:
+ 441 00fa 04B0     		add	sp, sp, #16
+ 442              		@ sp needed
+ 443 00fc BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 444              	.L87:
+ 445              		.align	2
+ 446              	.L86:
+ 447 0100 00000000 		.word	.LANCHOR0
+ 448 0104 50010000 		.word	.LC7
+ 449 0108 00000000 		.word	dbg_panic_msg
+ 450 010c 00000000 		.word	.LANCHOR3
+ 451 0110 82010000 		.word	.LC8
+ 452 0114 00000000 		.word	.LANCHOR5
+ 453 0118 EFBEADDE 		.word	-559038737
+ 454 011c 00000000 		.word	.LANCHOR4
+ 455 0120 00000000 		.word	.LANCHOR2
+ 456 0124 B4010000 		.word	.LC9
+ARM GAS  /tmp/ccxYfZxo.s 			page 9
+
+
+ 457 0128 FCFFFFFF 		.word	.LANCHOR1-4
+ 458 012c FCFFFFFF 		.word	.LANCHOR2-4
+ 459 0130 D0010000 		.word	.LC10
+ 460 0134 F9010000 		.word	.LC11
+ 461 0138 06020000 		.word	.LC12
+ 462 013c 16020000 		.word	.LC13
+ 463              		.size	configInit, .-configInit
+ 464              		.section	.text.configSave,"ax",%progbits
+ 465              		.align	1
+ 466              		.global	configSave
+ 467              		.thumb
+ 468              		.thumb_func
+ 469              		.type	configSave, %function
+ 470              	configSave:
+ 471              		@ args = 0, pretend = 0, frame = 8
+ 472              		@ frame_needed = 0, uses_anonymous_args = 0
+ 473 0000 184B     		ldr	r3, .L92
+ 474 0002 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 475 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 476 0006 33B9     		cbnz	r3, .L89
+ 477 0008 174A     		ldr	r2, .L92+4
+ 478 000a 184B     		ldr	r3, .L92+8
+ 479 000c 1A60     		str	r2, [r3]
+ 480 000e FFF7FEFF 		bl	sysHaltHook_
+ 481 0012 FFF7FEFF 		bl	port_halt
+ 482              	.L89:
+ 483 0016 1648     		ldr	r0, .L92+12
+ 484 0018 FFF7FEFF 		bl	chMtxLock
+ 485 001c FFF7FEFF 		bl	configStorageErase
+ 486 0020 0446     		mov	r4, r0
+ 487 0022 D0B9     		cbnz	r0, .L90
+ 488 0024 1349     		ldr	r1, .L92+16
+ 489 0026 0422     		movs	r2, #4
+ 490 0028 FFF7FEFF 		bl	configStorageWrite
+ 491 002c 0446     		mov	r4, r0
+ 492 002e A0B9     		cbnz	r0, .L90
+ 493 0030 114B     		ldr	r3, .L92+20
+ 494 0032 1D68     		ldr	r5, [r3]
+ 495 0034 AD00     		lsls	r5, r5, #2
+ 496 0036 2846     		mov	r0, r5
+ 497 0038 FFF7FEFF 		bl	crc32.constprop.1
+ 498 003c 02A9     		add	r1, sp, #8
+ 499 003e 41F8040D 		str	r0, [r1, #-4]!
+ 500 0042 0420     		movs	r0, #4
+ 501 0044 0246     		mov	r2, r0
+ 502 0046 FFF7FEFF 		bl	configStorageWrite
+ 503 004a 0446     		mov	r4, r0
+ 504 004c 28B9     		cbnz	r0, .L90
+ 505 004e 0820     		movs	r0, #8
+ 506 0050 0A49     		ldr	r1, .L92+24
+ 507 0052 2A46     		mov	r2, r5
+ 508 0054 FFF7FEFF 		bl	configStorageWrite
+ 509 0058 0446     		mov	r4, r0
+ 510              	.L90:
+ 511 005a FFF7FEFF 		bl	chMtxUnlock
+ 512 005e 2046     		mov	r0, r4
+ 513 0060 03B0     		add	sp, sp, #12
+ARM GAS  /tmp/ccxYfZxo.s 			page 10
+
+
+ 514              		@ sp needed
+ 515 0062 30BD     		pop	{r4, r5, pc}
+ 516              	.L93:
+ 517              		.align	2
+ 518              	.L92:
+ 519 0064 00000000 		.word	.LANCHOR3
+ 520 0068 22020000 		.word	.LC14
+ 521 006c 00000000 		.word	dbg_panic_msg
+ 522 0070 00000000 		.word	.LANCHOR5
+ 523 0074 00000000 		.word	.LANCHOR4
+ 524 0078 00000000 		.word	.LANCHOR0
+ 525 007c 00000000 		.word	.LANCHOR2
+ 526              		.size	configSave, .-configSave
+ 527              		.section	.text.configErase,"ax",%progbits
+ 528              		.align	1
+ 529              		.global	configErase
+ 530              		.thumb
+ 531              		.thumb_func
+ 532              		.type	configErase, %function
+ 533              	configErase:
+ 534              		@ args = 0, pretend = 0, frame = 0
+ 535              		@ frame_needed = 0, uses_anonymous_args = 0
+ 536 0000 0A4B     		ldr	r3, .L96
+ 537 0002 10B5     		push	{r4, lr}
+ 538 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 539 0006 33B9     		cbnz	r3, .L95
+ 540 0008 094A     		ldr	r2, .L96+4
+ 541 000a 0A4B     		ldr	r3, .L96+8
+ 542 000c 1A60     		str	r2, [r3]
+ 543 000e FFF7FEFF 		bl	sysHaltHook_
+ 544 0012 FFF7FEFF 		bl	port_halt
+ 545              	.L95:
+ 546 0016 0848     		ldr	r0, .L96+12
+ 547 0018 FFF7FEFF 		bl	chMtxLock
+ 548 001c FFF7FEFF 		bl	configStorageErase
+ 549 0020 0446     		mov	r4, r0
+ 550 0022 FFF7FEFF 		bl	chMtxUnlock
+ 551 0026 2046     		mov	r0, r4
+ 552 0028 10BD     		pop	{r4, pc}
+ 553              	.L97:
+ 554 002a 00BF     		.align	2
+ 555              	.L96:
+ 556 002c 00000000 		.word	.LANCHOR3
+ 557 0030 54020000 		.word	.LC15
+ 558 0034 00000000 		.word	dbg_panic_msg
+ 559 0038 00000000 		.word	.LANCHOR5
+ 560              		.size	configErase, .-configErase
+ 561              		.section	.text.configNameByIndex,"ax",%progbits
+ 562              		.align	1
+ 563              		.global	configNameByIndex
+ 564              		.thumb
+ 565              		.thumb_func
+ 566              		.type	configNameByIndex, %function
+ 567              	configNameByIndex:
+ 568              		@ args = 0, pretend = 0, frame = 0
+ 569              		@ frame_needed = 0, uses_anonymous_args = 0
+ 570 0000 0C4B     		ldr	r3, .L103
+ARM GAS  /tmp/ccxYfZxo.s 			page 11
+
+
+ 571 0002 10B5     		push	{r4, lr}
+ 572 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 573 0006 0446     		mov	r4, r0
+ 574 0008 33B9     		cbnz	r3, .L99
+ 575 000a 0B4A     		ldr	r2, .L103+4
+ 576 000c 0B4B     		ldr	r3, .L103+8
+ 577 000e 1A60     		str	r2, [r3]
+ 578 0010 FFF7FEFF 		bl	sysHaltHook_
+ 579 0014 FFF7FEFF 		bl	port_halt
+ 580              	.L99:
+ 581 0018 002C     		cmp	r4, #0
+ 582 001a 08DB     		blt	.L102
+ 583 001c 084B     		ldr	r3, .L103+12
+ 584 001e 1B68     		ldr	r3, [r3]
+ 585 0020 9C42     		cmp	r4, r3
+ 586 0022 04DA     		bge	.L102
+ 587 0024 074B     		ldr	r3, .L103+16
+ 588 0026 53F82430 		ldr	r3, [r3, r4, lsl #2]
+ 589 002a 1868     		ldr	r0, [r3]
+ 590 002c 10BD     		pop	{r4, pc}
+ 591              	.L102:
+ 592 002e 0020     		movs	r0, #0
+ 593 0030 10BD     		pop	{r4, pc}
+ 594              	.L104:
+ 595 0032 00BF     		.align	2
+ 596              	.L103:
+ 597 0034 00000000 		.word	.LANCHOR3
+ 598 0038 86020000 		.word	.LC16
+ 599 003c 00000000 		.word	dbg_panic_msg
+ 600 0040 00000000 		.word	.LANCHOR0
+ 601 0044 00000000 		.word	.LANCHOR1
+ 602              		.size	configNameByIndex, .-configNameByIndex
+ 603              		.section	.text.configSet,"ax",%progbits
+ 604              		.align	1
+ 605              		.global	configSet
+ 606              		.thumb
+ 607              		.thumb_func
+ 608              		.type	configSet, %function
+ 609              	configSet:
+ 610              		@ args = 0, pretend = 0, frame = 0
+ 611              		@ frame_needed = 0, uses_anonymous_args = 0
+ 612 0000 38B5     		push	{r3, r4, r5, lr}
+ 613 0002 144B     		ldr	r3, .L110
+ 614 0004 0446     		mov	r4, r0
+ 615 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 616 0008 0D46     		mov	r5, r1
+ 617 000a 33B9     		cbnz	r3, .L106
+ 618 000c 124A     		ldr	r2, .L110+4
+ 619 000e 134B     		ldr	r3, .L110+8
+ 620 0010 1A60     		str	r2, [r3]
+ 621 0012 FFF7FEFF 		bl	sysHaltHook_
+ 622 0016 FFF7FEFF 		bl	port_halt
+ 623              	.L106:
+ 624 001a 1148     		ldr	r0, .L110+12
+ 625 001c FFF7FEFF 		bl	chMtxLock
+ 626 0020 2046     		mov	r0, r4
+ 627 0022 FFF7FEFF 		bl	indexByName
+ARM GAS  /tmp/ccxYfZxo.s 			page 12
+
+
+ 628 0026 041E     		subs	r4, r0, #0
+ 629 0028 0BDB     		blt	.L108
+ 630 002a 0E4B     		ldr	r3, .L110+16
+ 631 002c 2946     		mov	r1, r5
+ 632 002e 53F82400 		ldr	r0, [r3, r4, lsl #2]
+ 633 0032 FFF7FEFF 		bl	isValid
+ 634 0036 38B1     		cbz	r0, .L109
+ 635 0038 0B4B     		ldr	r3, .L110+20
+ 636 003a 43F82450 		str	r5, [r3, r4, lsl #2]	@ float
+ 637 003e 0024     		movs	r4, #0
+ 638 0040 04E0     		b	.L107
+ 639              	.L108:
+ 640 0042 6FF00104 		mvn	r4, #1
+ 641 0046 01E0     		b	.L107
+ 642              	.L109:
+ 643 0048 6FF01504 		mvn	r4, #21
+ 644              	.L107:
+ 645 004c FFF7FEFF 		bl	chMtxUnlock
+ 646 0050 2046     		mov	r0, r4
+ 647 0052 38BD     		pop	{r3, r4, r5, pc}
+ 648              	.L111:
+ 649              		.align	2
+ 650              	.L110:
+ 651 0054 00000000 		.word	.LANCHOR3
+ 652 0058 B8020000 		.word	.LC17
+ 653 005c 00000000 		.word	dbg_panic_msg
+ 654 0060 00000000 		.word	.LANCHOR5
+ 655 0064 00000000 		.word	.LANCHOR1
+ 656 0068 00000000 		.word	.LANCHOR2
+ 657              		.size	configSet, .-configSet
+ 658              		.section	.text.configGetDescr,"ax",%progbits
+ 659              		.align	1
+ 660              		.global	configGetDescr
+ 661              		.thumb
+ 662              		.thumb_func
+ 663              		.type	configGetDescr, %function
+ 664              	configGetDescr:
+ 665              		@ args = 0, pretend = 0, frame = 0
+ 666              		@ frame_needed = 0, uses_anonymous_args = 0
+ 667 0000 38B5     		push	{r3, r4, r5, lr}
+ 668 0002 134B     		ldr	r3, .L118
+ 669 0004 0546     		mov	r5, r0
+ 670 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 671 0008 0C46     		mov	r4, r1
+ 672 000a 33B9     		cbnz	r3, .L113
+ 673 000c 114A     		ldr	r2, .L118+4
+ 674 000e 124B     		ldr	r3, .L118+8
+ 675 0010 1A60     		str	r2, [r3]
+ 676 0012 FFF7FEFF 		bl	sysHaltHook_
+ 677 0016 FFF7FEFF 		bl	port_halt
+ 678              	.L113:
+ 679 001a B4B1     		cbz	r4, .L116
+ 680              	.L115:
+ 681 001c 0F48     		ldr	r0, .L118+12
+ 682 001e FFF7FEFF 		bl	chMtxLock
+ 683 0022 2846     		mov	r0, r5
+ 684 0024 FFF7FEFF 		bl	indexByName
+ARM GAS  /tmp/ccxYfZxo.s 			page 13
+
+
+ 685 0028 0028     		cmp	r0, #0
+ 686 002a A9BF     		itett	ge
+ 687 002c 0C4B     		ldrge	r3, .L118+16
+ 688 002e 6FF00104 		mvnlt	r4, #1
+ 689 0032 53F82050 		ldrge	r5, [r3, r0, lsl #2]
+ 690 0036 0FCD     		ldmiage	r5!, {r0, r1, r2, r3}
+ 691 0038 A1BF     		itttt	ge
+ 692 003a 0FC4     		stmiage	r4!, {r0, r1, r2, r3}
+ 693 003c 2B68     		ldrge	r3, [r5]
+ 694 003e 2360     		strge	r3, [r4]
+ 695 0040 0024     		movge	r4, #0
+ 696 0042 FFF7FEFF 		bl	chMtxUnlock
+ 697 0046 2046     		mov	r0, r4
+ 698 0048 38BD     		pop	{r3, r4, r5, pc}
+ 699              	.L116:
+ 700 004a 6FF01500 		mvn	r0, #21
+ 701 004e 38BD     		pop	{r3, r4, r5, pc}
+ 702              	.L119:
+ 703              		.align	2
+ 704              	.L118:
+ 705 0050 00000000 		.word	.LANCHOR3
+ 706 0054 EA020000 		.word	.LC18
+ 707 0058 00000000 		.word	dbg_panic_msg
+ 708 005c 00000000 		.word	.LANCHOR5
+ 709 0060 00000000 		.word	.LANCHOR1
+ 710              		.size	configGetDescr, .-configGetDescr
+ 711              		.section	.text.configGet,"ax",%progbits
+ 712              		.align	1
+ 713              		.global	configGet
+ 714              		.thumb
+ 715              		.thumb_func
+ 716              		.type	configGet, %function
+ 717              	configGet:
+ 718              		@ args = 0, pretend = 0, frame = 0
+ 719              		@ frame_needed = 0, uses_anonymous_args = 0
+ 720 0000 0D4B     		ldr	r3, .L124
+ 721 0002 10B5     		push	{r4, lr}
+ 722 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 723 0006 0446     		mov	r4, r0
+ 724 0008 33B9     		cbnz	r3, .L121
+ 725 000a 0C4A     		ldr	r2, .L124+4
+ 726 000c 0C4B     		ldr	r3, .L124+8
+ 727 000e 1A60     		str	r2, [r3]
+ 728 0010 FFF7FEFF 		bl	sysHaltHook_
+ 729 0014 FFF7FEFF 		bl	port_halt
+ 730              	.L121:
+ 731 0018 0A48     		ldr	r0, .L124+12
+ 732 001a FFF7FEFF 		bl	chMtxLock
+ 733 001e 2046     		mov	r0, r4
+ 734 0020 FFF7FEFF 		bl	indexByName
+ 735 0024 0028     		cmp	r0, #0
+ 736 0026 AABF     		itet	ge
+ 737 0028 074B     		ldrge	r3, .L124+16
+ 738 002a 084C     		ldrlt	r4, .L124+20
+ 739 002c 53F82040 		ldrge	r4, [r3, r0, lsl #2]	@ float
+ 740 0030 FFF7FEFF 		bl	chMtxUnlock
+ 741 0034 2046     		mov	r0, r4
+ARM GAS  /tmp/ccxYfZxo.s 			page 14
+
+
+ 742 0036 10BD     		pop	{r4, pc}
+ 743              	.L125:
+ 744              		.align	2
+ 745              	.L124:
+ 746 0038 00000000 		.word	.LANCHOR3
+ 747 003c 1C030000 		.word	.LC19
+ 748 0040 00000000 		.word	dbg_panic_msg
+ 749 0044 00000000 		.word	.LANCHOR5
+ 750 0048 00000000 		.word	.LANCHOR2
+ 751 004c 0000C07F 		.word	2143289344
+ 752              		.size	configGet, .-configGet
+ 753              		.section	.bss._frozen,"aw",%nobits
+ 754              		.set	.LANCHOR3,. + 0
+ 755              		.type	_frozen, %object
+ 756              		.size	_frozen, 1
+ 757              	_frozen:
+ 758 0000 00       		.space	1
+ 759              		.section	.bss._value_pool,"aw",%nobits
+ 760              		.align	2
+ 761              		.set	.LANCHOR2,. + 0
+ 762              		.type	_value_pool, %object
+ 763              		.size	_value_pool, 160
+ 764              	_value_pool:
+ 765 0000 00000000 		.space	160
+ 765      00000000 
+ 765      00000000 
+ 765      00000000 
+ 765      00000000 
+ 766              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 767              	.LC0:
+ 768 0000 436F6E66 		.ascii	"Config: Initializing defaults - %s\012\000"
+ 768      69673A20 
+ 768      496E6974 
+ 768      69616C69 
+ 768      7A696E67 
+ 769              	.LC1:
+ 770 0024 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:113\000"
+ 770      785F6368 
+ 770      6962696F 
+ 770      732F2F2F 
+ 770      7A756261 
+ 771              	.LC2:
+ 772 0056 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:114\000"
+ 772      785F6368 
+ 772      6962696F 
+ 772      732F2F2F 
+ 772      7A756261 
+ 773              	.LC3:
+ 774 0088 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:115\000"
+ 774      785F6368 
+ 774      6962696F 
+ 774      732F2F2F 
+ 774      7A756261 
+ 775              	.LC4:
+ 776 00ba 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:119\000"
+ 776      785F6368 
+ 776      6962696F 
+ARM GAS  /tmp/ccxYfZxo.s 			page 15
+
+
+ 776      732F2F2F 
+ 776      7A756261 
+ 777              	.LC5:
+ 778 00ec 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:120\000"
+ 778      785F6368 
+ 778      6962696F 
+ 778      732F2F2F 
+ 778      7A756261 
+ 779              	.LC6:
+ 780 011e 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:112\000"
+ 780      785F6368 
+ 780      6962696F 
+ 780      732F2F2F 
+ 780      7A756261 
+ 781              	.LC7:
+ 782 0150 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:138\000"
+ 782      785F6368 
+ 782      6962696F 
+ 782      732F2F2F 
+ 782      7A756261 
+ 783              	.LC8:
+ 784 0182 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:139\000"
+ 784      785F6368 
+ 784      6962696F 
+ 784      732F2F2F 
+ 784      7A756261 
+ 785              	.LC9:
+ 786 01b4 436F6E66 		.ascii	"Config: %i params restored\012\000"
+ 786      69673A20 
+ 786      25692070 
+ 786      6172616D 
+ 786      73207265 
+ 787              	.LC10:
+ 788 01d0 436F6E66 		.ascii	"Config: Resetting param [%s]: %f --> %f\012\000"
+ 788      69673A20 
+ 788      52657365 
+ 788      7474696E 
+ 788      67207061 
+ 789              	.LC11:
+ 790 01f9 43524320 		.ascii	"CRC mismatch\000"
+ 790      6D69736D 
+ 790      61746368 
+ 790      00
+ 791              	.LC12:
+ 792 0206 4C61796F 		.ascii	"Layout mismatch\000"
+ 792      7574206D 
+ 792      69736D61 
+ 792      74636800 
+ 793              	.LC13:
+ 794 0216 466C6173 		.ascii	"Flash error\000"
+ 794      68206572 
+ 794      726F7200 
+ 795              	.LC14:
+ 796 0222 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:193\000"
+ 796      785F6368 
+ 796      6962696F 
+ 796      732F2F2F 
+ARM GAS  /tmp/ccxYfZxo.s 			page 16
+
+
+ 796      7A756261 
+ 797              	.LC15:
+ 798 0254 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:229\000"
+ 798      785F6368 
+ 798      6962696F 
+ 798      732F2F2F 
+ 798      7A756261 
+ 799              	.LC16:
+ 800 0286 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:238\000"
+ 800      785F6368 
+ 800      6962696F 
+ 800      732F2F2F 
+ 800      7A756261 
+ 801              	.LC17:
+ 802 02b8 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:248\000"
+ 802      785F6368 
+ 802      6962696F 
+ 802      732F2F2F 
+ 802      7A756261 
+ 803              	.LC18:
+ 804 02ea 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:271\000"
+ 804      785F6368 
+ 804      6962696F 
+ 804      732F2F2F 
+ 804      7A756261 
+ 805              	.LC19:
+ 806 031c 7A756261 		.ascii	"zubax_chibios///zubax_chibios/config/config.c:294\000"
+ 806      785F6368 
+ 806      6962696F 
+ 806      732F2F2F 
+ 806      7A756261 
+ 807              		.section	.bss._num_params,"aw",%nobits
+ 808              		.align	2
+ 809              		.set	.LANCHOR0,. + 0
+ 810              		.type	_num_params, %object
+ 811              		.size	_num_params, 4
+ 812              	_num_params:
+ 813 0000 00000000 		.space	4
+ 814              		.section	.bss._mutex,"aw",%nobits
+ 815              		.align	2
+ 816              		.set	.LANCHOR5,. + 0
+ 817              		.type	_mutex, %object
+ 818              		.size	_mutex, 16
+ 819              	_mutex:
+ 820 0000 00000000 		.space	16
+ 820      00000000 
+ 820      00000000 
+ 820      00000000 
+ 821              		.section	.bss._descr_pool,"aw",%nobits
+ 822              		.align	2
+ 823              		.set	.LANCHOR1,. + 0
+ 824              		.type	_descr_pool, %object
+ 825              		.size	_descr_pool, 160
+ 826              	_descr_pool:
+ 827 0000 00000000 		.space	160
+ 827      00000000 
+ 827      00000000 
+ARM GAS  /tmp/ccxYfZxo.s 			page 17
+
+
+ 827      00000000 
+ 827      00000000 
+ 828              		.section	.bss._layout_hash,"aw",%nobits
+ 829              		.align	2
+ 830              		.set	.LANCHOR4,. + 0
+ 831              		.type	_layout_hash, %object
+ 832              		.size	_layout_hash, 4
+ 833              	_layout_hash:
+ 834 0000 00000000 		.space	4
+ 835              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccxYfZxo.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 config.c
+     /tmp/ccxYfZxo.s:16     .text.indexByName:0000000000000000 $t
+     /tmp/ccxYfZxo.s:20     .text.indexByName:0000000000000000 indexByName
+     /tmp/ccxYfZxo.s:49     .text.indexByName:0000000000000030 $d
+     /tmp/ccxYfZxo.s:53     .text.reinitializeDefaults:0000000000000000 $t
+     /tmp/ccxYfZxo.s:57     .text.reinitializeDefaults:0000000000000000 reinitializeDefaults
+     /tmp/ccxYfZxo.s:82     .text.reinitializeDefaults:0000000000000028 $d
+     /tmp/ccxYfZxo.s:93     .text.isValid:0000000000000000 $t
+     /tmp/ccxYfZxo.s:97     .text.isValid:0000000000000000 isValid
+     /tmp/ccxYfZxo.s:162    .text.crc32.constprop.1:0000000000000000 $t
+     /tmp/ccxYfZxo.s:166    .text.crc32.constprop.1:0000000000000000 crc32.constprop.1
+     /tmp/ccxYfZxo.s:194    .text.crc32.constprop.1:000000000000002c $d
+     /tmp/ccxYfZxo.s:198    .text.configRegisterParam_:0000000000000000 $t
+     /tmp/ccxYfZxo.s:203    .text.configRegisterParam_:0000000000000000 configRegisterParam_
+     /tmp/ccxYfZxo.s:307    .text.configRegisterParam_:00000000000000dc $d
+     /tmp/ccxYfZxo.s:323    .text.configInit:0000000000000000 $t
+     /tmp/ccxYfZxo.s:328    .text.configInit:0000000000000000 configInit
+     /tmp/ccxYfZxo.s:447    .text.configInit:0000000000000100 $d
+     /tmp/ccxYfZxo.s:465    .text.configSave:0000000000000000 $t
+     /tmp/ccxYfZxo.s:470    .text.configSave:0000000000000000 configSave
+     /tmp/ccxYfZxo.s:519    .text.configSave:0000000000000064 $d
+     /tmp/ccxYfZxo.s:528    .text.configErase:0000000000000000 $t
+     /tmp/ccxYfZxo.s:533    .text.configErase:0000000000000000 configErase
+     /tmp/ccxYfZxo.s:556    .text.configErase:000000000000002c $d
+     /tmp/ccxYfZxo.s:562    .text.configNameByIndex:0000000000000000 $t
+     /tmp/ccxYfZxo.s:567    .text.configNameByIndex:0000000000000000 configNameByIndex
+     /tmp/ccxYfZxo.s:597    .text.configNameByIndex:0000000000000034 $d
+     /tmp/ccxYfZxo.s:604    .text.configSet:0000000000000000 $t
+     /tmp/ccxYfZxo.s:609    .text.configSet:0000000000000000 configSet
+     /tmp/ccxYfZxo.s:651    .text.configSet:0000000000000054 $d
+     /tmp/ccxYfZxo.s:659    .text.configGetDescr:0000000000000000 $t
+     /tmp/ccxYfZxo.s:664    .text.configGetDescr:0000000000000000 configGetDescr
+     /tmp/ccxYfZxo.s:705    .text.configGetDescr:0000000000000050 $d
+     /tmp/ccxYfZxo.s:712    .text.configGet:0000000000000000 $t
+     /tmp/ccxYfZxo.s:717    .text.configGet:0000000000000000 configGet
+     /tmp/ccxYfZxo.s:746    .text.configGet:0000000000000038 $d
+     /tmp/ccxYfZxo.s:757    .bss._frozen:0000000000000000 _frozen
+     /tmp/ccxYfZxo.s:758    .bss._frozen:0000000000000000 $d
+     /tmp/ccxYfZxo.s:760    .bss._value_pool:0000000000000000 $d
+     /tmp/ccxYfZxo.s:764    .bss._value_pool:0000000000000000 _value_pool
+     /tmp/ccxYfZxo.s:808    .bss._num_params:0000000000000000 $d
+     /tmp/ccxYfZxo.s:812    .bss._num_params:0000000000000000 _num_params
+     /tmp/ccxYfZxo.s:815    .bss._mutex:0000000000000000 $d
+     /tmp/ccxYfZxo.s:819    .bss._mutex:0000000000000000 _mutex
+     /tmp/ccxYfZxo.s:822    .bss._descr_pool:0000000000000000 $d
+     /tmp/ccxYfZxo.s:826    .bss._descr_pool:0000000000000000 _descr_pool
+     /tmp/ccxYfZxo.s:829    .bss._layout_hash:0000000000000000 $d
+     /tmp/ccxYfZxo.s:833    .bss._layout_hash:0000000000000000 _layout_hash
+
+UNDEFINED SYMBOLS
+strcmp
+lowsyslog
+__aeabi_fcmpeq
+__aeabi_f2iz
+__aeabi_i2f
+__aeabi_fcmpgt
+ARM GAS  /tmp/ccxYfZxo.s 			page 19
+
+
+__aeabi_fcmplt
+__fpclassifyf
+sysHaltHook_
+port_halt
+dbg_panic_msg
+__aeabi_f2d
+chMtxInit
+configStorageRead
+chMtxLock
+configStorageErase
+configStorageWrite
+chMtxUnlock

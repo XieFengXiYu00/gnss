@@ -1,0 +1,98 @@
+ARM GAS  /tmp/ccfU1drq.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_float_spec.cpp"
+  15              		.global	__aeabi_fmul
+  16              		.section	.text._ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf,"ax",%progbits
+  17              		.align	1
+  18              		.global	_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf
+  19              		.thumb
+  20              		.thumb_func
+  21              		.type	_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf, %function
+  22              	_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25 0000 20F00043 		bic	r3, r0, #-2147483648
+  26 0004 B3F1FF4F 		cmp	r3, #2139095040
+  27 0008 10B5     		push	{r4, lr}
+  28 000a 00F00044 		and	r4, r0, #-2147483648
+  29 000e 05D3     		bcc	.L2
+  30 0010 47F6FF70 		movw	r0, #32767
+  31 0014 08BF     		it	eq
+  32 0016 4FF4F840 		moveq	r0, #31744
+  33 001a 0EE0     		b	.L3
+  34              	.L2:
+  35 001c 0848     		ldr	r0, .L8
+  36 001e 4FF0F061 		mov	r1, #125829120
+  37 0022 1840     		ands	r0, r0, r3
+  38 0024 FFF7FEFF 		bl	__aeabi_fmul
+  39 0028 00F58050 		add	r0, r0, #4096
+  40 002c B0F1786F 		cmp	r0, #260046848
+  41 0030 88BF     		it	hi
+  42 0032 4FF07860 		movhi	r0, #260046848
+  43 0036 C0F34F30 		ubfx	r0, r0, #13, #16
+  44              	.L3:
+  45 003a 40EA1440 		orr	r0, r0, r4, lsr #16
+  46 003e 10BD     		pop	{r4, pc}
+  47              	.L9:
+  48              		.align	2
+  49              	.L8:
+  50 0040 00F0FF7F 		.word	2147479552
+  51              		.size	_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf, .-_ZN6uavcan16IEEE754Converter16nativeIeee
+  52              		.global	__aeabi_fcmpge
+  53              		.section	.text._ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt,"ax",%progbits
+  54              		.align	1
+  55              		.global	_ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt
+  56              		.thumb
+  57              		.thumb_func
+ARM GAS  /tmp/ccfU1drq.s 			page 2
+
+
+  58              		.type	_ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt, %function
+  59              	_ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt:
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62 0000 38B5     		push	{r3, r4, r5, lr}
+  63 0002 0546     		mov	r5, r0
+  64 0004 C0F30E00 		ubfx	r0, r0, #0, #15
+  65 0008 4FF0EF41 		mov	r1, #2004877312
+  66 000c 4003     		lsls	r0, r0, #13
+  67 000e FFF7FEFF 		bl	__aeabi_fmul
+  68 0012 4FF08F41 		mov	r1, #1199570944
+  69 0016 0446     		mov	r4, r0
+  70 0018 FFF7FEFF 		bl	__aeabi_fcmpge
+  71 001c 08B1     		cbz	r0, .L11
+  72 001e 44F0FF44 		orr	r4, r4, #2139095040
+  73              	.L11:
+  74 0022 05F40040 		and	r0, r5, #32768
+  75 0026 44EA0040 		orr	r0, r4, r0, lsl #16
+  76 002a 38BD     		pop	{r3, r4, r5, pc}
+  77              		.size	_ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt, .-_ZN6uavcan16IEEE754Converter16halfToNati
+  78              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccfU1drq.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_float_spec.cpp
+     /tmp/ccfU1drq.s:17     .text._ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf:0000000000000000 $t
+     /tmp/ccfU1drq.s:22     .text._ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf:0000000000000000 _ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf
+     /tmp/ccfU1drq.s:50     .text._ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf:0000000000000040 $d
+     /tmp/ccfU1drq.s:54     .text._ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt:0000000000000000 $t
+     /tmp/ccfU1drq.s:59     .text._ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt:0000000000000000 _ZN6uavcan16IEEE754Converter16halfToNativeIeeeEt
+
+UNDEFINED SYMBOLS
+__aeabi_fmul
+__aeabi_fcmpge

@@ -1,0 +1,324 @@
+ARM GAS  /tmp/ccOnGiDt.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chcond.c"
+  15              		.section	.text.prio_insert,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	prio_insert, %function
+  20              	prio_insert:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 0B46     		mov	r3, r1
+  24 0002 10B5     		push	{r4, lr}
+  25              	.L3:
+  26 0004 1B68     		ldr	r3, [r3]
+  27 0006 8B42     		cmp	r3, r1
+  28 0008 04D0     		beq	.L2
+  29 000a 9C68     		ldr	r4, [r3, #8]
+  30 000c 8268     		ldr	r2, [r0, #8]
+  31 000e 9442     		cmp	r4, r2
+  32 0010 F8D2     		bcs	.L3
+  33 0012 1946     		mov	r1, r3
+  34              	.L2:
+  35 0014 4B68     		ldr	r3, [r1, #4]
+  36 0016 0160     		str	r1, [r0]
+  37 0018 4360     		str	r3, [r0, #4]
+  38 001a 4860     		str	r0, [r1, #4]
+  39 001c 1860     		str	r0, [r3]
+  40 001e 10BD     		pop	{r4, pc}
+  41              		.size	prio_insert, .-prio_insert
+  42              		.section	.text.chCondInit,"ax",%progbits
+  43              		.align	1
+  44              		.global	chCondInit
+  45              		.thumb
+  46              		.thumb_func
+  47              		.type	chCondInit, %function
+  48              	chCondInit:
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52 0000 4060     		str	r0, [r0, #4]
+  53 0002 0060     		str	r0, [r0]
+  54 0004 7047     		bx	lr
+  55              		.size	chCondInit, .-chCondInit
+  56              		.section	.text.chCondSignal,"ax",%progbits
+  57              		.align	1
+ARM GAS  /tmp/ccOnGiDt.s 			page 2
+
+
+  58              		.global	chCondSignal
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	chCondSignal, %function
+  62              	chCondSignal:
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 08B5     		push	{r3, lr}
+  66 0002 0246     		mov	r2, r0
+  67 0004 2023     		movs	r3, #32
+  68              	@ 77 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+  69 0006 83F31188 		msr     BASEPRI, r3
+  70              	@ 0 "" 2
+  71              		.thumb
+  72 000a 0068     		ldr	r0, [r0]
+  73 000c 9042     		cmp	r0, r2
+  74 000e 05D0     		beq	.L8
+  75 0010 0368     		ldr	r3, [r0]
+  76 0012 0021     		movs	r1, #0
+  77 0014 1360     		str	r3, [r2]
+  78 0016 5A60     		str	r2, [r3, #4]
+  79 0018 FFF7FEFF 		bl	chSchWakeupS
+  80              	.L8:
+  81 001c 0023     		movs	r3, #0
+  82              	@ 80 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+  83 001e 83F31188 		msr     BASEPRI, r3
+  84              	@ 0 "" 2
+  85              		.thumb
+  86 0022 08BD     		pop	{r3, pc}
+  87              		.size	chCondSignal, .-chCondSignal
+  88              		.section	.text.chCondSignalI,"ax",%progbits
+  89              		.align	1
+  90              		.global	chCondSignalI
+  91              		.thumb
+  92              		.thumb_func
+  93              		.type	chCondSignalI, %function
+  94              	chCondSignalI:
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97 0000 08B5     		push	{r3, lr}
+  98 0002 0346     		mov	r3, r0
+  99 0004 0068     		ldr	r0, [r0]
+ 100 0006 9842     		cmp	r0, r3
+ 101 0008 06D0     		beq	.L9
+ 102 000a 0268     		ldr	r2, [r0]
+ 103 000c 1A60     		str	r2, [r3]
+ 104 000e 5360     		str	r3, [r2, #4]
+ 105 0010 FFF7FEFF 		bl	chSchReadyI
+ 106 0014 0023     		movs	r3, #0
+ 107 0016 0362     		str	r3, [r0, #32]
+ 108              	.L9:
+ 109 0018 08BD     		pop	{r3, pc}
+ 110              		.size	chCondSignalI, .-chCondSignalI
+ 111              		.section	.text.chCondBroadcastI,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	chCondBroadcastI
+ 114              		.thumb
+ARM GAS  /tmp/ccOnGiDt.s 			page 3
+
+
+ 115              		.thumb_func
+ 116              		.type	chCondBroadcastI, %function
+ 117              	chCondBroadcastI:
+ 118              		@ args = 0, pretend = 0, frame = 0
+ 119              		@ frame_needed = 0, uses_anonymous_args = 0
+ 120 0000 10B5     		push	{r4, lr}
+ 121 0002 0446     		mov	r4, r0
+ 122              	.L12:
+ 123 0004 2068     		ldr	r0, [r4]
+ 124 0006 A042     		cmp	r0, r4
+ 125 0008 08D0     		beq	.L14
+ 126 000a 0368     		ldr	r3, [r0]
+ 127 000c 2360     		str	r3, [r4]
+ 128 000e 5C60     		str	r4, [r3, #4]
+ 129 0010 FFF7FEFF 		bl	chSchReadyI
+ 130 0014 6FF00103 		mvn	r3, #1
+ 131 0018 0362     		str	r3, [r0, #32]
+ 132 001a F3E7     		b	.L12
+ 133              	.L14:
+ 134 001c 10BD     		pop	{r4, pc}
+ 135              		.size	chCondBroadcastI, .-chCondBroadcastI
+ 136              		.section	.text.chCondBroadcast,"ax",%progbits
+ 137              		.align	1
+ 138              		.global	chCondBroadcast
+ 139              		.thumb
+ 140              		.thumb_func
+ 141              		.type	chCondBroadcast, %function
+ 142              	chCondBroadcast:
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145 0000 08B5     		push	{r3, lr}
+ 146 0002 2023     		movs	r3, #32
+ 147              	@ 112 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+ 148 0004 83F31188 		msr     BASEPRI, r3
+ 149              	@ 0 "" 2
+ 150              		.thumb
+ 151 0008 FFF7FEFF 		bl	chCondBroadcastI
+ 152 000c FFF7FEFF 		bl	chSchRescheduleS
+ 153 0010 0023     		movs	r3, #0
+ 154              	@ 115 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+ 155 0012 83F31188 		msr     BASEPRI, r3
+ 156              	@ 0 "" 2
+ 157              		.thumb
+ 158 0016 08BD     		pop	{r3, pc}
+ 159              		.size	chCondBroadcast, .-chCondBroadcast
+ 160              		.section	.text.chCondWaitS,"ax",%progbits
+ 161              		.align	1
+ 162              		.global	chCondWaitS
+ 163              		.thumb
+ 164              		.thumb_func
+ 165              		.type	chCondWaitS, %function
+ 166              	chCondWaitS:
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169 0000 0A4B     		ldr	r3, .L17
+ 170 0002 70B5     		push	{r4, r5, r6, lr}
+ 171 0004 9C69     		ldr	r4, [r3, #24]
+ARM GAS  /tmp/ccOnGiDt.s 			page 4
+
+
+ 172 0006 0546     		mov	r5, r0
+ 173 0008 FFF7FEFF 		bl	chMtxUnlockS
+ 174 000c 0646     		mov	r6, r0
+ 175 000e 2946     		mov	r1, r5
+ 176 0010 2562     		str	r5, [r4, #32]
+ 177 0012 2046     		mov	r0, r4
+ 178 0014 FFF7FEFF 		bl	prio_insert
+ 179 0018 0520     		movs	r0, #5
+ 180 001a FFF7FEFF 		bl	chSchGoSleepS
+ 181 001e 246A     		ldr	r4, [r4, #32]
+ 182 0020 3046     		mov	r0, r6
+ 183 0022 FFF7FEFF 		bl	chMtxLockS
+ 184 0026 2046     		mov	r0, r4
+ 185 0028 70BD     		pop	{r4, r5, r6, pc}
+ 186              	.L18:
+ 187 002a 00BF     		.align	2
+ 188              	.L17:
+ 189 002c 00000000 		.word	rlist
+ 190              		.size	chCondWaitS, .-chCondWaitS
+ 191              		.section	.text.chCondWait,"ax",%progbits
+ 192              		.align	1
+ 193              		.global	chCondWait
+ 194              		.thumb
+ 195              		.thumb_func
+ 196              		.type	chCondWait, %function
+ 197              	chCondWait:
+ 198              		@ args = 0, pretend = 0, frame = 0
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200 0000 08B5     		push	{r3, lr}
+ 201 0002 2023     		movs	r3, #32
+ 202              	@ 161 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+ 203 0004 83F31188 		msr     BASEPRI, r3
+ 204              	@ 0 "" 2
+ 205              		.thumb
+ 206 0008 FFF7FEFF 		bl	chCondWaitS
+ 207 000c 0023     		movs	r3, #0
+ 208              	@ 163 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+ 209 000e 83F31188 		msr     BASEPRI, r3
+ 210              	@ 0 "" 2
+ 211              		.thumb
+ 212 0012 08BD     		pop	{r3, pc}
+ 213              		.size	chCondWait, .-chCondWait
+ 214              		.section	.text.chCondWaitTimeoutS,"ax",%progbits
+ 215              		.align	1
+ 216              		.global	chCondWaitTimeoutS
+ 217              		.thumb
+ 218              		.thumb_func
+ 219              		.type	chCondWaitTimeoutS, %function
+ 220              	chCondWaitTimeoutS:
+ 221              		@ args = 0, pretend = 0, frame = 0
+ 222              		@ frame_needed = 0, uses_anonymous_args = 0
+ 223 0000 70B5     		push	{r4, r5, r6, lr}
+ 224 0002 0446     		mov	r4, r0
+ 225 0004 0E46     		mov	r6, r1
+ 226 0006 FFF7FEFF 		bl	chMtxUnlockS
+ 227 000a 094B     		ldr	r3, .L25
+ 228 000c 0546     		mov	r5, r0
+ARM GAS  /tmp/ccOnGiDt.s 			page 5
+
+
+ 229 000e 9869     		ldr	r0, [r3, #24]
+ 230 0010 2146     		mov	r1, r4
+ 231 0012 0462     		str	r4, [r0, #32]
+ 232 0014 FFF7FEFF 		bl	prio_insert
+ 233 0018 0520     		movs	r0, #5
+ 234 001a 3146     		mov	r1, r6
+ 235 001c FFF7FEFF 		bl	chSchGoSleepTimeoutS
+ 236 0020 431C     		adds	r3, r0, #1
+ 237 0022 0446     		mov	r4, r0
+ 238 0024 02D0     		beq	.L21
+ 239 0026 2846     		mov	r0, r5
+ 240 0028 FFF7FEFF 		bl	chMtxLockS
+ 241              	.L21:
+ 242 002c 2046     		mov	r0, r4
+ 243 002e 70BD     		pop	{r4, r5, r6, pc}
+ 244              	.L26:
+ 245              		.align	2
+ 246              	.L25:
+ 247 0030 00000000 		.word	rlist
+ 248              		.size	chCondWaitTimeoutS, .-chCondWaitTimeoutS
+ 249              		.section	.text.chCondWaitTimeout,"ax",%progbits
+ 250              		.align	1
+ 251              		.global	chCondWaitTimeout
+ 252              		.thumb
+ 253              		.thumb_func
+ 254              		.type	chCondWaitTimeout, %function
+ 255              	chCondWaitTimeout:
+ 256              		@ args = 0, pretend = 0, frame = 0
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258 0000 08B5     		push	{r3, lr}
+ 259 0002 2023     		movs	r3, #32
+ 260              	@ 236 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+ 261 0004 83F31188 		msr     BASEPRI, r3
+ 262              	@ 0 "" 2
+ 263              		.thumb
+ 264 0008 FFF7FEFF 		bl	chCondWaitTimeoutS
+ 265 000c 0023     		movs	r3, #0
+ 266              	@ 238 "zubax_chibios///chibios/os/kernel/src/chcond.c" 1
+ 267 000e 83F31188 		msr     BASEPRI, r3
+ 268              	@ 0 "" 2
+ 269              		.thumb
+ 270 0012 08BD     		pop	{r3, pc}
+ 271              		.size	chCondWaitTimeout, .-chCondWaitTimeout
+ 272              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccOnGiDt.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chcond.c
+     /tmp/ccOnGiDt.s:16     .text.prio_insert:0000000000000000 $t
+     /tmp/ccOnGiDt.s:20     .text.prio_insert:0000000000000000 prio_insert
+     /tmp/ccOnGiDt.s:43     .text.chCondInit:0000000000000000 $t
+     /tmp/ccOnGiDt.s:48     .text.chCondInit:0000000000000000 chCondInit
+     /tmp/ccOnGiDt.s:57     .text.chCondSignal:0000000000000000 $t
+     /tmp/ccOnGiDt.s:62     .text.chCondSignal:0000000000000000 chCondSignal
+     /tmp/ccOnGiDt.s:89     .text.chCondSignalI:0000000000000000 $t
+     /tmp/ccOnGiDt.s:94     .text.chCondSignalI:0000000000000000 chCondSignalI
+     /tmp/ccOnGiDt.s:112    .text.chCondBroadcastI:0000000000000000 $t
+     /tmp/ccOnGiDt.s:117    .text.chCondBroadcastI:0000000000000000 chCondBroadcastI
+     /tmp/ccOnGiDt.s:137    .text.chCondBroadcast:0000000000000000 $t
+     /tmp/ccOnGiDt.s:142    .text.chCondBroadcast:0000000000000000 chCondBroadcast
+     /tmp/ccOnGiDt.s:161    .text.chCondWaitS:0000000000000000 $t
+     /tmp/ccOnGiDt.s:166    .text.chCondWaitS:0000000000000000 chCondWaitS
+     /tmp/ccOnGiDt.s:189    .text.chCondWaitS:000000000000002c $d
+     /tmp/ccOnGiDt.s:192    .text.chCondWait:0000000000000000 $t
+     /tmp/ccOnGiDt.s:197    .text.chCondWait:0000000000000000 chCondWait
+     /tmp/ccOnGiDt.s:215    .text.chCondWaitTimeoutS:0000000000000000 $t
+     /tmp/ccOnGiDt.s:220    .text.chCondWaitTimeoutS:0000000000000000 chCondWaitTimeoutS
+     /tmp/ccOnGiDt.s:247    .text.chCondWaitTimeoutS:0000000000000030 $d
+     /tmp/ccOnGiDt.s:250    .text.chCondWaitTimeout:0000000000000000 $t
+     /tmp/ccOnGiDt.s:255    .text.chCondWaitTimeout:0000000000000000 chCondWaitTimeout
+
+UNDEFINED SYMBOLS
+chSchWakeupS
+chSchReadyI
+chSchRescheduleS
+chMtxUnlockS
+chSchGoSleepS
+chMtxLockS
+rlist
+chSchGoSleepTimeoutS

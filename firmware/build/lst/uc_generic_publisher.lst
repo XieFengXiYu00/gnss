@@ -1,0 +1,253 @@
+ARM GAS  /tmp/ccSeuumZ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_generic_publisher.cpp"
+  15              		.section	.text._ZNK6uavcan20GenericPublisherBase8isInitedEv,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZNK6uavcan20GenericPublisherBase8isInitedEv
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZNK6uavcan20GenericPublisherBase8isInitedEv, %function
+  21              	_ZNK6uavcan20GenericPublisherBase8isInitedEv:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0069     		ldr	r0, [r0, #16]
+  26 0002 0130     		adds	r0, r0, #1
+  27 0004 18BF     		it	ne
+  28 0006 0120     		movne	r0, #1
+  29 0008 7047     		bx	lr
+  30              		.size	_ZNK6uavcan20GenericPublisherBase8isInitedEv, .-_ZNK6uavcan20GenericPublisherBase8isInitedEv
+  31              		.section	.text._ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE,"
+  32              		.align	1
+  33              		.global	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+  34              		.thumb
+  35              		.thumb_func
+  36              		.type	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE, %function
+  37              	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  41 0002 1D46     		mov	r5, r3
+  42 0004 0369     		ldr	r3, [r0, #16]
+  43 0006 0446     		mov	r4, r0
+  44 0008 0133     		adds	r3, r3, #1
+  45 000a 0F46     		mov	r7, r1
+  46 000c 1646     		mov	r6, r2
+  47 000e 0FD1     		bne	.L4
+  48 0010 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+  49 0014 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+  50 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+  51 001c 3946     		mov	r1, r7
+  52 001e 3246     		mov	r2, r6
+  53 0020 FFF7FEFF 		bl	_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+  54 0024 0146     		mov	r1, r0
+  55 0026 28B1     		cbz	r0, .L5
+  56 0028 2046     		mov	r0, r4
+  57 002a 2A46     		mov	r2, r5
+ARM GAS  /tmp/ccSeuumZ.s 			page 2
+
+
+  58 002c FFF7FEFF 		bl	_ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE
+  59              	.L4:
+  60 0030 0020     		movs	r0, #0
+  61 0032 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  62              	.L5:
+  63 0034 6FF00400 		mvn	r0, #4
+  64 0038 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  65              		.size	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE, .-_ZN6uav
+  66              		.section	.text._ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv,"ax",%progbits
+  67              		.align	1
+  68              		.global	_ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv
+  69              		.thumb
+  70              		.thumb_func
+  71              		.type	_ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv, %function
+  72              	_ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv:
+  73              		@ args = 0, pretend = 0, frame = 8
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+  76 0002 0446     		mov	r4, r0
+  77 0004 086A     		ldr	r0, [r1, #32]
+  78 0006 0D46     		mov	r5, r1
+  79 0008 0368     		ldr	r3, [r0]
+  80 000a 1B69     		ldr	r3, [r3, #16]
+  81 000c 9847     		blx	r3
+  82 000e D0F8A810 		ldr	r1, [r0, #168]
+  83 0012 6846     		mov	r0, sp
+  84 0014 0B68     		ldr	r3, [r1]
+  85 0016 9B68     		ldr	r3, [r3, #8]
+  86 0018 9847     		blx	r3
+  87 001a D5E90623 		ldrd	r2, [r5, #24]
+  88 001e 002A     		cmp	r2, #0
+  89 0020 73F10001 		sbcs	r1, r3, #0
+  90 0024 DDE90001 		ldrd	r0, [sp]
+  91 0028 09DA     		bge	.L8
+  92 002a 5642     		rsbs	r6, r2, #0
+  93 002c 63EB4307 		sbc	r7, r3, r3, lsl #1
+  94 0030 B942     		cmp	r1, r7
+  95 0032 08BF     		it	eq
+  96 0034 B042     		cmpeq	r0, r6
+  97 0036 0ED2     		bcs	.L9
+  98 0038 0022     		movs	r2, #0
+  99 003a 0023     		movs	r3, #0
+ 100 003c 0DE0     		b	.L11
+ 101              	.L8:
+ 102 003e 8618     		adds	r6, r0, r2
+ 103 0040 41EB0307 		adc	r7, r1, r3
+ 104 0044 8F42     		cmp	r7, r1
+ 105 0046 08BF     		it	eq
+ 106 0048 8642     		cmpeq	r6, r0
+ 107 004a 04D2     		bcs	.L9
+ 108 004c 4FF0FF32 		mov	r2, #-1
+ 109 0050 4FF0FF33 		mov	r3, #-1
+ 110 0054 01E0     		b	.L11
+ 111              	.L9:
+ 112 0056 1218     		adds	r2, r2, r0
+ 113 0058 4B41     		adcs	r3, r3, r1
+ 114              	.L11:
+ARM GAS  /tmp/ccSeuumZ.s 			page 3
+
+
+ 115 005a 2046     		mov	r0, r4
+ 116 005c C4E90023 		strd	r2, [r4]
+ 117 0060 03B0     		add	sp, sp, #12
+ 118              		@ sp needed
+ 119 0062 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 120              		.size	_ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv, .-_ZNK6uavcan20GenericPublisherBase13get
+ 121              		.section	.text._ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS
+ 122              		.align	1
+ 123              		.global	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12Tran
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12Transf
+ 127              	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeE
+ 128              		@ args = 8, pretend = 0, frame = 16
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 131 0004 0546     		mov	r5, r0
+ 132 0006 89B0     		sub	sp, sp, #36
+ 133 0008 DDF848B0 		ldr	fp, [sp, #72]
+ 134 000c D1F80480 		ldr	r8, [r1, #4]
+ 135 0010 4F89     		ldrh	r7, [r1, #10]
+ 136 0012 9246     		mov	r10, r2
+ 137 0014 9946     		mov	r9, r3
+ 138 0016 139E     		ldr	r6, [sp, #76]
+ 139 0018 06AC     		add	r4, sp, #24
+ 140 001a 04A8     		add	r0, sp, #16
+ 141 001c 2946     		mov	r1, r5
+ 142 001e BBF1000F 		cmp	fp, #0
+ 143 0022 14D0     		beq	.L13
+ 144 0024 FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv
+ 145 0028 96E80300 		ldmia	r6, {r0, r1}
+ 146 002c 84E80300 		stmia	r4, {r0, r1}
+ 147 0030 8DE81004 		stmia	sp, {r4, r10}
+ 148 0034 8DF80890 		strb	r9, [sp, #8]
+ 149 0038 9BF80030 		ldrb	r3, [fp]	@ zero_extendqisi2
+ 150 003c 2846     		mov	r0, r5
+ 151 003e 8DF80C30 		strb	r3, [sp, #12]
+ 152 0042 4146     		mov	r1, r8
+ 153 0044 3A46     		mov	r2, r7
+ 154 0046 04AB     		add	r3, sp, #16
+ 155 0048 FFF7FEFF 		bl	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10Tr
+ 156 004c 0FE0     		b	.L14
+ 157              	.L13:
+ 158 004e FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv
+ 159 0052 96E80300 		ldmia	r6, {r0, r1}
+ 160 0056 3A46     		mov	r2, r7
+ 161 0058 84E80300 		stmia	r4, {r0, r1}
+ 162 005c 04AB     		add	r3, sp, #16
+ 163 005e 8DE81004 		stmia	sp, {r4, r10}
+ 164 0062 8DF80890 		strb	r9, [sp, #8]
+ 165 0066 2846     		mov	r0, r5
+ 166 0068 4146     		mov	r1, r8
+ 167 006a FFF7FEFF 		bl	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE
+ 168              	.L14:
+ 169 006e 09B0     		add	sp, sp, #36
+ 170              		@ sp needed
+ 171 0070 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ARM GAS  /tmp/ccSeuumZ.s 			page 4
+
+
+ 172              		.size	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12Transf
+ 173              		.section	.text._ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE,"ax",%progbi
+ 174              		.align	1
+ 175              		.global	_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+ 176              		.thumb
+ 177              		.thumb_func
+ 178              		.type	_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE, %function
+ 179              	_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE:
+ 180              		@ args = 0, pretend = 0, frame = 8
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182 0000 0B46     		mov	r3, r1
+ 183 0002 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 184 0004 0246     		mov	r2, r0
+ 185 0006 0021     		movs	r1, #0
+ 186 0008 C820     		movs	r0, #200
+ 187 000a CDE90001 		strd	r0, [sp]
+ 188 000e D3E90001 		ldrd	r0, [r3]
+ 189 0012 C828     		cmp	r0, #200
+ 190 0014 71F10001 		sbcs	r1, r1, #0
+ 191 0018 ACBF     		ite	ge
+ 192 001a 1946     		movge	r1, r3
+ 193 001c 6946     		movlt	r1, sp
+ 194 001e 03C9     		ldmia	r1, {r0, r1}
+ 195 0020 83E80300 		stmia	r3, {r0, r1}
+ 196 0024 094C     		ldr	r4, .L20
+ 197 0026 D3E90001 		ldrd	r0, [r3]
+ 198 002a 0025     		movs	r5, #0
+ 199 002c 8442     		cmp	r4, r0
+ 200 002e 75EB0101 		sbcs	r1, r5, r1
+ 201 0032 ACBF     		ite	ge
+ 202 0034 1946     		movge	r1, r3
+ 203 0036 6946     		movlt	r1, sp
+ 204 0038 CDE90045 		strd	r4, [sp]
+ 205 003c 1832     		adds	r2, r2, #24
+ 206 003e 03C9     		ldmia	r1, {r0, r1}
+ 207 0040 83E80300 		stmia	r3, {r0, r1}
+ 208 0044 82E80300 		stmia	r2, {r0, r1}
+ 209 0048 03B0     		add	sp, sp, #12
+ 210              		@ sp needed
+ 211 004a 30BD     		pop	{r4, r5, pc}
+ 212              	.L21:
+ 213              		.align	2
+ 214              	.L20:
+ 215 004c 00879303 		.word	60000000
+ 216              		.size	_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE, .-_ZN6uavcan20Generi
+ 217              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccSeuumZ.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_generic_publisher.cpp
+     /tmp/ccSeuumZ.s:16     .text._ZNK6uavcan20GenericPublisherBase8isInitedEv:0000000000000000 $t
+     /tmp/ccSeuumZ.s:21     .text._ZNK6uavcan20GenericPublisherBase8isInitedEv:0000000000000000 _ZNK6uavcan20GenericPublisherBase8isInitedEv
+     /tmp/ccSeuumZ.s:32     .text._ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE:0000000000000000 $t
+     /tmp/ccSeuumZ.s:37     .text._ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE:0000000000000000 _ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+     /tmp/ccSeuumZ.s:67     .text._ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv:0000000000000000 $t
+     /tmp/ccSeuumZ.s:72     .text._ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv:0000000000000000 _ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv
+     /tmp/ccSeuumZ.s:122    .text._ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccSeuumZ.s:127    .text._ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+     /tmp/ccSeuumZ.s:174    .text._ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE:0000000000000000 $t
+     /tmp/ccSeuumZ.s:179    .text._ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE:0000000000000000 _ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+     /tmp/ccSeuumZ.s:215    .text._ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE:000000000000004c $d
+
+UNDEFINED SYMBOLS
+_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+_ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE
+_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10TransferIDE
+_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE

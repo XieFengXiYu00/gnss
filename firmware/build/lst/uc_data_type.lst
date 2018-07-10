@@ -1,0 +1,406 @@
+ARM GAS  /tmp/ccGFVDKL.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_data_type.cpp"
+  15              		.section	.text._ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE,"ax",%progbit
+  16              		.align	1
+  17              		.global	_ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE, %function
+  21              	_ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 08B9     		cbnz	r0, .L2
+  26 0002 FF20     		movs	r0, #255
+  27 0004 7047     		bx	lr
+  28              	.L2:
+  29 0006 0128     		cmp	r0, #1
+  30 0008 4FF6FF70 		movw	r0, #65535
+  31 000c 18BF     		it	ne
+  32 000e 0020     		movne	r0, #0
+  33 0010 7047     		bx	lr
+  34              		.size	_ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE, .-_ZN6uavcan10DataTyp
+  35              		.section	.text._ZN6uavcan20DataTypeSignatureCRC6extendEy,"ax",%progbits
+  36              		.align	1
+  37              		.global	_ZN6uavcan20DataTypeSignatureCRC6extendEy
+  38              		.thumb
+  39              		.thumb_func
+  40              		.type	_ZN6uavcan20DataTypeSignatureCRC6extendEy, %function
+  41              	_ZN6uavcan20DataTypeSignatureCRC6extendEy:
+  42              		@ args = 0, pretend = 0, frame = 0
+  43              		@ frame_needed = 0, uses_anonymous_args = 0
+  44              		@ link register save eliminated.
+  45 0000 D243     		mvns	r2, r2
+  46 0002 DB43     		mvns	r3, r3
+  47 0004 C0E90023 		strd	r2, [r0]
+  48 0008 7047     		bx	lr
+  49              		.size	_ZN6uavcan20DataTypeSignatureCRC6extendEy, .-_ZN6uavcan20DataTypeSignatureCRC6extendEy
+  50              		.section	.text._ZN6uavcan20DataTypeSignatureCRC3addEh,"ax",%progbits
+  51              		.align	1
+  52              		.global	_ZN6uavcan20DataTypeSignatureCRC3addEh
+  53              		.thumb
+  54              		.thumb_func
+  55              		.type	_ZN6uavcan20DataTypeSignatureCRC3addEh, %function
+  56              	_ZN6uavcan20DataTypeSignatureCRC3addEh:
+  57              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccGFVDKL.s 			page 2
+
+
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59 0000 0B06     		lsls	r3, r1, #24
+  60 0002 0022     		movs	r2, #0
+  61 0004 30B5     		push	{r4, r5, lr}
+  62 0006 D0E90045 		ldrd	r4, [r0]
+  63 000a 0821     		movs	r1, #8
+  64 000c 6240     		eors	r2, r2, r4
+  65 000e 6B40     		eors	r3, r3, r5
+  66              	.L11:
+  67 0010 002A     		cmp	r2, #0
+  68 0012 73F10004 		sbcs	r4, r3, #0
+  69 0016 07DA     		bge	.L9
+  70 0018 07A5     		adr	r5, .L13
+  71 001a D5E90045 		ldrd	r4, [r5]
+  72 001e 9218     		adds	r2, r2, r2
+  73 0020 5B41     		adcs	r3, r3, r3
+  74 0022 6240     		eors	r2, r2, r4
+  75 0024 6B40     		eors	r3, r3, r5
+  76 0026 01E0     		b	.L10
+  77              	.L9:
+  78 0028 9218     		adds	r2, r2, r2
+  79 002a 5B41     		adcs	r3, r3, r3
+  80              	.L10:
+  81 002c 0139     		subs	r1, r1, #1
+  82 002e EFD1     		bne	.L11
+  83 0030 C0E90023 		strd	r2, [r0]
+  84 0034 30BD     		pop	{r4, r5, pc}
+  85              	.L14:
+  86 0036 00BF     		.align	3
+  87              	.L13:
+  88 0038 9336EAA9 		.word	-1444268397
+  89 003c EBE1F042 		.word	1123082731
+  90              		.size	_ZN6uavcan20DataTypeSignatureCRC3addEh, .-_ZN6uavcan20DataTypeSignatureCRC3addEh
+  91              		.section	.text._ZN6uavcan20DataTypeSignatureCRC3addEPKhj,"ax",%progbits
+  92              		.align	1
+  93              		.global	_ZN6uavcan20DataTypeSignatureCRC3addEPKhj
+  94              		.thumb
+  95              		.thumb_func
+  96              		.type	_ZN6uavcan20DataTypeSignatureCRC3addEPKhj, %function
+  97              	_ZN6uavcan20DataTypeSignatureCRC3addEPKhj:
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 0000 70B5     		push	{r4, r5, r6, lr}
+ 101 0002 0646     		mov	r6, r0
+ 102 0004 0C46     		mov	r4, r1
+ 103 0006 8D18     		adds	r5, r1, r2
+ 104              	.L16:
+ 105 0008 AC42     		cmp	r4, r5
+ 106 000a 05D0     		beq	.L18
+ 107 000c 3046     		mov	r0, r6
+ 108 000e 14F8011B 		ldrb	r1, [r4], #1	@ zero_extendqisi2
+ 109 0012 FFF7FEFF 		bl	_ZN6uavcan20DataTypeSignatureCRC3addEh
+ 110 0016 F7E7     		b	.L16
+ 111              	.L18:
+ 112 0018 70BD     		pop	{r4, r5, r6, pc}
+ 113              		.size	_ZN6uavcan20DataTypeSignatureCRC3addEPKhj, .-_ZN6uavcan20DataTypeSignatureCRC3addEPKhj
+ 114              		.global	__aeabi_llsr
+ARM GAS  /tmp/ccGFVDKL.s 			page 3
+
+
+ 115              		.section	.text._ZN6uavcan17DataTypeSignature7mixin64Ey,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	_ZN6uavcan17DataTypeSignature7mixin64Ey
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	_ZN6uavcan17DataTypeSignature7mixin64Ey, %function
+ 121              	_ZN6uavcan17DataTypeSignature7mixin64Ey:
+ 122              		@ args = 0, pretend = 0, frame = 8
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 125 0002 1646     		mov	r6, r2
+ 126 0004 1F46     		mov	r7, r3
+ 127 0006 D0E90023 		ldrd	r2, [r0]
+ 128 000a D243     		mvns	r2, r2
+ 129 000c DB43     		mvns	r3, r3
+ 130 000e 0546     		mov	r5, r0
+ 131 0010 CDE90023 		strd	r2, [sp]
+ 132 0014 0024     		movs	r4, #0
+ 133              	.L20:
+ 134 0016 2246     		mov	r2, r4
+ 135 0018 3046     		mov	r0, r6
+ 136 001a 3946     		mov	r1, r7
+ 137 001c FFF7FEFF 		bl	__aeabi_llsr
+ 138 0020 0834     		adds	r4, r4, #8
+ 139 0022 C1B2     		uxtb	r1, r0
+ 140 0024 6846     		mov	r0, sp
+ 141 0026 FFF7FEFF 		bl	_ZN6uavcan20DataTypeSignatureCRC3addEh
+ 142 002a 402C     		cmp	r4, #64
+ 143 002c F3D1     		bne	.L20
+ 144 002e DDE90023 		ldrd	r2, [sp]
+ 145 0032 D243     		mvns	r2, r2
+ 146 0034 DB43     		mvns	r3, r3
+ 147 0036 C5E90023 		strd	r2, [r5]
+ 148 003a 03B0     		add	sp, sp, #12
+ 149              		@ sp needed
+ 150 003c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 151              		.size	_ZN6uavcan17DataTypeSignature7mixin64Ey, .-_ZN6uavcan17DataTypeSignature7mixin64Ey
+ 152              		.section	.text._ZN6uavcan17DataTypeSignature6extendES0_,"ax",%progbits
+ 153              		.align	1
+ 154              		.global	_ZN6uavcan17DataTypeSignature6extendES0_
+ 155              		.thumb
+ 156              		.thumb_func
+ 157              		.type	_ZN6uavcan17DataTypeSignature6extendES0_, %function
+ 158              	_ZN6uavcan17DataTypeSignature6extendES0_:
+ 159              		@ args = 0, pretend = 0, frame = 0
+ 160              		@ frame_needed = 0, uses_anonymous_args = 0
+ 161 0000 D0B5     		push	{r4, r6, r7, lr}
+ 162 0002 D0E90067 		ldrd	r6, [r0]
+ 163 0006 0446     		mov	r4, r0
+ 164 0008 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature7mixin64Ey
+ 165 000c 2046     		mov	r0, r4
+ 166 000e 3246     		mov	r2, r6
+ 167 0010 3B46     		mov	r3, r7
+ 168 0012 BDE8D040 		pop	{r4, r6, r7, lr}
+ 169 0016 FFF7FEBF 		b	_ZN6uavcan17DataTypeSignature7mixin64Ey
+ 170              		.size	_ZN6uavcan17DataTypeSignature6extendES0_, .-_ZN6uavcan17DataTypeSignature6extendES0_
+ 171              		.section	.text._ZNK6uavcan17DataTypeSignature13toTransferCRCEv,"ax",%progbits
+ARM GAS  /tmp/ccGFVDKL.s 			page 4
+
+
+ 172              		.align	1
+ 173              		.global	_ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+ 174              		.thumb
+ 175              		.thumb_func
+ 176              		.type	_ZNK6uavcan17DataTypeSignature13toTransferCRCEv, %function
+ 177              	_ZNK6uavcan17DataTypeSignature13toTransferCRCEv:
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 181 0002 D0E90067 		ldrd	r6, [r0]
+ 182 0006 4FF6FF74 		movw	r4, #65535
+ 183 000a 0025     		movs	r5, #0
+ 184              	.L24:
+ 185 000c 2A46     		mov	r2, r5
+ 186 000e 3046     		mov	r0, r6
+ 187 0010 3946     		mov	r1, r7
+ 188 0012 FFF7FEFF 		bl	__aeabi_llsr
+ 189 0016 074B     		ldr	r3, .L26
+ 190 0018 C0B2     		uxtb	r0, r0
+ 191 001a 80EA1420 		eor	r0, r0, r4, lsr #8
+ 192 001e 33F81030 		ldrh	r3, [r3, r0, lsl #1]
+ 193 0022 0835     		adds	r5, r5, #8
+ 194 0024 83EA0424 		eor	r4, r3, r4, lsl #8
+ 195 0028 402D     		cmp	r5, #64
+ 196 002a A4B2     		uxth	r4, r4
+ 197 002c EED1     		bne	.L24
+ 198 002e 2046     		mov	r0, r4	@ movhi
+ 199 0030 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 200              	.L27:
+ 201 0032 00BF     		.align	2
+ 202              	.L26:
+ 203 0034 00000000 		.word	_ZN6uavcan11TransferCRC5TableE
+ 204              		.size	_ZNK6uavcan17DataTypeSignature13toTransferCRCEv, .-_ZNK6uavcan17DataTypeSignature13toTransfe
+ 205              		.section	.text._ZNK6uavcan18DataTypeDescriptor7isValidEv,"ax",%progbits
+ 206              		.align	1
+ 207              		.global	_ZNK6uavcan18DataTypeDescriptor7isValidEv
+ 208              		.thumb
+ 209              		.thumb_func
+ 210              		.type	_ZNK6uavcan18DataTypeDescriptor7isValidEv, %function
+ 211              	_ZNK6uavcan18DataTypeDescriptor7isValidEv:
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214 0000 38B5     		push	{r3, r4, r5, lr}
+ 215 0002 0569     		ldr	r5, [r0, #16]
+ 216 0004 0446     		mov	r4, r0
+ 217 0006 007B     		ldrb	r0, [r0, #12]	@ zero_extendqisi2
+ 218 0008 FFF7FEFF 		bl	_ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE
+ 219 000c 80B2     		uxth	r0, r0
+ 220 000e 8542     		cmp	r5, r0
+ 221 0010 06D8     		bhi	.L30
+ 222 0012 A068     		ldr	r0, [r4, #8]
+ 223 0014 28B1     		cbz	r0, .L29
+ 224 0016 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 225 0018 0030     		adds	r0, r0, #0
+ 226 001a 18BF     		it	ne
+ 227 001c 0120     		movne	r0, #1
+ 228 001e 38BD     		pop	{r3, r4, r5, pc}
+ARM GAS  /tmp/ccGFVDKL.s 			page 5
+
+
+ 229              	.L30:
+ 230 0020 0020     		movs	r0, #0
+ 231              	.L29:
+ 232 0022 38BD     		pop	{r3, r4, r5, pc}
+ 233              		.size	_ZNK6uavcan18DataTypeDescriptor7isValidEv, .-_ZNK6uavcan18DataTypeDescriptor7isValidEv
+ 234              		.section	.text._ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc,"ax",%progbits
+ 235              		.align	1
+ 236              		.global	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc
+ 237              		.thumb
+ 238              		.thumb_func
+ 239              		.type	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc, %function
+ 240              	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc:
+ 241              		@ args = 0, pretend = 0, frame = 0
+ 242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243 0000 08B5     		push	{r3, lr}
+ 244 0002 037B     		ldrb	r3, [r0, #12]	@ zero_extendqisi2
+ 245 0004 8B42     		cmp	r3, r1
+ 246 0006 08D1     		bne	.L34
+ 247 0008 1146     		mov	r1, r2
+ 248 000a 8068     		ldr	r0, [r0, #8]
+ 249 000c 5022     		movs	r2, #80
+ 250 000e FFF7FEFF 		bl	strncmp
+ 251 0012 B0FA80F0 		clz	r0, r0
+ 252 0016 4009     		lsrs	r0, r0, #5
+ 253 0018 08BD     		pop	{r3, pc}
+ 254              	.L34:
+ 255 001a 0020     		movs	r0, #0
+ 256 001c 08BD     		pop	{r3, pc}
+ 257              		.size	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc, .-_ZNK6uavcan18DataTypeDescript
+ 258              		.section	.text._ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE,"ax",%prog
+ 259              		.align	1
+ 260              		.global	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE
+ 261              		.thumb
+ 262              		.thumb_func
+ 263              		.type	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE, %function
+ 264              	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE:
+ 265              		@ args = 0, pretend = 0, frame = 0
+ 266              		@ frame_needed = 0, uses_anonymous_args = 0
+ 267              		@ link register save eliminated.
+ 268 0000 037B     		ldrb	r3, [r0, #12]	@ zero_extendqisi2
+ 269 0002 8B42     		cmp	r3, r1
+ 270 0004 04D1     		bne	.L37
+ 271 0006 0369     		ldr	r3, [r0, #16]
+ 272 0008 9B1A     		subs	r3, r3, r2
+ 273 000a 5842     		rsbs	r0, r3, #0
+ 274 000c 5841     		adcs	r0, r0, r3
+ 275 000e 7047     		bx	lr
+ 276              	.L37:
+ 277 0010 0020     		movs	r0, #0
+ 278 0012 7047     		bx	lr
+ 279              		.size	_ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE, .-_ZNK6uavcan18Dat
+ 280              		.section	.text._ZNK6uavcan18DataTypeDescriptoreqERKS0_,"ax",%progbits
+ 281              		.align	1
+ 282              		.global	_ZNK6uavcan18DataTypeDescriptoreqERKS0_
+ 283              		.thumb
+ 284              		.thumb_func
+ 285              		.type	_ZNK6uavcan18DataTypeDescriptoreqERKS0_, %function
+ARM GAS  /tmp/ccGFVDKL.s 			page 6
+
+
+ 286              	_ZNK6uavcan18DataTypeDescriptoreqERKS0_:
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 289 0000 38B5     		push	{r3, r4, r5, lr}
+ 290 0002 027B     		ldrb	r2, [r0, #12]	@ zero_extendqisi2
+ 291 0004 0B7B     		ldrb	r3, [r1, #12]	@ zero_extendqisi2
+ 292 0006 9A42     		cmp	r2, r3
+ 293 0008 14D1     		bne	.L42
+ 294 000a 0269     		ldr	r2, [r0, #16]
+ 295 000c 0B69     		ldr	r3, [r1, #16]
+ 296 000e 9A42     		cmp	r2, r3
+ 297 0010 10D1     		bne	.L42
+ 298 0012 D0E90045 		ldrd	r4, [r0]
+ 299 0016 D1E90023 		ldrd	r2, [r1]
+ 300 001a 9D42     		cmp	r5, r3
+ 301 001c 08BF     		it	eq
+ 302 001e 9442     		cmpeq	r4, r2
+ 303 0020 08D1     		bne	.L42
+ 304 0022 8068     		ldr	r0, [r0, #8]
+ 305 0024 8968     		ldr	r1, [r1, #8]
+ 306 0026 5022     		movs	r2, #80
+ 307 0028 FFF7FEFF 		bl	strncmp
+ 308 002c B0FA80F0 		clz	r0, r0
+ 309 0030 4009     		lsrs	r0, r0, #5
+ 310 0032 38BD     		pop	{r3, r4, r5, pc}
+ 311              	.L42:
+ 312 0034 0020     		movs	r0, #0
+ 313 0036 38BD     		pop	{r3, r4, r5, pc}
+ 314              		.size	_ZNK6uavcan18DataTypeDescriptoreqERKS0_, .-_ZNK6uavcan18DataTypeDescriptoreqERKS0_
+ 315              		.global	_ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE
+ 316              		.global	_ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE
+ 317              		.global	_ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE
+ 318              		.global	_ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE
+ 319              		.section	.rodata._ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE,"a",%progbits
+ 320              		.align	1
+ 321              		.type	_ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE, %object
+ 322              		.size	_ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE, 2
+ 323              	_ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE:
+ 324 0000 FF00     		.short	255
+ 325              		.section	.rodata._ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE,"a",%progbits
+ 326              		.align	1
+ 327              		.type	_ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE, %object
+ 328              		.size	_ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE, 2
+ 329              	_ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE:
+ 330 0000 FFFF     		.short	-1
+ 331              		.section	.rodata._ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE,"a",%progbits
+ 332              		.align	2
+ 333              		.type	_ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE, %object
+ 334              		.size	_ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE, 4
+ 335              	_ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE:
+ 336 0000 50000000 		.word	80
+ 337              		.section	.rodata._ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE,"a",%progbits
+ 338              		.align	1
+ 339              		.type	_ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE, %object
+ 340              		.size	_ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE, 2
+ 341              	_ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE:
+ 342 0000 FFFF     		.short	-1
+ARM GAS  /tmp/ccGFVDKL.s 			page 7
+
+
+ 343              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccGFVDKL.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_data_type.cpp
+     /tmp/ccGFVDKL.s:16     .text._ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE:0000000000000000 $t
+     /tmp/ccGFVDKL.s:21     .text._ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE:0000000000000000 _ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE
+     /tmp/ccGFVDKL.s:36     .text._ZN6uavcan20DataTypeSignatureCRC6extendEy:0000000000000000 $t
+     /tmp/ccGFVDKL.s:41     .text._ZN6uavcan20DataTypeSignatureCRC6extendEy:0000000000000000 _ZN6uavcan20DataTypeSignatureCRC6extendEy
+     /tmp/ccGFVDKL.s:51     .text._ZN6uavcan20DataTypeSignatureCRC3addEh:0000000000000000 $t
+     /tmp/ccGFVDKL.s:56     .text._ZN6uavcan20DataTypeSignatureCRC3addEh:0000000000000000 _ZN6uavcan20DataTypeSignatureCRC3addEh
+     /tmp/ccGFVDKL.s:88     .text._ZN6uavcan20DataTypeSignatureCRC3addEh:0000000000000038 $d
+     /tmp/ccGFVDKL.s:92     .text._ZN6uavcan20DataTypeSignatureCRC3addEPKhj:0000000000000000 $t
+     /tmp/ccGFVDKL.s:97     .text._ZN6uavcan20DataTypeSignatureCRC3addEPKhj:0000000000000000 _ZN6uavcan20DataTypeSignatureCRC3addEPKhj
+     /tmp/ccGFVDKL.s:116    .text._ZN6uavcan17DataTypeSignature7mixin64Ey:0000000000000000 $t
+     /tmp/ccGFVDKL.s:121    .text._ZN6uavcan17DataTypeSignature7mixin64Ey:0000000000000000 _ZN6uavcan17DataTypeSignature7mixin64Ey
+     /tmp/ccGFVDKL.s:153    .text._ZN6uavcan17DataTypeSignature6extendES0_:0000000000000000 $t
+     /tmp/ccGFVDKL.s:158    .text._ZN6uavcan17DataTypeSignature6extendES0_:0000000000000000 _ZN6uavcan17DataTypeSignature6extendES0_
+     /tmp/ccGFVDKL.s:172    .text._ZNK6uavcan17DataTypeSignature13toTransferCRCEv:0000000000000000 $t
+     /tmp/ccGFVDKL.s:177    .text._ZNK6uavcan17DataTypeSignature13toTransferCRCEv:0000000000000000 _ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+     /tmp/ccGFVDKL.s:203    .text._ZNK6uavcan17DataTypeSignature13toTransferCRCEv:0000000000000034 $d
+     /tmp/ccGFVDKL.s:206    .text._ZNK6uavcan18DataTypeDescriptor7isValidEv:0000000000000000 $t
+     /tmp/ccGFVDKL.s:211    .text._ZNK6uavcan18DataTypeDescriptor7isValidEv:0000000000000000 _ZNK6uavcan18DataTypeDescriptor7isValidEv
+     /tmp/ccGFVDKL.s:235    .text._ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc:0000000000000000 $t
+     /tmp/ccGFVDKL.s:240    .text._ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc:0000000000000000 _ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc
+     /tmp/ccGFVDKL.s:259    .text._ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccGFVDKL.s:264    .text._ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE:0000000000000000 _ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE
+     /tmp/ccGFVDKL.s:281    .text._ZNK6uavcan18DataTypeDescriptoreqERKS0_:0000000000000000 $t
+     /tmp/ccGFVDKL.s:286    .text._ZNK6uavcan18DataTypeDescriptoreqERKS0_:0000000000000000 _ZNK6uavcan18DataTypeDescriptoreqERKS0_
+     /tmp/ccGFVDKL.s:335    .rodata._ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE:0000000000000000 _ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE
+     /tmp/ccGFVDKL.s:329    .rodata._ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE:0000000000000000 _ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE
+     /tmp/ccGFVDKL.s:341    .rodata._ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE:0000000000000000 _ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE
+     /tmp/ccGFVDKL.s:323    .rodata._ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE:0000000000000000 _ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE
+     /tmp/ccGFVDKL.s:320    .rodata._ZN6uavcan10DataTypeID25MaxServiceDataTypeIDValueE:0000000000000000 $d
+     /tmp/ccGFVDKL.s:326    .rodata._ZN6uavcan10DataTypeID26MaxPossibleDataTypeIDValueE:0000000000000000 $d
+     /tmp/ccGFVDKL.s:332    .rodata._ZN6uavcan18DataTypeDescriptor14MaxFullNameLenE:0000000000000000 $d
+     /tmp/ccGFVDKL.s:338    .rodata._ZN6uavcan10DataTypeID25MaxMessageDataTypeIDValueE:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+__aeabi_llsr
+_ZN6uavcan11TransferCRC5TableE
+strncmp

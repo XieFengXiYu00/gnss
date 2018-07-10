@@ -1,0 +1,434 @@
+ARM GAS  /tmp/ccMc4Byj.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chmtx.c"
+  15              		.section	.text.prio_insert,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	prio_insert, %function
+  20              	prio_insert:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 0B46     		mov	r3, r1
+  24 0002 10B5     		push	{r4, lr}
+  25              	.L3:
+  26 0004 1B68     		ldr	r3, [r3]
+  27 0006 8B42     		cmp	r3, r1
+  28 0008 04D0     		beq	.L2
+  29 000a 9C68     		ldr	r4, [r3, #8]
+  30 000c 8268     		ldr	r2, [r0, #8]
+  31 000e 9442     		cmp	r4, r2
+  32 0010 F8D2     		bcs	.L3
+  33 0012 1946     		mov	r1, r3
+  34              	.L2:
+  35 0014 4B68     		ldr	r3, [r1, #4]
+  36 0016 0160     		str	r1, [r0]
+  37 0018 4360     		str	r3, [r0, #4]
+  38 001a 4860     		str	r0, [r1, #4]
+  39 001c 1860     		str	r0, [r3]
+  40 001e 10BD     		pop	{r4, pc}
+  41              		.size	prio_insert, .-prio_insert
+  42              		.section	.text.chMtxInit,"ax",%progbits
+  43              		.align	1
+  44              		.global	chMtxInit
+  45              		.thumb
+  46              		.thumb_func
+  47              		.type	chMtxInit, %function
+  48              	chMtxInit:
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52 0000 0023     		movs	r3, #0
+  53 0002 4060     		str	r0, [r0, #4]
+  54 0004 0060     		str	r0, [r0]
+  55 0006 8360     		str	r3, [r0, #8]
+  56 0008 7047     		bx	lr
+  57              		.size	chMtxInit, .-chMtxInit
+ARM GAS  /tmp/ccMc4Byj.s 			page 2
+
+
+  58              		.section	.text.chMtxLockS,"ax",%progbits
+  59              		.align	1
+  60              		.global	chMtxLockS
+  61              		.thumb
+  62              		.thumb_func
+  63              		.type	chMtxLockS, %function
+  64              	chMtxLockS:
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 70B5     		push	{r4, r5, r6, lr}
+  68 0002 1F4B     		ldr	r3, .L16
+  69 0004 8468     		ldr	r4, [r0, #8]
+  70 0006 0646     		mov	r6, r0
+  71 0008 9D69     		ldr	r5, [r3, #24]
+  72 000a 002C     		cmp	r4, #0
+  73 000c 32D0     		beq	.L15
+  74              	.L9:
+  75 000e AB68     		ldr	r3, [r5, #8]
+  76 0010 A268     		ldr	r2, [r4, #8]
+  77 0012 9A42     		cmp	r2, r3
+  78 0014 24D2     		bcs	.L10
+  79 0016 A360     		str	r3, [r4, #8]
+  80 0018 237F     		ldrb	r3, [r4, #28]	@ zero_extendqisi2
+  81 001a 042B     		cmp	r3, #4
+  82 001c 0BD0     		beq	.L11
+  83 001e 052B     		cmp	r3, #5
+  84 0020 15D0     		beq	.L12
+  85 0022 EBB9     		cbnz	r3, .L10
+  86 0024 94E80C00 		ldmia	r4, {r2, r3}
+  87 0028 1A60     		str	r2, [r3]
+  88 002a 2268     		ldr	r2, [r4]
+  89 002c 2046     		mov	r0, r4
+  90 002e 5360     		str	r3, [r2, #4]
+  91 0030 FFF7FEFF 		bl	chSchReadyI
+  92 0034 14E0     		b	.L10
+  93              	.L11:
+  94 0036 94E80C00 		ldmia	r4, {r2, r3}
+  95 003a 1A60     		str	r2, [r3]
+  96 003c 2268     		ldr	r2, [r4]
+  97 003e 2046     		mov	r0, r4
+  98 0040 5360     		str	r3, [r2, #4]
+  99 0042 216A     		ldr	r1, [r4, #32]
+ 100 0044 FFF7FEFF 		bl	prio_insert
+ 101 0048 236A     		ldr	r3, [r4, #32]
+ 102 004a 9C68     		ldr	r4, [r3, #8]
+ 103 004c DFE7     		b	.L9
+ 104              	.L12:
+ 105 004e 94E80C00 		ldmia	r4, {r2, r3}
+ 106 0052 1A60     		str	r2, [r3]
+ 107 0054 2268     		ldr	r2, [r4]
+ 108 0056 2046     		mov	r0, r4
+ 109 0058 5360     		str	r3, [r2, #4]
+ 110 005a 216A     		ldr	r1, [r4, #32]
+ 111 005c FFF7FEFF 		bl	prio_insert
+ 112              	.L10:
+ 113 0060 2846     		mov	r0, r5
+ 114 0062 3146     		mov	r1, r6
+ARM GAS  /tmp/ccMc4Byj.s 			page 3
+
+
+ 115 0064 FFF7FEFF 		bl	prio_insert
+ 116 0068 2E62     		str	r6, [r5, #32]
+ 117 006a 0420     		movs	r0, #4
+ 118 006c BDE87040 		pop	{r4, r5, r6, lr}
+ 119 0070 FFF7FEBF 		b	chSchGoSleepS
+ 120              	.L15:
+ 121 0074 AB6B     		ldr	r3, [r5, #56]
+ 122 0076 8560     		str	r5, [r0, #8]
+ 123 0078 C360     		str	r3, [r0, #12]
+ 124 007a A863     		str	r0, [r5, #56]
+ 125 007c 70BD     		pop	{r4, r5, r6, pc}
+ 126              	.L17:
+ 127 007e 00BF     		.align	2
+ 128              	.L16:
+ 129 0080 00000000 		.word	rlist
+ 130              		.size	chMtxLockS, .-chMtxLockS
+ 131              		.section	.text.chMtxLock,"ax",%progbits
+ 132              		.align	1
+ 133              		.global	chMtxLock
+ 134              		.thumb
+ 135              		.thumb_func
+ 136              		.type	chMtxLock, %function
+ 137              	chMtxLock:
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 08B5     		push	{r3, lr}
+ 141 0002 2023     		movs	r3, #32
+ 142              	@ 105 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 143 0004 83F31188 		msr     BASEPRI, r3
+ 144              	@ 0 "" 2
+ 145              		.thumb
+ 146 0008 FFF7FEFF 		bl	chMtxLockS
+ 147 000c 0023     		movs	r3, #0
+ 148              	@ 109 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 149 000e 83F31188 		msr     BASEPRI, r3
+ 150              	@ 0 "" 2
+ 151              		.thumb
+ 152 0012 08BD     		pop	{r3, pc}
+ 153              		.size	chMtxLock, .-chMtxLock
+ 154              		.section	.text.chMtxTryLockS,"ax",%progbits
+ 155              		.align	1
+ 156              		.global	chMtxTryLockS
+ 157              		.thumb
+ 158              		.thumb_func
+ 159              		.type	chMtxTryLockS, %function
+ 160              	chMtxTryLockS:
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+ 164 0000 8368     		ldr	r3, [r0, #8]
+ 165 0002 3BB9     		cbnz	r3, .L21
+ 166 0004 044B     		ldr	r3, .L22
+ 167 0006 9B69     		ldr	r3, [r3, #24]
+ 168 0008 9A6B     		ldr	r2, [r3, #56]
+ 169 000a 8360     		str	r3, [r0, #8]
+ 170 000c C260     		str	r2, [r0, #12]
+ 171 000e 9863     		str	r0, [r3, #56]
+ARM GAS  /tmp/ccMc4Byj.s 			page 4
+
+
+ 172 0010 0120     		movs	r0, #1
+ 173 0012 7047     		bx	lr
+ 174              	.L21:
+ 175 0014 0020     		movs	r0, #0
+ 176 0016 7047     		bx	lr
+ 177              	.L23:
+ 178              		.align	2
+ 179              	.L22:
+ 180 0018 00000000 		.word	rlist
+ 181              		.size	chMtxTryLockS, .-chMtxTryLockS
+ 182              		.section	.text.chMtxTryLock,"ax",%progbits
+ 183              		.align	1
+ 184              		.global	chMtxTryLock
+ 185              		.thumb
+ 186              		.thumb_func
+ 187              		.type	chMtxTryLock, %function
+ 188              	chMtxTryLock:
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 0, uses_anonymous_args = 0
+ 191 0000 08B5     		push	{r3, lr}
+ 192 0002 2023     		movs	r3, #32
+ 193              	@ 209 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 194 0004 83F31188 		msr     BASEPRI, r3
+ 195              	@ 0 "" 2
+ 196              		.thumb
+ 197 0008 FFF7FEFF 		bl	chMtxTryLockS
+ 198 000c 0023     		movs	r3, #0
+ 199              	@ 213 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 200 000e 83F31188 		msr     BASEPRI, r3
+ 201              	@ 0 "" 2
+ 202              		.thumb
+ 203 0012 08BD     		pop	{r3, pc}
+ 204              		.size	chMtxTryLock, .-chMtxTryLock
+ 205              		.section	.text.chMtxUnlock,"ax",%progbits
+ 206              		.align	1
+ 207              		.global	chMtxUnlock
+ 208              		.thumb
+ 209              		.thumb_func
+ 210              		.type	chMtxUnlock, %function
+ 211              	chMtxUnlock:
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214 0000 38B5     		push	{r3, r4, r5, lr}
+ 215 0002 154B     		ldr	r3, .L32
+ 216 0004 9A69     		ldr	r2, [r3, #24]
+ 217 0006 2023     		movs	r3, #32
+ 218              	@ 261 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 219 0008 83F31188 		msr     BASEPRI, r3
+ 220              	@ 0 "" 2
+ 221              		.thumb
+ 222 000c 946B     		ldr	r4, [r2, #56]
+ 223 000e 2068     		ldr	r0, [r4]
+ 224 0010 E368     		ldr	r3, [r4, #12]
+ 225 0012 A042     		cmp	r0, r4
+ 226 0014 9363     		str	r3, [r2, #56]
+ 227 0016 17D0     		beq	.L26
+ 228 0018 D16B     		ldr	r1, [r2, #60]
+ARM GAS  /tmp/ccMc4Byj.s 			page 5
+
+
+ 229              	.L27:
+ 230 001a 43B1     		cbz	r3, .L31
+ 231 001c 1D68     		ldr	r5, [r3]
+ 232 001e 9D42     		cmp	r5, r3
+ 233 0020 03D0     		beq	.L28
+ 234 0022 AD68     		ldr	r5, [r5, #8]
+ 235 0024 A942     		cmp	r1, r5
+ 236 0026 38BF     		it	cc
+ 237 0028 2946     		movcc	r1, r5
+ 238              	.L28:
+ 239 002a DB68     		ldr	r3, [r3, #12]
+ 240 002c F5E7     		b	.L27
+ 241              	.L31:
+ 242 002e 0368     		ldr	r3, [r0]
+ 243 0030 9160     		str	r1, [r2, #8]
+ 244 0032 2360     		str	r3, [r4]
+ 245 0034 5C60     		str	r4, [r3, #4]
+ 246 0036 836B     		ldr	r3, [r0, #56]
+ 247 0038 A060     		str	r0, [r4, #8]
+ 248 003a E360     		str	r3, [r4, #12]
+ 249 003c 8463     		str	r4, [r0, #56]
+ 250 003e FFF7FEFF 		bl	chSchReadyI
+ 251 0042 FFF7FEFF 		bl	chSchRescheduleS
+ 252 0046 01E0     		b	.L30
+ 253              	.L26:
+ 254 0048 0023     		movs	r3, #0
+ 255 004a A360     		str	r3, [r4, #8]
+ 256              	.L30:
+ 257 004c 0023     		movs	r3, #0
+ 258              	@ 307 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 259 004e 83F31188 		msr     BASEPRI, r3
+ 260              	@ 0 "" 2
+ 261              		.thumb
+ 262 0052 2046     		mov	r0, r4
+ 263 0054 38BD     		pop	{r3, r4, r5, pc}
+ 264              	.L33:
+ 265 0056 00BF     		.align	2
+ 266              	.L32:
+ 267 0058 00000000 		.word	rlist
+ 268              		.size	chMtxUnlock, .-chMtxUnlock
+ 269              		.section	.text.chMtxUnlockS,"ax",%progbits
+ 270              		.align	1
+ 271              		.global	chMtxUnlockS
+ 272              		.thumb
+ 273              		.thumb_func
+ 274              		.type	chMtxUnlockS, %function
+ 275              	chMtxUnlockS:
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278 0000 38B5     		push	{r3, r4, r5, lr}
+ 279 0002 114B     		ldr	r3, .L41
+ 280 0004 9A69     		ldr	r2, [r3, #24]
+ 281 0006 946B     		ldr	r4, [r2, #56]
+ 282 0008 2068     		ldr	r0, [r4]
+ 283 000a E368     		ldr	r3, [r4, #12]
+ 284 000c A042     		cmp	r0, r4
+ 285 000e 9363     		str	r3, [r2, #56]
+ARM GAS  /tmp/ccMc4Byj.s 			page 6
+
+
+ 286 0010 15D0     		beq	.L35
+ 287 0012 D16B     		ldr	r1, [r2, #60]
+ 288              	.L36:
+ 289 0014 43B1     		cbz	r3, .L40
+ 290 0016 1D68     		ldr	r5, [r3]
+ 291 0018 9D42     		cmp	r5, r3
+ 292 001a 03D0     		beq	.L37
+ 293 001c AD68     		ldr	r5, [r5, #8]
+ 294 001e A942     		cmp	r1, r5
+ 295 0020 38BF     		it	cc
+ 296 0022 2946     		movcc	r1, r5
+ 297              	.L37:
+ 298 0024 DB68     		ldr	r3, [r3, #12]
+ 299 0026 F5E7     		b	.L36
+ 300              	.L40:
+ 301 0028 0368     		ldr	r3, [r0]
+ 302 002a 9160     		str	r1, [r2, #8]
+ 303 002c 2360     		str	r3, [r4]
+ 304 002e 5C60     		str	r4, [r3, #4]
+ 305 0030 836B     		ldr	r3, [r0, #56]
+ 306 0032 A060     		str	r0, [r4, #8]
+ 307 0034 E360     		str	r3, [r4, #12]
+ 308 0036 8463     		str	r4, [r0, #56]
+ 309 0038 FFF7FEFF 		bl	chSchReadyI
+ 310 003c 01E0     		b	.L39
+ 311              	.L35:
+ 312 003e 0023     		movs	r3, #0
+ 313 0040 A360     		str	r3, [r4, #8]
+ 314              	.L39:
+ 315 0042 2046     		mov	r0, r4
+ 316 0044 38BD     		pop	{r3, r4, r5, pc}
+ 317              	.L42:
+ 318 0046 00BF     		.align	2
+ 319              	.L41:
+ 320 0048 00000000 		.word	rlist
+ 321              		.size	chMtxUnlockS, .-chMtxUnlockS
+ 322              		.section	.text.chMtxUnlockAll,"ax",%progbits
+ 323              		.align	1
+ 324              		.global	chMtxUnlockAll
+ 325              		.thumb
+ 326              		.thumb_func
+ 327              		.type	chMtxUnlockAll, %function
+ 328              	chMtxUnlockAll:
+ 329              		@ args = 0, pretend = 0, frame = 0
+ 330              		@ frame_needed = 0, uses_anonymous_args = 0
+ 331 0000 124B     		ldr	r3, .L53
+ 332 0002 10B5     		push	{r4, lr}
+ 333 0004 9C69     		ldr	r4, [r3, #24]
+ 334 0006 2023     		movs	r3, #32
+ 335              	@ 383 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 336 0008 83F31188 		msr     BASEPRI, r3
+ 337              	@ 0 "" 2
+ 338              		.thumb
+ 339 000c A36B     		ldr	r3, [r4, #56]
+ 340 000e C3B1     		cbz	r3, .L44
+ 341              	.L50:
+ 342 0010 A36B     		ldr	r3, [r4, #56]
+ARM GAS  /tmp/ccMc4Byj.s 			page 7
+
+
+ 343 0012 1868     		ldr	r0, [r3]
+ 344 0014 DA68     		ldr	r2, [r3, #12]
+ 345 0016 9842     		cmp	r0, r3
+ 346 0018 A263     		str	r2, [r4, #56]
+ 347 001a 09D0     		beq	.L45
+ 348 001c 0268     		ldr	r2, [r0]
+ 349 001e 1A60     		str	r2, [r3]
+ 350 0020 5360     		str	r3, [r2, #4]
+ 351 0022 826B     		ldr	r2, [r0, #56]
+ 352 0024 9860     		str	r0, [r3, #8]
+ 353 0026 DA60     		str	r2, [r3, #12]
+ 354 0028 8363     		str	r3, [r0, #56]
+ 355 002a FFF7FEFF 		bl	chSchReadyI
+ 356 002e 01E0     		b	.L46
+ 357              	.L45:
+ 358 0030 0023     		movs	r3, #0
+ 359 0032 8360     		str	r3, [r0, #8]
+ 360              	.L46:
+ 361 0034 A36B     		ldr	r3, [r4, #56]
+ 362 0036 002B     		cmp	r3, #0
+ 363 0038 EAD1     		bne	.L50
+ 364 003a E36B     		ldr	r3, [r4, #60]
+ 365 003c A360     		str	r3, [r4, #8]
+ 366 003e FFF7FEFF 		bl	chSchRescheduleS
+ 367              	.L44:
+ 368 0042 0023     		movs	r3, #0
+ 369              	@ 401 "zubax_chibios///chibios/os/kernel/src/chmtx.c" 1
+ 370 0044 83F31188 		msr     BASEPRI, r3
+ 371              	@ 0 "" 2
+ 372              		.thumb
+ 373 0048 10BD     		pop	{r4, pc}
+ 374              	.L54:
+ 375 004a 00BF     		.align	2
+ 376              	.L53:
+ 377 004c 00000000 		.word	rlist
+ 378              		.size	chMtxUnlockAll, .-chMtxUnlockAll
+ 379              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccMc4Byj.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chmtx.c
+     /tmp/ccMc4Byj.s:16     .text.prio_insert:0000000000000000 $t
+     /tmp/ccMc4Byj.s:20     .text.prio_insert:0000000000000000 prio_insert
+     /tmp/ccMc4Byj.s:43     .text.chMtxInit:0000000000000000 $t
+     /tmp/ccMc4Byj.s:48     .text.chMtxInit:0000000000000000 chMtxInit
+     /tmp/ccMc4Byj.s:59     .text.chMtxLockS:0000000000000000 $t
+     /tmp/ccMc4Byj.s:64     .text.chMtxLockS:0000000000000000 chMtxLockS
+     /tmp/ccMc4Byj.s:129    .text.chMtxLockS:0000000000000080 $d
+     /tmp/ccMc4Byj.s:132    .text.chMtxLock:0000000000000000 $t
+     /tmp/ccMc4Byj.s:137    .text.chMtxLock:0000000000000000 chMtxLock
+     /tmp/ccMc4Byj.s:155    .text.chMtxTryLockS:0000000000000000 $t
+     /tmp/ccMc4Byj.s:160    .text.chMtxTryLockS:0000000000000000 chMtxTryLockS
+     /tmp/ccMc4Byj.s:180    .text.chMtxTryLockS:0000000000000018 $d
+     /tmp/ccMc4Byj.s:183    .text.chMtxTryLock:0000000000000000 $t
+     /tmp/ccMc4Byj.s:188    .text.chMtxTryLock:0000000000000000 chMtxTryLock
+     /tmp/ccMc4Byj.s:206    .text.chMtxUnlock:0000000000000000 $t
+     /tmp/ccMc4Byj.s:211    .text.chMtxUnlock:0000000000000000 chMtxUnlock
+     /tmp/ccMc4Byj.s:267    .text.chMtxUnlock:0000000000000058 $d
+     /tmp/ccMc4Byj.s:270    .text.chMtxUnlockS:0000000000000000 $t
+     /tmp/ccMc4Byj.s:275    .text.chMtxUnlockS:0000000000000000 chMtxUnlockS
+     /tmp/ccMc4Byj.s:320    .text.chMtxUnlockS:0000000000000048 $d
+     /tmp/ccMc4Byj.s:323    .text.chMtxUnlockAll:0000000000000000 $t
+     /tmp/ccMc4Byj.s:328    .text.chMtxUnlockAll:0000000000000000 chMtxUnlockAll
+     /tmp/ccMc4Byj.s:377    .text.chMtxUnlockAll:000000000000004c $d
+
+UNDEFINED SYMBOLS
+chSchReadyI
+chSchGoSleepS
+rlist
+chSchRescheduleS

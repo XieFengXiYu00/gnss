@@ -1,0 +1,245 @@
+ARM GAS  /tmp/ccyQ2XuV.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_service_client.cpp"
+  15              		.section	.text._ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE,"ax",%p
+  16              		.align	1
+  17              		.global	_ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE, %function
+  21              	_ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE:
+  22              		@ args = 0, pretend = 0, frame = 8
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 07B5     		push	{r0, r1, r2, lr}
+  25 0002 0123     		movs	r3, #1
+  26 0004 8376     		strb	r3, [r0, #26]
+  27 0006 4069     		ldr	r0, [r0, #20]
+  28 0008 02A9     		add	r1, sp, #8
+  29 000a 0122     		movs	r2, #1
+  30 000c 0023     		movs	r3, #0
+  31 000e 61E90223 		strd	r2, [r1, #-8]!
+  32 0012 0830     		adds	r0, r0, #8
+  33 0014 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+  34 0018 03B0     		add	sp, sp, #12
+  35              		@ sp needed
+  36 001a 5DF804FB 		ldr	pc, [sp], #4
+  37              		.size	_ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE, .-_ZN6uavcan17S
+  38              		.section	.text._ZN6uavcan17ServiceClientBase9CallStateD2Ev,"axG",%progbits,_ZN6uavcan17ServiceClie
+  39              		.align	1
+  40              		.weak	_ZN6uavcan17ServiceClientBase9CallStateD2Ev
+  41              		.thumb
+  42              		.thumb_func
+  43              		.type	_ZN6uavcan17ServiceClientBase9CallStateD2Ev, %function
+  44              	_ZN6uavcan17ServiceClientBase9CallStateD2Ev:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47 0000 10B5     		push	{r4, lr}
+  48 0002 0446     		mov	r4, r0
+  49 0004 024B     		ldr	r3, .L3
+  50 0006 0360     		str	r3, [r0]
+  51 0008 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+  52 000c 2046     		mov	r0, r4
+  53 000e 10BD     		pop	{r4, pc}
+  54              	.L4:
+  55              		.align	2
+  56              	.L3:
+  57 0010 08000000 		.word	_ZTVN6uavcan15DeadlineHandlerE+8
+ARM GAS  /tmp/ccyQ2XuV.s 			page 2
+
+
+  58              		.size	_ZN6uavcan17ServiceClientBase9CallStateD2Ev, .-_ZN6uavcan17ServiceClientBase9CallStateD2Ev
+  59              		.weak	_ZN6uavcan17ServiceClientBase9CallStateD1Ev
+  60              		.thumb_set _ZN6uavcan17ServiceClientBase9CallStateD1Ev,_ZN6uavcan17ServiceClientBase9CallStateD2Ev
+  61              		.section	.text._ZN6uavcan17ServiceClientBase9CallStateD0Ev,"axG",%progbits,_ZN6uavcan17ServiceClie
+  62              		.align	1
+  63              		.weak	_ZN6uavcan17ServiceClientBase9CallStateD0Ev
+  64              		.thumb
+  65              		.thumb_func
+  66              		.type	_ZN6uavcan17ServiceClientBase9CallStateD0Ev, %function
+  67              	_ZN6uavcan17ServiceClientBase9CallStateD0Ev:
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70 0000 10B5     		push	{r4, lr}
+  71 0002 0446     		mov	r4, r0
+  72 0004 FFF7FEFF 		bl	_ZN6uavcan17ServiceClientBase9CallStateD1Ev
+  73 0008 2046     		mov	r0, r4
+  74 000a FFF7FEFF 		bl	_ZdlPv
+  75 000e 2046     		mov	r0, r4
+  76 0010 10BD     		pop	{r4, pc}
+  77              		.size	_ZN6uavcan17ServiceClientBase9CallStateD0Ev, .-_ZN6uavcan17ServiceClientBase9CallStateD0Ev
+  78              		.section	.text._ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13Service
+  79              		.align	1
+  80              		.global	_ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE
+  81              		.thumb
+  82              		.thumb_func
+  83              		.type	_ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE, 
+  84              	_ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE:
+  85              		@ args = 4, pretend = 0, frame = 16
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+  88 0004 1D46     		mov	r5, r3
+  89 0006 DFB2     		uxtb	r7, r3
+  90 0008 5BB2     		sxtb	r3, r3
+  91 000a 85B0     		sub	sp, sp, #20
+  92 000c 002B     		cmp	r3, #0
+  93 000e 0646     		mov	r6, r0
+  94 0010 0C46     		mov	r4, r1
+  95 0012 9146     		mov	r9, r2
+  96 0014 DDF83080 		ldr	r8, [sp, #48]
+  97 0018 07DD     		ble	.L7
+  98 001a 0B68     		ldr	r3, [r1]
+  99 001c 0846     		mov	r0, r1
+ 100 001e 1B69     		ldr	r3, [r3, #16]
+ 101 0020 9847     		blx	r3
+ 102 0022 90F8E430 		ldrb	r3, [r0, #228]	@ zero_extendqisi2
+ 103 0026 BB42     		cmp	r3, r7
+ 104 0028 02D1     		bne	.L16
+ 105              	.L7:
+ 106 002a 6FF00100 		mvn	r0, #1
+ 107 002e 4BE0     		b	.L17
+ 108              	.L16:
+ 109 0030 88F80050 		strb	r5, [r8]
+ 110 0034 F769     		ldr	r7, [r6, #28]
+ 111 0036 67B9     		cbnz	r7, .L13
+ 112 0038 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 113 003c FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+ 114 0040 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ARM GAS  /tmp/ccyQ2XuV.s 			page 3
+
+
+ 115 0044 3946     		mov	r1, r7
+ 116 0046 4A46     		mov	r2, r9
+ 117 0048 FFF7FEFF 		bl	_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+ 118 004c F061     		str	r0, [r6, #28]
+ 119 004e 0028     		cmp	r0, #0
+ 120 0050 38D0     		beq	.L14
+ 121              	.L13:
+ 122 0052 F369     		ldr	r3, [r6, #28]
+ 123 0054 8DF80D50 		strb	r5, [sp, #13]
+ 124 0058 1B69     		ldr	r3, [r3, #16]
+ 125 005a 2046     		mov	r0, r4
+ 126 005c 0293     		str	r3, [sp, #8]
+ 127 005e 0123     		movs	r3, #1
+ 128 0060 8DF80C30 		strb	r3, [sp, #12]
+ 129 0064 2368     		ldr	r3, [r4]
+ 130 0066 1A4E     		ldr	r6, .L19
+ 131 0068 1B69     		ldr	r3, [r3, #16]
+ 132 006a 9847     		blx	r3
+ 133 006c D0F8A810 		ldr	r1, [r0, #168]
+ 134 0070 6846     		mov	r0, sp
+ 135 0072 0B68     		ldr	r3, [r1]
+ 136 0074 0027     		movs	r7, #0
+ 137 0076 9B68     		ldr	r3, [r3, #8]
+ 138 0078 9847     		blx	r3
+ 139 007a DDE90023 		ldrd	r2, [sp]
+ 140 007e B618     		adds	r6, r6, r2
+ 141 0080 5F41     		adcs	r7, r7, r3
+ 142 0082 9F42     		cmp	r7, r3
+ 143 0084 2368     		ldr	r3, [r4]
+ 144 0086 08BF     		it	eq
+ 145 0088 9642     		cmpeq	r6, r2
+ 146 008a DB68     		ldr	r3, [r3, #12]
+ 147 008c 2046     		mov	r0, r4
+ 148 008e 3CBF     		itt	cc
+ 149 0090 4FF0FF36 		movcc	r6, #-1
+ 150 0094 4FF0FF37 		movcc	r7, #-1
+ 151 0098 9847     		blx	r3
+ 152 009a 02A9     		add	r1, sp, #8
+ 153 009c AC30     		adds	r0, r0, #172
+ 154 009e 6A46     		mov	r2, sp
+ 155 00a0 CDE90067 		strd	r6, [sp]
+ 156 00a4 FFF7FEFF 		bl	_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13Mo
+ 157 00a8 48B1     		cbz	r0, .L15
+ 158 00aa 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 159 00ac 88F80130 		strb	r3, [r8, #1]
+ 160 00b0 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 161 00b2 0133     		adds	r3, r3, #1
+ 162 00b4 03F01F03 		and	r3, r3, #31
+ 163 00b8 0370     		strb	r3, [r0]
+ 164 00ba 0020     		movs	r0, #0
+ 165 00bc 04E0     		b	.L17
+ 166              	.L15:
+ 167 00be 6FF00200 		mvn	r0, #2
+ 168 00c2 01E0     		b	.L17
+ 169              	.L14:
+ 170 00c4 6FF00400 		mvn	r0, #4
+ 171              	.L17:
+ARM GAS  /tmp/ccyQ2XuV.s 			page 4
+
+
+ 172 00c8 05B0     		add	sp, sp, #20
+ 173              		@ sp needed
+ 174 00ca BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 175              	.L20:
+ 176 00ce 00BF     		.align	2
+ 177              	.L19:
+ 178 00d0 00879303 		.word	60000000
+ 179              		.size	_ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE, 
+ 180              		.weak	_ZTVN6uavcan15DeadlineHandlerE
+ 181              		.section	.rodata._ZTVN6uavcan15DeadlineHandlerE,"aG",%progbits,_ZTVN6uavcan15DeadlineHandlerE,comd
+ 182              		.align	3
+ 183              		.type	_ZTVN6uavcan15DeadlineHandlerE, %object
+ 184              		.size	_ZTVN6uavcan15DeadlineHandlerE, 20
+ 185              	_ZTVN6uavcan15DeadlineHandlerE:
+ 186 0000 00000000 		.word	0
+ 187 0004 00000000 		.word	0
+ 188 0008 00000000 		.word	0
+ 189 000c 00000000 		.word	0
+ 190 0010 00000000 		.word	__cxa_pure_virtual
+ 191              		.global	_ZTVN6uavcan17ServiceClientBase9CallStateE
+ 192              		.section	.rodata._ZTVN6uavcan17ServiceClientBase9CallStateE,"a",%progbits
+ 193              		.align	3
+ 194              		.type	_ZTVN6uavcan17ServiceClientBase9CallStateE, %object
+ 195              		.size	_ZTVN6uavcan17ServiceClientBase9CallStateE, 20
+ 196              	_ZTVN6uavcan17ServiceClientBase9CallStateE:
+ 197 0000 00000000 		.word	0
+ 198 0004 00000000 		.word	0
+ 199 0008 00000000 		.word	_ZN6uavcan17ServiceClientBase9CallStateD1Ev
+ 200 000c 00000000 		.word	_ZN6uavcan17ServiceClientBase9CallStateD0Ev
+ 201 0010 00000000 		.word	_ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE
+ 202              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccyQ2XuV.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_service_client.cpp
+     /tmp/ccyQ2XuV.s:16     .text._ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccyQ2XuV.s:21     .text._ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan17ServiceClientBase9CallState14handleDeadlineENS_13MonotonicTimeE
+     /tmp/ccyQ2XuV.s:39     .text._ZN6uavcan17ServiceClientBase9CallStateD2Ev:0000000000000000 $t
+     /tmp/ccyQ2XuV.s:44     .text._ZN6uavcan17ServiceClientBase9CallStateD2Ev:0000000000000000 _ZN6uavcan17ServiceClientBase9CallStateD2Ev
+     /tmp/ccyQ2XuV.s:57     .text._ZN6uavcan17ServiceClientBase9CallStateD2Ev:0000000000000010 $d
+     /tmp/ccyQ2XuV.s:185    .rodata._ZTVN6uavcan15DeadlineHandlerE:0000000000000000 _ZTVN6uavcan15DeadlineHandlerE
+     /tmp/ccyQ2XuV.s:44     .text._ZN6uavcan17ServiceClientBase9CallStateD2Ev:0000000000000000 _ZN6uavcan17ServiceClientBase9CallStateD1Ev
+     /tmp/ccyQ2XuV.s:62     .text._ZN6uavcan17ServiceClientBase9CallStateD0Ev:0000000000000000 $t
+     /tmp/ccyQ2XuV.s:67     .text._ZN6uavcan17ServiceClientBase9CallStateD0Ev:0000000000000000 _ZN6uavcan17ServiceClientBase9CallStateD0Ev
+     /tmp/ccyQ2XuV.s:79     .text._ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE:0000000000000000 $t
+     /tmp/ccyQ2XuV.s:84     .text._ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE:0000000000000000 _ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE
+     /tmp/ccyQ2XuV.s:178    .text._ZN6uavcan17ServiceClientBase13prepareToCallERNS_5INodeEPKcNS_6NodeIDERNS_13ServiceCallIDE:00000000000000d0 $d
+     /tmp/ccyQ2XuV.s:182    .rodata._ZTVN6uavcan15DeadlineHandlerE:0000000000000000 $d
+     /tmp/ccyQ2XuV.s:196    .rodata._ZTVN6uavcan17ServiceClientBase9CallStateE:0000000000000000 _ZTVN6uavcan17ServiceClientBase9CallStateE
+     /tmp/ccyQ2XuV.s:193    .rodata._ZTVN6uavcan17ServiceClientBase9CallStateE:0000000000000000 $d
+                           .group:0000000000000000 _ZN6uavcan17ServiceClientBase9CallStateD5Ev
+
+UNDEFINED SYMBOLS
+_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+_ZN6uavcan15DeadlineHandler4stopEv
+_ZdlPv
+_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13MonotonicTimeE
+__cxa_pure_virtual

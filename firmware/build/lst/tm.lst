@@ -1,0 +1,162 @@
+ARM GAS  /tmp/ccRODnOG.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"tm.c"
+  15              		.section	.text.tm_start,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	tm_start, %function
+  20              	tm_start:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24 0000 014B     		ldr	r3, .L2
+  25 0002 5B68     		ldr	r3, [r3, #4]
+  26 0004 8360     		str	r3, [r0, #8]
+  27 0006 7047     		bx	lr
+  28              	.L3:
+  29              		.align	2
+  30              	.L2:
+  31 0008 001000E0 		.word	-536866816
+  32              		.size	tm_start, .-tm_start
+  33              		.section	.text.tm_stop,"ax",%progbits
+  34              		.align	1
+  35              		.thumb
+  36              		.thumb_func
+  37              		.type	tm_stop, %function
+  38              	tm_stop:
+  39              		@ args = 0, pretend = 0, frame = 0
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41              		@ link register save eliminated.
+  42 0000 084B     		ldr	r3, .L8
+  43 0002 8268     		ldr	r2, [r0, #8]
+  44 0004 5B68     		ldr	r3, [r3, #4]
+  45 0006 9B1A     		subs	r3, r3, r2
+  46 0008 074A     		ldr	r2, .L8+4
+  47 000a 1268     		ldr	r2, [r2]
+  48 000c 9B1A     		subs	r3, r3, r2
+  49 000e C268     		ldr	r2, [r0, #12]
+  50 0010 8360     		str	r3, [r0, #8]
+  51 0012 9342     		cmp	r3, r2
+  52 0014 01D9     		bls	.L5
+  53 0016 C360     		str	r3, [r0, #12]
+  54 0018 7047     		bx	lr
+  55              	.L5:
+  56 001a 0269     		ldr	r2, [r0, #16]
+  57 001c 9342     		cmp	r3, r2
+ARM GAS  /tmp/ccRODnOG.s 			page 2
+
+
+  58 001e 38BF     		it	cc
+  59 0020 0361     		strcc	r3, [r0, #16]
+  60 0022 7047     		bx	lr
+  61              	.L9:
+  62              		.align	2
+  63              	.L8:
+  64 0024 001000E0 		.word	-536866816
+  65 0028 00000000 		.word	.LANCHOR0
+  66              		.size	tm_stop, .-tm_stop
+  67              		.section	.text.tmObjectInit,"ax",%progbits
+  68              		.align	1
+  69              		.global	tmObjectInit
+  70              		.thumb
+  71              		.thumb_func
+  72              		.type	tmObjectInit, %function
+  73              	tmObjectInit:
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76              		@ link register save eliminated.
+  77 0000 054B     		ldr	r3, .L11
+  78 0002 0360     		str	r3, [r0]
+  79 0004 054B     		ldr	r3, .L11+4
+  80 0006 4360     		str	r3, [r0, #4]
+  81 0008 0023     		movs	r3, #0
+  82 000a 8360     		str	r3, [r0, #8]
+  83 000c C360     		str	r3, [r0, #12]
+  84 000e 4FF0FF33 		mov	r3, #-1
+  85 0012 0361     		str	r3, [r0, #16]
+  86 0014 7047     		bx	lr
+  87              	.L12:
+  88 0016 00BF     		.align	2
+  89              	.L11:
+  90 0018 00000000 		.word	tm_start
+  91 001c 00000000 		.word	tm_stop
+  92              		.size	tmObjectInit, .-tmObjectInit
+  93              		.section	.text.tmInit,"ax",%progbits
+  94              		.align	1
+  95              		.global	tmInit
+  96              		.thumb
+  97              		.thumb_func
+  98              		.type	tmInit, %function
+  99              	tmInit:
+ 100              		@ args = 0, pretend = 0, frame = 24
+ 101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 102 0000 10B5     		push	{r4, lr}
+ 103 0002 084C     		ldr	r4, .L14
+ 104 0004 86B0     		sub	sp, sp, #24
+ 105 0006 0023     		movs	r3, #0
+ 106 0008 01A8     		add	r0, sp, #4
+ 107 000a 2360     		str	r3, [r4]
+ 108 000c FFF7FEFF 		bl	tmObjectInit
+ 109 0010 01A8     		add	r0, sp, #4
+ 110 0012 019B     		ldr	r3, [sp, #4]
+ 111 0014 9847     		blx	r3
+ 112 0016 029B     		ldr	r3, [sp, #8]
+ 113 0018 01A8     		add	r0, sp, #4
+ 114 001a 9847     		blx	r3
+ARM GAS  /tmp/ccRODnOG.s 			page 3
+
+
+ 115 001c 039B     		ldr	r3, [sp, #12]
+ 116 001e 2360     		str	r3, [r4]
+ 117 0020 06B0     		add	sp, sp, #24
+ 118              		@ sp needed
+ 119 0022 10BD     		pop	{r4, pc}
+ 120              	.L15:
+ 121              		.align	2
+ 122              	.L14:
+ 123 0024 00000000 		.word	.LANCHOR0
+ 124              		.size	tmInit, .-tmInit
+ 125              		.section	.bss.measurement_offset,"aw",%nobits
+ 126              		.align	2
+ 127              		.set	.LANCHOR0,. + 0
+ 128              		.type	measurement_offset, %object
+ 129              		.size	measurement_offset, 4
+ 130              	measurement_offset:
+ 131 0000 00000000 		.space	4
+ 132              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccRODnOG.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 tm.c
+     /tmp/ccRODnOG.s:16     .text.tm_start:0000000000000000 $t
+     /tmp/ccRODnOG.s:20     .text.tm_start:0000000000000000 tm_start
+     /tmp/ccRODnOG.s:31     .text.tm_start:0000000000000008 $d
+     /tmp/ccRODnOG.s:34     .text.tm_stop:0000000000000000 $t
+     /tmp/ccRODnOG.s:38     .text.tm_stop:0000000000000000 tm_stop
+     /tmp/ccRODnOG.s:64     .text.tm_stop:0000000000000024 $d
+     /tmp/ccRODnOG.s:68     .text.tmObjectInit:0000000000000000 $t
+     /tmp/ccRODnOG.s:73     .text.tmObjectInit:0000000000000000 tmObjectInit
+     /tmp/ccRODnOG.s:90     .text.tmObjectInit:0000000000000018 $d
+     /tmp/ccRODnOG.s:94     .text.tmInit:0000000000000000 $t
+     /tmp/ccRODnOG.s:99     .text.tmInit:0000000000000000 tmInit
+     /tmp/ccRODnOG.s:123    .text.tmInit:0000000000000024 $d
+     /tmp/ccRODnOG.s:126    .bss.measurement_offset:0000000000000000 $d
+     /tmp/ccRODnOG.s:130    .bss.measurement_offset:0000000000000000 measurement_offset
+
+NO UNDEFINED SYMBOLS

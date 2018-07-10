@@ -1,0 +1,44 @@
+ARM GAS  /tmp/cc9GAYY4.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chcore.c"
+  15              		.section	.text.port_halt,"ax",%progbits
+  16              		.align	1
+  17              		.weak	port_halt
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	port_halt, %function
+  21              	port_halt:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25              	@ 48 "zubax_chibios///chibios/os/ports/GCC/ARMCMx/chcore.c" 1
+  26 0000 72B6     		cpsid   i
+  27              	@ 0 "" 2
+  28              		.thumb
+  29              	.L2:
+  30 0002 FEE7     		b	.L2
+  31              		.size	port_halt, .-port_halt
+  32              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc9GAYY4.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chcore.c
+     /tmp/cc9GAYY4.s:16     .text.port_halt:0000000000000000 $t
+     /tmp/cc9GAYY4.s:21     .text.port_halt:0000000000000000 port_halt
+
+NO UNDEFINED SYMBOLS

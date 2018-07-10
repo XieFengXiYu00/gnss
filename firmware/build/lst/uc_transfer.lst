@@ -1,0 +1,231 @@
+ARM GAS  /tmp/ccBqrvGR.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_transfer.cpp"
+  15              		.section	.text._ZNK6uavcan10TransferID22computeForwardDistanceES0_,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZNK6uavcan10TransferID22computeForwardDistanceES0_
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZNK6uavcan10TransferID22computeForwardDistanceES0_, %function
+  21              	_ZNK6uavcan10TransferID22computeForwardDistanceES0_:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+  26 0002 C9B2     		uxtb	r1, r1
+  27 0004 081A     		subs	r0, r1, r0
+  28 0006 48BF     		it	mi
+  29 0008 2030     		addmi	r0, r0, #32
+  30 000a 7047     		bx	lr
+  31              		.size	_ZNK6uavcan10TransferID22computeForwardDistanceES0_, .-_ZNK6uavcan10TransferID22computeForwa
+  32              		.section	.text.startup._GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE,"ax",%progbits
+  33              		.align	1
+  34              		.thumb
+  35              		.thumb_func
+  36              		.type	_GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE, %function
+  37              	_GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 094B     		ldr	r3, .L4
+  42 0002 1022     		movs	r2, #16
+  43 0004 1A70     		strb	r2, [r3]
+  44 0006 094B     		ldr	r3, .L4+4
+  45 0008 1822     		movs	r2, #24
+  46 000a 1A70     		strb	r2, [r3]
+  47 000c 084B     		ldr	r3, .L4+8
+  48 000e 1E22     		movs	r2, #30
+  49 0010 1A70     		strb	r2, [r3]
+  50 0012 084B     		ldr	r3, .L4+12
+  51 0014 0122     		movs	r2, #1
+  52 0016 1A70     		strb	r2, [r3]
+  53 0018 074B     		ldr	r3, .L4+16
+  54 001a 1F22     		movs	r2, #31
+  55 001c 1A70     		strb	r2, [r3]
+  56 001e 074B     		ldr	r3, .L4+20
+  57 0020 0022     		movs	r2, #0
+ARM GAS  /tmp/ccBqrvGR.s 			page 2
+
+
+  58 0022 1A70     		strb	r2, [r3]
+  59 0024 7047     		bx	lr
+  60              	.L5:
+  61 0026 00BF     		.align	2
+  62              	.L4:
+  63 0028 00000000 		.word	.LANCHOR0
+  64 002c 00000000 		.word	.LANCHOR1
+  65 0030 00000000 		.word	.LANCHOR2
+  66 0034 00000000 		.word	.LANCHOR3
+  67 0038 00000000 		.word	.LANCHOR4
+  68 003c 00000000 		.word	.LANCHOR5
+  69              		.size	_GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE, .-_GLOBAL__sub_I__ZN6uavcan16TransferPr
+  70              		.section	.init_array,"aw",%init_array
+  71              		.align	2
+  72 0000 00000000 		.word	_GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE(target1)
+  73              		.global	_ZN6uavcan6NodeID9BroadcastE
+  74              		.global	_ZN6uavcan6NodeID29MaxRecommendedForRegularNodesE
+  75              		.global	_ZN6uavcan6NodeID3MaxE
+  76              		.global	_ZN6uavcan6NodeID6BitLenE
+  77              		.global	_ZN6uavcan6NodeID12ValueInvalidE
+  78              		.global	_ZN6uavcan6NodeID14ValueBroadcastE
+  79              		.global	_ZN6uavcan10TransferID4HalfE
+  80              		.global	_ZN6uavcan10TransferID3MaxE
+  81              		.global	_ZN6uavcan10TransferID6BitLenE
+  82              		.global	_ZN6uavcan16TransferPriority6LowestE
+  83              		.global	_ZN6uavcan16TransferPriority19OneLowerThanHighestE
+  84              		.global	_ZN6uavcan16TransferPriority19OneHigherThanLowestE
+  85              		.global	_ZN6uavcan16TransferPriority11MiddleLowerE
+  86              		.global	_ZN6uavcan16TransferPriority7DefaultE
+  87              		.global	_ZN6uavcan16TransferPriority14NumericallyMinE
+  88              		.global	_ZN6uavcan16TransferPriority14NumericallyMaxE
+  89              		.global	_ZN6uavcan16TransferPriority6BitLenE
+  90              		.section	.rodata._ZN6uavcan16TransferPriority6BitLenE,"a",%progbits
+  91              		.type	_ZN6uavcan16TransferPriority6BitLenE, %object
+  92              		.size	_ZN6uavcan16TransferPriority6BitLenE, 1
+  93              	_ZN6uavcan16TransferPriority6BitLenE:
+  94 0000 05       		.byte	5
+  95              		.section	.bss._ZN6uavcan16TransferPriority11MiddleLowerE,"aw",%nobits
+  96              		.set	.LANCHOR1,. + 0
+  97              		.type	_ZN6uavcan16TransferPriority11MiddleLowerE, %object
+  98              		.size	_ZN6uavcan16TransferPriority11MiddleLowerE, 1
+  99              	_ZN6uavcan16TransferPriority11MiddleLowerE:
+ 100 0000 00       		.space	1
+ 101              		.section	.rodata._ZN6uavcan10TransferID4HalfE,"a",%progbits
+ 102              		.type	_ZN6uavcan10TransferID4HalfE, %object
+ 103              		.size	_ZN6uavcan10TransferID4HalfE, 1
+ 104              	_ZN6uavcan10TransferID4HalfE:
+ 105 0000 10       		.byte	16
+ 106              		.section	.bss._ZN6uavcan16TransferPriority6LowestE,"aw",%nobits
+ 107              		.set	.LANCHOR4,. + 0
+ 108              		.type	_ZN6uavcan16TransferPriority6LowestE, %object
+ 109              		.size	_ZN6uavcan16TransferPriority6LowestE, 1
+ 110              	_ZN6uavcan16TransferPriority6LowestE:
+ 111 0000 00       		.space	1
+ 112              		.section	.rodata._ZN6uavcan6NodeID12ValueInvalidE,"a",%progbits
+ 113              		.type	_ZN6uavcan6NodeID12ValueInvalidE, %object
+ 114              		.size	_ZN6uavcan6NodeID12ValueInvalidE, 1
+ARM GAS  /tmp/ccBqrvGR.s 			page 3
+
+
+ 115              	_ZN6uavcan6NodeID12ValueInvalidE:
+ 116 0000 FF       		.byte	-1
+ 117              		.section	.bss._ZN6uavcan16TransferPriority7DefaultE,"aw",%nobits
+ 118              		.set	.LANCHOR0,. + 0
+ 119              		.type	_ZN6uavcan16TransferPriority7DefaultE, %object
+ 120              		.size	_ZN6uavcan16TransferPriority7DefaultE, 1
+ 121              	_ZN6uavcan16TransferPriority7DefaultE:
+ 122 0000 00       		.space	1
+ 123              		.section	.rodata._ZN6uavcan6NodeID14ValueBroadcastE,"a",%progbits
+ 124              		.type	_ZN6uavcan6NodeID14ValueBroadcastE, %object
+ 125              		.size	_ZN6uavcan6NodeID14ValueBroadcastE, 1
+ 126              	_ZN6uavcan6NodeID14ValueBroadcastE:
+ 127 0000 00       		.space	1
+ 128              		.section	.rodata._ZN6uavcan10TransferID6BitLenE,"a",%progbits
+ 129              		.type	_ZN6uavcan10TransferID6BitLenE, %object
+ 130              		.size	_ZN6uavcan10TransferID6BitLenE, 1
+ 131              	_ZN6uavcan10TransferID6BitLenE:
+ 132 0000 05       		.byte	5
+ 133              		.section	.rodata._ZN6uavcan16TransferPriority14NumericallyMaxE,"a",%progbits
+ 134              		.type	_ZN6uavcan16TransferPriority14NumericallyMaxE, %object
+ 135              		.size	_ZN6uavcan16TransferPriority14NumericallyMaxE, 1
+ 136              	_ZN6uavcan16TransferPriority14NumericallyMaxE:
+ 137 0000 1F       		.byte	31
+ 138              		.section	.rodata._ZN6uavcan6NodeID6BitLenE,"a",%progbits
+ 139              		.type	_ZN6uavcan6NodeID6BitLenE, %object
+ 140              		.size	_ZN6uavcan6NodeID6BitLenE, 1
+ 141              	_ZN6uavcan6NodeID6BitLenE:
+ 142 0000 07       		.byte	7
+ 143              		.section	.rodata._ZN6uavcan6NodeID29MaxRecommendedForRegularNodesE,"a",%progbits
+ 144              		.type	_ZN6uavcan6NodeID29MaxRecommendedForRegularNodesE, %object
+ 145              		.size	_ZN6uavcan6NodeID29MaxRecommendedForRegularNodesE, 1
+ 146              	_ZN6uavcan6NodeID29MaxRecommendedForRegularNodesE:
+ 147 0000 7D       		.byte	125
+ 148              		.section	.bss._ZN6uavcan6NodeID9BroadcastE,"aw",%nobits
+ 149              		.set	.LANCHOR5,. + 0
+ 150              		.type	_ZN6uavcan6NodeID9BroadcastE, %object
+ 151              		.size	_ZN6uavcan6NodeID9BroadcastE, 1
+ 152              	_ZN6uavcan6NodeID9BroadcastE:
+ 153 0000 00       		.space	1
+ 154              		.section	.rodata._ZN6uavcan16TransferPriority14NumericallyMinE,"a",%progbits
+ 155              		.type	_ZN6uavcan16TransferPriority14NumericallyMinE, %object
+ 156              		.size	_ZN6uavcan16TransferPriority14NumericallyMinE, 1
+ 157              	_ZN6uavcan16TransferPriority14NumericallyMinE:
+ 158 0000 00       		.space	1
+ 159              		.section	.rodata._ZN6uavcan6NodeID3MaxE,"a",%progbits
+ 160              		.type	_ZN6uavcan6NodeID3MaxE, %object
+ 161              		.size	_ZN6uavcan6NodeID3MaxE, 1
+ 162              	_ZN6uavcan6NodeID3MaxE:
+ 163 0000 7F       		.byte	127
+ 164              		.section	.bss._ZN6uavcan16TransferPriority19OneHigherThanLowestE,"aw",%nobits
+ 165              		.set	.LANCHOR2,. + 0
+ 166              		.type	_ZN6uavcan16TransferPriority19OneHigherThanLowestE, %object
+ 167              		.size	_ZN6uavcan16TransferPriority19OneHigherThanLowestE, 1
+ 168              	_ZN6uavcan16TransferPriority19OneHigherThanLowestE:
+ 169 0000 00       		.space	1
+ 170              		.section	.rodata._ZN6uavcan10TransferID3MaxE,"a",%progbits
+ 171              		.type	_ZN6uavcan10TransferID3MaxE, %object
+ARM GAS  /tmp/ccBqrvGR.s 			page 4
+
+
+ 172              		.size	_ZN6uavcan10TransferID3MaxE, 1
+ 173              	_ZN6uavcan10TransferID3MaxE:
+ 174 0000 1F       		.byte	31
+ 175              		.section	.bss._ZN6uavcan16TransferPriority19OneLowerThanHighestE,"aw",%nobits
+ 176              		.set	.LANCHOR3,. + 0
+ 177              		.type	_ZN6uavcan16TransferPriority19OneLowerThanHighestE, %object
+ 178              		.size	_ZN6uavcan16TransferPriority19OneLowerThanHighestE, 1
+ 179              	_ZN6uavcan16TransferPriority19OneLowerThanHighestE:
+ 180 0000 00       		.space	1
+ 181              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccBqrvGR.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_transfer.cpp
+     /tmp/ccBqrvGR.s:16     .text._ZNK6uavcan10TransferID22computeForwardDistanceES0_:0000000000000000 $t
+     /tmp/ccBqrvGR.s:21     .text._ZNK6uavcan10TransferID22computeForwardDistanceES0_:0000000000000000 _ZNK6uavcan10TransferID22computeForwardDistanceES0_
+     /tmp/ccBqrvGR.s:33     .text.startup._GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE:0000000000000000 $t
+     /tmp/ccBqrvGR.s:37     .text.startup._GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE:0000000000000000 _GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE
+     /tmp/ccBqrvGR.s:63     .text.startup._GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE:0000000000000028 $d
+     /tmp/ccBqrvGR.s:71     .init_array:0000000000000000 $d
+     /tmp/ccBqrvGR.s:152    .bss._ZN6uavcan6NodeID9BroadcastE:0000000000000000 _ZN6uavcan6NodeID9BroadcastE
+     /tmp/ccBqrvGR.s:146    .rodata._ZN6uavcan6NodeID29MaxRecommendedForRegularNodesE:0000000000000000 _ZN6uavcan6NodeID29MaxRecommendedForRegularNodesE
+     /tmp/ccBqrvGR.s:162    .rodata._ZN6uavcan6NodeID3MaxE:0000000000000000 _ZN6uavcan6NodeID3MaxE
+     /tmp/ccBqrvGR.s:141    .rodata._ZN6uavcan6NodeID6BitLenE:0000000000000000 _ZN6uavcan6NodeID6BitLenE
+     /tmp/ccBqrvGR.s:115    .rodata._ZN6uavcan6NodeID12ValueInvalidE:0000000000000000 _ZN6uavcan6NodeID12ValueInvalidE
+     /tmp/ccBqrvGR.s:126    .rodata._ZN6uavcan6NodeID14ValueBroadcastE:0000000000000000 _ZN6uavcan6NodeID14ValueBroadcastE
+     /tmp/ccBqrvGR.s:104    .rodata._ZN6uavcan10TransferID4HalfE:0000000000000000 _ZN6uavcan10TransferID4HalfE
+     /tmp/ccBqrvGR.s:173    .rodata._ZN6uavcan10TransferID3MaxE:0000000000000000 _ZN6uavcan10TransferID3MaxE
+     /tmp/ccBqrvGR.s:131    .rodata._ZN6uavcan10TransferID6BitLenE:0000000000000000 _ZN6uavcan10TransferID6BitLenE
+     /tmp/ccBqrvGR.s:110    .bss._ZN6uavcan16TransferPriority6LowestE:0000000000000000 _ZN6uavcan16TransferPriority6LowestE
+     /tmp/ccBqrvGR.s:179    .bss._ZN6uavcan16TransferPriority19OneLowerThanHighestE:0000000000000000 _ZN6uavcan16TransferPriority19OneLowerThanHighestE
+     /tmp/ccBqrvGR.s:168    .bss._ZN6uavcan16TransferPriority19OneHigherThanLowestE:0000000000000000 _ZN6uavcan16TransferPriority19OneHigherThanLowestE
+     /tmp/ccBqrvGR.s:99     .bss._ZN6uavcan16TransferPriority11MiddleLowerE:0000000000000000 _ZN6uavcan16TransferPriority11MiddleLowerE
+     /tmp/ccBqrvGR.s:121    .bss._ZN6uavcan16TransferPriority7DefaultE:0000000000000000 _ZN6uavcan16TransferPriority7DefaultE
+     /tmp/ccBqrvGR.s:157    .rodata._ZN6uavcan16TransferPriority14NumericallyMinE:0000000000000000 _ZN6uavcan16TransferPriority14NumericallyMinE
+     /tmp/ccBqrvGR.s:136    .rodata._ZN6uavcan16TransferPriority14NumericallyMaxE:0000000000000000 _ZN6uavcan16TransferPriority14NumericallyMaxE
+     /tmp/ccBqrvGR.s:93     .rodata._ZN6uavcan16TransferPriority6BitLenE:0000000000000000 _ZN6uavcan16TransferPriority6BitLenE
+     /tmp/ccBqrvGR.s:100    .bss._ZN6uavcan16TransferPriority11MiddleLowerE:0000000000000000 $d
+     /tmp/ccBqrvGR.s:111    .bss._ZN6uavcan16TransferPriority6LowestE:0000000000000000 $d
+     /tmp/ccBqrvGR.s:122    .bss._ZN6uavcan16TransferPriority7DefaultE:0000000000000000 $d
+     /tmp/ccBqrvGR.s:127    .rodata._ZN6uavcan6NodeID14ValueBroadcastE:0000000000000000 $d
+     /tmp/ccBqrvGR.s:153    .bss._ZN6uavcan6NodeID9BroadcastE:0000000000000000 $d
+     /tmp/ccBqrvGR.s:158    .rodata._ZN6uavcan16TransferPriority14NumericallyMinE:0000000000000000 $d
+     /tmp/ccBqrvGR.s:169    .bss._ZN6uavcan16TransferPriority19OneHigherThanLowestE:0000000000000000 $d
+     /tmp/ccBqrvGR.s:180    .bss._ZN6uavcan16TransferPriority19OneLowerThanHighestE:0000000000000000 $d
+
+NO UNDEFINED SYMBOLS

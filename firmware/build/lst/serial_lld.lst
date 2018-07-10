@@ -1,0 +1,583 @@
+ARM GAS  /tmp/cc5mg4v5.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"serial_lld.c"
+  15              		.section	.text.notify1,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	notify1, %function
+  20              	notify1:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24 0000 034A     		ldr	r2, .L2
+  25 0002 9389     		ldrh	r3, [r2, #12]
+  26 0004 9BB2     		uxth	r3, r3
+  27 0006 43F08003 		orr	r3, r3, #128
+  28 000a 9381     		strh	r3, [r2, #12]	@ movhi
+  29 000c 7047     		bx	lr
+  30              	.L3:
+  31 000e 00BF     		.align	2
+  32              	.L2:
+  33 0010 00380140 		.word	1073821696
+  34              		.size	notify1, .-notify1
+  35              		.section	.text.notify2,"ax",%progbits
+  36              		.align	1
+  37              		.thumb
+  38              		.thumb_func
+  39              		.type	notify2, %function
+  40              	notify2:
+  41              		@ args = 0, pretend = 0, frame = 0
+  42              		@ frame_needed = 0, uses_anonymous_args = 0
+  43              		@ link register save eliminated.
+  44 0000 034A     		ldr	r2, .L5
+  45 0002 9389     		ldrh	r3, [r2, #12]
+  46 0004 9BB2     		uxth	r3, r3
+  47 0006 43F08003 		orr	r3, r3, #128
+  48 000a 9381     		strh	r3, [r2, #12]	@ movhi
+  49 000c 7047     		bx	lr
+  50              	.L6:
+  51 000e 00BF     		.align	2
+  52              	.L5:
+  53 0010 00440040 		.word	1073759232
+  54              		.size	notify2, .-notify2
+  55              		.section	.text.notify3,"ax",%progbits
+  56              		.align	1
+  57              		.thumb
+ARM GAS  /tmp/cc5mg4v5.s 			page 2
+
+
+  58              		.thumb_func
+  59              		.type	notify3, %function
+  60              	notify3:
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  64 0000 034A     		ldr	r2, .L8
+  65 0002 9389     		ldrh	r3, [r2, #12]
+  66 0004 9BB2     		uxth	r3, r3
+  67 0006 43F08003 		orr	r3, r3, #128
+  68 000a 9381     		strh	r3, [r2, #12]	@ movhi
+  69 000c 7047     		bx	lr
+  70              	.L9:
+  71 000e 00BF     		.align	2
+  72              	.L8:
+  73 0010 00480040 		.word	1073760256
+  74              		.size	notify3, .-notify3
+  75              		.section	.text.serve_interrupt,"ax",%progbits
+  76              		.align	1
+  77              		.thumb
+  78              		.thumb_func
+  79              		.type	serve_interrupt, %function
+  80              	serve_interrupt:
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  84 0002 D0F85464 		ldr	r6, [r0, #1108]
+  85 0006 0546     		mov	r5, r0
+  86 0008 B789     		ldrh	r7, [r6, #12]
+  87 000a 3488     		ldrh	r4, [r6]
+  88 000c BFB2     		uxth	r7, r7
+  89 000e A4B2     		uxth	r4, r4
+  90 0010 E205     		lsls	r2, r4, #23
+  91 0012 0DD5     		bpl	.L11
+  92 0014 2023     		movs	r3, #32
+  93              	@ 161 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+  94 0016 83F31188 		msr     BASEPRI, r3
+  95              	@ 0 "" 2
+  96              		.thumb
+  97 001a 4FF40071 		mov	r1, #512
+  98 001e 0430     		adds	r0, r0, #4
+  99 0020 FFF7FEFF 		bl	chEvtBroadcastFlagsI
+ 100 0024 0023     		movs	r3, #0
+ 101              	@ 163 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+ 102 0026 83F31188 		msr     BASEPRI, r3
+ 103              	@ 0 "" 2
+ 104              		.thumb
+ 105 002a 4FF6FF63 		movw	r3, #65279
+ 106 002e 3380     		strh	r3, [r6]	@ movhi
+ 107              	.L11:
+ 108 0030 2023     		movs	r3, #32
+ 109              	@ 168 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+ 110 0032 83F31188 		msr     BASEPRI, r3
+ 111              	@ 0 "" 2
+ 112              		.thumb
+ 113              	.L12:
+ 114 0036 14F02F03 		ands	r3, r4, #47
+ARM GAS  /tmp/cc5mg4v5.s 			page 3
+
+
+ 115 003a 20D0     		beq	.L55
+ 116 003c 2307     		lsls	r3, r4, #28
+ 117 003e 13D0     		beq	.L13
+ 118 0040 14F0080F 		tst	r4, #8
+ 119 0044 0CBF     		ite	eq
+ 120 0046 0021     		moveq	r1, #0
+ 121 0048 8021     		movne	r1, #128
+ 122 004a E007     		lsls	r0, r4, #31
+ 123 004c 48BF     		it	mi
+ 124 004e 41F02001 		orrmi	r1, r1, #32
+ 125 0052 A207     		lsls	r2, r4, #30
+ 126 0054 48BF     		it	mi
+ 127 0056 41F04001 		orrmi	r1, r1, #64
+ 128 005a 6307     		lsls	r3, r4, #29
+ 129 005c 48BF     		it	mi
+ 130 005e 41F48071 		orrmi	r1, r1, #256
+ 131 0062 281D     		adds	r0, r5, #4
+ 132 0064 FFF7FEFF 		bl	chEvtBroadcastFlagsI
+ 133              	.L13:
+ 134 0068 B188     		ldrh	r1, [r6, #4]
+ 135 006a A006     		lsls	r0, r4, #26
+ 136 006c 89B2     		uxth	r1, r1
+ 137 006e 03D5     		bpl	.L18
+ 138 0070 2846     		mov	r0, r5
+ 139 0072 C9B2     		uxtb	r1, r1
+ 140 0074 FFF7FEFF 		bl	sdIncomingDataI
+ 141              	.L18:
+ 142 0078 3488     		ldrh	r4, [r6]
+ 143 007a A4B2     		uxth	r4, r4
+ 144 007c DBE7     		b	.L12
+ 145              	.L55:
+ 146              	@ 181 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+ 147 007e 83F31188 		msr     BASEPRI, r3
+ 148              	@ 0 "" 2
+ 149              		.thumb
+ 150 0082 3906     		lsls	r1, r7, #24
+ 151 0084 19D5     		bpl	.L20
+ 152 0086 2206     		lsls	r2, r4, #24
+ 153 0088 17D5     		bpl	.L20
+ 154 008a 2023     		movs	r3, #32
+ 155              	@ 186 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+ 156 008c 83F31188 		msr     BASEPRI, r3
+ 157              	@ 0 "" 2
+ 158              		.thumb
+ 159 0090 05F13000 		add	r0, r5, #48
+ 160 0094 FFF7FEFF 		bl	chOQGetI
+ 161 0098 0028     		cmp	r0, #0
+ 162 009a 09DA     		bge	.L21
+ 163 009c 281D     		adds	r0, r5, #4
+ 164 009e 0821     		movs	r1, #8
+ 165 00a0 FFF7FEFF 		bl	chEvtBroadcastFlagsI
+ 166 00a4 27F0C003 		bic	r3, r7, #192
+ 167 00a8 43F04003 		orr	r3, r3, #64
+ 168 00ac B381     		strh	r3, [r6, #12]	@ movhi
+ 169 00ae 01E0     		b	.L22
+ 170              	.L21:
+ 171 00b0 80B2     		uxth	r0, r0
+ARM GAS  /tmp/cc5mg4v5.s 			page 4
+
+
+ 172 00b2 B080     		strh	r0, [r6, #4]	@ movhi
+ 173              	.L22:
+ 174 00b4 0023     		movs	r3, #0
+ 175              	@ 194 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+ 176 00b6 83F31188 		msr     BASEPRI, r3
+ 177              	@ 0 "" 2
+ 178              		.thumb
+ 179              	.L20:
+ 180 00ba 6306     		lsls	r3, r4, #25
+ 181 00bc 18D5     		bpl	.L10
+ 182 00be 2023     		movs	r3, #32
+ 183              	@ 199 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+ 184 00c0 83F31188 		msr     BASEPRI, r3
+ 185              	@ 0 "" 2
+ 186              		.thumb
+ 187 00c4 6A6C     		ldr	r2, [r5, #68]
+ 188 00c6 AB6C     		ldr	r3, [r5, #72]
+ 189 00c8 9A42     		cmp	r2, r3
+ 190 00ca 01D1     		bne	.L24
+ 191 00cc AB6B     		ldr	r3, [r5, #56]
+ 192 00ce 53B9     		cbnz	r3, .L25
+ 193              	.L24:
+ 194 00d0 4FF6BF73 		movw	r3, #65471
+ 195 00d4 27F04007 		bic	r7, r7, #64
+ 196 00d8 BFB2     		uxth	r7, r7
+ 197 00da B781     		strh	r7, [r6, #12]	@ movhi
+ 198 00dc 3380     		strh	r3, [r6]	@ movhi
+ 199 00de 0023     		movs	r3, #0
+ 200              	@ 204 "zubax_chibios///chibios/os/hal/platforms/STM32/USARTv1/serial_lld.c" 1
+ 201 00e0 83F31188 		msr     BASEPRI, r3
+ 202              	@ 0 "" 2
+ 203              		.thumb
+ 204 00e4 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 205              	.L25:
+ 206 00e6 281D     		adds	r0, r5, #4
+ 207 00e8 1021     		movs	r1, #16
+ 208 00ea FFF7FEFF 		bl	chEvtBroadcastFlagsI
+ 209 00ee EFE7     		b	.L24
+ 210              	.L10:
+ 211 00f0 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 212              		.size	serve_interrupt, .-serve_interrupt
+ 213              		.section	.text.VectorD4,"ax",%progbits
+ 214              		.align	1
+ 215              		.global	VectorD4
+ 216              		.thumb
+ 217              		.thumb_func
+ 218              		.type	VectorD4, %function
+ 219              	VectorD4:
+ 220              		@ args = 0, pretend = 0, frame = 0
+ 221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 222 0000 08B5     		push	{r3, lr}
+ 223 0002 0348     		ldr	r0, .L57
+ 224 0004 FFF7FEFF 		bl	serve_interrupt
+ 225 0008 BDE80840 		pop	{r3, lr}
+ 226 000c FFF7FEBF 		b	_port_irq_epilogue
+ 227              	.L58:
+ 228              		.align	2
+ARM GAS  /tmp/cc5mg4v5.s 			page 5
+
+
+ 229              	.L57:
+ 230 0010 00000000 		.word	.LANCHOR0
+ 231              		.size	VectorD4, .-VectorD4
+ 232              		.section	.text.VectorD8,"ax",%progbits
+ 233              		.align	1
+ 234              		.global	VectorD8
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.type	VectorD8, %function
+ 238              	VectorD8:
+ 239              		@ args = 0, pretend = 0, frame = 0
+ 240              		@ frame_needed = 0, uses_anonymous_args = 0
+ 241 0000 08B5     		push	{r3, lr}
+ 242 0002 0348     		ldr	r0, .L60
+ 243 0004 FFF7FEFF 		bl	serve_interrupt
+ 244 0008 BDE80840 		pop	{r3, lr}
+ 245 000c FFF7FEBF 		b	_port_irq_epilogue
+ 246              	.L61:
+ 247              		.align	2
+ 248              	.L60:
+ 249 0010 00000000 		.word	.LANCHOR1
+ 250              		.size	VectorD8, .-VectorD8
+ 251              		.section	.text.VectorDC,"ax",%progbits
+ 252              		.align	1
+ 253              		.global	VectorDC
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.type	VectorDC, %function
+ 257              	VectorDC:
+ 258              		@ args = 0, pretend = 0, frame = 0
+ 259              		@ frame_needed = 0, uses_anonymous_args = 0
+ 260 0000 08B5     		push	{r3, lr}
+ 261 0002 0348     		ldr	r0, .L63
+ 262 0004 FFF7FEFF 		bl	serve_interrupt
+ 263 0008 BDE80840 		pop	{r3, lr}
+ 264 000c FFF7FEBF 		b	_port_irq_epilogue
+ 265              	.L64:
+ 266              		.align	2
+ 267              	.L63:
+ 268 0010 00000000 		.word	.LANCHOR2
+ 269              		.size	VectorDC, .-VectorDC
+ 270              		.section	.text.sd_lld_init,"ax",%progbits
+ 271              		.align	1
+ 272              		.global	sd_lld_init
+ 273              		.thumb
+ 274              		.thumb_func
+ 275              		.type	sd_lld_init, %function
+ 276              	sd_lld_init:
+ 277              		@ args = 0, pretend = 0, frame = 0
+ 278              		@ frame_needed = 0, uses_anonymous_args = 0
+ 279 0000 10B5     		push	{r4, lr}
+ 280 0002 0E4C     		ldr	r4, .L66
+ 281 0004 0021     		movs	r1, #0
+ 282 0006 2046     		mov	r0, r4
+ 283 0008 0D4A     		ldr	r2, .L66+4
+ 284 000a FFF7FEFF 		bl	sdObjectInit
+ 285 000e 0D4B     		ldr	r3, .L66+8
+ARM GAS  /tmp/cc5mg4v5.s 			page 6
+
+
+ 286 0010 0021     		movs	r1, #0
+ 287 0012 C4F85434 		str	r3, [r4, #1108]
+ 288 0016 0C4C     		ldr	r4, .L66+12
+ 289 0018 0C4A     		ldr	r2, .L66+16
+ 290 001a 2046     		mov	r0, r4
+ 291 001c FFF7FEFF 		bl	sdObjectInit
+ 292 0020 0B4B     		ldr	r3, .L66+20
+ 293 0022 0021     		movs	r1, #0
+ 294 0024 C4F85434 		str	r3, [r4, #1108]
+ 295 0028 0A4C     		ldr	r4, .L66+24
+ 296 002a 0B4A     		ldr	r2, .L66+28
+ 297 002c 2046     		mov	r0, r4
+ 298 002e FFF7FEFF 		bl	sdObjectInit
+ 299 0032 0A4B     		ldr	r3, .L66+32
+ 300 0034 C4F85434 		str	r3, [r4, #1108]
+ 301 0038 10BD     		pop	{r4, pc}
+ 302              	.L67:
+ 303 003a 00BF     		.align	2
+ 304              	.L66:
+ 305 003c 00000000 		.word	.LANCHOR0
+ 306 0040 00000000 		.word	notify1
+ 307 0044 00380140 		.word	1073821696
+ 308 0048 00000000 		.word	.LANCHOR1
+ 309 004c 00000000 		.word	notify2
+ 310 0050 00440040 		.word	1073759232
+ 311 0054 00000000 		.word	.LANCHOR2
+ 312 0058 00000000 		.word	notify3
+ 313 005c 00480040 		.word	1073760256
+ 314              		.size	sd_lld_init, .-sd_lld_init
+ 315              		.section	.text.sd_lld_start,"ax",%progbits
+ 316              		.align	1
+ 317              		.global	sd_lld_start
+ 318              		.thumb
+ 319              		.thumb_func
+ 320              		.type	sd_lld_start, %function
+ 321              	sd_lld_start:
+ 322              		@ args = 0, pretend = 0, frame = 0
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324 0000 38B5     		push	{r3, r4, r5, lr}
+ 325 0002 234C     		ldr	r4, .L76
+ 326 0004 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 327 0006 0029     		cmp	r1, #0
+ 328 0008 18BF     		it	ne
+ 329 000a 0C46     		movne	r4, r1
+ 330 000c 012B     		cmp	r3, #1
+ 331 000e 0546     		mov	r5, r0
+ 332 0010 1FD1     		bne	.L70
+ 333 0012 204B     		ldr	r3, .L76+4
+ 334 0014 9842     		cmp	r0, r3
+ 335 0016 06D1     		bne	.L71
+ 336 0018 1F4A     		ldr	r2, .L76+8
+ 337 001a 2520     		movs	r0, #37
+ 338 001c 9369     		ldr	r3, [r2, #24]
+ 339 001e 43F48043 		orr	r3, r3, #16384
+ 340 0022 9361     		str	r3, [r2, #24]
+ 341 0024 12E0     		b	.L75
+ 342              	.L71:
+ARM GAS  /tmp/cc5mg4v5.s 			page 7
+
+
+ 343 0026 1D4B     		ldr	r3, .L76+12
+ 344 0028 9842     		cmp	r0, r3
+ 345 002a 06D1     		bne	.L72
+ 346 002c 1A4A     		ldr	r2, .L76+8
+ 347 002e 2620     		movs	r0, #38
+ 348 0030 D369     		ldr	r3, [r2, #28]
+ 349 0032 43F40033 		orr	r3, r3, #131072
+ 350 0036 D361     		str	r3, [r2, #28]
+ 351 0038 08E0     		b	.L75
+ 352              	.L72:
+ 353 003a 194B     		ldr	r3, .L76+16
+ 354 003c 9842     		cmp	r0, r3
+ 355 003e 08D1     		bne	.L70
+ 356 0040 154A     		ldr	r2, .L76+8
+ 357 0042 2720     		movs	r0, #39
+ 358 0044 D369     		ldr	r3, [r2, #28]
+ 359 0046 43F48023 		orr	r3, r3, #262144
+ 360 004a D361     		str	r3, [r2, #28]
+ 361              	.L75:
+ 362 004c C021     		movs	r1, #192
+ 363 004e FFF7FEFF 		bl	nvicEnableVector
+ 364              	.L70:
+ 365 0052 2168     		ldr	r1, [r4]
+ 366 0054 134B     		ldr	r3, .L76+20
+ 367 0056 D5F85424 		ldr	r2, [r5, #1108]
+ 368 005a B3FBF1F3 		udiv	r3, r3, r1
+ 369 005e 9BB2     		uxth	r3, r3
+ 370 0060 1381     		strh	r3, [r2, #8]	@ movhi
+ 371 0062 E388     		ldrh	r3, [r4, #6]
+ 372 0064 43F04003 		orr	r3, r3, #64
+ 373 0068 9BB2     		uxth	r3, r3
+ 374 006a 1382     		strh	r3, [r2, #16]	@ movhi
+ 375 006c 2389     		ldrh	r3, [r4, #8]
+ 376 006e 43F00103 		orr	r3, r3, #1
+ 377 0072 9BB2     		uxth	r3, r3
+ 378 0074 9382     		strh	r3, [r2, #20]	@ movhi
+ 379 0076 A388     		ldrh	r3, [r4, #4]
+ 380 0078 43F40453 		orr	r3, r3, #8448
+ 381 007c 43F02C03 		orr	r3, r3, #44
+ 382 0080 9BB2     		uxth	r3, r3
+ 383 0082 9381     		strh	r3, [r2, #12]	@ movhi
+ 384 0084 0023     		movs	r3, #0
+ 385 0086 1380     		strh	r3, [r2]	@ movhi
+ 386 0088 1388     		ldrh	r3, [r2]
+ 387 008a 9388     		ldrh	r3, [r2, #4]
+ 388 008c 38BD     		pop	{r3, r4, r5, pc}
+ 389              	.L77:
+ 390 008e 00BF     		.align	2
+ 391              	.L76:
+ 392 0090 00000000 		.word	.LANCHOR3
+ 393 0094 00000000 		.word	.LANCHOR0
+ 394 0098 00100240 		.word	1073876992
+ 395 009c 00000000 		.word	.LANCHOR1
+ 396 00a0 00000000 		.word	.LANCHOR2
+ 397 00a4 40787D01 		.word	25000000
+ 398              		.size	sd_lld_start, .-sd_lld_start
+ 399              		.section	.text.sd_lld_stop,"ax",%progbits
+ARM GAS  /tmp/cc5mg4v5.s 			page 8
+
+
+ 400              		.align	1
+ 401              		.global	sd_lld_stop
+ 402              		.thumb
+ 403              		.thumb_func
+ 404              		.type	sd_lld_stop, %function
+ 405              	sd_lld_stop:
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 408              		@ link register save eliminated.
+ 409 0000 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 410 0002 022B     		cmp	r3, #2
+ 411 0004 27D1     		bne	.L78
+ 412 0006 D0F85434 		ldr	r3, [r0, #1108]
+ 413 000a 0022     		movs	r2, #0
+ 414 000c 9A81     		strh	r2, [r3, #12]	@ movhi
+ 415 000e 1A82     		strh	r2, [r3, #16]	@ movhi
+ 416 0010 9A82     		strh	r2, [r3, #20]	@ movhi
+ 417 0012 114B     		ldr	r3, .L85
+ 418 0014 9842     		cmp	r0, r3
+ 419 0016 09D1     		bne	.L81
+ 420 0018 02F18042 		add	r2, r2, #1073741824
+ 421 001c 02F50432 		add	r2, r2, #135168
+ 422 0020 9369     		ldr	r3, [r2, #24]
+ 423 0022 2520     		movs	r0, #37
+ 424 0024 23F48043 		bic	r3, r3, #16384
+ 425 0028 9361     		str	r3, [r2, #24]
+ 426 002a 12E0     		b	.L84
+ 427              	.L81:
+ 428 002c 0B4B     		ldr	r3, .L85+4
+ 429 002e 9842     		cmp	r0, r3
+ 430 0030 06D1     		bne	.L82
+ 431 0032 0B4A     		ldr	r2, .L85+8
+ 432 0034 2620     		movs	r0, #38
+ 433 0036 D369     		ldr	r3, [r2, #28]
+ 434 0038 23F40033 		bic	r3, r3, #131072
+ 435 003c D361     		str	r3, [r2, #28]
+ 436 003e 08E0     		b	.L84
+ 437              	.L82:
+ 438 0040 084B     		ldr	r3, .L85+12
+ 439 0042 9842     		cmp	r0, r3
+ 440 0044 07D1     		bne	.L78
+ 441 0046 064A     		ldr	r2, .L85+8
+ 442 0048 2720     		movs	r0, #39
+ 443 004a D369     		ldr	r3, [r2, #28]
+ 444 004c 23F48023 		bic	r3, r3, #262144
+ 445 0050 D361     		str	r3, [r2, #28]
+ 446              	.L84:
+ 447 0052 FFF7FEBF 		b	nvicDisableVector
+ 448              	.L78:
+ 449 0056 7047     		bx	lr
+ 450              	.L86:
+ 451              		.align	2
+ 452              	.L85:
+ 453 0058 00000000 		.word	.LANCHOR0
+ 454 005c 00000000 		.word	.LANCHOR1
+ 455 0060 00100240 		.word	1073876992
+ 456 0064 00000000 		.word	.LANCHOR2
+ARM GAS  /tmp/cc5mg4v5.s 			page 9
+
+
+ 457              		.size	sd_lld_stop, .-sd_lld_stop
+ 458              		.global	SD3
+ 459              		.global	SD2
+ 460              		.global	SD1
+ 461              		.section	.rodata.default_config,"a",%progbits
+ 462              		.align	2
+ 463              		.set	.LANCHOR3,. + 0
+ 464              		.type	default_config, %object
+ 465              		.size	default_config, 12
+ 466              	default_config:
+ 467 0000 00C20100 		.word	115200
+ 468 0004 0000     		.short	0
+ 469 0006 0040     		.short	16384
+ 470 0008 0000     		.short	0
+ 471 000a 0000     		.space	2
+ 472              		.section	.bss.SD1,"aw",%nobits
+ 473              		.align	2
+ 474              		.set	.LANCHOR0,. + 0
+ 475              		.type	SD1, %object
+ 476              		.size	SD1, 1112
+ 477              	SD1:
+ 478 0000 00000000 		.space	1112
+ 478      00000000 
+ 478      00000000 
+ 478      00000000 
+ 478      00000000 
+ 479              		.section	.bss.SD2,"aw",%nobits
+ 480              		.align	2
+ 481              		.set	.LANCHOR1,. + 0
+ 482              		.type	SD2, %object
+ 483              		.size	SD2, 1112
+ 484              	SD2:
+ 485 0000 00000000 		.space	1112
+ 485      00000000 
+ 485      00000000 
+ 485      00000000 
+ 485      00000000 
+ 486              		.section	.bss.SD3,"aw",%nobits
+ 487              		.align	2
+ 488              		.set	.LANCHOR2,. + 0
+ 489              		.type	SD3, %object
+ 490              		.size	SD3, 1112
+ 491              	SD3:
+ 492 0000 00000000 		.space	1112
+ 492      00000000 
+ 492      00000000 
+ 492      00000000 
+ 492      00000000 
+ 493              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc5mg4v5.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 serial_lld.c
+     /tmp/cc5mg4v5.s:16     .text.notify1:0000000000000000 $t
+     /tmp/cc5mg4v5.s:20     .text.notify1:0000000000000000 notify1
+     /tmp/cc5mg4v5.s:33     .text.notify1:0000000000000010 $d
+     /tmp/cc5mg4v5.s:36     .text.notify2:0000000000000000 $t
+     /tmp/cc5mg4v5.s:40     .text.notify2:0000000000000000 notify2
+     /tmp/cc5mg4v5.s:53     .text.notify2:0000000000000010 $d
+     /tmp/cc5mg4v5.s:56     .text.notify3:0000000000000000 $t
+     /tmp/cc5mg4v5.s:60     .text.notify3:0000000000000000 notify3
+     /tmp/cc5mg4v5.s:73     .text.notify3:0000000000000010 $d
+     /tmp/cc5mg4v5.s:76     .text.serve_interrupt:0000000000000000 $t
+     /tmp/cc5mg4v5.s:80     .text.serve_interrupt:0000000000000000 serve_interrupt
+     /tmp/cc5mg4v5.s:214    .text.VectorD4:0000000000000000 $t
+     /tmp/cc5mg4v5.s:219    .text.VectorD4:0000000000000000 VectorD4
+     /tmp/cc5mg4v5.s:230    .text.VectorD4:0000000000000010 $d
+     /tmp/cc5mg4v5.s:233    .text.VectorD8:0000000000000000 $t
+     /tmp/cc5mg4v5.s:238    .text.VectorD8:0000000000000000 VectorD8
+     /tmp/cc5mg4v5.s:249    .text.VectorD8:0000000000000010 $d
+     /tmp/cc5mg4v5.s:252    .text.VectorDC:0000000000000000 $t
+     /tmp/cc5mg4v5.s:257    .text.VectorDC:0000000000000000 VectorDC
+     /tmp/cc5mg4v5.s:268    .text.VectorDC:0000000000000010 $d
+     /tmp/cc5mg4v5.s:271    .text.sd_lld_init:0000000000000000 $t
+     /tmp/cc5mg4v5.s:276    .text.sd_lld_init:0000000000000000 sd_lld_init
+     /tmp/cc5mg4v5.s:305    .text.sd_lld_init:000000000000003c $d
+     /tmp/cc5mg4v5.s:316    .text.sd_lld_start:0000000000000000 $t
+     /tmp/cc5mg4v5.s:321    .text.sd_lld_start:0000000000000000 sd_lld_start
+     /tmp/cc5mg4v5.s:392    .text.sd_lld_start:0000000000000090 $d
+     /tmp/cc5mg4v5.s:400    .text.sd_lld_stop:0000000000000000 $t
+     /tmp/cc5mg4v5.s:405    .text.sd_lld_stop:0000000000000000 sd_lld_stop
+     /tmp/cc5mg4v5.s:453    .text.sd_lld_stop:0000000000000058 $d
+     /tmp/cc5mg4v5.s:491    .bss.SD3:0000000000000000 SD3
+     /tmp/cc5mg4v5.s:484    .bss.SD2:0000000000000000 SD2
+     /tmp/cc5mg4v5.s:477    .bss.SD1:0000000000000000 SD1
+     /tmp/cc5mg4v5.s:462    .rodata.default_config:0000000000000000 $d
+     /tmp/cc5mg4v5.s:466    .rodata.default_config:0000000000000000 default_config
+     /tmp/cc5mg4v5.s:473    .bss.SD1:0000000000000000 $d
+     /tmp/cc5mg4v5.s:480    .bss.SD2:0000000000000000 $d
+     /tmp/cc5mg4v5.s:487    .bss.SD3:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+chEvtBroadcastFlagsI
+sdIncomingDataI
+chOQGetI
+_port_irq_epilogue
+sdObjectInit
+nvicEnableVector
+nvicDisableVector

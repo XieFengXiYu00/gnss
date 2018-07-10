@@ -1,0 +1,127 @@
+ARM GAS  /tmp/ccj1ZvN2.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"hal.c"
+  15              		.section	.text.halInit,"ax",%progbits
+  16              		.align	1
+  17              		.global	halInit
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	halInit, %function
+  21              	halInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 08B5     		push	{r3, lr}
+  25 0002 FFF7FEFF 		bl	hal_lld_init
+  26 0006 FFF7FEFF 		bl	tmInit
+  27 000a 0548     		ldr	r0, .L2
+  28 000c FFF7FEFF 		bl	_pal_lld_init
+  29 0010 FFF7FEFF 		bl	i2cInit
+  30 0014 FFF7FEFF 		bl	sdInit
+  31 0018 BDE80840 		pop	{r3, lr}
+  32 001c FFF7FEBF 		b	boardInit
+  33              	.L3:
+  34              		.align	2
+  35              	.L2:
+  36 0020 00000000 		.word	pal_default_config
+  37              		.size	halInit, .-halInit
+  38              		.section	.text.halIsCounterWithin,"ax",%progbits
+  39              		.align	1
+  40              		.global	halIsCounterWithin
+  41              		.thumb
+  42              		.thumb_func
+  43              		.type	halIsCounterWithin, %function
+  44              	halIsCounterWithin:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		@ link register save eliminated.
+  48 0000 084B     		ldr	r3, .L13
+  49 0002 8142     		cmp	r1, r0
+  50 0004 5B68     		ldr	r3, [r3, #4]
+  51 0006 03D9     		bls	.L5
+  52 0008 8342     		cmp	r3, r0
+  53 000a 03D2     		bcs	.L11
+  54 000c 0020     		movs	r0, #0
+  55 000e 7047     		bx	lr
+  56              	.L5:
+  57 0010 8342     		cmp	r3, r0
+ARM GAS  /tmp/ccj1ZvN2.s 			page 2
+
+
+  58 0012 04D2     		bcs	.L10
+  59              	.L11:
+  60 0014 8B42     		cmp	r3, r1
+  61 0016 2CBF     		ite	cs
+  62 0018 0020     		movcs	r0, #0
+  63 001a 0120     		movcc	r0, #1
+  64 001c 7047     		bx	lr
+  65              	.L10:
+  66 001e 0120     		movs	r0, #1
+  67 0020 7047     		bx	lr
+  68              	.L14:
+  69 0022 00BF     		.align	2
+  70              	.L13:
+  71 0024 001000E0 		.word	-536866816
+  72              		.size	halIsCounterWithin, .-halIsCounterWithin
+  73              		.section	.text.halPolledDelay,"ax",%progbits
+  74              		.align	1
+  75              		.global	halPolledDelay
+  76              		.thumb
+  77              		.thumb_func
+  78              		.type	halPolledDelay, %function
+  79              	halPolledDelay:
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82 0000 38B5     		push	{r3, r4, r5, lr}
+  83 0002 054B     		ldr	r3, .L18
+  84 0004 5C68     		ldr	r4, [r3, #4]
+  85 0006 0519     		adds	r5, r0, r4
+  86              	.L16:
+  87 0008 2046     		mov	r0, r4
+  88 000a 2946     		mov	r1, r5
+  89 000c FFF7FEFF 		bl	halIsCounterWithin
+  90 0010 0028     		cmp	r0, #0
+  91 0012 F9D1     		bne	.L16
+  92 0014 38BD     		pop	{r3, r4, r5, pc}
+  93              	.L19:
+  94 0016 00BF     		.align	2
+  95              	.L18:
+  96 0018 001000E0 		.word	-536866816
+  97              		.size	halPolledDelay, .-halPolledDelay
+  98              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccj1ZvN2.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 hal.c
+     /tmp/ccj1ZvN2.s:16     .text.halInit:0000000000000000 $t
+     /tmp/ccj1ZvN2.s:21     .text.halInit:0000000000000000 halInit
+     /tmp/ccj1ZvN2.s:36     .text.halInit:0000000000000020 $d
+     /tmp/ccj1ZvN2.s:39     .text.halIsCounterWithin:0000000000000000 $t
+     /tmp/ccj1ZvN2.s:44     .text.halIsCounterWithin:0000000000000000 halIsCounterWithin
+     /tmp/ccj1ZvN2.s:71     .text.halIsCounterWithin:0000000000000024 $d
+     /tmp/ccj1ZvN2.s:74     .text.halPolledDelay:0000000000000000 $t
+     /tmp/ccj1ZvN2.s:79     .text.halPolledDelay:0000000000000000 halPolledDelay
+     /tmp/ccj1ZvN2.s:96     .text.halPolledDelay:0000000000000018 $d
+
+UNDEFINED SYMBOLS
+hal_lld_init
+tmInit
+_pal_lld_init
+i2cInit
+sdInit
+boardInit
+pal_default_config

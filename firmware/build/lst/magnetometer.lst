@@ -1,0 +1,2183 @@
+ARM GAS  /tmp/ccAtEVuB.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"magnetometer.cpp"
+  15              		.section	.text._ZN6uavcan17MonotonicDurationD2Ev,"axG",%progbits,_ZN6uavcan17MonotonicDurationD5Ev
+  16              		.align	1
+  17              		.weak	_ZN6uavcan17MonotonicDurationD2Ev
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan17MonotonicDurationD2Ev, %function
+  21              	_ZN6uavcan17MonotonicDurationD2Ev:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  26              		.size	_ZN6uavcan17MonotonicDurationD2Ev, .-_ZN6uavcan17MonotonicDurationD2Ev
+  27              		.weak	_ZN6uavcan17MonotonicDurationD1Ev
+  28              		.thumb_set _ZN6uavcan17MonotonicDurationD1Ev,_ZN6uavcan17MonotonicDurationD2Ev
+  29              		.section	.text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev,"axG",%
+  30              		.align	1
+  31              		.weak	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev
+  32              		.thumb
+  33              		.thumb_func
+  34              		.type	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev, %function
+  35              	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 7047     		bx	lr
+  40              		.size	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev, .-_ZN6uavcan9Pu
+  41              		.weak	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED1Ev
+  42              		.thumb_set _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED1Ev,_ZN6uavcan9
+  43              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev,"axG",%progbits,_ZN6uavcan22GlobalData
+  44              		.align	1
+  45              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, %function
+  49              	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+  53 0000 7047     		bx	lr
+  54              		.size	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, .-_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  55              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+  56              		.thumb_set _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev,_ZN6uavcan22GlobalDataTypeRegistry5EntryD2
+  57              		.section	.text._ZN6uavcan20StaticTransferBufferILt25EED2Ev,"axG",%progbits,_ZN6uavcan20StaticTrans
+ARM GAS  /tmp/ccAtEVuB.s 			page 2
+
+
+  58              		.align	1
+  59              		.weak	_ZN6uavcan20StaticTransferBufferILt25EED2Ev
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	_ZN6uavcan20StaticTransferBufferILt25EED2Ev, %function
+  63              	_ZN6uavcan20StaticTransferBufferILt25EED2Ev:
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0000 7047     		bx	lr
+  68              		.size	_ZN6uavcan20StaticTransferBufferILt25EED2Ev, .-_ZN6uavcan20StaticTransferBufferILt25EED2Ev
+  69              		.weak	_ZN6uavcan20StaticTransferBufferILt25EED1Ev
+  70              		.thumb_set _ZN6uavcan20StaticTransferBufferILt25EED1Ev,_ZN6uavcan20StaticTransferBufferILt25EED2Ev
+  71              		.section	.text._ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev,"ax",%progbits
+  72              		.align	1
+  73              		.thumb
+  74              		.thumb_func
+  75              		.type	_ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev, %function
+  76              	_ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev:
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80 0000 7047     		bx	lr
+  81              		.size	_ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev, .-_ZN12magnetometer12_GLOBAL__N_19MagThreadD2
+  82              		.thumb_set _ZN12magnetometer12_GLOBAL__N_19MagThreadD1Ev,_ZN12magnetometer12_GLOBAL__N_19MagThread
+  83              		.section	.text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm,"axG",%progbits,_ZN10chibios_rt1
+  84              		.align	1
+  85              		.weak	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+  86              		.thumb
+  87              		.thumb_func
+  88              		.type	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm, %function
+  89              	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+  93 0002 084B     		ldr	r3, .L7
+  94 0004 0446     		mov	r4, r0
+  95 0006 0D46     		mov	r5, r1
+  96 0008 0091     		str	r1, [sp]
+  97 000a 01F10800 		add	r0, r1, #8
+  98 000e 4FF4D161 		mov	r1, #1672
+  99 0012 FFF7FEFF 		bl	chThdCreateStatic
+ 100 0016 6860     		str	r0, [r5, #4]
+ 101 0018 6060     		str	r0, [r4, #4]
+ 102 001a 2046     		mov	r0, r4
+ 103 001c 024B     		ldr	r3, .L7+4
+ 104 001e 2360     		str	r3, [r4]
+ 105 0020 03B0     		add	sp, sp, #12
+ 106              		@ sp needed
+ 107 0022 30BD     		pop	{r4, r5, pc}
+ 108              	.L8:
+ 109              		.align	2
+ 110              	.L7:
+ 111 0024 00000000 		.word	_ZN10chibios_rt10_thd_startEPv
+ 112 0028 08000000 		.word	_ZTVN10chibios_rt15ThreadReferenceE+8
+ 113              		.size	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm, .-_ZN10chibios_rt16BaseStaticThreadILi10
+ 114              		.section	.text._ZN6uavcan20StaticTransferBufferILt25EED0Ev,"axG",%progbits,_ZN6uavcan20StaticTrans
+ARM GAS  /tmp/ccAtEVuB.s 			page 3
+
+
+ 115              		.align	1
+ 116              		.weak	_ZN6uavcan20StaticTransferBufferILt25EED0Ev
+ 117              		.thumb
+ 118              		.thumb_func
+ 119              		.type	_ZN6uavcan20StaticTransferBufferILt25EED0Ev, %function
+ 120              	_ZN6uavcan20StaticTransferBufferILt25EED0Ev:
+ 121              		@ args = 0, pretend = 0, frame = 0
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123 0000 10B5     		push	{r4, lr}
+ 124 0002 0446     		mov	r4, r0
+ 125 0004 FFF7FEFF 		bl	_ZdlPv
+ 126 0008 2046     		mov	r0, r4
+ 127 000a 10BD     		pop	{r4, pc}
+ 128              		.size	_ZN6uavcan20StaticTransferBufferILt25EED0Ev, .-_ZN6uavcan20StaticTransferBufferILt25EED0Ev
+ 129              		.global	__aeabi_fcmpun
+ 130              		.global	__aeabi_fcmpgt
+ 131              		.global	__aeabi_fcmplt
+ 132              		.section	.text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArra
+ 133              		.align	1
+ 134              		.thumb
+ 135              		.thumb_func
+ 136              		.type	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimiza
+ 137              	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationMod
+ 138              		@ args = 0, pretend = 0, frame = 8
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 141 0002 20F00045 		bic	r5, r0, #-2147483648
+ 142 0006 0446     		mov	r4, r0
+ 143 0008 0E46     		mov	r6, r1
+ 144 000a 2846     		mov	r0, r5
+ 145 000c 1049     		ldr	r1, .L16
+ 146 000e FFF7FEFF 		bl	__aeabi_fcmpun
+ 147 0012 88B9     		cbnz	r0, .L11
+ 148 0014 2846     		mov	r0, r5
+ 149 0016 0E49     		ldr	r1, .L16
+ 150 0018 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 151 001c 60B9     		cbnz	r0, .L11
+ 152 001e 2046     		mov	r0, r4
+ 153 0020 0C49     		ldr	r1, .L16+4
+ 154 0022 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 155 0026 30B9     		cbnz	r0, .L13
+ 156 0028 2046     		mov	r0, r4
+ 157 002a 0B49     		ldr	r1, .L16+8
+ 158 002c FFF7FEFF 		bl	__aeabi_fcmplt
+ 159 0030 10B1     		cbz	r0, .L11
+ 160 0032 094C     		ldr	r4, .L16+8
+ 161 0034 00E0     		b	.L11
+ 162              	.L13:
+ 163 0036 074C     		ldr	r4, .L16+4
+ 164              	.L11:
+ 165 0038 2046     		mov	r0, r4
+ 166 003a FFF7FEFF 		bl	_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf
+ 167 003e 02A9     		add	r1, sp, #8
+ 168 0040 21F8020D 		strh	r0, [r1, #-2]!	@ movhi
+ 169 0044 1022     		movs	r2, #16
+ 170 0046 3046     		mov	r0, r6
+ 171 0048 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ARM GAS  /tmp/ccAtEVuB.s 			page 4
+
+
+ 172 004c 02B0     		add	sp, sp, #8
+ 173              		@ sp needed
+ 174 004e 70BD     		pop	{r4, r5, r6, pc}
+ 175              	.L17:
+ 176              		.align	2
+ 177              	.L16:
+ 178 0050 FFFF7F7F 		.word	2139095039
+ 179 0054 00E07F47 		.word	1199562752
+ 180 0058 00E07FC7 		.word	-947920896
+ 181              		.size	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimiza
+ 182              		.section	.text._ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs,"ax",%progbits
+ 183              		.align	1
+ 184              		.thumb
+ 185              		.thumb_func
+ 186              		.type	_ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs, %function
+ 187              	_ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs:
+ 188              		@ args = 0, pretend = 0, frame = 8
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190 0000 30B5     		push	{r4, r5, lr}
+ 191 0002 87B0     		sub	sp, sp, #28
+ 192 0004 06AD     		add	r5, sp, #24
+ 193 0006 0323     		movs	r3, #3
+ 194 0008 05F8073D 		strb	r3, [r5, #-7]!
+ 195 000c 0446     		mov	r4, r0
+ 196 000e 1948     		ldr	r0, .L21
+ 197 0010 FFF7FEFF 		bl	i2cAcquireBus
+ 198 0014 0DF11203 		add	r3, sp, #18
+ 199 0018 0093     		str	r3, [sp]
+ 200 001a 0623     		movs	r3, #6
+ 201 001c 0193     		str	r3, [sp, #4]
+ 202 001e 0523     		movs	r3, #5
+ 203 0020 0293     		str	r3, [sp, #8]
+ 204 0022 2A46     		mov	r2, r5
+ 205 0024 1348     		ldr	r0, .L21
+ 206 0026 1E21     		movs	r1, #30
+ 207 0028 0123     		movs	r3, #1
+ 208 002a FFF7FEFF 		bl	i2cMasterTransmitTimeout
+ 209 002e 0546     		mov	r5, r0
+ 210 0030 1048     		ldr	r0, .L21
+ 211 0032 FFF7FEFF 		bl	i2cReleaseBus
+ 212 0036 25B1     		cbz	r5, .L19
+ 213 0038 0F48     		ldr	r0, .L21+4
+ 214 003a FFF7FEFF 		bl	lowsyslog
+ 215 003e 0020     		movs	r0, #0
+ 216 0040 15E0     		b	.L20
+ 217              	.L19:
+ 218 0042 9DF81220 		ldrb	r2, [sp, #18]	@ zero_extendqisi2
+ 219 0046 9DF81330 		ldrb	r3, [sp, #19]	@ zero_extendqisi2
+ 220 004a 0120     		movs	r0, #1
+ 221 004c 43EA0223 		orr	r3, r3, r2, lsl #8
+ 222 0050 2380     		strh	r3, [r4]	@ movhi
+ 223 0052 9DF81420 		ldrb	r2, [sp, #20]	@ zero_extendqisi2
+ 224 0056 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+ 225 005a 43EA0223 		orr	r3, r3, r2, lsl #8
+ 226 005e A380     		strh	r3, [r4, #4]	@ movhi
+ 227 0060 9DF81620 		ldrb	r2, [sp, #22]	@ zero_extendqisi2
+ 228 0064 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ARM GAS  /tmp/ccAtEVuB.s 			page 5
+
+
+ 229 0068 43EA0223 		orr	r3, r3, r2, lsl #8
+ 230 006c 6380     		strh	r3, [r4, #2]	@ movhi
+ 231              	.L20:
+ 232 006e 07B0     		add	sp, sp, #28
+ 233              		@ sp needed
+ 234 0070 30BD     		pop	{r4, r5, pc}
+ 235              	.L22:
+ 236 0072 00BF     		.align	2
+ 237              	.L21:
+ 238 0074 00000000 		.word	I2CD2
+ 239 0078 00000000 		.word	.LC0
+ 240              		.size	_ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs, .-_ZN12magnetometer12_GLOBAL__N_114tryRe
+ 241              		.section	.text._ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48,"ax",%progbits
+ 242              		.align	1
+ 243              		.thumb
+ 244              		.thumb_func
+ 245              		.type	_ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48, %function
+ 246              	_ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48:
+ 247              		@ args = 0, pretend = 0, frame = 8
+ 248              		@ frame_needed = 0, uses_anonymous_args = 0
+ 249 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 250 0004 0024     		movs	r4, #0
+ 251 0006 86B0     		sub	sp, sp, #24
+ 252 0008 8DF81100 		strb	r0, [sp, #17]
+ 253 000c 8DF81210 		strb	r1, [sp, #18]
+ 254 0010 8DF81340 		strb	r4, [sp, #19]
+ 255 0014 06AD     		add	r5, sp, #24
+ 256 0016 35F8073D 		ldrh	r3, [r5, #-7]!	@ unaligned
+ 257 001a 1E48     		ldr	r0, .L27
+ 258 001c 05AE     		add	r6, sp, #20
+ 259 001e 4FF00508 		mov	r8, #5
+ 260 0022 ADF81530 		strh	r3, [sp, #21]	@ unaligned
+ 261 0026 8DF81440 		strb	r4, [sp, #20]
+ 262 002a 8DF81740 		strb	r4, [sp, #23]
+ 263 002e FFF7FEFF 		bl	i2cAcquireBus
+ 264 0032 0094     		str	r4, [sp]
+ 265 0034 0194     		str	r4, [sp, #4]
+ 266 0036 CDF80880 		str	r8, [sp, #8]
+ 267 003a 1648     		ldr	r0, .L27
+ 268 003c 1E21     		movs	r1, #30
+ 269 003e 3246     		mov	r2, r6
+ 270 0040 0423     		movs	r3, #4
+ 271 0042 FFF7FEFF 		bl	i2cMasterTransmitTimeout
+ 272 0046 0746     		mov	r7, r0
+ 273 0048 1248     		ldr	r0, .L27
+ 274 004a FFF7FEFF 		bl	i2cReleaseBus
+ 275 004e EFB9     		cbnz	r7, .L26
+ 276 0050 06AC     		add	r4, sp, #24
+ 277 0052 04F8087D 		strb	r7, [r4, #-8]!
+ 278 0056 0F48     		ldr	r0, .L27
+ 279 0058 0327     		movs	r7, #3
+ 280 005a FFF7FEFF 		bl	i2cAcquireBus
+ 281 005e 2246     		mov	r2, r4
+ 282 0060 0096     		str	r6, [sp]
+ 283 0062 0197     		str	r7, [sp, #4]
+ 284 0064 CDF80880 		str	r8, [sp, #8]
+ 285 0068 0A48     		ldr	r0, .L27
+ARM GAS  /tmp/ccAtEVuB.s 			page 6
+
+
+ 286 006a 1E21     		movs	r1, #30
+ 287 006c 0123     		movs	r3, #1
+ 288 006e FFF7FEFF 		bl	i2cMasterTransmitTimeout
+ 289 0072 0446     		mov	r4, r0
+ 290 0074 0748     		ldr	r0, .L27
+ 291 0076 FFF7FEFF 		bl	i2cReleaseBus
+ 292 007a 3CB9     		cbnz	r4, .L26
+ 293 007c 3046     		mov	r0, r6
+ 294 007e 2946     		mov	r1, r5
+ 295 0080 3A46     		mov	r2, r7
+ 296 0082 FFF7FEFF 		bl	memcmp
+ 297 0086 08B9     		cbnz	r0, .L26
+ 298 0088 0120     		movs	r0, #1
+ 299 008a 00E0     		b	.L25
+ 300              	.L26:
+ 301 008c 0020     		movs	r0, #0
+ 302              	.L25:
+ 303 008e 06B0     		add	sp, sp, #24
+ 304              		@ sp needed
+ 305 0090 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 306              	.L28:
+ 307              		.align	2
+ 308              	.L27:
+ 309 0094 00000000 		.word	I2CD2
+ 310              		.size	_ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48, .-_ZN12magnetometer12_GLO
+ 311              		.section	.text._ZN12magnetometer12_GLOBAL__N_111trySelfTestEb,"ax",%progbits
+ 312              		.align	1
+ 313              		.thumb
+ 314              		.thumb_func
+ 315              		.type	_ZN12magnetometer12_GLOBAL__N_111trySelfTestEb, %function
+ 316              	_ZN12magnetometer12_GLOBAL__N_111trySelfTestEb:
+ 317              		@ args = 0, pretend = 0, frame = 8
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 320 0002 0646     		mov	r6, r0
+ 321 0004 E021     		movs	r1, #224
+ 322 0006 0028     		cmp	r0, #0
+ 323 0008 14BF     		ite	ne
+ 324 000a 7120     		movne	r0, #113
+ 325 000c 7220     		moveq	r0, #114
+ 326 000e FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48
+ 327 0012 0446     		mov	r4, r0
+ 328 0014 18B9     		cbnz	r0, .L31
+ 329 0016 1D48     		ldr	r0, .L46
+ 330 0018 FFF7FEFF 		bl	lowsyslog
+ 331 001c 33E0     		b	.L32
+ 332              	.L31:
+ 333 001e 0DF10A00 		add	r0, sp, #10
+ 334 0022 0021     		movs	r1, #0
+ 335 0024 0622     		movs	r2, #6
+ 336 0026 FFF7FEFF 		bl	memset
+ 337 002a 0325     		movs	r5, #3
+ 338              	.L33:
+ 339 002c 1848     		ldr	r0, .L46+4
+ 340 002e FFF7FEFF 		bl	usleep
+ 341 0032 0DF10A00 		add	r0, sp, #10
+ 342 0036 FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs
+ARM GAS  /tmp/ccAtEVuB.s 			page 7
+
+
+ 343 003a 0446     		mov	r4, r0
+ 344 003c 18B3     		cbz	r0, .L32
+ 345 003e 013D     		subs	r5, r5, #1
+ 346 0040 F4D1     		bne	.L33
+ 347 0042 BDF90E10 		ldrsh	r1, [sp, #14]
+ 348 0046 134D     		ldr	r5, .L46+8
+ 349 0048 0091     		str	r1, [sp]
+ 350 004a 1349     		ldr	r1, .L46+12
+ 351 004c BDF90C30 		ldrsh	r3, [sp, #12]
+ 352 0050 BDF90A20 		ldrsh	r2, [sp, #10]
+ 353 0054 1148     		ldr	r0, .L46+16
+ 354 0056 002E     		cmp	r6, #0
+ 355 0058 18BF     		it	ne
+ 356 005a 2946     		movne	r1, r5
+ 357 005c FFF7FEFF 		bl	lowsyslog
+ 358 0060 0DF10A03 		add	r3, sp, #10
+ 359              	.L38:
+ 360 0064 33F9021B 		ldrsh	r1, [r3], #2
+ 361 0068 0EB1     		cbz	r6, .L35
+ 362 006a 0A46     		mov	r2, r1
+ 363 006c 00E0     		b	.L36
+ 364              	.L35:
+ 365 006e 4A42     		negs	r2, r1
+ 366              	.L36:
+ 367 0070 8F3A     		subs	r2, r2, #143
+ 368 0072 C42A     		cmp	r2, #196
+ 369 0074 04D9     		bls	.L37
+ 370 0076 0A48     		ldr	r0, .L46+20
+ 371 0078 FFF7FEFF 		bl	lowsyslog
+ 372 007c 0024     		movs	r4, #0
+ 373 007e 02E0     		b	.L32
+ 374              	.L37:
+ 375 0080 04AA     		add	r2, sp, #16
+ 376 0082 9342     		cmp	r3, r2
+ 377 0084 EED1     		bne	.L38
+ 378              	.L32:
+ 379 0086 2046     		mov	r0, r4
+ 380 0088 04B0     		add	sp, sp, #16
+ 381              		@ sp needed
+ 382 008a 70BD     		pop	{r4, r5, r6, pc}
+ 383              	.L47:
+ 384              		.align	2
+ 385              	.L46:
+ 386 008c 23000000 		.word	.LC3
+ 387 0090 80380100 		.word	80000
+ 388 0094 11000000 		.word	.LC1
+ 389 0098 1A000000 		.word	.LC2
+ 390 009c 43000000 		.word	.LC4
+ 391 00a0 6E000000 		.word	.LC5
+ 392              		.size	_ZN12magnetometer12_GLOBAL__N_111trySelfTestEb, .-_ZN12magnetometer12_GLOBAL__N_111trySelfTe
+ 393              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev,"axG",%progbits,_ZN6uavcan22GlobalData
+ 394              		.align	1
+ 395              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev
+ 396              		.thumb
+ 397              		.thumb_func
+ 398              		.type	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev, %function
+ 399              	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:
+ARM GAS  /tmp/ccAtEVuB.s 			page 8
+
+
+ 400              		@ args = 0, pretend = 0, frame = 0
+ 401              		@ frame_needed = 0, uses_anonymous_args = 0
+ 402 0000 30B5     		push	{r4, r5, lr}
+ 403 0002 0022     		movs	r2, #0
+ 404 0004 0549     		ldr	r1, .L49
+ 405 0006 0260     		str	r2, [r0]
+ 406 0008 0024     		movs	r4, #0
+ 407 000a 0025     		movs	r5, #0
+ 408 000c 0275     		strb	r2, [r0, #20]
+ 409 000e 4FF0FF32 		mov	r2, #-1
+ 410 0012 C0E90245 		strd	r4, [r0, #8]
+ 411 0016 0161     		str	r1, [r0, #16]
+ 412 0018 8261     		str	r2, [r0, #24]
+ 413 001a 30BD     		pop	{r4, r5, pc}
+ 414              	.L50:
+ 415              		.align	2
+ 416              	.L49:
+ 417 001c 92000000 		.word	.LC6
+ 418              		.size	_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev, .-_ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev
+ 419              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 420              		.thumb_set _ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev,_ZN6uavcan22GlobalDataTypeRegistry5EntryC2
+ 421              		.section	.text._ZN12magnetometer4initEv,"ax",%progbits
+ 422              		.align	1
+ 423              		.global	_ZN12magnetometer4initEv
+ 424              		.thumb
+ 425              		.thumb_func
+ 426              		.type	_ZN12magnetometer4initEv, %function
+ 427              	_ZN12magnetometer4initEv:
+ 428              		@ args = 0, pretend = 0, frame = 8
+ 429              		@ frame_needed = 0, uses_anonymous_args = 0
+ 430 0000 07B5     		push	{r0, r1, r2, lr}
+ 431 0002 0449     		ldr	r1, .L52
+ 432 0004 6846     		mov	r0, sp
+ 433 0006 7722     		movs	r2, #119
+ 434 0008 FFF7FEFF 		bl	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+ 435 000c 03B0     		add	sp, sp, #12
+ 436              		@ sp needed
+ 437 000e 5DF804FB 		ldr	pc, [sp], #4
+ 438              	.L53:
+ 439 0012 00BF     		.align	2
+ 440              	.L52:
+ 441 0014 00000000 		.word	.LANCHOR0
+ 442              		.size	_ZN12magnetometer4initEv, .-_ZN12magnetometer4initEv
+ 443              		.section	.text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSig
+ 444              		.align	1
+ 445              		.weak	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 446              		.thumb
+ 447              		.thumb_func
+ 448              		.type	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE, 
+ 449              	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:
+ 450              		@ args = 0, pretend = 0, frame = 0
+ 451              		@ frame_needed = 0, uses_anonymous_args = 0
+ 452 0000 08B5     		push	{r3, lr}
+ 453 0002 03A3     		adr	r3, .L55
+ 454 0004 D3E90023 		ldrd	r2, [r3]
+ 455 0008 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 456 000c 08BD     		pop	{r3, pc}
+ARM GAS  /tmp/ccAtEVuB.s 			page 9
+
+
+ 457              	.L56:
+ 458 000e 00BF     		.align	3
+ 459              	.L55:
+ 460 0010 30598E00 		.word	9328944
+ 461 0014 3EA72094 		.word	-1809799362
+ 462              		.size	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE, 
+ 463              		.section	.text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INod
+ 464              		.align	1
+ 465              		.weak	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17Mo
+ 466              		.thumb
+ 467              		.thumb_func
+ 468              		.type	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17Mo
+ 469              	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17Monotonic
+ 470              		@ args = 0, pretend = 0, frame = 8
+ 471              		@ frame_needed = 0, uses_anonymous_args = 0
+ 472 0000 2DE9F743 		push	{r0, r1, r2, r4, r5, r6, r7, r8, r9, lr}
+ 473 0004 D3E90089 		ldrd	r8, [r3]
+ 474 0008 D2E90067 		ldrd	r6, [r2]
+ 475 000c 0B68     		ldr	r3, [r1]
+ 476 000e 0446     		mov	r4, r0
+ 477 0010 DB68     		ldr	r3, [r3, #12]
+ 478 0012 0846     		mov	r0, r1
+ 479 0014 0D46     		mov	r5, r1
+ 480 0016 9847     		blx	r3
+ 481 0018 4FF6FF72 		movw	r2, #65535
+ 482 001c 0E4B     		ldr	r3, .L58
+ 483 001e 4FF0FF31 		mov	r1, #-1
+ 484 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 485 0024 2161     		str	r1, [r4, #16]
+ 486 0026 2373     		strb	r3, [r4, #12]
+ 487 0028 02A9     		add	r1, sp, #8
+ 488 002a 0023     		movs	r3, #0
+ 489 002c 0830     		adds	r0, r0, #8
+ 490 002e A060     		str	r0, [r4, #8]
+ 491 0030 C4E90089 		strd	r8, [r4]
+ 492 0034 2046     		mov	r0, r4
+ 493 0036 6373     		strb	r3, [r4, #13]
+ 494 0038 E281     		strh	r2, [r4, #14]	@ movhi
+ 495 003a A382     		strh	r3, [r4, #20]	@ movhi
+ 496 003c A275     		strb	r2, [r4, #22]
+ 497 003e E375     		strb	r3, [r4, #23]
+ 498 0040 C4E90667 		strd	r6, [r4, #24]
+ 499 0044 2562     		str	r5, [r4, #32]
+ 500 0046 61E90267 		strd	r6, [r1, #-8]!
+ 501 004a FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+ 502 004e 2046     		mov	r0, r4
+ 503 0050 03B0     		add	sp, sp, #12
+ 504              		@ sp needed
+ 505 0052 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 506              	.L59:
+ 507 0056 00BF     		.align	2
+ 508              	.L58:
+ 509 0058 00000000 		.word	_ZN6uavcan16TransferPriority7DefaultE
+ 510              		.size	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17Mo
+ 511              		.weak	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC1ERNS_5INodeENS_17Mo
+ 512              		.thumb_set _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC1ERNS_5INodeENS
+ 513              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ARM GAS  /tmp/ccAtEVuB.s 			page 10
+
+
+ 514              		.align	1
+ 515              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 516              		.thumb
+ 517              		.thumb_func
+ 518              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 519              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registratio
+ 520              		@ args = 0, pretend = 0, frame = 40
+ 521              		@ frame_needed = 0, uses_anonymous_args = 0
+ 522 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 523 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 524 0004 8BB0     		sub	sp, sp, #44
+ 525 0006 0646     		mov	r6, r0
+ 526 0008 0F46     		mov	r7, r1
+ 527 000a 002B     		cmp	r3, #0
+ 528 000c 4AD1     		bne	.L63
+ 529 000e 304C     		ldr	r4, .L66+32
+ 530 0010 2368     		ldr	r3, [r4]
+ 531 0012 DB07     		lsls	r3, r3, #31
+ 532 0014 09D4     		bmi	.L62
+ 533 0016 2F48     		ldr	r0, .L66+36
+ 534 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 535 001c 0123     		movs	r3, #1
+ 536 001e 2D48     		ldr	r0, .L66+36
+ 537 0020 2D49     		ldr	r1, .L66+40
+ 538 0022 2E4A     		ldr	r2, .L66+44
+ 539 0024 2360     		str	r3, [r4]
+ 540 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 541              	.L62:
+ 542 002a 3046     		mov	r0, r6
+ 543 002c 2949     		ldr	r1, .L66+36
+ 544 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 545 0032 0446     		mov	r4, r0
+ 546 0034 0028     		cmp	r0, #0
+ 547 0036 36D1     		bne	.L61
+ 548 0038 1DA3     		adr	r3, .L66
+ 549 003a D3E90023 		ldrd	r2, [r3]
+ 550 003e 0AAD     		add	r5, sp, #40
+ 551 0040 65E90A23 		strd	r2, [r5, #-40]!
+ 552 0044 1CA3     		adr	r3, .L66+8
+ 553 0046 D3E90023 		ldrd	r2, [r3]
+ 554 004a 2846     		mov	r0, r5
+ 555 004c FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 556 0050 1BA3     		adr	r3, .L66+16
+ 557 0052 D3E90023 		ldrd	r2, [r3]
+ 558 0056 2846     		mov	r0, r5
+ 559 0058 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 560 005c 1AA3     		adr	r3, .L66+24
+ 561 005e D3E90023 		ldrd	r2, [r3]
+ 562 0062 2846     		mov	r0, r5
+ 563 0064 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 564 0068 DDE90023 		ldrd	r2, [sp]
+ 565 006c CDE90423 		strd	r2, [sp, #16]
+ 566 0070 1B4B     		ldr	r3, .L66+48
+ 567 0072 8DF81C40 		strb	r4, [sp, #28]
+ 568 0076 0294     		str	r4, [sp, #8]
+ 569 0078 164C     		ldr	r4, .L66+36
+ 570 007a 0693     		str	r3, [sp, #24]
+ARM GAS  /tmp/ccAtEVuB.s 			page 11
+
+
+ 571 007c 0897     		str	r7, [sp, #32]
+ 572 007e 02AD     		add	r5, sp, #8
+ 573 0080 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 574 0082 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 575 0084 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 576 0088 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 577 008c 3046     		mov	r0, r6
+ 578 008e A4F11001 		sub	r1, r4, #16
+ 579 0092 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 580 0096 30B9     		cbnz	r0, .L61
+ 581 0098 3046     		mov	r0, r6
+ 582 009a A4F11001 		sub	r1, r4, #16
+ 583 009e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 584 00a2 00E0     		b	.L61
+ 585              	.L63:
+ 586 00a4 0320     		movs	r0, #3
+ 587              	.L61:
+ 588 00a6 0BB0     		add	sp, sp, #44
+ 589              		@ sp needed
+ 590 00a8 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 591              	.L67:
+ 592 00aa 00BFAFF3 		.align	3
+ 592      0080
+ 593              	.L66:
+ 594 00b0 85E65350 		.word	1347675781
+ 595 00b4 99C80DA8 		.word	-1475491687
+ 596 00b8 F1C6A7C1 		.word	-1045969167
+ 597 00bc D068080F 		.word	252209360
+ 598 00c0 A1FE2765 		.word	1697119905
+ 599 00c4 37FD46DD 		.word	-582550217
+ 600 00c8 C4A0F433 		.word	871669956
+ 601 00cc C9C4D50A 		.word	181781705
+ 602 00d0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 603 00d4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 604 00d8 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 605 00dc 00000000 		.word	__dso_handle
+ 606 00e0 93000000 		.word	.LC7
+ 607              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 608              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_
+ 609              		.align	1
+ 610              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 611              		.thumb
+ 612              		.thumb_func
+ 613              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 614              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Registr
+ 615              		@ args = 0, pretend = 0, frame = 40
+ 616              		@ frame_needed = 0, uses_anonymous_args = 0
+ 617 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 618 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 619 0004 8BB0     		sub	sp, sp, #44
+ 620 0006 0646     		mov	r6, r0
+ 621 0008 0F46     		mov	r7, r1
+ 622 000a 002B     		cmp	r3, #0
+ 623 000c 3DD1     		bne	.L71
+ 624 000e 224C     		ldr	r4, .L74+8
+ 625 0010 2368     		ldr	r3, [r4]
+ 626 0012 DB07     		lsls	r3, r3, #31
+ARM GAS  /tmp/ccAtEVuB.s 			page 12
+
+
+ 627 0014 09D4     		bmi	.L70
+ 628 0016 2148     		ldr	r0, .L74+12
+ 629 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 630 001c 0123     		movs	r3, #1
+ 631 001e 1F48     		ldr	r0, .L74+12
+ 632 0020 1F49     		ldr	r1, .L74+16
+ 633 0022 204A     		ldr	r2, .L74+20
+ 634 0024 2360     		str	r3, [r4]
+ 635 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 636              	.L70:
+ 637 002a 3046     		mov	r0, r6
+ 638 002c 1B49     		ldr	r1, .L74+12
+ 639 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 640 0032 0446     		mov	r4, r0
+ 641 0034 50BB     		cbnz	r0, .L69
+ 642 0036 16A3     		adr	r3, .L74
+ 643 0038 D3E90023 		ldrd	r2, [r3]
+ 644 003c 0AAD     		add	r5, sp, #40
+ 645 003e 65E90A23 		strd	r2, [r5, #-40]!
+ 646 0042 2846     		mov	r0, r5
+ 647 0044 FFF7FEFF 		bl	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 648 0048 2846     		mov	r0, r5
+ 649 004a FFF7FEFF 		bl	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 650 004e DDE90023 		ldrd	r2, [sp]
+ 651 0052 CDE90423 		strd	r2, [sp, #16]
+ 652 0056 144B     		ldr	r3, .L74+24
+ 653 0058 8DF81C40 		strb	r4, [sp, #28]
+ 654 005c 0294     		str	r4, [sp, #8]
+ 655 005e 0F4C     		ldr	r4, .L74+12
+ 656 0060 0693     		str	r3, [sp, #24]
+ 657 0062 0897     		str	r7, [sp, #32]
+ 658 0064 02AD     		add	r5, sp, #8
+ 659 0066 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 660 0068 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 661 006a 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 662 006e 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 663 0072 3046     		mov	r0, r6
+ 664 0074 A4F11001 		sub	r1, r4, #16
+ 665 0078 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 666 007c 30B9     		cbnz	r0, .L69
+ 667 007e 3046     		mov	r0, r6
+ 668 0080 A4F11001 		sub	r1, r4, #16
+ 669 0084 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 670 0088 00E0     		b	.L69
+ 671              	.L71:
+ 672 008a 0320     		movs	r0, #3
+ 673              	.L69:
+ 674 008c 0BB0     		add	sp, sp, #44
+ 675              		@ sp needed
+ 676 008e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 677              	.L75:
+ 678              		.align	3
+ 679              	.L74:
+ 680 0090 FC248DF6 		.word	-158522116
+ 681 0094 C93DC988 		.word	-2000077367
+ 682 0098 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 683 009c 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ARM GAS  /tmp/ccAtEVuB.s 			page 13
+
+
+ 684 00a0 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 685 00a4 00000000 		.word	__dso_handle
+ 686 00a8 AF000000 		.word	.LC8
+ 687              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 688              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage
+ 689              		.align	1
+ 690              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 691              		.thumb
+ 692              		.thumb_func
+ 693              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 694              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18
+ 695              		@ args = 0, pretend = 0, frame = 40
+ 696              		@ frame_needed = 0, uses_anonymous_args = 0
+ 697 0000 70B5     		push	{r4, r5, r6, lr}
+ 698 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 699 0004 8AB0     		sub	sp, sp, #40
+ 700 0006 0646     		mov	r6, r0
+ 701 0008 0D46     		mov	r5, r1
+ 702 000a 002B     		cmp	r3, #0
+ 703 000c 3DD1     		bne	.L79
+ 704 000e 244C     		ldr	r4, .L82+16
+ 705 0010 2368     		ldr	r3, [r4]
+ 706 0012 DB07     		lsls	r3, r3, #31
+ 707 0014 09D4     		bmi	.L78
+ 708 0016 2348     		ldr	r0, .L82+20
+ 709 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 710 001c 0123     		movs	r3, #1
+ 711 001e 2148     		ldr	r0, .L82+20
+ 712 0020 2149     		ldr	r1, .L82+24
+ 713 0022 224A     		ldr	r2, .L82+28
+ 714 0024 2360     		str	r3, [r4]
+ 715 0026 FFF7FEFF 		bl	__aeabi_atexit
+ 716              	.L78:
+ 717 002a 3046     		mov	r0, r6
+ 718 002c 1D49     		ldr	r1, .L82+20
+ 719 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 720 0032 0446     		mov	r4, r0
+ 721 0034 50BB     		cbnz	r0, .L77
+ 722 0036 16A3     		adr	r3, .L82
+ 723 0038 D3E90023 		ldrd	r2, [r3]
+ 724 003c 0AA8     		add	r0, sp, #40
+ 725 003e 60E90A23 		strd	r2, [r0, #-40]!
+ 726 0042 15A3     		adr	r3, .L82+8
+ 727 0044 D3E90023 		ldrd	r2, [r3]
+ 728 0048 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 729 004c DDE90023 		ldrd	r2, [sp]
+ 730 0050 CDE90423 		strd	r2, [sp, #16]
+ 731 0054 164B     		ldr	r3, .L82+32
+ 732 0056 0294     		str	r4, [sp, #8]
+ 733 0058 0693     		str	r3, [sp, #24]
+ 734 005a 124C     		ldr	r4, .L82+20
+ 735 005c 0123     		movs	r3, #1
+ 736 005e 0895     		str	r5, [sp, #32]
+ 737 0060 8DF81C30 		strb	r3, [sp, #28]
+ 738 0064 02AD     		add	r5, sp, #8
+ 739 0066 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 740 0068 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ARM GAS  /tmp/ccAtEVuB.s 			page 14
+
+
+ 741 006a 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 742 006e 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 743 0072 3046     		mov	r0, r6
+ 744 0074 A4F11001 		sub	r1, r4, #16
+ 745 0078 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 746 007c 30B9     		cbnz	r0, .L77
+ 747 007e 3046     		mov	r0, r6
+ 748 0080 A4F11001 		sub	r1, r4, #16
+ 749 0084 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 750 0088 00E0     		b	.L77
+ 751              	.L79:
+ 752 008a 0320     		movs	r0, #3
+ 753              	.L77:
+ 754 008c 0AB0     		add	sp, sp, #40
+ 755              		@ sp needed
+ 756 008e 70BD     		pop	{r4, r5, r6, pc}
+ 757              	.L83:
+ 758              		.align	3
+ 759              	.L82:
+ 760 0090 BA6287D3 		.word	-746102086
+ 761 0094 782B86E9 		.word	-377083016
+ 762 0098 462357AF 		.word	-1353243834
+ 763 009c 41F11B71 		.word	1897656641
+ 764 00a0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 765 00a4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 766 00a8 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 767 00ac 00000000 		.word	__dso_handle
+ 768 00b0 CF000000 		.word	.LC9
+ 769              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 770              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStat
+ 771              		.align	1
+ 772              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 773              		.thumb
+ 774              		.thumb_func
+ 775              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 776              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Regis
+ 777              		@ args = 0, pretend = 0, frame = 40
+ 778              		@ frame_needed = 0, uses_anonymous_args = 0
+ 779 0000 70B5     		push	{r4, r5, r6, lr}
+ 780 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 781 0004 8AB0     		sub	sp, sp, #40
+ 782 0006 0646     		mov	r6, r0
+ 783 0008 0D46     		mov	r5, r1
+ 784 000a 002B     		cmp	r3, #0
+ 785 000c 3CD1     		bne	.L87
+ 786 000e 244C     		ldr	r4, .L90+16
+ 787 0010 2368     		ldr	r3, [r4]
+ 788 0012 DB07     		lsls	r3, r3, #31
+ 789 0014 09D4     		bmi	.L86
+ 790 0016 2348     		ldr	r0, .L90+20
+ 791 0018 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 792 001c 0123     		movs	r3, #1
+ 793 001e 2148     		ldr	r0, .L90+20
+ 794 0020 2149     		ldr	r1, .L90+24
+ 795 0022 224A     		ldr	r2, .L90+28
+ 796 0024 2360     		str	r3, [r4]
+ 797 0026 FFF7FEFF 		bl	__aeabi_atexit
+ARM GAS  /tmp/ccAtEVuB.s 			page 15
+
+
+ 798              	.L86:
+ 799 002a 3046     		mov	r0, r6
+ 800 002c 1D49     		ldr	r1, .L90+20
+ 801 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 802 0032 0446     		mov	r4, r0
+ 803 0034 48BB     		cbnz	r0, .L85
+ 804 0036 16A3     		adr	r3, .L90
+ 805 0038 D3E90023 		ldrd	r2, [r3]
+ 806 003c 0AA8     		add	r0, sp, #40
+ 807 003e 60E90A23 		strd	r2, [r0, #-40]!
+ 808 0042 15A3     		adr	r3, .L90+8
+ 809 0044 D3E90023 		ldrd	r2, [r3]
+ 810 0048 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 811 004c DDE90023 		ldrd	r2, [sp]
+ 812 0050 CDE90423 		strd	r2, [sp, #16]
+ 813 0054 164B     		ldr	r3, .L90+32
+ 814 0056 8DF81C40 		strb	r4, [sp, #28]
+ 815 005a 0294     		str	r4, [sp, #8]
+ 816 005c 114C     		ldr	r4, .L90+20
+ 817 005e 0895     		str	r5, [sp, #32]
+ 818 0060 0693     		str	r3, [sp, #24]
+ 819 0062 02AD     		add	r5, sp, #8
+ 820 0064 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 821 0066 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 822 0068 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 823 006c 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 824 0070 3046     		mov	r0, r6
+ 825 0072 A4F11001 		sub	r1, r4, #16
+ 826 0076 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 827 007a 30B9     		cbnz	r0, .L85
+ 828 007c 3046     		mov	r0, r6
+ 829 007e A4F11001 		sub	r1, r4, #16
+ 830 0082 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 831 0086 00E0     		b	.L85
+ 832              	.L87:
+ 833 0088 0320     		movs	r0, #3
+ 834              	.L85:
+ 835 008a 0AB0     		add	sp, sp, #40
+ 836              		@ sp needed
+ 837 008c 70BD     		pop	{r4, r5, r6, pc}
+ 838              	.L91:
+ 839 008e 00BF     		.align	3
+ 840              	.L90:
+ 841 0090 B3611B53 		.word	1394303411
+ 842 0094 54F6C731 		.word	835188308
+ 843 0098 50A34CC4 		.word	-1001610416
+ 844 009c F006B113 		.word	330368752
+ 845 00a0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 846 00a4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 847 00a8 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 848 00ac 00000000 		.word	__dso_handle
+ 849 00b0 F0000000 		.word	.LC10
+ 850              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 851              		.section	.text._ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E1
+ 852              		.align	1
+ 853              		.weak	_ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericP
+ 854              		.thumb
+ARM GAS  /tmp/ccAtEVuB.s 			page 16
+
+
+ 855              		.thumb_func
+ 856              		.type	_ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericP
+ 857              	_ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericPublishE
+ 858              		@ args = 8, pretend = 0, frame = 64
+ 859              		@ frame_needed = 0, uses_anonymous_args = 0
+ 860 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 861 0004 93B0     		sub	sp, sp, #76
+ 862 0006 9946     		mov	r9, r3
+ 863 0008 8046     		mov	r8, r0
+ 864 000a 0C46     		mov	r4, r1
+ 865 000c 9246     		mov	r10, r2
+ 866 000e FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase8isInitedEv
+ 867 0012 0346     		mov	r3, r0
+ 868 0014 A8B1     		cbz	r0, .L93
+ 869              	.L96:
+ 870 0016 0BAB     		add	r3, sp, #44
+ 871 0018 0993     		str	r3, [sp, #36]
+ 872 001a 264A     		ldr	r2, .L112
+ 873 001c 1923     		movs	r3, #25
+ 874 001e 08AF     		add	r7, sp, #32
+ 875 0020 ADF82830 		strh	r3, [sp, #40]	@ movhi
+ 876 0024 04AD     		add	r5, sp, #16
+ 877 0026 0023     		movs	r3, #0
+ 878 0028 ADF82A30 		strh	r3, [sp, #42]	@ movhi
+ 879 002c 0892     		str	r2, [sp, #32]
+ 880 002e 0497     		str	r7, [sp, #16]
+ 881 0030 0593     		str	r3, [sp, #20]
+ 882 0032 8DF81830 		strb	r3, [sp, #24]
+ 883 0036 0395     		str	r5, [sp, #12]
+ 884 0038 A4F1040B 		sub	fp, r4, #4
+ 885 003c 04F10806 		add	r6, r4, #8
+ 886 0040 09E0     		b	.L94
+ 887              	.L93:
+ 888 0042 4046     		mov	r0, r8
+ 889 0044 0121     		movs	r1, #1
+ 890 0046 1C4A     		ldr	r2, .L112+4
+ 891 0048 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+ 892 004c 0028     		cmp	r0, #0
+ 893 004e 2EDB     		blt	.L105
+ 894 0050 E1E7     		b	.L96
+ 895              	.L111:
+ 896 0052 B345     		cmp	fp, r6
+ 897 0054 07D0     		beq	.L110
+ 898              	.L94:
+ 899 0056 5BF8040F 		ldr	r0, [fp, #4]!	@ float
+ 900 005a 03A9     		add	r1, sp, #12
+ 901 005c FFF7FEFF 		bl	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizatio
+ 902 0060 0028     		cmp	r0, #0
+ 903 0062 F6DC     		bgt	.L111
+ 904 0064 12E0     		b	.L97
+ 905              	.L110:
+ 906 0066 237B     		ldrb	r3, [r4, #12]	@ zero_extendqisi2
+ 907 0068 9BB1     		cbz	r3, .L100
+ 908 006a 4FF0000B 		mov	fp, #0
+ 909              	.L102:
+ 910 006e 227B     		ldrb	r2, [r4, #12]	@ zero_extendqisi2
+ 911 0070 5FFA8BF3 		uxtb	r3, fp
+ARM GAS  /tmp/ccAtEVuB.s 			page 17
+
+
+ 912 0074 9A42     		cmp	r2, r3
+ 913 0076 0CD9     		bls	.L100
+ 914 0078 04EB8303 		add	r3, r4, r3, lsl #2
+ 915 007c 1869     		ldr	r0, [r3, #16]	@ float
+ 916 007e 03A9     		add	r1, sp, #12
+ 917 0080 FFF7FEFF 		bl	_ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizatio
+ 918 0084 0028     		cmp	r0, #0
+ 919 0086 0BF1010B 		add	fp, fp, #1
+ 920 008a F0DC     		bgt	.L102
+ 921              	.L97:
+ 922 008c 6FF00500 		mvn	r0, #5
+ 923 0090 0DE0     		b	.L105
+ 924              	.L100:
+ 925 0092 1D9B     		ldr	r3, [sp, #116]
+ 926 0094 5246     		mov	r2, r10
+ 927 0096 93E80300 		ldmia	r3, {r0, r1}
+ 928 009a 1C9B     		ldr	r3, [sp, #112]
+ 929 009c 85E80300 		stmia	r5, {r0, r1}
+ 930 00a0 8DE82800 		stmia	sp, {r3, r5}
+ 931 00a4 4046     		mov	r0, r8
+ 932 00a6 3946     		mov	r1, r7
+ 933 00a8 4B46     		mov	r3, r9
+ 934 00aa FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferT
+ 935              	.L105:
+ 936 00ae 13B0     		add	sp, sp, #76
+ 937              		@ sp needed
+ 938 00b0 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 939              	.L113:
+ 940              		.align	2
+ 941              	.L112:
+ 942 00b4 08000000 		.word	_ZTVN6uavcan20StaticTransferBufferILt25EEE+8
+ 943 00b8 12010000 		.word	.LC11
+ 944              		.size	_ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericP
+ 945              		.global	__aeabi_f2uiz
+ 946              		.section	.text._ZN12magnetometer12_GLOBAL__N_17publishEPff,"ax",%progbits
+ 947              		.align	1
+ 948              		.thumb
+ 949              		.thumb_func
+ 950              		.type	_ZN12magnetometer12_GLOBAL__N_17publishEPff, %function
+ 951              	_ZN12magnetometer12_GLOBAL__N_17publishEPff:
+ 952              		@ args = 0, pretend = 0, frame = 80
+ 953              		@ frame_needed = 0, uses_anonymous_args = 0
+ 954 0000 70B5     		push	{r4, r5, r6, lr}
+ 955 0002 96B0     		sub	sp, sp, #88
+ 956 0004 0446     		mov	r4, r0
+ 957 0006 0E46     		mov	r6, r1
+ 958 0008 FFF7FEFF 		bl	_ZN4node9isStartedEv
+ 959 000c 0028     		cmp	r0, #0
+ 960 000e 46D0     		beq	.L114
+ 961 0010 6168     		ldr	r1, [r4, #4]	@ unaligned
+ 962 0012 2068     		ldr	r0, [r4]	@ unaligned
+ 963 0014 09AB     		add	r3, sp, #36
+ 964 0016 03C3     		stmia	r3!, {r0, r1}
+ 965 0018 A068     		ldr	r0, [r4, #8]	@ unaligned
+ 966 001a 0125     		movs	r5, #1
+ 967 001c 1860     		str	r0, [r3]	@ unaligned
+ 968 001e 03A8     		add	r0, sp, #12
+ARM GAS  /tmp/ccAtEVuB.s 			page 18
+
+
+ 969 0020 8DF83050 		strb	r5, [sp, #48]
+ 970 0024 0D96     		str	r6, [sp, #52]	@ float
+ 971 0026 FFF7FEFF 		bl	_ZN4node4LockC1Ev
+ 972 002a FFF7FEFF 		bl	_ZN4node7getNodeEv
+ 973 002e 1D4C     		ldr	r4, .L124
+ 974 0030 0146     		mov	r1, r0
+ 975 0032 2368     		ldr	r3, [r4]
+ 976 0034 DB07     		lsls	r3, r3, #31
+ 977 0036 12D4     		bmi	.L117
+ 978 0038 1B4A     		ldr	r2, .L124+4
+ 979 003a 0023     		movs	r3, #0
+ 980 003c CDE90423 		strd	r2, [sp, #16]
+ 981 0040 1A4A     		ldr	r2, .L124+8
+ 982 0042 0023     		movs	r3, #0
+ 983 0044 CDE90623 		strd	r2, [sp, #24]
+ 984 0048 1948     		ldr	r0, .L124+12
+ 985 004a 04AA     		add	r2, sp, #16
+ 986 004c 06AB     		add	r3, sp, #24
+ 987 004e FFF7FEFF 		bl	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC1ERNS_5INodeENS_17Monot
+ 988 0052 1748     		ldr	r0, .L124+12
+ 989 0054 1749     		ldr	r1, .L124+16
+ 990 0056 184A     		ldr	r2, .L124+20
+ 991 0058 2560     		str	r5, [r4]
+ 992 005a FFF7FEFF 		bl	__aeabi_atexit
+ 993              	.L117:
+ 994 005e 174C     		ldr	r4, .L124+24
+ 995 0060 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 996 0062 53B9     		cbnz	r3, .L123
+ 997 0064 164B     		ldr	r3, .L124+28
+ 998 0066 1868     		ldr	r0, [r3]
+ 999 0068 FFF7FEFF 		bl	configGet
+ 1000 006c FFF7FEFF 		bl	__aeabi_f2uiz
+ 1001 0070 0F4B     		ldr	r3, .L124+12
+ 1002 0072 1873     		strb	r0, [r3, #12]
+ 1003 0074 0123     		movs	r3, #1
+ 1004 0076 2370     		strb	r3, [r4]
+ 1005 0078 F1E7     		b	.L117
+ 1006              	.L123:
+ 1007 007a 16AB     		add	r3, sp, #88
+ 1008 007c 0020     		movs	r0, #0
+ 1009 007e 0021     		movs	r1, #0
+ 1010 0080 63E91001 		strd	r0, [r3, #-64]!
+ 1011 0084 0022     		movs	r2, #0
+ 1012 0086 8DE80C00 		stmia	sp, {r2, r3}
+ 1013 008a 0E4B     		ldr	r3, .L124+32
+ 1014 008c 0848     		ldr	r0, .L124+12
+ 1015 008e 09A9     		add	r1, sp, #36
+ 1016 0090 0222     		movs	r2, #2
+ 1017 0092 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1018 0094 FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericPubl
+ 1019 0098 0398     		ldr	r0, [sp, #12]
+ 1020 009a FFF7FEFF 		bl	_ZN12uavcan_stm325Mutex6unlockEv
+ 1021              	.L114:
+ 1022 009e 16B0     		add	sp, sp, #88
+ 1023              		@ sp needed
+ 1024 00a0 70BD     		pop	{r4, r5, r6, pc}
+ 1025              	.L125:
+ARM GAS  /tmp/ccAtEVuB.s 			page 19
+
+
+ 1026 00a2 00BF     		.align	2
+ 1027              	.L124:
+ 1028 00a4 00000000 		.word	.LANCHOR1
+ 1029 00a8 A0860100 		.word	100000
+ 1030 00ac 00879303 		.word	60000000
+ 1031 00b0 00000000 		.word	.LANCHOR2
+ 1032 00b4 00000000 		.word	_ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED1Ev
+ 1033 00b8 00000000 		.word	__dso_handle
+ 1034 00bc 00000000 		.word	.LANCHOR4
+ 1035 00c0 00000000 		.word	.LANCHOR3
+ 1036 00c4 00000000 		.word	_ZN6uavcan6NodeID9BroadcastE
+ 1037              		.size	_ZN12magnetometer12_GLOBAL__N_17publishEPff, .-_ZN12magnetometer12_GLOBAL__N_17publishEPff
+ 1038              		.global	__aeabi_i2f
+ 1039              		.global	__aeabi_fmul
+ 1040              		.global	__aeabi_f2d
+ 1041              		.global	__aeabi_dcmpgt
+ 1042              		.section	.text.startup._ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv,"ax",%progbits
+ 1043              		.align	1
+ 1044              		.thumb
+ 1045              		.thumb_func
+ 1046              		.type	_ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv, %function
+ 1047              	_ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv:
+ 1048              		@ args = 0, pretend = 0, frame = 24
+ 1049              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1050 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 1051 0004 8046     		mov	r8, r0
+ 1052 0006 87B0     		sub	sp, sp, #28
+ 1053 0008 4FF47A70 		mov	r0, #1000
+ 1054 000c FFF7FEFF 		bl	watchdogCreate
+ 1055 0010 061E     		subs	r6, r0, #0
+ 1056 0012 06DA     		bge	.L127
+ 1057 0014 744A     		ldr	r2, .L161+8
+ 1058 0016 754B     		ldr	r3, .L161+12
+ 1059 0018 1A60     		str	r2, [r3]
+ 1060 001a FFF7FEFF 		bl	sysHaltHook_
+ 1061 001e FFF7FEFF 		bl	port_halt
+ 1062              	.L127:
+ 1063 0022 7348     		ldr	r0, .L161+16
+ 1064 0024 FFF7FEFF 		bl	_ZN10chibios_rt10BaseThread7setNameEPKc
+ 1065 0028 7248     		ldr	r0, .L161+20
+ 1066 002a FFF7FEFF 		bl	usleep
+ 1067 002e 3046     		mov	r0, r6
+ 1068 0030 FFF7FEFF 		bl	watchdogReset
+ 1069 0034 0220     		movs	r0, #2
+ 1070 0036 FFF7FEFF 		bl	_ZN4node24markComponentInitializedENS_11ComponentIDE
+ 1071              	.L128:
+ 1072 003a 0120     		movs	r0, #1
+ 1073 003c FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_111trySelfTestEb
+ 1074 0040 08B9     		cbnz	r0, .L129
+ 1075 0042 6D48     		ldr	r0, .L161+24
+ 1076 0044 0BE0     		b	.L158
+ 1077              	.L129:
+ 1078 0046 0020     		movs	r0, #0
+ 1079 0048 FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_111trySelfTestEb
+ 1080 004c 08B9     		cbnz	r0, .L131
+ 1081 004e 6B48     		ldr	r0, .L161+28
+ 1082 0050 05E0     		b	.L158
+ARM GAS  /tmp/ccAtEVuB.s 			page 20
+
+
+ 1083              	.L131:
+ 1084 0052 7820     		movs	r0, #120
+ 1085 0054 2021     		movs	r1, #32
+ 1086 0056 FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48
+ 1087 005a 18B9     		cbnz	r0, .L132
+ 1088 005c 6848     		ldr	r0, .L161+32
+ 1089              	.L158:
+ 1090 005e FFF7FEFF 		bl	lowsyslog
+ 1091 0062 0AE0     		b	.L153
+ 1092              	.L132:
+ 1093 0064 6748     		ldr	r0, .L161+36
+ 1094 0066 FFF7FEFF 		bl	usleep
+ 1095 006a 0023     		movs	r3, #0
+ 1096 006c 03A8     		add	r0, sp, #12
+ 1097 006e 0393     		str	r3, [sp, #12]
+ 1098 0070 ADF81030 		strh	r3, [sp, #16]	@ movhi
+ 1099 0074 FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs
+ 1100 0078 80B9     		cbnz	r0, .L133
+ 1101              	.L153:
+ 1102 007a FFF7FEFF 		bl	_ZN4node24hasPendingRestartRequestEv
+ 1103 007e 68B9     		cbnz	r0, .L133
+ 1104 0080 0220     		movs	r0, #2
+ 1105 0082 0146     		mov	r1, r0
+ 1106 0084 FFF7FEFF 		bl	_ZN4node18setComponentHealthENS_11ComponentIDEh
+ 1107 0088 5F48     		ldr	r0, .L161+40
+ 1108 008a FFF7FEFF 		bl	lowsyslog
+ 1109 008e 5948     		ldr	r0, .L161+20
+ 1110 0090 FFF7FEFF 		bl	usleep
+ 1111 0094 3046     		mov	r0, r6
+ 1112 0096 FFF7FEFF 		bl	watchdogReset
+ 1113 009a CEE7     		b	.L128
+ 1114              	.L133:
+ 1115 009c 3046     		mov	r0, r6
+ 1116 009e FFF7FEFF 		bl	watchdogReset
+ 1117 00a2 5A4B     		ldr	r3, .L161+44
+ 1118 00a4 1868     		ldr	r0, [r3]
+ 1119 00a6 FFF7FEFF 		bl	configGet
+ 1120 00aa 594B     		ldr	r3, .L161+48
+ 1121 00ac 8146     		mov	r9, r0
+ 1122 00ae 1868     		ldr	r0, [r3]
+ 1123 00b0 FFF7FEFF 		bl	configGet
+ 1124 00b4 0446     		mov	r4, r0
+ 1125 00b6 FFF7FEFF 		bl	_ZN10chibios_rt6System7getTimeEv
+ 1126 00ba 0746     		mov	r7, r0
+ 1127 00bc 2046     		mov	r0, r4
+ 1128 00be FFF7FEFF 		bl	__aeabi_f2uiz
+ 1129 00c2 4FF47A74 		mov	r4, #1000
+ 1130 00c6 6043     		muls	r0, r4, r0
+ 1131 00c8 441E     		subs	r4, r0, #1
+ 1132 00ca 5248     		ldr	r0, .L161+52
+ 1133 00cc B4FBF0F4 		udiv	r4, r4, r0
+ 1134 00d0 0134     		adds	r4, r4, #1
+ 1135              	.L148:
+ 1136 00d2 FFF7FEFF 		bl	_ZN4node24hasPendingRestartRequestEv
+ 1137 00d6 0028     		cmp	r0, #0
+ 1138 00d8 7AD1     		bne	.L160
+ 1139 00da 0023     		movs	r3, #0
+ARM GAS  /tmp/ccAtEVuB.s 			page 21
+
+
+ 1140 00dc 0090     		str	r0, [sp]
+ 1141 00de ADF80400 		strh	r0, [sp, #4]	@ movhi
+ 1142 00e2 6846     		mov	r0, sp
+ 1143 00e4 2744     		add	r7, r7, r4
+ 1144 00e6 0393     		str	r3, [sp, #12]	@ float
+ 1145 00e8 0493     		str	r3, [sp, #16]	@ float
+ 1146 00ea 0593     		str	r3, [sp, #20]	@ float
+ 1147 00ec EA46     		mov	r10, sp
+ 1148 00ee FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs
+ 1149 00f2 0028     		cmp	r0, #0
+ 1150 00f4 61D0     		beq	.L136
+ 1151 00f6 BDF90000 		ldrsh	r0, [sp]
+ 1152 00fa FFF7FEFF 		bl	__aeabi_i2f
+ 1153 00fe 4649     		ldr	r1, .L161+56
+ 1154 0100 FFF7FEFF 		bl	__aeabi_fmul
+ 1155 0104 0546     		mov	r5, r0
+ 1156 0106 BDF90200 		ldrsh	r0, [sp, #2]
+ 1157 010a FFF7FEFF 		bl	__aeabi_i2f
+ 1158 010e 4249     		ldr	r1, .L161+56
+ 1159 0110 FFF7FEFF 		bl	__aeabi_fmul
+ 1160 0114 0490     		str	r0, [sp, #16]	@ float
+ 1161 0116 BDF90400 		ldrsh	r0, [sp, #4]
+ 1162 011a FFF7FEFF 		bl	__aeabi_i2f
+ 1163 011e 3E49     		ldr	r1, .L161+56
+ 1164 0120 FFF7FEFF 		bl	__aeabi_fmul
+ 1165 0124 049B     		ldr	r3, [sp, #16]
+ 1166 0126 0590     		str	r0, [sp, #20]	@ float
+ 1167 0128 03F10043 		add	r3, r3, #-2147483648
+ 1168 012c 0495     		str	r5, [sp, #16]	@ float
+ 1169 012e 03A8     		add	r0, sp, #12
+ 1170 0130 4946     		mov	r1, r9
+ 1171 0132 03AD     		add	r5, sp, #12
+ 1172 0134 0393     		str	r3, [sp, #12]	@ float
+ 1173 0136 AB46     		mov	fp, r5
+ 1174 0138 FFF7FEFF 		bl	_ZN12magnetometer12_GLOBAL__N_17publishEPff
+ 1175              	.L138:
+ 1176 013c 5BF8040B 		ldr	r0, [fp], #4	@ float
+ 1177 0140 20F00040 		bic	r0, r0, #-2147483648
+ 1178 0144 FFF7FEFF 		bl	__aeabi_f2d
+ 1179 0148 25A3     		adr	r3, .L161
+ 1180 014a D3E90023 		ldrd	r2, [r3]
+ 1181 014e FFF7FEFF 		bl	__aeabi_dcmpgt
+ 1182 0152 40B9     		cbnz	r0, .L137
+ 1183 0154 06AB     		add	r3, sp, #24
+ 1184 0156 9B45     		cmp	fp, r3
+ 1185 0158 F0D1     		bne	.L138
+ 1186 015a 08F5D26B 		add	fp, r8, #1680
+ 1187 015e DBE90023 		ldrd	r2, [fp]
+ 1188 0162 1343     		orrs	r3, r2, r3
+ 1189 0164 15D1     		bne	.L149
+ 1190              	.L137:
+ 1191 0166 5046     		mov	r0, r10
+ 1192 0168 FFF7FEFF 		bl	_ZN12uavcan_stm325clock12getMonotonicEv
+ 1193 016c 9AE80300 		ldmia	r10, {r0, r1}
+ 1194 0170 08F5D263 		add	r3, r8, #1680
+ 1195 0174 83E80300 		stmia	r3, {r0, r1}
+ 1196              	.L144:
+ARM GAS  /tmp/ccAtEVuB.s 			page 22
+
+
+ 1197 0178 55F8040B 		ldr	r0, [r5], #4	@ float
+ 1198 017c 2749     		ldr	r1, .L161+60
+ 1199 017e 20F00040 		bic	r0, r0, #-2147483648
+ 1200 0182 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1201 0186 A8B9     		cbnz	r0, .L150
+ 1202 0188 06AB     		add	r3, sp, #24
+ 1203 018a 9D42     		cmp	r5, r3
+ 1204 018c F4D1     		bne	.L144
+ 1205 018e 0146     		mov	r1, r0
+ 1206 0190 11E0     		b	.L143
+ 1207              	.L149:
+ 1208 0192 5046     		mov	r0, r10
+ 1209 0194 FFF7FEFF 		bl	_ZN12uavcan_stm325clock12getMonotonicEv
+ 1210 0198 DBE90001 		ldrd	r0, [fp]
+ 1211 019c DDE90023 		ldrd	r2, [sp]
+ 1212 01a0 121A     		subs	r2, r2, r0
+ 1213 01a2 63EB0103 		sbc	r3, r3, r1
+ 1214 01a6 1E49     		ldr	r1, .L161+64
+ 1215 01a8 D1E90001 		ldrd	r0, [r1]
+ 1216 01ac 9042     		cmp	r0, r2
+ 1217 01ae 71EB0303 		sbcs	r3, r1, r3
+ 1218 01b2 E1DA     		bge	.L144
+ 1219              	.L150:
+ 1220 01b4 0121     		movs	r1, #1
+ 1221              	.L143:
+ 1222 01b6 0220     		movs	r0, #2
+ 1223 01b8 01E0     		b	.L159
+ 1224              	.L136:
+ 1225 01ba 0220     		movs	r0, #2
+ 1226 01bc 0146     		mov	r1, r0
+ 1227              	.L159:
+ 1228 01be FFF7FEFF 		bl	_ZN4node18setComponentHealthENS_11ComponentIDEh
+ 1229 01c2 3846     		mov	r0, r7
+ 1230 01c4 FFF7FEFF 		bl	sysSleepUntilChTime
+ 1231 01c8 3046     		mov	r0, r6
+ 1232 01ca FFF7FEFF 		bl	watchdogReset
+ 1233 01ce 80E7     		b	.L148
+ 1234              	.L160:
+ 1235 01d0 1448     		ldr	r0, .L161+68
+ 1236 01d2 FFF7FEFF 		bl	lowsyslog
+ 1237 01d6 0020     		movs	r0, #0
+ 1238 01d8 07B0     		add	sp, sp, #28
+ 1239              		@ sp needed
+ 1240 01da BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1241              	.L162:
+ 1242 01de 00BF     		.align	3
+ 1243              	.L161:
+ 1244 01e0 95D626E8 		.word	3894859413
+ 1245 01e4 0B2E113E 		.word	1041313291
+ 1246 01e8 3E010000 		.word	.LC12
+ 1247 01ec 00000000 		.word	dbg_panic_msg
+ 1248 01f0 74010000 		.word	.LC13
+ 1249 01f4 20A10700 		.word	500000
+ 1250 01f8 98010000 		.word	.LC15
+ 1251 01fc B7010000 		.word	.LC16
+ 1252 0200 D6010000 		.word	.LC17
+ 1253 0204 80380100 		.word	80000
+ARM GAS  /tmp/ccAtEVuB.s 			page 23
+
+
+ 1254 0208 78010000 		.word	.LC14
+ 1255 020c 00000000 		.word	.LANCHOR6
+ 1256 0210 00000000 		.word	.LANCHOR7
+ 1257 0214 40420F00 		.word	1000000
+ 1258 0218 282C713A 		.word	980495400
+ 1259 021c 6666A63F 		.word	1067869798
+ 1260 0220 00000000 		.word	.LANCHOR5
+ 1261 0224 FD010000 		.word	.LC18
+ 1262              		.size	_ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv, .-_ZN12magnetometer12_GLOBAL__N_19MagThrea
+ 1263              		.section	.text.startup._GLOBAL__sub_I__ZN12magnetometer4initEv,"ax",%progbits
+ 1264              		.align	1
+ 1265              		.thumb
+ 1266              		.thumb_func
+ 1267              		.type	_GLOBAL__sub_I__ZN12magnetometer4initEv, %function
+ 1268              	_GLOBAL__sub_I__ZN12magnetometer4initEv:
+ 1269              		@ args = 0, pretend = 0, frame = 0
+ 1270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1271 0000 70B5     		push	{r4, r5, r6, lr}
+ 1272 0002 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1273 0006 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1274 0008 0546     		mov	r5, r0
+ 1275 000a 53BB     		cbnz	r3, .L167
+ 1276 000c 804C     		ldr	r4, .L187+32
+ 1277 000e 2368     		ldr	r3, [r4]
+ 1278 0010 D907     		lsls	r1, r3, #31
+ 1279 0012 09D4     		bmi	.L165
+ 1280 0014 7F48     		ldr	r0, .L187+36
+ 1281 0016 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 1282 001a 0123     		movs	r3, #1
+ 1283 001c 7D48     		ldr	r0, .L187+36
+ 1284 001e 7E49     		ldr	r1, .L187+40
+ 1285 0020 7E4A     		ldr	r2, .L187+44
+ 1286 0022 2360     		str	r3, [r4]
+ 1287 0024 FFF7FEFF 		bl	__aeabi_atexit
+ 1288              	.L165:
+ 1289 0028 7A4C     		ldr	r4, .L187+36
+ 1290 002a 2846     		mov	r0, r5
+ 1291 002c 2146     		mov	r1, r4
+ 1292 002e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1293 0032 A8B9     		cbnz	r0, .L164
+ 1294 0034 6EA3     		adr	r3, .L187
+ 1295 0036 D3E90023 		ldrd	r2, [r3]
+ 1296 003a C4E90223 		strd	r2, [r4, #8]
+ 1297 003e 784B     		ldr	r3, .L187+48
+ 1298 0040 2060     		str	r0, [r4]
+ 1299 0042 2361     		str	r3, [r4, #16]
+ 1300 0044 0123     		movs	r3, #1
+ 1301 0046 2375     		strb	r3, [r4, #20]
+ 1302 0048 40F25513 		movw	r3, #341
+ 1303 004c 2846     		mov	r0, r5
+ 1304 004e A361     		str	r3, [r4, #24]
+ 1305 0050 2146     		mov	r1, r4
+ 1306 0052 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1307 0056 18B9     		cbnz	r0, .L164
+ 1308 0058 2846     		mov	r0, r5
+ 1309 005a 2146     		mov	r1, r4
+ 1310 005c FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ARM GAS  /tmp/ccAtEVuB.s 			page 24
+
+
+ 1311              	.L164:
+ 1312 0060 10B1     		cbz	r0, .L166
+ 1313              	.L167:
+ 1314 0062 7048     		ldr	r0, .L187+52
+ 1315 0064 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 1316              	.L166:
+ 1317 0068 0126     		movs	r6, #1
+ 1318 006a FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1319 006e 3146     		mov	r1, r6
+ 1320 0070 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registr
+ 1321 0074 0028     		cmp	r0, #0
+ 1322 0076 F4D1     		bne	.L167
+ 1323 0078 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1324 007c 0221     		movs	r1, #2
+ 1325 007e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Reg
+ 1326 0082 0028     		cmp	r0, #0
+ 1327 0084 EDD1     		bne	.L167
+ 1328 0086 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1329 008a 43F6FF71 		movw	r1, #16383
+ 1330 008e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS
+ 1331 0092 0028     		cmp	r0, #0
+ 1332 0094 E5D1     		bne	.L167
+ 1333 0096 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1334 009a 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1335 009c 0546     		mov	r5, r0
+ 1336 009e 002B     		cmp	r3, #0
+ 1337 00a0 DFD1     		bne	.L167
+ 1338 00a2 614C     		ldr	r4, .L187+56
+ 1339 00a4 2368     		ldr	r3, [r4]
+ 1340 00a6 DA07     		lsls	r2, r3, #31
+ 1341 00a8 08D4     		bmi	.L172
+ 1342 00aa 6048     		ldr	r0, .L187+60
+ 1343 00ac FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 1344 00b0 5E48     		ldr	r0, .L187+60
+ 1345 00b2 5949     		ldr	r1, .L187+40
+ 1346 00b4 594A     		ldr	r2, .L187+44
+ 1347 00b6 2660     		str	r6, [r4]
+ 1348 00b8 FFF7FEFF 		bl	__aeabi_atexit
+ 1349              	.L172:
+ 1350 00bc 5B4C     		ldr	r4, .L187+60
+ 1351 00be 2846     		mov	r0, r5
+ 1352 00c0 2146     		mov	r1, r4
+ 1353 00c2 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1354 00c6 98B9     		cbnz	r0, .L171
+ 1355 00c8 4BA3     		adr	r3, .L187+8
+ 1356 00ca D3E90023 		ldrd	r2, [r3]
+ 1357 00ce C4E90223 		strd	r2, [r4, #8]
+ 1358 00d2 574B     		ldr	r3, .L187+64
+ 1359 00d4 2060     		str	r0, [r4]
+ 1360 00d6 2361     		str	r3, [r4, #16]
+ 1361 00d8 0523     		movs	r3, #5
+ 1362 00da 2075     		strb	r0, [r4, #20]
+ 1363 00dc A361     		str	r3, [r4, #24]
+ 1364 00de 2846     		mov	r0, r5
+ 1365 00e0 2146     		mov	r1, r4
+ 1366 00e2 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1367 00e6 18B9     		cbnz	r0, .L171
+ARM GAS  /tmp/ccAtEVuB.s 			page 25
+
+
+ 1368 00e8 2846     		mov	r0, r5
+ 1369 00ea 2146     		mov	r1, r4
+ 1370 00ec FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1371              	.L171:
+ 1372 00f0 0028     		cmp	r0, #0
+ 1373 00f2 B6D1     		bne	.L167
+ 1374 00f4 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1375 00f8 0421     		movs	r1, #4
+ 1376 00fa FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18R
+ 1377 00fe 0028     		cmp	r0, #0
+ 1378 0100 AFD1     		bne	.L167
+ 1379 0102 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1380 0106 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1381 0108 0546     		mov	r5, r0
+ 1382 010a 002B     		cmp	r3, #0
+ 1383 010c A9D1     		bne	.L167
+ 1384 010e 494C     		ldr	r4, .L187+68
+ 1385 0110 2368     		ldr	r3, [r4]
+ 1386 0112 DB07     		lsls	r3, r3, #31
+ 1387 0114 09D4     		bmi	.L176
+ 1388 0116 4848     		ldr	r0, .L187+72
+ 1389 0118 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+ 1390 011c 0123     		movs	r3, #1
+ 1391 011e 4648     		ldr	r0, .L187+72
+ 1392 0120 3D49     		ldr	r1, .L187+40
+ 1393 0122 3E4A     		ldr	r2, .L187+44
+ 1394 0124 2360     		str	r3, [r4]
+ 1395 0126 FFF7FEFF 		bl	__aeabi_atexit
+ 1396              	.L176:
+ 1397 012a 434C     		ldr	r4, .L187+72
+ 1398 012c 2846     		mov	r0, r5
+ 1399 012e 2146     		mov	r1, r4
+ 1400 0130 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1401 0134 A8B9     		cbnz	r0, .L186
+ 1402 0136 32A3     		adr	r3, .L187+16
+ 1403 0138 D3E90023 		ldrd	r2, [r3]
+ 1404 013c C4E90223 		strd	r2, [r4, #8]
+ 1405 0140 3E4B     		ldr	r3, .L187+76
+ 1406 0142 2060     		str	r0, [r4]
+ 1407 0144 2361     		str	r3, [r4, #16]
+ 1408 0146 0123     		movs	r3, #1
+ 1409 0148 2375     		strb	r3, [r4, #20]
+ 1410 014a 40F2E933 		movw	r3, #1001
+ 1411 014e 2846     		mov	r0, r5
+ 1412 0150 A361     		str	r3, [r4, #24]
+ 1413 0152 2146     		mov	r1, r4
+ 1414 0154 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1415 0158 18B9     		cbnz	r0, .L186
+ 1416 015a 2846     		mov	r0, r5
+ 1417 015c 2146     		mov	r1, r4
+ 1418 015e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1419              	.L186:
+ 1420 0162 0446     		mov	r4, r0
+ 1421 0164 0028     		cmp	r0, #0
+ 1422 0166 7FF47CAF 		bne	.L167
+ 1423 016a 27A3     		adr	r3, .L187+24
+ 1424 016c D3E90023 		ldrd	r2, [r3]
+ARM GAS  /tmp/ccAtEVuB.s 			page 26
+
+
+ 1425 0170 3348     		ldr	r0, .L187+80
+ 1426 0172 3449     		ldr	r1, .L187+84
+ 1427 0174 C0E90023 		strd	r2, [r0]
+ 1428 0178 284A     		ldr	r2, .L187+44
+ 1429 017a FFF7FEFF 		bl	__aeabi_atexit
+ 1430 017e 3248     		ldr	r0, .L187+88
+ 1431 0180 324B     		ldr	r3, .L187+92
+ 1432 0182 0474     		strb	r4, [r0, #16]
+ 1433 0184 0360     		str	r3, [r0]
+ 1434 0186 324B     		ldr	r3, .L187+96
+ 1435 0188 0124     		movs	r4, #1
+ 1436 018a 4360     		str	r3, [r0, #4]	@ float
+ 1437 018c 314B     		ldr	r3, .L187+100
+ 1438 018e 8360     		str	r3, [r0, #8]	@ float
+ 1439 0190 4FF07E53 		mov	r3, #1065353216
+ 1440 0194 C360     		str	r3, [r0, #12]	@ float
+ 1441 0196 FFF7FEFF 		bl	configRegisterParam_
+ 1442 019a 2F48     		ldr	r0, .L187+104
+ 1443 019c 2F4B     		ldr	r3, .L187+108
+ 1444 019e 0474     		strb	r4, [r0, #16]
+ 1445 01a0 0360     		str	r3, [r0]
+ 1446 01a2 2F4B     		ldr	r3, .L187+112
+ 1447 01a4 4360     		str	r3, [r0, #4]	@ float
+ 1448 01a6 8360     		str	r3, [r0, #8]	@ float
+ 1449 01a8 2E4B     		ldr	r3, .L187+116
+ 1450 01aa C360     		str	r3, [r0, #12]	@ float
+ 1451 01ac FFF7FEFF 		bl	configRegisterParam_
+ 1452 01b0 2D48     		ldr	r0, .L187+120
+ 1453 01b2 2E4B     		ldr	r3, .L187+124
+ 1454 01b4 0474     		strb	r4, [r0, #16]
+ 1455 01b6 0360     		str	r3, [r0]
+ 1456 01b8 4FF08343 		mov	r3, #1098907648
+ 1457 01bc 4360     		str	r3, [r0, #4]	@ float
+ 1458 01be 0023     		movs	r3, #0
+ 1459 01c0 2B4C     		ldr	r4, .L187+128
+ 1460 01c2 8360     		str	r3, [r0, #8]	@ float
+ 1461 01c4 2B4B     		ldr	r3, .L187+132
+ 1462 01c6 C360     		str	r3, [r0, #12]	@ float
+ 1463 01c8 FFF7FEFF 		bl	configRegisterParam_
+ 1464 01cc 2046     		mov	r0, r4
+ 1465 01ce FFF7FEFF 		bl	_ZN10chibios_rt10BaseThreadC2Ev
+ 1466 01d2 294B     		ldr	r3, .L187+136
+ 1467 01d4 0020     		movs	r0, #0
+ 1468 01d6 2360     		str	r3, [r4]
+ 1469 01d8 0021     		movs	r1, #0
+ 1470 01da 04F5D263 		add	r3, r4, #1680
+ 1471 01de C3E90001 		strd	r0, [r3]
+ 1472 01e2 0E4A     		ldr	r2, .L187+44
+ 1473 01e4 2046     		mov	r0, r4
+ 1474 01e6 BDE87040 		pop	{r4, r5, r6, lr}
+ 1475 01ea 2449     		ldr	r1, .L187+140
+ 1476 01ec FFF7FEBF 		b	__aeabi_atexit
+ 1477              	.L188:
+ 1478              		.align	3
+ 1479              	.L187:
+ 1480 01f0 F1C6A7C1 		.word	-1045969167
+ 1481 01f4 D068080F 		.word	252209360
+ARM GAS  /tmp/ccAtEVuB.s 			page 27
+
+
+ 1482 01f8 F017304A 		.word	1244665840
+ 1483 01fc 39059E56 		.word	1453196601
+ 1484 0200 F2C20B46 		.word	1175175922
+ 1485 0204 A9D4A7E2 		.word	-492317527
+ 1486 0208 404B4C00 		.word	5000000
+ 1487 020c 00000000 		.word	0
+ 1488 0210 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1489 0214 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1490 0218 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 1491 021c 00000000 		.word	__dso_handle
+ 1492 0220 14020000 		.word	.LC19
+ 1493 0224 2F020000 		.word	.LC20
+ 1494 0228 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 1495 022c 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1496 0230 3F020000 		.word	.LC21
+ 1497 0234 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStr
+ 1498 0238 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStren
+ 1499 023c 12010000 		.word	.LC11
+ 1500 0240 00000000 		.word	.LANCHOR5
+ 1501 0244 00000000 		.word	_ZN6uavcan17MonotonicDurationD1Ev
+ 1502 0248 00000000 		.word	.LANCHOR6
+ 1503 024c 5B020000 		.word	.LC22
+ 1504 0250 0AD7A33B 		.word	1000593162
+ 1505 0254 BD378635 		.word	897988541
+ 1506 0258 00000000 		.word	.LANCHOR7
+ 1507 025c 68020000 		.word	.LC23
+ 1508 0260 00409C46 		.word	1184645120
+ 1509 0264 00247449 		.word	1232348160
+ 1510 0268 00000000 		.word	.LANCHOR3
+ 1511 026c 78020000 		.word	.LC24
+ 1512 0270 00000000 		.word	.LANCHOR0
+ 1513 0274 0000F841 		.word	1106771968
+ 1514 0278 08000000 		.word	.LANCHOR8+8
+ 1515 027c 00000000 		.word	_ZN12magnetometer12_GLOBAL__N_19MagThreadD1Ev
+ 1516              		.size	_GLOBAL__sub_I__ZN12magnetometer4initEv, .-_GLOBAL__sub_I__ZN12magnetometer4initEv
+ 1517              		.section	.init_array,"aw",%init_array
+ 1518              		.align	2
+ 1519 0000 00000000 		.word	_GLOBAL__sub_I__ZN12magnetometer4initEv(target1)
+ 1520              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStren
+ 1521              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFi
+ 1522              		.align	3
+ 1523              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStren
+ 1524              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStren
+ 1525              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi
+ 1526 0000 00000000 		.space	32
+ 1526      00000000 
+ 1526      00000000 
+ 1526      00000000 
+ 1526      00000000 
+ 1527              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 1528              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStat
+ 1529              		.align	3
+ 1530              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 1531              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 1532              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Regi
+ 1533 0000 00000000 		.space	32
+ 1533      00000000 
+ARM GAS  /tmp/ccAtEVuB.s 			page 28
+
+
+ 1533      00000000 
+ 1533      00000000 
+ 1533      00000000 
+ 1534              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1535              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEEN
+ 1536              		.align	3
+ 1537              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1538              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 1539              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Registrati
+ 1540 0000 00000000 		.space	32
+ 1540      00000000 
+ 1540      00000000 
+ 1540      00000000 
+ 1540      00000000 
+ 1541              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 1542              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage
+ 1543              		.align	3
+ 1544              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 1545              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 1546              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_1
+ 1547 0000 00000000 		.space	32
+ 1547      00000000 
+ 1547      00000000 
+ 1547      00000000 
+ 1547      00000000 
+ 1548              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 1549              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_
+ 1550              		.align	3
+ 1551              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 1552              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 1553              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Regist
+ 1554 0000 00000000 		.space	32
+ 1554      00000000 
+ 1554      00000000 
+ 1554      00000000 
+ 1554      00000000 
+ 1555              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1556              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ 1557              		.align	3
+ 1558              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1559              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1560              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registrati
+ 1561 0000 00000000 		.space	32
+ 1561      00000000 
+ 1561      00000000 
+ 1561      00000000 
+ 1561      00000000 
+ 1562              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1563              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0E
+ 1564              		.align	3
+ 1565              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1566              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1567              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Regis
+ 1568 0000 00000000 		.space	32
+ 1568      00000000 
+ 1568      00000000 
+ 1568      00000000 
+ARM GAS  /tmp/ccAtEVuB.s 			page 29
+
+
+ 1568      00000000 
+ 1569              		.weak	_ZTVN6uavcan20StaticTransferBufferILt25EEE
+ 1570              		.section	.rodata._ZTVN6uavcan20StaticTransferBufferILt25EEE,"aG",%progbits,_ZTVN6uavcan20StaticTra
+ 1571              		.align	3
+ 1572              		.type	_ZTVN6uavcan20StaticTransferBufferILt25EEE, %object
+ 1573              		.size	_ZTVN6uavcan20StaticTransferBufferILt25EEE, 24
+ 1574              	_ZTVN6uavcan20StaticTransferBufferILt25EEE:
+ 1575 0000 00000000 		.word	0
+ 1576 0004 00000000 		.word	0
+ 1577 0008 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt25EED1Ev
+ 1578 000c 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt25EED0Ev
+ 1579 0010 00000000 		.word	_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+ 1580 0014 00000000 		.word	_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+ 1581              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStr
+ 1582              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22Magnetic
+ 1583              		.align	2
+ 1584              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStr
+ 1585              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStr
+ 1586              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_I
+ 1587 0000 00000000 		.space	4
+ 1588              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 1589              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportSt
+ 1590              		.align	2
+ 1591              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 1592              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 1593              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Re
+ 1594 0000 00000000 		.space	4
+ 1595              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 1596              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EE
+ 1597              		.align	2
+ 1598              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 1599              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 1600              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Registra
+ 1601 0000 00000000 		.space	4
+ 1602              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 1603              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessa
+ 1604              		.align	2
+ 1605              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 1606              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 1607              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0
+ 1608 0000 00000000 		.space	4
+ 1609              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 1610              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInf
+ 1611              		.align	2
+ 1612              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 1613              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 1614              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Regi
+ 1615 0000 00000000 		.space	4
+ 1616              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1617              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EE
+ 1618              		.align	2
+ 1619              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1620              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1621              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registra
+ 1622 0000 00000000 		.space	4
+ 1623              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1624              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi
+ARM GAS  /tmp/ccAtEVuB.s 			page 30
+
+
+ 1625              		.align	2
+ 1626              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1627              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1628              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Reg
+ 1629 0000 00000000 		.space	4
+ 1630              		.section	.bss._ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57,"aw",%nobits
+ 1631              		.set	.LANCHOR4,. + 0
+ 1632              		.type	_ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57, %object
+ 1633              		.size	_ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57, 1
+ 1634              	_ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57:
+ 1635 0000 00       		.space	1
+ 1636              		.section	.bss._ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub,"aw",%nobits
+ 1637              		.align	2
+ 1638              		.set	.LANCHOR1,. + 0
+ 1639              		.type	_ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub, %object
+ 1640              		.size	_ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub, 4
+ 1641              	_ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub:
+ 1642 0000 00000000 		.space	4
+ 1643              		.section	.bss._ZN12magnetometer12_GLOBAL__N_1L14param_varianceE,"aw",%nobits
+ 1644              		.align	2
+ 1645              		.set	.LANCHOR6,. + 0
+ 1646              		.type	_ZN12magnetometer12_GLOBAL__N_1L14param_varianceE, %object
+ 1647              		.size	_ZN12magnetometer12_GLOBAL__N_1L14param_varianceE, 20
+ 1648              	_ZN12magnetometer12_GLOBAL__N_1L14param_varianceE:
+ 1649 0000 00000000 		.space	20
+ 1649      00000000 
+ 1649      00000000 
+ 1649      00000000 
+ 1649      00000000 
+ 1650              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 1651              	.LC0:
+ 1652 0000 4D616720 		.ascii	"Mag read failed\012\000"
+ 1652      72656164 
+ 1652      20666169 
+ 1652      6C65640A 
+ 1652      00
+ 1653              	.LC1:
+ 1654 0011 706F7369 		.ascii	"positive\000"
+ 1654      74697665 
+ 1654      00
+ 1655              	.LC2:
+ 1656 001a 6E656761 		.ascii	"negative\000"
+ 1656      74697665 
+ 1656      00
+ 1657              	.LC3:
+ 1658 0023 4D61673A 		.ascii	"Mag: Failed to begin self test\012\000"
+ 1658      20466169 
+ 1658      6C656420 
+ 1658      746F2062 
+ 1658      6567696E 
+ 1659              	.LC4:
+ 1660 0043 4D616720 		.ascii	"Mag self test sample, %s, x/y/z: %d %d %d\012\000"
+ 1660      73656C66 
+ 1660      20746573 
+ 1660      74207361 
+ 1660      6D706C65 
+ 1661              	.LC5:
+ARM GAS  /tmp/ccAtEVuB.s 			page 31
+
+
+ 1662 006e 4D616720 		.ascii	"Mag self test sample %d is invalid\012\000"
+ 1662      73656C66 
+ 1662      20746573 
+ 1662      74207361 
+ 1662      6D706C65 
+ 1663              	.LC6:
+ 1664 0092 00       		.ascii	"\000"
+ 1665              	.LC7:
+ 1666 0093 75617663 		.ascii	"uavcan.protocol.GetNodeInfo\000"
+ 1666      616E2E70 
+ 1666      726F746F 
+ 1666      636F6C2E 
+ 1666      4765744E 
+ 1667              	.LC8:
+ 1668 00af 75617663 		.ascii	"uavcan.protocol.GetDataTypeInfo\000"
+ 1668      616E2E70 
+ 1668      726F746F 
+ 1668      636F6C2E 
+ 1668      47657444 
+ 1669              	.LC9:
+ 1670 00cf 75617663 		.ascii	"uavcan.protocol.debug.LogMessage\000"
+ 1670      616E2E70 
+ 1670      726F746F 
+ 1670      636F6C2E 
+ 1670      64656275 
+ 1671              	.LC10:
+ 1672 00f0 75617663 		.ascii	"uavcan.protocol.GetTransportStats\000"
+ 1672      616E2E70 
+ 1672      726F746F 
+ 1672      636F6C2E 
+ 1672      47657454 
+ 1673              	.LC11:
+ 1674 0112 75617663 		.ascii	"uavcan.equipment.ahrs.MagneticFieldStrength\000"
+ 1674      616E2E65 
+ 1674      71756970 
+ 1674      6D656E74 
+ 1674      2E616872 
+ 1675              	.LC12:
+ 1676 013e 7A756261 		.ascii	"zubax_chibios//zubax_chibios/watchdog/watchdog.hpp:"
+ 1676      785F6368 
+ 1676      6962696F 
+ 1676      732F2F7A 
+ 1676      75626178 
+ 1677 0171 333000   		.ascii	"30\000"
+ 1678              	.LC13:
+ 1679 0174 6D616700 		.ascii	"mag\000"
+ 1680              	.LC14:
+ 1681 0178 4D616720 		.ascii	"Mag init failed, will retry...\012\000"
+ 1681      696E6974 
+ 1681      20666169 
+ 1681      6C65642C 
+ 1681      2077696C 
+ 1682              	.LC15:
+ 1683 0198 4D616720 		.ascii	"Mag positive self test failed\012\000"
+ 1683      706F7369 
+ 1683      74697665 
+ 1683      2073656C 
+ARM GAS  /tmp/ccAtEVuB.s 			page 32
+
+
+ 1683      66207465 
+ 1684              	.LC16:
+ 1685 01b7 4D616720 		.ascii	"Mag negative self test failed\012\000"
+ 1685      6E656761 
+ 1685      74697665 
+ 1685      2073656C 
+ 1685      66207465 
+ 1686              	.LC17:
+ 1687 01d6 4D61673A 		.ascii	"Mag: Failed to begin normal operation\012\000"
+ 1687      20466169 
+ 1687      6C656420 
+ 1687      746F2062 
+ 1687      6567696E 
+ 1688              	.LC18:
+ 1689 01fd 4D616720 		.ascii	"Mag driver terminated\012\000"
+ 1689      64726976 
+ 1689      65722074 
+ 1689      65726D69 
+ 1689      6E617465 
+ 1690              	.LC19:
+ 1691 0214 75617663 		.ascii	"uavcan.protocol.NodeStatus\000"
+ 1691      616E2E70 
+ 1691      726F746F 
+ 1691      636F6C2E 
+ 1691      4E6F6465 
+ 1692              	.LC20:
+ 1693 022f 54797065 		.ascii	"Type reg failed\000"
+ 1693      20726567 
+ 1693      20666169 
+ 1693      6C656400 
+ 1694              	.LC21:
+ 1695 023f 75617663 		.ascii	"uavcan.protocol.RestartNode\000"
+ 1695      616E2E70 
+ 1695      726F746F 
+ 1695      636F6C2E 
+ 1695      52657374 
+ 1696              	.LC22:
+ 1697 025b 6D61672E 		.ascii	"mag.variance\000"
+ 1697      76617269 
+ 1697      616E6365 
+ 1697      00
+ 1698              	.LC23:
+ 1699 0268 75617663 		.ascii	"uavcan.pubp-mag\000"
+ 1699      616E2E70 
+ 1699      7562702D 
+ 1699      6D616700 
+ 1700              	.LC24:
+ 1701 0278 75617663 		.ascii	"uavcan.prio-mag\000"
+ 1701      616E2E70 
+ 1701      72696F2D 
+ 1701      6D616700 
+ 1702              		.section	.bss._ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE,"aw",%nobits
+ 1703              		.align	3
+ 1704              		.set	.LANCHOR5,. + 0
+ 1705              		.type	_ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE, %object
+ 1706              		.size	_ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE, 8
+ 1707              	_ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE:
+ARM GAS  /tmp/ccAtEVuB.s 			page 33
+
+
+ 1708 0000 00000000 		.space	8
+ 1708      00000000 
+ 1709              		.section	.rodata._ZTVN12magnetometer12_GLOBAL__N_19MagThreadE,"a",%progbits
+ 1710              		.align	3
+ 1711              		.set	.LANCHOR8,. + 0
+ 1712              		.type	_ZTVN12magnetometer12_GLOBAL__N_19MagThreadE, %object
+ 1713              		.size	_ZTVN12magnetometer12_GLOBAL__N_19MagThreadE, 20
+ 1714              	_ZTVN12magnetometer12_GLOBAL__N_19MagThreadE:
+ 1715 0000 00000000 		.word	0
+ 1716 0004 00000000 		.word	0
+ 1717 0008 00000000 		.word	_ZN10chibios_rt15ThreadReference4stopEv
+ 1718 000c 00000000 		.word	_ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv
+ 1719 0010 00000000 		.word	_ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+ 1720              		.section	.bss._ZN12magnetometer12_GLOBAL__N_110mag_threadE,"aw",%nobits
+ 1721              		.align	3
+ 1722              		.set	.LANCHOR0,. + 0
+ 1723              		.type	_ZN12magnetometer12_GLOBAL__N_110mag_threadE, %object
+ 1724              		.size	_ZN12magnetometer12_GLOBAL__N_110mag_threadE, 1688
+ 1725              	_ZN12magnetometer12_GLOBAL__N_110mag_threadE:
+ 1726 0000 00000000 		.space	1688
+ 1726      00000000 
+ 1726      00000000 
+ 1726      00000000 
+ 1726      00000000 
+ 1727              		.section	.bss._ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE,"aw",%nobits
+ 1728              		.align	2
+ 1729              		.set	.LANCHOR7,. + 0
+ 1730              		.type	_ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE, %object
+ 1731              		.size	_ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE, 20
+ 1732              	_ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE:
+ 1733 0000 00000000 		.space	20
+ 1733      00000000 
+ 1733      00000000 
+ 1733      00000000 
+ 1733      00000000 
+ 1734              		.section	.bss._ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub,"aw",%nobits
+ 1735              		.align	3
+ 1736              		.set	.LANCHOR2,. + 0
+ 1737              		.type	_ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub, %object
+ 1738              		.size	_ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub, 40
+ 1739              	_ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub:
+ 1740 0000 00000000 		.space	40
+ 1740      00000000 
+ 1740      00000000 
+ 1740      00000000 
+ 1740      00000000 
+ 1741              		.section	.bss._ZN12magnetometer12_GLOBAL__N_1L10param_prioE,"aw",%nobits
+ 1742              		.align	2
+ 1743              		.set	.LANCHOR3,. + 0
+ 1744              		.type	_ZN12magnetometer12_GLOBAL__N_1L10param_prioE, %object
+ 1745              		.size	_ZN12magnetometer12_GLOBAL__N_1L10param_prioE, 20
+ 1746              	_ZN12magnetometer12_GLOBAL__N_1L10param_prioE:
+ 1747 0000 00000000 		.space	20
+ 1747      00000000 
+ 1747      00000000 
+ 1747      00000000 
+ 1747      00000000 
+ARM GAS  /tmp/ccAtEVuB.s 			page 34
+
+
+ 1748              		.hidden	__dso_handle
+ 1749              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccAtEVuB.s 			page 35
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 magnetometer.cpp
+     /tmp/ccAtEVuB.s:16     .text._ZN6uavcan17MonotonicDurationD2Ev:0000000000000000 $t
+     /tmp/ccAtEVuB.s:21     .text._ZN6uavcan17MonotonicDurationD2Ev:0000000000000000 _ZN6uavcan17MonotonicDurationD2Ev
+     /tmp/ccAtEVuB.s:21     .text._ZN6uavcan17MonotonicDurationD2Ev:0000000000000000 _ZN6uavcan17MonotonicDurationD1Ev
+     /tmp/ccAtEVuB.s:30     .text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev:0000000000000000 $t
+     /tmp/ccAtEVuB.s:35     .text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev:0000000000000000 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev
+     /tmp/ccAtEVuB.s:35     .text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev:0000000000000000 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED1Ev
+     /tmp/ccAtEVuB.s:44     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 $t
+     /tmp/ccAtEVuB.s:49     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+     /tmp/ccAtEVuB.s:49     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+     /tmp/ccAtEVuB.s:58     .text._ZN6uavcan20StaticTransferBufferILt25EED2Ev:0000000000000000 $t
+     /tmp/ccAtEVuB.s:63     .text._ZN6uavcan20StaticTransferBufferILt25EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt25EED2Ev
+     /tmp/ccAtEVuB.s:63     .text._ZN6uavcan20StaticTransferBufferILt25EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt25EED1Ev
+     /tmp/ccAtEVuB.s:72     .text._ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev:0000000000000000 $t
+     /tmp/ccAtEVuB.s:76     .text._ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev:0000000000000000 _ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev
+     /tmp/ccAtEVuB.s:76     .text._ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev:0000000000000000 _ZN12magnetometer12_GLOBAL__N_19MagThreadD1Ev
+     /tmp/ccAtEVuB.s:84     .text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:0000000000000000 $t
+     /tmp/ccAtEVuB.s:89     .text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:0000000000000000 _ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+     /tmp/ccAtEVuB.s:111    .text._ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm:0000000000000024 $d
+     /tmp/ccAtEVuB.s:115    .text._ZN6uavcan20StaticTransferBufferILt25EED0Ev:0000000000000000 $t
+     /tmp/ccAtEVuB.s:120    .text._ZN6uavcan20StaticTransferBufferILt25EED0Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt25EED0Ev
+     /tmp/ccAtEVuB.s:133    .text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.35:0000000000000000 $t
+     /tmp/ccAtEVuB.s:137    .text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.35:0000000000000000 _ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.35
+     /tmp/ccAtEVuB.s:178    .text._ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.35:0000000000000050 $d
+     /tmp/ccAtEVuB.s:183    .text._ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs:0000000000000000 $t
+     /tmp/ccAtEVuB.s:187    .text._ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs:0000000000000000 _ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs
+     /tmp/ccAtEVuB.s:238    .text._ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs:0000000000000074 $d
+     /tmp/ccAtEVuB.s:242    .text._ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48:0000000000000000 $t
+     /tmp/ccAtEVuB.s:246    .text._ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48:0000000000000000 _ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48
+     /tmp/ccAtEVuB.s:309    .text._ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48:0000000000000094 $d
+     /tmp/ccAtEVuB.s:312    .text._ZN12magnetometer12_GLOBAL__N_111trySelfTestEb:0000000000000000 $t
+     /tmp/ccAtEVuB.s:316    .text._ZN12magnetometer12_GLOBAL__N_111trySelfTestEb:0000000000000000 _ZN12magnetometer12_GLOBAL__N_111trySelfTestEb
+     /tmp/ccAtEVuB.s:386    .text._ZN12magnetometer12_GLOBAL__N_111trySelfTestEb:000000000000008c $d
+     /tmp/ccAtEVuB.s:394    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:0000000000000000 $t
+     /tmp/ccAtEVuB.s:399    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev
+     /tmp/ccAtEVuB.s:417    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:000000000000001c $d
+     /tmp/ccAtEVuB.s:399    .text._ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+     /tmp/ccAtEVuB.s:422    .text._ZN12magnetometer4initEv:0000000000000000 $t
+     /tmp/ccAtEVuB.s:427    .text._ZN12magnetometer4initEv:0000000000000000 _ZN12magnetometer4initEv
+     /tmp/ccAtEVuB.s:441    .text._ZN12magnetometer4initEv:0000000000000014 $d
+     /tmp/ccAtEVuB.s:444    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000000 $t
+     /tmp/ccAtEVuB.s:449    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000000 _ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+     /tmp/ccAtEVuB.s:460    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000010 $d
+     /tmp/ccAtEVuB.s:464    .text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17MonotonicDurationES8_:0000000000000000 $t
+     /tmp/ccAtEVuB.s:469    .text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17MonotonicDurationES8_:0000000000000000 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17MonotonicDurationES8_
+     /tmp/ccAtEVuB.s:509    .text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17MonotonicDurationES8_:0000000000000058 $d
+     /tmp/ccAtEVuB.s:469    .text._ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17MonotonicDurationES8_:0000000000000000 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC1ERNS_5INodeENS_17MonotonicDurationES8_
+     /tmp/ccAtEVuB.s:514    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccAtEVuB.s:519    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccAtEVuB.s:594    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:00000000000000b0 $d
+     /tmp/ccAtEVuB.s:1621   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1560   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:609    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccAtEVuB.s:614    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccAtEVuB.s:680    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000090 $d
+     /tmp/ccAtEVuB.s:1614   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+ARM GAS  /tmp/ccAtEVuB.s 			page 36
+
+
+     /tmp/ccAtEVuB.s:1553   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:689    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccAtEVuB.s:694    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccAtEVuB.s:760    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000090 $d
+     /tmp/ccAtEVuB.s:1607   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1546   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:771    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccAtEVuB.s:776    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccAtEVuB.s:841    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000090 $d
+     /tmp/ccAtEVuB.s:1593   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1532   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:852    .text._ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccAtEVuB.s:857    .text._ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+     /tmp/ccAtEVuB.s:942    .text._ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:00000000000000b4 $d
+     /tmp/ccAtEVuB.s:1574   .rodata._ZTVN6uavcan20StaticTransferBufferILt25EEE:0000000000000000 _ZTVN6uavcan20StaticTransferBufferILt25EEE
+     /tmp/ccAtEVuB.s:947    .text._ZN12magnetometer12_GLOBAL__N_17publishEPff:0000000000000000 $t
+     /tmp/ccAtEVuB.s:951    .text._ZN12magnetometer12_GLOBAL__N_17publishEPff:0000000000000000 _ZN12magnetometer12_GLOBAL__N_17publishEPff
+     /tmp/ccAtEVuB.s:1028   .text._ZN12magnetometer12_GLOBAL__N_17publishEPff:00000000000000a4 $d
+     /tmp/ccAtEVuB.s:1043   .text.startup._ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv:0000000000000000 $t
+     /tmp/ccAtEVuB.s:1047   .text.startup._ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv:0000000000000000 _ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv
+     /tmp/ccAtEVuB.s:1244   .text.startup._ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv:00000000000001e0 $d
+     /tmp/ccAtEVuB.s:1264   .text.startup._GLOBAL__sub_I__ZN12magnetometer4initEv:0000000000000000 $t
+     /tmp/ccAtEVuB.s:1268   .text.startup._GLOBAL__sub_I__ZN12magnetometer4initEv:0000000000000000 _GLOBAL__sub_I__ZN12magnetometer4initEv
+     /tmp/ccAtEVuB.s:1480   .text.startup._GLOBAL__sub_I__ZN12magnetometer4initEv:00000000000001f0 $d
+     /tmp/ccAtEVuB.s:1628   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1567   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1600   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1539   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1586   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1525   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccAtEVuB.s:1518   .init_array:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1522   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1529   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1536   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1543   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1550   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1557   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1564   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1571   .rodata._ZTVN6uavcan20StaticTransferBufferILt25EEE:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1583   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1590   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1597   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1604   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1611   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1618   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1625   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1634   .bss._ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57:0000000000000000 _ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57
+     /tmp/ccAtEVuB.s:1635   .bss._ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1637   .bss._ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1641   .bss._ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub:0000000000000000 _ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub
+     /tmp/ccAtEVuB.s:1644   .bss._ZN12magnetometer12_GLOBAL__N_1L14param_varianceE:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1648   .bss._ZN12magnetometer12_GLOBAL__N_1L14param_varianceE:0000000000000000 _ZN12magnetometer12_GLOBAL__N_1L14param_varianceE
+     /tmp/ccAtEVuB.s:1703   .bss._ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1707   .bss._ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE:0000000000000000 _ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE
+     /tmp/ccAtEVuB.s:1710   .rodata._ZTVN12magnetometer12_GLOBAL__N_19MagThreadE:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1714   .rodata._ZTVN12magnetometer12_GLOBAL__N_19MagThreadE:0000000000000000 _ZTVN12magnetometer12_GLOBAL__N_19MagThreadE
+     /tmp/ccAtEVuB.s:1721   .bss._ZN12magnetometer12_GLOBAL__N_110mag_threadE:0000000000000000 $d
+ARM GAS  /tmp/ccAtEVuB.s 			page 37
+
+
+     /tmp/ccAtEVuB.s:1725   .bss._ZN12magnetometer12_GLOBAL__N_110mag_threadE:0000000000000000 _ZN12magnetometer12_GLOBAL__N_110mag_threadE
+     /tmp/ccAtEVuB.s:1728   .bss._ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1732   .bss._ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE:0000000000000000 _ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE
+     /tmp/ccAtEVuB.s:1735   .bss._ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1739   .bss._ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub:0000000000000000 _ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub
+     /tmp/ccAtEVuB.s:1742   .bss._ZN12magnetometer12_GLOBAL__N_1L10param_prioE:0000000000000000 $d
+     /tmp/ccAtEVuB.s:1746   .bss._ZN12magnetometer12_GLOBAL__N_1L10param_prioE:0000000000000000 _ZN12magnetometer12_GLOBAL__N_1L10param_prioE
+                           .group:0000000000000000 _ZN6uavcan17MonotonicDurationD5Ev
+                           .group:0000000000000000 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED5Ev
+                           .group:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD5Ev
+                           .group:0000000000000000 _ZN6uavcan20StaticTransferBufferILt25EED5Ev
+                           .group:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryC5Ev
+                           .group:0000000000000000 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC5ERNS_5INodeENS_17MonotonicDurationES8_
+
+UNDEFINED SYMBOLS
+chThdCreateStatic
+_ZN10chibios_rt10_thd_startEPv
+_ZTVN10chibios_rt15ThreadReferenceE
+_ZdlPv
+__aeabi_fcmpun
+__aeabi_fcmpgt
+__aeabi_fcmplt
+_ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf
+_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+i2cAcquireBus
+i2cMasterTransmitTimeout
+i2cReleaseBus
+lowsyslog
+I2CD2
+memcmp
+memset
+usleep
+_ZN6uavcan17DataTypeSignature6extendES0_
+_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+_ZN6uavcan16TransferPriority7DefaultE
+__aeabi_atexit
+_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+__dso_handle
+_ZNK6uavcan20GenericPublisherBase8isInitedEv
+_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+__aeabi_f2uiz
+_ZN4node9isStartedEv
+_ZN4node4LockC1Ev
+_ZN4node7getNodeEv
+configGet
+_ZN12uavcan_stm325Mutex6unlockEv
+_ZN6uavcan6NodeID9BroadcastE
+__aeabi_i2f
+__aeabi_fmul
+__aeabi_f2d
+__aeabi_dcmpgt
+watchdogCreate
+sysHaltHook_
+port_halt
+_ZN10chibios_rt10BaseThread7setNameEPKc
+ARM GAS  /tmp/ccAtEVuB.s 			page 38
+
+
+watchdogReset
+_ZN4node24markComponentInitializedENS_11ComponentIDE
+_ZN4node24hasPendingRestartRequestEv
+_ZN4node18setComponentHealthENS_11ComponentIDEh
+_ZN10chibios_rt6System7getTimeEv
+_ZN12uavcan_stm325clock12getMonotonicEv
+sysSleepUntilChTime
+dbg_panic_msg
+_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+_ZN6uavcan16handleFatalErrorEPKc
+configRegisterParam_
+_ZN10chibios_rt10BaseThreadC2Ev
+_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+_ZN10chibios_rt15ThreadReference4stopEv

@@ -1,0 +1,413 @@
+ARM GAS  /tmp/ccg1GAAc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"serial.c"
+  15              		.section	.text.readt,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	readt, %function
+  20              	readt:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24 0000 0C30     		adds	r0, r0, #12
+  25 0002 FFF7FEBF 		b	chIQReadTimeout
+  26              		.size	readt, .-readt
+  27              		.section	.text.read,"ax",%progbits
+  28              		.align	1
+  29              		.thumb
+  30              		.thumb_func
+  31              		.type	read, %function
+  32              	read:
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 0C30     		adds	r0, r0, #12
+  37 0002 4FF0FF33 		mov	r3, #-1
+  38 0006 FFF7FEBF 		b	chIQReadTimeout
+  39              		.size	read, .-read
+  40              		.section	.text.writet,"ax",%progbits
+  41              		.align	1
+  42              		.thumb
+  43              		.thumb_func
+  44              		.type	writet, %function
+  45              	writet:
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 3030     		adds	r0, r0, #48
+  50 0002 FFF7FEBF 		b	chOQWriteTimeout
+  51              		.size	writet, .-writet
+  52              		.section	.text.write,"ax",%progbits
+  53              		.align	1
+  54              		.thumb
+  55              		.thumb_func
+  56              		.type	write, %function
+  57              	write:
+ARM GAS  /tmp/ccg1GAAc.s 			page 2
+
+
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+  61 0000 3030     		adds	r0, r0, #48
+  62 0002 4FF0FF33 		mov	r3, #-1
+  63 0006 FFF7FEBF 		b	chOQWriteTimeout
+  64              		.size	write, .-write
+  65              		.section	.text.gett,"ax",%progbits
+  66              		.align	1
+  67              		.thumb
+  68              		.thumb_func
+  69              		.type	gett, %function
+  70              	gett:
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		@ link register save eliminated.
+  74 0000 0C30     		adds	r0, r0, #12
+  75 0002 FFF7FEBF 		b	chIQGetTimeout
+  76              		.size	gett, .-gett
+  77              		.section	.text.get,"ax",%progbits
+  78              		.align	1
+  79              		.thumb
+  80              		.thumb_func
+  81              		.type	get, %function
+  82              	get:
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		@ link register save eliminated.
+  86 0000 0C30     		adds	r0, r0, #12
+  87 0002 4FF0FF31 		mov	r1, #-1
+  88 0006 FFF7FEBF 		b	chIQGetTimeout
+  89              		.size	get, .-get
+  90              		.section	.text.putt,"ax",%progbits
+  91              		.align	1
+  92              		.thumb
+  93              		.thumb_func
+  94              		.type	putt, %function
+  95              	putt:
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
+  99 0000 3030     		adds	r0, r0, #48
+ 100 0002 FFF7FEBF 		b	chOQPutTimeout
+ 101              		.size	putt, .-putt
+ 102              		.section	.text.put,"ax",%progbits
+ 103              		.align	1
+ 104              		.thumb
+ 105              		.thumb_func
+ 106              		.type	put, %function
+ 107              	put:
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110              		@ link register save eliminated.
+ 111 0000 3030     		adds	r0, r0, #48
+ 112 0002 4FF0FF32 		mov	r2, #-1
+ 113 0006 FFF7FEBF 		b	chOQPutTimeout
+ 114              		.size	put, .-put
+ARM GAS  /tmp/ccg1GAAc.s 			page 3
+
+
+ 115              		.section	.text.sdInit,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	sdInit
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	sdInit, %function
+ 121              	sdInit:
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		@ link register save eliminated.
+ 125 0000 FFF7FEBF 		b	sd_lld_init
+ 126              		.size	sdInit, .-sdInit
+ 127              		.section	.text.sdObjectInit,"ax",%progbits
+ 128              		.align	1
+ 129              		.global	sdObjectInit
+ 130              		.thumb
+ 131              		.thumb_func
+ 132              		.type	sdObjectInit, %function
+ 133              	sdObjectInit:
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 137 0002 1546     		mov	r5, r2
+ 138 0004 0246     		mov	r2, r0
+ 139 0006 0446     		mov	r4, r0
+ 140 0008 0B46     		mov	r3, r1
+ 141 000a 0D49     		ldr	r1, .L11
+ 142 000c 42F8041B 		str	r1, [r2], #4
+ 143 0010 4260     		str	r2, [r0, #4]
+ 144 0012 0122     		movs	r2, #1
+ 145 0014 0272     		strb	r2, [r0, #8]
+ 146 0016 04F15401 		add	r1, r4, #84
+ 147 001a 0090     		str	r0, [sp]
+ 148 001c 4FF40072 		mov	r2, #512
+ 149 0020 0C30     		adds	r0, r0, #12
+ 150 0022 FFF7FEFF 		bl	chIQInit
+ 151 0026 0094     		str	r4, [sp]
+ 152 0028 04F13000 		add	r0, r4, #48
+ 153 002c 04F51571 		add	r1, r4, #596
+ 154 0030 4FF40072 		mov	r2, #512
+ 155 0034 2B46     		mov	r3, r5
+ 156 0036 FFF7FEFF 		bl	chOQInit
+ 157 003a 03B0     		add	sp, sp, #12
+ 158              		@ sp needed
+ 159 003c 30BD     		pop	{r4, r5, pc}
+ 160              	.L12:
+ 161 003e 00BF     		.align	2
+ 162              	.L11:
+ 163 0040 00000000 		.word	.LANCHOR0
+ 164              		.size	sdObjectInit, .-sdObjectInit
+ 165              		.section	.text.sdStart,"ax",%progbits
+ 166              		.align	1
+ 167              		.global	sdStart
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.type	sdStart, %function
+ 171              	sdStart:
+ARM GAS  /tmp/ccg1GAAc.s 			page 4
+
+
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174 0000 10B5     		push	{r4, lr}
+ 175 0002 2023     		movs	r3, #32
+ 176 0004 0446     		mov	r4, r0
+ 177              	@ 163 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ 178 0006 83F31188 		msr     BASEPRI, r3
+ 179              	@ 0 "" 2
+ 180              		.thumb
+ 181 000a FFF7FEFF 		bl	sd_lld_start
+ 182 000e 0223     		movs	r3, #2
+ 183 0010 2372     		strb	r3, [r4, #8]
+ 184 0012 0023     		movs	r3, #0
+ 185              	@ 169 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ 186 0014 83F31188 		msr     BASEPRI, r3
+ 187              	@ 0 "" 2
+ 188              		.thumb
+ 189 0018 10BD     		pop	{r4, pc}
+ 190              		.size	sdStart, .-sdStart
+ 191              		.section	.text.sdStop,"ax",%progbits
+ 192              		.align	1
+ 193              		.global	sdStop
+ 194              		.thumb
+ 195              		.thumb_func
+ 196              		.type	sdStop, %function
+ 197              	sdStop:
+ 198              		@ args = 0, pretend = 0, frame = 0
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200 0000 10B5     		push	{r4, lr}
+ 201 0002 2023     		movs	r3, #32
+ 202 0004 0446     		mov	r4, r0
+ 203              	@ 185 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ 204 0006 83F31188 		msr     BASEPRI, r3
+ 205              	@ 0 "" 2
+ 206              		.thumb
+ 207 000a FFF7FEFF 		bl	sd_lld_stop
+ 208 000e 0123     		movs	r3, #1
+ 209 0010 2372     		strb	r3, [r4, #8]
+ 210 0012 04F13000 		add	r0, r4, #48
+ 211 0016 FFF7FEFF 		bl	chOQResetI
+ 212 001a 04F10C00 		add	r0, r4, #12
+ 213 001e FFF7FEFF 		bl	chIQResetI
+ 214 0022 FFF7FEFF 		bl	chSchRescheduleS
+ 215 0026 0023     		movs	r3, #0
+ 216              	@ 194 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ 217 0028 83F31188 		msr     BASEPRI, r3
+ 218              	@ 0 "" 2
+ 219              		.thumb
+ 220 002c 10BD     		pop	{r4, pc}
+ 221              		.size	sdStop, .-sdStop
+ 222              		.section	.text.sdIncomingDataI,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	sdIncomingDataI
+ 225              		.thumb
+ 226              		.thumb_func
+ 227              		.type	sdIncomingDataI, %function
+ 228              	sdIncomingDataI:
+ARM GAS  /tmp/ccg1GAAc.s 			page 5
+
+
+ 229              		@ args = 0, pretend = 0, frame = 0
+ 230              		@ frame_needed = 0, uses_anonymous_args = 0
+ 231 0000 38B5     		push	{r3, r4, r5, lr}
+ 232 0002 4369     		ldr	r3, [r0, #20]
+ 233 0004 0446     		mov	r4, r0
+ 234 0006 0D46     		mov	r5, r1
+ 235 0008 1BB9     		cbnz	r3, .L16
+ 236 000a 0430     		adds	r0, r0, #4
+ 237 000c 0421     		movs	r1, #4
+ 238 000e FFF7FEFF 		bl	chEvtBroadcastFlagsI
+ 239              	.L16:
+ 240 0012 04F10C00 		add	r0, r4, #12
+ 241 0016 2946     		mov	r1, r5
+ 242 0018 FFF7FEFF 		bl	chIQPutI
+ 243 001c 0028     		cmp	r0, #0
+ 244 001e 05DA     		bge	.L15
+ 245 0020 201D     		adds	r0, r4, #4
+ 246 0022 8021     		movs	r1, #128
+ 247 0024 BDE83840 		pop	{r3, r4, r5, lr}
+ 248 0028 FFF7FEBF 		b	chEvtBroadcastFlagsI
+ 249              	.L15:
+ 250 002c 38BD     		pop	{r3, r4, r5, pc}
+ 251              		.size	sdIncomingDataI, .-sdIncomingDataI
+ 252              		.section	.text.sdRequestDataI,"ax",%progbits
+ 253              		.align	1
+ 254              		.global	sdRequestDataI
+ 255              		.thumb
+ 256              		.thumb_func
+ 257              		.type	sdRequestDataI, %function
+ 258              	sdRequestDataI:
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261 0000 38B5     		push	{r3, r4, r5, lr}
+ 262 0002 0446     		mov	r4, r0
+ 263 0004 3030     		adds	r0, r0, #48
+ 264 0006 FFF7FEFF 		bl	chOQGetI
+ 265 000a 051E     		subs	r5, r0, #0
+ 266 000c 03DA     		bge	.L20
+ 267 000e 201D     		adds	r0, r4, #4
+ 268 0010 0821     		movs	r1, #8
+ 269 0012 FFF7FEFF 		bl	chEvtBroadcastFlagsI
+ 270              	.L20:
+ 271 0016 2846     		mov	r0, r5
+ 272 0018 38BD     		pop	{r3, r4, r5, pc}
+ 273              		.size	sdRequestDataI, .-sdRequestDataI
+ 274              		.section	.text.sdPutWouldBlock,"ax",%progbits
+ 275              		.align	1
+ 276              		.global	sdPutWouldBlock
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.type	sdPutWouldBlock, %function
+ 280              	sdPutWouldBlock:
+ 281              		@ args = 0, pretend = 0, frame = 0
+ 282              		@ frame_needed = 0, uses_anonymous_args = 0
+ 283              		@ link register save eliminated.
+ 284 0000 2023     		movs	r3, #32
+ 285              	@ 269 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ARM GAS  /tmp/ccg1GAAc.s 			page 6
+
+
+ 286 0002 83F31188 		msr     BASEPRI, r3
+ 287              	@ 0 "" 2
+ 288              		.thumb
+ 289 0006 0023     		movs	r3, #0
+ 290 0008 806B     		ldr	r0, [r0, #56]
+ 291              	@ 271 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ 292 000a 83F31188 		msr     BASEPRI, r3
+ 293              	@ 0 "" 2
+ 294              		.thumb
+ 295 000e B0FA80F0 		clz	r0, r0
+ 296 0012 4009     		lsrs	r0, r0, #5
+ 297 0014 7047     		bx	lr
+ 298              		.size	sdPutWouldBlock, .-sdPutWouldBlock
+ 299              		.section	.text.sdGetWouldBlock,"ax",%progbits
+ 300              		.align	1
+ 301              		.global	sdGetWouldBlock
+ 302              		.thumb
+ 303              		.thumb_func
+ 304              		.type	sdGetWouldBlock, %function
+ 305              	sdGetWouldBlock:
+ 306              		@ args = 0, pretend = 0, frame = 0
+ 307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 308              		@ link register save eliminated.
+ 309 0000 2023     		movs	r3, #32
+ 310              	@ 293 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ 311 0002 83F31188 		msr     BASEPRI, r3
+ 312              	@ 0 "" 2
+ 313              		.thumb
+ 314 0006 0023     		movs	r3, #0
+ 315 0008 4069     		ldr	r0, [r0, #20]
+ 316              	@ 295 "zubax_chibios///chibios/os/hal/src/serial.c" 1
+ 317 000a 83F31188 		msr     BASEPRI, r3
+ 318              	@ 0 "" 2
+ 319              		.thumb
+ 320 000e B0FA80F0 		clz	r0, r0
+ 321 0012 4009     		lsrs	r0, r0, #5
+ 322 0014 7047     		bx	lr
+ 323              		.size	sdGetWouldBlock, .-sdGetWouldBlock
+ 324              		.section	.rodata.vmt,"a",%progbits
+ 325              		.align	2
+ 326              		.set	.LANCHOR0,. + 0
+ 327              		.type	vmt, %object
+ 328              		.size	vmt, 32
+ 329              	vmt:
+ 330 0000 00000000 		.word	write
+ 331 0004 00000000 		.word	read
+ 332 0008 00000000 		.word	put
+ 333 000c 00000000 		.word	get
+ 334 0010 00000000 		.word	putt
+ 335 0014 00000000 		.word	gett
+ 336 0018 00000000 		.word	writet
+ 337 001c 00000000 		.word	readt
+ 338              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccg1GAAc.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 serial.c
+     /tmp/ccg1GAAc.s:16     .text.readt:0000000000000000 $t
+     /tmp/ccg1GAAc.s:20     .text.readt:0000000000000000 readt
+     /tmp/ccg1GAAc.s:28     .text.read:0000000000000000 $t
+     /tmp/ccg1GAAc.s:32     .text.read:0000000000000000 read
+     /tmp/ccg1GAAc.s:41     .text.writet:0000000000000000 $t
+     /tmp/ccg1GAAc.s:45     .text.writet:0000000000000000 writet
+     /tmp/ccg1GAAc.s:53     .text.write:0000000000000000 $t
+     /tmp/ccg1GAAc.s:57     .text.write:0000000000000000 write
+     /tmp/ccg1GAAc.s:66     .text.gett:0000000000000000 $t
+     /tmp/ccg1GAAc.s:70     .text.gett:0000000000000000 gett
+     /tmp/ccg1GAAc.s:78     .text.get:0000000000000000 $t
+     /tmp/ccg1GAAc.s:82     .text.get:0000000000000000 get
+     /tmp/ccg1GAAc.s:91     .text.putt:0000000000000000 $t
+     /tmp/ccg1GAAc.s:95     .text.putt:0000000000000000 putt
+     /tmp/ccg1GAAc.s:103    .text.put:0000000000000000 $t
+     /tmp/ccg1GAAc.s:107    .text.put:0000000000000000 put
+     /tmp/ccg1GAAc.s:116    .text.sdInit:0000000000000000 $t
+     /tmp/ccg1GAAc.s:121    .text.sdInit:0000000000000000 sdInit
+     /tmp/ccg1GAAc.s:128    .text.sdObjectInit:0000000000000000 $t
+     /tmp/ccg1GAAc.s:133    .text.sdObjectInit:0000000000000000 sdObjectInit
+     /tmp/ccg1GAAc.s:163    .text.sdObjectInit:0000000000000040 $d
+     /tmp/ccg1GAAc.s:166    .text.sdStart:0000000000000000 $t
+     /tmp/ccg1GAAc.s:171    .text.sdStart:0000000000000000 sdStart
+     /tmp/ccg1GAAc.s:192    .text.sdStop:0000000000000000 $t
+     /tmp/ccg1GAAc.s:197    .text.sdStop:0000000000000000 sdStop
+     /tmp/ccg1GAAc.s:223    .text.sdIncomingDataI:0000000000000000 $t
+     /tmp/ccg1GAAc.s:228    .text.sdIncomingDataI:0000000000000000 sdIncomingDataI
+     /tmp/ccg1GAAc.s:253    .text.sdRequestDataI:0000000000000000 $t
+     /tmp/ccg1GAAc.s:258    .text.sdRequestDataI:0000000000000000 sdRequestDataI
+     /tmp/ccg1GAAc.s:275    .text.sdPutWouldBlock:0000000000000000 $t
+     /tmp/ccg1GAAc.s:280    .text.sdPutWouldBlock:0000000000000000 sdPutWouldBlock
+     /tmp/ccg1GAAc.s:300    .text.sdGetWouldBlock:0000000000000000 $t
+     /tmp/ccg1GAAc.s:305    .text.sdGetWouldBlock:0000000000000000 sdGetWouldBlock
+     /tmp/ccg1GAAc.s:325    .rodata.vmt:0000000000000000 $d
+     /tmp/ccg1GAAc.s:329    .rodata.vmt:0000000000000000 vmt
+
+UNDEFINED SYMBOLS
+chIQReadTimeout
+chOQWriteTimeout
+chIQGetTimeout
+chOQPutTimeout
+sd_lld_init
+chIQInit
+chOQInit
+sd_lld_start
+sd_lld_stop
+chOQResetI
+chIQResetI
+chSchRescheduleS
+chEvtBroadcastFlagsI
+chIQPutI
+chOQGetI

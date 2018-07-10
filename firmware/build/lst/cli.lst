@@ -1,0 +1,352 @@
+ARM GAS  /tmp/ccFGEbnC.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cli.cpp"
+  15              		.section	.text._ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	_ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc, %function
+  20              	_ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc:
+  21              		@ Volatile: function does not return.
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 08B5     		push	{r3, lr}
+  25 0002 0948     		ldr	r0, .L4
+  26 0004 FFF7FEFF 		bl	lowsyslog
+  27 0008 42F21070 		movw	r0, #10000
+  28 000c FFF7FEFF 		bl	usleep
+  29              	@ 343 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmInstr.h" 1
+  30 0010 BFF34F8F 		dsb
+  31              	@ 0 "" 2
+  32              		.thumb
+  33 0014 0549     		ldr	r1, .L4+4
+  34 0016 064B     		ldr	r3, .L4+8
+  35 0018 CA68     		ldr	r2, [r1, #12]
+  36 001a 02F4E062 		and	r2, r2, #1792
+  37 001e 1343     		orrs	r3, r3, r2
+  38 0020 CB60     		str	r3, [r1, #12]
+  39              	@ 343 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmInstr.h" 1
+  40 0022 BFF34F8F 		dsb
+  41              	@ 0 "" 2
+  42              		.thumb
+  43              	.L2:
+  44 0026 FEE7     		b	.L2
+  45              	.L5:
+  46              		.align	2
+  47              	.L4:
+  48 0028 00000000 		.word	.LC0
+  49 002c 00ED00E0 		.word	-536810240
+  50 0030 0400FA05 		.word	100270084
+  51              		.size	_ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc, .-_ZN3cli12_GLOBAL__N_19cmd_res
+  52              		.section	.text._ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc,"ax",%progbits
+  53              		.align	1
+  54              		.thumb
+  55              		.thumb_func
+  56              		.type	_ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc, %function
+  57              	_ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc:
+ARM GAS  /tmp/ccFGEbnC.s 			page 2
+
+
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+  61 0000 0846     		mov	r0, r1
+  62 0002 1146     		mov	r1, r2
+  63 0004 FFF7FEBF 		b	_ZN13zubax_chibios6config17executeCliCommandEiPPc
+  64              		.size	_ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc, .-_ZN3cli12_GLOBAL__N_17cmd_cfgEP
+  65              		.section	.text._ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDri
+  66              		.align	1
+  67              		.thumb
+  68              		.thumb_func
+  69              		.type	_ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_c
+  70              	_ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_clES6_S6
+  71              		@ args = 0, pretend = 0, frame = 128
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73 0000 10B5     		push	{r4, lr}
+  74 0002 A0B0     		sub	sp, sp, #128
+  75 0004 8022     		movs	r2, #128
+  76 0006 0C46     		mov	r4, r1
+  77 0008 0C30     		adds	r0, r0, #12
+  78 000a 6946     		mov	r1, sp
+  79 000c 0023     		movs	r3, #0
+  80 000e FFF7FEFF 		bl	chIQReadTimeout
+  81 0012 0246     		mov	r2, r0
+  82 0014 30B1     		cbz	r0, .L7
+  83 0016 04F13000 		add	r0, r4, #48
+  84 001a 6946     		mov	r1, sp
+  85 001c 4FF0FF33 		mov	r3, #-1
+  86 0020 FFF7FEFF 		bl	chOQWriteTimeout
+  87              	.L7:
+  88 0024 20B0     		add	sp, sp, #128
+  89              		@ sp needed
+  90 0026 10BD     		pop	{r4, pc}
+  91              		.size	_ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_c
+  92              		.section	.text._ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc,"ax",%progbits
+  93              		.align	1
+  94              		.thumb
+  95              		.thumb_func
+  96              		.type	_ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc, %function
+  97              	_ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc:
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 0000 10B5     		push	{r4, lr}
+ 101 0002 0A48     		ldr	r0, .L14
+ 102 0004 FFF7FEFF 		bl	lowsyslog
+ 103 0008 FFF7FEFF 		bl	_ZN4gnss4stopEv
+ 104 000c 0120     		movs	r0, #1
+ 105 000e FFF7FEFF 		bl	sleep
+ 106 0012 FFF7FEFF 		bl	_ZN4gnss13getSerialPortEv
+ 107 0016 0446     		mov	r4, r0
+ 108              	.L13:
+ 109 0018 2046     		mov	r0, r4
+ 110 001a 0549     		ldr	r1, .L14+4
+ 111 001c FFF7FEFF 		bl	_ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_clES
+ 112 0020 0348     		ldr	r0, .L14+4
+ 113 0022 2146     		mov	r1, r4
+ 114 0024 FFF7FEFF 		bl	_ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_clES
+ARM GAS  /tmp/ccFGEbnC.s 			page 3
+
+
+ 115 0028 F6E7     		b	.L13
+ 116              	.L15:
+ 117 002a 00BF     		.align	2
+ 118              	.L14:
+ 119 002c 0A000000 		.word	.LC1
+ 120 0030 00000000 		.word	SD2
+ 121              		.size	_ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc, .-_ZN3cli12_GLOBAL__N_114
+ 122              		.section	.text._ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc,"ax",%progbits
+ 123              		.align	1
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	_ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc, %function
+ 127              	_ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc:
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130 0000 08B5     		push	{r3, lr}
+ 131 0002 0B48     		ldr	r0, .L18
+ 132 0004 FFF7FEFF 		bl	lowsyslog
+ 133 0008 0A48     		ldr	r0, .L18+4
+ 134 000a FFF7FEFF 		bl	usleep
+ 135 000e 0A48     		ldr	r0, .L18+8
+ 136 0010 FFF7FEFF 		bl	watchdogCreate
+ 137 0014 0028     		cmp	r0, #0
+ 138 0016 06DA     		bge	.L17
+ 139 0018 084A     		ldr	r2, .L18+12
+ 140 001a 094B     		ldr	r3, .L18+16
+ 141 001c 1A60     		str	r2, [r3]
+ 142 001e FFF7FEFF 		bl	sysHaltHook_
+ 143 0022 FFF7FEFF 		bl	port_halt
+ 144              	.L17:
+ 145 0026 BDE80840 		pop	{r3, lr}
+ 146 002a FFF7FEBF 		b	_ZN5board15enterBootloaderEv
+ 147              	.L19:
+ 148 002e 00BF     		.align	2
+ 149              	.L18:
+ 150 0030 38000000 		.word	.LC2
+ 151 0034 A0860100 		.word	100000
+ 152 0038 40420F00 		.word	1000000
+ 153 003c 53000000 		.word	.LC3
+ 154 0040 00000000 		.word	dbg_panic_msg
+ 155              		.size	_ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc, .-_ZN3cli12_GLOBAL__N_114
+ 156              		.section	.text._ZN3cli4initEv,"ax",%progbits
+ 157              		.align	1
+ 158              		.global	_ZN3cli4initEv
+ 159              		.thumb
+ 160              		.thumb_func
+ 161              		.type	_ZN3cli4initEv, %function
+ 162              	_ZN3cli4initEv:
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165 0000 10B5     		push	{r4, lr}
+ 166 0002 114C     		ldr	r4, .L23
+ 167 0004 A368     		ldr	r3, [r4, #8]
+ 168 0006 5A06     		lsls	r2, r3, #25
+ 169 0008 0AD4     		bmi	.L21
+ 170 000a 1048     		ldr	r0, .L23+4
+ 171 000c FFF7FEFF 		bl	usleep
+ARM GAS  /tmp/ccFGEbnC.s 			page 4
+
+
+ 172 0010 A368     		ldr	r3, [r4, #8]
+ 173 0012 5B06     		lsls	r3, r3, #25
+ 174 0014 04D4     		bmi	.L21
+ 175 0016 BDE81040 		pop	{r4, lr}
+ 176 001a 0D48     		ldr	r0, .L23+8
+ 177 001c FFF7FEBF 		b	lowsyslog
+ 178              	.L21:
+ 179 0020 FFF7FEFF 		bl	shellInit
+ 180 0024 0B48     		ldr	r0, .L23+12
+ 181 0026 0C49     		ldr	r1, .L23+16
+ 182 0028 4FF4D162 		mov	r2, #1672
+ 183 002c 0223     		movs	r3, #2
+ 184 002e FFF7FEFF 		bl	shellCreateStatic
+ 185 0032 40B9     		cbnz	r0, .L20
+ 186 0034 094A     		ldr	r2, .L23+20
+ 187 0036 0A4B     		ldr	r3, .L23+24
+ 188 0038 1A60     		str	r2, [r3]
+ 189 003a FFF7FEFF 		bl	sysHaltHook_
+ 190 003e BDE81040 		pop	{r4, lr}
+ 191 0042 FFF7FEBF 		b	port_halt
+ 192              	.L20:
+ 193 0046 10BD     		pop	{r4, pc}
+ 194              	.L24:
+ 195              		.align	2
+ 196              	.L23:
+ 197 0048 00140140 		.word	1073812480
+ 198 004c 20A10700 		.word	500000
+ 199 0050 89000000 		.word	.LC4
+ 200 0054 00000000 		.word	.LANCHOR0
+ 201 0058 00000000 		.word	.LANCHOR1
+ 202 005c BD000000 		.word	.LC5
+ 203 0060 00000000 		.word	dbg_panic_msg
+ 204              		.size	_ZN3cli4initEv, .-_ZN3cli4initEv
+ 205              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 206              	.LC0:
+ 207 0000 52455354 		.ascii	"RESTART\012\012\000"
+ 207      4152540A 
+ 207      0A00
+ 208              	.LC1:
+ 209 000a 0A524553 		.ascii	"\012RESET THE BOARD TO RESUME NORMAL OPERATION\012\012"
+ 209      45542054 
+ 209      48452042 
+ 209      4F415244 
+ 209      20544F20 
+ 210 0037 00       		.ascii	"\000"
+ 211              	.LC2:
+ 212 0038 0A454E54 		.ascii	"\012ENTERING THE BOOTLOADER\012\012\000"
+ 212      4552494E 
+ 212      47205448 
+ 212      4520424F 
+ 212      4F544C4F 
+ 213              	.LC3:
+ 214 0053 7A756261 		.ascii	"zubax_chibios//zubax_chibios/watchdog/watchdog.hpp:"
+ 214      785F6368 
+ 214      6962696F 
+ 214      732F2F7A 
+ 214      75626178 
+ARM GAS  /tmp/ccFGEbnC.s 			page 5
+
+
+ 215 0086 333000   		.ascii	"30\000"
+ 216              	.LC4:
+ 217 0089 436F6E73 		.ascii	"Console: RX pin is low, console will not be inited\012"
+ 217      6F6C653A 
+ 217      20525820 
+ 217      70696E20 
+ 217      6973206C 
+ 218 00bc 00       		.ascii	"\000"
+ 219              	.LC5:
+ 220 00bd 7372632F 		.ascii	"src/cli.cpp:116\000"
+ 220      636C692E 
+ 220      6370703A 
+ 220      31313600 
+ 221              	.LC6:
+ 222 00cd 63666700 		.ascii	"cfg\000"
+ 223              	.LC7:
+ 224 00d1 72657365 		.ascii	"reset\000"
+ 224      7400
+ 225              	.LC8:
+ 226 00d7 676E7373 		.ascii	"gnssbridge\000"
+ 226      62726964 
+ 226      676500
+ 227              	.LC9:
+ 228 00e2 626F6F74 		.ascii	"bootloader\000"
+ 228      6C6F6164 
+ 228      657200
+ 229              		.section	.rodata._ZN3cli12_GLOBAL__N_1L12HandlerTableE,"a",%progbits
+ 230              		.align	2
+ 231              		.type	_ZN3cli12_GLOBAL__N_1L12HandlerTableE, %object
+ 232              		.size	_ZN3cli12_GLOBAL__N_1L12HandlerTableE, 40
+ 233              	_ZN3cli12_GLOBAL__N_1L12HandlerTableE:
+ 234 0000 CD000000 		.word	.LC6
+ 235 0004 00000000 		.word	_ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc
+ 236 0008 D1000000 		.word	.LC7
+ 237 000c 00000000 		.word	_ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc
+ 238 0010 D7000000 		.word	.LC8
+ 239 0014 00000000 		.word	_ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc
+ 240 0018 E2000000 		.word	.LC9
+ 241 001c 00000000 		.word	_ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc
+ 242 0020 00000000 		.word	0
+ 243 0024 00000000 		.word	0
+ 244              		.section	.rodata._ZZN3cli4initEvE6config,"a",%progbits
+ 245              		.align	2
+ 246              		.set	.LANCHOR0,. + 0
+ 247              		.type	_ZZN3cli4initEvE6config, %object
+ 248              		.size	_ZZN3cli4initEvE6config, 8
+ 249              	_ZZN3cli4initEvE6config:
+ 250 0000 00000000 		.word	SD2
+ 251 0004 00000000 		.word	_ZN3cli12_GLOBAL__N_1L12HandlerTableE
+ 252              		.section	.bss._ZZN3cli4initEvE9_wa_shell,"aw",%nobits
+ 253              		.align	3
+ 254              		.set	.LANCHOR1,. + 0
+ 255              		.type	_ZZN3cli4initEvE9_wa_shell, %object
+ 256              		.size	_ZZN3cli4initEvE9_wa_shell, 1672
+ 257              	_ZZN3cli4initEvE9_wa_shell:
+ 258 0000 00000000 		.space	1672
+ 258      00000000 
+ARM GAS  /tmp/ccFGEbnC.s 			page 6
+
+
+ 258      00000000 
+ 258      00000000 
+ 258      00000000 
+ 259              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccFGEbnC.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 cli.cpp
+     /tmp/ccFGEbnC.s:16     .text._ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc:0000000000000000 $t
+     /tmp/ccFGEbnC.s:20     .text._ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc:0000000000000000 _ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc
+     /tmp/ccFGEbnC.s:48     .text._ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc:0000000000000028 $d
+     /tmp/ccFGEbnC.s:53     .text._ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc:0000000000000000 $t
+     /tmp/ccFGEbnC.s:57     .text._ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc:0000000000000000 _ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc
+     /tmp/ccFGEbnC.s:66     .text._ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_clES6_S6_.isra.0:0000000000000000 $t
+     /tmp/ccFGEbnC.s:70     .text._ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_clES6_S6_.isra.0:0000000000000000 _ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_clES6_S6_.isra.0
+     /tmp/ccFGEbnC.s:93     .text._ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc:0000000000000000 $t
+     /tmp/ccFGEbnC.s:97     .text._ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc:0000000000000000 _ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc
+     /tmp/ccFGEbnC.s:119    .text._ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc:000000000000002c $d
+     /tmp/ccFGEbnC.s:123    .text._ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc:0000000000000000 $t
+     /tmp/ccFGEbnC.s:127    .text._ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc:0000000000000000 _ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc
+     /tmp/ccFGEbnC.s:150    .text._ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc:0000000000000030 $d
+     /tmp/ccFGEbnC.s:157    .text._ZN3cli4initEv:0000000000000000 $t
+     /tmp/ccFGEbnC.s:162    .text._ZN3cli4initEv:0000000000000000 _ZN3cli4initEv
+     /tmp/ccFGEbnC.s:197    .text._ZN3cli4initEv:0000000000000048 $d
+     /tmp/ccFGEbnC.s:230    .rodata._ZN3cli12_GLOBAL__N_1L12HandlerTableE:0000000000000000 $d
+     /tmp/ccFGEbnC.s:233    .rodata._ZN3cli12_GLOBAL__N_1L12HandlerTableE:0000000000000000 _ZN3cli12_GLOBAL__N_1L12HandlerTableE
+     /tmp/ccFGEbnC.s:245    .rodata._ZZN3cli4initEvE6config:0000000000000000 $d
+     /tmp/ccFGEbnC.s:249    .rodata._ZZN3cli4initEvE6config:0000000000000000 _ZZN3cli4initEvE6config
+     /tmp/ccFGEbnC.s:253    .bss._ZZN3cli4initEvE9_wa_shell:0000000000000000 $d
+     /tmp/ccFGEbnC.s:257    .bss._ZZN3cli4initEvE9_wa_shell:0000000000000000 _ZZN3cli4initEvE9_wa_shell
+
+UNDEFINED SYMBOLS
+lowsyslog
+usleep
+_ZN13zubax_chibios6config17executeCliCommandEiPPc
+chIQReadTimeout
+chOQWriteTimeout
+_ZN4gnss4stopEv
+sleep
+_ZN4gnss13getSerialPortEv
+SD2
+watchdogCreate
+sysHaltHook_
+port_halt
+_ZN5board15enterBootloaderEv
+dbg_panic_msg
+shellInit
+shellCreateStatic

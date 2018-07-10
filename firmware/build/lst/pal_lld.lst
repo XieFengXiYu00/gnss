@@ -1,0 +1,170 @@
+ARM GAS  /tmp/ccPuO1iF.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"pal_lld.c"
+  15              		.section	.text._pal_lld_init,"ax",%progbits
+  16              		.align	1
+  17              		.global	_pal_lld_init
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_pal_lld_init, %function
+  21              	_pal_lld_init:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 174A     		ldr	r2, .L2
+  26 0002 9369     		ldr	r3, [r2, #24]
+  27 0004 43F07D03 		orr	r3, r3, #125
+  28 0008 9361     		str	r3, [r2, #24]
+  29 000a 0268     		ldr	r2, [r0]
+  30 000c 154B     		ldr	r3, .L2+4
+  31 000e DA60     		str	r2, [r3, #12]
+  32 0010 8268     		ldr	r2, [r0, #8]
+  33 0012 5A60     		str	r2, [r3, #4]
+  34 0014 4268     		ldr	r2, [r0, #4]
+  35 0016 1A60     		str	r2, [r3]
+  36 0018 C268     		ldr	r2, [r0, #12]
+  37 001a 03F58063 		add	r3, r3, #1024
+  38 001e DA60     		str	r2, [r3, #12]
+  39 0020 4269     		ldr	r2, [r0, #20]
+  40 0022 5A60     		str	r2, [r3, #4]
+  41 0024 0269     		ldr	r2, [r0, #16]
+  42 0026 1A60     		str	r2, [r3]
+  43 0028 8269     		ldr	r2, [r0, #24]
+  44 002a C3F80C24 		str	r2, [r3, #1036]
+  45 002e 026A     		ldr	r2, [r0, #32]
+  46 0030 C3F80424 		str	r2, [r3, #1028]
+  47 0034 C269     		ldr	r2, [r0, #28]
+  48 0036 C3F80024 		str	r2, [r3, #1024]
+  49 003a 426A     		ldr	r2, [r0, #36]
+  50 003c C3F80C28 		str	r2, [r3, #2060]
+  51 0040 C26A     		ldr	r2, [r0, #44]
+  52 0042 C3F80428 		str	r2, [r3, #2052]
+  53 0046 826A     		ldr	r2, [r0, #40]
+  54 0048 C3F80028 		str	r2, [r3, #2048]
+  55 004c 026B     		ldr	r2, [r0, #48]
+  56 004e C3F80C2C 		str	r2, [r3, #3084]
+  57 0052 826B     		ldr	r2, [r0, #56]
+ARM GAS  /tmp/ccPuO1iF.s 			page 2
+
+
+  58 0054 C3F8042C 		str	r2, [r3, #3076]
+  59 0058 426B     		ldr	r2, [r0, #52]
+  60 005a C3F8002C 		str	r2, [r3, #3072]
+  61 005e 7047     		bx	lr
+  62              	.L3:
+  63              		.align	2
+  64              	.L2:
+  65 0060 00100240 		.word	1073876992
+  66 0064 00080140 		.word	1073809408
+  67              		.size	_pal_lld_init, .-_pal_lld_init
+  68              		.section	.text._pal_lld_setgroupmode,"ax",%progbits
+  69              		.align	1
+  70              		.global	_pal_lld_setgroupmode
+  71              		.thumb
+  72              		.thumb_func
+  73              		.type	_pal_lld_setgroupmode, %function
+  74              	_pal_lld_setgroupmode:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 0000 032A     		cmp	r2, #3
+  78 0002 F0B5     		push	{r4, r5, r6, r7, lr}
+  79 0004 01D1     		bne	.L5
+  80 0006 0161     		str	r1, [r0, #16]
+  81 0008 02E0     		b	.L6
+  82              	.L5:
+  83 000a 042A     		cmp	r2, #4
+  84 000c 08BF     		it	eq
+  85 000e 4161     		streq	r1, [r0, #20]
+  86              	.L6:
+  87 0010 134B     		ldr	r3, .L14
+  88 0012 0826     		movs	r6, #8
+  89 0014 9F5C     		ldrb	r7, [r3, r2]	@ zero_extendqisi2
+  90 0016 0023     		movs	r3, #0
+  91 0018 1A46     		mov	r2, r3
+  92 001a 1C46     		mov	r4, r3
+  93 001c 1D46     		mov	r5, r3
+  94              	.L11:
+  95 001e 11F0800F 		tst	r1, #128
+  96 0022 4FEA0414 		lsl	r4, r4, #4
+  97 0026 4FEA0313 		lsl	r3, r3, #4
+  98 002a 4FEA0515 		lsl	r5, r5, #4
+  99 002e 4FEA0212 		lsl	r2, r2, #4
+ 100 0032 0CBF     		ite	eq
+ 101 0034 44F00F04 		orreq	r4, r4, #15
+ 102 0038 3B43     		orrne	r3, r3, r7
+ 103 003a 11F4004F 		tst	r1, #32768
+ 104 003e 0CBF     		ite	eq
+ 105 0040 45F00F05 		orreq	r5, r5, #15
+ 106 0044 3A43     		orrne	r2, r2, r7
+ 107 0046 013E     		subs	r6, r6, #1
+ 108 0048 4FEA4101 		lsl	r1, r1, #1
+ 109 004c E7D1     		bne	.L11
+ 110 004e 4168     		ldr	r1, [r0, #4]
+ 111 0050 0D40     		ands	r5, r5, r1
+ 112 0052 2A43     		orrs	r2, r2, r5
+ 113 0054 4260     		str	r2, [r0, #4]
+ 114 0056 0268     		ldr	r2, [r0]
+ARM GAS  /tmp/ccPuO1iF.s 			page 3
+
+
+ 115 0058 1440     		ands	r4, r4, r2
+ 116 005a 2343     		orrs	r3, r3, r4
+ 117 005c 0360     		str	r3, [r0]
+ 118 005e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 119              	.L15:
+ 120              		.align	2
+ 121              	.L14:
+ 122 0060 00000000 		.word	.LANCHOR0
+ 123              		.size	_pal_lld_setgroupmode, .-_pal_lld_setgroupmode
+ 124              		.section	.rodata.cfgtab.6039,"a",%progbits
+ 125              		.set	.LANCHOR0,. + 0
+ 126              		.type	cfgtab.6039, %object
+ 127              		.size	cfgtab.6039, 18
+ 128              	cfgtab.6039:
+ 129 0000 04       		.byte	4
+ 130 0001 02       		.byte	2
+ 131 0002 04       		.byte	4
+ 132 0003 08       		.byte	8
+ 133 0004 08       		.byte	8
+ 134 0005 00       		.byte	0
+ 135 0006 03       		.byte	3
+ 136 0007 07       		.byte	7
+ 137 0008 08       		.byte	8
+ 138 0009 08       		.byte	8
+ 139 000a 08       		.byte	8
+ 140 000b 08       		.byte	8
+ 141 000c 08       		.byte	8
+ 142 000d 08       		.byte	8
+ 143 000e 08       		.byte	8
+ 144 000f 08       		.byte	8
+ 145 0010 0B       		.byte	11
+ 146 0011 0F       		.byte	15
+ 147              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccPuO1iF.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 pal_lld.c
+     /tmp/ccPuO1iF.s:16     .text._pal_lld_init:0000000000000000 $t
+     /tmp/ccPuO1iF.s:21     .text._pal_lld_init:0000000000000000 _pal_lld_init
+     /tmp/ccPuO1iF.s:65     .text._pal_lld_init:0000000000000060 $d
+     /tmp/ccPuO1iF.s:69     .text._pal_lld_setgroupmode:0000000000000000 $t
+     /tmp/ccPuO1iF.s:74     .text._pal_lld_setgroupmode:0000000000000000 _pal_lld_setgroupmode
+     /tmp/ccPuO1iF.s:122    .text._pal_lld_setgroupmode:0000000000000060 $d
+     /tmp/ccPuO1iF.s:128    .rodata.cfgtab.6039:0000000000000000 cfgtab.6039
+
+NO UNDEFINED SYMBOLS

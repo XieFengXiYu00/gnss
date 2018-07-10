@@ -1,0 +1,127 @@
+ARM GAS  /tmp/ccGRkTmh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_can.cpp"
+  15              		.section	.text._ZNK6uavcan8CanFrame18priorityHigherThanERKS0_,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_, %function
+  21              	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 30B5     		push	{r4, r5, lr}
+  25 0002 0968     		ldr	r1, [r1]
+  26 0004 0468     		ldr	r4, [r0]
+  27 0006 C80F     		lsrs	r0, r1, #31
+  28 0008 E50F     		lsrs	r5, r4, #31
+  29 000a 8542     		cmp	r5, r0
+  30 000c 24F06042 		bic	r2, r4, #-536870912
+  31 0010 21F06043 		bic	r3, r1, #-536870912
+  32 0014 09D0     		beq	.L2
+  33 0016 05B1     		cbz	r5, .L3
+  34 0018 920C     		lsrs	r2, r2, #18
+  35              	.L3:
+  36 001a 00B1     		cbz	r0, .L4
+  37 001c 9B0C     		lsrs	r3, r3, #18
+  38              	.L4:
+  39 001e 9A42     		cmp	r2, r3
+  40 0020 0FD0     		beq	.L5
+  41 0022 34BF     		ite	cc
+  42 0024 0120     		movcc	r0, #1
+  43 0026 0020     		movcs	r0, #0
+  44 0028 30BD     		pop	{r4, r5, pc}
+  45              	.L2:
+  46 002a 9A42     		cmp	r2, r3
+  47 002c 05D1     		bne	.L6
+  48 002e C1F38070 		ubfx	r0, r1, #30, #1
+  49 0032 C4F38074 		ubfx	r4, r4, #30, #1
+  50 0036 8442     		cmp	r4, r0
+  51 0038 03D1     		bne	.L5
+  52              	.L6:
+  53 003a 9A42     		cmp	r2, r3
+  54 003c 2CBF     		ite	cs
+  55 003e 0020     		movcs	r0, #0
+  56 0040 0120     		movcc	r0, #1
+  57              	.L5:
+ARM GAS  /tmp/ccGRkTmh.s 			page 2
+
+
+  58 0042 30BD     		pop	{r4, r5, pc}
+  59              		.size	_ZNK6uavcan8CanFrame18priorityHigherThanERKS0_, .-_ZNK6uavcan8CanFrame18priorityHigherThanER
+  60              		.global	_ZN6uavcan8CanFrame10MaxDataLenE
+  61              		.global	_ZN6uavcan8CanFrame7FlagERRE
+  62              		.global	_ZN6uavcan8CanFrame7FlagRTRE
+  63              		.global	_ZN6uavcan8CanFrame7FlagEFFE
+  64              		.global	_ZN6uavcan8CanFrame9MaskExtIDE
+  65              		.global	_ZN6uavcan8CanFrame9MaskStdIDE
+  66              		.section	.rodata._ZN6uavcan8CanFrame9MaskStdIDE,"a",%progbits
+  67              		.align	2
+  68              		.type	_ZN6uavcan8CanFrame9MaskStdIDE, %object
+  69              		.size	_ZN6uavcan8CanFrame9MaskStdIDE, 4
+  70              	_ZN6uavcan8CanFrame9MaskStdIDE:
+  71 0000 FF070000 		.word	2047
+  72              		.section	.rodata._ZN6uavcan8CanFrame7FlagERRE,"a",%progbits
+  73              		.align	2
+  74              		.type	_ZN6uavcan8CanFrame7FlagERRE, %object
+  75              		.size	_ZN6uavcan8CanFrame7FlagERRE, 4
+  76              	_ZN6uavcan8CanFrame7FlagERRE:
+  77 0000 00000020 		.word	536870912
+  78              		.section	.rodata._ZN6uavcan8CanFrame7FlagRTRE,"a",%progbits
+  79              		.align	2
+  80              		.type	_ZN6uavcan8CanFrame7FlagRTRE, %object
+  81              		.size	_ZN6uavcan8CanFrame7FlagRTRE, 4
+  82              	_ZN6uavcan8CanFrame7FlagRTRE:
+  83 0000 00000040 		.word	1073741824
+  84              		.section	.rodata._ZN6uavcan8CanFrame10MaxDataLenE,"a",%progbits
+  85              		.type	_ZN6uavcan8CanFrame10MaxDataLenE, %object
+  86              		.size	_ZN6uavcan8CanFrame10MaxDataLenE, 1
+  87              	_ZN6uavcan8CanFrame10MaxDataLenE:
+  88 0000 08       		.byte	8
+  89              		.section	.rodata._ZN6uavcan8CanFrame9MaskExtIDE,"a",%progbits
+  90              		.align	2
+  91              		.type	_ZN6uavcan8CanFrame9MaskExtIDE, %object
+  92              		.size	_ZN6uavcan8CanFrame9MaskExtIDE, 4
+  93              	_ZN6uavcan8CanFrame9MaskExtIDE:
+  94 0000 FFFFFF1F 		.word	536870911
+  95              		.section	.rodata._ZN6uavcan8CanFrame7FlagEFFE,"a",%progbits
+  96              		.align	2
+  97              		.type	_ZN6uavcan8CanFrame7FlagEFFE, %object
+  98              		.size	_ZN6uavcan8CanFrame7FlagEFFE, 4
+  99              	_ZN6uavcan8CanFrame7FlagEFFE:
+ 100 0000 00000080 		.word	-2147483648
+ 101              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccGRkTmh.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_can.cpp
+     /tmp/ccGRkTmh.s:16     .text._ZNK6uavcan8CanFrame18priorityHigherThanERKS0_:0000000000000000 $t
+     /tmp/ccGRkTmh.s:21     .text._ZNK6uavcan8CanFrame18priorityHigherThanERKS0_:0000000000000000 _ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+     /tmp/ccGRkTmh.s:87     .rodata._ZN6uavcan8CanFrame10MaxDataLenE:0000000000000000 _ZN6uavcan8CanFrame10MaxDataLenE
+     /tmp/ccGRkTmh.s:76     .rodata._ZN6uavcan8CanFrame7FlagERRE:0000000000000000 _ZN6uavcan8CanFrame7FlagERRE
+     /tmp/ccGRkTmh.s:82     .rodata._ZN6uavcan8CanFrame7FlagRTRE:0000000000000000 _ZN6uavcan8CanFrame7FlagRTRE
+     /tmp/ccGRkTmh.s:99     .rodata._ZN6uavcan8CanFrame7FlagEFFE:0000000000000000 _ZN6uavcan8CanFrame7FlagEFFE
+     /tmp/ccGRkTmh.s:93     .rodata._ZN6uavcan8CanFrame9MaskExtIDE:0000000000000000 _ZN6uavcan8CanFrame9MaskExtIDE
+     /tmp/ccGRkTmh.s:70     .rodata._ZN6uavcan8CanFrame9MaskStdIDE:0000000000000000 _ZN6uavcan8CanFrame9MaskStdIDE
+     /tmp/ccGRkTmh.s:67     .rodata._ZN6uavcan8CanFrame9MaskStdIDE:0000000000000000 $d
+     /tmp/ccGRkTmh.s:73     .rodata._ZN6uavcan8CanFrame7FlagERRE:0000000000000000 $d
+     /tmp/ccGRkTmh.s:79     .rodata._ZN6uavcan8CanFrame7FlagRTRE:0000000000000000 $d
+     /tmp/ccGRkTmh.s:90     .rodata._ZN6uavcan8CanFrame9MaskExtIDE:0000000000000000 $d
+     /tmp/ccGRkTmh.s:96     .rodata._ZN6uavcan8CanFrame7FlagEFFE:0000000000000000 $d
+
+NO UNDEFINED SYMBOLS

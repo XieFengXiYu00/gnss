@@ -1,0 +1,76 @@
+ARM GAS  /tmp/ccEHCzD8.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_bit_array_copy.cpp"
+  15              		.section	.text._ZN6uavcan12bitarrayCopyEPKhjjPhj,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN6uavcan12bitarrayCopyEPKhjjPhj
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan12bitarrayCopyEPKhjjPhj, %function
+  21              	_ZN6uavcan12bitarrayCopyEPKhjjPhj:
+  22              		@ args = 4, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  25 0004 069F     		ldr	r7, [sp, #24]
+  26 0006 0A44     		add	r2, r2, r1
+  27              	.L2:
+  28 0008 8A42     		cmp	r2, r1
+  29 000a 26D0     		beq	.L5
+  30 000c 07F0070C 		and	ip, r7, #7
+  31 0010 01F00708 		and	r8, r1, #7
+  32 0014 C445     		cmp	ip, r8
+  33 0016 6646     		mov	r6, ip
+  34 0018 38BF     		it	cc
+  35 001a 4646     		movcc	r6, r8
+  36 001c C6F10804 		rsb	r4, r6, #8
+  37 0020 561A     		subs	r6, r2, r1
+  38 0022 A642     		cmp	r6, r4
+  39 0024 28BF     		it	cs
+  40 0026 2646     		movcs	r6, r4
+  41 0028 CD08     		lsrs	r5, r1, #3
+  42 002a 455D     		ldrb	r5, [r0, r5]	@ zero_extendqisi2
+  43 002c 4FF47F44 		mov	r4, #65280
+  44 0030 F440     		lsrs	r4, r4, r6
+  45 0032 4FEAD70E 		lsr	lr, r7, #3
+  46 0036 E4B2     		uxtb	r4, r4
+  47 0038 05FA08F5 		lsl	r5, r5, r8
+  48 003c 44FA0CF4 		asr	r4, r4, ip
+  49 0040 45FA0CF5 		asr	r5, r5, ip
+  50 0044 13F80EC0 		ldrb	ip, [r3, lr]	@ zero_extendqisi2
+  51 0048 2540     		ands	r5, r5, r4
+  52 004a 2CEA0404 		bic	r4, ip, r4
+  53 004e 2543     		orrs	r5, r5, r4
+  54 0050 03F80E50 		strb	r5, [r3, lr]
+  55 0054 3144     		add	r1, r1, r6
+  56 0056 3744     		add	r7, r7, r6
+  57 0058 D6E7     		b	.L2
+ARM GAS  /tmp/ccEHCzD8.s 			page 2
+
+
+  58              	.L5:
+  59 005a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  60              		.size	_ZN6uavcan12bitarrayCopyEPKhjjPhj, .-_ZN6uavcan12bitarrayCopyEPKhjjPhj
+  61              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccEHCzD8.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_bit_array_copy.cpp
+     /tmp/ccEHCzD8.s:16     .text._ZN6uavcan12bitarrayCopyEPKhjjPhj:0000000000000000 $t
+     /tmp/ccEHCzD8.s:21     .text._ZN6uavcan12bitarrayCopyEPKhjjPhj:0000000000000000 _ZN6uavcan12bitarrayCopyEPKhjjPhj
+
+NO UNDEFINED SYMBOLS

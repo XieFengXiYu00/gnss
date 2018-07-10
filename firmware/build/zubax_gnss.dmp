@@ -1,0 +1,1744 @@
+
+build/zubax_gnss.elf:     file format elf32-littlearm
+build/zubax_gnss.elf
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x08004c51
+
+Program Header:
+0x70000001 off    0x0002d610 vaddr 0x0801d610 paddr 0x0801d610 align 2**2
+         filesz 0x00000008 memsz 0x00000008 flags r--
+    LOAD off    0x00010000 vaddr 0x08000000 paddr 0x08000000 align 2**16
+         filesz 0x0001d618 memsz 0x0001d618 flags rwx
+    LOAD off    0x00030800 vaddr 0x20000800 paddr 0x0801d618 align 2**16
+         filesz 0x00000948 memsz 0x00000948 flags rw-
+    LOAD off    0x00040000 vaddr 0x20000000 paddr 0x20000000 align 2**16
+         filesz 0x00000000 memsz 0x000091f0 flags rw-
+private flags = 5000200: [Version5 EABI] [soft-float ABI]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 startup       00000150  08000000  08000000  00010000  2**4
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 constructors  00000034  08000150  08000150  00010150  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .text         0001d480  08000190  08000190  00010190  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .ARM.exidx    00000008  0801d610  0801d610  0002d610  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .textalign    00000000  0801d618  0801d618  00031148  2**0
+                  CONTENTS
+  5 .stacks       00000800  20000000  20000000  00040000  2**0
+                  ALLOC
+  6 .data         00000920  20000800  0801d618  00030800  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .noinit       00000008  20001120  0801df38  00031120  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  8 .app_descriptor 00000020  20001128  0801df40  00031128  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .bss          000080a8  20001148  20001148  00040000  2**3
+                  ALLOC
+ 10 .comment      00000070  00000000  00000000  00031148  2**0
+                  CONTENTS, READONLY
+ 11 .ARM.attributes 00000031  00000000  00000000  000311b8  2**0
+                  CONTENTS, READONLY
+ 12 .debug_info   0001d48c  00000000  00000000  000311e9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_abbrev 00006593  00000000  00000000  0004e675  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_aranges 00000c80  00000000  00000000  00054c08  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_ranges 00000e18  00000000  00000000  00055888  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_line   00008997  00000000  00000000  000566a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .debug_str    000026d9  00000000  00000000  0005f037  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 18 .debug_frame  000014b8  00000000  00000000  00061710  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 19 .debug_loc    00014aa2  00000000  00000000  00062bc8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+08000000 l    d  startup	00000000 startup
+08000150 l    d  constructors	00000000 constructors
+08000190 l    d  .text	00000000 .text
+0801d610 l    d  .ARM.exidx	00000000 .ARM.exidx
+0801d618 l    d  .textalign	00000000 .textalign
+20000000 l    d  .stacks	00000000 .stacks
+20000800 l    d  .data	00000000 .data
+20001120 l    d  .noinit	00000000 .noinit
+20001128 l    d  .app_descriptor	00000000 .app_descriptor
+20001148 l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    df *ABS*	00000000 vectors.c
+00000000 l    df *ABS*	00000000 gnss.cpp
+08007140 l     F .text	00000008 _ZN4gnss12_GLOBAL__N_110GnssThread4stopEv
+08007180 l     F .text	00000002 _ZN4gnss12_GLOBAL__N_18PlatformD2Ev
+08007180 l     F .text	00000002 _ZN4gnss12_GLOBAL__N_18PlatformD1Ev
+080071c0 l     F .text	0000000c _ZN4gnss12_GLOBAL__N_18PlatformD0Ev
+080071f0 l     F .text	00000012 _ZNK4gnss12_GLOBAL__N_18Platform11getRealUSecEv
+08007210 l     F .text	00000012 _ZNK4gnss12_GLOBAL__N_18Platform16getMonotonicUSecEv
+08007230 l     F .text	00000030 _ZN4gnss12_GLOBAL__N_18Platform15portSetBaudRateEj
+08007260 l     F .text	00000018 _ZN4gnss12_GLOBAL__N_18Platform8portReadEPhjj
+08007280 l     F .text	00000010 _ZN4gnss12_GLOBAL__N_18Platform9portWriteEPKhj
+08007290 l     F .text	00000034 _ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN4gnss12_GLOBAL__N_110GnssThreadEKFvRKN5ublox3FixEEEPS5_St12_PlaceholderILi1EEEEE10_M_managerERSt9_Any_dataRKSJ_St18_Manager_operation
+080072d0 l     F .text	00000030 _ZNSt14_Function_base13_Base_managerIZN4gnss12_GLOBAL__N_110GnssThread4mainEvEUlRKN5ublox9AuxiliaryEE_E10_M_managerERSt9_Any_dataRKSA_St18_Manager_operation
+08007300 l     F .text	000000c0 _ZN6uavcan8areCloseIffEEbRKT_RKT0_.isra.24
+080073c0 l     F .text	00000022 _ZNSt17_Function_handlerIFvRKN5ublox3FixEESt5_BindIFSt7_Mem_fnIMN4gnss12_GLOBAL__N_110GnssThreadEKFvS3_EEPS9_St12_PlaceholderILi1EEEEE9_M_invokeERKSt9_Any_dataS3_
+080073f0 l     F .text	0000005c _ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.79
+08007450 l     F .text	0000001e _ZN6uavcan11IntegerSpecILj4ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.96
+08007470 l     F .text	00000040 _ZNK6uavcan5ArrayINS_9FloatSpecILj16ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj9EE10encodeImplERNS_11ScalarCodecENS_25TailArrayOptimizationModeENS_11BooleanTypeILb1EEE.isra.98
+080074b0 l     F .text	00000034 _ZNK4gnss12_GLOBAL__N_110GnssThread11pauseOneSecEv
+08007510 l     F .text	00000038 _ZN4gnss12_GLOBAL__N_110GnssThreadD2Ev
+08007510 l     F .text	00000038 _ZN4gnss12_GLOBAL__N_110GnssThreadD1Ev
+08007af0 l     F .text	000000ec _ZNSt17_Function_handlerIFvRKN5ublox9AuxiliaryEEZN4gnss12_GLOBAL__N_110GnssThread4mainEvEUlS3_E_E9_M_invokeERKSt9_Any_dataS3_
+08000190 l     F .text	000001ec _ZN4gnss12_GLOBAL__N_110GnssThread4mainEv
+08008290 l     F .text	00000058 _ZNK4gnss12_GLOBAL__N_110GnssThread9handleFixERKN5ublox3FixE
+080080c0 l     F .text	000001c8 _ZN4gnss12_GLOBAL__N_110publishFixERKN5ublox3FixERKNS1_14GpsLeapSecondsE.isra.107
+08000380 l     F .text	0000045c _GLOBAL__sub_I__ZN4gnss4initEv
+0801b890 l     O .text	00000024 _ZTVN4gnss12_GLOBAL__N_18PlatformE
+20002604 l     O .bss	00000014 _ZN4gnss12_GLOBAL__N_1L34param_gnss_warn_min_fix_dimensionsE
+20002618 l     O .bss	00000001 _ZZN4gnss12_GLOBAL__N_110publishFixERKN5ublox3FixERKNS1_14GpsLeapSecondsEE18_executed_once_116
+2000261c l     O .bss	0000000c _ZZN4gnss12_GLOBAL__N_18Platform15portSetBaudRateEjE10serial_cfg
+20002628 l     O .bss	00000001 _ZZN4gnss12_GLOBAL__N_116publishAuxiliaryERKN5ublox3FixERKNS1_9AuxiliaryEE18_executed_once_146
+2000262c l     O .bss	00000020 _ZZN4gnss12_GLOBAL__N_116publishAuxiliaryERKN5ublox3FixERKNS1_9AuxiliaryEE3msg
+20002650 l     O .bss	000015e8 _ZN4gnss12_GLOBAL__N_111gnss_threadE
+20003c38 l     O .bss	00000098 _ZZN4gnss12_GLOBAL__N_110publishFixERKN5ublox3FixERKNS1_14GpsLeapSecondsEE3msg
+20003cd0 l     O .bss	00000004 _ZGVZN4gnss12_GLOBAL__N_110publishFixERKN5ublox3FixERKNS1_14GpsLeapSecondsEE3msg
+20003cd4 l     O .bss	00000014 _ZN4gnss12_GLOBAL__N_1L26param_gnss_fix_period_usecE
+0801b8c0 l     O .text	00000014 _ZTVN4gnss12_GLOBAL__N_110GnssThreadE
+20003ce8 l     O .bss	00000004 _ZGVZN4gnss12_GLOBAL__N_116publishAuxiliaryERKN5ublox3FixERKNS1_9AuxiliaryEE3msg
+20003cec l     O .bss	00000014 _ZN4gnss12_GLOBAL__N_1L26param_gnss_aux_period_usecE
+20003d00 l     O .bss	00000014 _ZN4gnss12_GLOBAL__N_1L19param_gnss_fix_prioE
+20003d18 l     O .bss	00000028 _ZZN4gnss12_GLOBAL__N_110publishFixERKN5ublox3FixERKNS1_14GpsLeapSecondsEE3pub
+20003d40 l     O .bss	00000028 _ZZN4gnss12_GLOBAL__N_116publishAuxiliaryERKN5ublox3FixERKNS1_9AuxiliaryEE3pub
+20003d68 l     O .bss	00000004 _ZGVZN4gnss12_GLOBAL__N_110publishFixERKN5ublox3FixERKNS1_14GpsLeapSecondsEE3pub
+20003d6c l     O .bss	00000014 _ZN4gnss12_GLOBAL__N_1L29param_gnss_warn_min_sats_usedE
+20003d80 l     O .bss	00000014 _ZN4gnss12_GLOBAL__N_1L19param_gnss_aux_prioE
+20003d94 l     O .bss	00000004 _ZGVZN4gnss12_GLOBAL__N_116publishAuxiliaryERKN5ublox3FixERKNS1_9AuxiliaryEE3pub
+00000000 l    df *ABS*	00000000 magnetometer.cpp
+08008320 l     F .text	00000002 _ZN12magnetometer12_GLOBAL__N_19MagThreadD2Ev
+08008320 l     F .text	00000002 _ZN12magnetometer12_GLOBAL__N_19MagThreadD1Ev
+08008370 l     F .text	0000005c _ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.35
+080083d0 l     F .text	0000007c _ZN12magnetometer12_GLOBAL__N_114tryReadRawDataEPs
+08008450 l     F .text	00000098 _ZN12magnetometer12_GLOBAL__N_115writeCraCrbModeEhhh.constprop.48
+080084f0 l     F .text	000000a4 _ZN12magnetometer12_GLOBAL__N_111trySelfTestEb
+080086e0 l     F .text	000000c8 _ZN12magnetometer12_GLOBAL__N_17publishEPff
+080007e0 l     F .text	00000228 _ZN12magnetometer12_GLOBAL__N_19MagThread4mainEv
+08000a10 l     F .text	00000280 _GLOBAL__sub_I__ZN12magnetometer4initEv
+20003dbc l     O .bss	00000001 _ZZN12magnetometer12_GLOBAL__N_17publishEPffE17_executed_once_57
+20003dc0 l     O .bss	00000004 _ZGVZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub
+20003dc4 l     O .bss	00000014 _ZN12magnetometer12_GLOBAL__N_1L14param_varianceE
+20003dd8 l     O .bss	00000008 _ZN12magnetometer12_GLOBAL__N_1L21MaxZeroVectorDurationE
+0801bc90 l     O .text	00000014 _ZTVN12magnetometer12_GLOBAL__N_19MagThreadE
+20003de0 l     O .bss	00000698 _ZN12magnetometer12_GLOBAL__N_110mag_threadE
+20004478 l     O .bss	00000014 _ZN12magnetometer12_GLOBAL__N_1L17param_period_usecE
+20004490 l     O .bss	00000028 _ZZN12magnetometer12_GLOBAL__N_17publishEPffE7mag_pub
+200044b8 l     O .bss	00000014 _ZN12magnetometer12_GLOBAL__N_1L10param_prioE
+00000000 l    df *ABS*	00000000 node.cpp
+08008820 l     F .text	00000002 _ZN4node12_GLOBAL__N_121RestartRequestHandlerD2Ev
+08008820 l     F .text	00000002 _ZN4node12_GLOBAL__N_121RestartRequestHandlerD1Ev
+08008830 l     F .text	00000002 _ZN4node12_GLOBAL__N_112ParamManagerD2Ev
+08008830 l     F .text	00000002 _ZN4node12_GLOBAL__N_112ParamManagerD1Ev
+08008840 l     F .text	00000002 _ZN4node12_GLOBAL__N_15._345D2Ev
+08008840 l     F .text	00000002 _ZN4node12_GLOBAL__N_15._345D1Ev
+080089f0 l     F .text	0000000c _ZN4node12_GLOBAL__N_121RestartRequestHandlerD0Ev
+08008a00 l     F .text	0000000c _ZN4node12_GLOBAL__N_112ParamManagerD0Ev
+08008bd0 l     F .text	0000001c _ZN4node12_GLOBAL__N_121RestartRequestHandler20handleRestartRequestEN6uavcan6NodeIDE
+08008c10 l     F .text	00000004 _ZN4node12_GLOBAL__N_112ParamManager14eraseAllParamsEv
+08008c20 l     F .text	00000004 _ZN4node12_GLOBAL__N_112ParamManager13saveAllParamsEv
+08008c30 l     F .text	00000044 _ZN4node12_GLOBAL__N_112ParamManager16assignParamValueERKN6uavcan5ArrayINS2_11IntegerSpecILj8ELNS2_10SignednessE0ELNS2_8CastModeE0EEELNS2_9ArrayModeE1ELj92EEERKNS2_8protocol5param6Value_ILi0EEE
+08008cb0 l     F .text	00000010 _ZN6uavcan19TransferPerfCounter8addErrorEv.isra.6
+08008cc0 l     F .text	0000002a _ZNK4node12_GLOBAL__N_112ParamManager7convertEf14ConfigDataTypeRN6uavcan8protocol5param13NumericValue_ILi0EEE.isra.33
+08008cf0 l     F .text	0000000c _ZNK13zubax_chibios6config9_internal5ParamIjE3getEv.isra.54
+08008dc0 l     F .text	00000022 _ZN6uavcan11IntegerSpecILj7ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.203
+08008df0 l     F .text	00000018 _ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.204
+08008e10 l     F .text	0000002c _ZN6uavcan11IntegerSpecILj48ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEyRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.323
+08008e40 l     F .text	000000bc _ZNK4node12_GLOBAL__N_112ParamManager7convertEf14ConfigDataTypeRN6uavcan8protocol5param6Value_ILi0EEE.isra.59
+08008f00 l     F .text	00000038 _ZNK4node12_GLOBAL__N_112ParamManager14readParamValueERKN6uavcan5ArrayINS2_11IntegerSpecILj8ELNS2_10SignednessE0ELNS2_8CastModeE0EEELNS2_9ArrayModeE1ELj92EEERNS2_8protocol5param6Value_ILi0EEE
+08008f40 l     F .text	00000044 _ZNK4node12_GLOBAL__N_112ParamManager22readParamDefaultMaxMinERKN6uavcan5ArrayINS2_11IntegerSpecILj8ELNS2_10SignednessE0ELNS2_8CastModeE0EEELNS2_9ArrayModeE1ELj92EEERNS2_8protocol5param6Value_ILi0EEERNSD_13NumericValue_ILi0EEESJ_
+08008f90 l     F .text	0000003e _ZNK6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj80EE10encodeImplERNS_11ScalarCodecENS_25TailArrayOptimizationModeENS_11BooleanTypeILb1EEE.isra.329
+080090e0 l     F .text	00000018 _ZN6uavcan13ServiceServerINS_8protocol16GetDataTypeInfo_ENS_12MethodBinderIPNS_20DataTypeInfoProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE.part.332
+08009100 l     F .text	00000018 _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE.part.335
+08009120 l     F .text	00000018 _ZN6uavcan13ServiceServerINS_8protocol4file20BeginFirmwareUpdate_EPFvRKNS_21ReceivedDataStructureINS3_8Request_ILi0EEEEERNS3_9Response_ILi0EEEEE24handleReceivedDataStructERS7_.part.339
+08009140 l     F .text	00000018 _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE.part.341
+08009160 l     F .text	00000018 _ZN6uavcan13ServiceServerINS_8protocol5param7GetSet_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS8_EE.part.352
+08009180 l     F .text	00000018 _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE.part.355
+080091a0 l     F .text	00000018 _ZN6uavcan13ServiceServerINS_8protocol18GetTransportStats_ENS_12MethodBinderIPKNS_22TransportStatsProviderEMS4_KFvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS8_EE.part.362
+080091c0 l     F .text	00000018 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE.part.372
+08009c80 l     F .text	0000008c _ZN4node12_GLOBAL__N_116getTimeSyncSlaveEv
+08009d10 l     F .text	0000003a _ZN4node12_GLOBAL__N_123isLocalUtcSourceEnabledEv
+08009da0 l     F .text	00000050 _ZN4node12_GLOBAL__N_132handleBeginFirmwareUpdateRequestERKN6uavcan21ReceivedDataStructureINS1_8protocol4file20BeginFirmwareUpdate_8Request_ILi0EEEEERNS5_9Response_ILi0EEE
+08009df0 l     F .text	0000007c _ZN4node12_GLOBAL__N_117getTimeSyncMasterEv.part.122
+08009e70 l     F .text	000000ec _ZNK4node12_GLOBAL__N_15._3458spinOnceEv
+0800a080 l     F .text	000000d0 _ZN4node12_GLOBAL__N_113configureNodeEv
+0800a9e0 l     F .text	0000002a _ZNK4node12_GLOBAL__N_112ParamManager19getParamNameByIndexEtRN6uavcan5ArrayINS2_11IntegerSpecILj8ELNS2_10SignednessE0ELNS2_8CastModeE0EEELNS2_9ArrayModeE1ELj92EEE
+0800ade0 l     F .text	0000004c _ZN4node12_GLOBAL__N_115publishTimeSyncERKN6uavcan10TimerEventE
+0800bb10 l     F .text	00000580 _ZNK4node12_GLOBAL__N_15._3454initEv
+08000c90 l     F .text	00000188 _ZN4node12_GLOBAL__N_15._3454mainEv
+0800cd40 l     F .text	00000056 _ZN6uavcan8protocol5param13NumericValue_ILi0EE6encodeERKS3_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.348
+08000e20 l     F .text	00000464 _GLOBAL__sub_I__ZN4node4LockC2Ev
+20004584 l     O .bss	00000004 _ZGVZN4node12_GLOBAL__N_117getTimeSyncMasterEvE6master
+0801c190 l     O .text	00000028 _ZTVN4node12_GLOBAL__N_112ParamManagerE
+20004588 l     O .bss	00000e50 _ZN4node12_GLOBAL__N_111node_threadE
+200053d8 l     O .bss	00000030 _ZZNK4node12_GLOBAL__N_15._3454initEvE9tsm_timer
+20005408 l     O .bss	00000068 _ZZN4node12_GLOBAL__N_116getTimeSyncSlaveEvE2ts
+20005470 l     O .bss	00000014 _ZN4node12_GLOBAL__N_1L22param_node_status_prioE
+2000082c l     O .data	00000004 _ZN4node12_GLOBAL__N_123restart_request_handlerE
+0801c1d0 l     O .text	00000014 _ZTVN4node12_GLOBAL__N_121RestartRequestHandlerE
+20005484 l     O .bss	00000006 _ZN4node12_GLOBAL__N_18comp_mgrE
+0801c1c0 l     O .text	00000010 _ZZN12uavcan_stm3213CanInitHelperILj32EE4initIZNK4node12_GLOBAL__N_15._34510initCanBusEvEUlvE_EEiT_RmE16StandardBitRates
+2000548c l     O .bss	00000004 _ZGVZN4node12_GLOBAL__N_128getBeginFirmwareUpdateServerEvE3srv
+20000830 l     O .data	00000004 _ZN4node12_GLOBAL__N_113param_managerE
+20005490 l     O .bss	00000070 _ZZN4node12_GLOBAL__N_128getBeginFirmwareUpdateServerEvE3srv
+20005500 l     O .bss	00000001 _ZN4node12_GLOBAL__N_123pending_restart_requestE
+20005508 l     O .bss	000000f8 _ZZN4node12_GLOBAL__N_114getParamServerEvE6server
+20005600 l     O .bss	000000f8 _ZZN4node12_GLOBAL__N_117getTimeSyncMasterEvE6master
+200056f8 l     O .bss	00000014 _ZN4node12_GLOBAL__N_1L35param_node_status_pub_interval_usecE
+2000570c l     O .bss	00000001 _ZN4node12_GLOBAL__N_17startedE
+20005710 l     O .bss	00000014 _ZN4node12_GLOBAL__N_1L20param_time_sync_prioE
+0801c580 l     O .text	00000014 _ZTVN4node12_GLOBAL__N_15._345E
+20005724 l     O .bss	00000004 _ZGVZNK4node12_GLOBAL__N_15._3454initEvE9tsm_timer
+20005728 l     O .bss	00000014 _ZN4node12_GLOBAL__N_1L27param_time_sync_period_usecE
+20005740 l     O .bss	00000930 _ZN4node12_GLOBAL__N_13canE
+20006070 l     O .bss	00000004 _ZGVZN4node7getNodeEvE4node
+20006074 l     O .bss	00000001 _ZZN4node12_GLOBAL__N_132handleBeginFirmwareUpdateRequestERKN6uavcan21ReceivedDataStructureINS1_8protocol4file20BeginFirmwareUpdate_8Request_ILi0EEEEERNS5_9Response_ILi0EEEE11in_progress
+20006078 l     O .bss	00000014 _ZN4node12_GLOBAL__N_1L13param_node_idE
+2000608c l     O .bss	00000001 _ZN4node12_GLOBAL__N_117local_utc_updatedE
+20006090 l     O .bss	00000014 _ZN4node12_GLOBAL__N_1L17param_can_bitrateE
+200060a4 l     O .bss	00000001 _ZN4node12_GLOBAL__N_124time_sync_master_enabledE
+200060a8 l     O .bss	00000004 _ZGVZN4node12_GLOBAL__N_116getTimeSyncSlaveEvE2ts
+200060ac l     O .bss	00000010 _ZN4node12_GLOBAL__N_110node_mutexE
+200060bc l     O .bss	00000004 _ZN4node12_GLOBAL__N_123active_can_bus_bit_rateE
+200060c0 l     O .bss	00000004 _ZGVZN4node12_GLOBAL__N_114getParamServerEvE6server
+200060c8 l     O .bss	000021a0 _ZZN4node7getNodeEvE4node
+00000000 l    df *ABS*	00000000 main.cpp
+08001360 l     F .text	00000170 _GLOBAL__sub_I_main
+00000000 l    df *ABS*	00000000 bootloader_interface.cpp
+080014d0 l     F .text	0000017c _GLOBAL__sub_I__ZN20bootloader_interface4initEv
+20001128 l     O .app_descriptor	00000020 _ZN20bootloader_interfaceL15_app_descriptorE
+20008280 l     O .bss	00000008 _ZN20bootloader_interfaceL11shared_dataE
+00000000 l    df *ABS*	00000000 air_sensor.cpp
+0800e430 l     F .text	0000005c _ZN6uavcan9FloatSpecILj16ELNS_8CastModeE0EE6encodeEfRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.33
+08001650 l     F .text	0000032c _ZN10air_sensor12_GLOBAL__N_115AirSensorThread4mainEv
+08001980 l     F .text	000002f4 _GLOBAL__sub_I__ZN10air_sensor4initEv
+200082d0 l     O .bss	00000004 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub
+200082d4 l     O .bss	00000008 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure
+200082dc l     O .bss	00000001 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE17_executed_once_79
+0801c830 l     O .text	00000014 _ZTVN10air_sensor12_GLOBAL__N_115AirSensorThreadE
+200082e0 l     O .bss	00000028 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub
+20008308 l     O .bss	00000014 _ZN10air_sensor12_GLOBAL__N_1L26param_temperature_varianceE
+20008320 l     O .bss	00000028 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE15temperature_pub
+20008348 l     O .bss	00000014 _ZN10air_sensor12_GLOBAL__N_1L23param_pressure_varianceE
+2000835c l     O .bss	00000004 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE8pressure
+20008360 l     O .bss	00000014 _ZN10air_sensor12_GLOBAL__N_1L10param_prioE
+20008378 l     O .bss	000006b0 _ZN10air_sensor12_GLOBAL__N_117air_sensor_threadE
+20008a28 l     O .bss	00000014 _ZN10air_sensor12_GLOBAL__N_1L17param_period_usecE
+20008a3c l     O .bss	00000004 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature
+20008a40 l     O .bss	00000004 _ZGVZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE12pressure_pub
+20008a44 l     O .bss	00000008 _ZZNK10air_sensor12_GLOBAL__N_115AirSensorThread7publishEffE11temperature
+00000000 l    df *ABS*	00000000 uc_node_status_provider.cpp
+0800e9a0 l     F .text	0000007e _ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.48
+08001c80 l     F .text	000000b4 _GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv
+00000000 l    df *ABS*	00000000 uc_dynamic_node_id_client.cpp
+08001d40 l     F .text	000000a4 _GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv
+00000000 l    df *ABS*	00000000 uc_transfer.cpp
+08001df0 l     F .text	00000040 _GLOBAL__sub_I__ZN6uavcan16TransferPriority6BitLenE
+00000000 l    df *ABS*	00000000 uc_outgoing_transfer_registry.cpp
+08001e30 l     F .text	00000024 _GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE
+00000000 l    df *ABS*	00000000 uc_stm32_clock.cpp
+08012290 l     F .text	0000006c _ZN12uavcan_stm325clockL28sampleUtcFromCriticalSectionEv
+08001e60 l     F .text	000001d8 _GLOBAL__sub_I__ZN12uavcan_stm325clock4initEv
+200090f8 l     O .bss	00000004 _ZN12uavcan_stm325clock12_GLOBAL__N_127utc_rel_rate_error_integralE
+200090fc l     O .bss	00000004 _ZN12uavcan_stm325clock12_GLOBAL__N_116utc_rel_rate_ppmE
+20009100 l     O .bss	00000004 _ZN12uavcan_stm325clock12_GLOBAL__N_131utc_accumulated_correction_nsecE
+20009104 l     O .bss	00000001 _ZN12uavcan_stm325clock12_GLOBAL__N_111initializedE
+20009108 l     O .bss	00000028 _ZN12uavcan_stm325clock12_GLOBAL__N_115utc_sync_paramsE
+20009130 l     O .bss	00000001 _ZN12uavcan_stm325clock12_GLOBAL__N_17utc_setE
+20009138 l     O .bss	00000008 _ZN12uavcan_stm325clock12_GLOBAL__N_115prev_utc_adj_atE
+20009140 l     O .bss	00000001 _ZN12uavcan_stm325clock12_GLOBAL__N_110utc_lockedE
+20009148 l     O .bss	00000008 _ZN12uavcan_stm325clock12_GLOBAL__N_19time_monoE
+20009150 l     O .bss	00000008 _ZZN12uavcan_stm3211SystemClock8instanceEvE7storage
+20009158 l     O .bss	00000004 _ZN12uavcan_stm325clock12_GLOBAL__N_132utc_correction_nsec_per_overflowE
+20009160 l     O .bss	00000008 _ZN12uavcan_stm325clock12_GLOBAL__N_18time_utcE
+20009168 l     O .bss	00000004 _ZN12uavcan_stm325clock12_GLOBAL__N_112utc_prev_adjE
+2000916c l     O .bss	00000010 _ZN12uavcan_stm325clock12_GLOBAL__N_15mutexE
+2000917c l     O .bss	00000004 _ZN12uavcan_stm325clock12_GLOBAL__N_112utc_jump_cntE
+00000000 l    df *ABS*	00000000 uc_stm32_can.cpp
+08012f40 l     F .text	00000030 _ZN12uavcan_stm3212_GLOBAL__N_117handleTxInterruptEh
+08013060 l     F .text	00000034 _ZN12uavcan_stm3212_GLOBAL__N_117handleRxInterruptEhh
+08002040 l     F .text	00000170 _GLOBAL__sub_I__ZN12uavcan_stm328CanIface7RxQueue16registerOverflowEv
+20009180 l     O .bss	00000008 _ZN12uavcan_stm3212_GLOBAL__N_16ifacesE
+20009188 l     O .bss	00000001 _ZZN12uavcan_stm329CanDriver4initEmNS_8CanIface13OperatingModeEE16initialized_once
+00000000 l    df *ABS*	00000000 uc_stm32_thread.cpp
+080021b0 l     F .text	00000170 _GLOBAL__sub_I__ZN12uavcan_stm328BusEvent4waitEN6uavcan17MonotonicDurationE
+00000000 l    df *ABS*	00000000 ch.cpp
+00000000 l    df *ABS*	00000000 lib_a-memcpy.o
+00000000 l    df *ABS*	00000000 lib_a-strcmp.o
+00000000 l    df *ABS*	00000000 _lshrdi3.o
+00000000 l    df *ABS*	00000000 _arm_addsubdf3.o
+00000000 l    df *ABS*	00000000 _arm_muldivdf3.o
+00000000 l    df *ABS*	00000000 _arm_cmpdf2.o
+00000000 l    df *ABS*	00000000 _arm_fixdfsi.o
+00000000 l    df *ABS*	00000000 _arm_fixunsdfsi.o
+00000000 l    df *ABS*	00000000 _arm_truncdfsf2.o
+00000000 l    df *ABS*	00000000 _arm_addsubsf3.o
+00000000 l    df *ABS*	00000000 _arm_muldivsf3.o
+00000000 l    df *ABS*	00000000 _arm_cmpsf2.o
+00000000 l    df *ABS*	00000000 _arm_unordsf2.o
+00000000 l    df *ABS*	00000000 _arm_fixsfsi.o
+00000000 l    df *ABS*	00000000 _arm_fixunssfsi.o
+00000000 l    df *ABS*	00000000 _aeabi_ldivmod.o
+00000000 l    df *ABS*	00000000 _aeabi_uldivmod.o
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 bpabi.c
+00000000 l    df *ABS*	00000000 _dvmd_tls.o
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 ms5611.c
+08003d50 l     F .text	000000a8 convertDx
+00000000 l    df *ABS*	00000000 config.c
+08004070 l     F .text	00000038 indexByName
+080040b0 l     F .text	00000038 reinitializeDefaults
+080040f0 l     F .text	00000080 isValid
+08004170 l     F .text	00000034 crc32.constprop.1
+20001148 l     O .bss	00000001 _frozen
+2000114c l     O .bss	000000a0 _value_pool
+200011ec l     O .bss	00000004 _num_params
+200011f0 l     O .bss	00000010 _mutex
+20001200 l     O .bss	000000a0 _descr_pool
+200012a0 l     O .bss	00000004 _layout_hash
+00000000 l    df *ABS*	00000000 config_storage_stm32.c
+08004640 l     F .text	00000018 waitReady
+08004660 l     F .text	00000034 prologue
+00000000 l    df *ABS*	00000000 watchdog_stm32.c
+20001120 l     O .noinit	00000004 _mask
+20001124 l     O .noinit	00000004 _num_watchdogs
+200012a4 l     O .bss	00000004 _wdg_timeout_ms
+00000000 l    df *ABS*	00000000 sys_stm32.c
+00000000 l    df *ABS*	00000000 sys_console.c
+080049e0 l     F .text	00000028 writeExpandingCrLf
+08004a10 l     F .text	0000004c genericPrint
+200012a8 l     O .bss	00000100 _buffer
+20000800 l     O .data	00000004 _stdout_stream
+20000804 l     O .data	00000010 _mutex
+00000000 l    df *ABS*	00000000 sys.c
+00000000 l    df *ABS*	00000000 crt0.c
+00000000 l    df *ABS*	00000000 chcore.c
+00000000 l    df *ABS*	00000000 chcore_v7m.c
+08004d34 l       .text	00000000 _port_exit_from_isr
+00000000 l    df *ABS*	00000000 nvic.c
+00000000 l    df *ABS*	00000000 chsys.c
+200013b0 l     O .bss	00000040 mainthread.4660
+00000000 l    df *ABS*	00000000 chvt.c
+00000000 l    df *ABS*	00000000 chschd.c
+080050a0 l     F .text	00000042 wakeup
+00000000 l    df *ABS*	00000000 chthreads.c
+00000000 l    df *ABS*	00000000 chsem.c
+00000000 l    df *ABS*	00000000 chmtx.c
+08005400 l     F .text	00000020 prio_insert
+00000000 l    df *ABS*	00000000 chevents.c
+00000000 l    df *ABS*	00000000 chqueues.c
+08005590 l     F .text	00000024 qwait
+00000000 l    df *ABS*	00000000 chmemcore.c
+200016e4 l     O .bss	00000004 endmem
+200016e8 l     O .bss	00000004 nextmem
+00000000 l    df *ABS*	00000000 chheap.c
+200016f0 l     O .bss	00000020 default_heap
+00000000 l    df *ABS*	00000000 hal.c
+00000000 l    df *ABS*	00000000 i2c.c
+00000000 l    df *ABS*	00000000 serial.c
+08005a10 l     F .text	00000006 readt
+08005a20 l     F .text	0000000a read
+08005a30 l     F .text	00000006 writet
+08005a40 l     F .text	0000000a write
+08005a50 l     F .text	00000006 gett
+08005a60 l     F .text	0000000a get
+08005a70 l     F .text	00000006 putt
+08005a80 l     F .text	0000000a put
+0801b5b0 l     O .text	00000020 vmt
+00000000 l    df *ABS*	00000000 tm.c
+08005b70 l     F .text	0000000c tm_start
+08005b80 l     F .text	0000002c tm_stop
+20001710 l     O .bss	00000004 measurement_offset
+00000000 l    df *ABS*	00000000 stm32_dma.c
+20001714 l     O .bss	00000060 dma_isr_redir
+20001774 l     O .bss	00000004 dma_streams_mask
+00000000 l    df *ABS*	00000000 hal_lld.c
+00000000 l    df *ABS*	00000000 pal_lld.c
+0801b660 l     O .text	00000012 cfgtab.6039
+00000000 l    df *ABS*	00000000 i2c_lld.c
+08006100 l     F .text	0000003e i2c_lld_abort_operation
+08006140 l     F .text	0000002a i2c_lld_safety_timeout
+08006170 l     F .text	00000034 i2c_lld_serve_tx_end_irq
+080061b0 l     F .text	00000066 i2c_lld_serve_rx_end_irq
+00000000 l    df *ABS*	00000000 serial_lld.c
+08006660 l     F .text	00000014 notify1
+08006680 l     F .text	00000014 notify2
+080066a0 l     F .text	00000014 notify3
+080066c0 l     F .text	000000f2 serve_interrupt
+0801b680 l     O .text	0000000c default_config
+00000000 l    df *ABS*	00000000 syscalls.c
+00000000 l    df *ABS*	00000000 chprintf.c
+080069c0 l     F .text	00000044 long_to_string_with_divisor
+00000000 l    df *ABS*	00000000 shell.c
+08006ca0 l     F .text	0000001a chprintf
+08006cc0 l     F .text	00000040 _strtok.constprop.2
+08006d00 l     F .text	00000024 cmd_systime
+08006d30 l     F .text	000000ac cmd_info
+08006ed0 l     F .text	00000178 shell_thread
+20000814 l     O .data	00000018 local_commands
+00000000 l    df *ABS*	00000000 memstreams.c
+08007050 l     F .text	0000001c put
+08007070 l     F .text	0000001a get
+08007090 l     F .text	00000026 reads
+080070c0 l     F .text	00000024 writes
+0801b840 l     O .text	00000010 vmt
+00000000 l    df *ABS*	00000000 board.cpp
+0801c610 l     O .text	0000000c _ZN5boardL7I2CCfg2E
+00000000 l    df *ABS*	00000000 ublox.cpp
+0800d4a0 l     F .text	00000080 _ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14
+0801c620 l     O .text	00000002 _ZZN5ublox9IOManager4sendERKNS_7MessageEE6Header
+20008268 l     O .bss	00000004 _ZGVZNK5ublox6Driver13areRatesValidEvE8validate
+20008270 l     O .bss	00000010 _ZZNK5ublox6Driver13areRatesValidEvE8validate
+00000000 l    df *ABS*	00000000 cli.cpp
+0800e610 l     F .text	00000034 _ZN3cli12_GLOBAL__N_19cmd_resetEP20BaseSequentialStreamiPPc
+0800e650 l     F .text	00000008 _ZN3cli12_GLOBAL__N_17cmd_cfgEP20BaseSequentialStreamiPPc
+0800e660 l     F .text	00000028 _ZZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPcENKUlP12SerialDriverS6_E_clES6_S6_.isra.0
+0800e690 l     F .text	00000034 _ZN3cli12_GLOBAL__N_114cmd_gnssbridgeEP20BaseSequentialStreamiPPc
+0800e6d0 l     F .text	00000044 _ZN3cli12_GLOBAL__N_114cmd_bootloaderEP20BaseSequentialStreamiPPc
+0801ca60 l     O .text	00000028 _ZN3cli12_GLOBAL__N_1L12HandlerTableE
+0801ca90 l     O .text	00000008 _ZZN3cli4initEvE6config
+20008a50 l     O .bss	00000688 _ZZN3cli4initEvE9_wa_shell
+00000000 l    df *ABS*	00000000 uc_data_type.cpp
+00000000 l    df *ABS*	00000000 uc_scalar_codec.cpp
+00000000 l    df *ABS*	00000000 uc_bit_array_copy.cpp
+00000000 l    df *ABS*	00000000 uc_bit_stream.cpp
+00000000 l    df *ABS*	00000000 uc_float_spec.cpp
+00000000 l    df *ABS*	00000000 uc_transfer_buffer.cpp
+00000000 l    df *ABS*	00000000 uc_transfer_receiver.cpp
+00000000 l    df *ABS*	00000000 uc_transfer_listener.cpp
+080101b0 l     F .text	0000007c _ZN6uavcan3MapINS_24TransferBufferManagerKeyENS_16TransferReceiverEE6insertERKS1_RKS2_.part.18
+08010280 l     F .text	0000006a _ZN6uavcan3MapINS_24TransferBufferManagerKeyENS_16TransferReceiverEE14removeAllWhereINS3_12YesPredicateEEEvT_.isra.17
+00000000 l    df *ABS*	00000000 uc_frame.cpp
+00000000 l    df *ABS*	00000000 uc_transfer_sender.cpp
+00000000 l    df *ABS*	00000000 uc_dispatcher.cpp
+00000000 l    df *ABS*	00000000 uc_can_io.cpp
+080111c0 l     F .text	00000010 _ZNK6uavcan15LazyConstructorINS_10CanTxQueueEE17ensureConstructedEv.isra.3
+00000000 l    df *ABS*	00000000 uc_generic_publisher.cpp
+00000000 l    df *ABS*	00000000 uc_timer.cpp
+00000000 l    df *ABS*	00000000 uc_global_data_type_registry.cpp
+200090e8 l     O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry8instanceEvE9singleton
+200090ec l     O .bss	0000000c _ZZN6uavcan22GlobalDataTypeRegistry8instanceEvE9singleton
+00000000 l    df *ABS*	00000000 uc_scheduler.cpp
+00000000 l    df *ABS*	00000000 uc_generic_subscriber.cpp
+00000000 l    df *ABS*	00000000 uc_dynamic_memory.cpp
+00000000 l    df *ABS*	00000000 uc_can.cpp
+00000000 l    df *ABS*	00000000 uc_error.cpp
+00000000 l    df *ABS*	00000000 config_cli.cpp
+08013580 l     F .text	000000dc _ZN13zubax_chibios6configL10printParamEPKcb
+2000918c l     O .bss	00000004 _ZZN13zubax_chibios6configL10printParamEPKcbE13_max_name_len
+00000000 l    df *ABS*	00000000 libstdcpp.cpp
+00000000 l    df *ABS*	00000000 abort.c
+00000000 l    df *ABS*	00000000 atoff.c
+00000000 l    df *ABS*	00000000 memcmp.c
+00000000 l    df *ABS*	00000000 memmove.c
+00000000 l    df *ABS*	00000000 memset.c
+00000000 l    df *ABS*	00000000 mktime.c
+08013a50 l     F .text	00000208 validate_structure
+0801d080 l     O .text	00000030 _DAYS_BEFORE_MONTH
+0801d0b0 l     O .text	00000030 DAYS_IN_MONTH
+00000000 l    df *ABS*	00000000 rand.c
+00000000 l    df *ABS*	00000000 sf_fpclassify.c
+00000000 l    df *ABS*	00000000 signal.c
+00000000 l    df *ABS*	00000000 signalr.c
+00000000 l    df *ABS*	00000000 strcasecmp.c
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 strncmp.c
+00000000 l    df *ABS*	00000000 strpbrk.c
+00000000 l    df *ABS*	00000000 strspn.c
+00000000 l    df *ABS*	00000000 strtod.c
+080142f0 l     F .text	00000042 sulp
+0801d0e0 l     O .text	00000028 tinytens
+0801d110 l     O .text	00000014 fpinan.5307
+0801d140 l     O .text	00000014 fpi.5271
+00000000 l    df *ABS*	00000000 tzcalc_limits.c
+00000000 l    df *ABS*	00000000 tzlock.c
+00000000 l    df *ABS*	00000000 tzset.c
+00000000 l    df *ABS*	00000000 tzset_r.c
+20009190 l     O .bss	0000000b __tzname_dst
+2000919c l     O .bss	0000000b __tzname_std
+200091a8 l     O .bss	00000004 prev_tzenv
+00000000 l    df *ABS*	00000000 vsnprintf.c
+00000000 l    df *ABS*	00000000 div.c
+00000000 l    df *ABS*	00000000 gdtoa-gethex.c
+08015860 l     F .text	000000a0 rshift
+00000000 l    df *ABS*	00000000 gdtoa-hexnan.c
+00000000 l    df *ABS*	00000000 getenv_r.c
+00000000 l    df *ABS*	00000000 gettzinfo.c
+20000840 l     O .data	00000040 tzinfo
+00000000 l    df *ABS*	00000000 locale.c
+20000cac l     O .data	00000038 lconv
+20000ce4 l     O .data	00000020 lc_ctype_charset
+00000000 l    df *ABS*	00000000 malloc.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 mlock.c
+00000000 l    df *ABS*	00000000 mprec.c
+0801d520 l     O .text	0000000c p05.5302
+00000000 l    df *ABS*	00000000 s_fpclassify.c
+00000000 l    df *ABS*	00000000 sf_nan.c
+00000000 l    df *ABS*	00000000 siscanf.c
+00000000 l    df *ABS*	00000000 stdio.c
+00000000 l    df *ABS*	00000000 strcpy.c
+00000000 l    df *ABS*	00000000 strtoul.c
+00000000 l    df *ABS*	00000000 vfscanf.c
+0801d560 l     O .text	00000022 basefix.6311
+00000000 l    df *ABS*	00000000 vfprintf.c
+0801d590 l     O .text	00000010 zeroes.6911
+0801d5a0 l     O .text	00000010 blanks.6910
+00000000 l    df *ABS*	00000000 ungetc.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 dtoa.c
+080192d0 l     F .text	0000012e quorem
+00000000 l    df *ABS*	00000000 envlock.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 iswspace.c
+00000000 l    df *ABS*	00000000 mbrtowc.c
+00000000 l    df *ABS*	00000000 mbtowc_r.c
+00000000 l    df *ABS*	00000000 memchr.c
+00000000 l    df *ABS*	00000000 mallocr.c
+00000000 l    df *ABS*	00000000 sccl.c
+00000000 l    df *ABS*	00000000 strtol.c
+00000000 l    df *ABS*	00000000 strtoll_r.c
+00000000 l    df *ABS*	00000000 strtoull_r.c
+00000000 l    df *ABS*	00000000 vfprintf.c
+00000000 l    df *ABS*	00000000 chregistry.c
+00000000 l    df *ABS*	00000000 uc_crc.cpp
+00000000 l    df *ABS*	00000000 ctype_.c
+00000000 l    df *ABS*	00000000 impure.c
+20000880 l     O .data	00000428 impure_data
+00000000 l    df *ABS*	00000000 month_lengths.c
+00000000 l    df *ABS*	00000000 tzvars.c
+00000000 l    df *ABS*	00000000 environ.c
+200091e8 l     O .bss	00000004 initial_env
+00000000 l    df *ABS*	00000000 reent.c
+00000000 l    df *ABS*	00000000 
+00000000 l       *UND*	00000000 _port_lock
+00000000 l       *UND*	00000000 _port_unlock
+0801c5d0 g     O .text	0000003c pal_default_config
+0800a150  w    F .text	000000d8 _ZN6uavcan20DataTypeInfoProvider28handleGetDataTypeInfoRequestERKNS_8protocol16GetDataTypeInfo_8Request_ILi0EEERNS2_9Response_ILi0EEE
+0800a6f0  w    F .text	00000014 _ZN6uavcan11ParamServerD2Ev
+0800c130  w    F .text	00000068 _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+08008910  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt371EED1Ev
+0800b690  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPNS_11ParamServerEMS1_FvRKNS_8protocol5param14ExecuteOpcode_8Request_ILi0EEERNS5_9Response_ILi0EEEEEcvbEv
+080113d0 g     F .text	00000038 _ZNK6uavcan12CanIOManager17makePendingTxMaskEv
+080110f0  w    F .text	00000036 _ZN6uavcan14LinkedListRootINS_16TransferListenerEE12insertBeforeINS_10Dispatcher16ListenerRegistry29DataTypeIDInsertionComparatorEEEvPS1_T_
+08004d10  w    F .text	00000002 Vector58
+08013790 g     F .text	00000010 _ZN10chibios_rt10BaseThread5startEm
+08004d10  w    F .text	00000002 VectorE8
+08004d10  w    F .text	00000002 Vector9C
+08004a60 g     F .text	00000020 lowsyslog
+08016e80 g     F .text	0000005c __any_on
+08002e74 g     F .text	00000012 .hidden __aeabi_dcmple
+08004e40 g     F .text	00000044 nvicEnableVector
+08016fc0 g     F .text	000000ba strcpy
+080037f0 g     F .text	00000030 .hidden __gnu_uldivmod_helper
+08004d10  w    F .text	00000002 VectorAC
+08004f80 g     F .text	00000050 chSysTimerHandlerI
+08004be0 g     F .text	00000004 _getpid
+08005360 g     F .text	0000000a chThdExit
+0800d700 g     F .text	00000040 _ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE
+08005570 g     F .text	00000020 chEvtBroadcastFlagsI
+08005110 g     F .text	0000003c chSchGoSleepTimeoutS
+08004800 g     F .text	000000c8 watchdogInit
+08002db0 g     F .text	0000007a .hidden __cmpdf2
+08008a50  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+08005970 g     F .text	00000004 i2cInit
+080112a0 g     F .text	00000042 _ZN6uavcan12CanIOManager10callSelectERNS_14CanSelectMasksERA3_PKNS_8CanFrameENS_13MonotonicTimeE
+080116b0 g     F .text	00000140 _ZN6uavcan12CanIOManager7receiveERNS_10CanRxFrameENS_13MonotonicTimeERt
+0800b8b0  w    F .text	000000d8 _ZN6uavcan16GenericPublisherINS_8protocol5debug11LogMessage_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+0800ffa0 g     F .text	00000040 _ZN6uavcan26MultiFrameIncomingTransferC1ENS_13MonotonicTimeENS_7UtcTimeERKNS_7RxFrameERNS_22TransferBufferAccessorE
+08011f30  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_
+0800ff00  w    F .text	0000000c _ZN6uavcan26MultiFrameIncomingTransferD0Ev
+08002db0 g     F .text	0000007a .hidden __eqdf2
+08012310  w    F .text	00000002 _ZN12uavcan_stm3211SystemClockD1Ev
+08010620  w    F .text	000000ea _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insertERKS1_RKS3_
+08003830 g     F .text	000002aa .hidden __divdi3
+08010760  w    F .text	00000078 _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14removeAllWhereINS2_24DeadlineExpiredPredicateEEEvT_
+0800aa50  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol4file20BeginFirmwareUpdate_EPFvRKNS_21ReceivedDataStructureINS3_8Request_ILi0EEEEERNS3_9Response_ILi0EEEEED1Ev
+08005430 g     F .text	00000084 chMtxLockS
+0801ce80 g     O .text	00000020 _ZTVN12uavcan_stm329CanDriverE
+08008870  w    F .text	00000008 _ZNK6uavcan4NodeILj7168EE12getSchedulerEv
+08012910  w    F .text	00000012 _ZN12uavcan_stm329CanDriverD0Ev
+0801ce40 g     O .text	0000001c _ZTVN6uavcan20LimitedPoolAllocatorE
+08005740 g     F .text	0000002a chOQResetI
+08004d10  w    F .text	00000002 Vector5C
+0800e3e0  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED2Ev
+08013100 g     F .text	00000064 _ZN12uavcan_stm328CanIface26discardTimedOutTxMailboxesEN6uavcan13MonotonicTimeE
+08002914 g     F .text	0000005a .hidden __floatdidf
+08011c90 g     F .text	00000038 _ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+0800a050  w    F .text	00000024 _ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj80EE9push_backERKh
+0800caf0  w    F .text	0000005c _ZN6uavcan8protocol16GetDataTypeInfo_9Response_ILi0EE6encodeERKS3_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE
+08009530  w    F .text	00000020 _ZN6uavcan8CanFrameC1Ev
+0800a6d0  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol5param14ExecuteOpcode_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEED1Ev
+0800fe00  w    F .text	00000002 _ZN6uavcan16IncomingTransfer7releaseEv
+0801bff0  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+080140e0 g     F .text	00000028 _kill_r
+08011a10 g     F .text	00000064 _ZNK6uavcan20GenericPublisherBase13getTxDeadlineEv
+08004d10  w    F .text	00000002 NMIVector
+20004570  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol4file20BeginFirmwareUpdate_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08004a80 g     F .text	0000002c printf
+0800a5f0  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEED2Ev
+08009370  w    F .text	00000058 _ZN6uavcan6LoggerC2ERNS_5INodeE
+20002580  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+0800ff50 g     F .text	00000048 _ZN6uavcan27SingleFrameIncomingTransferC2ERKNS_7RxFrameE
+0800dc00 g     F .text	0000009c _ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE
+0801bed0  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEEE
+08012810 g     F .text	0000009c Vector11C
+0800fe90  w    F .text	00000002 _ZN6uavcan26MultiFrameIncomingTransferD1Ev
+0800d210 g     F .text	00000048 _ZN5board4initEv
+0801bd30  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt93EEE
+08008ad0  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEE17TransferForwarderD1Ev
+080137b0 g     F .text	00000010 _ZN10chibios_rt10BaseThreadC2Ev
+200091ac g     O .bss	00000004 _daylight
+08013230 g     F .text	0000004e _ZNK12uavcan_stm329CanDriver15makeSelectMasksERA3_PKN6uavcan8CanFrameE
+08010df0 g     F .text	00000026 _ZN6uavcan10Dispatcher16ListenerRegistry11handleFrameERKNS_7RxFrameE
+0801caa0  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+08008900  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt129EED1Ev
+08005e40 g     F .text	0000003c dmaInit
+0800dca0 g     F .text	00000068 _ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE
+080111b0 g     F .text	0000000a _ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE
+08011b50 g     F .text	0000007e _ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE
+080165c0 g     F .text	00000002 __malloc_unlock
+08009550  w    F .text	00000044 _ZN6uavcan20GlobalTimeSyncMasterD1Ev
+080092e0  w    F .text	00000024 _ZN6uavcan19TimerEventForwarderISt8functionIFvRKNS_10TimerEventEEEED2Ev
+0800a630  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol5param7GetSet_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEED2Ev
+08008310  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt25EED1Ev
+0800f5b0 g     F .text	0000006a _ZN6uavcan9BitStream4readEPhj
+0800c780  w    F .text	000000aa _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+08008bf0  w    F .text	00000014 _ZN6uavcan19TimerEventForwarderISt8functionIFvRKNS_10TimerEventEEEE16handleTimerEventES4_
+0800b870  w    F .text	00000018 _ZN6uavcan11ScalarCodec6encodeILj3EhEEiT0_
+0800f490 g     F .text	00000026 _ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+08014340 g     F .text	00000f30 _strtod_r
+08003368 g     F .text	00000136 .hidden __divsf3
+080114b0 g     F .text	0000001c _ZN6uavcan10CanTxQueue6removeERPNS0_5EntryE
+08013410 g     F .text	00000010 Vector8C
+08012320  w    F .text	0000000c _ZN12uavcan_stm3211SystemClockD0Ev
+08007120  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment4gnss4Fix_ILi0EEEED2Ev
+0800a230  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev
+08013840 g     F .text	00000004 _ZN10chibios_rt5Mutex4lockEv
+0800f370  w    F .text	000000e2 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+0800a670  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEED0Ev
+080025e0 g     F .text	00000018 .hidden __aeabi_llsr
+080172b0 g     F .text	00000080 _sfread_r
+0800ebf0 g     F .text	00000014 _ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj80EEE
+0800aab0  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol16GetDataTypeInfo_ENS2_9Response_ILi0EEEE9checkInitEv
+08012bb0 g     F .text	00000060 _ZN12uavcan_stm328CanIface7receiveERN6uavcan8CanFrameERNS1_13MonotonicTimeERNS1_7UtcTimeERt
+080138e0 g     F .text	000000c6 memmove
+08007550  w    F .text	00000020 _ZN6uavcan22GlobalDataTypeRegistry5EntryC2Ev
+08006800 g     F .text	00000014 VectorDC
+080087d0  w    F .text	00000006 _ZNSt17_Function_handlerIFvRKN6uavcan10TimerEventEEPS4_E9_M_invokeERKSt9_Any_dataS3_
+08012cd0 g     F .text	0000001c _ZN12uavcan_stm328CanIface25waitMsrINakBitStateChangeEb
+0800afe0  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol4file20BeginFirmwareUpdate_ENS3_9Response_ILi0EEEE9checkInitEv
+08007130  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment4gnss10Auxiliary_ILi0EEEED2Ev
+200090dc g     O .bss	00000001 _ZN6uavcan16TransferPriority19OneHigherThanLowestE
+08007110  w    F .text	00000002 _ZN6uavcan9equipment4gnss4Fix_ILi0EED2Ev
+0800eec0 g     F .text	00000018 _ZN6uavcan19DynamicNodeIDClient9terminateEv
+08011240 g     F .text	00000054 _ZN6uavcan12CanIOManager11sendToIfaceEhRKNS_8CanFrameENS_13MonotonicTimeEt
+08010c50 g     F .text	000000e8 _ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE
+080165d0 g     F .text	00000050 _Balloc
+08000000 g     O startup	00000150 _vectors
+080035c0 g     F .text	0000004c .hidden __fixsfsi
+0801be30  w    O .text	00000014 _ZTVN6uavcan13ServiceServerINS_8protocol16GetDataTypeInfo_ENS_12MethodBinderIPNS_20DataTypeInfoProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEEE
+08009220  w    F .text	000000a0 _ZN6uavcan20GlobalTimeSyncMaster19handleLoopbackFrameERKNS_7RxFrameE
+0801bae0  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt25EEE
+08008a10  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+0800fe90  w    F .text	00000002 _ZN6uavcan26MultiFrameIncomingTransferD2Ev
+200090da g     O .bss	00000001 _ZN6uavcan16TransferPriority7DefaultE
+0801bcd0  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt371EEE
+080050f0 g     F .text	00000020 chSchGoSleepS
+08004d10  w    F .text	00000002 Vector110
+08002da0 g     F .text	0000008a .hidden __gtdf2
+08013860 g     F .text	00000006 atoff
+0801c0d0  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+0800e3d0  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED2Ev
+0800a750  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED2Ev
+0800a7f0  w    F .text	000000b4 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol4file20BeginFirmwareUpdate_EEENS0_18RegistrationResultENS_10DataTypeIDE
+0800c640  w    F .text	00000038 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEE24handleReceivedDataStructERS9_
+08011c30  w    F .text	00000002 _ZN6uavcan22GlobalDataTypeRegistryD1Ev
+08012440 g     F .text	0000003c _ZN12uavcan_stm325clock6getUtcEv
+08005a00 g     F .text	00000004 i2cReleaseBus
+080137a0 g     F .text	0000000c _ZN10chibios_rt6System7getTimeEv
+0800e190 g     F .text	000000c8 _ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE
+0800de00 g     F .text	00000040 _ZN5ublox6Driver20configureMessageRateEhhh
+08007170  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt16EED2Ev
+080036f0 g     F .text	0000002e .hidden __aeabi_d2lz
+0800e850 g     F .text	0000001a _ZN6uavcan17DataTypeSignature6extendES0_
+200091f0 g       *ABS*	00000000 __heap_base__
+0800e810 g     F .text	0000003e _ZN6uavcan17DataTypeSignature7mixin64Ey
+0800a360  w    F .text	00000012 _ZN6uavcan13ServiceServerINS_8protocol12RestartNode_ENS_12MethodBinderIPKNS_20RestartRequestServerEMS4_KFvRKNS_21ReceivedDataStructureINS2_8Request_ILi0EEEEERNS2_9Response_ILi0EEEEEEED0Ev
+080046e0 g     F .text	000000ac configStorageWrite
+200091ec g     O .bss	00000004 errno
+08016fb0 g     F .text	00000004 __seofread
+0801d618 g       .stacks	00000000 _etext
+08005d50 g     F .text	00000028 Vector120
+08005280 g     F .text	00000020 chThdCreateI
+08002e3c g     F .text	00000010 .hidden __aeabi_cdcmple
+080070f0 g     F .text	00000018 msObjectInit
+08013540 g     F .text	00000014 _ZN12uavcan_stm328BusEvent19signalFromInterruptEv
+0800fa00 g     F .text	00000026 _ZN6uavcan21TransferBufferManagerD2Ev
+08006330 g     F .text	000000e0 VectorC8
+08008a70  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+080130a0 g     F .text	00000058 _ZN12uavcan_stm328CanIface27handleStatusChangeInterruptEv
+0800aa70  w    F .text	00000012 _ZN6uavcan13ServiceServerINS_8protocol4file20BeginFirmwareUpdate_EPFvRKNS_21ReceivedDataStructureINS3_8Request_ILi0EEEEERNS3_9Response_ILi0EEEEED0Ev
+08004c00 g     F .text	00000020 usleep
+08002fec g     F .text	00000160 .hidden __aeabi_fadd
+0800fbd0 g     F .text	000000ba _ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE
+08002fe8 g     F .text	00000164 .hidden __subsf3
+0800b180  w    F .text	000000dc _ZN6uavcan20DataTypeInfoProvider5startEv
+08012480  w    F .text	0000000c _ZNK12uavcan_stm3211SystemClock6getUtcEv
+08013320 g     F .text	000000a0 _ZN12uavcan_stm329CanDriver8initOnceEv
+080089a0  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt377EED0Ev
+080111a0 g     F .text	0000000a _ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE
+08008950  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt377EED1Ev
+08005150 g     F .text	00000038 chSchWakeupS
+0801d070 g     O .text	0000000c _ZTVN10chibios_rt15ThreadReferenceE
+0800a2d0  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol5debug11LogMessage_ILi0EEES4_E9checkInitEv
+20004510  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5param14ExecuteOpcode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+080087c0  w    F .text	00000002 _ZN6uavcan13PoolAllocatorILj7168ELh56EcED1Ev
+08011e30 g     F .text	00000022 _ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv
+0801c030  w    O .text	00000014 _ZTVN6uavcan13ServiceServerINS_8protocol5param14ExecuteOpcode_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEEE
+08008b90  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+08005b40 g     F .text	0000002e sdIncomingDataI
+200025fc  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+080057d0 g     F .text	00000044 chOQGetI
+0800f9b0  w    F .text	00000012 _ZN6uavcan26TransferBufferManagerEntryD0Ev
+08005060 g     F .text	00000014 _scheduler_init
+0800a3e0  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol18GetTransportStats_ENS_12MethodBinderIPKNS_22TransportStatsProviderEMS4_KFvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED1Ev
+08005200 g     F .text	00000018 chSchRescheduleS
+080052a0 g     F .text	00000028 chThdCreateStatic
+08012330  w    F .text	0000000a _ZN12uavcan_stm3221CriticalSectionLockerD2Ev
+0801c050  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEEE
+0801bcf0  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt73EEE
+0800d570 g     F .text	0000001a _ZN5ublox16ChecksumComputer3addEPKhj
+08008620  w    F .text	000000bc _ZN6uavcan16GenericPublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+08013440 g     F .text	00000012 Vector94
+0801bdb0  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEEE
+080133c0 g     F .text	00000050 _ZN12uavcan_stm329CanDriver4initEmNS_8CanIface13OperatingModeE
+08010130 g     F .text	00000030 _ZN6uavcan16TransferListener32handleAnonymousTransferReceptionERKNS_7RxFrameE
+0800a6d0  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol5param14ExecuteOpcode_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEED2Ev
+08009480 g     F .text	00000014 _ZN4node4LockC2Ev
+0800e350 g     F .text	00000074 _ZN20bootloader_interface26passParametersToBootloaderEmN6uavcan6NodeIDE
+080036c0 g     F .text	00000026 .hidden __aeabi_f2lz
+08004d10  w    F .text	00000002 VectorA8
+08010930 g     F .text	000000cc _ZNK6uavcan5Frame7compileERNS_8CanFrameE
+0800a690  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEED2Ev
+0801be70  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEEE
+08007e30  w    F .text	000001f6 _ZN6uavcan9equipment4gnss4Fix_ILi0EE6encodeERKS3_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE
+0800c840  w    F .text	000001d8 _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+08002330 g     F .text	000000ec memcpy
+08015e20 g     F .text	00000184 __hexnan
+08002e2c g     F .text	00000020 .hidden __aeabi_cdrcmple
+08009930  w    F .text	0000001c _ZN12uavcan_stm328CanIfaceD2Ev
+0800aa10  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEED1Ev
+0800e7b0 g     F .text	00000040 _ZN6uavcan20DataTypeSignatureCRC3addEh
+08004d10  w    F .text	00000002 VectorB4
+08012280  w    F .text	00000002 _ZN6uavcan13MonotonicTimeD2Ev
+080137e0 g     F .text	00000004 _ZN10chibios_rt10BaseThread11setPriorityEm
+080085c0  w    F .text	0000005c _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC2ERNS_5INodeENS_17MonotonicDurationES8_
+080137d0 g     F .text	0000000c _ZN10chibios_rt10BaseThread7setNameEPKc
+08003578 g     F .text	00000012 .hidden __aeabi_fcmpgt
+08017cf0 g     F .text	000014f4 _svfprintf_r
+0800f1e0 g     F .text	0000018c _ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE0ELj16EEENS_6NodeIDENS_16TransferPriorityE
+08008360  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt25EED0Ev
+080028a4 g     F .text	00000022 .hidden __floatsidf
+0800a270  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol16GetDataTypeInfo_ENS_12MethodBinderIPNS_20DataTypeInfoProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev
+0800d800 g     F .text	000000a8 _ZN5ublox9IOManager4sendERKNS_7MessageE
+08008860  w    F .text	00000008 _ZN6uavcan4NodeILj7168EE12getSchedulerEv
+0800ac50  w    F .text	00000190 _ZN6uavcan20GlobalTimeSyncMaster7publishEv
+0801c0b0  w    O .text	00000020 _ZTVN6uavcan4NodeILj7168EEE
+08002da8 g     F .text	00000082 .hidden __ltdf2
+0800e120  w    F .text	00000070 _ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IJSt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_
+080079b0  w    F .text	00000024 _ZN6uavcan5ArrayINS_9FloatSpecILj16ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj9EE9push_backERKf
+0800b160  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPNS_20DataTypeInfoProviderEMS1_FvRKNS_8protocol16GetDataTypeInfo_8Request_ILi0EEERNS4_9Response_ILi0EEEEEcvbEv
+0800a010  w    F .text	00000012 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED0Ev
+0801b870  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt16EEE
+0800feb0 g     F .text	00000030 _ZNK6uavcan26MultiFrameIncomingTransfer4readEjPhj
+0800fa30 g     F .text	00000020 _ZN6uavcan21TransferBufferManager6removeERKNS_24TransferBufferManagerKeyE
+08009820  w    F .text	000000ec _ZN6uavcan19GlobalTimeSyncSlave10processMsgERKNS_21ReceivedDataStructureINS_8protocol15GlobalTimeSync_ILi0EEEEE
+08003690 g     F .text	00000000 .hidden __aeabi_uldivmod
+0800ee70  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt18EED0Ev
+08004ab0 g     F .text	00000038 puts
+20001c08 g     O .bss	00000458 SD2
+08005080 g     F .text	00000020 chSchReadyI
+0801cb70 g     O .text	00000018 _ZTVN6uavcan19DynamicNodeIDClientE
+080103b0 g     F .text	0000001e _ZN6uavcan16TransferListener7cleanupENS_13MonotonicTimeE
+08000184 g       constructors	00000000 __fini_array_end
+08004d20  w    F .text	00000004 port_halt
+08005990 g     F .text	0000001c i2cStart
+08008bb0  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+080042c0 g     F .text	00000140 configInit
+20000800 g       .stacks	00000000 __main_thread_stack_end__
+08008a90  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+0800bae0  w    F .text	00000024 _ZN6uavcan19DynamicNodeIDClientD1Ev
+08016ee0 g     F .text	00000058 __fpclassifyd
+08004fd0 g     F .text	00000018 _vt_init
+08016dd0 g     F .text	00000058 __ratio
+0800cae0  w    F .text	0000000a _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+080058d0 g     F .text	00000024 chCoreAllocI
+08008ad0  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEE17TransferForwarderD2Ev
+0800d290 g     F .text	00000018 _ZN5board12setStatusLedEb
+08010eb0 g     F .text	0000000e _ZN6uavcan10Dispatcher21notifyRxFrameListenerERKNS_10CanRxFrameEt
+08014070 g     F .text	00000056 _raise_r
+0800a540  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEED1Ev
+0801a520 g     F .text	0000001c iswspace
+08005920 g     F .text	00000020 _heap_init
+08003154 g     F .text	0000001c .hidden __aeabi_i2f
+08005c60 g     F .text	00000028 Vector74
+08008980  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt1EED0Ev
+0801d450 g     O .text	000000c8 __mprec_tens
+08005940 g     F .text	00000024 halInit
+08007830  w    F .text	000000b4 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE
+08004c20 g     F .text	00000010 sleep
+08016060 g     F .text	00000008 __locale_charset
+08015800 g     F .text	00000020 vsnprintf
+0800fea0  w    F .text	00000002 _ZN6uavcan27SingleFrameIncomingTransferD2Ev
+0800e8e0 g     F .text	0000001e _ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindEPKc
+080034a8 g     F .text	00000066 .hidden __lesf2
+200044f0  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+200024e0  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4gnss4Fix_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08004d10  w    F .text	00000002 VectorEC
+20001148 g       .bss	00000000 _bss_start
+08005190 g     F .text	00000030 chSchDoRescheduleBehind
+08002f00 g     F .text	00000040 .hidden __fixunsdfsi
+0801ce20 g     O .text	00000018 _ZTVN6uavcan9TimerBaseE
+08008d40  w    F .text	00000080 _ZN6uavcan11ParamServer12handleGetSetERKNS_8protocol5param7GetSet_8Request_ILi0EEERNS3_9Response_ILi0EEE
+0800ea40 g     F .text	000000c4 _ZN6uavcan18NodeStatusProvider7publishEv
+200091bc g     O .bss	00000004 __malloc_top_pad
+08004d10  w    F .text	00000002 UsageFaultVector
+0801c7f0  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt6EEE
+08017270 g     F .text	0000003a __ssrefill_r
+08014110 g     F .text	00000004 _getpid_r
+080096f0  w    F .text	000000bc _ZN6uavcan18NodeStatusProviderC1ERNS_5INodeE
+0800e300 g     F .text	00000024 _ZN20bootloader_interface31makeUavcanSoftwareVersionStructEv
+20010000 g       *ABS*	00000000 __heap_end__
+08014030 g     F .text	00000034 __fpclassifyf
+08010e80 g     F .text	00000026 _ZN6uavcan10Dispatcher19handleLoopbackFrameERKNS_10CanRxFrameE
+08008800  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt123EED1Ev
+08004d10  w    F .text	00000002 DebugMonitorVector
+08011090 g     F .text	0000001c _ZN6uavcan25LoopbackFrameListenerBase14startListeningEv
+08012080 g     F .text	00000086 _ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE
+080171c0 g     F .text	00000018 strtoul
+080112f0 g     F .text	000000d4 _ZN6uavcan12CanIOManagerC1ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj
+200013a8  w    O .bss	00000004 .hidden __dso_handle
+20000d04 g     O .data	00000004 __mb_cur_max
+08002884 g     F .text	0000001e .hidden __aeabi_ui2d
+0801cae0 g     O .text	00000018 _ZTVN6uavcan18NodeStatusProviderE
+08016080 g     F .text	00000008 _localeconv_r
+0801adc0 g     F .text	000001e8 _strtoull_r
+080089e0  w    F .text	0000000c _ZN6uavcan13PoolAllocatorILj7168ELh56EcED0Ev
+08010d40  w    F .text	00000032 _ZN6uavcan7RxFrameC2Ev
+080094e0 g     F .text	00000020 _ZN4node24markComponentInitializedENS_11ComponentIDE
+08012750 g     F .text	00000038 _ZN12uavcan_stm325clock16getUtcSyncParamsEv
+0800a580  w    F .text	00000014 _ZN6uavcan10SubscriberINS_8protocol15GlobalTimeSync_ILi0EEENS_12MethodBinderIPNS_19GlobalTimeSyncSlaveEMS5_FvRKNS_21ReceivedDataStructureIS3_EEEEEED1Ev
+08016810 g     F .text	00000012 __i2b
+08002320 g     F .text	00000004 _ZN10chibios_rt10BaseThread4mainEv
+200090db g     O .bss	00000001 _ZN6uavcan6NodeID9BroadcastE
+08002600 g     F .text	00000000 .hidden __aeabi_drsub
+08004d10  w    F .text	00000002 Vector40
+080069a0 g     F .text	00000016 _sbrk_r
+08004d10  w    F .text	00000002 VectorF8
+08004d10  w    F .text	00000002 Vector108
+08011610 g     F .text	0000003e _ZN6uavcan10CanTxQueue4peekEv
+0800a340  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol12RestartNode_ENS_12MethodBinderIPKNS_20RestartRequestServerEMS4_KFvRKNS_21ReceivedDataStructureINS2_8Request_ILi0EEEEERNS2_9Response_ILi0EEEEEEED2Ev
+08009520  w    F .text	0000000e _ZN6uavcan4fillIPhhEEvT_S2_RKT0_
+0800e960  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+08004c50 g     F .text	000000bc ResetHandler
+080056b0 g     F .text	00000070 chIQReadTimeout
+08004d10  w    F .text	00000002 VectorBC
+0800ef50 g     F .text	0000008e _ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEE
+08013660 g     F .text	000000d0 _ZN13zubax_chibios6config17executeCliCommandEiPPc
+0800a270  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol16GetDataTypeInfo_ENS_12MethodBinderIPNS_20DataTypeInfoProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED1Ev
+0801bf30  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEE17TransferForwarderE
+080134f0 g     F .text	00000050 _ZN12uavcan_stm328BusEvent4waitEN6uavcan17MonotonicDurationE
+08005d80 g     F .text	00000028 Vector124
+08013830 g     F .text	0000000c _ZN10chibios_rt5MutexC1Ev
+080088e0  w    F .text	00000020 _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+0800b3a0  w    F .text	000001a0 _ZN6uavcan4NodeILj7168EE5startENS_16TransferPriorityE
+08008940  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt93EED2Ev
+0800f460  w    F .text	0000000a _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+08012ac0 g     F .text	0000000c _ZN12uavcan_stm328CanIface7RxQueue16registerOverflowEv
+0801bf70  w    O .text	00000014 _ZTVN6uavcan10SubscriberINS_8protocol15GlobalTimeSync_ILi0EEENS_12MethodBinderIPNS_19GlobalTimeSyncSlaveEMS5_FvRKNS_21ReceivedDataStructureIS3_EEEEEEE
+08002e60 g     F .text	00000012 .hidden __aeabi_dcmplt
+080127d0 g     F .text	0000003c _ZN12uavcan_stm3211SystemClock8instanceEv
+080095a0  w    F .text	00000012 _ZN6uavcan20GlobalTimeSyncMasterD0Ev
+0800a7b0  w    F .text	00000012 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED0Ev
+08003e00 g     F .text	00000148 ms5611ReadPT
+08011010 g     F .text	00000006 _ZNK6uavcan10Dispatcher13hasSubscriberENS_10DataTypeIDE
+20002560  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08004d60 g     F .text	00000030 _port_init
+0800dfe0 g     F .text	00000138 _ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE
+0800c1b0  w    F .text	000000a0 _ZN6uavcan16GenericPublisherINS_8protocol4file20BeginFirmwareUpdate_ENS3_9Response_ILi0EEEE14genericPublishERKS5_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+200091b8 g     O .bss	00000004 __malloc_max_sbrked_mem
+08010da0 g     F .text	00000016 _ZNK6uavcan10Dispatcher16ListenerRegistry6existsENS_10DataTypeIDE
+080119c0 g     F .text	0000000a _ZNK6uavcan20GenericPublisherBase8isInitedEv
+200025ec  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08005f10 g     F .text	00000068 hal_lld_init
+080028c8 g     F .text	0000003a .hidden __extendsfdf2
+08002bc4 g     F .text	000001d0 .hidden __aeabi_ddiv
+0800d260 g     F .text	00000030 _ZN5board9setCANLedEjb
+0800ee80  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD1Ev
+0800ff10  w    F .text	00000032 _ZN6uavcan16TransferReceiverC2Ev
+08009310  w    F .text	00000012 _ZN6uavcan19TimerEventForwarderISt8functionIFvRKNS_10TimerEventEEEED0Ev
+0800fa50 g     F .text	0000003e _ZN6uavcan21TransferBufferManager6createERKNS_24TransferBufferManagerKeyE
+080093e0  w    F .text	0000004c _ZN6uavcan19GlobalTimeSyncSlave13adjustFromMsgERKNS_21ReceivedDataStructureINS_8protocol15GlobalTimeSync_ILi0EEEEE
+0800def0 g     F .text	00000004 _ZN5ublox6Driver4spinEj
+0800e420  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt4EED0Ev
+0800260c g     F .text	00000276 .hidden __adddf3
+0800b560  w    F .text	000000c4 _ZN6uavcan19GlobalTimeSyncSlave5startEv
+080034b0 g     F .text	0000005e .hidden __nesf2
+0800ab40  w    F .text	0000008c _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEE12genericStartEMNS_10DispatcherEFbPS5_E
+08016c50 g     F .text	000000ce __b2d
+0800c250  w    F .text	00000088 _ZN6uavcan13ServiceServerINS_8protocol4file20BeginFirmwareUpdate_EPFvRKNS_21ReceivedDataStructureINS3_8Request_ILi0EEEEERNS3_9Response_ILi0EEEEE24handleReceivedDataStructERS7_
+0800b990  w    F .text	00000148 _ZN6uavcan4NodeILj7168EE23registerInternalFailureEPKc
+08011650 g     F .text	0000005c _ZN6uavcan12CanIOManager15sendFromTxQueueEh
+08002970 g     F .text	00000254 .hidden __aeabi_dmul
+08005320 g     F .text	0000003c chThdExitS
+08011fe0 g     F .text	0000002c _ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE
+08013740 g     F .text	0000000c _ZdlPv
+0800e260 g     F .text	0000009c _ZN20bootloader_interface4initEv
+08008310  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt25EED2Ev
+0801a670 g     F .text	000003e0 _realloc_r
+08009210  w    F .text	0000000e _ZNK6uavcan5INode9getNodeIDEv
+08012790 g     F .text	00000034 _ZN12uavcan_stm325clock16setUtcSyncParamsERKNS0_13UtcSyncParamsE
+0800abd0  w    F .text	00000080 _ZN6uavcan16GenericPublisherINS_8protocol15GlobalTimeSync_ILi0EEES3_E14genericPublishERKS3_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+0800ebe0 g     F .text	00000006 _ZN6uavcan18NodeStatusProvider7setModeEh
+08011040 g     F .text	00000018 _ZN6uavcan10Dispatcher9setNodeIDENS_6NodeIDE
+0800e940  w    F .text	00000020 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+0800ae80  w    F .text	00000030 _ZN6uavcan8protocol5param13NumericValue_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+08007570  w    F .text	00000064 _ZN6uavcan20GenericPublisherBaseC2ERNS_5INodeENS_17MonotonicDurationES3_
+0801d2d0 g     O .text	00000100 __hexdig
+200024b8 g     O .bss	00000004 shell_terminated
+08003ae0 g     F .text	0000026e .hidden __udivdi3
+0800df00 g     F .text	00000044 _ZNK5ublox6Driver13areRatesValidEv
+08010230  w    F .text	00000042 _ZN6uavcan3MapINS_24TransferBufferManagerKeyENS_16TransferReceiverEE7compactEv
+0801be50  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+0801d530 g     O .text	00000028 __mprec_bigtens
+080059f0 g     F .text	00000006 i2cAcquireBus
+080166d0 g     F .text	00000098 __s2b
+080134d0 g     F .text	00000018 Vector148
+08013850 g     F .text	0000000e abort
+0801bdf0  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+08002884 g     F .text	0000001e .hidden __floatunsidf
+08016ac0 g     F .text	00000046 __mcmp
+080082f0  w    F .text	00000002 _ZN6uavcan17MonotonicDurationD2Ev
+080110c0  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_16TransferListenerEE6removeEPKS1_
+08009f60  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED1Ev
+0800dd90 g     F .text	00000064 _ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE
+08004580 g     F .text	00000064 configGetDescr
+0800e720 g     F .text	00000064 _ZN3cli4initEv
+08007170  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt16EED1Ev
+08006a10 g     F .text	00000284 chvprintf
+200090d9 g     O .bss	00000001 _ZN6uavcan16TransferPriority6LowestE
+080091f0  w    F .text	0000001c _ZNK6uavcan5INode16getMonotonicTimeEv
+08012930  w    F .text	0000000a _ZN12uavcan_stm3221CriticalSectionLockerC1Ev
+0801bd70  w    O .text	00000014 _ZTVN6uavcan25LoopbackFrameListenerBaseE
+080048d0 g     F .text	000000a0 watchdogCreate
+0800fcc0 g     F .text	00000130 _ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE
+08006de0 g     F .text	0000000c shellInit
+0801cd90 g     O .text	00000018 _ZTVN6uavcan26TransferBufferManagerEntryE
+0800ff50 g     F .text	00000048 _ZN6uavcan27SingleFrameIncomingTransferC1ERKNS_7RxFrameE
+08004d10  w    F .text	00000002 PendSVVector
+0801bef0  w    O .text	00000014 _ZTVN6uavcan13ServiceServerINS_8protocol18GetTransportStats_ENS_12MethodBinderIPKNS_22TransportStatsProviderEMS4_KFvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEEE
+0800b670  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPNS_11ParamServerEMS1_FvRKNS_8protocol5param7GetSet_8Request_ILi0EEERNS5_9Response_ILi0EEEEEcvbEv
+0800fdf0 g     F .text	0000000e _ZN6uavcan16TransferReceiver15yieldErrorCountEv
+080128d0 g     F .text	00000014 _ZN12uavcan_stm329CanDriver8getIfaceEh
+08004d10  w    F .text	00000002 Vector118
+0800d170  w    F .text	00000098 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE
+08010530  w    F .text	00000020 _ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+08002f40 g     F .text	0000009e .hidden __aeabi_d2f
+0800ec10 g     F .text	00000042 _ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE
+08004ff0 g     F .text	00000034 chVTSetI
+0800cef0  w    F .text	000000e0 _ZN6uavcan13ServiceServerINS_8protocol5param7GetSet_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS8_EE
+080074f0  w    F .text	00000012 _ZNSt14_Function_baseD2Ev
+08004d10  w    F .text	00000002 Vector64
+200091f0 g       .bss	00000000 _bss_end
+08003770 g     F .text	00000048 .hidden __aeabi_d2ulz
+08010d40  w    F .text	00000032 _ZN6uavcan7RxFrameC1Ev
+0801bdd0  w    O .text	00000014 _ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEEE
+08002fe8 g     F .text	00000164 .hidden __aeabi_fsub
+08004480 g     F .text	0000003c configErase
+200013ac g     O .bss	00000004 dbg_panic_msg
+08013560 g     F .text	00000004 _ZN12uavcan_stm325Mutex4lockEv
+0800a790  w    F .text	00000014 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED1Ev
+0800a3a0  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev
+200024c0  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4gnss10Auxiliary_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08012940 g     F .text	0000001c _ZN12uavcan_stm328CanIface16configureFiltersEPKN6uavcan15CanFilterConfigEt
+0800c6a0  w    F .text	00000020 _ZN6uavcan11ScalarCodec6decodeILj8EhEEiRT0_
+08004c40  w    F .text	00000002 _default_exit
+08006090 g     F .text	00000064 _pal_lld_setgroupmode
+0800e900 g     F .text	00000014 _ZNK6uavcan18DataTypeDescriptor5matchENS_12DataTypeKindENS_10DataTypeIDE
+0800e570  w    F .text	0000009c _ZN6uavcan16GenericPublisherINS_9equipment8air_data18StaticTemperature_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+080104a0 g     F .text	00000080 _ZN6uavcan16TransferListener11handleFrameERKNS_7RxFrameE
+08008b50  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+0800c2e0  w    F .text	000000c4 _ZN6uavcan16GenericPublisherINS_8protocol5param14ExecuteOpcode_ENS3_9Response_ILi0EEEE14genericPublishERKS5_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+08003590 g     F .text	0000002c .hidden __aeabi_fcmpun
+08015440 g     F .text	00000002 __tz_unlock
+0800a7d0  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED0Ev
+0801bfd0  w    O .text	00000014 _ZTVN6uavcan13ServiceServerINS_8protocol5param7GetSet_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEEE
+200044d0  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol4file20BeginFirmwareUpdate_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08016770 g     F .text	00000040 __hi0bits
+08004d10  w    F .text	00000002 VectorCC
+0800ca20  w    F .text	0000000a _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+08003564 g     F .text	00000012 .hidden __aeabi_fcmpge
+20002060 g     O .bss	00000458 SD3
+08002eb0 g     F .text	0000004e .hidden __fixdfsi
+08006820 g     F .text	00000060 sd_lld_init
+0800a8b0  w    F .text	000000f8 _ZN12uavcan_stm329CanDriverC2ILj32EEERA2_AT__NS_9CanRxItemE
+08009980  w    F .text	00000012 _ZN12uavcan_stm328CanIfaceD0Ev
+0800fb20 g     F .text	0000005c _ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE
+08005370 g     F .text	00000008 chSemInit
+08013200 g     F .text	00000024 _ZN12uavcan_stm328CanIface11hadActivityEv
+0801bfb0  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEEE
+0800cc80  w    F .text	00000016 _ZN6uavcan11ScalarCodec6encodeILj32EmEEiT0_
+0800b260  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPKNS_20RestartRequestServerEMS1_KFvRKNS_21ReceivedDataStructureINS_8protocol12RestartNode_8Request_ILi0EEEEERNS6_9Response_ILi0EEEEEcvbEv
+080088b0  w    F .text	00000014 _ZN6uavcan13PoolAllocatorILj7168ELh56EcE10deallocateEPKv
+08004d10  w    F .text	00000002 Vector54
+08009330  w    F .text	00000034 _ZN6uavcan9TimerBaseC2ERNS_5INodeE
+08003180 g     F .text	0000007c .hidden __floatdisf
+08013460 g     F .text	00000018 Vector98
+0801bf50  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEEE
+08008800  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt123EED2Ev
+08007570  w    F .text	00000064 _ZN6uavcan20GenericPublisherBaseC1ERNS_5INodeENS_17MonotonicDurationES3_
+0801bf10  w    O .text	00000014 _ZTVN6uavcan20GlobalTimeSyncMasterE
+080128b0  w    F .text	00000004 _ZNK12uavcan_stm328CanIface13getNumFiltersEv
+0800e340 g     F .text	0000000c _ZN20bootloader_interface18getInheritedNodeIDEv
+0800e920 g     F .text	00000012 _ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS2_9Response_ILi0EEE
+080097b0  w    F .text	00000014 _ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEmiERKS1_
+08007ce0  w    F .text	00000036 _ZNK6uavcan20SquareMatrixAnalyzerIPKfLj9EE8isScalarEv
+080114d0 g     F .text	00000020 _ZN6uavcan10CanTxQueueD2Ev
+0800e400  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt4EED1Ev
+0800d2b0 g     F .text	000000b8 _ZN5board15enterBootloaderEv
+200090dd g     O .bss	00000001 _ZN6uavcan16TransferPriority19OneLowerThanHighestE
+08004400 g     F .text	00000080 configSave
+080067e0 g     F .text	00000014 VectorD8
+080034a0 g     F .text	0000006e .hidden __gtsf2
+20000834 g     O .data	00000008 _tzname
+08011ed0 g     F .text	0000005c _ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm
+080102f0 g     F .text	00000028 _ZN6uavcan16TransferListenerD1Ev
+20001118 g     O .data	00000004 environ
+20002600  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+0801bf90  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+08008850  w    F .text	00000004 _ZN6uavcan4NodeILj7168EE12getAllocatorEv
+080137f0 g     F .text	00000004 _ZN10chibios_rt10BaseThread11unlockMutexEv
+08009c40 g     F .text	00000040 _ZN4node7getNodeEv
+08011b00 g     F .text	00000050 _ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+08004d10  w    F .text	00000002 Vector138
+080025e0 g     F .text	00000018 .hidden __lshrdi3
+080111f0 g     F .text	00000016 _ZNK6uavcan10CanTxQueue5Entry13qosHigherThanERKNS_8CanFrameENS0_3QosE
+080131d0 g     F .text	00000022 _ZNK12uavcan_stm328CanIface15isRxBufferEmptyEv
+0800260c g     F .text	00000276 .hidden __aeabi_dadd
+0800a630  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol5param7GetSet_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEED1Ev
+0801beb0  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+08009fa0  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED1Ev
+08004d10  w    F .text	00000002 Vector24
+08002da8 g     F .text	00000082 .hidden __ledf2
+08009430  w    F .text	0000004c _ZN6uavcan19GlobalTimeSyncSlave13updateFromMsgERKNS_21ReceivedDataStructureINS_8protocol15GlobalTimeSync_ILi0EEEEE
+080054c0 g     F .text	00000014 chMtxLock
+08012ad0 g     F .text	00000076 _ZN12uavcan_stm328CanIface7RxQueue4pushERKN6uavcan8CanFrameERKyt
+08006e10 g     F .text	0000001c shellCreateStatic
+08011020 g     F .text	00000008 _ZNK6uavcan10Dispatcher12hasPublisherENS_10DataTypeIDE
+08007620  w    F .text	00000018 _ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+08003550 g     F .text	00000012 .hidden __aeabi_fcmple
+08003720 g     F .text	0000004c .hidden __aeabi_f2ulz
+080096a0  w    F .text	00000046 _ZN6uavcan8protocol12GetNodeInfo_9Response_ILi0EEC2Ev
+08008880  w    F .text	00000030 _ZN6uavcan13PoolAllocatorILj7168ELh56EcE8allocateEj
+08016970 g     F .text	000000a0 __pow5mult
+08002904 g     F .text	0000006a .hidden __aeabi_ul2d
+08011030 g     F .text	00000006 _ZNK6uavcan10Dispatcher9hasServerENS_10DataTypeIDE
+0800ed00 g     F .text	00000158 _ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE
+08005220 g     F .text	00000014 chSchDoReschedule
+08004f20 g     F .text	0000005c chSysInit
+08012210  w    F .text	0000000c _ZN6uavcan20LimitedPoolAllocatorD0Ev
+0800eee0 g     F .text	00000028 _ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm
+08005300 g     F .text	00000018 chThdSleep
+080055c0 g     F .text	0000001c chIQInit
+08004790 g     F .text	00000068 configStorageErase
+08008a90  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+0800e870 g     F .text	00000038 _ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+08013780 g     F .text	00000002 _ZN10chibios_rt15ThreadReference4stopEv
+0800a650  w    F .text	00000012 _ZN6uavcan13ServiceServerINS_8protocol5param7GetSet_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEED0Ev
+08007150  w    F .text	00000002 _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+0801b5d0 g     O .text	00000090 _stm32_dma_streams
+0800aa90  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEED0Ev
+0800a5b0  w    F .text	00000012 _ZN6uavcan10SubscriberINS_8protocol15GlobalTimeSync_ILi0EEENS_12MethodBinderIPNS_19GlobalTimeSyncSlaveEMS5_FvRKNS_21ReceivedDataStructureIS3_EEEEEED0Ev
+08005d20 g     F .text	00000028 Vector84
+080096a0  w    F .text	00000046 _ZN6uavcan8protocol12GetNodeInfo_9Response_ILi0EEC1Ev
+08004b60 g     F .text	00000014 sysPanic
+08009fc0  w    F .text	00000024 _ZN6uavcan18NodeStatusProviderD1Ev
+0800c620  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEEEEcvbEv
+08004e00 g     F .text	0000001a SysTickVector
+0800f7f0 g     F .text	0000002c _ZN6uavcan26TransferBufferManagerEntry11instantiateERNS_14IPoolAllocatorEt
+08009950  w    F .text	00000024 _ZN12uavcan_stm3213CanInitHelperILj32EED2Ev
+08008ab0  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+080114f0 g     F .text	00000120 _ZN6uavcan10CanTxQueue4pushERKNS_8CanFrameENS_13MonotonicTimeENS0_3QosEt
+0800a440  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol15GlobalTimeSync_ILi0EEES3_E9checkInitEv
+08008930  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt1EED2Ev
+080094b0 g     F .text	0000000c _ZN4node24hasPendingRestartRequestEv
+08002e9c g     F .text	00000012 .hidden __aeabi_dcmpgt
+08011130 g     F .text	00000026 _ZN6uavcan10Dispatcher16ListenerRegistry3addEPNS_16TransferListenerENS1_4ModeE
+0800a380  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEED0Ev
+0800ee60  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt18EED1Ev
+0800b6b0  w    F .text	000001bc _ZN6uavcan11ParamServer5startEPNS_13IParamManagerE
+0801b850  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt79EEE
+08005f80 g     F .text	000000a0 stm32_clock_init
+0801a5d0 g     F .text	00000092 memchr
+080045f0 g     F .text	00000050 configGet
+0800c680  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS4_9Response_ILi0EEEEEcvbEv
+08006020 g     F .text	00000068 _pal_lld_init
+080078f0  w    F .text	000000b4 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE
+0801a370 g     F .text	000001b0 _free_r
+08009500 g     F .text	00000018 _ZN4node4initEv
+08012110 g     F .text	00000032 _ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+08012270 g     F .text	00000006 _ZN6uavcan16handleFatalErrorEPKc
+08008910  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt371EED2Ev
+08012340 g     F .text	00000064 _ZN12uavcan_stm325clock4initEv
+08016070 g     F .text	0000000c __locale_mb_cur_max
+0800a3e0  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol18GetTransportStats_ENS_12MethodBinderIPKNS_22TransportStatsProviderEMS4_KFvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev
+0800f4c0 g     F .text	0000005e _ZN6uavcan12bitarrayCopyEPKhjjPhj
+08002e88 g     F .text	00000012 .hidden __aeabi_dcmpge
+08005a90 g     F .text	00000004 sdInit
+08004d10  w    F .text	00000002 BusFaultVector
+0800aa50  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol4file20BeginFirmwareUpdate_EPFvRKNS_21ReceivedDataStructureINS3_8Request_ILi0EEEEERNS3_9Response_ILi0EEEEED2Ev
+0801ceb0 g     O .text	00000024 _ZTVN12uavcan_stm328CanIfaceE
+08004af0  w    F .text	00000002 sysApplicationHaltHook
+08010e20 g     F .text	0000005c _ZN6uavcan10Dispatcher11handleFrameERKNS_10CanRxFrameE
+080105f0  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7KVGroupEE6removeEPKS6_
+08011d30  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_22GlobalDataTypeRegistry5EntryEE6removeEPKS2_
+08008960  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt123EED0Ev
+080171e0 g     F .text	00000088 _sungetc_r
+08002608 g     F .text	0000027a .hidden __aeabi_dsub
+08013c60 g     F .text	00000390 mktime
+08004d10  w    F .text	00000002 VectorD0
+0800b010  w    F .text	0000006a _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compactEv
+0801c7d0 g     O .text	00000018 _ZN5ublox9IOManager14ValidBaudRatesE
+20001114 g     O .data	00000004 __malloc_sbrk_base
+0801cdf0 g     O .text	00000020 _ZTVN6uavcan26MultiFrameIncomingTransferE
+080058a0 g     F .text	00000028 _core_init
+08007be0  w    F .text	00000020 _ZSt4swapISt9_Any_dataEvRT_S2_
+08010320  w    F .text	00000084 _ZN6uavcan3MapINS_24TransferBufferManagerKeyENS_16TransferReceiverEE14removeAllWhereINS_16TransferListener25TimedOutReceiverPredicateEEEvT_
+08009f60  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev
+08008810  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt7EED2Ev
+0801abf0 g     F .text	000001cc _strtoll_r
+080093d0  w    F .text	0000000e _ZN12uavcan_stm3211MutexLockerD1Ev
+200090d8 g     O .bss	00000001 _ZN6uavcan16TransferPriority11MiddleLowerE
+200025a0  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08011e60 g     F .text	0000006c _ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE
+08002904 g     F .text	0000006a .hidden __floatundidf
+08011410 g     F .text	00000070 _ZNK6uavcan12CanIOManager20getIfacePerfCountersEh
+08013ff0 g     F .text	00000040 rand
+0800b380  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPKNS_22TransportStatsProviderEMS1_KFvRKNS_8protocol18GetTransportStats_8Request_ILi0EEERNS5_9Response_ILi0EEEEEcvbEv
+08013770 g     F .text	0000000c __cxa_pure_virtual
+08011c40 g     F .text	00000034 _ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+08005af0 g     F .text	0000001a sdStart
+08016a10 g     F .text	000000b0 __lshift
+08012430  w    F .text	0000000c _ZNK12uavcan_stm3211SystemClock12getMonotonicEv
+0800a470  w    F .text	000000d0 _ZN6uavcan20GlobalTimeSyncMaster4initENS_16TransferPriorityE
+0800fea0  w    F .text	00000002 _ZN6uavcan27SingleFrameIncomingTransferD1Ev
+08003154 g     F .text	0000001c .hidden __floatsisf
+08013490 g     F .text	00000012 Vector140
+0801afb0 g     F .text	00000104 __ssprint_r
+08007640  w    F .text	0000004c _ZN6uavcan9equipment4gnss4Fix_ILi0EEC2Ev
+0800d370 g     F .text	00000020 _ZN5board7restartEv
+08004d10  w    F .text	00000002 VectorE4
+0800a290  w    F .text	00000012 _ZN6uavcan13ServiceServerINS_8protocol16GetDataTypeInfo_ENS_12MethodBinderIPNS_20DataTypeInfoProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED0Ev
+0801d050 g     O .text	00000014 _ZTVN10chibios_rt10BaseThreadE
+08004d10  w    F .text	00000002 VectorC0
+0801cb20  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt18EEE
+08007600 g     F .text	00000010 _ZN4gnss4stopEv
+080141c0 g     F .text	00000092 strncmp
+080088d0  w    F .text	00000004 _ZNK6uavcan13PoolAllocatorILj7168ELh56EcE16getBlockCapacityEv
+08009530  w    F .text	00000020 _ZN6uavcan8CanFrameC2Ev
+0800fe20 g     F .text	00000006 _ZN6uavcan16IncomingTransfer5writeEjPKhj
+0800ee60  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt18EED2Ev
+08012280  w    F .text	00000002 _ZN6uavcan13MonotonicTimeD1Ev
+08005e10 g     F .text	00000028 Vector130
+08004e20 g     F .text	00000010 _port_switch
+0800a340  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol12RestartNode_ENS_12MethodBinderIPKNS_20RestartRequestServerEMS4_KFvRKNS_21ReceivedDataStructureINS2_8Request_ILi0EEEEERNS2_9Response_ILi0EEEEEEED1Ev
+08008030  w    F .text	00000088 _ZN6uavcan16GenericPublisherINS_9equipment4gnss4Fix_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+08016830 g     F .text	0000013e __multiply
+00010000 g       *ABS*	00000000 __ram_size__
+0800fa00 g     F .text	00000026 _ZN6uavcan21TransferBufferManagerD1Ev
+08010520 g     F .text	0000000c _ZNK6uavcan10TransferID22computeForwardDistanceES0_
+08007610 g     F .text	00000008 _ZN4gnss13getSerialPortEv
+0800e8b0 g     F .text	00000024 _ZNK6uavcan18DataTypeDescriptor7isValidEv
+080035c0 g     F .text	0000004c .hidden __aeabi_f2iz
+0801d3f0 g     O .text	00000060 __month_lengths
+08013800 g     F .text	0000000c _ZN10chibios_rt16CounterSemaphoreC1El
+200091c0 g     O .bss	00000028 __malloc_current_mallinfo
+080128c0  w    F .text	00000004 _ZNK12uavcan_stm329CanDriver12getNumIfacesEv
+080034b0 g     F .text	0000005e .hidden __eqsf2
+08016d20 g     F .text	000000a8 __d2b
+08004d40 g     F .text	00000012 SVCallVector
+08014120 g     F .text	00000040 strcasecmp
+08004c30  w    F .text	00000002 __late_init
+08011160 g     F .text	00000010 _ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE
+200025e8  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4gnss11RTCMStream_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+200016b8 g     O .bss	00000010 vtlist
+08012300  w    F .text	00000002 _ZN12uavcan_stm325clock13UtcSyncParamsD1Ev
+08004d10  w    F .text	00000002 HardFaultVector
+08004d90 g     F .text	00000068 _port_irq_epilogue
+080121a0 g     F .text	00000018 _ZN6uavcan20LimitedPoolAllocator8allocateEj
+0801c150  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt123EEE
+0801be90  w    O .text	00000014 _ZTVN6uavcan13ServiceServerINS_8protocol12RestartNode_ENS_12MethodBinderIPKNS_20RestartRequestServerEMS4_KFvRKNS_21ReceivedDataStructureINS2_8Request_ILi0EEEEERNS2_9Response_ILi0EEEEEEEE
+08004d10  w    F .text	00000002 Vector134
+08010dc0 g     F .text	00000022 _ZN6uavcan10Dispatcher16ListenerRegistry7cleanupENS_13MonotonicTimeE
+08017080 g     F .text	00000134 _strtoul_r
+08010a70 g     F .text	00000014 _ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE
+08012700  w    F .text	00000014 _ZN12uavcan_stm3211SystemClock9adjustUtcEN6uavcan11UtcDurationE
+0800f980  w    F .text	00000028 _ZN6uavcan26TransferBufferManagerEntryD2Ev
+08005900 g     F .text	00000014 chCoreAlloc
+0800eb40 g     F .text	0000008c _ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE
+08003368 g     F .text	00000136 .hidden __aeabi_fdiv
+080028a4 g     F .text	00000022 .hidden __aeabi_i2d
+080107e0 g     F .text	00000018 _ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE
+080036c0 g     F .text	00000026 .hidden __fixsfdi
+0800e400  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt4EED2Ev
+08004d10  w    F .text	00000002 VectorF0
+0801cb90 g     O .text	00000200 _ZN6uavcan11TransferCRC5TableE
+08011d60 g     F .text	0000004c _ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+08011a80 g     F .text	00000074 _ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+08013870 g     F .text	00000062 memcmp
+0800ae50  w    F .text	00000030 _ZN6uavcan8protocol5param6Value_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+08010ec0 g     F .text	0000008e _ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE
+080105b0  w    F .text	0000003a _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyERKS1_
+08012490 g     F .text	00000268 _ZN12uavcan_stm325clock9adjustUtcEN6uavcan11UtcDurationE
+08011fb0 g     F .text	00000024 _ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+08005de0 g     F .text	00000028 Vector12C
+08012cf0 g     F .text	0000019c _ZN12uavcan_stm328CanIface4initEmNS0_13OperatingModeE
+080092c0  w    F .text	00000016 _ZN6uavcan5INode9setNodeIDENS_6NodeIDE
+08003170 g     F .text	0000008c .hidden __floatundisf
+08013820 g     F .text	00000004 _ZN10chibios_rt16CounterSemaphore7signalIEv
+0800ecd0  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv
+0801c170  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt7EEE
+0800f110 g     F .text	000000c8 _ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE
+08012330  w    F .text	0000000a _ZN12uavcan_stm3221CriticalSectionLockerD1Ev
+0800ef10 g     F .text	00000036 _ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE
+0800e3f0  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt6EED1Ev
+08004510 g     F .text	0000006c configSet
+08013480 g     F .text	00000010 Vector13C
+08003820  w    F .text	00000002 .hidden __aeabi_ldiv0
+0800c6c0  w    F .text	000000ac _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+0800e3e0  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment8air_data18StaticTemperature_ILi0EEEED1Ev
+0800d6a0 g     F .text	00000016 _ZNK5ublox15MessageReceiver14getReadLenHintEv
+08002bc4 g     F .text	000001d0 .hidden __divdf3
+08011170 g     F .text	0000001a _ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE
+0800c0b0  w    F .text	00000068 _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+0800d560 g     F .text	00000010 _ZN5ublox16ChecksumComputer3addEh
+08012300  w    F .text	00000002 _ZN12uavcan_stm325clock13UtcSyncParamsD2Ev
+08008a50  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+20003db8  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08016e30 g     F .text	00000046 __copybits
+080114d0 g     F .text	00000020 _ZN6uavcan10CanTxQueueD1Ev
+0800b080  w    F .text	000000c0 _ZN6uavcan4NodeILj7168EED2Ev
+08008b10  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+080123d0 g     F .text	00000060 _ZN12uavcan_stm325clock12getMonotonicEv
+20000d08 g     O .data	00000408 __malloc_av_
+0800314c g     F .text	00000024 .hidden __aeabi_ui2f
+080102f0 g     F .text	00000028 _ZN6uavcan16TransferListenerD2Ev
+08015790 g     F .text	00000070 _vsnprintf_r
+08010a50 g     F .text	00000012 _ZNK6uavcan14TransferSender13registerErrorEv
+08004d10  w    F .text	00000002 Vector100
+08002970 g     F .text	00000254 .hidden __muldf3
+0801d618 g       *ABS*	00000000 _textdata
+0800dd10 g     F .text	00000080 _ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE
+08004d10  w    F .text	00000002 VectorE0
+0800cb50  w    F .text	00000074 _ZN6uavcan16GenericPublisherINS_8protocol16GetDataTypeInfo_ENS2_9Response_ILi0EEEE14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+08007190  w    F .text	0000002c _ZN10chibios_rt16BaseStaticThreadILi3000EE5startEm
+00000000 g       startup	00000000 _text
+08004d10  w    F .text	00000002 VectorF4
+08011fa0 g     F .text	0000000e _ZN6uavcan15DeadlineHandler4stopEv
+0800a690  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEED1Ev
+08011c00 g     F .text	0000002a _ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE
+08004d10  w    F .text	00000002 MemManageVector
+080044c0 g     F .text	00000048 configNameByIndex
+0801be10  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEEE
+0800f820 g     F .text	00000020 _ZN6uavcan26TransferBufferManagerEntry7destroyERPS0_RNS_14IPoolAllocatorE
+080165b0 g     F .text	00000002 __malloc_lock
+0800aeb0  w    F .text	000000c4 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5param7GetSet_EEENS0_18RegistrationResultENS_10DataTypeIDE
+08008920  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt73EED2Ev
+08000184 g       constructors	00000000 __fini_array_start
+0800ab10  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol18GetTransportStats_ENS2_9Response_ILi0EEEE9checkInitEv
+0800cda0  w    F .text	000000ca _ZN6uavcan8protocol5param7GetSet_9Response_ILi0EE6encodeERKS4_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE
+08010160  w    F .text	0000001e _ZN6uavcan3MapINS_24TransferBufferManagerKeyENS_16TransferReceiverEE7findKeyERKS1_
+08013280 g     F .text	00000098 _ZN12uavcan_stm329CanDriver6selectERN6uavcan14CanSelectMasksERA3_PKNS1_8CanFrameENS1_13MonotonicTimeE
+08019270 g     F .text	0000005e _calloc_r
+08012c10 g     F .text	000000bc _ZN12uavcan_stm328CanIface14computeTimingsEmRNS0_7TimingsE
+080094c0 g     F .text	00000020 _ZN4node18setComponentHealthENS_11ComponentIDEh
+08013830 g     F .text	0000000c _ZN10chibios_rt5MutexC2Ev
+08008c80  w    F .text	0000002e _ZN6uavcan11ParamServer19handleExecuteOpcodeERKNS_8protocol5param14ExecuteOpcode_8Request_ILi0EEERNS3_9Response_ILi0EEE
+0800a5f0  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEED1Ev
+0800f6c0 g     F .text	00000036 _ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+08009d50 g     F .text	0000004c _ZN4node28adjustUtcTimeFromLocalSourceERKN6uavcan11UtcDurationE
+08015430 g     F .text	00000002 __tz_lock
+080034b0 g     F .text	0000005e .hidden __cmpsf2
+08012200  w    F .text	00000002 _ZN6uavcan20LimitedPoolAllocatorD1Ev
+08010890 g     F .text	000000a0 _ZN6uavcan5Frame5parseERKNS_8CanFrameE
+08011060  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_25LoopbackFrameListenerBaseEE6removeEPKS1_
+0800fb80 g     F .text	00000048 _ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE
+0800b280  w    F .text	000000f8 _ZN6uavcan13ServiceServerINS_8protocol12RestartNode_ENS_12MethodBinderIPKNS_20RestartRequestServerEMS4_KFvRKNS_21ReceivedDataStructureINS2_8Request_ILi0EEEEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERSA_
+080128f0  w    F .text	00000020 _ZN12uavcan_stm329CanDriverD2Ev
+080139b0 g     F .text	0000009a memset
+08004970 g     F .text	00000044 watchdogReset
+0800e410  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt6EED0Ev
+0801cea0 g     O .text	0000000c _ZN12uavcan_stm328CanIface9TSR_ABRQxE
+0800c1a0  w    F .text	0000000a _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+08001290 g     F .text	000000c4 main
+08008950  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt377EED2Ev
+08005c00 g     F .text	00000028 Vector6C
+08011f60 g     F .text	0000003e _ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE
+0800d740 g     F .text	000000c0 _ZN5ublox9IOManager4spinEj
+08009030  w    F .text	000000a2 _ZNK6uavcan22TransportStatsProvider23handleGetTransportStatsERKNS_8protocol18GetTransportStats_8Request_ILi0EEERNS2_9Response_ILi0EEE
+08012960 g     F .text	0000002c _ZNK12uavcan_stm328CanIface13getErrorCountEv
+08013810 g     F .text	00000004 _ZN10chibios_rt16CounterSemaphore11waitTimeoutEm
+08012200  w    F .text	00000002 _ZN6uavcan20LimitedPoolAllocatorD2Ev
+200091b4 g     O .bss	00000004 __malloc_max_total_mem
+0800f9d0  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_26TransferBufferManagerEntryEE6removeEPKS1_
+0800a710  w    F .text	00000012 _ZN6uavcan13ServiceServerINS_8protocol5param14ExecuteOpcode_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEED0Ev
+08003180 g     F .text	0000007c .hidden __aeabi_l2f
+200016c8 g     O .bss	0000001c rlist
+08011c30  w    F .text	00000002 _ZN6uavcan22GlobalDataTypeRegistryD2Ev
+08004d10  w    F .text	00000002 VectorA0
+08009650  w    F .text	00000046 _ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_
+0800fa90 g     F .text	00000066 _ZN6uavcan16TransferReceiver21updateTransferTimingsEv
+080034a8 g     F .text	00000066 .hidden __ltsf2
+08008970  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt73EED0Ev
+0800b080  w    F .text	000000c0 _ZN6uavcan4NodeILj7168EED1Ev
+20004578  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5param14ExecuteOpcode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+0801c070  w    O .text	00000014 _ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEEE
+0800b630  w    F .text	00000038 _ZN6uavcan10SubscriberINS_8protocol15GlobalTimeSync_ILi0EEENS_12MethodBinderIPNS_19GlobalTimeSyncSlaveEMS5_FvRKNS_21ReceivedDataStructureIS3_EEEEEE24handleReceivedDataStructERS8_
+08013750 g     F .text	0000000c _ZSt25__throw_bad_function_callv
+08008920  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt73EED1Ev
+08007c20  w    F .text	000000b4 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4gnss4Fix_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE
+08012ed0 g     F .text	00000070 _ZN12uavcan_stm328CanIface17handleTxInterruptEy
+08006590 g     F .text	000000c8 i2c_lld_master_transmit_timeout
+08002f40 g     F .text	0000009e .hidden __truncdfsf2
+0801aad0 g     F .text	0000011c _strtol_r
+0800da20 g     F .text	000001dc _ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE
+0800c460  w    F .text	000000e4 _ZN6uavcan16GenericPublisherINS_8protocol18GetTransportStats_ENS2_9Response_ILi0EEEE14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+08015fb0 g     F .text	00000088 _findenv_r
+08000184 g       constructors	00000000 __init_array_end
+08011220 g     F .text	0000001c _ZNK6uavcan10CanTxQueue24topPriorityHigherOrEqualERKNS_8CanFrameE
+08005b10 g     F .text	0000002e sdStop
+08019400 g     F .text	00000ea2 _dtoa_r
+080160a0 g     F .text	0000050c _malloc_r
+08012e90 g     F .text	0000003a _ZN12uavcan_stm328CanIface24handleTxMailboxInterruptEhby
+08010a90 g     F .text	000001b8 _ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10TransferIDE
+0800a5d0  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEED0Ev
+0800a400  w    F .text	00000012 _ZN6uavcan13ServiceServerINS_8protocol18GetTransportStats_ENS_12MethodBinderIPKNS_22TransportStatsProviderEMS4_KFvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED0Ev
+08002914 g     F .text	0000005a .hidden __aeabi_l2d
+08006220 g     F .text	00000110 VectorC4
+08005cc0 g     F .text	00000028 Vector7C
+0801cb00  w    O .text	00000018 _ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderE
+20003d98  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+080191f0 g     F .text	0000007a __submore
+0801a2c0 g     F .text	00000002 __env_unlock
+0801c090  w    O .text	0000001c _ZTVN6uavcan13PoolAllocatorILj7168ELh56EcEE
+200025f8  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+080089c0  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt371EED0Ev
+200090e0 g     O .bss	00000008 _ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE
+2000457c  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5param7GetSet_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08013800 g     F .text	0000000c _ZN10chibios_rt16CounterSemaphoreC2El
+08005420 g     F .text	0000000a chMtxInit
+0800ce70  w    F .text	00000074 _ZN6uavcan16GenericPublisherINS_8protocol5param7GetSet_ENS3_9Response_ILi0EEEE14genericPublishERKS5_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+0800a6f0  w    F .text	00000014 _ZN6uavcan11ParamServerD1Ev
+0800e980  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+08003170 g     F .text	0000008c .hidden __aeabi_ul2f
+08004f00 g     F .text	00000014 _idle_thread
+08003720 g     F .text	0000004c .hidden __fixunssfdi
+08008d00  w    F .text	00000040 _ZNK6uavcan20RestartRequestServer17handleRestartNodeERKNS_21ReceivedDataStructureINS_8protocol12RestartNode_8Request_ILi0EEEEERNS3_9Response_ILi0EEE
+0800f7c0 g     F .text	00000030 _ZN6uavcan26TransferBufferManagerEntry5Block5writeERPKhjRjS5_
+0800c090  w    F .text	00000012 _ZN6uavcan19DynamicNodeIDClientD0Ev
+08005820 g     F .text	0000007e chOQWriteTimeout
+08003518 g     F .text	00000010 .hidden __aeabi_cfcmple
+0800cbd0  w    F .text	000000ac _ZN6uavcan13ServiceServerINS_8protocol16GetDataTypeInfo_ENS_12MethodBinderIPNS_20DataTypeInfoProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE
+0800e960  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+0800b140  w    F .text	00000012 _ZN6uavcan4NodeILj7168EED0Ev
+08003f50 g     F .text	00000048 ms5611Reset
+08004d10  w    F .text	00000002 VectorB0
+0801a2d0 g     F .text	0000009c _malloc_trim_r
+0801b590 g     O .text	00000016 ch_debug
+200025e4  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4gnss4Fix_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08003200 g     F .text	00000168 .hidden __mulsf3
+080099a0  w    F .text	00000294 _ZN6uavcan4NodeILj7168EEC1ERNS_10ICanDriverERNS_12ISystemClockE
+08008300  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED2Ev
+080074f0  w    F .text	00000012 _ZNSt14_Function_baseD1Ev
+0800d6c0 g     F .text	00000036 _ZNK5ublox15MessageReceiver18getReceivedMessageEv
+08012f70 g     F .text	000000ec _ZN12uavcan_stm328CanIface17handleRxInterruptEhy
+0800de40 g     F .text	000000a4 _ZN5ublox6Driver17configureMessagesEv
+08013420 g     F .text	00000012 Vector90
+08005540 g     F .text	0000002c chEvtSignalI
+08015450 g     F .text	0000000c _tzset_unlocked
+08002420 g     F .text	000001ba strcmp
+08009950  w    F .text	00000024 _ZN12uavcan_stm3213CanInitHelperILj32EED1Ev
+08008a10  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+08016f50 g     F .text	00000058 siscanf
+0801ce60  w    O .text	0000001c _ZTVN12uavcan_stm3211SystemClockE
+08004d10  w    F .text	00000002 Vector114
+20000000 g       startup	00000000 __ram_start__
+0800d550  w    F .text	00000006 _ZN13zubax_chibios8watchdog5Timer5resetEv
+20002520  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08004e30 g     F .text	00000010 _port_thread_start
+0800e3f0  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt6EED2Ev
+08010070 g     F .text	000000bc _ZN6uavcan16TransferListener15handleReceptionERNS_16TransferReceiverERKNS_7RxFrameERNS_22TransferBufferAccessorE
+0800a730  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEED0Ev
+08004d10  w    F .text	00000002 Vector60
+08010fc0 g     F .text	00000050 _ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE
+080085c0  w    F .text	0000005c _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEEC1ERNS_5INodeENS_17MonotonicDurationES8_
+08004d10  w    F .text	00000002 Vector1C
+200025c0  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+0800d8b0 g     F .text	00000052 _ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+08003770 g     F .text	00000048 .hidden __fixunsdfdi
+08002db0 g     F .text	0000007a .hidden __nedf2
+0800f010  w    F .text	00000024 _ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj16EE9push_backERKh
+0800f870  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_26TransferBufferManagerEntry5BlockEE6removeEPKS2_
+080051c0 g     F .text	00000038 chSchDoRescheduleAhead
+0800f700 g     F .text	00000012 _ZN6uavcan26TransferBufferManagerEntry5Block11instantiateERNS_14IPoolAllocatorE
+200082a8  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+080119d0 g     F .text	0000003a _ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+0800f620 g     F .text	00000044 _ZN6uavcan16IEEE754Converter16nativeIeeeToHalfEf
+08009fa0  w    F .text	00000014 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev
+0800d590 g     F .text	00000104 _ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh
+080059b0 g     F .text	0000003c i2cMasterTransmitTimeout
+08008fd0  w    F .text	0000001a _ZN6uavcan8snprintfEPcjPKcz
+08004d10  w    F .text	00000002 Vector48
+08006410 g     F .text	00000028 i2c_lld_init
+0800bae0  w    F .text	00000024 _ZN6uavcan19DynamicNodeIDClientD2Ev
+080036f0 g     F .text	0000002e .hidden __fixdfdi
+08012930  w    F .text	0000000a _ZN12uavcan_stm3221CriticalSectionLockerC2Ev
+0800cca0  w    F .text	0000009c _ZN6uavcan8protocol5param6Value_ILi0EE6encodeERKS3_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE
+08008940  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt93EED1Ev
+20000400 g       .stacks	00000000 __process_stack_base__
+0800ea20  w    F .text	00000016 _ZNK6uavcan5INode13isPassiveModeEv
+08015270 g     F .text	00000030 strtof
+200082cc  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data15StaticPressure_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+0801bcb0  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt129EEE
+080034a0 g     F .text	0000006e .hidden __gesf2
+08008a30  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+0800f980  w    F .text	00000028 _ZN6uavcan26TransferBufferManagerEntryD1Ev
+08002fe0 g     F .text	0000016c .hidden __aeabi_frsub
+08007160  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt79EED2Ev
+0800a230  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED1Ev
+08016f40 g     F .text	00000008 nanf
+20000ca8 g     O .data	00000004 _impure_ptr
+0800e120  w    F .text	00000070 _ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IISt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IISt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_
+0800f740 g     F .text	00000030 _ZN6uavcan26TransferBufferManagerEntry5Block4readERPhjRjS4_
+08005c30 g     F .text	00000028 Vector70
+0800e7f0 g     F .text	0000001a _ZN6uavcan20DataTypeSignatureCRC3addEPKhj
+08003528 g     F .text	00000012 .hidden __aeabi_fcmpeq
+08011cd0 g     F .text	00000020 _ZNK6uavcan22GlobalDataTypeRegistry4findEPKc
+080067c0 g     F .text	00000014 VectorD4
+0801a540 g     F .text	0000005c _mbrtowc_r
+080046a0 g     F .text	00000034 configStorageRead
+0800ffe0 g     F .text	00000026 _ZNK6uavcan16TransferListener25TimedOutReceiverPredicateclERKNS_24TransferBufferManagerKeyERKNS_16TransferReceiverE
+08010550 g     F .text	0000005a _ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE
+08004ed0 g     F .text	00000026 nvicSetSystemHandlerPriority
+08005980 g     F .text	0000000e i2cObjectInit
+08003200 g     F .text	00000168 .hidden __aeabi_fmul
+080079e0  w    F .text	00000110 _ZN6uavcan16GenericPublisherINS_9equipment4gnss10Auxiliary_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+0800e490 g     F .text	00000040 _ZN10air_sensor4initEv
+200025f4  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08006e30 g     F .text	0000009c shellGetLine
+0800ebd0 g     F .text	00000006 _ZN6uavcan18NodeStatusProvider9setHealthEh
+0800a030  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED0Ev
+08008ff0  w    F .text	00000030 _ZN6uavcan16TransferListenerC2ERNS_19TransferPerfCounterERKNS_18DataTypeDescriptorEtRNS_14IPoolAllocatorE
+0800aae0  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol12RestartNode_ENS2_9Response_ILi0EEEE9checkInitEv
+08007c00  w    F .text	00000018 _ZN6uavcan10Timestamp_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+08003510 g     F .text	00000018 .hidden __aeabi_cfrcmple
+0800f860 g     F .text	00000010 _ZN6uavcan21TransferBufferManager6accessERKNS_24TransferBufferManagerKeyE
+080041b0 g     F .text	00000110 configRegisterParam_
+08007d20  w    F .text	00000102 _ZN6uavcan5ArrayINS_9FloatSpecILj16ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj9EE20packSquareMatrixImplIPKfEEvT_
+0800a790  w    F .text	00000014 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED2Ev
+20004574  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+200013f0 g     O .bss	000002c8 _idle_thread_wa
+08012990 g     F .text	00000122 _ZN12uavcan_stm328CanIface4sendERKN6uavcan8CanFrameENS1_13MonotonicTimeEt
+0800c550  w    F .text	000000c4 _ZN6uavcan13ServiceServerINS_8protocol18GetTransportStats_ENS_12MethodBinderIPKNS_22TransportStatsProviderEMS4_KFvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS8_EE
+08005720 g     F .text	00000018 chOQInit
+0801a5a0 g     F .text	0000002a __ascii_mbtowc
+08005660 g     F .text	00000046 chIQGetTimeout
+20000800 g       .data	00000000 _data
+08009fc0  w    F .text	00000024 _ZN6uavcan18NodeStatusProviderD2Ev
+08011190 g     F .text	0000000a _ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE
+08016c00 g     F .text	00000044 __ulp
+0800fe50 g     F .text	00000038 _ZNK6uavcan27SingleFrameIncomingTransfer4readEjPhj
+08004b80 g     F .text	00000044 sysSleepUntilChTime
+0800fee0  w    F .text	0000000a _ZN6uavcan26MultiFrameIncomingTransfer7releaseEv
+08007780  w    F .text	000000ac _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+08008b70  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+08010710 g     F .text	00000042 _ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13MonotonicTimeE
+08007640  w    F .text	0000004c _ZN6uavcan9equipment4gnss4Fix_ILi0EEC1Ev
+0800f840 g     F .text	0000001a _ZN6uavcan21TransferBufferManager9findFirstERKNS_24TransferBufferManagerKeyE
+08008330  w    F .text	0000002c _ZN10chibios_rt16BaseStaticThreadILi1024EE5startEm
+08004d10  w    F .text	00000002 Vector4C
+0800a3a0  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEED1Ev
+080134b0 g     F .text	00000012 Vector144
+0800fe10  w    F .text	00000004 _ZNK6uavcan16IncomingTransfer19isAnonymousTransferEv
+08010d80 g     F .text	00000018 _ZN6uavcan29LoopbackFrameListenerRegistry15invokeListenersERNS_7RxFrameE
+20004530  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5param7GetSet_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08007120  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment4gnss4Fix_ILi0EEEED1Ev
+08005cf0 g     F .text	00000028 Vector80
+08005610 g     F .text	00000046 chIQPutI
+080099a0  w    F .text	00000294 _ZN6uavcan4NodeILj7168EEC2ERNS_10ICanDriverERNS_12ISystemClockE
+08004d30 g     F .text	00000006 _port_switch_from_isr
+200082c8  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08002f00 g     F .text	00000040 .hidden __aeabi_d2uiz
+200025e0  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4gnss10Auxiliary_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08005bd0 g     F .text	00000028 tmInit
+200091b0 g     O .bss	00000004 _timezone
+080087b0  w    F .text	00000006 _ZNK6uavcan10ICanDriver8getIfaceEh
+0800ff10  w    F .text	00000032 _ZN6uavcan16TransferReceiverC1Ev
+0801c810  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt4EEE
+08017330 g     F .text	000009b8 __ssvfiscanf_r
+08012720 g     F .text	00000028 _ZN12uavcan_stm325clock11isUtcLockedEv
+0800353c g     F .text	00000012 .hidden __aeabi_fcmplt
+08004d10  w    F .text	00000002 Vector68
+080054e0 g     F .text	0000005c chMtxUnlock
+08004b00 g     F .text	00000058 sysHaltHook_
+080085a0 g     F .text	00000018 _ZN12magnetometer4initEv
+0800fe30 g     F .text	00000012 _ZNK6uavcan27SingleFrameIncomingTransfer19isAnonymousTransferEv
+20000400 g       .stacks	00000000 __main_stack_end__
+08008810  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt7EED1Ev
+08005c90 g     F .text	00000028 Vector78
+080121e0 g     F .text	00000018 _ZNK6uavcan20LimitedPoolAllocator16getBlockCapacityEv
+08002e4c g     F .text	00000012 .hidden __aeabi_dcmpeq
+080091e0  w    F .text	0000000e _ZN6uavcan5INode14getSystemClockEv
+080087e0  w    F .text	00000018 _ZNSt14_Function_base13_Base_managerIPFvRKN6uavcan10TimerEventEEE10_M_managerERSt9_Any_dataRKS8_St18_Manager_operation
+08010010 g     F .text	00000054 _ZNK6uavcan16TransferListener15checkPayloadCrcEtRKNS_15ITransferBufferE
+080089d0  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt129EED0Ev
+0800eb10 g     F .text	0000002c _ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE
+080121c0 g     F .text	00000016 _ZN6uavcan20LimitedPoolAllocator10deallocateEPKv
+080089b0  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt7EED0Ev
+0800a580  w    F .text	00000014 _ZN6uavcan10SubscriberINS_8protocol15GlobalTimeSync_ILi0EEENS_12MethodBinderIPNS_19GlobalTimeSyncSlaveEMS5_FvRKNS_21ReceivedDataStructureIS3_EEEEEED2Ev
+0800a300  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev
+20010000 g       *ABS*	00000000 __ram_end__
+20001120 g       .data	00000000 _edata
+0800fef0  w    F .text	0000000c _ZN6uavcan27SingleFrameIncomingTransferD0Ev
+08007150  w    F .text	00000002 _ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+0800df50  w    F .text	0000008a _ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j
+200091f0 g       .bss	00000000 _end
+0800fb00 g     F .text	00000018 _ZN6uavcan16TransferReceiver22prepareForNextTransferEv
+08006440 g     F .text	00000150 i2c_lld_start
+08009ff0  w    F .text	00000012 _ZN6uavcan18NodeStatusProviderD0Ev
+080093d0  w    F .text	0000000e _ZN12uavcan_stm3211MutexLockerD2Ev
+080097d0  w    F .text	00000050 _ZNK6uavcan19GlobalTimeSyncSlave8isActiveEv
+08003590 g     F .text	0000002c .hidden __unordsf2
+08009910  w    F .text	00000012 _ZN6uavcan19GlobalTimeSyncSlave20handleGlobalTimeSyncERKNS_21ReceivedDataStructureINS_8protocol15GlobalTimeSync_ILi0EEEEE
+0800d910 g     F .text	00000108 _ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE
+08008b50  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol5param7GetSet_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+08009330  w    F .text	00000034 _ZN6uavcan9TimerBaseC1ERNS_5INodeE
+0800d520  w    F .text	00000022 _ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7_St12_PlaceholderILi1EEEEE9_M_invokeERKSt9_Any_dataS3_
+08005030 g     F .text	00000024 chVTResetI
+0800f470 g     F .text	00000020 _ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+08012220 g     F .text	00000044 _ZNK6uavcan8CanFrame18priorityHigherThanERKS0_
+080049c0 g     F .text	0000001c sysEmergencyPrint
+08015460 g     F .text	0000032c _tzset_unlocked_r
+08008930  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt1EED1Ev
+08004d10 g     F .text	00000002 _unhandled_exception
+08013170 g     F .text	00000052 _ZNK12uavcan_stm328CanIface19canAcceptNewTxFrameERKN6uavcan8CanFrameE
+08006df0 g     F .text	00000020 shellExit
+08007130  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment4gnss10Auxiliary_ILi0EEEED1Ev
+20001778 g     O .bss	00000038 I2CD2
+08005aa0 g     F .text	00000044 sdObjectInit
+0800d460  w    F .text	00000034 _ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessageEEEPS4_St12_PlaceholderILi1EEEEE10_M_managerERSt9_Any_dataRKSH_St18_Manager_operation
+08003610 g     F .text	0000003e .hidden __aeabi_f2uiz
+0800cfd0  w    F .text	0000019c _ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+080082f0  w    F .text	00000002 _ZN6uavcan17MonotonicDurationD1Ev
+0800ae30  w    F .text	00000018 _ZN6uavcan8protocol5param6Empty_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+08004d10  w    F .text	00000002 Vector88
+0800a300  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol12RestartNode_ENS2_8Request_ILi0EEENS_16TransferListenerEED1Ev
+08011db0 g     F .text	0000007a _ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+08013730 g     F .text	00000004 _Znwj
+0801c0f0  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEEE
+20001110 g     O .data	00000004 __malloc_trim_threshold
+0800a5a0  w    F .text	0000000c _ZN6uavcan19GlobalTimeSyncSlaveD2Ev
+08009020  w    F .text	0000000c _ZN6uavcan5INode13getDispatcherEv
+0800e3d0  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment8air_data15StaticPressure_ILi0EEEED1Ev
+08005bb0 g     F .text	00000020 tmObjectInit
+20000400 g       .stacks	00000000 __main_thread_stack_base__
+0800314c g     F .text	00000024 .hidden __floatunsisf
+08016b10 g     F .text	000000e4 __mdiff
+080111d0 g     F .text	00000018 _ZN6uavcan10CanTxQueue5Entry7destroyERPS1_RNS_14IPoolAllocatorE
+08011480  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_10CanTxQueue5EntryEE6removeEPKS2_
+08002eb0 g     F .text	0000004e .hidden __aeabi_d2iz
+0800ffa0 g     F .text	00000040 _ZN6uavcan26MultiFrameIncomingTransferC2ENS_13MonotonicTimeENS_7UtcTimeERKNS_7RxFrameERNS_22TransferBufferAccessorE
+0800aa10  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEED2Ev
+080103d0  w    F .text	000000d0 _ZN6uavcan3MapINS_24TransferBufferManagerKeyENS_16TransferReceiverEE6insertERKS1_RKS2_
+0800efe0  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv
+08004bf0 g     F .text	00000002 _kill
+08004d10  w    F .text	00000002 Vector104
+2000083c g     O .data	00000004 __ctype_ptr__
+08013570 g     F .text	00000004 _ZN12uavcan_stm325Mutex6unlockEv
+08003518 g     F .text	00000010 .hidden __aeabi_cfcmpeq
+0801c110  w    O .text	00000014 _ZTVN6uavcan13ServiceServerINS_8protocol4file20BeginFirmwareUpdate_EPFvRKNS_21ReceivedDataStructureINS3_8Request_ILi0EEEEERNS3_9Response_ILi0EEEEEE
+08010800 g     F .text	00000020 _ZN6uavcan5Frame10setPayloadEPKhj
+20004580  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15GlobalTimeSync_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+0800a540  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEED2Ev
+0800f8a0 g     F .text	000000aa _ZN6uavcan26TransferBufferManagerEntry5writeEjPKhj
+0800e790 g     F .text	00000012 _ZN6uavcan10DataTypeID26getMaxValueForDataTypeKindENS_12DataTypeKindE
+08008990  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt93EED0Ev
+08003fa0 g     F .text	000000cc ms5611GetProm
+0801c010  w    O .text	00000014 _ZTVN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEEE
+08004d10  w    F .text	00000002 Vector10C
+08007690  w    F .text	000000e4 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+0801aa50 g     F .text	00000078 __sccl
+0800a5a0  w    F .text	0000000c _ZN6uavcan19GlobalTimeSyncSlaveD1Ev
+080052d0 g     F .text	00000030 chThdSetPriority
+0801d1c0 g     O .text	00000101 _ctype_
+0801bd10  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt1EEE
+08003820  w    F .text	00000002 .hidden __aeabi_idiv0
+08000150 g       constructors	00000000 __init_array_start
+08006930 g     F .text	00000068 sd_lld_stop
+0800b540  w    F .text	00000018 _ZNK6uavcan12MethodBinderIPNS_19GlobalTimeSyncSlaveEMS1_FvRKNS_21ReceivedDataStructureINS_8protocol15GlobalTimeSync_ILi0EEEEEEEcvbEv
+2000111c g     O .data	00000004 __mbtowc
+0800a420  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol18GetTransportStats_ENS2_8Request_ILi0EEENS_16TransferListenerEED0Ev
+0800afb0  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol5param14ExecuteOpcode_ENS3_9Response_ILi0EEEE9checkInitEv
+08003610 g     F .text	0000003e .hidden __fixunssfsi
+080137c0 g     F .text	00000006 _ZN10chibios_rt10_thd_startEPv
+08004bd0 g     F .text	0000000c _exit
+20004550  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15GlobalTimeSync_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+200017b0 g     O .bss	00000458 SD1
+08010f50 g     F .text	00000062 _ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth
+0800b890  w    F .text	00000018 _ZN6uavcan11ScalarCodec6encodeILj5EhEEiT0_
+0800d390 g     F .text	00000014 _ZN5board12readUniqueIDEPh
+08004d10  w    F .text	00000002 Vector14C
+08012010 g     F .text	00000066 _ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE
+080142b0 g     F .text	00000034 strspn
+08009550  w    F .text	00000044 _ZN6uavcan20GlobalTimeSyncMasterD2Ev
+08005240 g     F .text	00000038 _thread_init
+08004d10  w    F .text	00000002 Vector50
+0801cdd0 g     O .text	00000018 _ZTVN6uavcan16TransferListenerE
+080117f0 g     F .text	000001ce _ZN6uavcan12CanIOManager4sendERKNS_8CanFrameENS_13MonotonicTimeES4_hNS_10CanTxQueue3QosEt
+080075e0 g     F .text	00000018 _ZN4gnss4initEv
+08014160 g     F .text	0000005c strlen
+08005e80 g     F .text	00000084 dmaStreamAllocate
+20002540  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+0800f720 g     F .text	00000018 _ZN6uavcan26TransferBufferManagerEntry5Block7destroyERPS1_RNS_14IPoolAllocatorE
+0800a8b0  w    F .text	000000f8 _ZN12uavcan_stm329CanDriverC1ILj32EEERA2_AT__NS_9CanRxItemE
+08002e3c g     F .text	00000010 .hidden __aeabi_cdcmpeq
+08002da0 g     F .text	0000008a .hidden __gedf2
+0801cdb0 g     O .text	00000020 _ZTVN6uavcan27SingleFrameIncomingTransferE
+0801bd90  w    O .text	00000014 _ZTVN6uavcan15DeadlineHandlerE
+08015900 g     F .text	00000512 __gethex
+080092e0  w    F .text	00000024 _ZN6uavcan19TimerEventForwarderISt8functionIFvRKNS_10TimerEventEEEED1Ev
+0800f040  w    F .text	000000c8 _ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+20008288  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment8air_data18StaticTemperature_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+08012b50 g     F .text	00000056 _ZN12uavcan_stm328CanIface7RxQueue3popERN6uavcan8CanFrameERyRt
+08011c80 g     F .text	0000000a _ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+080037c0 g     F .text	00000030 .hidden __gnu_ldivmod_helper
+0800c120  w    F .text	0000000a _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+08008b30  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+08015820 g     F .text	0000003e div
+08008af0  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol15GlobalTimeSync_ILi0EEES3_NS_16TransferListenerEE17TransferForwarderD0Ev
+080095c0  w    F .text	0000008c _ZN6uavcan19DynamicNodeIDClientC1ERNS_5INodeE
+080087c0  w    F .text	00000002 _ZN6uavcan13PoolAllocatorILj7168ELh56EcED2Ev
+08004e90 g     F .text	0000003c nvicDisableVector
+08005770 g     F .text	00000052 chOQPutTimeout
+080053c0 g     F .text	00000014 chSemWaitTimeout
+080095c0  w    F .text	0000008c _ZN6uavcan19DynamicNodeIDClientC2ERNS_5INodeE
+20000000 g       .stacks	00000000 __main_stack_base__
+08004d10  w    F .text	00000002 Vector44
+080028c8 g     F .text	0000003a .hidden __aeabi_f2d
+0800f670 g     F .text	00000042 _ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+08004d10  w    F .text	00000002 Vector28
+0800d3c0 g     F .text	00000094 boardInit
+0800c3b0  w    F .text	000000ac _ZN6uavcan13ServiceServerINS_8protocol5param14ExecuteOpcode_ENS_12MethodBinderIPNS_11ParamServerEMS5_FvRKNS3_8Request_ILi0EEERNS3_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS8_EE
+08012310  w    F .text	00000002 _ZN12uavcan_stm3211SystemClockD2Ev
+08004d10  w    F .text	00000002 VectorB8
+08006880 g     F .text	000000a8 sd_lld_start
+08011bd0 g     F .text	0000002a _ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE
+0800e4d0  w    F .text	00000098 _ZN6uavcan16GenericPublisherINS_9equipment8air_data15StaticPressure_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+08011cf0 g     F .text	00000034 _ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindENS_10DataTypeIDE
+080071d0  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt79EED0Ev
+00000400 g       *ABS*	00000000 __main_stack_size__
+08009480 g     F .text	00000014 _ZN4node4LockC1Ev
+080110b0 g     F .text	0000000e _ZN6uavcan25LoopbackFrameListenerBase13stopListeningEv
+08004d10  w    F .text	00000002 VectorFC
+08008300  w    F .text	00000002 _ZN6uavcan9PublisherINS_9equipment4ahrs22MagneticFieldStrength_ILi0EEEED1Ev
+08007550  w    F .text	00000020 _ZN6uavcan22GlobalDataTypeRegistry5EntryC1Ev
+08012150 g     F .text	00000046 _ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E
+0801a2b0 g     F .text	00000002 __env_lock
+0800ee80  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD2Ev
+08010a00 g     F .text	00000046 _ZN6uavcan7RxFrame5parseERKNS_10CanRxFrameE
+080123b0 g     F .text	00000014 _ZN12uavcan_stm325clock26getUtcUSecFromCanInterruptEv
+08002608 g     F .text	0000027a .hidden __subdf3
+08008b90  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+0801c130  w    O .text	00000018 _ZTVN6uavcan19TimerEventForwarderISt8functionIFvRKNS_10TimerEventEEEEE
+20000800 g       .stacks	00000000 __process_stack_end__
+0800af80  w    F .text	00000024 _ZN6uavcan16GenericPublisherINS_8protocol5param7GetSet_ENS3_9Response_ILi0EEEE9checkInitEv
+080167b0 g     F .text	0000005a __lo0bits
+080152a0 g     F .text	00000190 __tzcalc_limits
+08004d10  w    F .text	00000002 Vector34
+08003650 g     F .text	00000000 .hidden __aeabi_ldivmod
+08011210 g     F .text	0000000c _ZN6uavcan10CanTxQueue21registerRejectedFrameEv
+080055e0 g     F .text	00000028 chIQResetI
+08008900  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt129EED2Ev
+08008b10  w    F .text	00000014 _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+0800d3b0 g     F .text	00000004 __early_init
+080094a0 g     F .text	0000000c _ZN4node9isStartedEv
+080112f0 g     F .text	000000d4 _ZN6uavcan12CanIOManagerC2ERNS_10ICanDriverERNS_14IPoolAllocatorERNS_12ISystemClockEj
+08008ff0  w    F .text	00000030 _ZN6uavcan16TransferListenerC1ERNS_19TransferPerfCounterERKNS_18DataTypeDescriptorEtRNS_14IPoolAllocatorE
+080053e0 g     F .text	0000001e chSemSignalI
+08013760 g     F .text	00000004 __aeabi_atexit
+0800eea0  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD0Ev
+0800ec60 g     F .text	0000006c _ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE
+080096f0  w    F .text	000000bc _ZN6uavcan18NodeStatusProviderC2ERNS_5INodeE
+08005db0 g     F .text	00000028 Vector128
+0800c830  w    F .text	0000000a _ZN6uavcan17GenericSubscriberINS_8protocol4file20BeginFirmwareUpdate_ENS3_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+0800f770 g     F .text	0000004c _ZNK6uavcan26TransferBufferManagerEntry4readEjPhj
+08009930  w    F .text	0000001c _ZN12uavcan_stm328CanIfaceD1Ev
+08002fec g     F .text	00000160 .hidden __addsf3
+080128f0  w    F .text	00000020 _ZN12uavcan_stm329CanDriverD1Ev
+08007160  w    F .text	00000002 _ZN6uavcan20StaticTransferBufferILt79EED1Ev
+08004d10  w    F .text	00000002 VectorA4
+0800f950 g     F .text	0000002e _ZN6uavcan26TransferBufferManagerEntry5resetERKNS_24TransferBufferManagerKeyE
+08007110  w    F .text	00000002 _ZN6uavcan9equipment4gnss4Fix_ILi0EED1Ev
+200025f0  w    O .bss	00000004 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+00000400 g       *ABS*	00000000 __process_stack_size__
+08009370  w    F .text	00000058 _ZN6uavcan6LoggerC1ERNS_5INodeE
+0800e330 g     F .text	0000000c _ZN20bootloader_interface25getInheritedCanBusBitRateEv
+0801bd50  w    O .text	00000018 _ZTVN6uavcan20StaticTransferBufferILt377EEE
+0800ca30  w    F .text	000000a4 _ZN6uavcan17GenericSubscriberINS_8protocol5param14ExecuteOpcode_ENS3_8Request_ILi0EEENS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+08014260 g     F .text	00000048 strpbrk
+08010820 g     F .text	0000006a _ZNK6uavcan5Frame7isValidEv
+08004d10  w    F .text	00000002 Vector20
+0800a9b0  w    F .text	00000024 _ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj92EE9push_backERKh
+08016050 g     F .text	00000008 __gettzinfo
+080140d0 g     F .text	00000010 raise
+080137b0 g     F .text	00000010 _ZN10chibios_rt10BaseThreadC1Ev
+0800a2b0  w    F .text	00000012 _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED0Ev
+08016090 g     F .text	00000010 free
+0800c770  w    F .text	0000000a _ZN6uavcan17GenericSubscriberINS_8protocol16GetDataTypeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+0800a750  w    F .text	0000003c _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED1Ev
+08016640 g     F .text	00000082 __multadd
+08010180  w    F .text	00000022 _ZN6uavcan14LinkedListRootINS_3MapINS_24TransferBufferManagerKeyENS_16TransferReceiverEE7KVGroupEE6removeEPKS5_
+08005380 g     F .text	00000038 chSemWaitTimeoutS
+0800fc90 g     F .text	0000002c _ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE
+08016620 g     F .text	00000012 _Bfree
+08016040 g     F .text	00000010 _getenv_r
+080071e0  w    F .text	0000000c _ZN6uavcan20StaticTransferBufferILt16EED0Ev
+0800f520 g     F .text	0000008a _ZN6uavcan9BitStream5writeEPKhj
+20002500  w    O .bss	00000020 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_9equipment4gnss11RTCMStream_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+
+

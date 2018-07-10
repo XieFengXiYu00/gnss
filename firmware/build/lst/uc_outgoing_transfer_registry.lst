@@ -1,0 +1,553 @@
+ARM GAS  /tmp/cc7YSknY.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_outgoing_transfer_registry.cpp"
+  15              		.section	.text._ZN6uavcan17MonotonicDurationD2Ev,"axG",%progbits,_ZN6uavcan17MonotonicDurationD5Ev
+  16              		.align	1
+  17              		.weak	_ZN6uavcan17MonotonicDurationD2Ev
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan17MonotonicDurationD2Ev, %function
+  21              	_ZN6uavcan17MonotonicDurationD2Ev:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  26              		.size	_ZN6uavcan17MonotonicDurationD2Ev, .-_ZN6uavcan17MonotonicDurationD2Ev
+  27              		.weak	_ZN6uavcan17MonotonicDurationD1Ev
+  28              		.thumb_set _ZN6uavcan17MonotonicDurationD1Ev,_ZN6uavcan17MonotonicDurationD2Ev
+  29              		.section	.text._ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_,"axG",%progbits,_ZNK6uavcan27Outgo
+  30              		.align	1
+  31              		.weak	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+  32              		.thumb
+  33              		.thumb_func
+  34              		.type	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_, %function
+  35              	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 0268     		ldr	r2, [r0]
+  40 0002 0B68     		ldr	r3, [r1]
+  41 0004 9A42     		cmp	r2, r3
+  42 0006 09D1     		bne	.L5
+  43 0008 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+  44 000a 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
+  45 000c 9A42     		cmp	r2, r3
+  46 000e 05D1     		bne	.L5
+  47 0010 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+  48 0012 4879     		ldrb	r0, [r1, #5]	@ zero_extendqisi2
+  49 0014 1B1A     		subs	r3, r3, r0
+  50 0016 5842     		rsbs	r0, r3, #0
+  51 0018 5841     		adcs	r0, r0, r3
+  52 001a 7047     		bx	lr
+  53              	.L5:
+  54 001c 0020     		movs	r0, #0
+  55 001e 7047     		bx	lr
+  56              		.size	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_, .-_ZNK6uavcan27OutgoingTransferRegistryKey
+  57              		.section	.text._ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE,"ax
+ARM GAS  /tmp/cc7YSknY.s 			page 2
+
+
+  58              		.align	1
+  59              		.global	_ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	_ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE, %function
+  63              	_ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE:
+  64              		@ args = 0, pretend = 0, frame = 8
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66 0000 2DE9F743 		push	{r0, r1, r2, r4, r5, r6, r7, r8, r9, lr}
+  67 0004 0F46     		mov	r7, r1
+  68 0006 9046     		mov	r8, r2
+  69 0008 4468     		ldr	r4, [r0, #4]
+  70              	.L8:
+  71 000a 04B3     		cbz	r4, .L13
+  72 000c 2546     		mov	r5, r4
+  73 000e 55F8189B 		ldr	r9, [r5], #24
+  74 0012 0026     		movs	r6, #0
+  75              	.L11:
+  76 0014 4FF0FF33 		mov	r3, #-1
+  77 0018 0093     		str	r3, [sp]
+  78 001a 8DF80430 		strb	r3, [sp, #4]
+  79 001e 6846     		mov	r0, sp
+  80 0020 FF23     		movs	r3, #255
+  81 0022 2946     		mov	r1, r5
+  82 0024 8DF80530 		strb	r3, [sp, #5]
+  83 0028 FFF7FEFF 		bl	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+  84 002c 28B9     		cbnz	r0, .L9
+  85 002e 2B68     		ldr	r3, [r5]
+  86 0030 9F42     		cmp	r7, r3
+  87 0032 02D1     		bne	.L9
+  88 0034 2B79     		ldrb	r3, [r5, #4]	@ zero_extendqisi2
+  89 0036 4345     		cmp	r3, r8
+  90 0038 05D0     		beq	.L10
+  91              	.L9:
+  92 003a 1835     		adds	r5, r5, #24
+  93 003c 0EB9     		cbnz	r6, .L16
+  94 003e 0126     		movs	r6, #1
+  95 0040 E8E7     		b	.L11
+  96              	.L16:
+  97 0042 4C46     		mov	r4, r9
+  98 0044 E1E7     		b	.L8
+  99              	.L10:
+ 100 0046 1820     		movs	r0, #24
+ 101 0048 06FB0000 		mla	r0, r6, r0, r0
+ 102 004c 0444     		add	r4, r4, r0
+ 103              	.L13:
+ 104 004e 201C     		adds	r0, r4, #0
+ 105 0050 18BF     		it	ne
+ 106 0052 0120     		movne	r0, #1
+ 107 0054 03B0     		add	sp, sp, #12
+ 108              		@ sp needed
+ 109 0056 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 110              		.size	_ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE, .-_ZNK6uavc
+ 111              		.section	.text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5Value
+ 112              		.align	1
+ 113              		.weak	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKe
+ 114              		.thumb
+ARM GAS  /tmp/cc7YSknY.s 			page 3
+
+
+ 115              		.thumb_func
+ 116              		.type	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKe
+ 117              	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyERKS1_
+ 118              		@ args = 0, pretend = 0, frame = 0
+ 119              		@ frame_needed = 0, uses_anonymous_args = 0
+ 120 0000 38B5     		push	{r3, r4, r5, lr}
+ 121 0002 0D46     		mov	r5, r1
+ 122 0004 0468     		ldr	r4, [r0]
+ 123              	.L18:
+ 124 0006 B4B1     		cbz	r4, .L22
+ 125 0008 2846     		mov	r0, r5
+ 126 000a 04F11801 		add	r1, r4, #24
+ 127 000e FFF7FEFF 		bl	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+ 128 0012 08B1     		cbz	r0, .L26
+ 129 0014 0023     		movs	r3, #0
+ 130 0016 06E0     		b	.L20
+ 131              	.L26:
+ 132 0018 2846     		mov	r0, r5
+ 133 001a 04F13001 		add	r1, r4, #48
+ 134 001e FFF7FEFF 		bl	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+ 135 0022 30B1     		cbz	r0, .L25
+ 136 0024 0123     		movs	r3, #1
+ 137              	.L20:
+ 138 0026 1820     		movs	r0, #24
+ 139 0028 00FB0344 		mla	r4, r0, r3, r4
+ 140 002c 04F10800 		add	r0, r4, #8
+ 141 0030 38BD     		pop	{r3, r4, r5, pc}
+ 142              	.L25:
+ 143 0032 2468     		ldr	r4, [r4]
+ 144 0034 E7E7     		b	.L18
+ 145              	.L22:
+ 146 0036 2046     		mov	r0, r4
+ 147 0038 38BD     		pop	{r3, r4, r5, pc}
+ 148              		.size	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKe
+ 149              		.section	.text._ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTr
+ 150              		.align	1
+ 151              		.weak	_ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferReg
+ 152              		.thumb
+ 153              		.thumb_func
+ 154              		.type	_ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferReg
+ 155              	_ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5V
+ 156              		@ args = 0, pretend = 0, frame = 0
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158              		@ link register save eliminated.
+ 159 0000 0368     		ldr	r3, [r0]
+ 160 0002 6BB1     		cbz	r3, .L27
+ 161 0004 61B1     		cbz	r1, .L27
+ 162 0006 8B42     		cmp	r3, r1
+ 163 0008 03D1     		bne	.L30
+ 164 000a 1B68     		ldr	r3, [r3]
+ 165 000c 0360     		str	r3, [r0]
+ 166 000e 7047     		bx	lr
+ 167              	.L32:
+ 168 0010 1346     		mov	r3, r2
+ 169              	.L30:
+ 170 0012 1A68     		ldr	r2, [r3]
+ 171 0014 22B1     		cbz	r2, .L27
+ARM GAS  /tmp/cc7YSknY.s 			page 4
+
+
+ 172 0016 8A42     		cmp	r2, r1
+ 173 0018 FAD1     		bne	.L32
+ 174 001a 0A68     		ldr	r2, [r1]
+ 175 001c 1A60     		str	r2, [r3]
+ 176 001e 7047     		bx	lr
+ 177              	.L27:
+ 178 0020 7047     		bx	lr
+ 179              		.size	_ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferReg
+ 180              		.section	.text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5Value
+ 181              		.align	1
+ 182              		.weak	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compac
+ 183              		.thumb
+ 184              		.thumb_func
+ 185              		.type	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compac
+ 186              	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compactEv:
+ 187              		@ args = 0, pretend = 0, frame = 8
+ 188              		@ frame_needed = 0, uses_anonymous_args = 0
+ 189 0000 2DE9F341 		push	{r0, r1, r4, r5, r6, r7, r8, lr}
+ 190 0004 0546     		mov	r5, r0
+ 191 0006 0468     		ldr	r4, [r0]
+ 192              	.L40:
+ 193 0008 6CB3     		cbz	r4, .L50
+ 194 000a 2146     		mov	r1, r4
+ 195 000c 4FF0FF37 		mov	r7, #-1
+ 196 0010 FF26     		movs	r6, #255
+ 197 0012 51F8188B 		ldr	r8, [r1], #24
+ 198 0016 6846     		mov	r0, sp
+ 199 0018 0097     		str	r7, [sp]
+ 200 001a 8DF80470 		strb	r7, [sp, #4]
+ 201 001e 8DF80560 		strb	r6, [sp, #5]
+ 202 0022 FFF7FEFF 		bl	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+ 203 0026 78B1     		cbz	r0, .L41
+ 204 0028 6846     		mov	r0, sp
+ 205 002a 04F13001 		add	r1, r4, #48
+ 206 002e 0097     		str	r7, [sp]
+ 207 0030 8DF80460 		strb	r6, [sp, #4]
+ 208 0034 8DF80560 		strb	r6, [sp, #5]
+ 209 0038 FFF7FEFF 		bl	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+ 210 003c 30B9     		cbnz	r0, .L42
+ 211 003e 03E0     		b	.L41
+ 212              	.L43:
+ 213 0040 0368     		ldr	r3, [r0]
+ 214 0042 2146     		mov	r1, r4
+ 215 0044 DB68     		ldr	r3, [r3, #12]
+ 216 0046 9847     		blx	r3
+ 217              	.L41:
+ 218 0048 4446     		mov	r4, r8
+ 219 004a DDE7     		b	.L40
+ 220              	.L42:
+ 221 004c 2846     		mov	r0, r5
+ 222 004e 2146     		mov	r1, r4
+ 223 0050 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegist
+ 224 0054 6868     		ldr	r0, [r5, #4]
+ 225 0056 04F10802 		add	r2, r4, #8
+ 226 005a 04F13803 		add	r3, r4, #56
+ 227              	.L44:
+ 228 005e 9342     		cmp	r3, r2
+ARM GAS  /tmp/cc7YSknY.s 			page 5
+
+
+ 229 0060 EED0     		beq	.L43
+ 230 0062 183B     		subs	r3, r3, #24
+ 231 0064 FBE7     		b	.L44
+ 232              	.L50:
+ 233 0066 02B0     		add	sp, sp, #8
+ 234              		@ sp needed
+ 235 0068 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 236              		.size	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compac
+ 237              		.section	.text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5Value
+ 238              		.align	1
+ 239              		.weak	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insert
+ 240              		.thumb
+ 241              		.thumb_func
+ 242              		.type	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insert
+ 243              	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insertERKS1_R
+ 244              		@ args = 0, pretend = 0, frame = 24
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 247 0004 86B0     		sub	sp, sp, #24
+ 248 0006 8046     		mov	r8, r0
+ 249 0008 8A46     		mov	r10, r1
+ 250 000a 1746     		mov	r7, r2
+ 251 000c FFF7FEFF 		bl	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyER
+ 252 0010 70B1     		cbz	r0, .L52
+ 253 0012 0023     		movs	r3, #0
+ 254 0014 0022     		movs	r2, #0
+ 255 0016 C0E90023 		strd	r2, [r0]
+ 256 001a 0023     		movs	r3, #0
+ 257 001c 0372     		strb	r3, [r0, #8]
+ 258 001e 4FF0FF33 		mov	r3, #-1
+ 259 0022 0361     		str	r3, [r0, #16]
+ 260 0024 0375     		strb	r3, [r0, #20]
+ 261 0026 FF23     		movs	r3, #255
+ 262 0028 4375     		strb	r3, [r0, #21]
+ 263 002a 4046     		mov	r0, r8
+ 264 002c FFF7FEFF 		bl	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compactEv
+ 265              	.L52:
+ 266 0030 4FF0FF36 		mov	r6, #-1
+ 267 0034 FF23     		movs	r3, #255
+ 268 0036 4046     		mov	r0, r8
+ 269 0038 6946     		mov	r1, sp
+ 270 003a 0096     		str	r6, [sp]
+ 271 003c 8DF80460 		strb	r6, [sp, #4]
+ 272 0040 8DF80530 		strb	r3, [sp, #5]
+ 273 0044 FFF7FEFF 		bl	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyER
+ 274 0048 6C46     		mov	r4, sp
+ 275 004a 8146     		mov	r9, r0
+ 276 004c 88B1     		cbz	r0, .L53
+ 277 004e 97E80F00 		ldmia	r7, {r0, r1, r2, r3}
+ 278 0052 4E46     		mov	r6, r9
+ 279 0054 8DE80F00 		stmia	sp, {r0, r1, r2, r3}
+ 280 0058 9AE80300 		ldmia	r10, {r0, r1}
+ 281 005c 06AB     		add	r3, sp, #24
+ 282 005e 03E90300 		stmdb	r3, {r0, r1}
+ 283 0062 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 284 0064 0FC6     		stmia	r6!, {r0, r1, r2, r3}
+ 285 0066 94E80300 		ldmia	r4, {r0, r1}
+ARM GAS  /tmp/cc7YSknY.s 			page 6
+
+
+ 286 006a 86E80300 		stmia	r6, {r0, r1}
+ 287 006e 4846     		mov	r0, r9
+ 288 0070 38E0     		b	.L54
+ 289              	.L53:
+ 290 0072 D8F80400 		ldr	r0, [r8, #4]
+ 291 0076 3821     		movs	r1, #56
+ 292 0078 0368     		ldr	r3, [r0]
+ 293 007a 9B68     		ldr	r3, [r3, #8]
+ 294 007c 9847     		blx	r3
+ 295 007e 0546     		mov	r5, r0
+ 296 0080 80B3     		cbz	r0, .L55
+ 297 0082 0022     		movs	r2, #0
+ 298 0084 0023     		movs	r3, #0
+ 299 0086 C0E90223 		strd	r2, [r0, #8]
+ 300 008a C0E90823 		strd	r2, [r0, #32]
+ 301 008e 8661     		str	r6, [r0, #24]
+ 302 0090 0677     		strb	r6, [r0, #28]
+ 303 0092 4677     		strb	r6, [r0, #29]
+ 304 0094 0663     		str	r6, [r0, #48]
+ 305 0096 80F83460 		strb	r6, [r0, #52]
+ 306 009a 80F83560 		strb	r6, [r0, #53]
+ 307 009e C0F80090 		str	r9, [r0]
+ 308 00a2 80F81090 		strb	r9, [r0, #16]
+ 309 00a6 80F82890 		strb	r9, [r0, #40]
+ 310 00aa 2946     		mov	r1, r5
+ 311 00ac 4046     		mov	r0, r8
+ 312 00ae FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegist
+ 313 00b2 D8F80030 		ldr	r3, [r8]
+ 314 00b6 05F10806 		add	r6, r5, #8
+ 315 00ba 2B60     		str	r3, [r5]
+ 316 00bc C8F80050 		str	r5, [r8]
+ 317 00c0 97E80F00 		ldmia	r7, {r0, r1, r2, r3}
+ 318 00c4 8DE80F00 		stmia	sp, {r0, r1, r2, r3}
+ 319 00c8 9AE80300 		ldmia	r10, {r0, r1}
+ 320 00cc 06AB     		add	r3, sp, #24
+ 321 00ce 03E90300 		stmdb	r3, {r0, r1}
+ 322 00d2 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 323 00d4 0FC6     		stmia	r6!, {r0, r1, r2, r3}
+ 324 00d6 94E80300 		ldmia	r4, {r0, r1}
+ 325 00da 86E80300 		stmia	r6, {r0, r1}
+ 326 00de 05F10800 		add	r0, r5, #8
+ 327 00e2 FFE7     		b	.L54
+ 328              	.L55:
+ 329              	.L54:
+ 330 00e4 06B0     		add	sp, sp, #24
+ 331              		@ sp needed
+ 332 00e6 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 333              		.size	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insert
+ 334              		.section	.text._ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistr
+ 335              		.align	1
+ 336              		.global	_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS
+ 337              		.thumb
+ 338              		.thumb_func
+ 339              		.type	_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_1
+ 340              	_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13Monoto
+ 341              		@ args = 0, pretend = 0, frame = 16
+ 342              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/cc7YSknY.s 			page 7
+
+
+ 343 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 344 0002 041D     		adds	r4, r0, #4
+ 345 0004 2046     		mov	r0, r4
+ 346 0006 0E46     		mov	r6, r1
+ 347 0008 1546     		mov	r5, r2
+ 348 000a FFF7FEFF 		bl	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyER
+ 349 000e 38B1     		cbz	r0, .L60
+ 350 0010 0346     		mov	r3, r0
+ 351              	.L62:
+ 352 0012 95E80300 		ldmia	r5, {r0, r1}
+ 353 0016 83E80300 		stmia	r3, {r0, r1}
+ 354 001a 03F10800 		add	r0, r3, #8
+ 355 001e 0EE0     		b	.L64
+ 356              	.L60:
+ 357 0020 0023     		movs	r3, #0
+ 358 0022 0022     		movs	r2, #0
+ 359 0024 CDE90023 		strd	r2, [sp]
+ 360 0028 8DF80800 		strb	r0, [sp, #8]
+ 361 002c 3146     		mov	r1, r6
+ 362 002e 2046     		mov	r0, r4
+ 363 0030 6A46     		mov	r2, sp
+ 364 0032 FFF7FEFF 		bl	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insertERK
+ 365 0036 0346     		mov	r3, r0
+ 366 0038 0028     		cmp	r0, #0
+ 367 003a EAD1     		bne	.L62
+ 368 003c 1846     		mov	r0, r3
+ 369              	.L64:
+ 370 003e 04B0     		add	sp, sp, #16
+ 371              		@ sp needed
+ 372 0040 70BD     		pop	{r4, r5, r6, pc}
+ 373              		.size	_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_1
+ 374              		.section	.text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5Value
+ 375              		.align	1
+ 376              		.weak	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14remov
+ 377              		.thumb
+ 378              		.thumb_func
+ 379              		.type	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14remov
+ 380              	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14removeAllWhe
+ 381              		@ args = 0, pretend = 0, frame = 8
+ 382              		@ frame_needed = 0, uses_anonymous_args = 0
+ 383 0000 2DE9F34B 		push	{r0, r1, r4, r5, r6, r7, r8, r9, fp, lr}
+ 384 0004 8146     		mov	r9, r0
+ 385 0006 8B46     		mov	fp, r1
+ 386 0008 0368     		ldr	r3, [r0]
+ 387 000a 0026     		movs	r6, #0
+ 388              	.L66:
+ 389 000c 6BB3     		cbz	r3, .L75
+ 390 000e 1C46     		mov	r4, r3
+ 391 0010 54F8187B 		ldr	r7, [r4], #24
+ 392 0014 03F14805 		add	r5, r3, #72
+ 393              	.L68:
+ 394 0018 4FF0FF38 		mov	r8, #-1
+ 395 001c FF23     		movs	r3, #255
+ 396 001e 6846     		mov	r0, sp
+ 397 0020 2146     		mov	r1, r4
+ 398 0022 CDF80080 		str	r8, [sp]
+ 399 0026 8DF80480 		strb	r8, [sp, #4]
+ARM GAS  /tmp/cc7YSknY.s 			page 8
+
+
+ 400 002a 8DF80530 		strb	r3, [sp, #5]
+ 401 002e FFF7FEFF 		bl	_ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+ 402 0032 8646     		mov	lr, r0
+ 403 0034 A0B9     		cbnz	r0, .L67
+ 404 0036 54E90423 		ldrd	r2, [r4, #-16]
+ 405 003a DBE90001 		ldrd	r0, [fp]
+ 406 003e 9942     		cmp	r1, r3
+ 407 0040 08BF     		it	eq
+ 408 0042 9042     		cmpeq	r0, r2
+ 409 0044 0CD3     		bcc	.L67
+ 410 0046 0022     		movs	r2, #0
+ 411 0048 0023     		movs	r3, #0
+ 412 004a 44E90423 		strd	r2, [r4, #-16]
+ 413 004e 0136     		adds	r6, r6, #1
+ 414 0050 04F808EC 		strb	lr, [r4, #-8]
+ 415 0054 C4F80080 		str	r8, [r4]
+ 416 0058 84F80480 		strb	r8, [r4, #4]
+ 417 005c 84F80580 		strb	r8, [r4, #5]
+ 418              	.L67:
+ 419 0060 1834     		adds	r4, r4, #24
+ 420 0062 AC42     		cmp	r4, r5
+ 421 0064 D8D1     		bne	.L68
+ 422 0066 3B46     		mov	r3, r7
+ 423 0068 D0E7     		b	.L66
+ 424              	.L75:
+ 425 006a 16B1     		cbz	r6, .L65
+ 426 006c 4846     		mov	r0, r9
+ 427 006e FFF7FEFF 		bl	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compactEv
+ 428              	.L65:
+ 429 0072 02B0     		add	sp, sp, #8
+ 430              		@ sp needed
+ 431 0074 BDE8F08B 		pop	{r4, r5, r6, r7, r8, r9, fp, pc}
+ 432              		.size	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14remov
+ 433              		.section	.text._ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE,"ax",%progbits
+ 434              		.align	1
+ 435              		.global	_ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE
+ 436              		.thumb
+ 437              		.thumb_func
+ 438              		.type	_ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE, %function
+ 439              	_ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE:
+ 440              		@ args = 0, pretend = 0, frame = 8
+ 441              		@ frame_needed = 0, uses_anonymous_args = 0
+ 442 0000 07B5     		push	{r0, r1, r2, lr}
+ 443 0002 D1E90023 		ldrd	r2, [r1]
+ 444 0006 02A9     		add	r1, sp, #8
+ 445 0008 61E90223 		strd	r2, [r1, #-8]!
+ 446 000c 0430     		adds	r0, r0, #4
+ 447 000e FFF7FEFF 		bl	_ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14removeAl
+ 448 0012 03B0     		add	sp, sp, #12
+ 449              		@ sp needed
+ 450 0014 5DF804FB 		ldr	pc, [sp], #4
+ 451              		.size	_ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE, .-_ZN6uavcan24OutgoingTran
+ 452              		.section	.text.startup._GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE,"ax"
+ 453              		.align	1
+ 454              		.thumb
+ 455              		.thumb_func
+ 456              		.type	_GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE, %function
+ARM GAS  /tmp/cc7YSknY.s 			page 9
+
+
+ 457              	_GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE:
+ 458              		@ args = 0, pretend = 0, frame = 0
+ 459              		@ frame_needed = 0, uses_anonymous_args = 0
+ 460              		@ link register save eliminated.
+ 461 0000 044A     		ldr	r2, .L78
+ 462 0002 0548     		ldr	r0, .L78+4
+ 463 0004 0023     		movs	r3, #0
+ 464 0006 C0E90023 		strd	r2, [r0]
+ 465 000a 0449     		ldr	r1, .L78+8
+ 466 000c 044A     		ldr	r2, .L78+12
+ 467 000e FFF7FEBF 		b	__aeabi_atexit
+ 468              	.L79:
+ 469 0012 00BF     		.align	2
+ 470              	.L78:
+ 471 0014 80841E00 		.word	2000000
+ 472 0018 00000000 		.word	.LANCHOR0
+ 473 001c 00000000 		.word	_ZN6uavcan17MonotonicDurationD1Ev
+ 474 0020 00000000 		.word	__dso_handle
+ 475              		.size	_GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE, .-_GLOBAL__sub_I__ZN
+ 476              		.section	.init_array,"aw",%init_array
+ 477              		.align	2
+ 478 0000 00000000 		.word	_GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE(target1)
+ 479              		.global	_ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE
+ 480              		.section	.bss._ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE,"aw",%nobits
+ 481              		.align	3
+ 482              		.set	.LANCHOR0,. + 0
+ 483              		.type	_ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE, %object
+ 484              		.size	_ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE, 8
+ 485              	_ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE:
+ 486 0000 00000000 		.space	8
+ 486      00000000 
+ 487              		.hidden	__dso_handle
+ 488              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc7YSknY.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_outgoing_transfer_registry.cpp
+     /tmp/cc7YSknY.s:16     .text._ZN6uavcan17MonotonicDurationD2Ev:0000000000000000 $t
+     /tmp/cc7YSknY.s:21     .text._ZN6uavcan17MonotonicDurationD2Ev:0000000000000000 _ZN6uavcan17MonotonicDurationD2Ev
+     /tmp/cc7YSknY.s:21     .text._ZN6uavcan17MonotonicDurationD2Ev:0000000000000000 _ZN6uavcan17MonotonicDurationD1Ev
+     /tmp/cc7YSknY.s:30     .text._ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_:0000000000000000 $t
+     /tmp/cc7YSknY.s:35     .text._ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_:0000000000000000 _ZNK6uavcan27OutgoingTransferRegistryKeyeqERKS0_
+     /tmp/cc7YSknY.s:58     .text._ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE:0000000000000000 $t
+     /tmp/cc7YSknY.s:63     .text._ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE:0000000000000000 _ZNK6uavcan24OutgoingTransferRegistry6existsENS_10DataTypeIDENS_12TransferTypeE
+     /tmp/cc7YSknY.s:112    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyERKS1_:0000000000000000 $t
+     /tmp/cc7YSknY.s:117    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyERKS1_:0000000000000000 _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7findKeyERKS1_
+     /tmp/cc7YSknY.s:150    .text._ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7KVGroupEE6removeEPKS6_:0000000000000000 $t
+     /tmp/cc7YSknY.s:155    .text._ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7KVGroupEE6removeEPKS6_:0000000000000000 _ZN6uavcan14LinkedListRootINS_3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7KVGroupEE6removeEPKS6_
+     /tmp/cc7YSknY.s:181    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compactEv:0000000000000000 $t
+     /tmp/cc7YSknY.s:186    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compactEv:0000000000000000 _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE7compactEv
+     /tmp/cc7YSknY.s:238    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insertERKS1_RKS3_:0000000000000000 $t
+     /tmp/cc7YSknY.s:243    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insertERKS1_RKS3_:0000000000000000 _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE6insertERKS1_RKS3_
+     /tmp/cc7YSknY.s:335    .text._ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/cc7YSknY.s:340    .text._ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13MonotonicTimeE
+     /tmp/cc7YSknY.s:375    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14removeAllWhereINS2_24DeadlineExpiredPredicateEEEvT_:0000000000000000 $t
+     /tmp/cc7YSknY.s:380    .text._ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14removeAllWhereINS2_24DeadlineExpiredPredicateEEEvT_:0000000000000000 _ZN6uavcan3MapINS_27OutgoingTransferRegistryKeyENS_24OutgoingTransferRegistry5ValueEE14removeAllWhereINS2_24DeadlineExpiredPredicateEEEvT_
+     /tmp/cc7YSknY.s:434    .text._ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/cc7YSknY.s:439    .text._ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan24OutgoingTransferRegistry7cleanupENS_13MonotonicTimeE
+     /tmp/cc7YSknY.s:453    .text.startup._GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE:0000000000000000 $t
+     /tmp/cc7YSknY.s:457    .text.startup._GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE:0000000000000000 _GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE
+     /tmp/cc7YSknY.s:471    .text.startup._GLOBAL__sub_I__ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE:0000000000000014 $d
+     /tmp/cc7YSknY.s:477    .init_array:0000000000000000 $d
+     /tmp/cc7YSknY.s:485    .bss._ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE:0000000000000000 _ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE
+     /tmp/cc7YSknY.s:481    .bss._ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE:0000000000000000 $d
+                           .group:0000000000000000 _ZN6uavcan17MonotonicDurationD5Ev
+
+UNDEFINED SYMBOLS
+__aeabi_atexit
+__dso_handle

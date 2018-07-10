@@ -1,0 +1,378 @@
+ARM GAS  /tmp/cc68t94u.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_transfer_sender.cpp"
+  15              		.section	.text._ZNK6uavcan14TransferSender13registerErrorEv,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZNK6uavcan14TransferSender13registerErrorEv
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZNK6uavcan14TransferSender13registerErrorEv, %function
+  21              	_ZNK6uavcan14TransferSender13registerErrorEv:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 8168     		ldr	r1, [r0, #8]
+  26 0002 D1E93023 		ldrd	r2, [r1, #192]
+  27 0006 0132     		adds	r2, r2, #1
+  28 0008 43F10003 		adc	r3, r3, #0
+  29 000c C1E93023 		strd	r2, [r1, #192]
+  30 0010 7047     		bx	lr
+  31              		.size	_ZNK6uavcan14TransferSender13registerErrorEv, .-_ZNK6uavcan14TransferSender13registerErrorEv
+  32              		.section	.text._ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE,"ax"
+  33              		.align	1
+  34              		.global	_ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE
+  35              		.thumb
+  36              		.thumb_func
+  37              		.type	_ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE, %function
+  38              	_ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE:
+  39              		@ args = 0, pretend = 0, frame = 0
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41 0000 0B69     		ldr	r3, [r1, #16]
+  42 0002 10B5     		push	{r4, lr}
+  43 0004 0446     		mov	r4, r0
+  44 0006 4273     		strb	r2, [r0, #13]
+  45 0008 0361     		str	r3, [r0, #16]
+  46 000a 0846     		mov	r0, r1
+  47 000c FFF7FEFF 		bl	_ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+  48 0010 E081     		strh	r0, [r4, #14]	@ movhi
+  49 0012 10BD     		pop	{r4, pc}
+  50              		.size	_ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE, .-_ZN6uavcan
+  51              		.section	.text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6No
+  52              		.align	1
+  53              		.global	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS
+  54              		.thumb
+  55              		.thumb_func
+  56              		.type	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_1
+  57              	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10Transf
+ARM GAS  /tmp/cc68t94u.s 			page 2
+
+
+  58              		@ args = 16, pretend = 0, frame = 48
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  61 0004 0446     		mov	r4, r0
+  62 0006 8946     		mov	r9, r1
+  63 0008 1646     		mov	r6, r2
+  64 000a A168     		ldr	r1, [r4, #8]
+  65 000c 2269     		ldr	r2, [r4, #16]
+  66 000e 91B0     		sub	sp, sp, #68
+  67 0010 1F46     		mov	r7, r3
+  68 0012 0C92     		str	r2, [sp, #48]
+  69 0014 91F8DC30 		ldrb	r3, [r1, #220]	@ zero_extendqisi2
+  70 0018 0022     		movs	r2, #0
+  71 001a 0D92     		str	r2, [sp, #52]
+  72 001c 8DF83C20 		strb	r2, [sp, #60]
+  73 0020 8DF83D20 		strb	r2, [sp, #61]
+  74 0024 227B     		ldrb	r2, [r4, #12]	@ zero_extendqisi2
+  75 0026 9DF86C00 		ldrb	r0, [sp, #108]	@ zero_extendqisi2
+  76 002a 9DF870E0 		ldrb	lr, [sp, #112]	@ zero_extendqisi2
+  77 002e 9DF87450 		ldrb	r5, [sp, #116]	@ zero_extendqisi2
+  78 0032 8DF83830 		strb	r3, [sp, #56]
+  79 0036 5BB2     		sxtb	r3, r3
+  80 0038 8DF82B20 		strb	r2, [sp, #43]
+  81 003c 002B     		cmp	r3, #0
+  82 003e 4FF00102 		mov	r2, #1
+  83 0042 8DF82C00 		strb	r0, [sp, #44]
+  84 0046 8DF839E0 		strb	lr, [sp, #57]
+  85 004a 8DF83A50 		strb	r5, [sp, #58]
+  86 004e 8DF83B20 		strb	r2, [sp, #59]
+  87 0052 09DC     		bgt	.L4
+  88 0054 E37D     		ldrb	r3, [r4, #23]	@ zero_extendqisi2
+  89 0056 002B     		cmp	r3, #0
+  90 0058 00F0A580 		beq	.L19
+  91 005c 0228     		cmp	r0, #2
+  92 005e 40F0A280 		bne	.L19
+  93 0062 072E     		cmp	r6, #7
+  94 0064 00F39F80 		bgt	.L19
+  95              	.L4:
+  96 0068 D1E92C23 		ldrd	r2, [r1, #176]
+  97 006c 12F1010A 		adds	r10, r2, #1
+  98 0070 43F1000B 		adc	fp, r3, #0
+  99 0074 072E     		cmp	r6, #7
+ 100 0076 C1E92CAB 		strd	r10, [r1, #176]
+ 101 007a 2DD8     		bhi	.L6
+ 102 007c 09A8     		add	r0, sp, #36
+ 103 007e 4946     		mov	r1, r9
+ 104 0080 3246     		mov	r2, r6
+ 105 0082 FFF7FEFF 		bl	_ZN6uavcan5Frame10setPayloadEPKhj
+ 106 0086 B042     		cmp	r0, r6
+ 107 0088 05D0     		beq	.L7
+ 108 008a 2046     		mov	r0, r4
+ 109 008c FFF7FEFF 		bl	_ZNK6uavcan14TransferSender13registerErrorEv
+ 110 0090 6FF00900 		mvn	r0, #9
+ 111 0094 8BE0     		b	.L5
+ 112              	.L7:
+ 113 0096 0123     		movs	r3, #1
+ 114 0098 8DF83C30 		strb	r3, [sp, #60]
+ARM GAS  /tmp/cc68t94u.s 			page 3
+
+
+ 115 009c 04AA     		add	r2, sp, #16
+ 116 009e 9DF93830 		ldrsb	r3, [sp, #56]
+ 117 00a2 97E80300 		ldmia	r7, {r0, r1}
+ 118 00a6 A58A     		ldrh	r5, [r4, #20]
+ 119 00a8 82E80300 		stmia	r2, {r0, r1}
+ 120 00ac 1A99     		ldr	r1, [sp, #104]
+ 121 00ae 002B     		cmp	r3, #0
+ 122 00b0 06AB     		add	r3, sp, #24
+ 123 00b2 03C9     		ldmia	r1, {r0, r1}
+ 124 00b4 D8BF     		it	le
+ 125 00b6 45F00205 		orrle	r5, r5, #2
+ 126 00ba 83E80300 		stmia	r3, {r0, r1}
+ 127 00be 617B     		ldrb	r1, [r4, #13]	@ zero_extendqisi2
+ 128 00c0 D8BF     		it	le
+ 129 00c2 ADB2     		uxthle	r5, r5
+ 130 00c4 A668     		ldr	r6, [r4, #8]
+ 131 00c6 8DE82200 		stmia	sp, {r1, r5}
+ 132 00ca A17D     		ldrb	r1, [r4, #22]	@ zero_extendqisi2
+ 133 00cc 3046     		mov	r0, r6
+ 134 00ce 0291     		str	r1, [sp, #8]
+ 135 00d0 09A9     		add	r1, sp, #36
+ 136 00d2 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth
+ 137 00d6 6AE0     		b	.L5
+ 138              	.L6:
+ 139 00d8 4A46     		mov	r2, r9
+ 140 00da E389     		ldrh	r3, [r4, #14]
+ 141 00dc 09EB0600 		add	r0, r9, r6
+ 142              	.L10:
+ 143 00e0 8242     		cmp	r2, r0
+ 144 00e2 0AD0     		beq	.L23
+ 145 00e4 12F8011B 		ldrb	r1, [r2], #1	@ zero_extendqisi2
+ 146 00e8 324D     		ldr	r5, .L24
+ 147 00ea 81EA1321 		eor	r1, r1, r3, lsr #8
+ 148 00ee 35F81110 		ldrh	r1, [r5, r1, lsl #1]
+ 149 00f2 81EA0323 		eor	r3, r1, r3, lsl #8
+ 150 00f6 9BB2     		uxth	r3, r3
+ 151 00f8 F2E7     		b	.L10
+ 152              	.L23:
+ 153 00fa 8DF81830 		strb	r3, [sp, #24]
+ 154 00fe 1B0A     		lsrs	r3, r3, #8
+ 155 0100 8DF81930 		strb	r3, [sp, #25]
+ 156 0104 0023     		movs	r3, #0
+ 157              	.L12:
+ 158 0106 0DF1180A 		add	r10, sp, #24
+ 159 010a 0AEB0302 		add	r2, r10, r3
+ 160 010e 19F80310 		ldrb	r1, [r9, r3]	@ zero_extendqisi2
+ 161 0112 0133     		adds	r3, r3, #1
+ 162 0114 062B     		cmp	r3, #6
+ 163 0116 9170     		strb	r1, [r2, #2]
+ 164 0118 F5D1     		bne	.L12
+ 165 011a 09A8     		add	r0, sp, #36
+ 166 011c 5146     		mov	r1, r10
+ 167 011e 0822     		movs	r2, #8
+ 168 0120 FFF7FEFF 		bl	_ZN6uavcan5Frame10setPayloadEPKhj
+ 169 0124 0128     		cmp	r0, #1
+ 170 0126 0546     		mov	r5, r0
+ 171 0128 03DC     		bgt	.L13
+ARM GAS  /tmp/cc68t94u.s 			page 4
+
+
+ 172 012a 2046     		mov	r0, r4
+ 173 012c FFF7FEFF 		bl	_ZNK6uavcan14TransferSender13registerErrorEv
+ 174 0130 3CE0     		b	.L20
+ 175              	.L13:
+ 176 0132 A0F1020B 		sub	fp, r0, #2
+ 177 0136 0025     		movs	r5, #0
+ 178              	.L14:
+ 179 0138 1A9B     		ldr	r3, [sp, #104]
+ 180 013a 04AA     		add	r2, sp, #16
+ 181 013c 97E80300 		ldmia	r7, {r0, r1}
+ 182 0140 82E80300 		stmia	r2, {r0, r1}
+ 183 0144 93E80300 		ldmia	r3, {r0, r1}
+ 184 0148 637B     		ldrb	r3, [r4, #13]	@ zero_extendqisi2
+ 185 014a 8AE80300 		stmia	r10, {r0, r1}
+ 186 014e 0093     		str	r3, [sp]
+ 187 0150 A38A     		ldrh	r3, [r4, #20]
+ 188 0152 A068     		ldr	r0, [r4, #8]
+ 189 0154 0193     		str	r3, [sp, #4]
+ 190 0156 A37D     		ldrb	r3, [r4, #22]	@ zero_extendqisi2
+ 191 0158 09A9     		add	r1, sp, #36
+ 192 015a 0293     		str	r3, [sp, #8]
+ 193 015c 5346     		mov	r3, r10
+ 194 015e FFF7FEFF 		bl	_ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth
+ 195 0162 B0F10008 		subs	r8, r0, #0
+ 196 0166 04DA     		bge	.L15
+ 197 0168 2046     		mov	r0, r4
+ 198 016a FFF7FEFF 		bl	_ZNK6uavcan14TransferSender13registerErrorEv
+ 199 016e 4046     		mov	r0, r8
+ 200 0170 1DE0     		b	.L5
+ 201              	.L15:
+ 202 0172 9DF83C30 		ldrb	r3, [sp, #60]	@ zero_extendqisi2
+ 203 0176 0135     		adds	r5, r5, #1
+ 204 0178 C3B9     		cbnz	r3, .L20
+ 205 017a 8DF83B30 		strb	r3, [sp, #59]
+ 206 017e 9DF83D30 		ldrb	r3, [sp, #61]	@ zero_extendqisi2
+ 207 0182 09EB0B01 		add	r1, r9, fp
+ 208 0186 83F00103 		eor	r3, r3, #1
+ 209 018a CBEB0602 		rsb	r2, fp, r6
+ 210 018e 09A8     		add	r0, sp, #36
+ 211 0190 8DF83D30 		strb	r3, [sp, #61]
+ 212 0194 FFF7FEFF 		bl	_ZN6uavcan5Frame10setPayloadEPKhj
+ 213 0198 8344     		add	fp, fp, r0
+ 214 019a B345     		cmp	fp, r6
+ 215 019c CCDB     		blt	.L14
+ 216 019e 0123     		movs	r3, #1
+ 217 01a0 8DF83C30 		strb	r3, [sp, #60]
+ 218 01a4 C8E7     		b	.L14
+ 219              	.L19:
+ 220 01a6 6FF00A00 		mvn	r0, #10
+ 221 01aa 00E0     		b	.L5
+ 222              	.L20:
+ 223 01ac 2846     		mov	r0, r5
+ 224              	.L5:
+ 225 01ae 11B0     		add	sp, sp, #68
+ 226              		@ sp needed
+ 227 01b0 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 228              	.L25:
+ARM GAS  /tmp/cc68t94u.s 			page 5
+
+
+ 229              		.align	2
+ 230              	.L24:
+ 231 01b4 00000000 		.word	_ZN6uavcan11TransferCRC5TableE
+ 232              		.size	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_1
+ 233              		.section	.text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6No
+ 234              		.align	1
+ 235              		.global	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE
+ 236              		.thumb
+ 237              		.thumb_func
+ 238              		.type	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE, %f
+ 239              	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE:
+ 240              		@ args = 12, pretend = 0, frame = 32
+ 241              		@ frame_needed = 0, uses_anonymous_args = 0
+ 242 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 243 0004 8DB0     		sub	sp, sp, #52
+ 244 0006 1E46     		mov	r6, r3
+ 245 0008 9DF86030 		ldrb	r3, [sp, #96]	@ zero_extendqisi2
+ 246 000c 0546     		mov	r5, r0
+ 247 000e 8A46     		mov	r10, r1
+ 248 0010 9346     		mov	fp, r2
+ 249 0012 0269     		ldr	r2, [r0, #16]
+ 250 0014 03C8     		ldmia	r0, {r0-r1}
+ 251 0016 0018     		adds	r0, r0, r0
+ 252 0018 4941     		adcs	r1, r1, r1
+ 253 001a 0CAC     		add	r4, sp, #48
+ 254 001c 9C46     		mov	ip, r3
+ 255 001e 8DF82D30 		strb	r3, [sp, #45]
+ 256 0022 304B     		ldr	r3, .L37
+ 257 0024 64E90401 		strd	r0, [r4, #-16]!
+ 258 0028 D3E90089 		ldrd	r8, [r3]
+ 259 002c 4045     		cmp	r0, r8
+ 260 002e 0A92     		str	r2, [sp, #40]
+ 261 0030 71EB0902 		sbcs	r2, r1, r9
+ 262 0034 B4BF     		ite	lt
+ 263 0036 9E46     		movlt	lr, r3
+ 264 0038 A646     		movge	lr, r4
+ 265 003a 9DF85C70 		ldrb	r7, [sp, #92]	@ zero_extendqisi2
+ 266 003e DEE90001 		ldrd	r0, [lr]
+ 267 0042 0028     		cmp	r0, #0
+ 268 0044 71F10003 		sbcs	r3, r1, #0
+ 269 0048 8DF82C70 		strb	r7, [sp, #44]
+ 270 004c D6E90023 		ldrd	r2, [r6]
+ 271 0050 08DA     		bge	.L28
+ 272 0052 D0F10008 		rsbs	r8, r0, #0
+ 273 0056 61EB4109 		sbc	r9, r1, r1, lsl #1
+ 274 005a 4B45     		cmp	r3, r9
+ 275 005c 08BF     		it	eq
+ 276 005e 4245     		cmpeq	r2, r8
+ 277 0060 08D2     		bcs	.L30
+ 278 0062 0AE0     		b	.L36
+ 279              	.L28:
+ 280 0064 12EB0008 		adds	r8, r2, r0
+ 281 0068 43EB0109 		adc	r9, r3, r1
+ 282 006c 9945     		cmp	r9, r3
+ 283 006e 08BF     		it	eq
+ 284 0070 9045     		cmpeq	r8, r2
+ 285 0072 05D3     		bcc	.L34
+ARM GAS  /tmp/cc68t94u.s 			page 6
+
+
+ 286              	.L30:
+ 287 0074 1218     		adds	r2, r2, r0
+ 288 0076 4B41     		adcs	r3, r3, r1
+ 289 0078 06E0     		b	.L29
+ 290              	.L36:
+ 291 007a 0022     		movs	r2, #0
+ 292 007c 0023     		movs	r3, #0
+ 293 007e 03E0     		b	.L29
+ 294              	.L34:
+ 295 0080 4FF0FF32 		mov	r2, #-1
+ 296 0084 4FF0FF33 		mov	r3, #-1
+ 297              	.L29:
+ 298 0088 A868     		ldr	r0, [r5, #8]
+ 299 008a CDE90823 		strd	r2, [sp, #32]
+ 300 008e A430     		adds	r0, r0, #164
+ 301 0090 0AA9     		add	r1, sp, #40
+ 302 0092 2246     		mov	r2, r4
+ 303 0094 CDF814C0 		str	ip, [sp, #20]
+ 304 0098 FFF7FEFF 		bl	_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13Mo
+ 305 009c E8B1     		cbz	r0, .L35
+ 306 009e 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 307 00a0 DDF814C0 		ldr	ip, [sp, #20]
+ 308 00a4 03F01F02 		and	r2, r3, #31
+ 309 00a8 0133     		adds	r3, r3, #1
+ 310 00aa 03F01F03 		and	r3, r3, #31
+ 311 00ae 0370     		strb	r3, [r0]
+ 312 00b0 06AB     		add	r3, sp, #24
+ 313 00b2 96E80300 		ldmia	r6, {r0, r1}
+ 314 00b6 83E80300 		stmia	r3, {r0, r1}
+ 315 00ba 1699     		ldr	r1, [sp, #88]
+ 316 00bc 03C9     		ldmia	r1, {r0, r1}
+ 317 00be 84E80300 		stmia	r4, {r0, r1}
+ 318 00c2 8DF80C20 		strb	r2, [sp, #12]
+ 319 00c6 8DE89000 		stmia	sp, {r4, r7}
+ 320 00ca 8DF808C0 		strb	ip, [sp, #8]
+ 321 00ce 2846     		mov	r0, r5
+ 322 00d0 5146     		mov	r1, r10
+ 323 00d2 5A46     		mov	r2, fp
+ 324 00d4 FFF7FEFF 		bl	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10Tr
+ 325 00d8 01E0     		b	.L31
+ 326              	.L35:
+ 327 00da 6FF00200 		mvn	r0, #2
+ 328              	.L31:
+ 329 00de 0DB0     		add	sp, sp, #52
+ 330              		@ sp needed
+ 331 00e0 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 332              	.L38:
+ 333              		.align	2
+ 334              	.L37:
+ 335 00e4 00000000 		.word	_ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE
+ 336              		.size	_ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE, .-
+ 337              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc68t94u.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_transfer_sender.cpp
+     /tmp/cc68t94u.s:16     .text._ZNK6uavcan14TransferSender13registerErrorEv:0000000000000000 $t
+     /tmp/cc68t94u.s:21     .text._ZNK6uavcan14TransferSender13registerErrorEv:0000000000000000 _ZNK6uavcan14TransferSender13registerErrorEv
+     /tmp/cc68t94u.s:33     .text._ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE:0000000000000000 $t
+     /tmp/cc68t94u.s:38     .text._ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE:0000000000000000 _ZN6uavcan14TransferSender4initERKNS_18DataTypeDescriptorENS_10CanTxQueue3QosE
+     /tmp/cc68t94u.s:52     .text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10TransferIDE:0000000000000000 $t
+     /tmp/cc68t94u.s:57     .text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10TransferIDE:0000000000000000 _ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10TransferIDE
+     /tmp/cc68t94u.s:231    .text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDENS_10TransferIDE:00000000000001b4 $d
+     /tmp/cc68t94u.s:234    .text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE:0000000000000000 $t
+     /tmp/cc68t94u.s:239    .text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE:0000000000000000 _ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE
+     /tmp/cc68t94u.s:335    .text._ZNK6uavcan14TransferSender4sendEPKhjNS_13MonotonicTimeES3_NS_12TransferTypeENS_6NodeIDE:00000000000000e4 $d
+
+UNDEFINED SYMBOLS
+_ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+_ZN6uavcan5Frame10setPayloadEPKhj
+_ZN6uavcan10Dispatcher4sendERKNS_5FrameENS_13MonotonicTimeES4_NS_10CanTxQueue3QosEth
+_ZN6uavcan11TransferCRC5TableE
+_ZN6uavcan24OutgoingTransferRegistry14accessOrCreateERKNS_27OutgoingTransferRegistryKeyENS_13MonotonicTimeE
+_ZN6uavcan24OutgoingTransferRegistry16MinEntryLifetimeE

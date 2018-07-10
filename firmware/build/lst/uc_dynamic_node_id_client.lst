@@ -1,0 +1,1369 @@
+ARM GAS  /tmp/cccdcNTo.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_dynamic_node_id_client.cpp"
+  15              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev,"axG",%progbits,_ZN6uavcan22GlobalData
+  16              		.align	1
+  17              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, %function
+  21              	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  26              		.size	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, .-_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  27              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+  28              		.thumb_set _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev,_ZN6uavcan22GlobalDataTypeRegistry5EntryD2
+  29              		.section	.text._ZN6uavcan20StaticTransferBufferILt18EED2Ev,"axG",%progbits,_ZN6uavcan20StaticTrans
+  30              		.align	1
+  31              		.weak	_ZN6uavcan20StaticTransferBufferILt18EED2Ev
+  32              		.thumb
+  33              		.thumb_func
+  34              		.type	_ZN6uavcan20StaticTransferBufferILt18EED2Ev, %function
+  35              	_ZN6uavcan20StaticTransferBufferILt18EED2Ev:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 7047     		bx	lr
+  40              		.size	_ZN6uavcan20StaticTransferBufferILt18EED2Ev, .-_ZN6uavcan20StaticTransferBufferILt18EED2Ev
+  41              		.weak	_ZN6uavcan20StaticTransferBufferILt18EED1Ev
+  42              		.thumb_set _ZN6uavcan20StaticTransferBufferILt18EED1Ev,_ZN6uavcan20StaticTransferBufferILt18EED2Ev
+  43              		.section	.text._ZN6uavcan20StaticTransferBufferILt18EED0Ev,"axG",%progbits,_ZN6uavcan20StaticTrans
+  44              		.align	1
+  45              		.weak	_ZN6uavcan20StaticTransferBufferILt18EED0Ev
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	_ZN6uavcan20StaticTransferBufferILt18EED0Ev, %function
+  49              	_ZN6uavcan20StaticTransferBufferILt18EED0Ev:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52 0000 10B5     		push	{r4, lr}
+  53 0002 0446     		mov	r4, r0
+  54 0004 FFF7FEFF 		bl	_ZdlPv
+  55 0008 2046     		mov	r0, r4
+  56 000a 10BD     		pop	{r4, pc}
+  57              		.size	_ZN6uavcan20StaticTransferBufferILt18EED0Ev, .-_ZN6uavcan20StaticTransferBufferILt18EED0Ev
+ARM GAS  /tmp/cccdcNTo.s 			page 2
+
+
+  58              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_N
+  59              		.align	1
+  60              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+  61              		.thumb
+  62              		.thumb_func
+  63              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+  64              	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferList
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 10B5     		push	{r4, lr}
+  68 0002 0446     		mov	r4, r0
+  69 0004 024B     		ldr	r3, .L5
+  70 0006 0360     		str	r3, [r0]
+  71 0008 FFF7FEFF 		bl	_ZN6uavcan16TransferListenerD2Ev
+  72 000c 2046     		mov	r0, r4
+  73 000e 10BD     		pop	{r4, pc}
+  74              	.L6:
+  75              		.align	2
+  76              	.L5:
+  77 0010 08000000 		.word	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+  78              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+  79              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+  80              		.thumb_set _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16
+  81              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_N
+  82              		.align	1
+  83              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+  84              		.thumb
+  85              		.thumb_func
+  86              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+  87              	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferList
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 10B5     		push	{r4, lr}
+  91 0002 0446     		mov	r4, r0
+  92 0004 FFF7FEFF 		bl	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Transfer
+  93 0008 2046     		mov	r0, r4
+  94 000a FFF7FEFF 		bl	_ZdlPv
+  95 000e 2046     		mov	r0, r4
+  96 0010 10BD     		pop	{r4, pc}
+  97              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+  98              		.section	.text._ZN6uavcan19DynamicNodeIDClient9terminateEv,"ax",%progbits
+  99              		.align	1
+ 100              		.global	_ZN6uavcan19DynamicNodeIDClient9terminateEv
+ 101              		.thumb
+ 102              		.thumb_func
+ 103              		.type	_ZN6uavcan19DynamicNodeIDClient9terminateEv, %function
+ 104              	_ZN6uavcan19DynamicNodeIDClient9terminateEv:
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 10B5     		push	{r4, lr}
+ 108 0002 0446     		mov	r4, r0
+ 109 0004 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+ 110 0008 04F14C00 		add	r0, r4, #76
+ 111 000c D4F88010 		ldr	r1, [r4, #128]
+ 112 0010 BDE81040 		pop	{r4, lr}
+ 113 0014 FFF7FEBF 		b	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+ 114              		.size	_ZN6uavcan19DynamicNodeIDClient9terminateEv, .-_ZN6uavcan19DynamicNodeIDClient9terminateEv
+ARM GAS  /tmp/cccdcNTo.s 			page 3
+
+
+ 115              		.section	.text._ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	_ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	_ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm, %function
+ 121              	_ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm:
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124 0000 70B5     		push	{r4, r5, r6, lr}
+ 125 0002 0C46     		mov	r4, r1
+ 126 0004 1546     		mov	r5, r2
+ 127 0006 0646     		mov	r6, r0
+ 128 0008 FFF7FEFF 		bl	rand
+ 129 000c 2A1B     		subs	r2, r5, r4
+ 130 000e B0FBF2F1 		udiv	r1, r0, r2
+ 131 0012 01FB1200 		mls	r0, r1, r2, r0
+ 132 0016 0444     		add	r4, r4, r0
+ 133 0018 4FF47A70 		mov	r0, #1000
+ 134 001c A4FB0001 		umull	r0, r1, r4, r0
+ 135 0020 C6E90001 		strd	r0, [r6]
+ 136 0024 3046     		mov	r0, r6
+ 137 0026 70BD     		pop	{r4, r5, r6, pc}
+ 138              		.size	_ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm, .-_ZN6uavcan19DynamicNodeIDClient17ge
+ 139              		.section	.text._ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE
+ 142              		.thumb
+ 143              		.thumb_func
+ 144              		.type	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE, %function
+ 145              	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE:
+ 146              		@ args = 0, pretend = 0, frame = 16
+ 147              		@ frame_needed = 0, uses_anonymous_args = 0
+ 148 0000 30B5     		push	{r4, r5, lr}
+ 149 0002 85B0     		sub	sp, sp, #20
+ 150 0004 0546     		mov	r5, r0
+ 151 0006 6C46     		mov	r4, sp
+ 152 0008 6846     		mov	r0, sp
+ 153 000a 21B9     		cbnz	r1, .L11
+ 154 000c 4FF41671 		mov	r1, #600
+ 155 0010 4FF47A72 		mov	r2, #1000
+ 156 0014 02E0     		b	.L13
+ 157              	.L11:
+ 158 0016 0021     		movs	r1, #0
+ 159 0018 4FF4C872 		mov	r2, #400
+ 160              	.L13:
+ 161 001c FFF7FEFF 		bl	_ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm
+ 162 0020 94E80300 		ldmia	r4, {r0, r1}
+ 163 0024 02AB     		add	r3, sp, #8
+ 164 0026 83E80300 		stmia	r3, {r0, r1}
+ 165 002a 2846     		mov	r0, r5
+ 166 002c 1946     		mov	r1, r3
+ 167 002e FFF7FEFF 		bl	_ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE
+ 168 0032 05B0     		add	sp, sp, #20
+ 169              		@ sp needed
+ 170 0034 30BD     		pop	{r4, r5, pc}
+ 171              		.size	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE, .-_ZN6uavcan19DynamicNodeIDClient1
+ARM GAS  /tmp/cccdcNTo.s 			page 4
+
+
+ 172              		.section	.text._ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8
+ 173              		.align	1
+ 174              		.global	_ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protoco
+ 175              		.thumb
+ 176              		.thumb_func
+ 177              		.type	_ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol1
+ 178              	_ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol15dynami
+ 179              		@ args = 0, pretend = 0, frame = 0
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 182 0002 90F9A230 		ldrsb	r3, [r0, #162]
+ 183 0006 0446     		mov	r4, r0
+ 184 0008 002B     		cmp	r3, #0
+ 185 000a 0D46     		mov	r5, r1
+ 186 000c 2ADC     		bgt	.L42
+ 187 000e 0021     		movs	r1, #0
+ 188 0010 80F8A010 		strb	r1, [r0, #160]
+ 189 0014 FFF7FEFF 		bl	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE
+ 190 0018 6869     		ldr	r0, [r5, #20]
+ 191 001a AE78     		ldrb	r6, [r5, #2]	@ zero_extendqisi2
+ 192 001c 10B9     		cbnz	r0, .L17
+ 193              	.L20:
+ 194 001e A978     		ldrb	r1, [r5, #2]	@ zero_extendqisi2
+ 195 0020 A1B3     		cbz	r1, .L15
+ 196 0022 04E0     		b	.L43
+ 197              	.L17:
+ 198 0024 0368     		ldr	r3, [r0]
+ 199 0026 5B69     		ldr	r3, [r3, #20]
+ 200 0028 9847     		blx	r3
+ 201 002a 78BB     		cbnz	r0, .L15
+ 202 002c F7E7     		b	.L20
+ 203              	.L43:
+ 204 002e A6F11002 		sub	r2, r6, #16
+ 205 0032 5342     		rsbs	r3, r2, #0
+ 206 0034 5341     		adcs	r3, r3, r2
+ 207 0036 CBB1     		cbz	r3, .L21
+ 208 0038 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+ 209 003a 3AB3     		cbz	r2, .L15
+ 210 003c 16E0     		b	.L21
+ 211              	.L23:
+ 212 003e 92F800E0 		ldrb	lr, [r2]	@ zero_extendqisi2
+ 213 0042 16F8017F 		ldrb	r7, [r6, #1]!	@ zero_extendqisi2
+ 214 0046 BE45     		cmp	lr, r7
+ 215 0048 20D1     		bne	.L15
+ 216 004a 0132     		adds	r2, r2, #1
+ 217              	.L26:
+ 218 004c 8242     		cmp	r2, r0
+ 219 004e F6D1     		bne	.L23
+ 220 0050 A3B1     		cbz	r3, .L41
+ 221 0052 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 222 0054 84F8A230 		strb	r3, [r4, #162]
+ 223 0058 6B69     		ldr	r3, [r5, #20]
+ 224 005a 6BB1     		cbz	r3, .L29
+ 225 005c DB7E     		ldrb	r3, [r3, #27]	@ zero_extendqisi2
+ 226              	.L25:
+ 227 005e 2046     		mov	r0, r4
+ 228 0060 84F8A330 		strb	r3, [r4, #163]
+ARM GAS  /tmp/cccdcNTo.s 			page 5
+
+
+ 229              	.L42:
+ 230 0064 BDE8F840 		pop	{r3, r4, r5, r6, r7, lr}
+ 231 0068 FFF7FEBF 		b	_ZN6uavcan19DynamicNodeIDClient9terminateEv
+ 232              	.L21:
+ 233 006c 6818     		adds	r0, r5, r1
+ 234 006e EA1C     		adds	r2, r5, #3
+ 235 0070 0330     		adds	r0, r0, #3
+ 236 0072 04F18F06 		add	r6, r4, #143
+ 237 0076 E9E7     		b	.L26
+ 238              	.L29:
+ 239 0078 FF23     		movs	r3, #255
+ 240 007a F0E7     		b	.L25
+ 241              	.L41:
+ 242 007c 84F8A010 		strb	r1, [r4, #160]
+ 243 0080 2046     		mov	r0, r4
+ 244 0082 BDE8F840 		pop	{r3, r4, r5, r6, r7, lr}
+ 245 0086 0121     		movs	r1, #1
+ 246 0088 FFF7FEBF 		b	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE
+ 247              	.L15:
+ 248 008c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 249              		.size	_ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol1
+ 250              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_N
+ 251              		.align	1
+ 252              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 253              		.thumb
+ 254              		.thumb_func
+ 255              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 256              	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferList
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259 0000 10B5     		push	{r4, lr}
+ 260 0002 0446     		mov	r4, r0
+ 261 0004 0C4B     		ldr	r3, .L52
+ 262 0006 40F8043B 		str	r3, [r0], #4
+ 263 000a A16B     		ldr	r1, [r4, #56]
+ 264 000c FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+ 265 0010 A06B     		ldr	r0, [r4, #56]
+ 266 0012 10B1     		cbz	r0, .L45
+ 267 0014 0368     		ldr	r3, [r0]
+ 268 0016 5B68     		ldr	r3, [r3, #4]
+ 269 0018 9847     		blx	r3
+ 270              	.L45:
+ 271 001a 0023     		movs	r3, #0
+ 272 001c A363     		str	r3, [r4, #56]
+ 273 001e 04F13802 		add	r2, r4, #56
+ 274 0022 04F10C03 		add	r3, r4, #12
+ 275              	.L46:
+ 276 0026 9342     		cmp	r3, r2
+ 277 0028 03D0     		beq	.L51
+ 278 002a 0021     		movs	r1, #0
+ 279 002c 03F8011B 		strb	r1, [r3], #1
+ 280 0030 F9E7     		b	.L46
+ 281              	.L51:
+ 282 0032 2046     		mov	r0, r4
+ 283 0034 10BD     		pop	{r4, pc}
+ 284              	.L53:
+ 285 0036 00BF     		.align	2
+ARM GAS  /tmp/cccdcNTo.s 			page 6
+
+
+ 286              	.L52:
+ 287 0038 08000000 		.word	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 288              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 289              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 290              		.thumb_set _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16
+ 291              		.section	.text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12Method
+ 292              		.align	1
+ 293              		.weak	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 294              		.thumb
+ 295              		.thumb_func
+ 296              		.type	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 297              	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19Dyn
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 300 0000 10B5     		push	{r4, lr}
+ 301 0002 0446     		mov	r4, r0
+ 302 0004 024B     		ldr	r3, .L55
+ 303 0006 0360     		str	r3, [r0]
+ 304 0008 FFF7FEFF 		bl	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Transfer
+ 305 000c 2046     		mov	r0, r4
+ 306 000e 10BD     		pop	{r4, pc}
+ 307              	.L56:
+ 308              		.align	2
+ 309              	.L55:
+ 310 0010 08000000 		.word	_ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderI
+ 311              		.size	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 312              		.weak	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 313              		.thumb_set _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBind
+ 314              		.section	.text._ZN6uavcan19DynamicNodeIDClientD2Ev,"axG",%progbits,_ZN6uavcan19DynamicNodeIDClient
+ 315              		.align	1
+ 316              		.weak	_ZN6uavcan19DynamicNodeIDClientD2Ev
+ 317              		.thumb
+ 318              		.thumb_func
+ 319              		.type	_ZN6uavcan19DynamicNodeIDClientD2Ev, %function
+ 320              	_ZN6uavcan19DynamicNodeIDClientD2Ev:
+ 321              		@ args = 0, pretend = 0, frame = 0
+ 322              		@ frame_needed = 0, uses_anonymous_args = 0
+ 323 0000 10B5     		push	{r4, lr}
+ 324 0002 0446     		mov	r4, r0
+ 325 0004 054B     		ldr	r3, .L58
+ 326 0006 40F8483B 		str	r3, [r0], #72
+ 327 000a FFF7FEFF 		bl	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_1
+ 328 000e 044B     		ldr	r3, .L58+4
+ 329 0010 2046     		mov	r0, r4
+ 330 0012 2360     		str	r3, [r4]
+ 331 0014 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+ 332 0018 2046     		mov	r0, r4
+ 333 001a 10BD     		pop	{r4, pc}
+ 334              	.L59:
+ 335              		.align	2
+ 336              	.L58:
+ 337 001c 08000000 		.word	.LANCHOR0+8
+ 338 0020 08000000 		.word	_ZTVN6uavcan15DeadlineHandlerE+8
+ 339              		.size	_ZN6uavcan19DynamicNodeIDClientD2Ev, .-_ZN6uavcan19DynamicNodeIDClientD2Ev
+ 340              		.weak	_ZN6uavcan19DynamicNodeIDClientD1Ev
+ 341              		.thumb_set _ZN6uavcan19DynamicNodeIDClientD1Ev,_ZN6uavcan19DynamicNodeIDClientD2Ev
+ 342              		.section	.text._ZN6uavcan19DynamicNodeIDClientD0Ev,"axG",%progbits,_ZN6uavcan19DynamicNodeIDClient
+ARM GAS  /tmp/cccdcNTo.s 			page 7
+
+
+ 343              		.align	1
+ 344              		.weak	_ZN6uavcan19DynamicNodeIDClientD0Ev
+ 345              		.thumb
+ 346              		.thumb_func
+ 347              		.type	_ZN6uavcan19DynamicNodeIDClientD0Ev, %function
+ 348              	_ZN6uavcan19DynamicNodeIDClientD0Ev:
+ 349              		@ args = 0, pretend = 0, frame = 0
+ 350              		@ frame_needed = 0, uses_anonymous_args = 0
+ 351 0000 10B5     		push	{r4, lr}
+ 352 0002 0446     		mov	r4, r0
+ 353 0004 FFF7FEFF 		bl	_ZN6uavcan19DynamicNodeIDClientD1Ev
+ 354 0008 2046     		mov	r0, r4
+ 355 000a FFF7FEFF 		bl	_ZdlPv
+ 356 000e 2046     		mov	r0, r4
+ 357 0010 10BD     		pop	{r4, pc}
+ 358              		.size	_ZN6uavcan19DynamicNodeIDClientD0Ev, .-_ZN6uavcan19DynamicNodeIDClientD0Ev
+ 359              		.section	.text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12Method
+ 360              		.align	1
+ 361              		.weak	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 362              		.thumb
+ 363              		.thumb_func
+ 364              		.type	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 365              	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19Dyn
+ 366              		@ args = 0, pretend = 0, frame = 0
+ 367              		@ frame_needed = 0, uses_anonymous_args = 0
+ 368 0000 10B5     		push	{r4, lr}
+ 369 0002 0446     		mov	r4, r0
+ 370 0004 FFF7FEFF 		bl	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_1
+ 371 0008 2046     		mov	r0, r4
+ 372 000a FFF7FEFF 		bl	_ZdlPv
+ 373 000e 2046     		mov	r0, r4
+ 374 0010 10BD     		pop	{r4, pc}
+ 375              		.size	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 376              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_N
+ 377              		.align	1
+ 378              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 379              		.thumb
+ 380              		.thumb_func
+ 381              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 382              	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferList
+ 383              		@ args = 0, pretend = 0, frame = 0
+ 384              		@ frame_needed = 0, uses_anonymous_args = 0
+ 385 0000 10B5     		push	{r4, lr}
+ 386 0002 0446     		mov	r4, r0
+ 387 0004 FFF7FEFF 		bl	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Transfer
+ 388 0008 2046     		mov	r0, r4
+ 389 000a FFF7FEFF 		bl	_ZdlPv
+ 390 000e 2046     		mov	r0, r4
+ 391 0010 10BD     		pop	{r4, pc}
+ 392              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 393              		.section	.text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9
+ 394              		.align	1
+ 395              		.weak	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInit
+ 396              		.thumb
+ 397              		.thumb_func
+ 398              		.type	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInit
+ 399              	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv:
+ARM GAS  /tmp/cccdcNTo.s 			page 8
+
+
+ 400              		@ args = 0, pretend = 0, frame = 0
+ 401              		@ frame_needed = 0, uses_anonymous_args = 0
+ 402 0000 10B5     		push	{r4, lr}
+ 403 0002 0446     		mov	r4, r0
+ 404 0004 FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase8isInitedEv
+ 405 0008 0346     		mov	r3, r0
+ 406 000a 30B9     		cbnz	r0, .L64
+ 407 000c 2046     		mov	r0, r4
+ 408 000e BDE81040 		pop	{r4, lr}
+ 409 0012 0121     		movs	r1, #1
+ 410 0014 024A     		ldr	r2, .L65
+ 411 0016 FFF7FEBF 		b	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+ 412              	.L64:
+ 413 001a 0020     		movs	r0, #0
+ 414 001c 10BD     		pop	{r4, pc}
+ 415              	.L66:
+ 416 001e 00BF     		.align	2
+ 417              	.L65:
+ 418 0020 00000000 		.word	.LC0
+ 419              		.size	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInit
+ 420              		.section	.text._ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9Arr
+ 421              		.align	1
+ 422              		.weak	_ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1E
+ 423              		.thumb
+ 424              		.thumb_func
+ 425              		.type	_ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1E
+ 426              	_ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj16EE9
+ 427              		@ args = 0, pretend = 0, frame = 0
+ 428              		@ frame_needed = 0, uses_anonymous_args = 0
+ 429 0000 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 430 0002 10B5     		push	{r4, lr}
+ 431 0004 0F2B     		cmp	r3, #15
+ 432 0006 9CBF     		itt	ls
+ 433 0008 0133     		addls	r3, r3, #1
+ 434 000a 0370     		strbls	r3, [r0]
+ 435 000c 0478     		ldrb	r4, [r0]	@ zero_extendqisi2
+ 436 000e 621E     		subs	r2, r4, #1
+ 437 0010 D3B2     		uxtb	r3, r2
+ 438 0012 A342     		cmp	r3, r4
+ 439 0014 02D3     		bcc	.L69
+ 440 0016 002C     		cmp	r4, #0
+ 441 0018 08BF     		it	eq
+ 442 001a 0023     		moveq	r3, #0
+ 443              	.L69:
+ 444 001c 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 445 001e 0344     		add	r3, r3, r0
+ 446 0020 5A70     		strb	r2, [r3, #1]
+ 447 0022 10BD     		pop	{r4, pc}
+ 448              		.size	_ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1E
+ 449              		.section	.text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E1
+ 450              		.align	1
+ 451              		.weak	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericP
+ 452              		.thumb
+ 453              		.thumb_func
+ 454              		.type	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericP
+ 455              	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericPublishE
+ 456              		@ args = 8, pretend = 0, frame = 56
+ARM GAS  /tmp/cccdcNTo.s 			page 9
+
+
+ 457              		@ frame_needed = 0, uses_anonymous_args = 0
+ 458 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 459 0004 91B0     		sub	sp, sp, #68
+ 460 0006 8246     		mov	r10, r0
+ 461 0008 0C46     		mov	r4, r1
+ 462 000a 9146     		mov	r9, r2
+ 463 000c 9846     		mov	r8, r3
+ 464 000e FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv
+ 465 0012 0028     		cmp	r0, #0
+ 466 0014 52DB     		blt	.L85
+ 467 0016 0BAB     		add	r3, sp, #44
+ 468 0018 0993     		str	r3, [sp, #36]
+ 469 001a 1223     		movs	r3, #18
+ 470 001c ADF82830 		strh	r3, [sp, #40]	@ movhi
+ 471 0020 284B     		ldr	r3, .L86
+ 472 0022 0026     		movs	r6, #0
+ 473 0024 0893     		str	r3, [sp, #32]
+ 474 0026 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 475 0028 08AF     		add	r7, sp, #32
+ 476 002a 802B     		cmp	r3, #128
+ 477 002c 28BF     		it	cs
+ 478 002e 7F23     		movcs	r3, #127
+ 479 0030 03F07F03 		and	r3, r3, #127
+ 480 0034 04AD     		add	r5, sp, #16
+ 481 0036 03A8     		add	r0, sp, #12
+ 482 0038 0DF10B01 		add	r1, sp, #11
+ 483 003c 0722     		movs	r2, #7
+ 484 003e ADF82A60 		strh	r6, [sp, #42]	@ movhi
+ 485 0042 0497     		str	r7, [sp, #16]
+ 486 0044 0596     		str	r6, [sp, #20]
+ 487 0046 8DF81860 		strb	r6, [sp, #24]
+ 488 004a 0395     		str	r5, [sp, #12]
+ 489 004c 8DF80B30 		strb	r3, [sp, #11]
+ 490 0050 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 491 0054 B042     		cmp	r0, r6
+ 492 0056 20DD     		ble	.L74
+ 493 0058 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 494 005a 03A8     		add	r0, sp, #12
+ 495 005c 0DF10B01 		add	r1, sp, #11
+ 496 0060 0122     		movs	r2, #1
+ 497 0062 8DF80B30 		strb	r3, [sp, #11]
+ 498 0066 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 499 006a B042     		cmp	r0, r6
+ 500 006c 15DD     		ble	.L74
+ 501 006e A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
+ 502 0070 B3B1     		cbz	r3, .L75
+ 503 0072 B346     		mov	fp, r6
+ 504              	.L76:
+ 505 0074 A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
+ 506 0076 5FFA8BF3 		uxtb	r3, fp
+ 507 007a 9A42     		cmp	r2, r3
+ 508 007c 10D9     		bls	.L75
+ 509 007e 2344     		add	r3, r3, r4
+ 510 0080 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 511 0082 03A8     		add	r0, sp, #12
+ 512 0084 0DF10B01 		add	r1, sp, #11
+ 513 0088 0822     		movs	r2, #8
+ARM GAS  /tmp/cccdcNTo.s 			page 10
+
+
+ 514 008a 8DF80B30 		strb	r3, [sp, #11]
+ 515 008e FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 516 0092 0028     		cmp	r0, #0
+ 517 0094 0BF1010B 		add	fp, fp, #1
+ 518 0098 ECDC     		bgt	.L76
+ 519              	.L74:
+ 520 009a 6FF00500 		mvn	r0, #5
+ 521 009e 0DE0     		b	.L85
+ 522              	.L75:
+ 523 00a0 1B9B     		ldr	r3, [sp, #108]
+ 524 00a2 4A46     		mov	r2, r9
+ 525 00a4 93E80300 		ldmia	r3, {r0, r1}
+ 526 00a8 1A9B     		ldr	r3, [sp, #104]
+ 527 00aa 85E80300 		stmia	r5, {r0, r1}
+ 528 00ae 8DE82800 		stmia	sp, {r3, r5}
+ 529 00b2 5046     		mov	r0, r10
+ 530 00b4 3946     		mov	r1, r7
+ 531 00b6 4346     		mov	r3, r8
+ 532 00b8 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferT
+ 533              	.L85:
+ 534 00bc 11B0     		add	sp, sp, #68
+ 535              		@ sp needed
+ 536 00be BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 537              	.L87:
+ 538 00c2 00BF     		.align	2
+ 539              	.L86:
+ 540 00c4 08000000 		.word	_ZTVN6uavcan20StaticTransferBufferILt18EEE+8
+ 541              		.size	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericP
+ 542              		.section	.text._ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE,"ax",%progbits
+ 543              		.align	1
+ 544              		.global	_ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE
+ 545              		.thumb
+ 546              		.thumb_func
+ 547              		.type	_ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE, %function
+ 548              	_ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE:
+ 549              		@ args = 0, pretend = 0, frame = 32
+ 550              		@ frame_needed = 0, uses_anonymous_args = 0
+ 551 0000 70B5     		push	{r4, r5, r6, lr}
+ 552 0002 90F9A230 		ldrsb	r3, [r0, #162]
+ 553 0006 8AB0     		sub	sp, sp, #40
+ 554 0008 002B     		cmp	r3, #0
+ 555 000a 0446     		mov	r4, r0
+ 556 000c 02DD     		ble	.L89
+ 557 000e FFF7FEFF 		bl	_ZN6uavcan19DynamicNodeIDClient9terminateEv
+ 558 0012 53E0     		b	.L88
+ 559              	.L89:
+ 560 0014 90F8A130 		ldrb	r3, [r0, #161]	@ zero_extendqisi2
+ 561 0018 90F8A050 		ldrb	r5, [r0, #160]	@ zero_extendqisi2
+ 562 001c 8DF81430 		strb	r3, [sp, #20]
+ 563 0020 B5FA85F3 		clz	r3, r5
+ 564 0024 C5F11005 		rsb	r5, r5, #16
+ 565 0028 EDB2     		uxtb	r5, r5
+ 566 002a 062D     		cmp	r5, #6
+ 567 002c 4FF00002 		mov	r2, #0
+ 568 0030 4FEA5313 		lsr	r3, r3, #5
+ 569 0034 28BF     		it	cs
+ 570 0036 0625     		movcs	r5, #6
+ARM GAS  /tmp/cccdcNTo.s 			page 11
+
+
+ 571 0038 8DF81620 		strb	r2, [sp, #22]
+ 572 003c 8DF81530 		strb	r3, [sp, #21]
+ 573 0040 8DF80820 		strb	r2, [sp, #8]
+ 574 0044 0DB1     		cbz	r5, .L92
+ 575 0046 2E46     		mov	r6, r5
+ 576 0048 0AE0     		b	.L93
+ 577              	.L92:
+ 578 004a 94F8A030 		ldrb	r3, [r4, #160]	@ zero_extendqisi2
+ 579 004e 1D44     		add	r5, r5, r3
+ 580 0050 03F19002 		add	r2, r3, #144
+ 581 0054 9035     		adds	r5, r5, #144
+ 582 0056 2244     		add	r2, r2, r4
+ 583 0058 2544     		add	r5, r5, r4
+ 584 005a 0DF11703 		add	r3, sp, #23
+ 585 005e 09E0     		b	.L94
+ 586              	.L93:
+ 587 0060 013E     		subs	r6, r6, #1
+ 588 0062 F6B2     		uxtb	r6, r6
+ 589 0064 FF2E     		cmp	r6, #255
+ 590 0066 F0D0     		beq	.L92
+ 591 0068 0DF11600 		add	r0, sp, #22
+ 592 006c 02A9     		add	r1, sp, #8
+ 593 006e FFF7FEFF 		bl	_ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj1
+ 594 0072 F5E7     		b	.L93
+ 595              	.L94:
+ 596 0074 AA42     		cmp	r2, r5
+ 597 0076 04D0     		beq	.L102
+ 598 0078 12F8011B 		ldrb	r1, [r2], #1	@ zero_extendqisi2
+ 599 007c 03F8011B 		strb	r1, [r3], #1
+ 600 0080 F8E7     		b	.L94
+ 601              	.L102:
+ 602 0082 0025     		movs	r5, #0
+ 603 0084 2046     		mov	r0, r4
+ 604 0086 2946     		mov	r1, r5
+ 605 0088 84F8A050 		strb	r5, [r4, #160]
+ 606 008c FFF7FEFF 		bl	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE
+ 607 0090 0022     		movs	r2, #0
+ 608 0092 0023     		movs	r3, #0
+ 609 0094 CDE90223 		strd	r2, [sp, #8]
+ 610 0098 02AB     		add	r3, sp, #8
+ 611 009a 0193     		str	r3, [sp, #4]
+ 612 009c 084B     		ldr	r3, .L103
+ 613 009e 0095     		str	r5, [sp]
+ 614 00a0 04F12000 		add	r0, r4, #32
+ 615 00a4 05A9     		add	r1, sp, #20
+ 616 00a6 0222     		movs	r2, #2
+ 617 00a8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 618 00aa FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericPubl
+ 619 00ae A842     		cmp	r0, r5
+ 620 00b0 04DA     		bge	.L88
+ 621 00b2 206C     		ldr	r0, [r4, #64]
+ 622 00b4 0349     		ldr	r1, .L103+4
+ 623 00b6 0368     		ldr	r3, [r0]
+ 624 00b8 5B69     		ldr	r3, [r3, #20]
+ 625 00ba 9847     		blx	r3
+ 626              	.L88:
+ 627 00bc 0AB0     		add	sp, sp, #40
+ARM GAS  /tmp/cccdcNTo.s 			page 12
+
+
+ 628              		@ sp needed
+ 629 00be 70BD     		pop	{r4, r5, r6, pc}
+ 630              	.L104:
+ 631              		.align	2
+ 632              	.L103:
+ 633 00c0 00000000 		.word	_ZN6uavcan6NodeID9BroadcastE
+ 634 00c4 2B000000 		.word	.LC1
+ 635              		.size	_ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE, .-_ZN6uavcan19DynamicN
+ 636              		.section	.text._ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStruct
+ 637              		.align	1
+ 638              		.weak	_ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8p
+ 639              		.thumb
+ 640              		.thumb_func
+ 641              		.type	_ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8p
+ 642              	_ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8protocol
+ 643              		@ args = 0, pretend = 0, frame = 0
+ 644              		@ frame_needed = 0, uses_anonymous_args = 0
+ 645              		@ link register save eliminated.
+ 646 0000 0368     		ldr	r3, [r0]
+ 647 0002 2BB1     		cbz	r3, .L107
+ 648 0004 4368     		ldr	r3, [r0, #4]
+ 649 0006 2BB9     		cbnz	r3, .L108
+ 650 0008 8068     		ldr	r0, [r0, #8]
+ 651 000a 00F00100 		and	r0, r0, #1
+ 652 000e 7047     		bx	lr
+ 653              	.L107:
+ 654 0010 1846     		mov	r0, r3
+ 655 0012 7047     		bx	lr
+ 656              	.L108:
+ 657 0014 0120     		movs	r0, #1
+ 658 0016 7047     		bx	lr
+ 659              		.size	_ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8p
+ 660              		.section	.text._ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10Signed
+ 661              		.align	1
+ 662              		.global	_ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0E
+ 663              		.thumb
+ 664              		.thumb_func
+ 665              		.type	_ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELN
+ 666              	_ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8Cast
+ 667              		@ args = 0, pretend = 0, frame = 24
+ 668              		@ frame_needed = 0, uses_anonymous_args = 0
+ 669 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 670 0004 0446     		mov	r4, r0
+ 671 0006 87B0     		sub	sp, sp, #28
+ 672 0008 0D46     		mov	r5, r1
+ 673 000a 1646     		mov	r6, r2
+ 674 000c 1F46     		mov	r7, r3
+ 675 000e FFF7FEFF 		bl	_ZN6uavcan19DynamicNodeIDClient9terminateEv
+ 676 0012 206C     		ldr	r0, [r4, #64]
+ 677 0014 0368     		ldr	r3, [r0]
+ 678 0016 1B69     		ldr	r3, [r3, #16]
+ 679 0018 9847     		blx	r3
+ 680 001a 90F9E430 		ldrsb	r3, [r0, #228]
+ 681 001e 002B     		cmp	r3, #0
+ 682 0020 15DC     		bgt	.L120
+ 683 0022 2946     		mov	r1, r5
+ 684 0024 05F11002 		add	r2, r5, #16
+ARM GAS  /tmp/cccdcNTo.s 			page 13
+
+
+ 685 0028 04F19003 		add	r3, r4, #144
+ 686              	.L111:
+ 687 002c 9142     		cmp	r1, r2
+ 688 002e 04D0     		beq	.L131
+ 689 0030 11F8010B 		ldrb	r0, [r1], #1	@ zero_extendqisi2
+ 690 0034 03F8010B 		strb	r0, [r3], #1
+ 691 0038 F8E7     		b	.L111
+ 692              	.L131:
+ 693 003a 04F18F03 		add	r3, r4, #143
+ 694 003e 04F19F02 		add	r2, r4, #159
+ 695              	.L114:
+ 696 0042 13F8011F 		ldrb	r1, [r3, #1]!	@ zero_extendqisi2
+ 697 0046 29B9     		cbnz	r1, .L113
+ 698 0048 9342     		cmp	r3, r2
+ 699 004a FAD1     		bne	.L114
+ 700 004c 2CE0     		b	.L123
+ 701              	.L120:
+ 702 004e 6FF00900 		mvn	r0, #9
+ 703 0052 8CE0     		b	.L125
+ 704              	.L113:
+ 705 0054 73B2     		sxtb	r3, r6
+ 706 0056 002B     		cmp	r3, #0
+ 707 0058 26DB     		blt	.L123
+ 708 005a FF23     		movs	r3, #255
+ 709 005c 84F8A160 		strb	r6, [r4, #161]
+ 710 0060 84F8A230 		strb	r3, [r4, #162]
+ 711 0064 84F8A330 		strb	r3, [r4, #163]
+ 712 0068 04F12000 		add	r0, r4, #32
+ 713 006c FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv
+ 714 0070 0028     		cmp	r0, #0
+ 715 0072 7CDB     		blt	.L125
+ 716 0074 84F82C70 		strb	r7, [r4, #44]
+ 717 0078 3E4B     		ldr	r3, .L133
+ 718 007a 0126     		movs	r6, #1
+ 719 007c 04F14C07 		add	r7, r4, #76
+ 720 0080 3846     		mov	r0, r7
+ 721 0082 84F83760 		strb	r6, [r4, #55]
+ 722 0086 4FF00009 		mov	r9, #0
+ 723 008a D4F88010 		ldr	r1, [r4, #128]
+ 724 008e 03AD     		add	r5, sp, #12
+ 725 0090 0394     		str	r4, [sp, #12]
+ 726 0092 0493     		str	r3, [sp, #16]
+ 727 0094 CDF81490 		str	r9, [sp, #20]
+ 728 0098 FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+ 729 009c 2846     		mov	r0, r5
+ 730 009e 04F14808 		add	r8, r4, #72
+ 731 00a2 FFF7FEFF 		bl	_ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8prot
+ 732 00a6 10B9     		cbnz	r0, .L132
+ 733              	.L123:
+ 734 00a8 6FF00100 		mvn	r0, #1
+ 735 00ac 5FE0     		b	.L125
+ 736              	.L132:
+ 737 00ae 04F18403 		add	r3, r4, #132
+ 738 00b2 95E80700 		ldmia	r5, {r0, r1, r2}
+ 739 00b6 83E80700 		stmia	r3, {r0, r1, r2}
+ 740 00ba 2F4B     		ldr	r3, .L133+4
+ 741 00bc CDF80890 		str	r9, [sp, #8]
+ARM GAS  /tmp/cccdcNTo.s 			page 14
+
+
+ 742 00c0 0193     		str	r3, [sp, #4]
+ 743 00c2 D4F88030 		ldr	r3, [r4, #128]
+ 744 00c6 002B     		cmp	r3, #0
+ 745 00c8 3CD1     		bne	.L116
+ 746 00ca FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 747 00ce FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+ 748 00d2 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 749 00d6 3146     		mov	r1, r6
+ 750 00d8 284A     		ldr	r2, .L133+8
+ 751 00da FFF7FEFF 		bl	_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+ 752 00de 0646     		mov	r6, r0
+ 753 00e0 68B3     		cbz	r0, .L122
+ 754 00e2 E06C     		ldr	r0, [r4, #76]
+ 755 00e4 0368     		ldr	r3, [r0]
+ 756 00e6 9B68     		ldr	r3, [r3, #8]
+ 757 00e8 9847     		blx	r3
+ 758 00ea D4F88050 		ldr	r5, [r4, #128]
+ 759 00ee 8146     		mov	r9, r0
+ 760 00f0 15B1     		cbz	r5, .L117
+ 761              	.L118:
+ 762 00f2 2348     		ldr	r0, .L133+12
+ 763 00f4 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 764              	.L117:
+ 765 00f8 E06C     		ldr	r0, [r4, #76]
+ 766 00fa 0368     		ldr	r3, [r0]
+ 767 00fc DB68     		ldr	r3, [r3, #12]
+ 768 00fe 9847     		blx	r3
+ 769 0100 204B     		ldr	r3, .L133+16
+ 770 0102 B830     		adds	r0, r0, #184
+ 771 0104 6365     		str	r3, [r4, #84]
+ 772 0106 1223     		movs	r3, #18
+ 773 0108 A4F86830 		strh	r3, [r4, #104]	@ movhi
+ 774 010c 6067     		str	r0, [r4, #116]
+ 775 010e A565     		str	r5, [r4, #88]
+ 776 0110 E665     		str	r6, [r4, #92]
+ 777 0112 2566     		str	r5, [r4, #96]
+ 778 0114 C4F86490 		str	r9, [r4, #100]
+ 779 0118 E566     		str	r5, [r4, #108]
+ 780 011a C4F87090 		str	r9, [r4, #112]
+ 781 011e 3046     		mov	r0, r6
+ 782 0120 FFF7FEFF 		bl	_ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+ 783 0124 184B     		ldr	r3, .L133+20
+ 784 0126 A4F87800 		strh	r0, [r4, #120]	@ movhi
+ 785 012a 6365     		str	r3, [r4, #84]
+ 786 012c 04F15403 		add	r3, r4, #84
+ 787 0130 84F87A50 		strb	r5, [r4, #122]
+ 788 0134 C4F87C80 		str	r8, [r4, #124]
+ 789 0138 C4F88030 		str	r3, [r4, #128]
+ 790 013c 02E0     		b	.L116
+ 791              	.L122:
+ 792 013e 6FF00400 		mvn	r0, #4
+ 793 0142 14E0     		b	.L125
+ 794              	.L116:
+ 795 0144 01AB     		add	r3, sp, #4
+ 796 0146 3846     		mov	r0, r7
+ 797 0148 0CCB     		ldmia	r3, {r2, r3}
+ 798 014a D4F88010 		ldr	r1, [r4, #128]
+ARM GAS  /tmp/cccdcNTo.s 			page 15
+
+
+ 799 014e FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E
+ 800 0152 0028     		cmp	r0, #0
+ 801 0154 0BDB     		blt	.L125
+ 802 0156 D4F88030 		ldr	r3, [r4, #128]
+ 803 015a 002B     		cmp	r3, #0
+ 804 015c C9D0     		beq	.L118
+ 805 015e 0122     		movs	r2, #1
+ 806 0160 2046     		mov	r0, r4
+ 807 0162 83F82620 		strb	r2, [r3, #38]
+ 808 0166 0021     		movs	r1, #0
+ 809 0168 FFF7FEFF 		bl	_ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE
+ 810 016c 0020     		movs	r0, #0
+ 811              	.L125:
+ 812 016e 07B0     		add	sp, sp, #28
+ 813              		@ sp needed
+ 814 0170 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 815              	.L134:
+ 816              		.align	2
+ 817              	.L133:
+ 818 0174 00000000 		.word	_ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol1
+ 819 0178 00000000 		.word	_ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE
+ 820 017c 00000000 		.word	.LC0
+ 821 0180 4E000000 		.word	.LC2
+ 822 0184 08000000 		.word	_ZTVN6uavcan16TransferListenerE+8
+ 823 0188 08000000 		.word	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 824              		.size	_ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELN
+ 825              		.section	.text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12Method
+ 826              		.align	1
+ 827              		.weak	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 828              		.thumb
+ 829              		.thumb_func
+ 830              		.type	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 831              	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19Dyn
+ 832              		@ args = 0, pretend = 0, frame = 0
+ 833              		@ frame_needed = 0, uses_anonymous_args = 0
+ 834 0000 70B5     		push	{r4, r5, r6, lr}
+ 835 0002 0446     		mov	r4, r0
+ 836 0004 3C30     		adds	r0, r0, #60
+ 837 0006 0D46     		mov	r5, r1
+ 838 0008 FFF7FEFF 		bl	_ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8prot
+ 839 000c 78B1     		cbz	r0, .L136
+ 840 000e 626C     		ldr	r2, [r4, #68]
+ 841 0010 E06B     		ldr	r0, [r4, #60]
+ 842 0012 12F0010F 		tst	r2, #1
+ 843 0016 4FEA6202 		asr	r2, r2, #1
+ 844 001a 18BF     		it	ne
+ 845 001c 8158     		ldrne	r1, [r0, r2]
+ 846 001e 236C     		ldr	r3, [r4, #64]
+ 847 0020 1044     		add	r0, r0, r2
+ 848 0022 18BF     		it	ne
+ 849 0024 CB58     		ldrne	r3, [r1, r3]
+ 850 0026 2946     		mov	r1, r5
+ 851 0028 BDE87040 		pop	{r4, r5, r6, lr}
+ 852 002c 1847     		bx	r3	@ indirect register sibling call
+ 853              	.L136:
+ 854 002e 0148     		ldr	r0, .L139
+ 855 0030 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ARM GAS  /tmp/cccdcNTo.s 			page 16
+
+
+ 856              	.L140:
+ 857              		.align	2
+ 858              	.L139:
+ 859 0034 61000000 		.word	.LC3
+ 860              		.size	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 861              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_N
+ 862              		.align	1
+ 863              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 864              		.thumb
+ 865              		.thumb_func
+ 866              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 867              	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferList
+ 868              		@ args = 0, pretend = 0, frame = 48
+ 869              		@ frame_needed = 0, uses_anonymous_args = 0
+ 870 0000 70B5     		push	{r4, r5, r6, lr}
+ 871 0002 8CB0     		sub	sp, sp, #48
+ 872 0004 0024     		movs	r4, #0
+ 873 0006 0B91     		str	r1, [sp, #44]
+ 874 0008 0391     		str	r1, [sp, #12]
+ 875 000a 03AB     		add	r3, sp, #12
+ 876 000c 0546     		mov	r5, r0
+ 877 000e 0E46     		mov	r6, r1
+ 878 0010 02A8     		add	r0, sp, #8
+ 879 0012 0DF10701 		add	r1, sp, #7
+ 880 0016 0722     		movs	r2, #7
+ 881 0018 8DF81840 		strb	r4, [sp, #24]
+ 882 001c 8DF81940 		strb	r4, [sp, #25]
+ 883 0020 8DF81A40 		strb	r4, [sp, #26]
+ 884 0024 0494     		str	r4, [sp, #16]
+ 885 0026 8DF81440 		strb	r4, [sp, #20]
+ 886 002a 0293     		str	r3, [sp, #8]
+ 887 002c 8DF80740 		strb	r4, [sp, #7]
+ 888 0030 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+ 889 0034 0028     		cmp	r0, #0
+ 890 0036 37DD     		ble	.L151
+ 891 0038 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 892 003c 02A8     		add	r0, sp, #8
+ 893 003e 0DF10701 		add	r1, sp, #7
+ 894 0042 0122     		movs	r2, #1
+ 895 0044 8DF81830 		strb	r3, [sp, #24]
+ 896 0048 8DF80740 		strb	r4, [sp, #7]
+ 897 004c FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+ 898 0050 0028     		cmp	r0, #0
+ 899 0052 29DD     		ble	.L151
+ 900 0054 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 901 0058 8DF81A40 		strb	r4, [sp, #26]
+ 902 005c 8DF81930 		strb	r3, [sp, #25]
+ 903              	.L147:
+ 904 0060 0023     		movs	r3, #0
+ 905 0062 02A8     		add	r0, sp, #8
+ 906 0064 0DF10701 		add	r1, sp, #7
+ 907 0068 0822     		movs	r2, #8
+ 908 006a 8DF80630 		strb	r3, [sp, #6]
+ 909 006e 8DF80730 		strb	r3, [sp, #7]
+ 910 0072 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+ 911 0076 0028     		cmp	r0, #0
+ 912 0078 C4BF     		itt	gt
+ARM GAS  /tmp/cccdcNTo.s 			page 17
+
+
+ 913 007a 9DF80730 		ldrbgt	r3, [sp, #7]	@ zero_extendqisi2
+ 914 007e 8DF80630 		strbgt	r3, [sp, #6]
+ 915 0082 0028     		cmp	r0, #0
+ 916 0084 10DB     		blt	.L151
+ 917 0086 0AD0     		beq	.L153
+ 918 0088 9DF81A30 		ldrb	r3, [sp, #26]	@ zero_extendqisi2
+ 919 008c 102B     		cmp	r3, #16
+ 920 008e 08D0     		beq	.L154
+ 921 0090 0DF11A00 		add	r0, sp, #26
+ 922 0094 0DF10601 		add	r1, sp, #6
+ 923 0098 FFF7FEFF 		bl	_ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj1
+ 924 009c E0E7     		b	.L147
+ 925              	.L153:
+ 926 009e 0124     		movs	r4, #1
+ 927 00a0 03E0     		b	.L143
+ 928              	.L154:
+ 929 00a2 6FF00504 		mvn	r4, #5
+ 930 00a6 00E0     		b	.L143
+ 931              	.L151:
+ 932 00a8 0446     		mov	r4, r0
+ 933              	.L143:
+ 934 00aa 3368     		ldr	r3, [r6]
+ 935 00ac 3046     		mov	r0, r6
+ 936 00ae 1B69     		ldr	r3, [r3, #16]
+ 937 00b0 9847     		blx	r3
+ 938 00b2 012C     		cmp	r4, #1
+ 939 00b4 0ED0     		beq	.L148
+ 940 00b6 AB68     		ldr	r3, [r5, #8]
+ 941 00b8 6868     		ldr	r0, [r5, #4]
+ 942 00ba 0133     		adds	r3, r3, #1
+ 943 00bc AB60     		str	r3, [r5, #8]
+ 944 00be 0368     		ldr	r3, [r0]
+ 945 00c0 DB68     		ldr	r3, [r3, #12]
+ 946 00c2 9847     		blx	r3
+ 947 00c4 D0E93223 		ldrd	r2, [r0, #200]
+ 948 00c8 0132     		adds	r2, r2, #1
+ 949 00ca 43F10003 		adc	r3, r3, #0
+ 950 00ce C0E93223 		strd	r2, [r0, #200]
+ 951 00d2 04E0     		b	.L141
+ 952              	.L148:
+ 953 00d4 2B68     		ldr	r3, [r5]
+ 954 00d6 2846     		mov	r0, r5
+ 955 00d8 9B68     		ldr	r3, [r3, #8]
+ 956 00da 06A9     		add	r1, sp, #24
+ 957 00dc 9847     		blx	r3
+ 958              	.L141:
+ 959 00de 0CB0     		add	sp, sp, #48
+ 960              		@ sp needed
+ 961 00e0 70BD     		pop	{r4, r5, r6, pc}
+ 962              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 963              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_N
+ 964              		.align	1
+ 965              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 966              		.thumb
+ 967              		.thumb_func
+ 968              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 969              	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferList
+ARM GAS  /tmp/cccdcNTo.s 			page 18
+
+
+ 970              		@ args = 0, pretend = 0, frame = 0
+ 971              		@ frame_needed = 0, uses_anonymous_args = 0
+ 972 0000 08B5     		push	{r3, lr}
+ 973 0002 806A     		ldr	r0, [r0, #40]
+ 974 0004 FFF7FEFF 		bl	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Transfer
+ 975 0008 08BD     		pop	{r3, pc}
+ 976              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 977              		.section	.text.startup._GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv,"ax",%progbits
+ 978              		.align	1
+ 979              		.thumb
+ 980              		.thumb_func
+ 981              		.type	_GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv, %function
+ 982              	_GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv:
+ 983              		@ args = 0, pretend = 0, frame = 0
+ 984              		@ frame_needed = 0, uses_anonymous_args = 0
+ 985 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 986 0002 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 987 0006 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 988 0008 0546     		mov	r5, r0
+ 989 000a 002B     		cmp	r3, #0
+ 990 000c 31D1     		bne	.L163
+ 991 000e 1E4A     		ldr	r2, .L164+8
+ 992 0010 1E48     		ldr	r0, .L164+12
+ 993 0012 1368     		ldr	r3, [r2]
+ 994 0014 13F00103 		ands	r3, r3, #1
+ 995 0018 10D1     		bne	.L158
+ 996 001a 1D49     		ldr	r1, .L164+16
+ 997 001c 0360     		str	r3, [r0]
+ 998 001e 0375     		strb	r3, [r0, #20]
+ 999 0020 4FF0FF33 		mov	r3, #-1
+ 1000 0024 0026     		movs	r6, #0
+ 1001 0026 0027     		movs	r7, #0
+ 1002 0028 8361     		str	r3, [r0, #24]
+ 1003 002a 0123     		movs	r3, #1
+ 1004 002c 0161     		str	r1, [r0, #16]
+ 1005 002e 1360     		str	r3, [r2]
+ 1006 0030 C0E90267 		strd	r6, [r0, #8]
+ 1007 0034 1749     		ldr	r1, .L164+20
+ 1008 0036 184A     		ldr	r2, .L164+24
+ 1009 0038 FFF7FEFF 		bl	__aeabi_atexit
+ 1010              	.L158:
+ 1011 003c 134C     		ldr	r4, .L164+12
+ 1012 003e 2846     		mov	r0, r5
+ 1013 0040 2146     		mov	r1, r4
+ 1014 0042 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1015 0046 98B9     		cbnz	r0, .L157
+ 1016 0048 0DA3     		adr	r3, .L164
+ 1017 004a D3E90023 		ldrd	r2, [r3]
+ 1018 004e C4E90223 		strd	r2, [r4, #8]
+ 1019 0052 124B     		ldr	r3, .L164+28
+ 1020 0054 2060     		str	r0, [r4]
+ 1021 0056 2361     		str	r3, [r4, #16]
+ 1022 0058 0123     		movs	r3, #1
+ 1023 005a 2375     		strb	r3, [r4, #20]
+ 1024 005c A361     		str	r3, [r4, #24]
+ 1025 005e 2846     		mov	r0, r5
+ 1026 0060 2146     		mov	r1, r4
+ARM GAS  /tmp/cccdcNTo.s 			page 19
+
+
+ 1027 0062 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1028 0066 18B9     		cbnz	r0, .L157
+ 1029 0068 2846     		mov	r0, r5
+ 1030 006a 2146     		mov	r1, r4
+ 1031 006c FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1032              	.L157:
+ 1033 0070 10B1     		cbz	r0, .L156
+ 1034              	.L163:
+ 1035 0072 0B48     		ldr	r0, .L164+32
+ 1036 0074 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 1037              	.L156:
+ 1038 0078 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1039              	.L165:
+ 1040 007a 00BFAFF3 		.align	3
+ 1040      0080
+ 1041              	.L164:
+ 1042 0080 401DA120 		.word	547429696
+ 1043 0084 26812A0B 		.word	187334950
+ 1044 0088 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Alloc
+ 1045 008c 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocat
+ 1046 0090 6A000000 		.word	.LC4
+ 1047 0094 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 1048 0098 00000000 		.word	__dso_handle
+ 1049 009c 00000000 		.word	.LC0
+ 1050 00a0 6B000000 		.word	.LC5
+ 1051              		.size	_GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv, .-_GLOBAL__sub_I__ZN6uavcan19Dyn
+ 1052              		.section	.init_array,"aw",%init_array
+ 1053              		.align	2
+ 1054 0000 00000000 		.word	_GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv(target1)
+ 1055              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocat
+ 1056              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id1
+ 1057              		.align	3
+ 1058              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocat
+ 1059              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocat
+ 1060              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi
+ 1061 0000 00000000 		.space	32
+ 1061      00000000 
+ 1061      00000000 
+ 1061      00000000 
+ 1061      00000000 
+ 1062              		.weak	_ZTVN6uavcan15DeadlineHandlerE
+ 1063              		.section	.rodata._ZTVN6uavcan15DeadlineHandlerE,"aG",%progbits,_ZTVN6uavcan15DeadlineHandlerE,comd
+ 1064              		.align	3
+ 1065              		.type	_ZTVN6uavcan15DeadlineHandlerE, %object
+ 1066              		.size	_ZTVN6uavcan15DeadlineHandlerE, 20
+ 1067              	_ZTVN6uavcan15DeadlineHandlerE:
+ 1068 0000 00000000 		.word	0
+ 1069 0004 00000000 		.word	0
+ 1070 0008 00000000 		.word	0
+ 1071 000c 00000000 		.word	0
+ 1072 0010 00000000 		.word	__cxa_pure_virtual
+ 1073              		.weak	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 1074              		.section	.rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEE
+ 1075              		.align	3
+ 1076              		.type	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 1077              		.size	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 1078              	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferLi
+ARM GAS  /tmp/cccdcNTo.s 			page 20
+
+
+ 1079 0000 00000000 		.word	0
+ 1080 0004 00000000 		.word	0
+ 1081 0008 00000000 		.word	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 1082 000c 00000000 		.word	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 1083 0010 00000000 		.word	_ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Trans
+ 1084 0014 00000000 		.word	_ZN6uavcan16TransferListener11handleFrameERKNS_7RxFrameE
+ 1085              		.weak	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 1086              		.section	.rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEE
+ 1087              		.align	3
+ 1088              		.type	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 1089              		.size	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16Tra
+ 1090              	_ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferLi
+ 1091 0000 00000000 		.word	0
+ 1092 0004 00000000 		.word	0
+ 1093 0008 00000000 		.word	0
+ 1094 000c 00000000 		.word	0
+ 1095 0010 00000000 		.word	__cxa_pure_virtual
+ 1096              		.weak	_ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderI
+ 1097              		.section	.rodata._ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12Me
+ 1098              		.align	3
+ 1099              		.type	_ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderI
+ 1100              		.size	_ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderI
+ 1101              	_ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19D
+ 1102 0000 00000000 		.word	0
+ 1103 0004 00000000 		.word	0
+ 1104 0008 00000000 		.word	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 1105 000c 00000000 		.word	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 1106 0010 00000000 		.word	_ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPN
+ 1107              		.global	_ZTVN6uavcan19DynamicNodeIDClientE
+ 1108              		.weak	_ZTVN6uavcan20StaticTransferBufferILt18EEE
+ 1109              		.section	.rodata._ZTVN6uavcan20StaticTransferBufferILt18EEE,"aG",%progbits,_ZTVN6uavcan20StaticTra
+ 1110              		.align	3
+ 1111              		.type	_ZTVN6uavcan20StaticTransferBufferILt18EEE, %object
+ 1112              		.size	_ZTVN6uavcan20StaticTransferBufferILt18EEE, 24
+ 1113              	_ZTVN6uavcan20StaticTransferBufferILt18EEE:
+ 1114 0000 00000000 		.word	0
+ 1115 0004 00000000 		.word	0
+ 1116 0008 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt18EED1Ev
+ 1117 000c 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt18EED0Ev
+ 1118 0010 00000000 		.word	_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+ 1119 0014 00000000 		.word	_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+ 1120              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Alloc
+ 1121              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_i
+ 1122              		.align	2
+ 1123              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Alloc
+ 1124              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Alloc
+ 1125              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_I
+ 1126 0000 00000000 		.space	4
+ 1127              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 1128              	.LC0:
+ 1129 0000 75617663 		.ascii	"uavcan.protocol.dynamic_node_id.Allocation\000"
+ 1129      616E2E70 
+ 1129      726F746F 
+ 1129      636F6C2E 
+ 1129      64796E61 
+ 1130              	.LC1:
+ 1131 002b 44796E61 		.ascii	"DynamicNodeIDClient request failed\000"
+ARM GAS  /tmp/cccdcNTo.s 			page 21
+
+
+ 1131      6D69634E 
+ 1131      6F646549 
+ 1131      44436C69 
+ 1131      656E7420 
+ 1132              	.LC2:
+ 1133 004e 4C617A79 		.ascii	"LazyConstructor<T>\000"
+ 1133      436F6E73 
+ 1133      74727563 
+ 1133      746F723C 
+ 1133      543E00
+ 1134              	.LC3:
+ 1135 0061 53756220 		.ascii	"Sub clbk\000"
+ 1135      636C626B 
+ 1135      00
+ 1136              	.LC4:
+ 1137 006a 00       		.ascii	"\000"
+ 1138              	.LC5:
+ 1139 006b 54797065 		.ascii	"Type reg failed\000"
+ 1139      20726567 
+ 1139      20666169 
+ 1139      6C656400 
+ 1140              		.section	.rodata._ZTVN6uavcan19DynamicNodeIDClientE,"a",%progbits
+ 1141              		.align	3
+ 1142              		.set	.LANCHOR0,. + 0
+ 1143              		.type	_ZTVN6uavcan19DynamicNodeIDClientE, %object
+ 1144              		.size	_ZTVN6uavcan19DynamicNodeIDClientE, 24
+ 1145              	_ZTVN6uavcan19DynamicNodeIDClientE:
+ 1146 0000 00000000 		.word	0
+ 1147 0004 00000000 		.word	0
+ 1148 0008 00000000 		.word	_ZN6uavcan19DynamicNodeIDClientD1Ev
+ 1149 000c 00000000 		.word	_ZN6uavcan19DynamicNodeIDClientD0Ev
+ 1150 0010 00000000 		.word	_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE
+ 1151 0014 00000000 		.word	_ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE
+ 1152              		.hidden	__dso_handle
+ 1153              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cccdcNTo.s 			page 22
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_dynamic_node_id_client.cpp
+     /tmp/cccdcNTo.s:16     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:21     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+     /tmp/cccdcNTo.s:21     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+     /tmp/cccdcNTo.s:30     .text._ZN6uavcan20StaticTransferBufferILt18EED2Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:35     .text._ZN6uavcan20StaticTransferBufferILt18EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt18EED2Ev
+     /tmp/cccdcNTo.s:35     .text._ZN6uavcan20StaticTransferBufferILt18EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt18EED1Ev
+     /tmp/cccdcNTo.s:44     .text._ZN6uavcan20StaticTransferBufferILt18EED0Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:49     .text._ZN6uavcan20StaticTransferBufferILt18EED0Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt18EED0Ev
+     /tmp/cccdcNTo.s:59     .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:64     .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD2Ev
+     /tmp/cccdcNTo.s:77     .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000010 $d
+     /tmp/cccdcNTo.s:1078   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderE:0000000000000000 _ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderE
+     /tmp/cccdcNTo.s:64     .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD1Ev
+     /tmp/cccdcNTo.s:82     .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD0Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:87     .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD0Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD0Ev
+     /tmp/cccdcNTo.s:99     .text._ZN6uavcan19DynamicNodeIDClient9terminateEv:0000000000000000 $t
+     /tmp/cccdcNTo.s:104    .text._ZN6uavcan19DynamicNodeIDClient9terminateEv:0000000000000000 _ZN6uavcan19DynamicNodeIDClient9terminateEv
+     /tmp/cccdcNTo.s:116    .text._ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm:0000000000000000 $t
+     /tmp/cccdcNTo.s:121    .text._ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm:0000000000000000 _ZN6uavcan19DynamicNodeIDClient17getRandomDurationEmm
+     /tmp/cccdcNTo.s:140    .text._ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE:0000000000000000 $t
+     /tmp/cccdcNTo.s:145    .text._ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE:0000000000000000 _ZN6uavcan19DynamicNodeIDClient12restartTimerENS0_4ModeE
+     /tmp/cccdcNTo.s:173    .text._ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEE:0000000000000000 $t
+     /tmp/cccdcNTo.s:178    .text._ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEE:0000000000000000 _ZN6uavcan19DynamicNodeIDClient16handleAllocationERKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEE
+     /tmp/cccdcNTo.s:251    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED2Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:256    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED2Ev
+     /tmp/cccdcNTo.s:287    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED2Ev:0000000000000038 $d
+     /tmp/cccdcNTo.s:1090   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEEE:0000000000000000 _ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEEE
+     /tmp/cccdcNTo.s:256    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED1Ev
+     /tmp/cccdcNTo.s:292    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED2Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:297    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED2Ev:0000000000000000 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED2Ev
+     /tmp/cccdcNTo.s:310    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED2Ev:0000000000000010 $d
+     /tmp/cccdcNTo.s:1101   .rodata._ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEEE:0000000000000000 _ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEEE
+     /tmp/cccdcNTo.s:297    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED2Ev:0000000000000000 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED1Ev
+     /tmp/cccdcNTo.s:315    .text._ZN6uavcan19DynamicNodeIDClientD2Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:320    .text._ZN6uavcan19DynamicNodeIDClientD2Ev:0000000000000000 _ZN6uavcan19DynamicNodeIDClientD2Ev
+     /tmp/cccdcNTo.s:337    .text._ZN6uavcan19DynamicNodeIDClientD2Ev:000000000000001c $d
+     /tmp/cccdcNTo.s:1067   .rodata._ZTVN6uavcan15DeadlineHandlerE:0000000000000000 _ZTVN6uavcan15DeadlineHandlerE
+     /tmp/cccdcNTo.s:320    .text._ZN6uavcan19DynamicNodeIDClientD2Ev:0000000000000000 _ZN6uavcan19DynamicNodeIDClientD1Ev
+     /tmp/cccdcNTo.s:343    .text._ZN6uavcan19DynamicNodeIDClientD0Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:348    .text._ZN6uavcan19DynamicNodeIDClientD0Ev:0000000000000000 _ZN6uavcan19DynamicNodeIDClientD0Ev
+     /tmp/cccdcNTo.s:360    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED0Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:365    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED0Ev:0000000000000000 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED0Ev
+     /tmp/cccdcNTo.s:377    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED0Ev:0000000000000000 $t
+     /tmp/cccdcNTo.s:382    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED0Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED0Ev
+     /tmp/cccdcNTo.s:394    .text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv:0000000000000000 $t
+     /tmp/cccdcNTo.s:399    .text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv:0000000000000000 _ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv
+     /tmp/cccdcNTo.s:418    .text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E9checkInitEv:0000000000000020 $d
+     /tmp/cccdcNTo.s:421    .text._ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj16EE9push_backERKh:0000000000000000 $t
+     /tmp/cccdcNTo.s:426    .text._ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj16EE9push_backERKh:0000000000000000 _ZN6uavcan5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj16EE9push_backERKh
+     /tmp/cccdcNTo.s:450    .text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/cccdcNTo.s:455    .text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+     /tmp/cccdcNTo.s:540    .text._ZN6uavcan16GenericPublisherINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_E14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:00000000000000c4 $d
+     /tmp/cccdcNTo.s:1113   .rodata._ZTVN6uavcan20StaticTransferBufferILt18EEE:0000000000000000 _ZTVN6uavcan20StaticTransferBufferILt18EEE
+     /tmp/cccdcNTo.s:543    .text._ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE:0000000000000000 $t
+     /tmp/cccdcNTo.s:548    .text._ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE:0000000000000000 _ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE
+ARM GAS  /tmp/cccdcNTo.s 			page 23
+
+
+     /tmp/cccdcNTo.s:633    .text._ZN6uavcan19DynamicNodeIDClient16handleTimerEventERKNS_10TimerEventE:00000000000000c0 $d
+     /tmp/cccdcNTo.s:637    .text._ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEEEEcvbEv:0000000000000000 $t
+     /tmp/cccdcNTo.s:642    .text._ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEEEEcvbEv:0000000000000000 _ZNK6uavcan12MethodBinderIPNS_19DynamicNodeIDClientEMS1_FvRKNS_21ReceivedDataStructureINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEEEEcvbEv
+     /tmp/cccdcNTo.s:661    .text._ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE0ELj16EEENS_6NodeIDENS_16TransferPriorityE:0000000000000000 $t
+     /tmp/cccdcNTo.s:666    .text._ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE0ELj16EEENS_6NodeIDENS_16TransferPriorityE:0000000000000000 _ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE0ELj16EEENS_6NodeIDENS_16TransferPriorityE
+     /tmp/cccdcNTo.s:818    .text._ZN6uavcan19DynamicNodeIDClient5startERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE0ELj16EEENS_6NodeIDENS_16TransferPriorityE:0000000000000174 $d
+     /tmp/cccdcNTo.s:826    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEE24handleReceivedDataStructERS9_:0000000000000000 $t
+     /tmp/cccdcNTo.s:831    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEE24handleReceivedDataStructERS9_:0000000000000000 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEE24handleReceivedDataStructERS9_
+     /tmp/cccdcNTo.s:859    .text._ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEE24handleReceivedDataStructERS9_:0000000000000034 $d
+     /tmp/cccdcNTo.s:862    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE:0000000000000000 $t
+     /tmp/cccdcNTo.s:867    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE22handleIncomingTransferERNS_16IncomingTransferE
+     /tmp/cccdcNTo.s:964    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE:0000000000000000 $t
+     /tmp/cccdcNTo.s:969    .text._ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+     /tmp/cccdcNTo.s:978    .text.startup._GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv:0000000000000000 $t
+     /tmp/cccdcNTo.s:982    .text.startup._GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv:0000000000000000 _GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv
+     /tmp/cccdcNTo.s:1042   .text.startup._GLOBAL__sub_I__ZN6uavcan19DynamicNodeIDClient9terminateEv:0000000000000080 $d
+     /tmp/cccdcNTo.s:1125   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/cccdcNTo.s:1060   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/cccdcNTo.s:1053   .init_array:0000000000000000 $d
+     /tmp/cccdcNTo.s:1057   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/cccdcNTo.s:1064   .rodata._ZTVN6uavcan15DeadlineHandlerE:0000000000000000 $d
+     /tmp/cccdcNTo.s:1075   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderE:0000000000000000 $d
+     /tmp/cccdcNTo.s:1087   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEEE:0000000000000000 $d
+     /tmp/cccdcNTo.s:1098   .rodata._ZTVN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEEE:0000000000000000 $d
+     /tmp/cccdcNTo.s:1145   .rodata._ZTVN6uavcan19DynamicNodeIDClientE:0000000000000000 _ZTVN6uavcan19DynamicNodeIDClientE
+     /tmp/cccdcNTo.s:1110   .rodata._ZTVN6uavcan20StaticTransferBufferILt18EEE:0000000000000000 $d
+     /tmp/cccdcNTo.s:1122   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol15dynamic_node_id11Allocation_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/cccdcNTo.s:1141   .rodata._ZTVN6uavcan19DynamicNodeIDClientE:0000000000000000 $d
+                           .group:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD5Ev
+                           .group:0000000000000000 _ZN6uavcan20StaticTransferBufferILt18EED5Ev
+                           .group:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEE17TransferForwarderD5Ev
+                           .group:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEES4_NS_16TransferListenerEED5Ev
+                           .group:0000000000000000 _ZN6uavcan10SubscriberINS_8protocol15dynamic_node_id11Allocation_ILi0EEENS_12MethodBinderIPNS_19DynamicNodeIDClientEMS6_FvRKNS_21ReceivedDataStructureIS4_EEEEEED5Ev
+                           .group:0000000000000000 _ZN6uavcan19DynamicNodeIDClientD5Ev
+
+UNDEFINED SYMBOLS
+_ZdlPv
+_ZN6uavcan16TransferListenerD2Ev
+_ZN6uavcan15DeadlineHandler4stopEv
+_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+rand
+_ZN6uavcan9TimerBase21startOneShotWithDelayENS_17MonotonicDurationE
+_ZNK6uavcan20GenericPublisherBase8isInitedEv
+_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+_ZN6uavcan6NodeID9BroadcastE
+_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+_ZN6uavcan16handleFatalErrorEPKc
+_ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E
+_ZN6uavcan10Dispatcher23registerMessageListenerEPNS_16TransferListenerE
+_ZTVN6uavcan16TransferListenerE
+_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+__aeabi_atexit
+ARM GAS  /tmp/cccdcNTo.s 			page 24
+
+
+_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+__dso_handle
+__cxa_pure_virtual
+_ZN6uavcan16TransferListener11handleFrameERKNS_7RxFrameE
+_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE

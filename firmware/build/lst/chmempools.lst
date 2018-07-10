@@ -1,0 +1,171 @@
+ARM GAS  /tmp/cc5Vf6aW.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chmempools.c"
+  15              		.section	.text.chPoolInit,"ax",%progbits
+  16              		.align	1
+  17              		.global	chPoolInit
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	chPoolInit, %function
+  21              	chPoolInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0023     		movs	r3, #0
+  26 0002 0360     		str	r3, [r0]
+  27 0004 4160     		str	r1, [r0, #4]
+  28 0006 8260     		str	r2, [r0, #8]
+  29 0008 7047     		bx	lr
+  30              		.size	chPoolInit, .-chPoolInit
+  31              		.section	.text.chPoolAllocI,"ax",%progbits
+  32              		.align	1
+  33              		.global	chPoolAllocI
+  34              		.thumb
+  35              		.thumb_func
+  36              		.type	chPoolAllocI, %function
+  37              	chPoolAllocI:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 0346     		mov	r3, r0
+  42 0002 0068     		ldr	r0, [r0]
+  43 0004 10B1     		cbz	r0, .L3
+  44 0006 0268     		ldr	r2, [r0]
+  45 0008 1A60     		str	r2, [r3]
+  46 000a 7047     		bx	lr
+  47              	.L3:
+  48 000c 9A68     		ldr	r2, [r3, #8]
+  49 000e 0AB1     		cbz	r2, .L4
+  50 0010 5868     		ldr	r0, [r3, #4]
+  51 0012 1047     		bx	r2
+  52              	.L4:
+  53 0014 7047     		bx	lr
+  54              		.size	chPoolAllocI, .-chPoolAllocI
+  55              		.section	.text.chPoolAlloc,"ax",%progbits
+  56              		.align	1
+  57              		.global	chPoolAlloc
+ARM GAS  /tmp/cc5Vf6aW.s 			page 2
+
+
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	chPoolAlloc, %function
+  61              	chPoolAlloc:
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 08B5     		push	{r3, lr}
+  65 0002 2023     		movs	r3, #32
+  66              	@ 131 "zubax_chibios///chibios/os/kernel/src/chmempools.c" 1
+  67 0004 83F31188 		msr     BASEPRI, r3
+  68              	@ 0 "" 2
+  69              		.thumb
+  70 0008 FFF7FEFF 		bl	chPoolAllocI
+  71 000c 0023     		movs	r3, #0
+  72              	@ 133 "zubax_chibios///chibios/os/kernel/src/chmempools.c" 1
+  73 000e 83F31188 		msr     BASEPRI, r3
+  74              	@ 0 "" 2
+  75              		.thumb
+  76 0012 08BD     		pop	{r3, pc}
+  77              		.size	chPoolAlloc, .-chPoolAlloc
+  78              		.section	.text.chPoolFreeI,"ax",%progbits
+  79              		.align	1
+  80              		.global	chPoolFreeI
+  81              		.thumb
+  82              		.thumb_func
+  83              		.type	chPoolFreeI, %function
+  84              	chPoolFreeI:
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87              		@ link register save eliminated.
+  88 0000 0368     		ldr	r3, [r0]
+  89 0002 0B60     		str	r3, [r1]
+  90 0004 0160     		str	r1, [r0]
+  91 0006 7047     		bx	lr
+  92              		.size	chPoolFreeI, .-chPoolFreeI
+  93              		.section	.text.chPoolFree,"ax",%progbits
+  94              		.align	1
+  95              		.global	chPoolFree
+  96              		.thumb
+  97              		.thumb_func
+  98              		.type	chPoolFree, %function
+  99              	chPoolFree:
+ 100              		@ args = 0, pretend = 0, frame = 0
+ 101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 102              		@ link register save eliminated.
+ 103 0000 2023     		movs	r3, #32
+ 104              	@ 173 "zubax_chibios///chibios/os/kernel/src/chmempools.c" 1
+ 105 0002 83F31188 		msr     BASEPRI, r3
+ 106              	@ 0 "" 2
+ 107              		.thumb
+ 108 0006 0368     		ldr	r3, [r0]
+ 109 0008 0B60     		str	r3, [r1]
+ 110 000a 0160     		str	r1, [r0]
+ 111 000c 0023     		movs	r3, #0
+ 112              	@ 175 "zubax_chibios///chibios/os/kernel/src/chmempools.c" 1
+ 113 000e 83F31188 		msr     BASEPRI, r3
+ 114              	@ 0 "" 2
+ARM GAS  /tmp/cc5Vf6aW.s 			page 3
+
+
+ 115              		.thumb
+ 116 0012 7047     		bx	lr
+ 117              		.size	chPoolFree, .-chPoolFree
+ 118              		.section	.text.chPoolLoadArray,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	chPoolLoadArray
+ 121              		.thumb
+ 122              		.thumb_func
+ 123              		.type	chPoolLoadArray, %function
+ 124              	chPoolLoadArray:
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127 0000 70B5     		push	{r4, r5, r6, lr}
+ 128 0002 0646     		mov	r6, r0
+ 129 0004 0D46     		mov	r5, r1
+ 130 0006 1446     		mov	r4, r2
+ 131              	.L13:
+ 132 0008 3CB1     		cbz	r4, .L15
+ 133 000a 2946     		mov	r1, r5
+ 134 000c 3046     		mov	r0, r6
+ 135 000e FFF7FEFF 		bl	chPoolFree
+ 136 0012 7368     		ldr	r3, [r6, #4]
+ 137 0014 013C     		subs	r4, r4, #1
+ 138 0016 1D44     		add	r5, r5, r3
+ 139 0018 F6E7     		b	.L13
+ 140              	.L15:
+ 141 001a 70BD     		pop	{r4, r5, r6, pc}
+ 142              		.size	chPoolLoadArray, .-chPoolLoadArray
+ 143              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc5Vf6aW.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chmempools.c
+     /tmp/cc5Vf6aW.s:16     .text.chPoolInit:0000000000000000 $t
+     /tmp/cc5Vf6aW.s:21     .text.chPoolInit:0000000000000000 chPoolInit
+     /tmp/cc5Vf6aW.s:32     .text.chPoolAllocI:0000000000000000 $t
+     /tmp/cc5Vf6aW.s:37     .text.chPoolAllocI:0000000000000000 chPoolAllocI
+     /tmp/cc5Vf6aW.s:56     .text.chPoolAlloc:0000000000000000 $t
+     /tmp/cc5Vf6aW.s:61     .text.chPoolAlloc:0000000000000000 chPoolAlloc
+     /tmp/cc5Vf6aW.s:79     .text.chPoolFreeI:0000000000000000 $t
+     /tmp/cc5Vf6aW.s:84     .text.chPoolFreeI:0000000000000000 chPoolFreeI
+     /tmp/cc5Vf6aW.s:94     .text.chPoolFree:0000000000000000 $t
+     /tmp/cc5Vf6aW.s:99     .text.chPoolFree:0000000000000000 chPoolFree
+     /tmp/cc5Vf6aW.s:119    .text.chPoolLoadArray:0000000000000000 $t
+     /tmp/cc5Vf6aW.s:124    .text.chPoolLoadArray:0000000000000000 chPoolLoadArray
+
+NO UNDEFINED SYMBOLS

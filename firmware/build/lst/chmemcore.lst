@@ -1,0 +1,163 @@
+ARM GAS  /tmp/ccfJ77DQ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chmemcore.c"
+  15              		.section	.text._core_init,"ax",%progbits
+  16              		.align	1
+  17              		.global	_core_init
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_core_init, %function
+  21              	_core_init:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 054B     		ldr	r3, .L2
+  26 0002 064A     		ldr	r2, .L2+4
+  27 0004 23F00703 		bic	r3, r3, #7
+  28 0008 1360     		str	r3, [r2]
+  29 000a 054B     		ldr	r3, .L2+8
+  30 000c 054A     		ldr	r2, .L2+12
+  31 000e 23F00703 		bic	r3, r3, #7
+  32 0012 1360     		str	r3, [r2]
+  33 0014 7047     		bx	lr
+  34              	.L3:
+  35 0016 00BF     		.align	2
+  36              	.L2:
+  37 0018 07000000 		.word	__heap_base__+7
+  38 001c 00000000 		.word	.LANCHOR0
+  39 0020 00000000 		.word	__heap_end__
+  40 0024 00000000 		.word	.LANCHOR1
+  41              		.size	_core_init, .-_core_init
+  42              		.section	.text.chCoreAllocI,"ax",%progbits
+  43              		.align	1
+  44              		.global	chCoreAllocI
+  45              		.thumb
+  46              		.thumb_func
+  47              		.type	chCoreAllocI, %function
+  48              	chCoreAllocI:
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52 0000 0649     		ldr	r1, .L7
+  53 0002 074A     		ldr	r2, .L7+4
+  54 0004 0730     		adds	r0, r0, #7
+  55 0006 20F00703 		bic	r3, r0, #7
+  56 000a 1268     		ldr	r2, [r2]
+  57 000c 0868     		ldr	r0, [r1]
+ARM GAS  /tmp/ccfJ77DQ.s 			page 2
+
+
+  58 000e 121A     		subs	r2, r2, r0
+  59 0010 9A42     		cmp	r2, r3
+  60 0012 26BF     		itte	cs
+  61 0014 1B18     		addcs	r3, r3, r0
+  62 0016 0B60     		strcs	r3, [r1]
+  63 0018 0020     		movcc	r0, #0
+  64 001a 7047     		bx	lr
+  65              	.L8:
+  66              		.align	2
+  67              	.L7:
+  68 001c 00000000 		.word	.LANCHOR0
+  69 0020 00000000 		.word	.LANCHOR1
+  70              		.size	chCoreAllocI, .-chCoreAllocI
+  71              		.section	.text.chCoreAlloc,"ax",%progbits
+  72              		.align	1
+  73              		.global	chCoreAlloc
+  74              		.thumb
+  75              		.thumb_func
+  76              		.type	chCoreAlloc, %function
+  77              	chCoreAlloc:
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80 0000 08B5     		push	{r3, lr}
+  81 0002 2023     		movs	r3, #32
+  82              	@ 94 "zubax_chibios///chibios/os/kernel/src/chmemcore.c" 1
+  83 0004 83F31188 		msr     BASEPRI, r3
+  84              	@ 0 "" 2
+  85              		.thumb
+  86 0008 FFF7FEFF 		bl	chCoreAllocI
+  87 000c 0023     		movs	r3, #0
+  88              	@ 96 "zubax_chibios///chibios/os/kernel/src/chmemcore.c" 1
+  89 000e 83F31188 		msr     BASEPRI, r3
+  90              	@ 0 "" 2
+  91              		.thumb
+  92 0012 08BD     		pop	{r3, pc}
+  93              		.size	chCoreAlloc, .-chCoreAlloc
+  94              		.section	.text.chCoreStatus,"ax",%progbits
+  95              		.align	1
+  96              		.global	chCoreStatus
+  97              		.thumb
+  98              		.thumb_func
+  99              		.type	chCoreStatus, %function
+ 100              	chCoreStatus:
+ 101              		@ args = 0, pretend = 0, frame = 0
+ 102              		@ frame_needed = 0, uses_anonymous_args = 0
+ 103              		@ link register save eliminated.
+ 104 0000 024B     		ldr	r3, .L11
+ 105 0002 1868     		ldr	r0, [r3]
+ 106 0004 024B     		ldr	r3, .L11+4
+ 107 0006 1B68     		ldr	r3, [r3]
+ 108 0008 C01A     		subs	r0, r0, r3
+ 109 000a 7047     		bx	lr
+ 110              	.L12:
+ 111              		.align	2
+ 112              	.L11:
+ 113 000c 00000000 		.word	.LANCHOR1
+ 114 0010 00000000 		.word	.LANCHOR0
+ARM GAS  /tmp/ccfJ77DQ.s 			page 3
+
+
+ 115              		.size	chCoreStatus, .-chCoreStatus
+ 116              		.section	.bss.endmem,"aw",%nobits
+ 117              		.align	2
+ 118              		.set	.LANCHOR1,. + 0
+ 119              		.type	endmem, %object
+ 120              		.size	endmem, 4
+ 121              	endmem:
+ 122 0000 00000000 		.space	4
+ 123              		.section	.bss.nextmem,"aw",%nobits
+ 124              		.align	2
+ 125              		.set	.LANCHOR0,. + 0
+ 126              		.type	nextmem, %object
+ 127              		.size	nextmem, 4
+ 128              	nextmem:
+ 129 0000 00000000 		.space	4
+ 130              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccfJ77DQ.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chmemcore.c
+     /tmp/ccfJ77DQ.s:16     .text._core_init:0000000000000000 $t
+     /tmp/ccfJ77DQ.s:21     .text._core_init:0000000000000000 _core_init
+     /tmp/ccfJ77DQ.s:37     .text._core_init:0000000000000018 $d
+     /tmp/ccfJ77DQ.s:43     .text.chCoreAllocI:0000000000000000 $t
+     /tmp/ccfJ77DQ.s:48     .text.chCoreAllocI:0000000000000000 chCoreAllocI
+     /tmp/ccfJ77DQ.s:68     .text.chCoreAllocI:000000000000001c $d
+     /tmp/ccfJ77DQ.s:72     .text.chCoreAlloc:0000000000000000 $t
+     /tmp/ccfJ77DQ.s:77     .text.chCoreAlloc:0000000000000000 chCoreAlloc
+     /tmp/ccfJ77DQ.s:95     .text.chCoreStatus:0000000000000000 $t
+     /tmp/ccfJ77DQ.s:100    .text.chCoreStatus:0000000000000000 chCoreStatus
+     /tmp/ccfJ77DQ.s:113    .text.chCoreStatus:000000000000000c $d
+     /tmp/ccfJ77DQ.s:117    .bss.endmem:0000000000000000 $d
+     /tmp/ccfJ77DQ.s:121    .bss.endmem:0000000000000000 endmem
+     /tmp/ccfJ77DQ.s:124    .bss.nextmem:0000000000000000 $d
+     /tmp/ccfJ77DQ.s:128    .bss.nextmem:0000000000000000 nextmem
+
+UNDEFINED SYMBOLS
+__heap_base__
+__heap_end__

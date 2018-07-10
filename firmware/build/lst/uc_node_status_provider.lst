@@ -1,0 +1,1833 @@
+ARM GAS  /tmp/ccIcItQV.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_node_status_provider.cpp"
+  15              		.section	.text._ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInf
+  16              		.align	1
+  17              		.global	_ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Requ
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Reques
+  21              	_ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Request_ILi0E
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 08B5     		push	{r3, lr}
+  25 0002 00F1C801 		add	r1, r0, #200
+  26 0006 1046     		mov	r0, r2
+  27 0008 40F28512 		movw	r2, #389
+  28 000c FFF7FEFF 		bl	memcpy
+  29 0010 08BD     		pop	{r3, pc}
+  30              		.size	_ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Reques
+  31              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev,"axG",%progbits,_ZN6uavcan22GlobalData
+  32              		.align	1
+  33              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  34              		.thumb
+  35              		.thumb_func
+  36              		.type	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, %function
+  37              	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 7047     		bx	lr
+  42              		.size	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, .-_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  43              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+  44              		.thumb_set _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev,_ZN6uavcan22GlobalDataTypeRegistry5EntryD2
+  45              		.section	.text._ZN6uavcan20StaticTransferBufferILt7EED2Ev,"axG",%progbits,_ZN6uavcan20StaticTransf
+  46              		.align	1
+  47              		.weak	_ZN6uavcan20StaticTransferBufferILt7EED2Ev
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	_ZN6uavcan20StaticTransferBufferILt7EED2Ev, %function
+  51              	_ZN6uavcan20StaticTransferBufferILt7EED2Ev:
+  52              		@ args = 0, pretend = 0, frame = 0
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54              		@ link register save eliminated.
+  55 0000 7047     		bx	lr
+  56              		.size	_ZN6uavcan20StaticTransferBufferILt7EED2Ev, .-_ZN6uavcan20StaticTransferBufferILt7EED2Ev
+  57              		.weak	_ZN6uavcan20StaticTransferBufferILt7EED1Ev
+ARM GAS  /tmp/ccIcItQV.s 			page 2
+
+
+  58              		.thumb_set _ZN6uavcan20StaticTransferBufferILt7EED1Ev,_ZN6uavcan20StaticTransferBufferILt7EED2Ev
+  59              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16T
+  60              		.align	1
+  61              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+  62              		.thumb
+  63              		.thumb_func
+  64              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+  65              	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerE
+  66              		@ args = 0, pretend = 0, frame = 8
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+  69 0002 0B68     		ldr	r3, [r1]
+  70 0004 856A     		ldr	r5, [r0, #40]
+  71 0006 02AC     		add	r4, sp, #8
+  72 0008 44F8041D 		str	r1, [r4, #-4]!
+  73 000c 0846     		mov	r0, r1
+  74 000e 1B69     		ldr	r3, [r3, #16]
+  75 0010 9847     		blx	r3
+  76 0012 2B68     		ldr	r3, [r5]
+  77 0014 2846     		mov	r0, r5
+  78 0016 9B68     		ldr	r3, [r3, #8]
+  79 0018 2146     		mov	r1, r4
+  80 001a 9847     		blx	r3
+  81 001c 03B0     		add	sp, sp, #12
+  82              		@ sp needed
+  83 001e 30BD     		pop	{r4, r5, pc}
+  84              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+  85              		.section	.text._ZN6uavcan20StaticTransferBufferILt377EED2Ev,"axG",%progbits,_ZN6uavcan20StaticTran
+  86              		.align	1
+  87              		.weak	_ZN6uavcan20StaticTransferBufferILt377EED2Ev
+  88              		.thumb
+  89              		.thumb_func
+  90              		.type	_ZN6uavcan20StaticTransferBufferILt377EED2Ev, %function
+  91              	_ZN6uavcan20StaticTransferBufferILt377EED2Ev:
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              		@ link register save eliminated.
+  95 0000 7047     		bx	lr
+  96              		.size	_ZN6uavcan20StaticTransferBufferILt377EED2Ev, .-_ZN6uavcan20StaticTransferBufferILt377EED2Ev
+  97              		.weak	_ZN6uavcan20StaticTransferBufferILt377EED1Ev
+  98              		.thumb_set _ZN6uavcan20StaticTransferBufferILt377EED1Ev,_ZN6uavcan20StaticTransferBufferILt377EED2
+  99              		.section	.text._ZN6uavcan20StaticTransferBufferILt7EED0Ev,"axG",%progbits,_ZN6uavcan20StaticTransf
+ 100              		.align	1
+ 101              		.weak	_ZN6uavcan20StaticTransferBufferILt7EED0Ev
+ 102              		.thumb
+ 103              		.thumb_func
+ 104              		.type	_ZN6uavcan20StaticTransferBufferILt7EED0Ev, %function
+ 105              	_ZN6uavcan20StaticTransferBufferILt7EED0Ev:
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108 0000 10B5     		push	{r4, lr}
+ 109 0002 0446     		mov	r4, r0
+ 110 0004 FFF7FEFF 		bl	_ZdlPv
+ 111 0008 2046     		mov	r0, r4
+ 112 000a 10BD     		pop	{r4, pc}
+ 113              		.size	_ZN6uavcan20StaticTransferBufferILt7EED0Ev, .-_ZN6uavcan20StaticTransferBufferILt7EED0Ev
+ 114              		.section	.text._ZN6uavcan20StaticTransferBufferILt377EED0Ev,"axG",%progbits,_ZN6uavcan20StaticTran
+ARM GAS  /tmp/ccIcItQV.s 			page 3
+
+
+ 115              		.align	1
+ 116              		.weak	_ZN6uavcan20StaticTransferBufferILt377EED0Ev
+ 117              		.thumb
+ 118              		.thumb_func
+ 119              		.type	_ZN6uavcan20StaticTransferBufferILt377EED0Ev, %function
+ 120              	_ZN6uavcan20StaticTransferBufferILt377EED0Ev:
+ 121              		@ args = 0, pretend = 0, frame = 0
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123 0000 10B5     		push	{r4, lr}
+ 124 0002 0446     		mov	r4, r0
+ 125 0004 FFF7FEFF 		bl	_ZdlPv
+ 126 0008 2046     		mov	r0, r4
+ 127 000a 10BD     		pop	{r4, pc}
+ 128              		.size	_ZN6uavcan20StaticTransferBufferILt377EED0Ev, .-_ZN6uavcan20StaticTransferBufferILt377EED0Ev
+ 129              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16T
+ 130              		.align	1
+ 131              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 135              	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerE
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138 0000 10B5     		push	{r4, lr}
+ 139 0002 0446     		mov	r4, r0
+ 140 0004 024B     		ldr	r3, .L9
+ 141 0006 0360     		str	r3, [r0]
+ 142 0008 FFF7FEFF 		bl	_ZN6uavcan16TransferListenerD2Ev
+ 143 000c 2046     		mov	r0, r4
+ 144 000e 10BD     		pop	{r4, pc}
+ 145              	.L10:
+ 146              		.align	2
+ 147              	.L9:
+ 148 0010 08000000 		.word	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 149              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 150              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 151              		.thumb_set _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Trans
+ 152              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16T
+ 153              		.align	1
+ 154              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 155              		.thumb
+ 156              		.thumb_func
+ 157              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 158              	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerE
+ 159              		@ args = 0, pretend = 0, frame = 0
+ 160              		@ frame_needed = 0, uses_anonymous_args = 0
+ 161 0000 10B5     		push	{r4, lr}
+ 162 0002 0446     		mov	r4, r0
+ 163 0004 FFF7FEFF 		bl	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListe
+ 164 0008 2046     		mov	r0, r4
+ 165 000a FFF7FEFF 		bl	_ZdlPv
+ 166 000e 2046     		mov	r0, r4
+ 167 0010 10BD     		pop	{r4, pc}
+ 168              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 169              		.section	.text._ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11Scal
+ 170              		.align	1
+ 171              		.thumb
+ARM GAS  /tmp/ccIcItQV.s 			page 4
+
+
+ 172              		.thumb_func
+ 173              		.type	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecEN
+ 174              	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_25Tai
+ 175              		@ args = 0, pretend = 0, frame = 8
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177 0000 07B5     		push	{r0, r1, r2, lr}
+ 178 0002 02AB     		add	r3, sp, #8
+ 179 0004 03F8010D 		strb	r0, [r3, #-1]!
+ 180 0008 0822     		movs	r2, #8
+ 181 000a 0846     		mov	r0, r1
+ 182 000c 1946     		mov	r1, r3
+ 183 000e FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 184 0012 03B0     		add	sp, sp, #12
+ 185              		@ sp needed
+ 186 0014 5DF804FB 		ldr	pc, [sp], #4
+ 187              		.size	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecEN
+ 188              		.section	.text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeSt
+ 189              		.align	1
+ 190              		.thumb
+ 191              		.thumb_func
+ 192              		.type	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 193              	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196 0000 10B5     		push	{r4, lr}
+ 197 0002 0446     		mov	r4, r0
+ 198 0004 006E     		ldr	r0, [r0, #96]
+ 199 0006 0368     		ldr	r3, [r0]
+ 200 0008 DB68     		ldr	r3, [r3, #12]
+ 201 000a 9847     		blx	r3
+ 202 000c D0E93223 		ldrd	r2, [r0, #200]
+ 203 0010 0132     		adds	r2, r2, #1
+ 204 0012 43F10003 		adc	r3, r3, #0
+ 205 0016 C0E93223 		strd	r2, [r0, #200]
+ 206 001a 636F     		ldr	r3, [r4, #116]
+ 207 001c 0133     		adds	r3, r3, #1
+ 208 001e 6367     		str	r3, [r4, #116]
+ 209 0020 10BD     		pop	{r4, pc}
+ 210              		.size	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 211              		.section	.text._ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArray
+ 212              		.align	1
+ 213              		.thumb
+ 214              		.thumb_func
+ 215              		.type	_ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimizat
+ 216              	_ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimizationMode
+ 217              		@ args = 0, pretend = 0, frame = 8
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 220 0002 0368     		ldr	r3, [r0]
+ 221 0004 02AC     		add	r4, sp, #8
+ 222 0006 44F8043D 		str	r3, [r4, #-4]!
+ 223 000a 0646     		mov	r6, r0
+ 224 000c 0D46     		mov	r5, r1
+ 225 000e 0846     		mov	r0, r1
+ 226 0010 2022     		movs	r2, #32
+ 227 0012 2146     		mov	r1, r4
+ 228 0014 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ARM GAS  /tmp/ccIcItQV.s 			page 5
+
+
+ 229 0018 0028     		cmp	r0, #0
+ 230 001a 2EDD     		ble	.L15
+ 231 001c 3379     		ldrb	r3, [r6, #4]	@ zero_extendqisi2
+ 232 001e 2846     		mov	r0, r5
+ 233 0020 032B     		cmp	r3, #3
+ 234 0022 28BF     		it	cs
+ 235 0024 0323     		movcs	r3, #3
+ 236 0026 2146     		mov	r1, r4
+ 237 0028 0222     		movs	r2, #2
+ 238 002a 8DF80430 		strb	r3, [sp, #4]
+ 239 002e FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 240 0032 0028     		cmp	r0, #0
+ 241 0034 21DD     		ble	.L15
+ 242 0036 7379     		ldrb	r3, [r6, #5]	@ zero_extendqisi2
+ 243 0038 2846     		mov	r0, r5
+ 244 003a 072B     		cmp	r3, #7
+ 245 003c 28BF     		it	cs
+ 246 003e 0723     		movcs	r3, #7
+ 247 0040 2146     		mov	r1, r4
+ 248 0042 0322     		movs	r2, #3
+ 249 0044 8DF80430 		strb	r3, [sp, #4]
+ 250 0048 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 251 004c 0028     		cmp	r0, #0
+ 252 004e 14DD     		ble	.L15
+ 253 0050 B379     		ldrb	r3, [r6, #6]	@ zero_extendqisi2
+ 254 0052 2846     		mov	r0, r5
+ 255 0054 072B     		cmp	r3, #7
+ 256 0056 28BF     		it	cs
+ 257 0058 0723     		movcs	r3, #7
+ 258 005a 2146     		mov	r1, r4
+ 259 005c 0322     		movs	r2, #3
+ 260 005e 8DF80430 		strb	r3, [sp, #4]
+ 261 0062 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 262 0066 0028     		cmp	r0, #0
+ 263 0068 07DD     		ble	.L15
+ 264 006a 3389     		ldrh	r3, [r6, #8]
+ 265 006c 2846     		mov	r0, r5
+ 266 006e 2146     		mov	r1, r4
+ 267 0070 1022     		movs	r2, #16
+ 268 0072 ADF80430 		strh	r3, [sp, #4]	@ movhi
+ 269 0076 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 270              	.L15:
+ 271 007a 02B0     		add	sp, sp, #8
+ 272              		@ sp needed
+ 273 007c 70BD     		pop	{r4, r5, r6, pc}
+ 274              		.size	_ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimizat
+ 275              		.section	.text._ZNK6uavcan5INode13isPassiveModeEv,"axG",%progbits,_ZNK6uavcan5INode13isPassiveMode
+ 276              		.align	1
+ 277              		.weak	_ZNK6uavcan5INode13isPassiveModeEv
+ 278              		.thumb
+ 279              		.thumb_func
+ 280              		.type	_ZNK6uavcan5INode13isPassiveModeEv, %function
+ 281              	_ZNK6uavcan5INode13isPassiveModeEv:
+ 282              		@ args = 0, pretend = 0, frame = 0
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284 0000 08B5     		push	{r3, lr}
+ 285 0002 0368     		ldr	r3, [r0]
+ARM GAS  /tmp/ccIcItQV.s 			page 6
+
+
+ 286 0004 1B69     		ldr	r3, [r3, #16]
+ 287 0006 9847     		blx	r3
+ 288 0008 90F9E400 		ldrsb	r0, [r0, #228]
+ 289 000c 0028     		cmp	r0, #0
+ 290 000e CCBF     		ite	gt
+ 291 0010 0020     		movgt	r0, #0
+ 292 0012 0120     		movle	r0, #1
+ 293 0014 08BD     		pop	{r3, pc}
+ 294              		.size	_ZNK6uavcan5INode13isPassiveModeEv, .-_ZNK6uavcan5INode13isPassiveModeEv
+ 295              		.section	.text._ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv,"ax",%progbits
+ 296              		.align	1
+ 297              		.global	_ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv
+ 298              		.thumb
+ 299              		.thumb_func
+ 300              		.type	_ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv, %function
+ 301              	_ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv:
+ 302              		@ args = 0, pretend = 0, frame = 0
+ 303              		@ frame_needed = 0, uses_anonymous_args = 0
+ 304              		@ link register save eliminated.
+ 305 0000 90F8FB01 		ldrb	r0, [r0, #507]	@ zero_extendqisi2
+ 306 0004 0030     		adds	r0, r0, #0
+ 307 0006 18BF     		it	ne
+ 308 0008 0120     		movne	r0, #1
+ 309 000a 7047     		bx	lr
+ 310              		.size	_ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv, .-_ZNK6uavcan18NodeStatusProvider2
+ 311              		.global	__aeabi_ldivmod
+ 312              		.section	.text._ZN6uavcan18NodeStatusProvider7publishEv,"ax",%progbits
+ 313              		.align	1
+ 314              		.global	_ZN6uavcan18NodeStatusProvider7publishEv
+ 315              		.thumb
+ 316              		.thumb_func
+ 317              		.type	_ZN6uavcan18NodeStatusProvider7publishEv, %function
+ 318              	_ZN6uavcan18NodeStatusProvider7publishEv:
+ 319              		@ args = 0, pretend = 0, frame = 56
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 322 0002 0446     		mov	r4, r0
+ 323 0004 806C     		ldr	r0, [r0, #72]
+ 324 0006 91B0     		sub	sp, sp, #68
+ 325 0008 0368     		ldr	r3, [r0]
+ 326 000a 0AAE     		add	r6, sp, #40
+ 327 000c 1B69     		ldr	r3, [r3, #16]
+ 328 000e 9847     		blx	r3
+ 329 0010 D0F8A810 		ldr	r1, [r0, #168]
+ 330 0014 3046     		mov	r0, r6
+ 331 0016 0B68     		ldr	r3, [r1]
+ 332 0018 04F12807 		add	r7, r4, #40
+ 333 001c 9B68     		ldr	r3, [r3, #8]
+ 334 001e 9847     		blx	r3
+ 335 0020 DDE90A23 		ldrd	r2, [sp, #40]
+ 336 0024 D4E90801 		ldrd	r0, [r4, #32]
+ 337 0028 101A     		subs	r0, r2, r0
+ 338 002a 63EB0101 		sbc	r1, r3, r1
+ 339 002e 4FF47A72 		mov	r2, #1000
+ 340 0032 0023     		movs	r3, #0
+ 341 0034 FFF7FEFF 		bl	__aeabi_ldivmod
+ 342 0038 0023     		movs	r3, #0
+ARM GAS  /tmp/ccIcItQV.s 			page 7
+
+
+ 343 003a 4FF47A72 		mov	r2, #1000
+ 344 003e FFF7FEFF 		bl	__aeabi_ldivmod
+ 345 0042 C4F8C800 		str	r0, [r4, #200]
+ 346 0046 3846     		mov	r0, r7
+ 347 0048 FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase8isInitedEv
+ 348 004c 0346     		mov	r3, r0
+ 349 004e 38B3     		cbz	r0, .L22
+ 350              	.L26:
+ 351 0050 0DAB     		add	r3, sp, #52
+ 352 0052 0B93     		str	r3, [sp, #44]
+ 353 0054 0723     		movs	r3, #7
+ 354 0056 ADF83030 		strh	r3, [sp, #48]	@ movhi
+ 355 005a 174B     		ldr	r3, .L31
+ 356 005c 10A9     		add	r1, sp, #64
+ 357 005e 0A93     		str	r3, [sp, #40]
+ 358 0060 06AB     		add	r3, sp, #24
+ 359 0062 0025     		movs	r5, #0
+ 360 0064 41F82C3D 		str	r3, [r1, #-44]!
+ 361 0068 04F1C800 		add	r0, r4, #200
+ 362 006c 0393     		str	r3, [sp, #12]
+ 363 006e ADF83250 		strh	r5, [sp, #50]	@ movhi
+ 364 0072 0696     		str	r6, [sp, #24]
+ 365 0074 0795     		str	r5, [sp, #28]
+ 366 0076 8DF82050 		strb	r5, [sp, #32]
+ 367 007a FFF7FEFF 		bl	_ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimization
+ 368 007e A842     		cmp	r0, r5
+ 369 0080 039B     		ldr	r3, [sp, #12]
+ 370 0082 15DD     		ble	.L30
+ 371 0084 0193     		str	r3, [sp, #4]
+ 372 0086 0D4B     		ldr	r3, .L31+4
+ 373 0088 0020     		movs	r0, #0
+ 374 008a 0021     		movs	r1, #0
+ 375 008c CDE90601 		strd	r0, [sp, #24]
+ 376 0090 0095     		str	r5, [sp]
+ 377 0092 3846     		mov	r0, r7
+ 378 0094 3146     		mov	r1, r6
+ 379 0096 0222     		movs	r2, #2
+ 380 0098 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 381 009a FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferT
+ 382 009e 09E0     		b	.L25
+ 383              	.L22:
+ 384 00a0 3846     		mov	r0, r7
+ 385 00a2 0121     		movs	r1, #1
+ 386 00a4 064A     		ldr	r2, .L31+8
+ 387 00a6 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+ 388 00aa 0028     		cmp	r0, #0
+ 389 00ac 02DB     		blt	.L25
+ 390 00ae CFE7     		b	.L26
+ 391              	.L30:
+ 392 00b0 6FF00500 		mvn	r0, #5
+ 393              	.L25:
+ 394 00b4 11B0     		add	sp, sp, #68
+ 395              		@ sp needed
+ 396 00b6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 397              	.L32:
+ 398              		.align	2
+ 399              	.L31:
+ARM GAS  /tmp/ccIcItQV.s 			page 8
+
+
+ 400 00b8 08000000 		.word	_ZTVN6uavcan20StaticTransferBufferILt7EEE+8
+ 401 00bc 00000000 		.word	_ZN6uavcan6NodeID9BroadcastE
+ 402 00c0 00000000 		.word	.LC0
+ 403              		.size	_ZN6uavcan18NodeStatusProvider7publishEv, .-_ZN6uavcan18NodeStatusProvider7publishEv
+ 404              		.section	.text._ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE,"ax",%progbits
+ 405              		.align	1
+ 406              		.global	_ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE
+ 407              		.thumb
+ 408              		.thumb_func
+ 409              		.type	_ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE, %function
+ 410              	_ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE:
+ 411              		@ args = 0, pretend = 0, frame = 0
+ 412              		@ frame_needed = 0, uses_anonymous_args = 0
+ 413 0000 10B5     		push	{r4, lr}
+ 414 0002 0446     		mov	r4, r0
+ 415 0004 806C     		ldr	r0, [r0, #72]
+ 416 0006 FFF7FEFF 		bl	_ZNK6uavcan5INode13isPassiveModeEv
+ 417 000a 58B9     		cbnz	r0, .L33
+ 418 000c 2046     		mov	r0, r4
+ 419 000e FFF7FEFF 		bl	_ZN6uavcan18NodeStatusProvider7publishEv
+ 420 0012 0028     		cmp	r0, #0
+ 421 0014 06DA     		bge	.L33
+ 422 0016 A06C     		ldr	r0, [r4, #72]
+ 423 0018 0349     		ldr	r1, .L37
+ 424 001a 0368     		ldr	r3, [r0]
+ 425 001c BDE81040 		pop	{r4, lr}
+ 426 0020 5B69     		ldr	r3, [r3, #20]
+ 427 0022 1847     		bx	r3	@ indirect register sibling call
+ 428              	.L33:
+ 429 0024 10BD     		pop	{r4, pc}
+ 430              	.L38:
+ 431 0026 00BF     		.align	2
+ 432              	.L37:
+ 433 0028 1B000000 		.word	.LC1
+ 434              		.size	_ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE, .-_ZN6uavcan18NodeStatu
+ 435              		.section	.text._ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE,
+ 436              		.align	1
+ 437              		.global	_ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE
+ 438              		.thumb
+ 439              		.thumb_func
+ 440              		.type	_ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE, %functio
+ 441              	_ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE:
+ 442              		@ args = 0, pretend = 0, frame = 24
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 445 0004 0C46     		mov	r4, r1
+ 446 0006 8046     		mov	r8, r0
+ 447 0008 1F48     		ldr	r0, .L44
+ 448 000a 86B0     		sub	sp, sp, #24
+ 449 000c 4FF4FA62 		mov	r2, #2000
+ 450 0010 0023     		movs	r3, #0
+ 451 0012 CDE90223 		strd	r2, [sp, #8]
+ 452 0016 D4E90023 		ldrd	r2, [r4]
+ 453 001a 0021     		movs	r1, #0
+ 454 001c 9042     		cmp	r0, r2
+ 455 001e 71EB0303 		sbcs	r3, r1, r3
+ 456 0022 ACBF     		ite	ge
+ARM GAS  /tmp/ccIcItQV.s 			page 9
+
+
+ 457 0024 2346     		movge	r3, r4
+ 458 0026 6B46     		movlt	r3, sp
+ 459 0028 CDE90001 		strd	r0, [sp]
+ 460 002c 93E80300 		ldmia	r3, {r0, r1}
+ 461 0030 84E80300 		stmia	r4, {r0, r1}
+ 462 0034 D4E90023 		ldrd	r2, [r4]
+ 463 0038 B2F5FA6F 		cmp	r2, #2000
+ 464 003c 73F10003 		sbcs	r3, r3, #0
+ 465 0040 ACBF     		ite	ge
+ 466 0042 2346     		movge	r3, r4
+ 467 0044 02AB     		addlt	r3, sp, #8
+ 468 0046 04AD     		add	r5, sp, #16
+ 469 0048 93E80300 		ldmia	r3, {r0, r1}
+ 470 004c 84E80300 		stmia	r4, {r0, r1}
+ 471 0050 85E80300 		stmia	r5, {r0, r1}
+ 472 0054 4046     		mov	r0, r8
+ 473 0056 2946     		mov	r1, r5
+ 474 0058 FFF7FEFF 		bl	_ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE
+ 475 005c D4E90067 		ldrd	r6, [r4]
+ 476 0060 1422     		movs	r2, #20
+ 477 0062 0023     		movs	r3, #0
+ 478 0064 3046     		mov	r0, r6
+ 479 0066 3946     		mov	r1, r7
+ 480 0068 FFF7FEFF 		bl	__aeabi_ldivmod
+ 481 006c 301A     		subs	r0, r6, r0
+ 482 006e 67EB0101 		sbc	r1, r7, r1
+ 483 0072 CDE90401 		strd	r0, [sp, #16]
+ 484 0076 08F12800 		add	r0, r8, #40
+ 485 007a 2946     		mov	r1, r5
+ 486 007c FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+ 487 0080 06B0     		add	sp, sp, #24
+ 488              		@ sp needed
+ 489 0082 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 490              	.L45:
+ 491 0086 00BF     		.align	2
+ 492              	.L44:
+ 493 0088 40420F00 		.word	1000000
+ 494              		.size	_ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE, .-_ZN6ua
+ 495              		.section	.text._ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv,"ax",%progbits
+ 496              		.align	1
+ 497              		.global	_ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv
+ 498              		.thumb
+ 499              		.thumb_func
+ 500              		.type	_ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv, %function
+ 501              	_ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv:
+ 502              		@ args = 0, pretend = 0, frame = 0
+ 503              		@ frame_needed = 0, uses_anonymous_args = 0
+ 504              		@ link register save eliminated.
+ 505 0000 0346     		mov	r3, r0
+ 506 0002 1831     		adds	r1, r1, #24
+ 507 0004 03C9     		ldmia	r1, {r0, r1}
+ 508 0006 83E80300 		stmia	r3, {r0, r1}
+ 509 000a 1846     		mov	r0, r3
+ 510 000c 7047     		bx	lr
+ 511              		.size	_ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv, .-_ZNK6uavcan18NodeStatusProv
+ 512              		.section	.text._ZN6uavcan18NodeStatusProvider9setHealthEh,"ax",%progbits
+ 513              		.align	1
+ARM GAS  /tmp/ccIcItQV.s 			page 10
+
+
+ 514              		.global	_ZN6uavcan18NodeStatusProvider9setHealthEh
+ 515              		.thumb
+ 516              		.thumb_func
+ 517              		.type	_ZN6uavcan18NodeStatusProvider9setHealthEh, %function
+ 518              	_ZN6uavcan18NodeStatusProvider9setHealthEh:
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521              		@ link register save eliminated.
+ 522 0000 80F8CC10 		strb	r1, [r0, #204]
+ 523 0004 7047     		bx	lr
+ 524              		.size	_ZN6uavcan18NodeStatusProvider9setHealthEh, .-_ZN6uavcan18NodeStatusProvider9setHealthEh
+ 525              		.section	.text._ZN6uavcan18NodeStatusProvider7setModeEh,"ax",%progbits
+ 526              		.align	1
+ 527              		.global	_ZN6uavcan18NodeStatusProvider7setModeEh
+ 528              		.thumb
+ 529              		.thumb_func
+ 530              		.type	_ZN6uavcan18NodeStatusProvider7setModeEh, %function
+ 531              	_ZN6uavcan18NodeStatusProvider7setModeEh:
+ 532              		@ args = 0, pretend = 0, frame = 0
+ 533              		@ frame_needed = 0, uses_anonymous_args = 0
+ 534              		@ link register save eliminated.
+ 535 0000 80F8CD10 		strb	r1, [r0, #205]
+ 536 0004 7047     		bx	lr
+ 537              		.size	_ZN6uavcan18NodeStatusProvider7setModeEh, .-_ZN6uavcan18NodeStatusProvider7setModeEh
+ 538              		.section	.text._ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt,"ax",%progbits
+ 539              		.align	1
+ 540              		.global	_ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt
+ 541              		.thumb
+ 542              		.thumb_func
+ 543              		.type	_ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt, %function
+ 544              	_ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt:
+ 545              		@ args = 0, pretend = 0, frame = 0
+ 546              		@ frame_needed = 0, uses_anonymous_args = 0
+ 547              		@ link register save eliminated.
+ 548 0000 A0F8D010 		strh	r1, [r0, #208]	@ movhi
+ 549 0004 7047     		bx	lr
+ 550              		.size	_ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt, .-_ZN6uavcan18NodeStatusProvi
+ 551              		.section	.text._ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10Signe
+ 552              		.align	1
+ 553              		.global	_ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0
+ 554              		.thumb
+ 555              		.thumb_func
+ 556              		.type	_ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0EL
+ 557              	_ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8Cas
+ 558              		@ args = 0, pretend = 0, frame = 0
+ 559              		@ frame_needed = 0, uses_anonymous_args = 0
+ 560 0000 08B5     		push	{r3, lr}
+ 561 0002 90F8FB31 		ldrb	r3, [r0, #507]	@ zero_extendqisi2
+ 562 0006 23B9     		cbnz	r3, .L50
+ 563 0008 00F2FB10 		addw	r0, r0, #507
+ 564 000c 5222     		movs	r2, #82
+ 565 000e FFF7FEFF 		bl	memcpy
+ 566              	.L50:
+ 567 0012 08BD     		pop	{r3, pc}
+ 568              		.size	_ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0EL
+ 569              		.section	.text._ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_
+ 570              		.align	1
+ARM GAS  /tmp/ccIcItQV.s 			page 11
+
+
+ 571              		.global	_ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE
+ 572              		.thumb
+ 573              		.thumb_func
+ 574              		.type	_ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE, 
+ 575              	_ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE:
+ 576              		@ args = 0, pretend = 0, frame = 16
+ 577              		@ frame_needed = 0, uses_anonymous_args = 0
+ 578 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 579 0002 D0F8D830 		ldr	r3, [r0, #216]
+ 580 0006 23F07F42 		bic	r2, r3, #-16777216
+ 581 000a 0023     		movs	r3, #0
+ 582 000c 8DF80030 		strb	r3, [sp]
+ 583 0010 8DF80130 		strb	r3, [sp, #1]
+ 584 0014 8DF80230 		strb	r3, [sp, #2]
+ 585 0018 009B     		ldr	r3, [sp]
+ 586 001a 23F07F43 		bic	r3, r3, #-16777216
+ 587 001e 9A42     		cmp	r2, r3
+ 588 0020 0DD1     		bne	.L52
+ 589 0022 D0F8DC30 		ldr	r3, [r0, #220]
+ 590 0026 53B9     		cbnz	r3, .L52
+ 591 0028 D0F8E020 		ldr	r2, [r0, #224]
+ 592 002c D0F8E430 		ldr	r3, [r0, #228]
+ 593 0030 1343     		orrs	r3, r2, r3
+ 594 0032 02BF     		ittt	eq
+ 595 0034 00F1D804 		addeq	r4, r0, #216
+ 596 0038 0FC9     		ldmiaeq	r1, {r0, r1, r2, r3}
+ 597 003a 84E80F00 		stmiaeq	r4, {r0, r1, r2, r3}
+ 598              	.L52:
+ 599 003e 04B0     		add	sp, sp, #16
+ 600              		@ sp needed
+ 601 0040 10BD     		pop	{r4, pc}
+ 602              		.size	_ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE, 
+ 603              		.section	.text._ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_
+ 604              		.align	1
+ 605              		.global	_ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE
+ 606              		.thumb
+ 607              		.thumb_func
+ 608              		.type	_ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE, 
+ 609              	_ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE:
+ 610              		@ args = 0, pretend = 0, frame = 280
+ 611              		@ frame_needed = 0, uses_anonymous_args = 0
+ 612 0000 70B5     		push	{r4, r5, r6, lr}
+ 613 0002 0023     		movs	r3, #0
+ 614 0004 C6B0     		sub	sp, sp, #280
+ 615 0006 8DF80530 		strb	r3, [sp, #5]
+ 616 000a 8DF80630 		strb	r3, [sp, #6]
+ 617 000e 0DF10703 		add	r3, sp, #7
+ 618              	.L61:
+ 619 0012 0022     		movs	r2, #0
+ 620 0014 03F8012B 		strb	r2, [r3], #1
+ 621 0018 0DF11704 		add	r4, sp, #23
+ 622 001c A342     		cmp	r3, r4
+ 623 001e F8D1     		bne	.L61
+ 624 0020 8DF81720 		strb	r2, [sp, #23]
+ 625 0024 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 626 0028 90F8E820 		ldrb	r2, [r0, #232]	@ zero_extendqisi2
+ 627 002c 9A42     		cmp	r2, r3
+ARM GAS  /tmp/ccIcItQV.s 			page 12
+
+
+ 628 002e 1BD1     		bne	.L60
+ 629 0030 90F8E920 		ldrb	r2, [r0, #233]	@ zero_extendqisi2
+ 630 0034 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 631 0038 9A42     		cmp	r2, r3
+ 632 003a 15D1     		bne	.L60
+ 633 003c 00F1E903 		add	r3, r0, #233
+ 634 0040 0DF10602 		add	r2, sp, #6
+ 635 0044 00F1F904 		add	r4, r0, #249
+ 636              	.L63:
+ 637 0048 13F8016F 		ldrb	r6, [r3, #1]!	@ zero_extendqisi2
+ 638 004c 12F8015F 		ldrb	r5, [r2, #1]!	@ zero_extendqisi2
+ 639 0050 AE42     		cmp	r6, r5
+ 640 0052 09D1     		bne	.L60
+ 641 0054 A342     		cmp	r3, r4
+ 642 0056 F7D1     		bne	.L63
+ 643 0058 90F8FA30 		ldrb	r3, [r0, #250]	@ zero_extendqisi2
+ 644 005c 23B9     		cbnz	r3, .L60
+ 645 005e E830     		adds	r0, r0, #232
+ 646 0060 40F21312 		movw	r2, #275
+ 647 0064 FFF7FEFF 		bl	memcpy
+ 648              	.L60:
+ 649 0068 46B0     		add	sp, sp, #280
+ 650              		@ sp needed
+ 651 006a 70BD     		pop	{r4, r5, r6, pc}
+ 652              		.size	_ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE, 
+ 653              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ 654              		.align	1
+ 655              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 656              		.thumb
+ 657              		.thumb_func
+ 658              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 659              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registratio
+ 660              		@ args = 0, pretend = 0, frame = 40
+ 661              		@ frame_needed = 0, uses_anonymous_args = 0
+ 662 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 663 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 664 0004 8BB0     		sub	sp, sp, #44
+ 665 0006 0646     		mov	r6, r0
+ 666 0008 0F46     		mov	r7, r1
+ 667 000a 002B     		cmp	r3, #0
+ 668 000c 53D1     		bne	.L79
+ 669 000e 344A     		ldr	r2, .L82+32
+ 670 0010 3448     		ldr	r0, .L82+36
+ 671 0012 1368     		ldr	r3, [r2]
+ 672 0014 13F00103 		ands	r3, r3, #1
+ 673 0018 10D1     		bne	.L78
+ 674 001a 3349     		ldr	r1, .L82+40
+ 675 001c 0360     		str	r3, [r0]
+ 676 001e 0375     		strb	r3, [r0, #20]
+ 677 0020 4FF0FF33 		mov	r3, #-1
+ 678 0024 0024     		movs	r4, #0
+ 679 0026 0025     		movs	r5, #0
+ 680 0028 8361     		str	r3, [r0, #24]
+ 681 002a 0123     		movs	r3, #1
+ 682 002c 0161     		str	r1, [r0, #16]
+ 683 002e 1360     		str	r3, [r2]
+ 684 0030 C0E90245 		strd	r4, [r0, #8]
+ARM GAS  /tmp/ccIcItQV.s 			page 13
+
+
+ 685 0034 2D49     		ldr	r1, .L82+44
+ 686 0036 2E4A     		ldr	r2, .L82+48
+ 687 0038 FFF7FEFF 		bl	__aeabi_atexit
+ 688              	.L78:
+ 689 003c 3046     		mov	r0, r6
+ 690 003e 2949     		ldr	r1, .L82+36
+ 691 0040 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 692 0044 0446     		mov	r4, r0
+ 693 0046 0028     		cmp	r0, #0
+ 694 0048 36D1     		bne	.L77
+ 695 004a 1DA3     		adr	r3, .L82
+ 696 004c D3E90023 		ldrd	r2, [r3]
+ 697 0050 0AAD     		add	r5, sp, #40
+ 698 0052 65E90A23 		strd	r2, [r5, #-40]!
+ 699 0056 1CA3     		adr	r3, .L82+8
+ 700 0058 D3E90023 		ldrd	r2, [r3]
+ 701 005c 2846     		mov	r0, r5
+ 702 005e FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 703 0062 1BA3     		adr	r3, .L82+16
+ 704 0064 D3E90023 		ldrd	r2, [r3]
+ 705 0068 2846     		mov	r0, r5
+ 706 006a FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 707 006e 1AA3     		adr	r3, .L82+24
+ 708 0070 D3E90023 		ldrd	r2, [r3]
+ 709 0074 2846     		mov	r0, r5
+ 710 0076 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 711 007a DDE90023 		ldrd	r2, [sp]
+ 712 007e CDE90423 		strd	r2, [sp, #16]
+ 713 0082 1C4B     		ldr	r3, .L82+52
+ 714 0084 8DF81C40 		strb	r4, [sp, #28]
+ 715 0088 0294     		str	r4, [sp, #8]
+ 716 008a 164C     		ldr	r4, .L82+36
+ 717 008c 0693     		str	r3, [sp, #24]
+ 718 008e 0897     		str	r7, [sp, #32]
+ 719 0090 02AD     		add	r5, sp, #8
+ 720 0092 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 721 0094 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 722 0096 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 723 009a 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 724 009e 3046     		mov	r0, r6
+ 725 00a0 A4F11001 		sub	r1, r4, #16
+ 726 00a4 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 727 00a8 30B9     		cbnz	r0, .L77
+ 728 00aa 3046     		mov	r0, r6
+ 729 00ac A4F11001 		sub	r1, r4, #16
+ 730 00b0 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 731 00b4 00E0     		b	.L77
+ 732              	.L79:
+ 733 00b6 0320     		movs	r0, #3
+ 734              	.L77:
+ 735 00b8 0BB0     		add	sp, sp, #44
+ 736              		@ sp needed
+ 737 00ba F0BD     		pop	{r4, r5, r6, r7, pc}
+ 738              	.L83:
+ 739 00bc AFF30080 		.align	3
+ 740              	.L82:
+ 741 00c0 85E65350 		.word	1347675781
+ARM GAS  /tmp/ccIcItQV.s 			page 14
+
+
+ 742 00c4 99C80DA8 		.word	-1475491687
+ 743 00c8 F1C6A7C1 		.word	-1045969167
+ 744 00cc D068080F 		.word	252209360
+ 745 00d0 A1FE2765 		.word	1697119905
+ 746 00d4 37FD46DD 		.word	-582550217
+ 747 00d8 C4A0F433 		.word	871669956
+ 748 00dc C9C4D50A 		.word	181781705
+ 749 00e0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 750 00e4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 751 00e8 31000000 		.word	.LC2
+ 752 00ec 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 753 00f0 00000000 		.word	__dso_handle
+ 754 00f4 32000000 		.word	.LC3
+ 755              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 756              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16T
+ 757              		.align	1
+ 758              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 759              		.thumb
+ 760              		.thumb_func
+ 761              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 762              	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerE
+ 763              		@ args = 0, pretend = 0, frame = 0
+ 764              		@ frame_needed = 0, uses_anonymous_args = 0
+ 765 0000 10B5     		push	{r4, lr}
+ 766 0002 0446     		mov	r4, r0
+ 767 0004 0C4B     		ldr	r3, .L92
+ 768 0006 40F8043B 		str	r3, [r0], #4
+ 769 000a A16B     		ldr	r1, [r4, #56]
+ 770 000c FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+ 771 0010 A06B     		ldr	r0, [r4, #56]
+ 772 0012 10B1     		cbz	r0, .L85
+ 773 0014 0368     		ldr	r3, [r0]
+ 774 0016 5B68     		ldr	r3, [r3, #4]
+ 775 0018 9847     		blx	r3
+ 776              	.L85:
+ 777 001a 0023     		movs	r3, #0
+ 778 001c A363     		str	r3, [r4, #56]
+ 779 001e 04F13802 		add	r2, r4, #56
+ 780 0022 04F10C03 		add	r3, r4, #12
+ 781              	.L86:
+ 782 0026 9342     		cmp	r3, r2
+ 783 0028 03D0     		beq	.L91
+ 784 002a 0021     		movs	r1, #0
+ 785 002c 03F8011B 		strb	r1, [r3], #1
+ 786 0030 F9E7     		b	.L86
+ 787              	.L91:
+ 788 0032 2046     		mov	r0, r4
+ 789 0034 10BD     		pop	{r4, pc}
+ 790              	.L93:
+ 791 0036 00BF     		.align	2
+ 792              	.L92:
+ 793 0038 08000000 		.word	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 794              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 795              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 796              		.thumb_set _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Trans
+ 797              		.section	.text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeSt
+ 798              		.align	1
+ARM GAS  /tmp/ccIcItQV.s 			page 15
+
+
+ 799              		.weak	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 800              		.thumb
+ 801              		.thumb_func
+ 802              		.type	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 803              	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4
+ 804              		@ args = 0, pretend = 0, frame = 0
+ 805              		@ frame_needed = 0, uses_anonymous_args = 0
+ 806 0000 10B5     		push	{r4, lr}
+ 807 0002 0446     		mov	r4, r0
+ 808 0004 024B     		ldr	r3, .L95
+ 809 0006 0360     		str	r3, [r0]
+ 810 0008 FFF7FEFF 		bl	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListe
+ 811 000c 2046     		mov	r0, r4
+ 812 000e 10BD     		pop	{r4, pc}
+ 813              	.L96:
+ 814              		.align	2
+ 815              	.L95:
+ 816 0010 08000000 		.word	_ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusPro
+ 817              		.size	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 818              		.weak	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 819              		.thumb_set _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatus
+ 820              		.section	.text._ZN6uavcan18NodeStatusProviderD2Ev,"axG",%progbits,_ZN6uavcan18NodeStatusProviderD5
+ 821              		.align	1
+ 822              		.weak	_ZN6uavcan18NodeStatusProviderD2Ev
+ 823              		.thumb
+ 824              		.thumb_func
+ 825              		.type	_ZN6uavcan18NodeStatusProviderD2Ev, %function
+ 826              	_ZN6uavcan18NodeStatusProviderD2Ev:
+ 827              		@ args = 0, pretend = 0, frame = 0
+ 828              		@ frame_needed = 0, uses_anonymous_args = 0
+ 829 0000 10B5     		push	{r4, lr}
+ 830 0002 0446     		mov	r4, r0
+ 831 0004 054B     		ldr	r3, .L98
+ 832 0006 40F8503B 		str	r3, [r0], #80
+ 833 000a FFF7FEFF 		bl	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvider
+ 834 000e 044B     		ldr	r3, .L98+4
+ 835 0010 2046     		mov	r0, r4
+ 836 0012 2360     		str	r3, [r4]
+ 837 0014 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+ 838 0018 2046     		mov	r0, r4
+ 839 001a 10BD     		pop	{r4, pc}
+ 840              	.L99:
+ 841              		.align	2
+ 842              	.L98:
+ 843 001c 08000000 		.word	.LANCHOR0+8
+ 844 0020 08000000 		.word	_ZTVN6uavcan15DeadlineHandlerE+8
+ 845              		.size	_ZN6uavcan18NodeStatusProviderD2Ev, .-_ZN6uavcan18NodeStatusProviderD2Ev
+ 846              		.weak	_ZN6uavcan18NodeStatusProviderD1Ev
+ 847              		.thumb_set _ZN6uavcan18NodeStatusProviderD1Ev,_ZN6uavcan18NodeStatusProviderD2Ev
+ 848              		.section	.text._ZN6uavcan18NodeStatusProviderD0Ev,"axG",%progbits,_ZN6uavcan18NodeStatusProviderD5
+ 849              		.align	1
+ 850              		.weak	_ZN6uavcan18NodeStatusProviderD0Ev
+ 851              		.thumb
+ 852              		.thumb_func
+ 853              		.type	_ZN6uavcan18NodeStatusProviderD0Ev, %function
+ 854              	_ZN6uavcan18NodeStatusProviderD0Ev:
+ 855              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccIcItQV.s 			page 16
+
+
+ 856              		@ frame_needed = 0, uses_anonymous_args = 0
+ 857 0000 10B5     		push	{r4, lr}
+ 858 0002 0446     		mov	r4, r0
+ 859 0004 FFF7FEFF 		bl	_ZN6uavcan18NodeStatusProviderD1Ev
+ 860 0008 2046     		mov	r0, r4
+ 861 000a FFF7FEFF 		bl	_ZdlPv
+ 862 000e 2046     		mov	r0, r4
+ 863 0010 10BD     		pop	{r4, pc}
+ 864              		.size	_ZN6uavcan18NodeStatusProviderD0Ev, .-_ZN6uavcan18NodeStatusProviderD0Ev
+ 865              		.section	.text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeSt
+ 866              		.align	1
+ 867              		.weak	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 868              		.thumb
+ 869              		.thumb_func
+ 870              		.type	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 871              	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4
+ 872              		@ args = 0, pretend = 0, frame = 0
+ 873              		@ frame_needed = 0, uses_anonymous_args = 0
+ 874 0000 10B5     		push	{r4, lr}
+ 875 0002 0446     		mov	r4, r0
+ 876 0004 FFF7FEFF 		bl	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvider
+ 877 0008 2046     		mov	r0, r4
+ 878 000a FFF7FEFF 		bl	_ZdlPv
+ 879 000e 2046     		mov	r0, r4
+ 880 0010 10BD     		pop	{r4, pc}
+ 881              		.size	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 882              		.section	.text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16T
+ 883              		.align	1
+ 884              		.weak	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 885              		.thumb
+ 886              		.thumb_func
+ 887              		.type	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 888              	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerE
+ 889              		@ args = 0, pretend = 0, frame = 0
+ 890              		@ frame_needed = 0, uses_anonymous_args = 0
+ 891 0000 10B5     		push	{r4, lr}
+ 892 0002 0446     		mov	r4, r0
+ 893 0004 FFF7FEFF 		bl	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListe
+ 894 0008 2046     		mov	r0, r4
+ 895 000a FFF7FEFF 		bl	_ZdlPv
+ 896 000e 2046     		mov	r0, r4
+ 897 0010 10BD     		pop	{r4, pc}
+ 898              		.size	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 899              		.section	.text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9chec
+ 900              		.align	1
+ 901              		.weak	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv
+ 902              		.thumb
+ 903              		.thumb_func
+ 904              		.type	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv, 
+ 905              	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv:
+ 906              		@ args = 0, pretend = 0, frame = 0
+ 907              		@ frame_needed = 0, uses_anonymous_args = 0
+ 908 0000 10B5     		push	{r4, lr}
+ 909 0002 0446     		mov	r4, r0
+ 910 0004 FFF7FEFF 		bl	_ZNK6uavcan20GenericPublisherBase8isInitedEv
+ 911 0008 0146     		mov	r1, r0
+ 912 000a 30B9     		cbnz	r0, .L104
+ARM GAS  /tmp/ccIcItQV.s 			page 17
+
+
+ 913 000c 2046     		mov	r0, r4
+ 914 000e BDE81040 		pop	{r4, lr}
+ 915 0012 034A     		ldr	r2, .L105
+ 916 0014 0123     		movs	r3, #1
+ 917 0016 FFF7FEBF 		b	_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+ 918              	.L104:
+ 919 001a 0020     		movs	r0, #0
+ 920 001c 10BD     		pop	{r4, pc}
+ 921              	.L106:
+ 922 001e 00BF     		.align	2
+ 923              	.L105:
+ 924 0020 32000000 		.word	.LC3
+ 925              		.size	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv, 
+ 926              		.section	.text._ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInf
+ 927              		.align	1
+ 928              		.weak	_ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Reques
+ 929              		.thumb
+ 930              		.thumb_func
+ 931              		.type	_ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Reques
+ 932              	_ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Request_ILi0E
+ 933              		@ args = 0, pretend = 0, frame = 0
+ 934              		@ frame_needed = 0, uses_anonymous_args = 0
+ 935              		@ link register save eliminated.
+ 936 0000 0368     		ldr	r3, [r0]
+ 937 0002 2BB1     		cbz	r3, .L109
+ 938 0004 4368     		ldr	r3, [r0, #4]
+ 939 0006 2BB9     		cbnz	r3, .L110
+ 940 0008 8068     		ldr	r0, [r0, #8]
+ 941 000a 00F00100 		and	r0, r0, #1
+ 942 000e 7047     		bx	lr
+ 943              	.L109:
+ 944 0010 1846     		mov	r0, r3
+ 945 0012 7047     		bx	lr
+ 946              	.L110:
+ 947 0014 0120     		movs	r0, #1
+ 948 0016 7047     		bx	lr
+ 949              		.size	_ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Reques
+ 950              		.section	.text._ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE,"ax",%progbi
+ 951              		.align	1
+ 952              		.global	_ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE
+ 953              		.thumb
+ 954              		.thumb_func
+ 955              		.type	_ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE, %function
+ 956              	_ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE:
+ 957              		@ args = 0, pretend = 0, frame = 24
+ 958              		@ frame_needed = 0, uses_anonymous_args = 0
+ 959 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 960 0004 90F8FB31 		ldrb	r3, [r0, #507]	@ zero_extendqisi2
+ 961 0008 86B0     		sub	sp, sp, #24
+ 962 000a 0446     		mov	r4, r0
+ 963 000c 002B     		cmp	r3, #0
+ 964 000e 7CD0     		beq	.L120
+ 965 0010 80F83410 		strb	r1, [r0, #52]
+ 966 0014 806C     		ldr	r0, [r0, #72]
+ 967 0016 FFF7FEFF 		bl	_ZNK6uavcan5INode13isPassiveModeEv
+ 968 001a 04F15407 		add	r7, r4, #84
+ 969 001e A8B1     		cbz	r0, .L113
+ARM GAS  /tmp/ccIcItQV.s 			page 18
+
+
+ 970              	.L117:
+ 971 0020 464B     		ldr	r3, .L125
+ 972 0022 3846     		mov	r0, r7
+ 973 0024 4FF00009 		mov	r9, #0
+ 974 0028 D4F88810 		ldr	r1, [r4, #136]
+ 975 002c 02AE     		add	r6, sp, #8
+ 976 002e 0294     		str	r4, [sp, #8]
+ 977 0030 0393     		str	r3, [sp, #12]
+ 978 0032 CDF81090 		str	r9, [sp, #16]
+ 979 0036 FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+ 980 003a 3046     		mov	r0, r6
+ 981 003c 04F15008 		add	r8, r4, #80
+ 982 0040 FFF7FEFF 		bl	_ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Request_I
+ 983 0044 40B9     		cbnz	r0, .L114
+ 984 0046 6FF00105 		mvn	r5, #1
+ 985 004a 54E0     		b	.L116
+ 986              	.L113:
+ 987 004c 2046     		mov	r0, r4
+ 988 004e FFF7FEFF 		bl	_ZN6uavcan18NodeStatusProvider7publishEv
+ 989 0052 051E     		subs	r5, r0, #0
+ 990 0054 E4DA     		bge	.L117
+ 991 0056 4EE0     		b	.L116
+ 992              	.L114:
+ 993 0058 04F1B803 		add	r3, r4, #184
+ 994 005c 96E80700 		ldmia	r6, {r0, r1, r2}
+ 995 0060 83E80700 		stmia	r3, {r0, r1, r2}
+ 996 0064 04F19000 		add	r0, r4, #144
+ 997 0068 FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv
+ 998 006c 051E     		subs	r5, r0, #0
+ 999 006e 42DB     		blt	.L116
+ 1000 0070 334B     		ldr	r3, .L125+4
+ 1001 0072 D4F88850 		ldr	r5, [r4, #136]
+ 1002 0076 8DE80802 		stmia	sp, {r3, r9}
+ 1003 007a 002D     		cmp	r5, #0
+ 1004 007c 48D1     		bne	.L118
+ 1005 007e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1006 0082 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+ 1007 0086 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1008 008a 2946     		mov	r1, r5
+ 1009 008c 2D4A     		ldr	r2, .L125+8
+ 1010 008e FFF7FEFF 		bl	_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+ 1011 0092 8146     		mov	r9, r0
+ 1012 0094 68B3     		cbz	r0, .L121
+ 1013 0096 606D     		ldr	r0, [r4, #84]
+ 1014 0098 0368     		ldr	r3, [r0]
+ 1015 009a 9B68     		ldr	r3, [r3, #8]
+ 1016 009c 9847     		blx	r3
+ 1017 009e D4F88850 		ldr	r5, [r4, #136]
+ 1018 00a2 8246     		mov	r10, r0
+ 1019 00a4 15B1     		cbz	r5, .L119
+ 1020 00a6 2848     		ldr	r0, .L125+12
+ 1021 00a8 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 1022              	.L119:
+ 1023 00ac 606D     		ldr	r0, [r4, #84]
+ 1024 00ae 0368     		ldr	r3, [r0]
+ 1025 00b0 DB68     		ldr	r3, [r3, #12]
+ 1026 00b2 9847     		blx	r3
+ARM GAS  /tmp/ccIcItQV.s 			page 19
+
+
+ 1027 00b4 254B     		ldr	r3, .L125+16
+ 1028 00b6 B830     		adds	r0, r0, #184
+ 1029 00b8 E365     		str	r3, [r4, #92]
+ 1030 00ba E067     		str	r0, [r4, #124]
+ 1031 00bc 2566     		str	r5, [r4, #96]
+ 1032 00be C4F86490 		str	r9, [r4, #100]
+ 1033 00c2 A566     		str	r5, [r4, #104]
+ 1034 00c4 C4F86CA0 		str	r10, [r4, #108]
+ 1035 00c8 A4F87050 		strh	r5, [r4, #112]	@ movhi
+ 1036 00cc 6567     		str	r5, [r4, #116]
+ 1037 00ce C4F878A0 		str	r10, [r4, #120]
+ 1038 00d2 4846     		mov	r0, r9
+ 1039 00d4 FFF7FEFF 		bl	_ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+ 1040 00d8 1D4B     		ldr	r3, .L125+20
+ 1041 00da A4F88000 		strh	r0, [r4, #128]	@ movhi
+ 1042 00de E365     		str	r3, [r4, #92]
+ 1043 00e0 04F15C03 		add	r3, r4, #92
+ 1044 00e4 84F88250 		strb	r5, [r4, #130]
+ 1045 00e8 C4F88480 		str	r8, [r4, #132]
+ 1046 00ec C4F88830 		str	r3, [r4, #136]
+ 1047 00f0 0EE0     		b	.L118
+ 1048              	.L121:
+ 1049 00f2 6FF00405 		mvn	r5, #4
+ 1050              	.L116:
+ 1051 00f6 3846     		mov	r0, r7
+ 1052 00f8 D4F88810 		ldr	r1, [r4, #136]
+ 1053 00fc FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+ 1054 0100 2046     		mov	r0, r4
+ 1055 0102 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+ 1056              	.L124:
+ 1057 0106 2846     		mov	r0, r5
+ 1058 0108 14E0     		b	.L122
+ 1059              	.L120:
+ 1060 010a 6FF00700 		mvn	r0, #7
+ 1061 010e 11E0     		b	.L122
+ 1062              	.L118:
+ 1063 0110 3846     		mov	r0, r7
+ 1064 0112 9DE80C00 		ldmia	sp, {r2, r3}
+ 1065 0116 D4F88810 		ldr	r1, [r4, #136]
+ 1066 011a FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E
+ 1067 011e 051E     		subs	r5, r0, #0
+ 1068 0120 E9DB     		blt	.L116
+ 1069 0122 0C4A     		ldr	r2, .L125+24
+ 1070 0124 0023     		movs	r3, #0
+ 1071 0126 2046     		mov	r0, r4
+ 1072 0128 3146     		mov	r1, r6
+ 1073 012a CDE90223 		strd	r2, [sp, #8]
+ 1074 012e FFF7FEFF 		bl	_ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE
+ 1075 0132 E8E7     		b	.L124
+ 1076              	.L122:
+ 1077 0134 06B0     		add	sp, sp, #24
+ 1078              		@ sp needed
+ 1079 0136 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 1080              	.L126:
+ 1081 013a 00BF     		.align	2
+ 1082              	.L125:
+ 1083 013c 00000000 		.word	_ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Reques
+ARM GAS  /tmp/ccIcItQV.s 			page 20
+
+
+ 1084 0140 00000000 		.word	_ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE
+ 1085 0144 32000000 		.word	.LC3
+ 1086 0148 4E000000 		.word	.LC4
+ 1087 014c 08000000 		.word	_ZTVN6uavcan16TransferListenerE+8
+ 1088 0150 08000000 		.word	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 1089 0154 40420F00 		.word	1000000
+ 1090              		.size	_ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE, .-_ZN6uavcan18NodeSt
+ 1091              		.section	.text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14gen
+ 1092              		.align	1
+ 1093              		.weak	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPubli
+ 1094              		.thumb
+ 1095              		.thumb_func
+ 1096              		.type	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPubli
+ 1097              	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPublishERKS4
+ 1098              		@ args = 8, pretend = 0, frame = 424
+ 1099              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1100 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 1101 0004 EDB0     		sub	sp, sp, #436
+ 1102 0006 8246     		mov	r10, r0
+ 1103 0008 0C46     		mov	r4, r1
+ 1104 000a 9146     		mov	r9, r2
+ 1105 000c 9846     		mov	r8, r3
+ 1106 000e FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv
+ 1107 0012 0028     		cmp	r0, #0
+ 1108 0014 C0F29980 		blt	.L153
+ 1109 0018 0AAE     		add	r6, sp, #40
+ 1110 001a 0DAB     		add	r3, sp, #52
+ 1111 001c 7360     		str	r3, [r6, #4]
+ 1112 001e 40F27913 		movw	r3, #377
+ 1113 0022 4B4A     		ldr	r2, .L155
+ 1114 0024 06AD     		add	r5, sp, #24
+ 1115 0026 3381     		strh	r3, [r6, #8]	@ movhi
+ 1116 0028 2046     		mov	r0, r4
+ 1117 002a 0023     		movs	r3, #0
+ 1118 002c 03A9     		add	r1, sp, #12
+ 1119 002e 7381     		strh	r3, [r6, #10]	@ movhi
+ 1120 0030 3260     		str	r2, [r6]
+ 1121 0032 2E60     		str	r6, [r5]
+ 1122 0034 6B60     		str	r3, [r5, #4]
+ 1123 0036 2B72     		strb	r3, [r5, #8]
+ 1124 0038 0395     		str	r5, [sp, #12]
+ 1125 003a FFF7FEFF 		bl	_ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimization
+ 1126 003e 0028     		cmp	r0, #0
+ 1127 0040 72DD     		ble	.L130
+ 1128 0042 207C     		ldrb	r0, [r4, #16]	@ zero_extendqisi2
+ 1129 0044 03A9     		add	r1, sp, #12
+ 1130 0046 FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1131 004a 0028     		cmp	r0, #0
+ 1132 004c 6CDD     		ble	.L130
+ 1133 004e 607C     		ldrb	r0, [r4, #17]	@ zero_extendqisi2
+ 1134 0050 03A9     		add	r1, sp, #12
+ 1135 0052 FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1136 0056 0028     		cmp	r0, #0
+ 1137 0058 66DD     		ble	.L130
+ 1138 005a A07C     		ldrb	r0, [r4, #18]	@ zero_extendqisi2
+ 1139 005c 03A9     		add	r1, sp, #12
+ 1140 005e FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ARM GAS  /tmp/ccIcItQV.s 			page 21
+
+
+ 1141 0062 0028     		cmp	r0, #0
+ 1142 0064 60DD     		ble	.L130
+ 1143 0066 6369     		ldr	r3, [r4, #20]
+ 1144 0068 03A8     		add	r0, sp, #12
+ 1145 006a 04A9     		add	r1, sp, #16
+ 1146 006c 2022     		movs	r2, #32
+ 1147 006e 0493     		str	r3, [sp, #16]
+ 1148 0070 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 1149 0074 0028     		cmp	r0, #0
+ 1150 0076 57DD     		ble	.L130
+ 1151 0078 D4E90623 		ldrd	r2, [r4, #24]
+ 1152 007c 03A8     		add	r0, sp, #12
+ 1153 007e CDE90423 		strd	r2, [sp, #16]
+ 1154 0082 04A9     		add	r1, sp, #16
+ 1155 0084 4022     		movs	r2, #64
+ 1156 0086 FFF7FEFF 		bl	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+ 1157 008a 0028     		cmp	r0, #0
+ 1158 008c 4CDD     		ble	.L130
+ 1159 008e 94F82000 		ldrb	r0, [r4, #32]	@ zero_extendqisi2
+ 1160 0092 03A9     		add	r1, sp, #12
+ 1161 0094 FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1162 0098 0028     		cmp	r0, #0
+ 1163 009a 45DD     		ble	.L130
+ 1164 009c 94F82100 		ldrb	r0, [r4, #33]	@ zero_extendqisi2
+ 1165 00a0 03A9     		add	r1, sp, #12
+ 1166 00a2 FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1167 00a6 0028     		cmp	r0, #0
+ 1168 00a8 3EDD     		ble	.L130
+ 1169 00aa 04F1210B 		add	fp, r4, #33
+ 1170 00ae 04F13107 		add	r7, r4, #49
+ 1171              	.L133:
+ 1172 00b2 1BF8010F 		ldrb	r0, [fp, #1]!	@ zero_extendqisi2
+ 1173 00b6 03A9     		add	r1, sp, #12
+ 1174 00b8 FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1175 00bc 0028     		cmp	r0, #0
+ 1176 00be 33DD     		ble	.L130
+ 1177 00c0 BB45     		cmp	fp, r7
+ 1178 00c2 F6D1     		bne	.L133
+ 1179 00c4 94F83200 		ldrb	r0, [r4, #50]	@ zero_extendqisi2
+ 1180 00c8 03A9     		add	r1, sp, #12
+ 1181 00ca FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1182 00ce 0028     		cmp	r0, #0
+ 1183 00d0 2ADD     		ble	.L130
+ 1184 00d2 94F83230 		ldrb	r3, [r4, #50]	@ zero_extendqisi2
+ 1185 00d6 93B1     		cbz	r3, .L135
+ 1186 00d8 4FF0000B 		mov	fp, #0
+ 1187              	.L136:
+ 1188 00dc 94F83220 		ldrb	r2, [r4, #50]	@ zero_extendqisi2
+ 1189 00e0 5FFA8BF3 		uxtb	r3, fp
+ 1190 00e4 9A42     		cmp	r2, r3
+ 1191 00e6 0AD9     		bls	.L135
+ 1192 00e8 2344     		add	r3, r3, r4
+ 1193 00ea 93F83300 		ldrb	r0, [r3, #51]	@ zero_extendqisi2
+ 1194 00ee 03A9     		add	r1, sp, #12
+ 1195 00f0 FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1196 00f4 0028     		cmp	r0, #0
+ 1197 00f6 0BF1010B 		add	fp, fp, #1
+ARM GAS  /tmp/ccIcItQV.s 			page 22
+
+
+ 1198 00fa EFDC     		bgt	.L136
+ 1199 00fc 14E0     		b	.L130
+ 1200              	.L135:
+ 1201 00fe 94F83331 		ldrb	r3, [r4, #307]	@ zero_extendqisi2
+ 1202 0102 A3B1     		cbz	r3, .L139
+ 1203 0104 4FF0000B 		mov	fp, #0
+ 1204              	.L142:
+ 1205 0108 94F83321 		ldrb	r2, [r4, #307]	@ zero_extendqisi2
+ 1206 010c 5FFA8BF3 		uxtb	r3, fp
+ 1207 0110 9A42     		cmp	r2, r3
+ 1208 0112 0CD9     		bls	.L139
+ 1209 0114 2344     		add	r3, r3, r4
+ 1210 0116 93F83401 		ldrb	r0, [r3, #308]	@ zero_extendqisi2
+ 1211 011a 03A9     		add	r1, sp, #12
+ 1212 011c FFF7FEFF 		bl	_ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_2
+ 1213 0120 0028     		cmp	r0, #0
+ 1214 0122 0BF1010B 		add	fp, fp, #1
+ 1215 0126 EFDC     		bgt	.L142
+ 1216              	.L130:
+ 1217 0128 6FF00500 		mvn	r0, #5
+ 1218 012c 0DE0     		b	.L153
+ 1219              	.L139:
+ 1220 012e 779B     		ldr	r3, [sp, #476]
+ 1221 0130 4A46     		mov	r2, r9
+ 1222 0132 93E80300 		ldmia	r3, {r0, r1}
+ 1223 0136 769B     		ldr	r3, [sp, #472]
+ 1224 0138 85E80300 		stmia	r5, {r0, r1}
+ 1225 013c 8DE82800 		stmia	sp, {r3, r5}
+ 1226 0140 5046     		mov	r0, r10
+ 1227 0142 3146     		mov	r1, r6
+ 1228 0144 4346     		mov	r3, r8
+ 1229 0146 FFF7FEFF 		bl	_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferT
+ 1230              	.L153:
+ 1231 014a 6DB0     		add	sp, sp, #436
+ 1232              		@ sp needed
+ 1233 014c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1234              	.L156:
+ 1235              		.align	2
+ 1236              	.L155:
+ 1237 0150 08000000 		.word	_ZTVN6uavcan20StaticTransferBufferILt377EEE+8
+ 1238              		.size	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPubli
+ 1239              		.section	.text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeSt
+ 1240              		.align	1
+ 1241              		.weak	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 1242              		.thumb
+ 1243              		.thumb_func
+ 1244              		.type	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 1245              	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4
+ 1246              		@ args = 0, pretend = 0, frame = 408
+ 1247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1248 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1249 0002 0446     		mov	r4, r0
+ 1250 0004 E9B0     		sub	sp, sp, #420
+ 1251 0006 0D46     		mov	r5, r1
+ 1252 0008 0020     		movs	r0, #0
+ 1253 000a 0021     		movs	r1, #0
+ 1254 000c CDE90C01 		strd	r0, [sp, #48]
+ARM GAS  /tmp/ccIcItQV.s 			page 23
+
+
+ 1255 0010 0023     		movs	r3, #0
+ 1256 0012 0693     		str	r3, [sp, #24]
+ 1257 0014 8DF81C30 		strb	r3, [sp, #28]
+ 1258 0018 8DF81D30 		strb	r3, [sp, #29]
+ 1259 001c 8DF81E30 		strb	r3, [sp, #30]
+ 1260 0020 ADF82030 		strh	r3, [sp, #32]	@ movhi
+ 1261 0024 8DF82830 		strb	r3, [sp, #40]
+ 1262 0028 8DF82930 		strb	r3, [sp, #41]
+ 1263 002c 8DF82A30 		strb	r3, [sp, #42]
+ 1264 0030 0B93     		str	r3, [sp, #44]
+ 1265 0032 8DF83830 		strb	r3, [sp, #56]
+ 1266 0036 8DF83930 		strb	r3, [sp, #57]
+ 1267 003a 0DF13A02 		add	r2, sp, #58
+ 1268              	.L158:
+ 1269 003e 0023     		movs	r3, #0
+ 1270 0040 02F8013B 		strb	r3, [r2], #1
+ 1271 0044 0DF14A01 		add	r1, sp, #74
+ 1272 0048 8A42     		cmp	r2, r1
+ 1273 004a F8D1     		bne	.L158
+ 1274 004c 8DF84A30 		strb	r3, [sp, #74]
+ 1275 0050 8DF84B31 		strb	r3, [sp, #331]
+ 1276 0054 04F16800 		add	r0, r4, #104
+ 1277 0058 0123     		movs	r3, #1
+ 1278 005a 8DF89D31 		strb	r3, [sp, #413]
+ 1279 005e FFF7FEFF 		bl	_ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Request_I
+ 1280 0062 90B1     		cbz	r0, .L159
+ 1281 0064 226F     		ldr	r2, [r4, #112]
+ 1282 0066 A06E     		ldr	r0, [r4, #104]
+ 1283 0068 12F0010F 		tst	r2, #1
+ 1284 006c 4FEA6202 		asr	r2, r2, #1
+ 1285 0070 18BF     		it	ne
+ 1286 0072 8158     		ldrne	r1, [r0, r2]
+ 1287 0074 E36E     		ldr	r3, [r4, #108]
+ 1288 0076 1044     		add	r0, r0, r2
+ 1289 0078 18BF     		it	ne
+ 1290 007a CB58     		ldrne	r3, [r1, r3]
+ 1291 007c 06AA     		add	r2, sp, #24
+ 1292 007e 2946     		mov	r1, r5
+ 1293 0080 9847     		blx	r3
+ 1294 0082 9DF89D31 		ldrb	r3, [sp, #413]	@ zero_extendqisi2
+ 1295 0086 33B3     		cbz	r3, .L157
+ 1296 0088 02E0     		b	.L170
+ 1297              	.L159:
+ 1298 008a 1448     		ldr	r0, .L171
+ 1299 008c FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 1300              	.L170:
+ 1301 0090 2B68     		ldr	r3, [r5]
+ 1302 0092 0BB1     		cbz	r3, .L167
+ 1303 0094 1B7E     		ldrb	r3, [r3, #24]	@ zero_extendqisi2
+ 1304 0096 00E0     		b	.L164
+ 1305              	.L167:
+ 1306 0098 FF23     		movs	r3, #255
+ 1307              	.L164:
+ 1308 009a 84F84C30 		strb	r3, [r4, #76]
+ 1309 009e 2A68     		ldr	r2, [r5]
+ 1310 00a0 04F14000 		add	r0, r4, #64
+ 1311 00a4 12B1     		cbz	r2, .L168
+ARM GAS  /tmp/ccIcItQV.s 			page 24
+
+
+ 1312 00a6 D37E     		ldrb	r3, [r2, #27]	@ zero_extendqisi2
+ 1313 00a8 927E     		ldrb	r2, [r2, #26]	@ zero_extendqisi2
+ 1314 00aa 00E0     		b	.L165
+ 1315              	.L168:
+ 1316 00ac FF23     		movs	r3, #255
+ 1317              	.L165:
+ 1318 00ae 8DF80F20 		strb	r2, [sp, #15]
+ 1319 00b2 0026     		movs	r6, #0
+ 1320 00b4 68AA     		add	r2, sp, #416
+ 1321 00b6 0027     		movs	r7, #0
+ 1322 00b8 62E96467 		strd	r6, [r2, #-400]!
+ 1323 00bc 0DF10F01 		add	r1, sp, #15
+ 1324 00c0 8DE80600 		stmia	sp, {r1, r2}
+ 1325 00c4 06A9     		add	r1, sp, #24
+ 1326 00c6 0022     		movs	r2, #0
+ 1327 00c8 FFF7FEFF 		bl	_ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPublishE
+ 1328 00cc 0028     		cmp	r0, #0
+ 1329 00ce 02DA     		bge	.L157
+ 1330 00d0 2046     		mov	r0, r4
+ 1331 00d2 FFF7FEFF 		bl	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvider
+ 1332              	.L157:
+ 1333 00d6 69B0     		add	sp, sp, #420
+ 1334              		@ sp needed
+ 1335 00d8 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1336              	.L172:
+ 1337 00da 00BF     		.align	2
+ 1338              	.L171:
+ 1339 00dc 61000000 		.word	.LC5
+ 1340              		.size	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 1341              		.section	.text.startup._GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv,"ax
+ 1342              		.align	1
+ 1343              		.thumb
+ 1344              		.thumb_func
+ 1345              		.type	_GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv, %function
+ 1346              	_GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv:
+ 1347              		@ args = 0, pretend = 0, frame = 0
+ 1348              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1349 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1350 0002 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1351 0006 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 1352 0008 0546     		mov	r5, r0
+ 1353 000a 002B     		cmp	r3, #0
+ 1354 000c 33D1     		bne	.L177
+ 1355 000e 224A     		ldr	r2, .L182+8
+ 1356 0010 2248     		ldr	r0, .L182+12
+ 1357 0012 1368     		ldr	r3, [r2]
+ 1358 0014 13F00103 		ands	r3, r3, #1
+ 1359 0018 10D1     		bne	.L175
+ 1360 001a 2149     		ldr	r1, .L182+16
+ 1361 001c 0360     		str	r3, [r0]
+ 1362 001e 0375     		strb	r3, [r0, #20]
+ 1363 0020 4FF0FF33 		mov	r3, #-1
+ 1364 0024 0026     		movs	r6, #0
+ 1365 0026 0027     		movs	r7, #0
+ 1366 0028 8361     		str	r3, [r0, #24]
+ 1367 002a 0123     		movs	r3, #1
+ 1368 002c 0161     		str	r1, [r0, #16]
+ARM GAS  /tmp/ccIcItQV.s 			page 25
+
+
+ 1369 002e 1360     		str	r3, [r2]
+ 1370 0030 C0E90267 		strd	r6, [r0, #8]
+ 1371 0034 1B49     		ldr	r1, .L182+20
+ 1372 0036 1C4A     		ldr	r2, .L182+24
+ 1373 0038 FFF7FEFF 		bl	__aeabi_atexit
+ 1374              	.L175:
+ 1375 003c 174C     		ldr	r4, .L182+12
+ 1376 003e 2846     		mov	r0, r5
+ 1377 0040 2146     		mov	r1, r4
+ 1378 0042 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1379 0046 A8B9     		cbnz	r0, .L174
+ 1380 0048 11A3     		adr	r3, .L182
+ 1381 004a D3E90023 		ldrd	r2, [r3]
+ 1382 004e C4E90223 		strd	r2, [r4, #8]
+ 1383 0052 164B     		ldr	r3, .L182+28
+ 1384 0054 2060     		str	r0, [r4]
+ 1385 0056 2361     		str	r3, [r4, #16]
+ 1386 0058 0123     		movs	r3, #1
+ 1387 005a 2375     		strb	r3, [r4, #20]
+ 1388 005c 40F25513 		movw	r3, #341
+ 1389 0060 2846     		mov	r0, r5
+ 1390 0062 2146     		mov	r1, r4
+ 1391 0064 A361     		str	r3, [r4, #24]
+ 1392 0066 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 1393 006a 18B9     		cbnz	r0, .L174
+ 1394 006c 2846     		mov	r0, r5
+ 1395 006e 2146     		mov	r1, r4
+ 1396 0070 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 1397              	.L174:
+ 1398 0074 10B1     		cbz	r0, .L176
+ 1399              	.L177:
+ 1400 0076 0E48     		ldr	r0, .L182+32
+ 1401 0078 FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 1402              	.L176:
+ 1403 007c FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 1404 0080 0121     		movs	r1, #1
+ 1405 0082 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registr
+ 1406 0086 0028     		cmp	r0, #0
+ 1407 0088 F5D1     		bne	.L177
+ 1408 008a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1409              	.L183:
+ 1410 008c AFF30080 		.align	3
+ 1411              	.L182:
+ 1412 0090 F1C6A7C1 		.word	-1045969167
+ 1413 0094 D068080F 		.word	252209360
+ 1414 0098 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1415 009c 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1416 00a0 31000000 		.word	.LC2
+ 1417 00a4 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 1418 00a8 00000000 		.word	__dso_handle
+ 1419 00ac 00000000 		.word	.LC0
+ 1420 00b0 6F000000 		.word	.LC6
+ 1421              		.size	_GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv, .-_GLOBAL__sub_I__Z
+ 1422              		.section	.init_array,"aw",%init_array
+ 1423              		.align	2
+ 1424 0000 00000000 		.word	_GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv(target1)
+ 1425              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ARM GAS  /tmp/ccIcItQV.s 			page 26
+
+
+ 1426              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ 1427              		.align	3
+ 1428              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1429              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 1430              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registrati
+ 1431 0000 00000000 		.space	32
+ 1431      00000000 
+ 1431      00000000 
+ 1431      00000000 
+ 1431      00000000 
+ 1432              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1433              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0E
+ 1434              		.align	3
+ 1435              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1436              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 1437              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Regis
+ 1438 0000 00000000 		.space	32
+ 1438      00000000 
+ 1438      00000000 
+ 1438      00000000 
+ 1438      00000000 
+ 1439              		.weak	_ZTVN6uavcan20StaticTransferBufferILt377EEE
+ 1440              		.section	.rodata._ZTVN6uavcan20StaticTransferBufferILt377EEE,"aG",%progbits,_ZTVN6uavcan20StaticTr
+ 1441              		.align	3
+ 1442              		.type	_ZTVN6uavcan20StaticTransferBufferILt377EEE, %object
+ 1443              		.size	_ZTVN6uavcan20StaticTransferBufferILt377EEE, 24
+ 1444              	_ZTVN6uavcan20StaticTransferBufferILt377EEE:
+ 1445 0000 00000000 		.word	0
+ 1446 0004 00000000 		.word	0
+ 1447 0008 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt377EED1Ev
+ 1448 000c 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt377EED0Ev
+ 1449 0010 00000000 		.word	_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+ 1450 0014 00000000 		.word	_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+ 1451              		.weak	_ZTVN6uavcan15DeadlineHandlerE
+ 1452              		.section	.rodata._ZTVN6uavcan15DeadlineHandlerE,"aG",%progbits,_ZTVN6uavcan15DeadlineHandlerE,comd
+ 1453              		.align	3
+ 1454              		.type	_ZTVN6uavcan15DeadlineHandlerE, %object
+ 1455              		.size	_ZTVN6uavcan15DeadlineHandlerE, 20
+ 1456              	_ZTVN6uavcan15DeadlineHandlerE:
+ 1457 0000 00000000 		.word	0
+ 1458 0004 00000000 		.word	0
+ 1459 0008 00000000 		.word	0
+ 1460 000c 00000000 		.word	0
+ 1461 0010 00000000 		.word	__cxa_pure_virtual
+ 1462              		.weak	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 1463              		.section	.rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS
+ 1464              		.align	3
+ 1465              		.type	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 1466              		.size	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 1467              	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListene
+ 1468 0000 00000000 		.word	0
+ 1469 0004 00000000 		.word	0
+ 1470 0008 00000000 		.word	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 1471 000c 00000000 		.word	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 1472 0010 00000000 		.word	_ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferLi
+ 1473 0014 00000000 		.word	_ZN6uavcan16TransferListener11handleFrameERKNS_7RxFrameE
+ 1474              		.weak	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ARM GAS  /tmp/ccIcItQV.s 			page 27
+
+
+ 1475              		.section	.rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS
+ 1476              		.align	3
+ 1477              		.type	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 1478              		.size	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16Transfer
+ 1479              	_ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListene
+ 1480 0000 00000000 		.word	0
+ 1481 0004 00000000 		.word	0
+ 1482 0008 00000000 		.word	0
+ 1483 000c 00000000 		.word	0
+ 1484 0010 00000000 		.word	__cxa_pure_virtual
+ 1485              		.weak	_ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusPro
+ 1486              		.section	.rodata._ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18No
+ 1487              		.align	3
+ 1488              		.type	_ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusPro
+ 1489              		.size	_ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusPro
+ 1490              	_ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEM
+ 1491 0000 00000000 		.word	0
+ 1492 0004 00000000 		.word	0
+ 1493 0008 00000000 		.word	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 1494 000c 00000000 		.word	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 1495 0010 00000000 		.word	_ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProvi
+ 1496              		.global	_ZTVN6uavcan18NodeStatusProviderE
+ 1497              		.weak	_ZTVN6uavcan20StaticTransferBufferILt7EEE
+ 1498              		.section	.rodata._ZTVN6uavcan20StaticTransferBufferILt7EEE,"aG",%progbits,_ZTVN6uavcan20StaticTran
+ 1499              		.align	3
+ 1500              		.type	_ZTVN6uavcan20StaticTransferBufferILt7EEE, %object
+ 1501              		.size	_ZTVN6uavcan20StaticTransferBufferILt7EEE, 24
+ 1502              	_ZTVN6uavcan20StaticTransferBufferILt7EEE:
+ 1503 0000 00000000 		.word	0
+ 1504 0004 00000000 		.word	0
+ 1505 0008 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt7EED1Ev
+ 1506 000c 00000000 		.word	_ZN6uavcan20StaticTransferBufferILt7EED0Ev
+ 1507 0010 00000000 		.word	_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+ 1508 0014 00000000 		.word	_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+ 1509              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1510              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EE
+ 1511              		.align	2
+ 1512              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1513              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 1514              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registra
+ 1515 0000 00000000 		.space	4
+ 1516              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1517              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi
+ 1518              		.align	2
+ 1519              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1520              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 1521              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Reg
+ 1522 0000 00000000 		.space	4
+ 1523              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 1524              	.LC0:
+ 1525 0000 75617663 		.ascii	"uavcan.protocol.NodeStatus\000"
+ 1525      616E2E70 
+ 1525      726F746F 
+ 1525      636F6C2E 
+ 1525      4E6F6465 
+ 1526              	.LC1:
+ 1527 001b 4E6F6465 		.ascii	"NodeStatus pub failed\000"
+ARM GAS  /tmp/ccIcItQV.s 			page 28
+
+
+ 1527      53746174 
+ 1527      75732070 
+ 1527      75622066 
+ 1527      61696C65 
+ 1528              	.LC2:
+ 1529 0031 00       		.ascii	"\000"
+ 1530              	.LC3:
+ 1531 0032 75617663 		.ascii	"uavcan.protocol.GetNodeInfo\000"
+ 1531      616E2E70 
+ 1531      726F746F 
+ 1531      636F6C2E 
+ 1531      4765744E 
+ 1532              	.LC4:
+ 1533 004e 4C617A79 		.ascii	"LazyConstructor<T>\000"
+ 1533      436F6E73 
+ 1533      74727563 
+ 1533      746F723C 
+ 1533      543E00
+ 1534              	.LC5:
+ 1535 0061 53727620 		.ascii	"Srv serv clbk\000"
+ 1535      73657276 
+ 1535      20636C62 
+ 1535      6B00
+ 1536              	.LC6:
+ 1537 006f 54797065 		.ascii	"Type reg failed\000"
+ 1537      20726567 
+ 1537      20666169 
+ 1537      6C656400 
+ 1538              		.section	.rodata._ZTVN6uavcan18NodeStatusProviderE,"a",%progbits
+ 1539              		.align	3
+ 1540              		.set	.LANCHOR0,. + 0
+ 1541              		.type	_ZTVN6uavcan18NodeStatusProviderE, %object
+ 1542              		.size	_ZTVN6uavcan18NodeStatusProviderE, 24
+ 1543              	_ZTVN6uavcan18NodeStatusProviderE:
+ 1544 0000 00000000 		.word	0
+ 1545 0004 00000000 		.word	0
+ 1546 0008 00000000 		.word	_ZN6uavcan18NodeStatusProviderD1Ev
+ 1547 000c 00000000 		.word	_ZN6uavcan18NodeStatusProviderD0Ev
+ 1548 0010 00000000 		.word	_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE
+ 1549 0014 00000000 		.word	_ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE
+ 1550              		.hidden	__dso_handle
+ 1551              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccIcItQV.s 			page 29
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_node_status_provider.cpp
+     /tmp/ccIcItQV.s:16     .text._ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS2_9Response_ILi0EEE:0000000000000000 $t
+     /tmp/ccIcItQV.s:21     .text._ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS2_9Response_ILi0EEE:0000000000000000 _ZN6uavcan18NodeStatusProvider24handleGetNodeInfoRequestERKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS2_9Response_ILi0EEE
+     /tmp/ccIcItQV.s:32     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:37     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+     /tmp/ccIcItQV.s:37     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+     /tmp/ccIcItQV.s:46     .text._ZN6uavcan20StaticTransferBufferILt7EED2Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:51     .text._ZN6uavcan20StaticTransferBufferILt7EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt7EED2Ev
+     /tmp/ccIcItQV.s:51     .text._ZN6uavcan20StaticTransferBufferILt7EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt7EED1Ev
+     /tmp/ccIcItQV.s:60     .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE:0000000000000000 $t
+     /tmp/ccIcItQV.s:65     .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarder22handleIncomingTransferERNS_16IncomingTransferE
+     /tmp/ccIcItQV.s:86     .text._ZN6uavcan20StaticTransferBufferILt377EED2Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:91     .text._ZN6uavcan20StaticTransferBufferILt377EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt377EED2Ev
+     /tmp/ccIcItQV.s:91     .text._ZN6uavcan20StaticTransferBufferILt377EED2Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt377EED1Ev
+     /tmp/ccIcItQV.s:100    .text._ZN6uavcan20StaticTransferBufferILt7EED0Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:105    .text._ZN6uavcan20StaticTransferBufferILt7EED0Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt7EED0Ev
+     /tmp/ccIcItQV.s:115    .text._ZN6uavcan20StaticTransferBufferILt377EED0Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:120    .text._ZN6uavcan20StaticTransferBufferILt377EED0Ev:0000000000000000 _ZN6uavcan20StaticTransferBufferILt377EED0Ev
+     /tmp/ccIcItQV.s:130    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:135    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev
+     /tmp/ccIcItQV.s:148    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000010 $d
+     /tmp/ccIcItQV.s:1467   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE:0000000000000000 _ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE
+     /tmp/ccIcItQV.s:135    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD1Ev
+     /tmp/ccIcItQV.s:153    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:158    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD0Ev
+     /tmp/ccIcItQV.s:170    .text._ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.60:0000000000000000 $t
+     /tmp/ccIcItQV.s:174    .text._ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.60:0000000000000000 _ZN6uavcan11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EE6encodeEhRNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.60
+     /tmp/ccIcItQV.s:189    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE.part.75:0000000000000000 $t
+     /tmp/ccIcItQV.s:193    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE.part.75:0000000000000000 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE.part.75
+     /tmp/ccIcItQV.s:212    .text._ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.48:0000000000000000 $t
+     /tmp/ccIcItQV.s:216    .text._ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.48:0000000000000000 _ZN6uavcan8protocol11NodeStatus_ILi0EE6encodeERKS2_RNS_11ScalarCodecENS_25TailArrayOptimizationModeE.isra.48
+     /tmp/ccIcItQV.s:276    .text._ZNK6uavcan5INode13isPassiveModeEv:0000000000000000 $t
+     /tmp/ccIcItQV.s:281    .text._ZNK6uavcan5INode13isPassiveModeEv:0000000000000000 _ZNK6uavcan5INode13isPassiveModeEv
+     /tmp/ccIcItQV.s:296    .text._ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv:0000000000000000 $t
+     /tmp/ccIcItQV.s:301    .text._ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv:0000000000000000 _ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv
+     /tmp/ccIcItQV.s:313    .text._ZN6uavcan18NodeStatusProvider7publishEv:0000000000000000 $t
+     /tmp/ccIcItQV.s:318    .text._ZN6uavcan18NodeStatusProvider7publishEv:0000000000000000 _ZN6uavcan18NodeStatusProvider7publishEv
+     /tmp/ccIcItQV.s:400    .text._ZN6uavcan18NodeStatusProvider7publishEv:00000000000000b8 $d
+     /tmp/ccIcItQV.s:1502   .rodata._ZTVN6uavcan20StaticTransferBufferILt7EEE:0000000000000000 _ZTVN6uavcan20StaticTransferBufferILt7EEE
+     /tmp/ccIcItQV.s:405    .text._ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE:0000000000000000 $t
+     /tmp/ccIcItQV.s:410    .text._ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE:0000000000000000 _ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE
+     /tmp/ccIcItQV.s:433    .text._ZN6uavcan18NodeStatusProvider16handleTimerEventERKNS_10TimerEventE:0000000000000028 $d
+     /tmp/ccIcItQV.s:436    .text._ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE:0000000000000000 $t
+     /tmp/ccIcItQV.s:441    .text._ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE:0000000000000000 _ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE
+     /tmp/ccIcItQV.s:493    .text._ZN6uavcan18NodeStatusProvider26setStatusPublicationPeriodENS_17MonotonicDurationE:0000000000000088 $d
+     /tmp/ccIcItQV.s:496    .text._ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv:0000000000000000 $t
+     /tmp/ccIcItQV.s:501    .text._ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv:0000000000000000 _ZNK6uavcan18NodeStatusProvider26getStatusPublicationPeriodEv
+     /tmp/ccIcItQV.s:513    .text._ZN6uavcan18NodeStatusProvider9setHealthEh:0000000000000000 $t
+     /tmp/ccIcItQV.s:518    .text._ZN6uavcan18NodeStatusProvider9setHealthEh:0000000000000000 _ZN6uavcan18NodeStatusProvider9setHealthEh
+     /tmp/ccIcItQV.s:526    .text._ZN6uavcan18NodeStatusProvider7setModeEh:0000000000000000 $t
+     /tmp/ccIcItQV.s:531    .text._ZN6uavcan18NodeStatusProvider7setModeEh:0000000000000000 _ZN6uavcan18NodeStatusProvider7setModeEh
+     /tmp/ccIcItQV.s:539    .text._ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt:0000000000000000 $t
+     /tmp/ccIcItQV.s:544    .text._ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt:0000000000000000 _ZN6uavcan18NodeStatusProvider27setVendorSpecificStatusCodeEt
+     /tmp/ccIcItQV.s:552    .text._ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj80EEE:0000000000000000 $t
+     /tmp/ccIcItQV.s:557    .text._ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj80EEE:0000000000000000 _ZN6uavcan18NodeStatusProvider7setNameERKNS_5ArrayINS_11IntegerSpecILj8ELNS_10SignednessE0ELNS_8CastModeE0EEELNS_9ArrayModeE1ELj80EEE
+     /tmp/ccIcItQV.s:570    .text._ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE:0000000000000000 $t
+ARM GAS  /tmp/ccIcItQV.s 			page 30
+
+
+     /tmp/ccIcItQV.s:575    .text._ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE:0000000000000000 _ZN6uavcan18NodeStatusProvider18setSoftwareVersionERKNS_8protocol16SoftwareVersion_ILi0EEE
+     /tmp/ccIcItQV.s:604    .text._ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE:0000000000000000 $t
+     /tmp/ccIcItQV.s:609    .text._ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE:0000000000000000 _ZN6uavcan18NodeStatusProvider18setHardwareVersionERKNS_8protocol16HardwareVersion_ILi0EEE
+     /tmp/ccIcItQV.s:654    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccIcItQV.s:659    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccIcItQV.s:741    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:00000000000000c0 $d
+     /tmp/ccIcItQV.s:1514   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccIcItQV.s:1430   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccIcItQV.s:757    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:762    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev
+     /tmp/ccIcItQV.s:793    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev:0000000000000038 $d
+     /tmp/ccIcItQV.s:1479   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEEE:0000000000000000 _ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEEE
+     /tmp/ccIcItQV.s:762    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED2Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED1Ev
+     /tmp/ccIcItQV.s:798    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:803    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev:0000000000000000 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev
+     /tmp/ccIcItQV.s:816    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev:0000000000000010 $d
+     /tmp/ccIcItQV.s:1490   .rodata._ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEEE:0000000000000000 _ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEEE
+     /tmp/ccIcItQV.s:803    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED2Ev:0000000000000000 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED1Ev
+     /tmp/ccIcItQV.s:821    .text._ZN6uavcan18NodeStatusProviderD2Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:826    .text._ZN6uavcan18NodeStatusProviderD2Ev:0000000000000000 _ZN6uavcan18NodeStatusProviderD2Ev
+     /tmp/ccIcItQV.s:843    .text._ZN6uavcan18NodeStatusProviderD2Ev:000000000000001c $d
+     /tmp/ccIcItQV.s:1456   .rodata._ZTVN6uavcan15DeadlineHandlerE:0000000000000000 _ZTVN6uavcan15DeadlineHandlerE
+     /tmp/ccIcItQV.s:826    .text._ZN6uavcan18NodeStatusProviderD2Ev:0000000000000000 _ZN6uavcan18NodeStatusProviderD1Ev
+     /tmp/ccIcItQV.s:849    .text._ZN6uavcan18NodeStatusProviderD0Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:854    .text._ZN6uavcan18NodeStatusProviderD0Ev:0000000000000000 _ZN6uavcan18NodeStatusProviderD0Ev
+     /tmp/ccIcItQV.s:866    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED0Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:871    .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED0Ev:0000000000000000 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED0Ev
+     /tmp/ccIcItQV.s:883    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED0Ev:0000000000000000 $t
+     /tmp/ccIcItQV.s:888    .text._ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED0Ev:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED0Ev
+     /tmp/ccIcItQV.s:900    .text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv:0000000000000000 $t
+     /tmp/ccIcItQV.s:905    .text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv:0000000000000000 _ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv
+     /tmp/ccIcItQV.s:924    .text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE9checkInitEv:0000000000000020 $d
+     /tmp/ccIcItQV.s:927    .text._ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS4_9Response_ILi0EEEEEcvbEv:0000000000000000 $t
+     /tmp/ccIcItQV.s:932    .text._ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS4_9Response_ILi0EEEEEcvbEv:0000000000000000 _ZNK6uavcan12MethodBinderIPNS_18NodeStatusProviderEMS1_FvRKNS_8protocol12GetNodeInfo_8Request_ILi0EEERNS4_9Response_ILi0EEEEEcvbEv
+     /tmp/ccIcItQV.s:951    .text._ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE:0000000000000000 $t
+     /tmp/ccIcItQV.s:956    .text._ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE:0000000000000000 _ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE
+     /tmp/ccIcItQV.s:1083   .text._ZN6uavcan18NodeStatusProvider15startAndPublishENS_16TransferPriorityE:000000000000013c $d
+     /tmp/ccIcItQV.s:1092   .text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccIcItQV.s:1097   .text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+     /tmp/ccIcItQV.s:1237   .text._ZN6uavcan16GenericPublisherINS_8protocol12GetNodeInfo_ENS2_9Response_ILi0EEEE14genericPublishERKS4_NS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE:0000000000000150 $d
+     /tmp/ccIcItQV.s:1444   .rodata._ZTVN6uavcan20StaticTransferBufferILt377EEE:0000000000000000 _ZTVN6uavcan20StaticTransferBufferILt377EEE
+     /tmp/ccIcItQV.s:1240   .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE:0000000000000000 $t
+     /tmp/ccIcItQV.s:1245   .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE:0000000000000000 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE
+     /tmp/ccIcItQV.s:1339   .text._ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEE24handleReceivedDataStructERNS_21ReceivedDataStructureIS7_EE:00000000000000dc $d
+     /tmp/ccIcItQV.s:1342   .text.startup._GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv:0000000000000000 $t
+     /tmp/ccIcItQV.s:1346   .text.startup._GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv:0000000000000000 _GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv
+     /tmp/ccIcItQV.s:1412   .text.startup._GLOBAL__sub_I__ZNK6uavcan18NodeStatusProvider21isNodeInfoInitializedEv:0000000000000090 $d
+     /tmp/ccIcItQV.s:1521   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccIcItQV.s:1437   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccIcItQV.s:1423   .init_array:0000000000000000 $d
+     /tmp/ccIcItQV.s:1427   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccIcItQV.s:1434   .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccIcItQV.s:1441   .rodata._ZTVN6uavcan20StaticTransferBufferILt377EEE:0000000000000000 $d
+     /tmp/ccIcItQV.s:1453   .rodata._ZTVN6uavcan15DeadlineHandlerE:0000000000000000 $d
+     /tmp/ccIcItQV.s:1464   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderE:0000000000000000 $d
+     /tmp/ccIcItQV.s:1476   .rodata._ZTVN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEEE:0000000000000000 $d
+     /tmp/ccIcItQV.s:1487   .rodata._ZTVN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEEE:0000000000000000 $d
+ARM GAS  /tmp/ccIcItQV.s 			page 31
+
+
+     /tmp/ccIcItQV.s:1543   .rodata._ZTVN6uavcan18NodeStatusProviderE:0000000000000000 _ZTVN6uavcan18NodeStatusProviderE
+     /tmp/ccIcItQV.s:1499   .rodata._ZTVN6uavcan20StaticTransferBufferILt7EEE:0000000000000000 $d
+     /tmp/ccIcItQV.s:1511   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccIcItQV.s:1518   .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccIcItQV.s:1539   .rodata._ZTVN6uavcan18NodeStatusProviderE:0000000000000000 $d
+                           .group:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD5Ev
+                           .group:0000000000000000 _ZN6uavcan20StaticTransferBufferILt7EED5Ev
+                           .group:0000000000000000 _ZN6uavcan20StaticTransferBufferILt377EED5Ev
+                           .group:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEE17TransferForwarderD5Ev
+                           .group:0000000000000000 _ZN6uavcan17GenericSubscriberINS_8protocol12GetNodeInfo_ENS2_8Request_ILi0EEENS_16TransferListenerEED5Ev
+                           .group:0000000000000000 _ZN6uavcan13ServiceServerINS_8protocol12GetNodeInfo_ENS_12MethodBinderIPNS_18NodeStatusProviderEMS4_FvRKNS2_8Request_ILi0EEERNS2_9Response_ILi0EEEEEEED5Ev
+                           .group:0000000000000000 _ZN6uavcan18NodeStatusProviderD5Ev
+
+UNDEFINED SYMBOLS
+memcpy
+_ZdlPv
+_ZN6uavcan16TransferListenerD2Ev
+_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+__aeabi_ldivmod
+_ZNK6uavcan20GenericPublisherBase8isInitedEv
+_ZN6uavcan20GenericPublisherBase14genericPublishERKNS_24StaticTransferBufferImplENS_12TransferTypeENS_6NodeIDEPNS_10TransferIDENS_13MonotonicTimeE
+_ZN6uavcan20GenericPublisherBase6doInitENS_12DataTypeKindEPKcNS_10CanTxQueue3QosE
+_ZN6uavcan6NodeID9BroadcastE
+_ZN6uavcan9TimerBase13startPeriodicENS_17MonotonicDurationE
+_ZN6uavcan20GenericPublisherBase12setTxTimeoutENS_17MonotonicDurationE
+__aeabi_atexit
+_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+_ZN6uavcan17DataTypeSignature6extendES0_
+_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+__dso_handle
+_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+_ZN6uavcan15DeadlineHandler4stopEv
+_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+_ZN6uavcan22GlobalDataTypeRegistry6freezeEv
+_ZNK6uavcan22GlobalDataTypeRegistry4findENS_12DataTypeKindEPKc
+_ZN6uavcan16handleFatalErrorEPKc
+_ZNK6uavcan17DataTypeSignature13toTransferCRCEv
+_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E
+_ZN6uavcan10Dispatcher30registerServiceRequestListenerEPNS_16TransferListenerE
+_ZTVN6uavcan16TransferListenerE
+_ZNK6uavcan24StaticTransferBufferImpl4readEjPhj
+_ZN6uavcan24StaticTransferBufferImpl5writeEjPKhj
+__cxa_pure_virtual
+_ZN6uavcan16TransferListener11handleFrameERKNS_7RxFrameE
+_ZN6uavcan9TimerBase14handleDeadlineENS_13MonotonicTimeE

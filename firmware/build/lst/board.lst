@@ -1,0 +1,484 @@
+ARM GAS  /tmp/ccIS4aIg.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"board.cpp"
+  15              		.section	.text._ZN5board4initEv,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN5board4initEv
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN5board4initEv, %function
+  21              	_ZN5board4initEv:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 08B5     		push	{r3, lr}
+  25 0002 FFF7FEFF 		bl	halInit
+  26 0006 FFF7FEFF 		bl	chSysInit
+  27 000a 0B48     		ldr	r0, .L5
+  28 000c 0021     		movs	r1, #0
+  29 000e FFF7FEFF 		bl	sdStart
+  30 0012 FFF7FEFF 		bl	watchdogInit
+  31 0016 0948     		ldr	r0, .L5+4
+  32 0018 0949     		ldr	r1, .L5+8
+  33 001a FFF7FEFF 		bl	i2cStart
+  34              	.L3:
+  35 001e FFF7FEFF 		bl	configInit
+  36 0022 011E     		subs	r1, r0, #0
+  37 0024 06DA     		bge	.L1
+  38 0026 0748     		ldr	r0, .L5+12
+  39 0028 FFF7FEFF 		bl	lowsyslog
+  40 002c 0120     		movs	r0, #1
+  41 002e FFF7FEFF 		bl	sleep
+  42 0032 F4E7     		b	.L3
+  43              	.L1:
+  44 0034 08BD     		pop	{r3, pc}
+  45              	.L6:
+  46 0036 00BF     		.align	2
+  47              	.L5:
+  48 0038 00000000 		.word	SD2
+  49 003c 00000000 		.word	I2CD2
+  50 0040 00000000 		.word	.LANCHOR0
+  51 0044 00000000 		.word	.LC0
+  52              		.size	_ZN5board4initEv, .-_ZN5board4initEv
+  53              		.section	.text._ZN5board3dieEi,"ax",%progbits
+  54              		.align	1
+  55              		.global	_ZN5board3dieEi
+  56              		.thumb
+  57              		.thumb_func
+ARM GAS  /tmp/ccIS4aIg.s 			page 2
+
+
+  58              		.type	_ZN5board3dieEi, %function
+  59              	_ZN5board3dieEi:
+  60              		@ Volatile: function does not return.
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63 0000 0146     		mov	r1, r0
+  64 0002 08B5     		push	{r3, lr}
+  65 0004 0948     		ldr	r0, .L9
+  66 0006 FFF7FEFF 		bl	lowsyslog
+  67              	.L8:
+  68 000a 094C     		ldr	r4, .L9+4
+  69 000c 4FF00053 		mov	r3, #536870912
+  70 0010 2361     		str	r3, [r4, #16]
+  71 0012 46F2A810 		movw	r0, #25000
+  72 0016 FFF7FEFF 		bl	usleep
+  73 001a 4FF40053 		mov	r3, #8192
+  74 001e 2361     		str	r3, [r4, #16]
+  75 0020 46F2A810 		movw	r0, #25000
+  76 0024 FFF7FEFF 		bl	usleep
+  77 0028 EFE7     		b	.L8
+  78              	.L10:
+  79 002a 00BF     		.align	2
+  80              	.L9:
+  81 002c 17000000 		.word	.LC1
+  82 0030 00180140 		.word	1073813504
+  83              		.size	_ZN5board3dieEi, .-_ZN5board3dieEi
+  84              		.section	.text._ZN5board9setCANLedEjb,"ax",%progbits
+  85              		.align	1
+  86              		.global	_ZN5board9setCANLedEjb
+  87              		.thumb
+  88              		.thumb_func
+  89              		.type	_ZN5board9setCANLedEjb, %function
+  90              	_ZN5board9setCANLedEjb:
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		@ link register save eliminated.
+  94 0000 10B1     		cbz	r0, .L13
+  95 0002 0128     		cmp	r0, #1
+  96 0004 08D0     		beq	.L14
+  97 0006 7047     		bx	lr
+  98              	.L13:
+  99 0008 0029     		cmp	r1, #0
+ 100 000a 0CBF     		ite	eq
+ 101 000c 4FF00043 		moveq	r3, #-2147483648
+ 102 0010 0023     		movne	r3, #0
+ 103 0012 43EAC131 		orr	r1, r3, r1, lsl #15
+ 104 0016 06E0     		b	.L19
+ 105              	.L14:
+ 106 0018 0029     		cmp	r1, #0
+ 107 001a 0CBF     		ite	eq
+ 108 001c 4FF08043 		moveq	r3, #1073741824
+ 109 0020 0023     		movne	r3, #0
+ 110 0022 43EA8131 		orr	r1, r3, r1, lsl #14
+ 111              	.L19:
+ 112 0026 014B     		ldr	r3, .L20
+ 113 0028 1961     		str	r1, [r3, #16]
+ 114 002a 7047     		bx	lr
+ARM GAS  /tmp/ccIS4aIg.s 			page 3
+
+
+ 115              	.L21:
+ 116              		.align	2
+ 117              	.L20:
+ 118 002c 00180140 		.word	1073813504
+ 119              		.size	_ZN5board9setCANLedEjb, .-_ZN5board9setCANLedEjb
+ 120              		.section	.text._ZN5board12setStatusLedEb,"ax",%progbits
+ 121              		.align	1
+ 122              		.global	_ZN5board12setStatusLedEb
+ 123              		.thumb
+ 124              		.thumb_func
+ 125              		.type	_ZN5board12setStatusLedEb, %function
+ 126              	_ZN5board12setStatusLedEb:
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		@ link register save eliminated.
+ 130 0000 0028     		cmp	r0, #0
+ 131 0002 0CBF     		ite	eq
+ 132 0004 4FF00053 		moveq	r3, #536870912
+ 133 0008 0023     		movne	r3, #0
+ 134 000a 43EA4030 		orr	r0, r3, r0, lsl #13
+ 135 000e 014B     		ldr	r3, .L25
+ 136 0010 1861     		str	r0, [r3, #16]
+ 137 0012 7047     		bx	lr
+ 138              	.L26:
+ 139              		.align	2
+ 140              	.L25:
+ 141 0014 00180140 		.word	1073813504
+ 142              		.size	_ZN5board12setStatusLedEb, .-_ZN5board12setStatusLedEb
+ 143              		.section	.text._ZN5board15enterBootloaderEv,"ax",%progbits
+ 144              		.align	1
+ 145              		.global	_ZN5board15enterBootloaderEv
+ 146              		.thumb
+ 147              		.thumb_func
+ 148              		.type	_ZN5board15enterBootloaderEv, %function
+ 149              	_ZN5board15enterBootloaderEv:
+ 150              		@ args = 0, pretend = 0, frame = 0
+ 151              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152 0000 08B5     		push	{r3, lr}
+ 153 0002 274B     		ldr	r3, .L31
+ 154 0004 1968     		ldr	r1, [r3]
+ 155 0006 0123     		movs	r3, #1
+ 156              	@ 481 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmFunc.h" 1
+ 157 0008 83F31088 		MSR primask, r3
+ 158              	@ 0 "" 2
+ 159              		.thumb
+ 160 000c 0022     		movs	r2, #0
+ 161              	.L28:
+ 162 000e 9300     		lsls	r3, r2, #2
+ 163 0010 03F16043 		add	r3, r3, #-536870912
+ 164 0014 03F56143 		add	r3, r3, #57600
+ 165 0018 D3F80002 		ldr	r0, [r3, #512]
+ 166 001c 0132     		adds	r2, r2, #1
+ 167 001e 082A     		cmp	r2, #8
+ 168 0020 C3F88000 		str	r0, [r3, #128]
+ 169 0024 F3D1     		bne	.L28
+ 170 0026 1F4B     		ldr	r3, .L31+4
+ 171 0028 4FF00062 		mov	r2, #134217728
+ARM GAS  /tmp/ccIS4aIg.s 			page 4
+
+
+ 172 002c 5A60     		str	r2, [r3, #4]
+ 173 002e 1E4B     		ldr	r3, .L31+8
+ 174 0030 1A68     		ldr	r2, [r3]
+ 175 0032 42F00102 		orr	r2, r2, #1
+ 176 0036 1A60     		str	r2, [r3]
+ 177 0038 5868     		ldr	r0, [r3, #4]
+ 178 003a 1C4A     		ldr	r2, .L31+12
+ 179 003c 0240     		ands	r2, r2, r0
+ 180 003e 5A60     		str	r2, [r3, #4]
+ 181 0040 1A68     		ldr	r2, [r3]
+ 182 0042 1B48     		ldr	r0, .L31+16
+ 183 0044 22F08472 		bic	r2, r2, #17301504
+ 184 0048 22F48032 		bic	r2, r2, #65536
+ 185 004c 1A60     		str	r2, [r3]
+ 186 004e 1A68     		ldr	r2, [r3]
+ 187 0050 22F48022 		bic	r2, r2, #262144
+ 188 0054 1A60     		str	r2, [r3]
+ 189 0056 5A68     		ldr	r2, [r3, #4]
+ 190 0058 22F4FE02 		bic	r2, r2, #8323072
+ 191 005c 5A60     		str	r2, [r3, #4]
+ 192 005e 1A68     		ldr	r2, [r3]
+ 193 0060 22F0A052 		bic	r2, r2, #335544320
+ 194 0064 1A60     		str	r2, [r3]
+ 195 0066 4FF47F02 		mov	r2, #16711680
+ 196 006a 9A60     		str	r2, [r3, #8]
+ 197 006c 0022     		movs	r2, #0
+ 198 006e DA62     		str	r2, [r3, #44]
+ 199 0070 0260     		str	r2, [r0]
+ 200 0072 4260     		str	r2, [r0, #4]
+ 201 0074 8260     		str	r2, [r0, #8]
+ 202 0076 5A68     		ldr	r2, [r3, #4]
+ 203 0078 22F00302 		bic	r2, r2, #3
+ 204 007c 5A60     		str	r2, [r3, #4]
+ 205 007e 9A69     		ldr	r2, [r3, #24]
+ 206 0080 22F48042 		bic	r2, r2, #16384
+ 207 0084 9A61     		str	r2, [r3, #24]
+ 208 0086 DA68     		ldr	r2, [r3, #12]
+ 209 0088 62F48042 		orn	r2, r2, #16384
+ 210 008c DA60     		str	r2, [r3, #12]
+ 211 008e DA68     		ldr	r2, [r3, #12]
+ 212 0090 02F48042 		and	r2, r2, #16384
+ 213 0094 DA60     		str	r2, [r3, #12]
+ 214 0096 074B     		ldr	r3, .L31+20
+ 215              	@ 454 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmFunc.h" 1
+ 216 0098 83F30888 		MSR msp, r3
+ 217              	
+ 218              	@ 0 "" 2
+ 219              		.thumb
+ 220 009c 8847     		blx	r1
+ 221              	.L29:
+ 222 009e FEE7     		b	.L29
+ 223              	.L32:
+ 224              		.align	2
+ 225              	.L31:
+ 226 00a0 04B0FF1F 		.word	536850436
+ 227 00a4 00ED00E0 		.word	-536810240
+ 228 00a8 00100240 		.word	1073876992
+ARM GAS  /tmp/ccIS4aIg.s 			page 5
+
+
+ 229 00ac 0000FFF8 		.word	-117506048
+ 230 00b0 10E000E0 		.word	-536813552
+ 231 00b4 00100020 		.word	536875008
+ 232              		.size	_ZN5board15enterBootloaderEv, .-_ZN5board15enterBootloaderEv
+ 233              		.section	.text._ZN5board7restartEv,"ax",%progbits
+ 234              		.align	1
+ 235              		.global	_ZN5board7restartEv
+ 236              		.thumb
+ 237              		.thumb_func
+ 238              		.type	_ZN5board7restartEv, %function
+ 239              	_ZN5board7restartEv:
+ 240              		@ Volatile: function does not return.
+ 241              		@ args = 0, pretend = 0, frame = 0
+ 242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243              		@ link register save eliminated.
+ 244              	@ 343 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmInstr.h" 1
+ 245 0000 BFF34F8F 		dsb
+ 246              	@ 0 "" 2
+ 247              		.thumb
+ 248 0004 0449     		ldr	r1, .L35
+ 249 0006 054B     		ldr	r3, .L35+4
+ 250 0008 CA68     		ldr	r2, [r1, #12]
+ 251 000a 02F4E062 		and	r2, r2, #1792
+ 252 000e 1343     		orrs	r3, r3, r2
+ 253 0010 CB60     		str	r3, [r1, #12]
+ 254              	@ 343 "zubax_chibios///chibios/os/ports/common/ARMCMx/CMSIS/include/core_cmInstr.h" 1
+ 255 0012 BFF34F8F 		dsb
+ 256              	@ 0 "" 2
+ 257              		.thumb
+ 258              	.L34:
+ 259 0016 FEE7     		b	.L34
+ 260              	.L36:
+ 261              		.align	2
+ 262              	.L35:
+ 263 0018 00ED00E0 		.word	-536810240
+ 264 001c 0400FA05 		.word	100270084
+ 265              		.size	_ZN5board7restartEv, .-_ZN5board7restartEv
+ 266              		.section	.text._ZN5board12readUniqueIDEPh,"ax",%progbits
+ 267              		.align	1
+ 268              		.global	_ZN5board12readUniqueIDEPh
+ 269              		.thumb
+ 270              		.thumb_func
+ 271              		.type	_ZN5board12readUniqueIDEPh, %function
+ 272              	_ZN5board12readUniqueIDEPh:
+ 273              		@ args = 0, pretend = 0, frame = 0
+ 274              		@ frame_needed = 0, uses_anonymous_args = 0
+ 275              		@ link register save eliminated.
+ 276 0000 0246     		mov	r2, r0
+ 277 0002 034B     		ldr	r3, .L38
+ 278 0004 03CB     		ldmia	r3!, {r0, r1}
+ 279 0006 1060     		str	r0, [r2]	@ unaligned
+ 280 0008 5160     		str	r1, [r2, #4]	@ unaligned
+ 281 000a 1868     		ldr	r0, [r3]	@ unaligned
+ 282 000c 9060     		str	r0, [r2, #8]	@ unaligned
+ 283 000e 7047     		bx	lr
+ 284              	.L39:
+ 285              		.align	2
+ARM GAS  /tmp/ccIS4aIg.s 			page 6
+
+
+ 286              	.L38:
+ 287 0010 E8F7FF1F 		.word	536868840
+ 288              		.size	_ZN5board12readUniqueIDEPh, .-_ZN5board12readUniqueIDEPh
+ 289              		.section	.text.__early_init,"ax",%progbits
+ 290              		.align	1
+ 291              		.global	__early_init
+ 292              		.thumb
+ 293              		.thumb_func
+ 294              		.type	__early_init, %function
+ 295              	__early_init:
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              		@ link register save eliminated.
+ 299 0000 FFF7FEBF 		b	stm32_clock_init
+ 300              		.size	__early_init, .-__early_init
+ 301              		.section	.text.boardInit,"ax",%progbits
+ 302              		.align	1
+ 303              		.global	boardInit
+ 304              		.thumb
+ 305              		.thumb_func
+ 306              		.type	boardInit, %function
+ 307              	boardInit:
+ 308              		@ args = 0, pretend = 0, frame = 0
+ 309              		@ frame_needed = 0, uses_anonymous_args = 0
+ 310 0000 1F49     		ldr	r1, .L42
+ 311 0002 38B5     		push	{r3, r4, r5, lr}
+ 312 0004 4A68     		ldr	r2, [r1, #4]
+ 313 0006 1F4B     		ldr	r3, .L42+4
+ 314 0008 1F4C     		ldr	r4, .L42+8
+ 315 000a 22F0E062 		bic	r2, r2, #117440512
+ 316 000e 1343     		orrs	r3, r3, r2
+ 317 0010 4B60     		str	r3, [r1, #4]
+ 318 0012 2046     		mov	r0, r4
+ 319 0014 4FF40051 		mov	r1, #8192
+ 320 0018 0622     		movs	r2, #6
+ 321 001a FFF7FEFF 		bl	_pal_lld_setgroupmode
+ 322 001e 2046     		mov	r0, r4
+ 323 0020 4FF48041 		mov	r1, #16384
+ 324 0024 0622     		movs	r2, #6
+ 325 0026 FFF7FEFF 		bl	_pal_lld_setgroupmode
+ 326 002a 2046     		mov	r0, r4
+ 327 002c 4FF40041 		mov	r1, #32768
+ 328 0030 A4F58064 		sub	r4, r4, #1024
+ 329 0034 0622     		movs	r2, #6
+ 330 0036 FFF7FEFF 		bl	_pal_lld_setgroupmode
+ 331 003a 144D     		ldr	r5, .L42+12
+ 332 003c 2046     		mov	r0, r4
+ 333 003e 2021     		movs	r1, #32
+ 334 0040 1022     		movs	r2, #16
+ 335 0042 FFF7FEFF 		bl	_pal_lld_setgroupmode
+ 336 0046 2046     		mov	r0, r4
+ 337 0048 4021     		movs	r1, #64
+ 338 004a 0322     		movs	r2, #3
+ 339 004c FFF7FEFF 		bl	_pal_lld_setgroupmode
+ 340 0050 2846     		mov	r0, r5
+ 341 0052 4FF48061 		mov	r1, #1024
+ 342 0056 1022     		movs	r2, #16
+ARM GAS  /tmp/ccIS4aIg.s 			page 7
+
+
+ 343 0058 FFF7FEFF 		bl	_pal_lld_setgroupmode
+ 344 005c 2846     		mov	r0, r5
+ 345 005e 4FF40061 		mov	r1, #2048
+ 346 0062 0322     		movs	r2, #3
+ 347 0064 FFF7FEFF 		bl	_pal_lld_setgroupmode
+ 348 0068 094A     		ldr	r2, .L42+16
+ 349 006a 2046     		mov	r0, r4
+ 350 006c D369     		ldr	r3, [r2, #28]
+ 351 006e 0221     		movs	r1, #2
+ 352 0070 43F00073 		orr	r3, r3, #33554432
+ 353 0074 D361     		str	r3, [r2, #28]
+ 354 0076 1022     		movs	r2, #16
+ 355 0078 BDE83840 		pop	{r3, r4, r5, lr}
+ 356 007c FFF7FEBF 		b	_pal_lld_setgroupmode
+ 357              	.L43:
+ 358              		.align	2
+ 359              	.L42:
+ 360 0080 00000140 		.word	1073807360
+ 361 0084 18600002 		.word	33579032
+ 362 0088 00180140 		.word	1073813504
+ 363 008c 00100140 		.word	1073811456
+ 364 0090 00100240 		.word	1073876992
+ 365              		.size	boardInit, .-boardInit
+ 366              		.global	pal_default_config
+ 367              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 368              	.LC0:
+ 369 0000 436F6E66 		.ascii	"Config init failed %i\012\000"
+ 369      69672069 
+ 369      6E697420 
+ 369      6661696C 
+ 369      65642025 
+ 370              	.LC1:
+ 371 0017 46617461 		.ascii	"Fatal error %i\012\000"
+ 371      6C206572 
+ 371      726F7220 
+ 371      25690A00 
+ 372              		.section	.rodata.pal_default_config,"a",%progbits
+ 373              		.align	2
+ 374              		.type	pal_default_config, %object
+ 375              		.size	pal_default_config, 60
+ 376              	pal_default_config:
+ 377 0000 FFFFFFFF 		.word	-1
+ 378 0004 88888888 		.word	-2004318072
+ 379 0008 88088088 		.word	-2004875128
+ 380 000c FFFFFFFF 		.word	-1
+ 381 0010 88282288 		.word	-2011027320
+ 382 0014 488A4888 		.word	-2008511928
+ 383 0018 FFFFFFFF 		.word	-1
+ 384 001c 88888888 		.word	-2004318072
+ 385 0020 88888888 		.word	-2004318072
+ 386 0024 FFFFFFFF 		.word	-1
+ 387 0028 88888888 		.word	-2004318072
+ 388 002c 88888888 		.word	-2004318072
+ 389 0030 00000000 		.word	0
+ 390 0034 88888888 		.word	-2004318072
+ 391 0038 88888888 		.word	-2004318072
+ 392              		.section	.rodata._ZN5boardL7I2CCfg2E,"a",%progbits
+ARM GAS  /tmp/ccIS4aIg.s 			page 8
+
+
+ 393              		.align	2
+ 394              		.set	.LANCHOR0,. + 0
+ 395              		.type	_ZN5boardL7I2CCfg2E, %object
+ 396              		.size	_ZN5boardL7I2CCfg2E, 12
+ 397              	_ZN5boardL7I2CCfg2E:
+ 398 0000 01       		.byte	1
+ 399 0001 000000   		.space	3
+ 400 0004 801A0600 		.word	400000
+ 401 0008 02       		.byte	2
+ 402 0009 000000   		.space	3
+ 403              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccIS4aIg.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 board.cpp
+     /tmp/ccIS4aIg.s:16     .text._ZN5board4initEv:0000000000000000 $t
+     /tmp/ccIS4aIg.s:21     .text._ZN5board4initEv:0000000000000000 _ZN5board4initEv
+     /tmp/ccIS4aIg.s:48     .text._ZN5board4initEv:0000000000000038 $d
+     /tmp/ccIS4aIg.s:54     .text._ZN5board3dieEi:0000000000000000 $t
+     /tmp/ccIS4aIg.s:59     .text._ZN5board3dieEi:0000000000000000 _ZN5board3dieEi
+     /tmp/ccIS4aIg.s:81     .text._ZN5board3dieEi:000000000000002c $d
+     /tmp/ccIS4aIg.s:85     .text._ZN5board9setCANLedEjb:0000000000000000 $t
+     /tmp/ccIS4aIg.s:90     .text._ZN5board9setCANLedEjb:0000000000000000 _ZN5board9setCANLedEjb
+     /tmp/ccIS4aIg.s:118    .text._ZN5board9setCANLedEjb:000000000000002c $d
+     /tmp/ccIS4aIg.s:121    .text._ZN5board12setStatusLedEb:0000000000000000 $t
+     /tmp/ccIS4aIg.s:126    .text._ZN5board12setStatusLedEb:0000000000000000 _ZN5board12setStatusLedEb
+     /tmp/ccIS4aIg.s:141    .text._ZN5board12setStatusLedEb:0000000000000014 $d
+     /tmp/ccIS4aIg.s:144    .text._ZN5board15enterBootloaderEv:0000000000000000 $t
+     /tmp/ccIS4aIg.s:149    .text._ZN5board15enterBootloaderEv:0000000000000000 _ZN5board15enterBootloaderEv
+     /tmp/ccIS4aIg.s:226    .text._ZN5board15enterBootloaderEv:00000000000000a0 $d
+     /tmp/ccIS4aIg.s:234    .text._ZN5board7restartEv:0000000000000000 $t
+     /tmp/ccIS4aIg.s:239    .text._ZN5board7restartEv:0000000000000000 _ZN5board7restartEv
+     /tmp/ccIS4aIg.s:263    .text._ZN5board7restartEv:0000000000000018 $d
+     /tmp/ccIS4aIg.s:267    .text._ZN5board12readUniqueIDEPh:0000000000000000 $t
+     /tmp/ccIS4aIg.s:272    .text._ZN5board12readUniqueIDEPh:0000000000000000 _ZN5board12readUniqueIDEPh
+     /tmp/ccIS4aIg.s:287    .text._ZN5board12readUniqueIDEPh:0000000000000010 $d
+     /tmp/ccIS4aIg.s:290    .text.__early_init:0000000000000000 $t
+     /tmp/ccIS4aIg.s:295    .text.__early_init:0000000000000000 __early_init
+     /tmp/ccIS4aIg.s:302    .text.boardInit:0000000000000000 $t
+     /tmp/ccIS4aIg.s:307    .text.boardInit:0000000000000000 boardInit
+     /tmp/ccIS4aIg.s:360    .text.boardInit:0000000000000080 $d
+     /tmp/ccIS4aIg.s:376    .rodata.pal_default_config:0000000000000000 pal_default_config
+     /tmp/ccIS4aIg.s:373    .rodata.pal_default_config:0000000000000000 $d
+     /tmp/ccIS4aIg.s:393    .rodata._ZN5boardL7I2CCfg2E:0000000000000000 $d
+     /tmp/ccIS4aIg.s:397    .rodata._ZN5boardL7I2CCfg2E:0000000000000000 _ZN5boardL7I2CCfg2E
+
+UNDEFINED SYMBOLS
+halInit
+chSysInit
+sdStart
+watchdogInit
+i2cStart
+configInit
+lowsyslog
+sleep
+SD2
+I2CD2
+usleep
+stm32_clock_init
+_pal_lld_setgroupmode

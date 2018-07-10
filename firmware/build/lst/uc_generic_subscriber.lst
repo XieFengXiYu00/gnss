@@ -1,0 +1,122 @@
+ARM GAS  /tmp/cc2SxVdx.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_generic_subscriber.cpp"
+  15              		.section	.text._ZN6uavcan5INode13getDispatcherEv,"axG",%progbits,_ZN6uavcan5INode13getDispatcherEv
+  16              		.align	1
+  17              		.weak	_ZN6uavcan5INode13getDispatcherEv
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan5INode13getDispatcherEv, %function
+  21              	_ZN6uavcan5INode13getDispatcherEv:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 08B5     		push	{r3, lr}
+  25 0002 0368     		ldr	r3, [r0]
+  26 0004 DB68     		ldr	r3, [r3, #12]
+  27 0006 9847     		blx	r3
+  28 0008 0830     		adds	r0, r0, #8
+  29 000a 08BD     		pop	{r3, pc}
+  30              		.size	_ZN6uavcan5INode13getDispatcherEv, .-_ZN6uavcan5INode13getDispatcherEv
+  31              		.section	.text._ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE,"ax",%progbits
+  32              		.align	1
+  33              		.global	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+  34              		.thumb
+  35              		.thumb_func
+  36              		.type	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE, %function
+  37              	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40 0000 38B5     		push	{r3, r4, r5, lr}
+  41 0002 0546     		mov	r5, r0
+  42 0004 0C46     		mov	r4, r1
+  43 0006 99B1     		cbz	r1, .L2
+  44 0008 0068     		ldr	r0, [r0]
+  45 000a FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+  46 000e 2146     		mov	r1, r4
+  47 0010 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE
+  48 0014 2868     		ldr	r0, [r5]
+  49 0016 FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+  50 001a 2146     		mov	r1, r4
+  51 001c FFF7FEFF 		bl	_ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE
+  52 0020 2868     		ldr	r0, [r5]
+  53 0022 FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+  54 0026 2146     		mov	r1, r4
+  55 0028 BDE83840 		pop	{r3, r4, r5, lr}
+  56 002c FFF7FEBF 		b	_ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE
+  57              	.L2:
+ARM GAS  /tmp/cc2SxVdx.s 			page 2
+
+
+  58 0030 38BD     		pop	{r3, r4, r5, pc}
+  59              		.size	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE, .-_ZN6uavcan21GenericSubscri
+  60              		.section	.text._ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10Dispat
+  61              		.align	1
+  62              		.global	_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFb
+  63              		.thumb
+  64              		.thumb_func
+  65              		.type	_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2
+  66              	_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E:
+  67              		@ args = 0, pretend = 0, frame = 8
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+  70 0002 02AC     		add	r4, sp, #8
+  71 0004 04E90C00 		stmdb	r4, {r2, r3}
+  72 0008 0746     		mov	r7, r0
+  73 000a 9DE83000 		ldmia	sp, {r4, r5}
+  74 000e 0E46     		mov	r6, r1
+  75 0010 A9B1     		cbz	r1, .L8
+  76 0012 FFF7FEFF 		bl	_ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+  77 0016 3868     		ldr	r0, [r7]
+  78 0018 FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+  79 001c 15F0010F 		tst	r5, #1
+  80 0020 4FEA6505 		asr	r5, r5, #1
+  81 0024 16BF     		itet	ne
+  82 0026 4359     		ldrne	r3, [r0, r5]
+  83 0028 2346     		moveq	r3, r4
+  84 002a 1B59     		ldrne	r3, [r3, r4]
+  85 002c 2844     		add	r0, r0, r5
+  86 002e 3146     		mov	r1, r6
+  87 0030 9847     		blx	r3
+  88 0032 0028     		cmp	r0, #0
+  89 0034 0CBF     		ite	eq
+  90 0036 6FF00600 		mvneq	r0, #6
+  91 003a 0020     		movne	r0, #0
+  92 003c 01E0     		b	.L6
+  93              	.L8:
+  94 003e 6FF00900 		mvn	r0, #9
+  95              	.L6:
+  96 0042 03B0     		add	sp, sp, #12
+  97              		@ sp needed
+  98 0044 F0BD     		pop	{r4, r5, r6, r7, pc}
+  99              		.size	_ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2
+ 100              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc2SxVdx.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_generic_subscriber.cpp
+     /tmp/cc2SxVdx.s:16     .text._ZN6uavcan5INode13getDispatcherEv:0000000000000000 $t
+     /tmp/cc2SxVdx.s:21     .text._ZN6uavcan5INode13getDispatcherEv:0000000000000000 _ZN6uavcan5INode13getDispatcherEv
+     /tmp/cc2SxVdx.s:32     .text._ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE:0000000000000000 $t
+     /tmp/cc2SxVdx.s:37     .text._ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE:0000000000000000 _ZN6uavcan21GenericSubscriberBase4stopEPNS_16TransferListenerE
+     /tmp/cc2SxVdx.s:61     .text._ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E:0000000000000000 $t
+     /tmp/cc2SxVdx.s:66     .text._ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E:0000000000000000 _ZN6uavcan21GenericSubscriberBase12genericStartEPNS_16TransferListenerEMNS_10DispatcherEFbS2_E
+
+UNDEFINED SYMBOLS
+_ZN6uavcan10Dispatcher25unregisterMessageListenerEPNS_16TransferListenerE
+_ZN6uavcan10Dispatcher32unregisterServiceRequestListenerEPNS_16TransferListenerE
+_ZN6uavcan10Dispatcher33unregisterServiceResponseListenerEPNS_16TransferListenerE

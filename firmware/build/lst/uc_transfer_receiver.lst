@@ -1,0 +1,612 @@
+ARM GAS  /tmp/ccm8NzAt.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_transfer_receiver.cpp"
+  15              		.section	.text._ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv, %function
+  21              	_ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0B8B     		ldrh	r3, [r1, #24]
+  26 0002 4FF47A72 		mov	r2, #1000
+  27 0006 A3FB0223 		umull	r2, r3, r3, r2
+  28 000a C0E90023 		strd	r2, [r0]
+  29 000e 7047     		bx	lr
+  30              		.size	_ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv, .-_ZNK6uavcan16TransferReceiver19getIf
+  31              		.section	.text._ZNK6uavcan16TransferReceiver13getTidTimeoutEv,"ax",%progbits
+  32              		.align	1
+  33              		.global	_ZNK6uavcan16TransferReceiver13getTidTimeoutEv
+  34              		.thumb
+  35              		.thumb_func
+  36              		.type	_ZNK6uavcan16TransferReceiver13getTidTimeoutEv, %function
+  37              	_ZNK6uavcan16TransferReceiver13getTidTimeoutEv:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 024A     		ldr	r2, .L3
+  42 0002 0023     		movs	r3, #0
+  43 0004 C0E90023 		strd	r2, [r0]
+  44 0008 7047     		bx	lr
+  45              	.L4:
+  46 000a 00BF     		.align	2
+  47              	.L3:
+  48 000c 40420F00 		.word	1000000
+  49              		.size	_ZNK6uavcan16TransferReceiver13getTidTimeoutEv, .-_ZNK6uavcan16TransferReceiver13getTidTimeo
+  50              		.section	.text._ZNK6uavcan16TransferReceiver13registerErrorEv,"ax",%progbits
+  51              		.align	1
+  52              		.global	_ZNK6uavcan16TransferReceiver13registerErrorEv
+  53              		.thumb
+  54              		.thumb_func
+  55              		.type	_ZNK6uavcan16TransferReceiver13registerErrorEv, %function
+  56              	_ZNK6uavcan16TransferReceiver13registerErrorEv:
+  57              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccm8NzAt.s 			page 2
+
+
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  60 0000 C37F     		ldrb	r3, [r0, #31]	@ zero_extendqisi2
+  61 0002 C3F3C402 		ubfx	r2, r3, #3, #5
+  62 0006 0132     		adds	r2, r2, #1
+  63 0008 62F3C703 		bfi	r3, r2, #3, #5
+  64 000c C377     		strb	r3, [r0, #31]
+  65 000e 7047     		bx	lr
+  66              		.size	_ZNK6uavcan16TransferReceiver13registerErrorEv, .-_ZNK6uavcan16TransferReceiver13registerErr
+  67              		.global	__aeabi_ldivmod
+  68              		.section	.text._ZN6uavcan16TransferReceiver21updateTransferTimingsEv,"ax",%progbits
+  69              		.align	1
+  70              		.global	_ZN6uavcan16TransferReceiver21updateTransferTimingsEv
+  71              		.thumb
+  72              		.thumb_func
+  73              		.type	_ZN6uavcan16TransferReceiver21updateTransferTimingsEv, %function
+  74              	_ZN6uavcan16TransferReceiver21updateTransferTimingsEv:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 0000 10B5     		push	{r4, lr}
+  78 0002 0146     		mov	r1, r0
+  79 0004 0446     		mov	r4, r0
+  80 0006 F1E80223 		ldrd	r2, [r1], #8
+  81 000a 03C9     		ldmia	r1, {r0, r1}
+  82 000c 84E80300 		stmia	r4, {r0, r1}
+  83 0010 52EA0301 		orrs	r1, r2, r3
+  84 0014 26D0     		beq	.L6
+  85 0016 D4E90001 		ldrd	r0, [r4]
+  86 001a 50EA010E 		orrs	lr, r0, r1
+  87 001e 21D0     		beq	.L6
+  88 0020 9942     		cmp	r1, r3
+  89 0022 08BF     		it	eq
+  90 0024 9042     		cmpeq	r0, r2
+  91 0026 00D2     		bcs	.L8
+  92 0028 10BD     		pop	{r4, pc}
+  93              	.L8:
+  94 002a 801A     		subs	r0, r0, r2
+  95 002c 61EB0301 		sbc	r1, r1, r3
+  96 0030 4FF47A72 		mov	r2, #1000
+  97 0034 0023     		movs	r3, #0
+  98 0036 FFF7FEFF 		bl	__aeabi_ldivmod
+  99 003a 4FF6FF72 		movw	r2, #65535
+ 100 003e 0023     		movs	r3, #0
+ 101 0040 8B42     		cmp	r3, r1
+ 102 0042 08BF     		it	eq
+ 103 0044 8242     		cmpeq	r2, r0
+ 104 0046 01D2     		bcs	.L10
+ 105 0048 1046     		mov	r0, r2
+ 106 004a 1946     		mov	r1, r3
+ 107              	.L10:
+ 108 004c 50EA0103 		orrs	r3, r0, r1
+ 109 0050 238B     		ldrh	r3, [r4, #24]
+ 110 0052 04BF     		itt	eq
+ 111 0054 0120     		moveq	r0, #1
+ 112 0056 0021     		moveq	r1, #0
+ 113 0058 0722     		movs	r2, #7
+ 114 005a E3FB0201 		umlal	r0, r1, r3, r2
+ARM GAS  /tmp/ccm8NzAt.s 			page 3
+
+
+ 115 005e C008     		lsrs	r0, r0, #3
+ 116 0060 2083     		strh	r0, [r4, #24]	@ movhi
+ 117 0062 10BD     		pop	{r4, pc}
+ 118              	.L6:
+ 119 0064 10BD     		pop	{r4, pc}
+ 120              		.size	_ZN6uavcan16TransferReceiver21updateTransferTimingsEv, .-_ZN6uavcan16TransferReceiver21updat
+ 121              		.section	.text._ZN6uavcan16TransferReceiver22prepareForNextTransferEv,"ax",%progbits
+ 122              		.align	1
+ 123              		.global	_ZN6uavcan16TransferReceiver22prepareForNextTransferEv
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	_ZN6uavcan16TransferReceiver22prepareForNextTransferEv, %function
+ 127              	_ZN6uavcan16TransferReceiver22prepareForNextTransferEv:
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              		@ link register save eliminated.
+ 131 0000 837F     		ldrb	r3, [r0, #30]	@ zero_extendqisi2
+ 132 0002 0133     		adds	r3, r3, #1
+ 133 0004 03F01F03 		and	r3, r3, #31
+ 134 0008 8377     		strb	r3, [r0, #30]
+ 135 000a C37F     		ldrb	r3, [r0, #31]	@ zero_extendqisi2
+ 136 000c 6FF30003 		bfc	r3, #0, #1
+ 137 0010 C377     		strb	r3, [r0, #31]
+ 138 0012 0023     		movs	r3, #0
+ 139 0014 8383     		strh	r3, [r0, #28]	@ movhi
+ 140 0016 7047     		bx	lr
+ 141              		.size	_ZN6uavcan16TransferReceiver22prepareForNextTransferEv, .-_ZN6uavcan16TransferReceiver22prep
+ 142              		.section	.text._ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE,"ax",%progbits
+ 143              		.align	1
+ 144              		.global	_ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE
+ 145              		.thumb
+ 146              		.thumb_func
+ 147              		.type	_ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE, %function
+ 148              	_ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE:
+ 149              		@ args = 0, pretend = 0, frame = 0
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151 0000 10B5     		push	{r4, lr}
+ 152 0002 C37F     		ldrb	r3, [r0, #31]	@ zero_extendqisi2
+ 153 0004 91F83020 		ldrb	r2, [r1, #48]	@ zero_extendqisi2
+ 154 0008 C3F34104 		ubfx	r4, r3, #1, #2
+ 155 000c 9442     		cmp	r4, r2
+ 156 000e 1CD1     		bne	.L36
+ 157 0010 CA7D     		ldrb	r2, [r1, #23]	@ zero_extendqisi2
+ 158 0012 42B1     		cbz	r2, .L25
+ 159 0014 0A7E     		ldrb	r2, [r1, #24]	@ zero_extendqisi2
+ 160 0016 12B9     		cbnz	r2, .L26
+ 161 0018 0A69     		ldr	r2, [r1, #16]
+ 162 001a 012A     		cmp	r2, #1
+ 163 001c 0FD9     		bls	.L27
+ 164              	.L26:
+ 165 001e 4A7E     		ldrb	r2, [r1, #25]	@ zero_extendqisi2
+ 166 0020 6AB9     		cbnz	r2, .L27
+ 167 0022 828B     		ldrh	r2, [r0, #28]
+ 168 0024 9AB9     		cbnz	r2, .L28
+ 169              	.L25:
+ 170 0026 C37F     		ldrb	r3, [r0, #31]	@ zero_extendqisi2
+ 171 0028 4C7E     		ldrb	r4, [r1, #25]	@ zero_extendqisi2
+ARM GAS  /tmp/ccm8NzAt.s 			page 4
+
+
+ 172 002a 03F00102 		and	r2, r3, #1
+ 173 002e 9442     		cmp	r4, r2
+ 174 0030 05D1     		bne	.L27
+ 175 0032 897D     		ldrb	r1, [r1, #22]	@ zero_extendqisi2
+ 176 0034 827F     		ldrb	r2, [r0, #30]	@ zero_extendqisi2
+ 177 0036 9142     		cmp	r1, r2
+ 178 0038 01D1     		bne	.L27
+ 179 003a 0120     		movs	r0, #1
+ 180 003c 10BD     		pop	{r4, pc}
+ 181              	.L27:
+ 182 003e C3F3C402 		ubfx	r2, r3, #3, #5
+ 183 0042 0132     		adds	r2, r2, #1
+ 184 0044 62F3C703 		bfi	r3, r2, #3, #5
+ 185 0048 C377     		strb	r3, [r0, #31]
+ 186              	.L36:
+ 187 004a 0020     		movs	r0, #0
+ 188 004c 10BD     		pop	{r4, pc}
+ 189              	.L28:
+ 190 004e C3F3C402 		ubfx	r2, r3, #3, #5
+ 191 0052 0132     		adds	r2, r2, #1
+ 192 0054 62F3C703 		bfi	r3, r2, #3, #5
+ 193 0058 C377     		strb	r3, [r0, #31]
+ 194 005a E4E7     		b	.L25
+ 195              		.size	_ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE, .-_ZNK6uavcan16TransferReceiver8valid
+ 196              		.section	.text._ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE,"ax
+ 197              		.align	1
+ 198              		.global	_ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE
+ 199              		.thumb
+ 200              		.thumb_func
+ 201              		.type	_ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE, %function
+ 202              	_ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE:
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205 0000 70B5     		push	{r4, r5, r6, lr}
+ 206 0002 0446     		mov	r4, r0
+ 207 0004 1046     		mov	r0, r2
+ 208 0006 CA7D     		ldrb	r2, [r1, #23]	@ zero_extendqisi2
+ 209 0008 0B46     		mov	r3, r1
+ 210 000a 0D69     		ldr	r5, [r1, #16]
+ 211 000c 7AB1     		cbz	r2, .L38
+ 212 000e 012D     		cmp	r5, #1
+ 213 0010 01D8     		bhi	.L39
+ 214              	.L41:
+ 215 0012 0020     		movs	r0, #0
+ 216 0014 70BD     		pop	{r4, r5, r6, pc}
+ 217              	.L39:
+ 218 0016 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 219 0018 023D     		subs	r5, r5, #2
+ 220 001a 6283     		strh	r2, [r4, #26]	@ movhi
+ 221 001c 4978     		ldrb	r1, [r1, #1]	@ zero_extendqisi2
+ 222 001e 42EA0122 		orr	r2, r2, r1, lsl #8
+ 223 0022 6283     		strh	r2, [r4, #26]	@ movhi
+ 224 0024 0268     		ldr	r2, [r0]
+ 225 0026 A18B     		ldrh	r1, [r4, #28]
+ 226 0028 D668     		ldr	r6, [r2, #12]
+ 227 002a 9A1C     		adds	r2, r3, #2
+ 228 002c 03E0     		b	.L44
+ARM GAS  /tmp/ccm8NzAt.s 			page 5
+
+
+ 229              	.L38:
+ 230 002e 0268     		ldr	r2, [r0]
+ 231 0030 A18B     		ldrh	r1, [r4, #28]
+ 232 0032 D668     		ldr	r6, [r2, #12]
+ 233 0034 1A46     		mov	r2, r3
+ 234              	.L44:
+ 235 0036 2B46     		mov	r3, r5
+ 236 0038 B047     		blx	r6
+ 237 003a A842     		cmp	r0, r5
+ 238 003c E9D1     		bne	.L41
+ 239 003e A38B     		ldrh	r3, [r4, #28]
+ 240 0040 1844     		add	r0, r0, r3
+ 241 0042 A083     		strh	r0, [r4, #28]	@ movhi
+ 242 0044 0120     		movs	r0, #1
+ 243 0046 70BD     		pop	{r4, r5, r6, pc}
+ 244              		.size	_ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE, .-_ZN6uavca
+ 245              		.section	.text._ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE,"a
+ 246              		.align	1
+ 247              		.global	_ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE
+ 248              		.thumb
+ 249              		.thumb_func
+ 250              		.type	_ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE, %function
+ 251              	_ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE:
+ 252              		@ args = 0, pretend = 0, frame = 0
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254 0000 CB7D     		ldrb	r3, [r1, #23]	@ zero_extendqisi2
+ 255 0002 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 256 0006 0546     		mov	r5, r0
+ 257 0008 0E46     		mov	r6, r1
+ 258 000a 1746     		mov	r7, r2
+ 259 000c 3BB1     		cbz	r3, .L46
+ 260 000e D1E90823 		ldrd	r2, [r1, #32]
+ 261 0012 C0E90223 		strd	r2, [r0, #8]
+ 262 0016 D1E90A23 		ldrd	r2, [r1, #40]
+ 263 001a C0E90423 		strd	r2, [r0, #16]
+ 264              	.L46:
+ 265 001e F37D     		ldrb	r3, [r6, #23]	@ zero_extendqisi2
+ 266 0020 07F10408 		add	r8, r7, #4
+ 267 0024 83B1     		cbz	r3, .L47
+ 268 0026 337E     		ldrb	r3, [r6, #24]	@ zero_extendqisi2
+ 269 0028 73B1     		cbz	r3, .L47
+ 270 002a 4146     		mov	r1, r8
+ 271 002c 3868     		ldr	r0, [r7]
+ 272 002e FFF7FEFF 		bl	_ZN6uavcan21TransferBufferManager6removeERKNS_24TransferBufferManagerKeyE
+ 273 0032 2846     		mov	r0, r5
+ 274 0034 FFF7FEFF 		bl	_ZN6uavcan16TransferReceiver21updateTransferTimingsEv
+ 275 0038 2846     		mov	r0, r5
+ 276 003a FFF7FEFF 		bl	_ZN6uavcan16TransferReceiver22prepareForNextTransferEv
+ 277 003e 0023     		movs	r3, #0
+ 278 0040 6B83     		strh	r3, [r5, #26]	@ movhi
+ 279 0042 0220     		movs	r0, #2
+ 280 0044 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 281              	.L47:
+ 282 0048 3868     		ldr	r0, [r7]
+ 283 004a 4146     		mov	r1, r8
+ 284 004c FFF7FEFF 		bl	_ZN6uavcan21TransferBufferManager6accessERKNS_24TransferBufferManagerKeyE
+ 285 0050 0446     		mov	r4, r0
+ARM GAS  /tmp/ccm8NzAt.s 			page 6
+
+
+ 286 0052 28B9     		cbnz	r0, .L49
+ 287 0054 3868     		ldr	r0, [r7]
+ 288 0056 4146     		mov	r1, r8
+ 289 0058 FFF7FEFF 		bl	_ZN6uavcan21TransferBufferManager6createERKNS_24TransferBufferManagerKeyE
+ 290 005c 0446     		mov	r4, r0
+ 291 005e 50B1     		cbz	r0, .L61
+ 292              	.L49:
+ 293 0060 2246     		mov	r2, r4
+ 294 0062 2846     		mov	r0, r5
+ 295 0064 3146     		mov	r1, r6
+ 296 0066 FFF7FEFF 		bl	_ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE
+ 297 006a 0446     		mov	r4, r0
+ 298 006c 80B9     		cbnz	r0, .L51
+ 299 006e 3868     		ldr	r0, [r7]
+ 300 0070 4146     		mov	r1, r8
+ 301 0072 FFF7FEFF 		bl	_ZN6uavcan21TransferBufferManager6removeERKNS_24TransferBufferManagerKeyE
+ 302              	.L61:
+ 303 0076 2846     		mov	r0, r5
+ 304 0078 FFF7FEFF 		bl	_ZN6uavcan16TransferReceiver22prepareForNextTransferEv
+ 305 007c EB7F     		ldrb	r3, [r5, #31]	@ zero_extendqisi2
+ 306 007e 2046     		mov	r0, r4
+ 307 0080 C3F3C402 		ubfx	r2, r3, #3, #5
+ 308 0084 0132     		adds	r2, r2, #1
+ 309 0086 62F3C703 		bfi	r3, r2, #3, #5
+ 310 008a EB77     		strb	r3, [r5, #31]
+ 311 008c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 312              	.L51:
+ 313 0090 EB7F     		ldrb	r3, [r5, #31]	@ zero_extendqisi2
+ 314 0092 03F00102 		and	r2, r3, #1
+ 315 0096 82F00102 		eor	r2, r2, #1
+ 316 009a 62F30003 		bfi	r3, r2, #0, #1
+ 317 009e EB77     		strb	r3, [r5, #31]
+ 318 00a0 307E     		ldrb	r0, [r6, #24]	@ zero_extendqisi2
+ 319 00a2 40B1     		cbz	r0, .L60
+ 320 00a4 2846     		mov	r0, r5
+ 321 00a6 FFF7FEFF 		bl	_ZN6uavcan16TransferReceiver21updateTransferTimingsEv
+ 322 00aa 2846     		mov	r0, r5
+ 323 00ac FFF7FEFF 		bl	_ZN6uavcan16TransferReceiver22prepareForNextTransferEv
+ 324 00b0 0120     		movs	r0, #1
+ 325 00b2 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 326              	.L60:
+ 327 00b6 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 328              		.size	_ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE, .-_ZN6uavc
+ 329              		.section	.text._ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE,"ax",%progbits
+ 330              		.align	1
+ 331              		.global	_ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE
+ 332              		.thumb
+ 333              		.thumb_func
+ 334              		.type	_ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE, %function
+ 335              	_ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE:
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339 0000 D1E90023 		ldrd	r2, [r1]
+ 340 0004 00F10801 		add	r1, r0, #8
+ 341 0008 D1E90001 		ldrd	r0, [r1]
+ 342 000c 121A     		subs	r2, r2, r0
+ARM GAS  /tmp/ccm8NzAt.s 			page 7
+
+
+ 343 000e 0648     		ldr	r0, .L65
+ 344 0010 63EB0103 		sbc	r3, r3, r1
+ 345 0014 9042     		cmp	r0, r2
+ 346 0016 4FF00001 		mov	r1, #0
+ 347 001a 71EB0303 		sbcs	r3, r1, r3
+ 348 001e B4BF     		ite	lt
+ 349 0020 0120     		movlt	r0, #1
+ 350 0022 0020     		movge	r0, #0
+ 351 0024 7047     		bx	lr
+ 352              	.L66:
+ 353 0026 00BF     		.align	2
+ 354              	.L65:
+ 355 0028 40420F00 		.word	1000000
+ 356              		.size	_ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE, .-_ZNK6uavcan16TransferReceiv
+ 357              		.section	.text._ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE,"
+ 358              		.align	1
+ 359              		.global	_ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE
+ 360              		.thumb
+ 361              		.thumb_func
+ 362              		.type	_ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE, %function
+ 363              	_ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE:
+ 364              		@ args = 0, pretend = 0, frame = 16
+ 365              		@ frame_needed = 0, uses_anonymous_args = 0
+ 366 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 367 0004 0446     		mov	r4, r0
+ 368 0006 0D46     		mov	r5, r1
+ 369 0008 D1E90801 		ldrd	r0, [r1, #32]
+ 370 000c 50EA0103 		orrs	r3, r0, r1
+ 371 0010 85B0     		sub	sp, sp, #20
+ 372 0012 1746     		mov	r7, r2
+ 373 0014 01D1     		bne	.L68
+ 374              	.L70:
+ 375 0016 0020     		movs	r0, #0
+ 376 0018 87E0     		b	.L94
+ 377              	.L68:
+ 378 001a D4E90023 		ldrd	r2, [r4]
+ 379 001e 9942     		cmp	r1, r3
+ 380 0020 08BF     		it	eq
+ 381 0022 9042     		cmpeq	r0, r2
+ 382 0024 F7D3     		bcc	.L70
+ 383 0026 D4E90223 		ldrd	r2, [r4, #8]
+ 384 002a 9942     		cmp	r1, r3
+ 385 002c 08BF     		it	eq
+ 386 002e 9042     		cmpeq	r0, r2
+ 387 0030 F1D3     		bcc	.L70
+ 388 0032 0DF10808 		add	r8, sp, #8
+ 389 0036 05F12003 		add	r3, r5, #32
+ 390 003a 93E80300 		ldmia	r3, {r0, r1}
+ 391 003e 88E80300 		stmia	r8, {r0, r1}
+ 392 0042 4146     		mov	r1, r8
+ 393 0044 2046     		mov	r0, r4
+ 394 0046 FFF7FEFF 		bl	_ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE
+ 395 004a E67F     		ldrb	r6, [r4, #31]	@ zero_extendqisi2
+ 396 004c 0090     		str	r0, [sp]
+ 397 004e C6F34103 		ubfx	r3, r6, #1, #2
+ 398 0052 A97D     		ldrb	r1, [r5, #22]	@ zero_extendqisi2
+ 399 0054 04F11E00 		add	r0, r4, #30
+ARM GAS  /tmp/ccm8NzAt.s 			page 8
+
+
+ 400 0058 06F00609 		and	r9, r6, #6
+ 401 005c 0193     		str	r3, [sp, #4]
+ 402 005e 95F830A0 		ldrb	r10, [r5, #48]	@ zero_extendqisi2
+ 403 0062 EE7D     		ldrb	r6, [r5, #23]	@ zero_extendqisi2
+ 404 0064 FFF7FEFF 		bl	_ZNK6uavcan10TransferID22computeForwardDistanceES0_
+ 405 0068 AB7D     		ldrb	r3, [r5, #22]	@ zero_extendqisi2
+ 406 006a A17F     		ldrb	r1, [r4, #30]	@ zero_extendqisi2
+ 407 006c 8346     		mov	fp, r0
+ 408 006e 4046     		mov	r0, r8
+ 409 0070 8DF80830 		strb	r3, [sp, #8]
+ 410 0074 FFF7FEFF 		bl	_ZNK6uavcan10TransferID22computeForwardDistanceES0_
+ 411 0078 D4E90223 		ldrd	r2, [r4, #8]
+ 412 007c 8646     		mov	lr, r0
+ 413 007e D5E90801 		ldrd	r0, [r5, #32]
+ 414 0082 801A     		subs	r0, r0, r2
+ 415 0084 61EB0301 		sbc	r1, r1, r3
+ 416 0088 B9F1060F 		cmp	r9, #6
+ 417 008c 0B46     		mov	r3, r1
+ 418 008e 0246     		mov	r2, r0
+ 419 0090 218B     		ldrh	r1, [r4, #24]
+ 420 0092 19D0     		beq	.L73
+ 421 0094 0098     		ldr	r0, [sp]
+ 422 0096 98B9     		cbnz	r0, .L74
+ 423 0098 4FF47A78 		mov	r8, #1000
+ 424 009c A1FB0889 		umull	r8, r9, r1, r8
+ 425 00a0 0199     		ldr	r1, [sp, #4]
+ 426 00a2 8A45     		cmp	r10, r1
+ 427 00a4 04D1     		bne	.L75
+ 428 00a6 66B3     		cbz	r6, .L76
+ 429 00a8 BEF1010F 		cmp	lr, #1
+ 430 00ac 08DC     		bgt	.L74
+ 431 00ae 24E0     		b	.L98
+ 432              	.L75:
+ 433 00b0 9045     		cmp	r8, r2
+ 434 00b2 79EB0303 		sbcs	r3, r9, r3
+ 435 00b6 24DA     		bge	.L76
+ 436 00b8 1EB3     		cbz	r6, .L76
+ 437              	.L81:
+ 438 00ba BBF10F0F 		cmp	fp, #15
+ 439 00be 20DC     		bgt	.L76
+ 440              	.L74:
+ 441 00c0 A27F     		ldrb	r2, [r4, #30]	@ zero_extendqisi2
+ 442 00c2 AB7D     		ldrb	r3, [r5, #22]	@ zero_extendqisi2
+ 443 00c4 9A42     		cmp	r2, r3
+ 444 00c6 28D1     		bne	.L78
+ 445              	.L73:
+ 446 00c8 3868     		ldr	r0, [r7]
+ 447 00ca 391D     		adds	r1, r7, #4
+ 448 00cc FFF7FEFF 		bl	_ZN6uavcan21TransferBufferManager6removeERKNS_24TransferBufferManagerKeyE
+ 449 00d0 95F83020 		ldrb	r2, [r5, #48]	@ zero_extendqisi2
+ 450 00d4 E37F     		ldrb	r3, [r4, #31]	@ zero_extendqisi2
+ 451 00d6 62F34203 		bfi	r3, r2, #1, #2
+ 452 00da E377     		strb	r3, [r4, #31]
+ 453 00dc E27F     		ldrb	r2, [r4, #31]	@ zero_extendqisi2
+ 454 00de AB7D     		ldrb	r3, [r5, #22]	@ zero_extendqisi2
+ 455 00e0 6FF30002 		bfc	r2, #0, #1
+ 456 00e4 E277     		strb	r2, [r4, #31]
+ARM GAS  /tmp/ccm8NzAt.s 			page 9
+
+
+ 457 00e6 0022     		movs	r2, #0
+ 458 00e8 A377     		strb	r3, [r4, #30]
+ 459 00ea A283     		strh	r2, [r4, #28]	@ movhi
+ 460 00ec 6283     		strh	r2, [r4, #26]	@ movhi
+ 461 00ee 46B9     		cbnz	r6, .L76
+ 462 00f0 0133     		adds	r3, r3, #1
+ 463 00f2 03F01F03 		and	r3, r3, #31
+ 464 00f6 A377     		strb	r3, [r4, #30]
+ 465 00f8 8DE7     		b	.L70
+ 466              	.L98:
+ 467 00fa 9045     		cmp	r8, r2
+ 468 00fc 79EB0303 		sbcs	r3, r9, r3
+ 469 0100 DBDB     		blt	.L81
+ 470              	.L76:
+ 471 0102 2046     		mov	r0, r4
+ 472 0104 2946     		mov	r1, r5
+ 473 0106 FFF7FEFF 		bl	_ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE
+ 474 010a 0028     		cmp	r0, #0
+ 475 010c 83D0     		beq	.L70
+ 476 010e 2046     		mov	r0, r4
+ 477 0110 2946     		mov	r1, r5
+ 478 0112 3A46     		mov	r2, r7
+ 479 0114 FFF7FEFF 		bl	_ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE
+ 480 0118 07E0     		b	.L94
+ 481              	.L78:
+ 482 011a E37F     		ldrb	r3, [r4, #31]	@ zero_extendqisi2
+ 483 011c C3F3C402 		ubfx	r2, r3, #3, #5
+ 484 0120 0132     		adds	r2, r2, #1
+ 485 0122 62F3C703 		bfi	r3, r2, #3, #5
+ 486 0126 E377     		strb	r3, [r4, #31]
+ 487 0128 CEE7     		b	.L73
+ 488              	.L94:
+ 489 012a 05B0     		add	sp, sp, #20
+ 490              		@ sp needed
+ 491 012c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 492              		.size	_ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE, .-_ZN6uav
+ 493              		.section	.text._ZN6uavcan16TransferReceiver15yieldErrorCountEv,"ax",%progbits
+ 494              		.align	1
+ 495              		.global	_ZN6uavcan16TransferReceiver15yieldErrorCountEv
+ 496              		.thumb
+ 497              		.thumb_func
+ 498              		.type	_ZN6uavcan16TransferReceiver15yieldErrorCountEv, %function
+ 499              	_ZN6uavcan16TransferReceiver15yieldErrorCountEv:
+ 500              		@ args = 0, pretend = 0, frame = 0
+ 501              		@ frame_needed = 0, uses_anonymous_args = 0
+ 502              		@ link register save eliminated.
+ 503 0000 C37F     		ldrb	r3, [r0, #31]	@ zero_extendqisi2
+ 504 0002 1A46     		mov	r2, r3
+ 505 0004 6FF3C702 		bfc	r2, #3, #5
+ 506 0008 C277     		strb	r2, [r0, #31]
+ 507 000a D808     		lsrs	r0, r3, #3
+ 508 000c 7047     		bx	lr
+ 509              		.size	_ZN6uavcan16TransferReceiver15yieldErrorCountEv, .-_ZN6uavcan16TransferReceiver15yieldErrorC
+ 510              		.global	_ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE
+ 511              		.global	_ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE
+ 512              		.global	_ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE
+ 513              		.global	_ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE
+ARM GAS  /tmp/ccm8NzAt.s 			page 10
+
+
+ 514              		.section	.rodata._ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE,"a",%progbits
+ 515              		.align	1
+ 516              		.type	_ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE, %object
+ 517              		.size	_ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE, 2
+ 518              	_ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE:
+ 519 0000 E803     		.short	1000
+ 520              		.section	.rodata._ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE,"a",%progbits
+ 521              		.align	1
+ 522              		.type	_ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE, %object
+ 523              		.size	_ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE, 2
+ 524              	_ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE:
+ 525 0000 0100     		.short	1
+ 526              		.section	.rodata._ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE,"a",%progbits
+ 527              		.align	1
+ 528              		.type	_ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE, %object
+ 529              		.size	_ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE, 2
+ 530              	_ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE:
+ 531 0000 E803     		.short	1000
+ 532              		.section	.rodata._ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE,"a",%progbits
+ 533              		.align	1
+ 534              		.type	_ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE, %object
+ 535              		.size	_ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE, 2
+ 536              	_ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE:
+ 537 0000 FFFF     		.short	-1
+ 538              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccm8NzAt.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_transfer_receiver.cpp
+     /tmp/ccm8NzAt.s:16     .text._ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv:0000000000000000 $t
+     /tmp/ccm8NzAt.s:21     .text._ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv:0000000000000000 _ZNK6uavcan16TransferReceiver19getIfaceSwitchDelayEv
+     /tmp/ccm8NzAt.s:32     .text._ZNK6uavcan16TransferReceiver13getTidTimeoutEv:0000000000000000 $t
+     /tmp/ccm8NzAt.s:37     .text._ZNK6uavcan16TransferReceiver13getTidTimeoutEv:0000000000000000 _ZNK6uavcan16TransferReceiver13getTidTimeoutEv
+     /tmp/ccm8NzAt.s:48     .text._ZNK6uavcan16TransferReceiver13getTidTimeoutEv:000000000000000c $d
+     /tmp/ccm8NzAt.s:51     .text._ZNK6uavcan16TransferReceiver13registerErrorEv:0000000000000000 $t
+     /tmp/ccm8NzAt.s:56     .text._ZNK6uavcan16TransferReceiver13registerErrorEv:0000000000000000 _ZNK6uavcan16TransferReceiver13registerErrorEv
+     /tmp/ccm8NzAt.s:69     .text._ZN6uavcan16TransferReceiver21updateTransferTimingsEv:0000000000000000 $t
+     /tmp/ccm8NzAt.s:74     .text._ZN6uavcan16TransferReceiver21updateTransferTimingsEv:0000000000000000 _ZN6uavcan16TransferReceiver21updateTransferTimingsEv
+     /tmp/ccm8NzAt.s:122    .text._ZN6uavcan16TransferReceiver22prepareForNextTransferEv:0000000000000000 $t
+     /tmp/ccm8NzAt.s:127    .text._ZN6uavcan16TransferReceiver22prepareForNextTransferEv:0000000000000000 _ZN6uavcan16TransferReceiver22prepareForNextTransferEv
+     /tmp/ccm8NzAt.s:143    .text._ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE:0000000000000000 $t
+     /tmp/ccm8NzAt.s:148    .text._ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE:0000000000000000 _ZNK6uavcan16TransferReceiver8validateERKNS_7RxFrameE
+     /tmp/ccm8NzAt.s:197    .text._ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE:0000000000000000 $t
+     /tmp/ccm8NzAt.s:202    .text._ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE:0000000000000000 _ZN6uavcan16TransferReceiver12writePayloadERKNS_7RxFrameERNS_15ITransferBufferE
+     /tmp/ccm8NzAt.s:246    .text._ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE:0000000000000000 $t
+     /tmp/ccm8NzAt.s:251    .text._ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE:0000000000000000 _ZN6uavcan16TransferReceiver7receiveERKNS_7RxFrameERNS_22TransferBufferAccessorE
+     /tmp/ccm8NzAt.s:330    .text._ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccm8NzAt.s:335    .text._ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE:0000000000000000 _ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE
+     /tmp/ccm8NzAt.s:355    .text._ZNK6uavcan16TransferReceiver10isTimedOutENS_13MonotonicTimeE:0000000000000028 $d
+     /tmp/ccm8NzAt.s:358    .text._ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE:0000000000000000 $t
+     /tmp/ccm8NzAt.s:363    .text._ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE:0000000000000000 _ZN6uavcan16TransferReceiver8addFrameERKNS_7RxFrameERNS_22TransferBufferAccessorE
+     /tmp/ccm8NzAt.s:494    .text._ZN6uavcan16TransferReceiver15yieldErrorCountEv:0000000000000000 $t
+     /tmp/ccm8NzAt.s:499    .text._ZN6uavcan16TransferReceiver15yieldErrorCountEv:0000000000000000 _ZN6uavcan16TransferReceiver15yieldErrorCountEv
+     /tmp/ccm8NzAt.s:518    .rodata._ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE:0000000000000000 _ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE
+     /tmp/ccm8NzAt.s:530    .rodata._ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE:0000000000000000 _ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE
+     /tmp/ccm8NzAt.s:536    .rodata._ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE:0000000000000000 _ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE
+     /tmp/ccm8NzAt.s:524    .rodata._ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE:0000000000000000 _ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE
+     /tmp/ccm8NzAt.s:515    .rodata._ZN6uavcan16TransferReceiver21DefaultTidTimeoutMSecE:0000000000000000 $d
+     /tmp/ccm8NzAt.s:521    .rodata._ZN6uavcan16TransferReceiver23MinTransferIntervalMSecE:0000000000000000 $d
+     /tmp/ccm8NzAt.s:527    .rodata._ZN6uavcan16TransferReceiver27DefaultTransferIntervalMSecE:0000000000000000 $d
+     /tmp/ccm8NzAt.s:533    .rodata._ZN6uavcan16TransferReceiver23MaxTransferIntervalMSecE:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+__aeabi_ldivmod
+_ZN6uavcan21TransferBufferManager6removeERKNS_24TransferBufferManagerKeyE
+_ZN6uavcan21TransferBufferManager6accessERKNS_24TransferBufferManagerKeyE
+_ZN6uavcan21TransferBufferManager6createERKNS_24TransferBufferManagerKeyE
+_ZNK6uavcan10TransferID22computeForwardDistanceES0_

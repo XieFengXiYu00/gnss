@@ -1,0 +1,2047 @@
+ARM GAS  /tmp/cct1mH4m.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"ublox.cpp"
+  15              		.section	.text._ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9
+  16              		.align	1
+  17              		.weak	_ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessage
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessage
+  21              	_ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessageEEEPS4_
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 022A     		cmp	r2, #2
+  25 0002 38B5     		push	{r3, r4, r5, lr}
+  26 0004 0446     		mov	r4, r0
+  27 0006 05D0     		beq	.L3
+  28 0008 032A     		cmp	r2, #3
+  29 000a 0ED0     		beq	.L4
+  30 000c 012A     		cmp	r2, #1
+  31 000e 0FD1     		bne	.L2
+  32 0010 0B68     		ldr	r3, [r1]
+  33 0012 08E0     		b	.L6
+  34              	.L3:
+  35 0014 0C20     		movs	r0, #12
+  36 0016 0D68     		ldr	r5, [r1]
+  37 0018 FFF7FEFF 		bl	_Znwj
+  38 001c 0346     		mov	r3, r0
+  39 001e 95E80700 		ldmia	r5, {r0, r1, r2}
+  40 0022 83E80700 		stmia	r3, {r0, r1, r2}
+  41              	.L6:
+  42 0026 2360     		str	r3, [r4]
+  43 0028 02E0     		b	.L2
+  44              	.L4:
+  45 002a 0068     		ldr	r0, [r0]
+  46 002c FFF7FEFF 		bl	_ZdlPv
+  47              	.L2:
+  48 0030 0020     		movs	r0, #0
+  49 0032 38BD     		pop	{r3, r4, r5, pc}
+  50              		.size	_ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessage
+  51              		.global	__aeabi_f2d
+  52              		.global	__aeabi_ddiv
+  53              		.global	__aeabi_dadd
+  54              		.global	__aeabi_d2ulz
+  55              		.section	.text._ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14,"
+  56              		.align	1
+  57              		.thumb
+ARM GAS  /tmp/cct1mH4m.s 			page 2
+
+
+  58              		.thumb_func
+  59              		.type	_ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14, %function
+  60              	_ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14:
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  64 0002 0546     		mov	r5, r0
+  65 0004 0846     		mov	r0, r1
+  66 0006 FFF7FEFF 		bl	__aeabi_f2d
+  67 000a 0246     		mov	r2, r0
+  68 000c 0B46     		mov	r3, r1
+  69 000e 18A1     		adr	r1, .L12
+  70 0010 D1E90001 		ldrd	r0, [r1]
+  71 0014 FFF7FEFF 		bl	__aeabi_ddiv
+  72 0018 0022     		movs	r2, #0
+  73 001a 174B     		ldr	r3, .L12+8
+  74 001c FFF7FEFF 		bl	__aeabi_dadd
+  75 0020 FFF7FEFF 		bl	__aeabi_d2ulz
+  76 0024 0218     		adds	r2, r0, r0
+  77 0026 41EB0103 		adc	r3, r1, r1
+  78 002a 144C     		ldr	r4, .L12+12
+  79 002c 8018     		adds	r0, r0, r2
+  80 002e 5941     		adcs	r1, r1, r3
+  81 0030 D4E90023 		ldrd	r2, [r4]
+  82 0034 9942     		cmp	r1, r3
+  83 0036 08BF     		it	eq
+  84 0038 9042     		cmpeq	r0, r2
+  85 003a 16D2     		bcs	.L11
+  86 003c A468     		ldr	r4, [r4, #8]
+  87 003e 04F58D64 		add	r4, r4, #1128
+  88 0042 D4E90067 		ldrd	r6, [r4]
+  89 0046 D5E90045 		ldrd	r4, [r5]
+  90 004a BD42     		cmp	r5, r7
+  91 004c 08BF     		it	eq
+  92 004e B442     		cmpeq	r4, r6
+  93 0050 3CBF     		itt	cc
+  94 0052 3D46     		movcc	r5, r7
+  95 0054 3446     		movcc	r4, r6
+  96 0056 121A     		subs	r2, r2, r0
+  97 0058 63EB0103 		sbc	r3, r3, r1
+  98 005c 9D42     		cmp	r5, r3
+  99 005e 08BF     		it	eq
+ 100 0060 9442     		cmpeq	r4, r2
+ 101 0062 2CBF     		ite	cs
+ 102 0064 0120     		movcs	r0, #1
+ 103 0066 0020     		movcc	r0, #0
+ 104 0068 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 105              	.L11:
+ 106 006a 0120     		movs	r0, #1
+ 107 006c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 108              	.L13:
+ 109 006e 00BF     		.align	3
+ 110              	.L12:
+ 111 0070 00000000 		.word	0
+ 112 0074 80842E41 		.word	1093567616
+ 113 0078 0000E03F 		.word	1071644672
+ 114 007c 00000000 		.word	.LANCHOR0
+ARM GAS  /tmp/cct1mH4m.s 			page 3
+
+
+ 115              		.size	_ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14, .-_ZZNK5u
+ 116              		.section	.text._ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEF
+ 117              		.align	1
+ 118              		.weak	_ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.type	_ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7
+ 122              	_ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7_St12_P
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 10B5     		push	{r4, lr}
+ 126 0002 0368     		ldr	r3, [r0]
+ 127 0004 5A68     		ldr	r2, [r3, #4]
+ 128 0006 9868     		ldr	r0, [r3, #8]
+ 129 0008 12F0010F 		tst	r2, #1
+ 130 000c 4FEA6202 		asr	r2, r2, #1
+ 131 0010 18BF     		it	ne
+ 132 0012 8458     		ldrne	r4, [r0, r2]
+ 133 0014 1B68     		ldr	r3, [r3]
+ 134 0016 1044     		add	r0, r0, r2
+ 135 0018 18BF     		it	ne
+ 136 001a E358     		ldrne	r3, [r4, r3]
+ 137 001c BDE81040 		pop	{r4, lr}
+ 138 0020 1847     		bx	r3	@ indirect register sibling call
+ 139              		.size	_ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7
+ 140              		.section	.text._ZN13zubax_chibios8watchdog5Timer5resetEv,"axG",%progbits,_ZN13zubax_chibios8watchd
+ 141              		.align	1
+ 142              		.weak	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 143              		.thumb
+ 144              		.thumb_func
+ 145              		.type	_ZN13zubax_chibios8watchdog5Timer5resetEv, %function
+ 146              	_ZN13zubax_chibios8watchdog5Timer5resetEv:
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+ 150 0000 0068     		ldr	r0, [r0]
+ 151 0002 FFF7FEBF 		b	watchdogReset
+ 152              		.size	_ZN13zubax_chibios8watchdog5Timer5resetEv, .-_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 153              		.section	.text._ZN5ublox16ChecksumComputer3addEh,"ax",%progbits
+ 154              		.align	1
+ 155              		.global	_ZN5ublox16ChecksumComputer3addEh
+ 156              		.thumb
+ 157              		.thumb_func
+ 158              		.type	_ZN5ublox16ChecksumComputer3addEh, %function
+ 159              	_ZN5ublox16ChecksumComputer3addEh:
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162              		@ link register save eliminated.
+ 163 0000 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 164 0002 1944     		add	r1, r1, r3
+ 165 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 166 0006 C9B2     		uxtb	r1, r1
+ 167 0008 0170     		strb	r1, [r0]
+ 168 000a 1944     		add	r1, r1, r3
+ 169 000c 4170     		strb	r1, [r0, #1]
+ 170 000e 7047     		bx	lr
+ 171              		.size	_ZN5ublox16ChecksumComputer3addEh, .-_ZN5ublox16ChecksumComputer3addEh
+ARM GAS  /tmp/cct1mH4m.s 			page 4
+
+
+ 172              		.section	.text._ZN5ublox16ChecksumComputer3addEPKhj,"ax",%progbits
+ 173              		.align	1
+ 174              		.global	_ZN5ublox16ChecksumComputer3addEPKhj
+ 175              		.thumb
+ 176              		.thumb_func
+ 177              		.type	_ZN5ublox16ChecksumComputer3addEPKhj, %function
+ 178              	_ZN5ublox16ChecksumComputer3addEPKhj:
+ 179              		@ args = 0, pretend = 0, frame = 0
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 70B5     		push	{r4, r5, r6, lr}
+ 182 0002 0646     		mov	r6, r0
+ 183 0004 0C46     		mov	r4, r1
+ 184 0006 8D18     		adds	r5, r1, r2
+ 185              	.L20:
+ 186 0008 AC42     		cmp	r4, r5
+ 187 000a 05D0     		beq	.L22
+ 188 000c 3046     		mov	r0, r6
+ 189 000e 14F8011B 		ldrb	r1, [r4], #1	@ zero_extendqisi2
+ 190 0012 FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEh
+ 191 0016 F7E7     		b	.L20
+ 192              	.L22:
+ 193 0018 70BD     		pop	{r4, r5, r6, pc}
+ 194              		.size	_ZN5ublox16ChecksumComputer3addEPKhj, .-_ZN5ublox16ChecksumComputer3addEPKhj
+ 195              		.section	.text._ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh,"ax",%progbits
+ 196              		.align	1
+ 197              		.global	_ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh
+ 198              		.thumb
+ 199              		.thumb_func
+ 200              		.type	_ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh, %function
+ 201              	_ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh:
+ 202              		@ args = 0, pretend = 0, frame = 8
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 204 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 205 0002 0446     		mov	r4, r0
+ 206 0004 0068     		ldr	r0, [r0]
+ 207 0006 0023     		movs	r3, #0
+ 208 0008 0828     		cmp	r0, #8
+ 209 000a 6ED8     		bhi	.L24
+ 210 000c DFE800F0 		tbb	[pc, r0]
+ 211              	.L26:
+ 212 0010 09       		.byte	(.L25-.L26)/2
+ 213 0011 12       		.byte	(.L27-.L26)/2
+ 214 0012 05       		.byte	(.L28-.L26)/2
+ 215 0013 17       		.byte	(.L29-.L26)/2
+ 216 0014 1B       		.byte	(.L30-.L26)/2
+ 217 0015 1E       		.byte	(.L31-.L26)/2
+ 218 0016 2E       		.byte	(.L32-.L26)/2
+ 219 0017 3A       		.byte	(.L33-.L26)/2
+ 220 0018 3E       		.byte	(.L34-.L26)/2
+ 221 0019 00       		.p2align 1
+ 222              	.L28:
+ 223 001a 84F82420 		strb	r2, [r4, #36]
+ 224 001e 0323     		movs	r3, #3
+ 225 0020 63E0     		b	.L24
+ 226              	.L25:
+ 227 0022 B52A     		cmp	r2, #181
+ 228 0024 01BF     		itttt	eq
+ARM GAS  /tmp/cct1mH4m.s 			page 5
+
+
+ 229 0026 0123     		moveq	r3, #1
+ 230 0028 44F8103B 		streq	r3, [r4], #16
+ 231 002c 0FC9     		ldmiaeq	r1, {r0, r1, r2, r3}
+ 232 002e 84E80F00 		stmiaeq	r4, {r0, r1, r2, r3}
+ 233 0032 5FE0     		b	.L44
+ 234              	.L27:
+ 235 0034 622A     		cmp	r2, #98
+ 236 0036 0CBF     		ite	eq
+ 237 0038 0223     		moveq	r3, #2
+ 238 003a 0023     		movne	r3, #0
+ 239 003c 55E0     		b	.L24
+ 240              	.L29:
+ 241 003e 84F82520 		strb	r2, [r4, #37]
+ 242 0042 0423     		movs	r3, #4
+ 243 0044 51E0     		b	.L24
+ 244              	.L30:
+ 245 0046 2284     		strh	r2, [r4, #32]	@ movhi
+ 246 0048 0523     		movs	r3, #5
+ 247 004a 4EE0     		b	.L24
+ 248              	.L31:
+ 249 004c 218C     		ldrh	r1, [r4, #32]
+ 250 004e 6368     		ldr	r3, [r4, #4]
+ 251 0050 41EA0221 		orr	r1, r1, r2, lsl #8
+ 252 0054 0025     		movs	r5, #0
+ 253 0056 9942     		cmp	r1, r3
+ 254 0058 2184     		strh	r1, [r4, #32]	@ movhi
+ 255 005a 6584     		strh	r5, [r4, #34]	@ movhi
+ 256 005c 01D8     		bhi	.L38
+ 257 005e 0623     		movs	r3, #6
+ 258 0060 43E0     		b	.L24
+ 259              	.L38:
+ 260 0062 2648     		ldr	r0, .L45
+ 261 0064 FFF7FEFF 		bl	lowsyslog
+ 262 0068 2560     		str	r5, [r4]
+ 263 006a 43E0     		b	.L44
+ 264              	.L32:
+ 265 006c 638C     		ldrh	r3, [r4, #34]
+ 266 006e A168     		ldr	r1, [r4, #8]
+ 267 0070 CA54     		strb	r2, [r1, r3]
+ 268 0072 638C     		ldrh	r3, [r4, #34]
+ 269 0074 228C     		ldrh	r2, [r4, #32]
+ 270 0076 0133     		adds	r3, r3, #1
+ 271 0078 9BB2     		uxth	r3, r3
+ 272 007a 9A42     		cmp	r2, r3
+ 273 007c 6384     		strh	r3, [r4, #34]	@ movhi
+ 274 007e 39D8     		bhi	.L44
+ 275 0080 0723     		movs	r3, #7
+ 276 0082 32E0     		b	.L24
+ 277              	.L33:
+ 278 0084 84F82620 		strb	r2, [r4, #38]
+ 279 0088 0823     		movs	r3, #8
+ 280 008a 2EE0     		b	.L24
+ 281              	.L34:
+ 282 008c 2360     		str	r3, [r4]
+ 283 008e 94F82430 		ldrb	r3, [r4, #36]	@ zero_extendqisi2
+ 284 0092 84F82720 		strb	r2, [r4, #39]
+ 285 0096 0DF10600 		add	r0, sp, #6
+ARM GAS  /tmp/cct1mH4m.s 			page 6
+
+
+ 286 009a 94F82510 		ldrb	r1, [r4, #37]	@ zero_extendqisi2
+ 287 009e 8DF80630 		strb	r3, [sp, #6]
+ 288 00a2 8DF80730 		strb	r3, [sp, #7]
+ 289 00a6 FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEh
+ 290 00aa 0DF10600 		add	r0, sp, #6
+ 291 00ae 94F82010 		ldrb	r1, [r4, #32]	@ zero_extendqisi2
+ 292 00b2 FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEh
+ 293 00b6 218C     		ldrh	r1, [r4, #32]
+ 294 00b8 0DF10600 		add	r0, sp, #6
+ 295 00bc 090A     		lsrs	r1, r1, #8
+ 296 00be FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEh
+ 297 00c2 628C     		ldrh	r2, [r4, #34]
+ 298 00c4 0DF10600 		add	r0, sp, #6
+ 299 00c8 A168     		ldr	r1, [r4, #8]
+ 300 00ca FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEPKhj
+ 301 00ce 9DF80620 		ldrb	r2, [sp, #6]	@ zero_extendqisi2
+ 302 00d2 94F82630 		ldrb	r3, [r4, #38]	@ zero_extendqisi2
+ 303 00d6 9A42     		cmp	r2, r3
+ 304 00d8 09D1     		bne	.L40
+ 305 00da 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 306 00de 94F82730 		ldrb	r3, [r4, #39]	@ zero_extendqisi2
+ 307 00e2 9A42     		cmp	r2, r3
+ 308 00e4 03D1     		bne	.L40
+ 309 00e6 0120     		movs	r0, #1
+ 310 00e8 05E0     		b	.L43
+ 311              	.L24:
+ 312 00ea 2360     		str	r3, [r4]
+ 313 00ec 02E0     		b	.L44
+ 314              	.L40:
+ 315 00ee 0448     		ldr	r0, .L45+4
+ 316 00f0 FFF7FEFF 		bl	lowsyslog
+ 317              	.L44:
+ 318 00f4 0020     		movs	r0, #0
+ 319              	.L43:
+ 320 00f6 03B0     		add	sp, sp, #12
+ 321              		@ sp needed
+ 322 00f8 30BD     		pop	{r4, r5, pc}
+ 323              	.L46:
+ 324 00fa 00BF     		.align	2
+ 325              	.L45:
+ 326 00fc 00000000 		.word	.LC0
+ 327 0100 18000000 		.word	.LC1
+ 328              		.size	_ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh, .-_ZN5ublox15MessageReceiver8nextBy
+ 329              		.section	.text._ZNK5ublox15MessageReceiver14getReadLenHintEv,"ax",%progbits
+ 330              		.align	1
+ 331              		.global	_ZNK5ublox15MessageReceiver14getReadLenHintEv
+ 332              		.thumb
+ 333              		.thumb_func
+ 334              		.type	_ZNK5ublox15MessageReceiver14getReadLenHintEv, %function
+ 335              	_ZNK5ublox15MessageReceiver14getReadLenHintEv:
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339 0000 0368     		ldr	r3, [r0]
+ 340 0002 062B     		cmp	r3, #6
+ 341 0004 05D1     		bne	.L50
+ 342 0006 038C     		ldrh	r3, [r0, #32]
+ARM GAS  /tmp/cct1mH4m.s 			page 7
+
+
+ 343 0008 408C     		ldrh	r0, [r0, #34]
+ 344 000a 8342     		cmp	r3, r0
+ 345 000c 01D9     		bls	.L50
+ 346 000e 181A     		subs	r0, r3, r0
+ 347 0010 7047     		bx	lr
+ 348              	.L50:
+ 349 0012 0120     		movs	r0, #1
+ 350 0014 7047     		bx	lr
+ 351              		.size	_ZNK5ublox15MessageReceiver14getReadLenHintEv, .-_ZNK5ublox15MessageReceiver14getReadLenHint
+ 352              		.section	.text._ZNK5ublox15MessageReceiver18getReceivedMessageEv,"ax",%progbits
+ 353              		.align	1
+ 354              		.global	_ZNK5ublox15MessageReceiver18getReceivedMessageEv
+ 355              		.thumb
+ 356              		.thumb_func
+ 357              		.type	_ZNK5ublox15MessageReceiver18getReceivedMessageEv, %function
+ 358              	_ZNK5ublox15MessageReceiver18getReceivedMessageEv:
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361 0000 38B5     		push	{r3, r4, r5, lr}
+ 362 0002 0446     		mov	r4, r0
+ 363 0004 0D46     		mov	r5, r1
+ 364 0006 2022     		movs	r2, #32
+ 365 0008 0021     		movs	r1, #0
+ 366 000a FFF7FEFF 		bl	memset
+ 367 000e D5E90423 		ldrd	r2, [r5, #16]
+ 368 0012 C4E90423 		strd	r2, [r4, #16]
+ 369 0016 D5E90623 		ldrd	r2, [r5, #24]
+ 370 001a C4E90623 		strd	r2, [r4, #24]
+ 371 001e 95F82430 		ldrb	r3, [r5, #36]	@ zero_extendqisi2
+ 372 0022 2046     		mov	r0, r4
+ 373 0024 2370     		strb	r3, [r4]
+ 374 0026 95F82530 		ldrb	r3, [r5, #37]	@ zero_extendqisi2
+ 375 002a 6370     		strb	r3, [r4, #1]
+ 376 002c 6B8C     		ldrh	r3, [r5, #34]
+ 377 002e 2381     		strh	r3, [r4, #8]	@ movhi
+ 378 0030 AB68     		ldr	r3, [r5, #8]
+ 379 0032 6360     		str	r3, [r4, #4]
+ 380 0034 38BD     		pop	{r3, r4, r5, pc}
+ 381              		.size	_ZNK5ublox15MessageReceiver18getReceivedMessageEv, .-_ZNK5ublox15MessageReceiver18getReceive
+ 382              		.section	.text._ZN5ublox15MessageReceiver5resetEv,"ax",%progbits
+ 383              		.align	1
+ 384              		.global	_ZN5ublox15MessageReceiver5resetEv
+ 385              		.thumb
+ 386              		.thumb_func
+ 387              		.type	_ZN5ublox15MessageReceiver5resetEv, %function
+ 388              	_ZN5ublox15MessageReceiver5resetEv:
+ 389              		@ args = 0, pretend = 0, frame = 0
+ 390              		@ frame_needed = 0, uses_anonymous_args = 0
+ 391              		@ link register save eliminated.
+ 392 0000 0023     		movs	r3, #0
+ 393 0002 0360     		str	r3, [r0]
+ 394 0004 7047     		bx	lr
+ 395              		.size	_ZN5ublox15MessageReceiver5resetEv, .-_ZN5ublox15MessageReceiver5resetEv
+ 396              		.section	.text._ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE,"ax",%progbits
+ 397              		.align	1
+ 398              		.global	_ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE
+ 399              		.thumb
+ARM GAS  /tmp/cct1mH4m.s 			page 8
+
+
+ 400              		.thumb_func
+ 401              		.type	_ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE, %function
+ 402              	_ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE:
+ 403              		@ args = 0, pretend = 0, frame = 0
+ 404              		@ frame_needed = 0, uses_anonymous_args = 0
+ 405              		@ link register save eliminated.
+ 406 0000 40F20512 		movw	r2, #261
+ 407 0004 0B88     		ldrh	r3, [r1]
+ 408 0006 9342     		cmp	r3, r2
+ 409 0008 06D1     		bne	.L54
+ 410 000a 4B68     		ldr	r3, [r1, #4]
+ 411 000c 6BB1     		cbz	r3, .L55
+ 412 000e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 413 0010 0271     		strb	r2, [r0, #4]
+ 414 0012 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 415 0014 4371     		strb	r3, [r0, #5]
+ 416 0016 7047     		bx	lr
+ 417              	.L54:
+ 418 0018 052B     		cmp	r3, #5
+ 419 001a 06D1     		bne	.L55
+ 420 001c 4B68     		ldr	r3, [r1, #4]
+ 421 001e 23B1     		cbz	r3, .L55
+ 422 0020 0648     		ldr	r0, .L66
+ 423 0022 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 424 0024 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 425 0026 FFF7FEBF 		b	lowsyslog
+ 426              	.L55:
+ 427 002a D0F85834 		ldr	r3, [r0, #1112]
+ 428 002e 23B1     		cbz	r3, .L53
+ 429 0030 D0F85C34 		ldr	r3, [r0, #1116]
+ 430 0034 00F58A60 		add	r0, r0, #1104
+ 431 0038 1847     		bx	r3	@ indirect register sibling call
+ 432              	.L53:
+ 433 003a 7047     		bx	lr
+ 434              	.L67:
+ 435              		.align	2
+ 436              	.L66:
+ 437 003c 31000000 		.word	.LC2
+ 438              		.size	_ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE, .-_ZN5ublox9IOManager21handleRe
+ 439              		.section	.text._ZN5ublox9IOManager4spinEj,"ax",%progbits
+ 440              		.align	1
+ 441              		.global	_ZN5ublox9IOManager4spinEj
+ 442              		.thumb
+ 443              		.thumb_func
+ 444              		.type	_ZN5ublox9IOManager4spinEj, %function
+ 445              	_ZN5ublox9IOManager4spinEj:
+ 446              		@ args = 0, pretend = 0, frame = 72
+ 447              		@ frame_needed = 0, uses_anonymous_args = 0
+ 448 0000 2DE9F04D 		push	{r4, r5, r6, r7, r8, r10, fp, lr}
+ 449 0004 0646     		mov	r6, r0
+ 450 0006 0068     		ldr	r0, [r0]
+ 451 0008 92B0     		sub	sp, sp, #72
+ 452 000a 0368     		ldr	r3, [r0]
+ 453 000c 0C46     		mov	r4, r1
+ 454 000e 5B69     		ldr	r3, [r3, #20]
+ 455 0010 9847     		blx	r3
+ 456 0012 4FF47A73 		mov	r3, #1000
+ARM GAS  /tmp/cct1mH4m.s 			page 9
+
+
+ 457 0016 E3FB0401 		umlal	r0, r1, r3, r4
+ 458 001a CDE90001 		strd	r0, [sp]
+ 459              	.L72:
+ 460 001e 06F58567 		add	r7, r6, #1064
+ 461 0022 0022     		movs	r2, #0
+ 462 0024 0023     		movs	r3, #0
+ 463 0026 3846     		mov	r0, r7
+ 464 0028 CDE90A23 		strd	r2, [sp, #40]
+ 465 002c CDE90C23 		strd	r2, [sp, #48]
+ 466 0030 FFF7FEFF 		bl	_ZNK5ublox15MessageReceiver14getReadLenHintEv
+ 467 0034 0246     		mov	r2, r0
+ 468 0036 1028     		cmp	r0, #16
+ 469 0038 3068     		ldr	r0, [r6]
+ 470 003a 0DF1380A 		add	r10, sp, #56
+ 471 003e 0368     		ldr	r3, [r0]
+ 472 0040 28BF     		it	cs
+ 473 0042 1022     		movcs	r2, #16
+ 474 0044 DC68     		ldr	r4, [r3, #12]
+ 475 0046 5146     		mov	r1, r10
+ 476 0048 0123     		movs	r3, #1
+ 477 004a A047     		blx	r4
+ 478 004c 8346     		mov	fp, r0
+ 479 004e 3068     		ldr	r0, [r6]
+ 480 0050 4FF00008 		mov	r8, #0
+ 481 0054 0368     		ldr	r3, [r0]
+ 482 0056 9B69     		ldr	r3, [r3, #24]
+ 483 0058 9847     		blx	r3
+ 484 005a CDE90C01 		strd	r0, [sp, #48]
+ 485 005e 3068     		ldr	r0, [r6]
+ 486 0060 0368     		ldr	r3, [r0]
+ 487 0062 5B69     		ldr	r3, [r3, #20]
+ 488 0064 9847     		blx	r3
+ 489 0066 CDE90A01 		strd	r0, [sp, #40]
+ 490              	.L69:
+ 491 006a D845     		cmp	r8, fp
+ 492 006c 1BD0     		beq	.L77
+ 493 006e 3846     		mov	r0, r7
+ 494 0070 0AA9     		add	r1, sp, #40
+ 495 0072 1AF80820 		ldrb	r2, [r10, r8]	@ zero_extendqisi2
+ 496 0076 FFF7FEFF 		bl	_ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh
+ 497 007a 88B1     		cbz	r0, .L70
+ 498 007c 02A8     		add	r0, sp, #8
+ 499 007e 3946     		mov	r1, r7
+ 500 0080 06F10805 		add	r5, r6, #8
+ 501 0084 02AC     		add	r4, sp, #8
+ 502 0086 FFF7FEFF 		bl	_ZNK5ublox15MessageReceiver18getReceivedMessageEv
+ 503 008a 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 504 008c 0FC5     		stmia	r5!, {r0, r1, r2, r3}
+ 505 008e 94E80F00 		ldmia	r4, {r0, r1, r2, r3}
+ 506 0092 85E80F00 		stmia	r5, {r0, r1, r2, r3}
+ 507 0096 3046     		mov	r0, r6
+ 508 0098 06F10801 		add	r1, r6, #8
+ 509 009c FFF7FEFF 		bl	_ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE
+ 510              	.L70:
+ 511 00a0 08F10108 		add	r8, r8, #1
+ 512 00a4 E1E7     		b	.L69
+ 513              	.L77:
+ARM GAS  /tmp/cct1mH4m.s 			page 10
+
+
+ 514 00a6 3068     		ldr	r0, [r6]
+ 515 00a8 0368     		ldr	r3, [r0]
+ 516 00aa 5B69     		ldr	r3, [r3, #20]
+ 517 00ac 9847     		blx	r3
+ 518 00ae DDE90023 		ldrd	r2, [sp]
+ 519 00b2 9942     		cmp	r1, r3
+ 520 00b4 08BF     		it	eq
+ 521 00b6 9042     		cmpeq	r0, r2
+ 522 00b8 B1D3     		bcc	.L72
+ 523 00ba 12B0     		add	sp, sp, #72
+ 524              		@ sp needed
+ 525 00bc BDE8F08D 		pop	{r4, r5, r6, r7, r8, r10, fp, pc}
+ 526              		.size	_ZN5ublox9IOManager4spinEj, .-_ZN5ublox9IOManager4spinEj
+ 527              		.section	.text._ZN5ublox9IOManager4sendERKNS_7MessageE,"ax",%progbits
+ 528              		.align	1
+ 529              		.global	_ZN5ublox9IOManager4sendERKNS_7MessageE
+ 530              		.thumb
+ 531              		.thumb_func
+ 532              		.type	_ZN5ublox9IOManager4sendERKNS_7MessageE, %function
+ 533              	_ZN5ublox9IOManager4sendERKNS_7MessageE:
+ 534              		@ args = 0, pretend = 0, frame = 8
+ 535              		@ frame_needed = 0, uses_anonymous_args = 0
+ 536 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 537 0002 0C46     		mov	r4, r1
+ 538 0004 0546     		mov	r5, r0
+ 539 0006 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 540 0008 6846     		mov	r0, sp
+ 541 000a 4978     		ldrb	r1, [r1, #1]	@ zero_extendqisi2
+ 542 000c 8DF80030 		strb	r3, [sp]
+ 543 0010 8DF80130 		strb	r3, [sp, #1]
+ 544 0014 FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEh
+ 545 0018 6846     		mov	r0, sp
+ 546 001a 217A     		ldrb	r1, [r4, #8]	@ zero_extendqisi2
+ 547 001c FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEh
+ 548 0020 2189     		ldrh	r1, [r4, #8]
+ 549 0022 6846     		mov	r0, sp
+ 550 0024 090A     		lsrs	r1, r1, #8
+ 551 0026 FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEh
+ 552 002a 6846     		mov	r0, sp
+ 553 002c 6168     		ldr	r1, [r4, #4]
+ 554 002e 2289     		ldrh	r2, [r4, #8]
+ 555 0030 FFF7FEFF 		bl	_ZN5ublox16ChecksumComputer3addEPKhj
+ 556 0034 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 557 0036 2868     		ldr	r0, [r5]
+ 558 0038 8DF80230 		strb	r3, [sp, #2]
+ 559 003c 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 560 003e 1949     		ldr	r1, .L83
+ 561 0040 8DF80330 		strb	r3, [sp, #3]
+ 562 0044 2389     		ldrh	r3, [r4, #8]
+ 563 0046 0222     		movs	r2, #2
+ 564 0048 8DF80430 		strb	r3, [sp, #4]
+ 565 004c 1B0A     		lsrs	r3, r3, #8
+ 566 004e 8DF80530 		strb	r3, [sp, #5]
+ 567 0052 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 568 0056 8DF80630 		strb	r3, [sp, #6]
+ 569 005a 9DF80130 		ldrb	r3, [sp, #1]	@ zero_extendqisi2
+ 570 005e 8DF80730 		strb	r3, [sp, #7]
+ARM GAS  /tmp/cct1mH4m.s 			page 11
+
+
+ 571 0062 0368     		ldr	r3, [r0]
+ 572 0064 9B68     		ldr	r3, [r3, #8]
+ 573 0066 9847     		blx	r3
+ 574 0068 2868     		ldr	r0, [r5]
+ 575 006a 0DF10201 		add	r1, sp, #2
+ 576 006e 0368     		ldr	r3, [r0]
+ 577 0070 0222     		movs	r2, #2
+ 578 0072 9B68     		ldr	r3, [r3, #8]
+ 579 0074 9847     		blx	r3
+ 580 0076 2868     		ldr	r0, [r5]
+ 581 0078 0222     		movs	r2, #2
+ 582 007a 0368     		ldr	r3, [r0]
+ 583 007c 01A9     		add	r1, sp, #4
+ 584 007e 9B68     		ldr	r3, [r3, #8]
+ 585 0080 9847     		blx	r3
+ 586 0082 2289     		ldrh	r2, [r4, #8]
+ 587 0084 22B1     		cbz	r2, .L79
+ 588 0086 2868     		ldr	r0, [r5]
+ 589 0088 6168     		ldr	r1, [r4, #4]
+ 590 008a 0368     		ldr	r3, [r0]
+ 591 008c 9B68     		ldr	r3, [r3, #8]
+ 592 008e 9847     		blx	r3
+ 593              	.L79:
+ 594 0090 2868     		ldr	r0, [r5]
+ 595 0092 0DF10601 		add	r1, sp, #6
+ 596 0096 0368     		ldr	r3, [r0]
+ 597 0098 0222     		movs	r2, #2
+ 598 009a 9B68     		ldr	r3, [r3, #8]
+ 599 009c 9847     		blx	r3
+ 600 009e 03B0     		add	sp, sp, #12
+ 601              		@ sp needed
+ 602 00a0 30BD     		pop	{r4, r5, pc}
+ 603              	.L84:
+ 604 00a2 00BF     		.align	2
+ 605              	.L83:
+ 606 00a4 00000000 		.word	.LANCHOR1
+ 607              		.size	_ZN5ublox9IOManager4sendERKNS_7MessageE, .-_ZN5ublox9IOManager4sendERKNS_7MessageE
+ 608              		.section	.text._ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj,"ax",%progbits
+ 609              		.align	1
+ 610              		.global	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+ 611              		.thumb
+ 612              		.thumb_func
+ 613              		.type	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj, %function
+ 614              	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj:
+ 615              		@ args = 0, pretend = 0, frame = 0
+ 616              		@ frame_needed = 0, uses_anonymous_args = 0
+ 617 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 618 0002 0446     		mov	r4, r0
+ 619 0004 0068     		ldr	r0, [r0]
+ 620 0006 1646     		mov	r6, r2
+ 621 0008 0368     		ldr	r3, [r0]
+ 622 000a 0D46     		mov	r5, r1
+ 623 000c 5B69     		ldr	r3, [r3, #20]
+ 624 000e 9847     		blx	r3
+ 625 0010 4FF47A73 		mov	r3, #1000
+ 626 0014 E3FB0601 		umlal	r0, r1, r3, r6
+ 627 0018 0646     		mov	r6, r0
+ARM GAS  /tmp/cct1mH4m.s 			page 12
+
+
+ 628 001a 0F46     		mov	r7, r1
+ 629 001c 2046     		mov	r0, r4
+ 630 001e 2946     		mov	r1, r5
+ 631 0020 FFF7FEFF 		bl	_ZN5ublox9IOManager4sendERKNS_7MessageE
+ 632 0024 0023     		movs	r3, #0
+ 633 0026 2371     		strb	r3, [r4, #4]
+ 634 0028 6371     		strb	r3, [r4, #5]
+ 635              	.L86:
+ 636 002a 2068     		ldr	r0, [r4]
+ 637 002c 0368     		ldr	r3, [r0]
+ 638 002e 5B69     		ldr	r3, [r3, #20]
+ 639 0030 9847     		blx	r3
+ 640 0032 B942     		cmp	r1, r7
+ 641 0034 08BF     		it	eq
+ 642 0036 B042     		cmpeq	r0, r6
+ 643 0038 09D2     		bcs	.L90
+ 644 003a 2046     		mov	r0, r4
+ 645 003c 0021     		movs	r1, #0
+ 646 003e FFF7FEFF 		bl	_ZN5ublox9IOManager4spinEj
+ 647 0042 A288     		ldrh	r2, [r4, #4]
+ 648 0044 2B88     		ldrh	r3, [r5]
+ 649 0046 9A42     		cmp	r2, r3
+ 650 0048 EFD1     		bne	.L86
+ 651 004a 0120     		movs	r0, #1
+ 652 004c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 653              	.L90:
+ 654 004e 0020     		movs	r0, #0
+ 655 0050 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 656              		.size	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj, .-_ZN5ublox9IOManager14sendAndWaitAckER
+ 657              		.section	.text._ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE,"ax",%progbits
+ 658              		.align	1
+ 659              		.global	_ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE
+ 660              		.thumb
+ 661              		.thumb_func
+ 662              		.type	_ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE, %function
+ 663              	_ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE:
+ 664              		@ args = 0, pretend = 0, frame = 32
+ 665              		@ frame_needed = 0, uses_anonymous_args = 0
+ 666 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 667 0004 89B0     		sub	sp, sp, #36
+ 668 0006 03AE     		add	r6, sp, #12
+ 669 0008 1422     		movs	r2, #20
+ 670 000a 0446     		mov	r4, r0
+ 671 000c 8B46     		mov	fp, r1
+ 672 000e 3046     		mov	r0, r6
+ 673 0010 0021     		movs	r1, #0
+ 674 0012 FFF7FEFF 		bl	memset
+ 675 0016 4FF40D62 		mov	r2, #2256
+ 676 001a 0492     		str	r2, [sp, #16]
+ 677 001c 4FF4E132 		mov	r2, #115200
+ 678 0020 0123     		movs	r3, #1
+ 679 0022 0592     		str	r2, [sp, #20]
+ 680 0024 DFF8DCA0 		ldr	r10, .L100+16
+ 681 0028 0522     		movs	r2, #5
+ 682 002a 8DF80C30 		strb	r3, [sp, #12]
+ 683 002e ADF81820 		strh	r2, [sp, #24]	@ movhi
+ 684 0032 ADF81A30 		strh	r3, [sp, #26]	@ movhi
+ARM GAS  /tmp/cct1mH4m.s 			page 13
+
+
+ 685              	.L95:
+ 686 0036 5AF8047B 		ldr	r7, [r10], #4
+ 687 003a 5846     		mov	r0, fp
+ 688 003c FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 689 0040 D4E90689 		ldrd	r8, [r4, #24]
+ 690 0044 2B48     		ldr	r0, .L100
+ 691 0046 3946     		mov	r1, r7
+ 692 0048 FFF7FEFF 		bl	lowsyslog
+ 693 004c 2068     		ldr	r0, [r4]
+ 694 004e 0025     		movs	r5, #0
+ 695 0050 0368     		ldr	r3, [r0]
+ 696 0052 C4F82854 		str	r5, [r4, #1064]
+ 697 0056 1B69     		ldr	r3, [r3, #16]
+ 698 0058 3946     		mov	r1, r7
+ 699 005a 9847     		blx	r3
+ 700 005c 2946     		mov	r1, r5
+ 701 005e 0C22     		movs	r2, #12
+ 702 0060 6846     		mov	r0, sp
+ 703 0062 0597     		str	r7, [sp, #20]
+ 704 0064 FFF7FEFF 		bl	memset
+ 705 0068 0623     		movs	r3, #6
+ 706 006a 8DF80030 		strb	r3, [sp]
+ 707 006e 2046     		mov	r0, r4
+ 708 0070 1423     		movs	r3, #20
+ 709 0072 6946     		mov	r1, sp
+ 710 0074 C822     		movs	r2, #200
+ 711 0076 ADF80830 		strh	r3, [sp, #8]	@ movhi
+ 712 007a 0196     		str	r6, [sp, #4]
+ 713 007c FFF7FEFF 		bl	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+ 714 0080 0546     		mov	r5, r0
+ 715 0082 40B9     		cbnz	r0, .L97
+ 716 0084 D4E90623 		ldrd	r2, [r4, #24]
+ 717 0088 9945     		cmp	r9, r3
+ 718 008a 08BF     		it	eq
+ 719 008c 9045     		cmpeq	r8, r2
+ 720 008e 34BF     		ite	cc
+ 721 0090 0125     		movcc	r5, #1
+ 722 0092 0025     		movcs	r5, #0
+ 723 0094 1DB3     		cbz	r5, .L93
+ 724              	.L97:
+ 725 0096 3946     		mov	r1, r7
+ 726 0098 1748     		ldr	r0, .L100+4
+ 727 009a FFF7FEFF 		bl	lowsyslog
+ 728 009e 5846     		mov	r0, fp
+ 729 00a0 FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 730 00a4 4FF4E137 		mov	r7, #115200
+ 731 00a8 0021     		movs	r1, #0
+ 732 00aa 0C22     		movs	r2, #12
+ 733 00ac 6846     		mov	r0, sp
+ 734 00ae 0597     		str	r7, [sp, #20]
+ 735 00b0 FFF7FEFF 		bl	memset
+ 736 00b4 0623     		movs	r3, #6
+ 737 00b6 8DF80030 		strb	r3, [sp]
+ 738 00ba 6946     		mov	r1, sp
+ 739 00bc 1423     		movs	r3, #20
+ 740 00be C822     		movs	r2, #200
+ 741 00c0 2046     		mov	r0, r4
+ARM GAS  /tmp/cct1mH4m.s 			page 14
+
+
+ 742 00c2 ADF80830 		strh	r3, [sp, #8]	@ movhi
+ 743 00c6 0196     		str	r6, [sp, #4]
+ 744 00c8 FFF7FEFF 		bl	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+ 745 00cc 2068     		ldr	r0, [r4]
+ 746 00ce 3946     		mov	r1, r7
+ 747 00d0 0368     		ldr	r3, [r0]
+ 748 00d2 1B69     		ldr	r3, [r3, #16]
+ 749 00d4 9847     		blx	r3
+ 750 00d6 0023     		movs	r3, #0
+ 751 00d8 C4F82834 		str	r3, [r4, #1064]
+ 752 00dc 05E0     		b	.L99
+ 753              	.L93:
+ 754 00de 074B     		ldr	r3, .L100+8
+ 755 00e0 9A45     		cmp	r10, r3
+ 756 00e2 A8D1     		bne	.L95
+ 757 00e4 0648     		ldr	r0, .L100+12
+ 758 00e6 FFF7FEFF 		bl	lowsyslog
+ 759              	.L99:
+ 760 00ea 2846     		mov	r0, r5
+ 761 00ec 09B0     		add	sp, sp, #36
+ 762              		@ sp needed
+ 763 00ee BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 764              	.L101:
+ 765 00f2 00BF     		.align	2
+ 766              	.L100:
+ 767 00f4 4B000000 		.word	.LC3
+ 768 00f8 69000000 		.word	.LC4
+ 769 00fc 18000000 		.word	.LANCHOR2+24
+ 770 0100 83000000 		.word	.LC5
+ 771 0104 00000000 		.word	.LANCHOR2
+ 772              		.size	_ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE, .-_ZN5ublox9IOManager9confi
+ 773              		.global	__aeabi_i2d
+ 774              		.global	__aeabi_i2f
+ 775              		.global	__aeabi_fdiv
+ 776              		.global	__aeabi_ui2f
+ 777              		.global	__aeabi_fmul
+ 778              		.section	.text._ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE,"ax",%progbits
+ 779              		.align	1
+ 780              		.global	_ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE
+ 781              		.thumb
+ 782              		.thumb_func
+ 783              		.type	_ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE, %function
+ 784              	_ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE:
+ 785              		@ args = 0, pretend = 0, frame = 160
+ 786              		@ frame_needed = 0, uses_anonymous_args = 0
+ 787 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 788 0002 0446     		mov	r4, r0
+ 789 0004 0F46     		mov	r7, r1
+ 790 0006 1546     		mov	r5, r2
+ 791 0008 A9B0     		sub	sp, sp, #164
+ 792 000a 0021     		movs	r1, #0
+ 793 000c A022     		movs	r2, #160
+ 794 000e 04F58E66 		add	r6, r4, #1136
+ 795 0012 6846     		mov	r0, sp
+ 796 0014 FFF7FEFF 		bl	memset
+ 797 0018 6946     		mov	r1, sp
+ 798 001a 9C22     		movs	r2, #156
+ARM GAS  /tmp/cct1mH4m.s 			page 15
+
+
+ 799 001c 3046     		mov	r0, r6
+ 800 001e FFF7FEFF 		bl	memcpy
+ 801 0022 97E80F00 		ldmia	r7, {r0, r1, r2, r3}
+ 802 0026 86E80F00 		stmia	r6, {r0, r1, r2, r3}
+ 803 002a E869     		ldr	r0, [r5, #28]	@ unaligned
+ 804 002c FFF7FEFF 		bl	__aeabi_i2d
+ 805 0030 65A3     		adr	r3, .L125
+ 806 0032 D3E90023 		ldrd	r2, [r3]
+ 807 0036 FFF7FEFF 		bl	__aeabi_ddiv
+ 808 003a 04F59267 		add	r7, r4, #1168
+ 809 003e C7E90001 		strd	r0, [r7]
+ 810 0042 A869     		ldr	r0, [r5, #24]	@ unaligned
+ 811 0044 FFF7FEFF 		bl	__aeabi_i2d
+ 812 0048 5FA3     		adr	r3, .L125
+ 813 004a D3E90023 		ldrd	r2, [r3]
+ 814 004e FFF7FEFF 		bl	__aeabi_ddiv
+ 815 0052 04F59367 		add	r7, r4, #1176
+ 816 0056 C7E90001 		strd	r0, [r7]
+ 817 005a 286A     		ldr	r0, [r5, #32]	@ unaligned
+ 818 005c FFF7FEFF 		bl	__aeabi_i2f
+ 819 0060 5B49     		ldr	r1, .L125+8
+ 820 0062 FFF7FEFF 		bl	__aeabi_fdiv
+ 821 0066 C4F8A004 		str	r0, [r4, #1184]	@ float
+ 822 006a 686A     		ldr	r0, [r5, #36]	@ unaligned
+ 823 006c FFF7FEFF 		bl	__aeabi_i2f
+ 824 0070 5749     		ldr	r1, .L125+8
+ 825 0072 FFF7FEFF 		bl	__aeabi_fdiv
+ 826 0076 C4F8A404 		str	r0, [r4, #1188]	@ float
+ 827 007a 286B     		ldr	r0, [r5, #48]	@ unaligned
+ 828 007c FFF7FEFF 		bl	__aeabi_i2f
+ 829 0080 5349     		ldr	r1, .L125+8
+ 830 0082 FFF7FEFF 		bl	__aeabi_fdiv
+ 831 0086 C4F8A804 		str	r0, [r4, #1192]	@ float
+ 832 008a 686B     		ldr	r0, [r5, #52]	@ unaligned
+ 833 008c FFF7FEFF 		bl	__aeabi_i2f
+ 834 0090 4F49     		ldr	r1, .L125+8
+ 835 0092 FFF7FEFF 		bl	__aeabi_fdiv
+ 836 0096 C4F8AC04 		str	r0, [r4, #1196]	@ float
+ 837 009a A86B     		ldr	r0, [r5, #56]	@ unaligned
+ 838 009c FFF7FEFF 		bl	__aeabi_i2f
+ 839 00a0 4B49     		ldr	r1, .L125+8
+ 840 00a2 FFF7FEFF 		bl	__aeabi_fdiv
+ 841 00a6 C4F8B004 		str	r0, [r4, #1200]	@ float
+ 842 00aa A86A     		ldr	r0, [r5, #40]	@ unaligned
+ 843 00ac FFF7FEFF 		bl	__aeabi_ui2f
+ 844 00b0 4749     		ldr	r1, .L125+8
+ 845 00b2 FFF7FEFF 		bl	__aeabi_fdiv
+ 846 00b6 0146     		mov	r1, r0
+ 847 00b8 FFF7FEFF 		bl	__aeabi_fmul
+ 848 00bc C4F8B804 		str	r0, [r4, #1208]	@ float
+ 849 00c0 C4F8C804 		str	r0, [r4, #1224]	@ float
+ 850 00c4 E86A     		ldr	r0, [r5, #44]	@ unaligned
+ 851 00c6 FFF7FEFF 		bl	__aeabi_ui2f
+ 852 00ca 4149     		ldr	r1, .L125+8
+ 853 00cc FFF7FEFF 		bl	__aeabi_fdiv
+ 854 00d0 0146     		mov	r1, r0
+ 855 00d2 FFF7FEFF 		bl	__aeabi_fmul
+ARM GAS  /tmp/cct1mH4m.s 			page 16
+
+
+ 856 00d6 C4F8D804 		str	r0, [r4, #1240]	@ float
+ 857 00da 686C     		ldr	r0, [r5, #68]	@ unaligned
+ 858 00dc FFF7FEFF 		bl	__aeabi_ui2f
+ 859 00e0 3B49     		ldr	r1, .L125+8
+ 860 00e2 FFF7FEFF 		bl	__aeabi_fdiv
+ 861 00e6 0146     		mov	r1, r0
+ 862 00e8 FFF7FEFF 		bl	__aeabi_fmul
+ 863 00ec C4F8DC04 		str	r0, [r4, #1244]	@ float
+ 864 00f0 C4F8EC04 		str	r0, [r4, #1260]	@ float
+ 865 00f4 C4F8FC04 		str	r0, [r4, #1276]	@ float
+ 866 00f8 B5F84C00 		ldrh	r0, [r5, #76]	@ unaligned
+ 867 00fc FFF7FEFF 		bl	__aeabi_i2f
+ 868 0100 3449     		ldr	r1, .L125+12
+ 869 0102 FFF7FEFF 		bl	__aeabi_fmul
+ 870 0106 2B7D     		ldrb	r3, [r5, #20]	@ zero_extendqisi2
+ 871 0108 C4F8B404 		str	r0, [r4, #1204]	@ float
+ 872 010c 023B     		subs	r3, r3, #2
+ 873 010e 032B     		cmp	r3, #3
+ 874 0110 09D8     		bhi	.L103
+ 875 0112 DFE803F0 		tbb	[pc, r3]
+ 876              	.L105:
+ 877 0116 02       		.byte	(.L104-.L105)/2
+ 878 0117 04       		.byte	(.L106-.L105)/2
+ 879 0118 04       		.byte	(.L106-.L105)/2
+ 880 0119 06       		.byte	(.L107-.L105)/2
+ 881              		.p2align 1
+ 882              	.L104:
+ 883 011a 0223     		movs	r3, #2
+ 884 011c 04E0     		b	.L124
+ 885              	.L106:
+ 886 011e 0323     		movs	r3, #3
+ 887 0120 02E0     		b	.L124
+ 888              	.L107:
+ 889 0122 0123     		movs	r3, #1
+ 890 0124 00E0     		b	.L124
+ 891              	.L103:
+ 892 0126 0023     		movs	r3, #0
+ 893              	.L124:
+ 894 0128 C4F80035 		str	r3, [r4, #1280]
+ 895 012c EB7D     		ldrb	r3, [r5, #23]	@ zero_extendqisi2
+ 896 012e C4F80835 		str	r3, [r4, #1288]
+ 897 0132 6B7D     		ldrb	r3, [r5, #21]	@ zero_extendqisi2
+ 898 0134 9B07     		lsls	r3, r3, #30
+ 899 0136 42BF     		ittt	mi
+ 900 0138 D4F80435 		ldrmi	r3, [r4, #1284]
+ 901 013c 43F00103 		orrmi	r3, r3, #1
+ 902 0140 C4F80435 		strmi	r3, [r4, #1284]
+ 903 0144 EB7A     		ldrb	r3, [r5, #11]	@ zero_extendqisi2
+ 904 0146 03F00303 		and	r3, r3, #3
+ 905 014a 032B     		cmp	r3, #3
+ 906 014c 09D1     		bne	.L114
+ 907 014e 40F26C73 		movw	r3, #1900
+ 908 0152 AA88     		ldrh	r2, [r5, #4]	@ unaligned
+ 909 0154 9A42     		cmp	r2, r3
+ 910 0156 04D9     		bls	.L114
+ 911 0158 AB79     		ldrb	r3, [r5, #6]	@ zero_extendqisi2
+ 912 015a 0033     		adds	r3, r3, #0
+ARM GAS  /tmp/cct1mH4m.s 			page 17
+
+
+ 913 015c 18BF     		it	ne
+ 914 015e 0123     		movne	r3, #1
+ 915 0160 00E0     		b	.L110
+ 916              	.L114:
+ 917 0162 0023     		movs	r3, #0
+ 918              	.L110:
+ 919 0164 84F88834 		strb	r3, [r4, #1160]
+ 920 0168 1BB3     		cbz	r3, .L111
+ 921 016a 0021     		movs	r1, #0
+ 922 016c 2422     		movs	r2, #36
+ 923 016e 6846     		mov	r0, sp
+ 924 0170 FFF7FEFF 		bl	memset
+ 925 0174 AB88     		ldrh	r3, [r5, #4]	@ unaligned
+ 926 0176 6846     		mov	r0, sp
+ 927 0178 A3F26C73 		subw	r3, r3, #1900
+ 928 017c 0593     		str	r3, [sp, #20]
+ 929 017e AB79     		ldrb	r3, [r5, #6]	@ zero_extendqisi2
+ 930 0180 013B     		subs	r3, r3, #1
+ 931 0182 0493     		str	r3, [sp, #16]
+ 932 0184 EB79     		ldrb	r3, [r5, #7]	@ zero_extendqisi2
+ 933 0186 0393     		str	r3, [sp, #12]
+ 934 0188 2B7A     		ldrb	r3, [r5, #8]	@ zero_extendqisi2
+ 935 018a 0293     		str	r3, [sp, #8]
+ 936 018c 6B7A     		ldrb	r3, [r5, #9]	@ zero_extendqisi2
+ 937 018e 0193     		str	r3, [sp, #4]
+ 938 0190 AB7A     		ldrb	r3, [r5, #10]	@ zero_extendqisi2
+ 939 0192 0093     		str	r3, [sp]
+ 940 0194 FFF7FEFF 		bl	mktime
+ 941 0198 2B69     		ldr	r3, [r5, #16]	@ unaligned
+ 942 019a 4FF47A72 		mov	r2, #1000
+ 943 019e 93FBF2F2 		sdiv	r2, r3, r2
+ 944 01a2 0D4D     		ldr	r5, .L125+16
+ 945 01a4 D317     		asrs	r3, r2, #31
+ 946 01a6 C5FB0023 		smlal	r2, r3, r5, r0
+ 947 01aa 04F59061 		add	r1, r4, #1152
+ 948 01ae C1E90023 		strd	r2, [r1]
+ 949              	.L111:
+ 950 01b2 D4F86037 		ldr	r3, [r4, #1888]
+ 951 01b6 2BB1     		cbz	r3, .L102
+ 952 01b8 D4F86437 		ldr	r3, [r4, #1892]
+ 953 01bc 04F5EB60 		add	r0, r4, #1880
+ 954 01c0 3146     		mov	r1, r6
+ 955 01c2 9847     		blx	r3
+ 956              	.L102:
+ 957 01c4 29B0     		add	sp, sp, #164
+ 958              		@ sp needed
+ 959 01c6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 960              	.L126:
+ 961              		.align	3
+ 962              	.L125:
+ 963 01c8 00000000 		.word	0
+ 964 01cc D0126341 		.word	1097011920
+ 965 01d0 00007A44 		.word	1148846080
+ 966 01d4 0AD7233C 		.word	1008981770
+ 967 01d8 40420F00 		.word	1000000
+ 968              		.size	_ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE, .-_ZN5ublox6Driver9handlePV
+ 969              		.section	.text._ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE,"ax",%progbits
+ARM GAS  /tmp/cct1mH4m.s 			page 18
+
+
+ 970              		.align	1
+ 971              		.global	_ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE
+ 972              		.thumb
+ 973              		.thumb_func
+ 974              		.type	_ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE, %function
+ 975              	_ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE:
+ 976              		@ args = 0, pretend = 0, frame = 0
+ 977              		@ frame_needed = 0, uses_anonymous_args = 0
+ 978 0000 70B5     		push	{r4, r5, r6, lr}
+ 979 0002 1546     		mov	r5, r2
+ 980 0004 00F5A266 		add	r6, r0, #1296
+ 981 0008 0446     		mov	r4, r0
+ 982 000a 0FC9     		ldmia	r1, {r0, r1, r2, r3}
+ 983 000c 86E80F00 		stmia	r6, {r0, r1, r2, r3}
+ 984 0010 A888     		ldrh	r0, [r5, #4]	@ unaligned
+ 985 0012 FFF7FEFF 		bl	__aeabi_i2f
+ 986 0016 2049     		ldr	r1, .L129
+ 987 0018 FFF7FEFF 		bl	__aeabi_fmul
+ 988 001c C4F82005 		str	r0, [r4, #1312]	@ float
+ 989 0020 E888     		ldrh	r0, [r5, #6]	@ unaligned
+ 990 0022 FFF7FEFF 		bl	__aeabi_i2f
+ 991 0026 1C49     		ldr	r1, .L129
+ 992 0028 FFF7FEFF 		bl	__aeabi_fmul
+ 993 002c C4F82405 		str	r0, [r4, #1316]	@ float
+ 994 0030 A889     		ldrh	r0, [r5, #12]	@ unaligned
+ 995 0032 FFF7FEFF 		bl	__aeabi_i2f
+ 996 0036 1849     		ldr	r1, .L129
+ 997 0038 FFF7FEFF 		bl	__aeabi_fmul
+ 998 003c C4F82805 		str	r0, [r4, #1320]	@ float
+ 999 0040 6889     		ldrh	r0, [r5, #10]	@ unaligned
+ 1000 0042 FFF7FEFF 		bl	__aeabi_i2f
+ 1001 0046 1449     		ldr	r1, .L129
+ 1002 0048 FFF7FEFF 		bl	__aeabi_fmul
+ 1003 004c C4F82C05 		str	r0, [r4, #1324]	@ float
+ 1004 0050 2889     		ldrh	r0, [r5, #8]	@ unaligned
+ 1005 0052 FFF7FEFF 		bl	__aeabi_i2f
+ 1006 0056 1049     		ldr	r1, .L129
+ 1007 0058 FFF7FEFF 		bl	__aeabi_fmul
+ 1008 005c C4F83005 		str	r0, [r4, #1328]	@ float
+ 1009 0060 E889     		ldrh	r0, [r5, #14]	@ unaligned
+ 1010 0062 FFF7FEFF 		bl	__aeabi_i2f
+ 1011 0066 0C49     		ldr	r1, .L129
+ 1012 0068 FFF7FEFF 		bl	__aeabi_fmul
+ 1013 006c C4F83405 		str	r0, [r4, #1332]	@ float
+ 1014 0070 288A     		ldrh	r0, [r5, #16]	@ unaligned
+ 1015 0072 FFF7FEFF 		bl	__aeabi_i2f
+ 1016 0076 0849     		ldr	r1, .L129
+ 1017 0078 FFF7FEFF 		bl	__aeabi_fmul
+ 1018 007c D4F87037 		ldr	r3, [r4, #1904]
+ 1019 0080 C4F83805 		str	r0, [r4, #1336]	@ float
+ 1020 0084 3BB1     		cbz	r3, .L127
+ 1021 0086 D4F87437 		ldr	r3, [r4, #1908]
+ 1022 008a 04F5ED60 		add	r0, r4, #1896
+ 1023 008e 3146     		mov	r1, r6
+ 1024 0090 BDE87040 		pop	{r4, r5, r6, lr}
+ 1025 0094 1847     		bx	r3	@ indirect register sibling call
+ 1026              	.L127:
+ARM GAS  /tmp/cct1mH4m.s 			page 19
+
+
+ 1027 0096 70BD     		pop	{r4, r5, r6, pc}
+ 1028              	.L130:
+ 1029              		.align	2
+ 1030              	.L129:
+ 1031 0098 0AD7233C 		.word	1008981770
+ 1032              		.size	_ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE, .-_ZN5ublox6Driver9handleDO
+ 1033              		.section	.text._ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE,"ax",%progbits
+ 1034              		.align	1
+ 1035              		.global	_ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE
+ 1036              		.thumb
+ 1037              		.thumb_func
+ 1038              		.type	_ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE, %function
+ 1039              	_ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE:
+ 1040              		@ args = 0, pretend = 0, frame = 0
+ 1041              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1042 0000 1179     		ldrb	r1, [r2, #4]	@ zero_extendqisi2
+ 1043 0002 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1044 0004 0129     		cmp	r1, #1
+ 1045 0006 04D0     		beq	.L132
+ 1046 0008 BDE8F040 		pop	{r4, r5, r6, r7, lr}
+ 1047 000c 1548     		ldr	r0, .L136
+ 1048 000e FFF7FEBF 		b	lowsyslog
+ 1049              	.L132:
+ 1050 0012 5379     		ldrb	r3, [r2, #5]	@ zero_extendqisi2
+ 1051 0014 00F5A861 		add	r1, r0, #1344
+ 1052 0018 C0F83C35 		str	r3, [r0, #1340]
+ 1053 001c 0024     		movs	r4, #0
+ 1054 001e 02F10803 		add	r3, r2, #8
+ 1055              	.L133:
+ 1056 0022 5579     		ldrb	r5, [r2, #5]	@ zero_extendqisi2
+ 1057 0024 0431     		adds	r1, r1, #4
+ 1058 0026 802D     		cmp	r5, #128
+ 1059 0028 28BF     		it	cs
+ 1060 002a 8025     		movcs	r5, #128
+ 1061 002c AC42     		cmp	r4, r5
+ 1062 002e 17D2     		bcs	.L135
+ 1063 0030 9D78     		ldrb	r5, [r3, #2]	@ zero_extendqisi2
+ 1064 0032 5F78     		ldrb	r7, [r3, #1]	@ zero_extendqisi2
+ 1065 0034 93F800E0 		ldrb	lr, [r3]	@ zero_extendqisi2
+ 1066 0038 9E68     		ldr	r6, [r3, #8]	@ unaligned
+ 1067 003a 01F8025C 		strb	r5, [r1, #-2]
+ 1068 003e 04F5A875 		add	r5, r4, #336
+ 1069 0042 01F804EC 		strb	lr, [r1, #-4]
+ 1070 0046 01F8037C 		strb	r7, [r1, #-3]
+ 1071 004a 00EB8505 		add	r5, r0, r5, lsl #2
+ 1072 004e EF78     		ldrb	r7, [r5, #3]	@ zero_extendqisi2
+ 1073 0050 C6F3C006 		ubfx	r6, r6, #3, #1
+ 1074 0054 66F30007 		bfi	r7, r6, #0, #1
+ 1075 0058 EF70     		strb	r7, [r5, #3]
+ 1076 005a 0134     		adds	r4, r4, #1
+ 1077 005c 0C33     		adds	r3, r3, #12
+ 1078 005e E0E7     		b	.L133
+ 1079              	.L135:
+ 1080 0060 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1081              	.L137:
+ 1082 0062 00BF     		.align	2
+ 1083              	.L136:
+ARM GAS  /tmp/cct1mH4m.s 			page 20
+
+
+ 1084 0064 9E000000 		.word	.LC6
+ 1085              		.size	_ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE, .-_ZN5ublox6Driver9handleSA
+ 1086              		.section	.text._ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE,"ax",%pro
+ 1087              		.align	1
+ 1088              		.global	_ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE
+ 1089              		.thumb
+ 1090              		.thumb_func
+ 1091              		.type	_ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE, %function
+ 1092              	_ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE:
+ 1093              		@ args = 0, pretend = 0, frame = 0
+ 1094              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1095 0000 70B5     		push	{r4, r5, r6, lr}
+ 1096 0002 1646     		mov	r6, r2
+ 1097 0004 0023     		movs	r3, #0
+ 1098 0006 80F84037 		strb	r3, [r0, #1856]
+ 1099 000a 80F84137 		strb	r3, [r0, #1857]
+ 1100 000e 80F84237 		strb	r3, [r0, #1858]
+ 1101 0012 80F84337 		strb	r3, [r0, #1859]
+ 1102 0016 80F84437 		strb	r3, [r0, #1860]
+ 1103 001a 80F84537 		strb	r3, [r0, #1861]
+ 1104 001e 80F84637 		strb	r3, [r0, #1862]
+ 1105 0022 80F84737 		strb	r3, [r0, #1863]
+ 1106 0026 80F84837 		strb	r3, [r0, #1864]
+ 1107 002a 80F84937 		strb	r3, [r0, #1865]
+ 1108 002e 80F84A37 		strb	r3, [r0, #1866]
+ 1109 0032 80F84B37 		strb	r3, [r0, #1867]
+ 1110 0036 80F84C37 		strb	r3, [r0, #1868]
+ 1111 003a 80F84D37 		strb	r3, [r0, #1869]
+ 1112 003e 80F84E37 		strb	r3, [r0, #1870]
+ 1113 0042 80F84F37 		strb	r3, [r0, #1871]
+ 1114 0046 80F85037 		strb	r3, [r0, #1872]
+ 1115 004a 80F85137 		strb	r3, [r0, #1873]
+ 1116 004e 00F5E864 		add	r4, r0, #1856
+ 1117 0052 0546     		mov	r5, r0
+ 1118 0054 0FC9     		ldmia	r1, {r0, r1, r2, r3}
+ 1119 0056 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 1120 005a F37A     		ldrb	r3, [r6, #11]	@ zero_extendqisi2
+ 1121 005c 5B07     		lsls	r3, r3, #29
+ 1122 005e 0ED5     		bpl	.L138
+ 1123 0060 96F90A30 		ldrsb	r3, [r6, #10]
+ 1124 0064 A5F85037 		strh	r3, [r5, #1872]	@ movhi
+ 1125 0068 D5F88037 		ldr	r3, [r5, #1920]
+ 1126 006c 3BB1     		cbz	r3, .L138
+ 1127 006e D5F88437 		ldr	r3, [r5, #1924]
+ 1128 0072 05F5EF60 		add	r0, r5, #1912
+ 1129 0076 2146     		mov	r1, r4
+ 1130 0078 BDE87040 		pop	{r4, r5, r6, lr}
+ 1131 007c 1847     		bx	r3	@ indirect register sibling call
+ 1132              	.L138:
+ 1133 007e 70BD     		pop	{r4, r5, r6, pc}
+ 1134              		.size	_ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE, .-_ZN5ublox6Drive
+ 1135              		.section	.text._ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE,"ax",%progbits
+ 1136              		.align	1
+ 1137              		.global	_ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE
+ 1138              		.thumb
+ 1139              		.thumb_func
+ 1140              		.type	_ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE, %function
+ARM GAS  /tmp/cct1mH4m.s 			page 21
+
+
+ 1141              	_ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE:
+ 1142              		@ args = 0, pretend = 0, frame = 0
+ 1143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1144              		@ link register save eliminated.
+ 1145 0000 0A88     		ldrh	r2, [r1]
+ 1146 0002 0B46     		mov	r3, r1
+ 1147 0004 40F20171 		movw	r1, #1793
+ 1148 0008 8A42     		cmp	r2, r1
+ 1149 000a 05D1     		bne	.L146
+ 1150 000c 5A68     		ldr	r2, [r3, #4]
+ 1151 000e 0AB3     		cbz	r2, .L147
+ 1152 0010 03F11001 		add	r1, r3, #16
+ 1153 0014 FFF7FEBF 		b	_ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE
+ 1154              	.L146:
+ 1155 0018 40F20141 		movw	r1, #1025
+ 1156 001c 8A42     		cmp	r2, r1
+ 1157 001e 05D1     		bne	.L148
+ 1158 0020 5A68     		ldr	r2, [r3, #4]
+ 1159 0022 BAB1     		cbz	r2, .L147
+ 1160 0024 03F11001 		add	r1, r3, #16
+ 1161 0028 FFF7FEBF 		b	_ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE
+ 1162              	.L148:
+ 1163 002c 43F20151 		movw	r1, #13569
+ 1164 0030 8A42     		cmp	r2, r1
+ 1165 0032 05D1     		bne	.L149
+ 1166 0034 5A68     		ldr	r2, [r3, #4]
+ 1167 0036 6AB1     		cbz	r2, .L147
+ 1168 0038 03F11001 		add	r1, r3, #16
+ 1169 003c FFF7FEBF 		b	_ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE
+ 1170              	.L149:
+ 1171 0040 42F20101 		movw	r1, #8193
+ 1172 0044 8A42     		cmp	r2, r1
+ 1173 0046 05D1     		bne	.L147
+ 1174 0048 5A68     		ldr	r2, [r3, #4]
+ 1175 004a 1AB1     		cbz	r2, .L147
+ 1176 004c 03F11001 		add	r1, r3, #16
+ 1177 0050 FFF7FEBF 		b	_ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE
+ 1178              	.L147:
+ 1179 0054 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 1180 0056 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 1181 0058 0148     		ldr	r0, .L162
+ 1182 005a 1B89     		ldrh	r3, [r3, #8]
+ 1183 005c FFF7FEBF 		b	lowsyslog
+ 1184              	.L163:
+ 1185              		.align	2
+ 1186              	.L162:
+ 1187 0060 C8000000 		.word	.LC7
+ 1188              		.size	_ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE, .-_ZN5ublox6Driver21handleReceived
+ 1189              		.section	.text._ZN5ublox6Driver20configureMessageRateEhhh,"ax",%progbits
+ 1190              		.align	1
+ 1191              		.global	_ZN5ublox6Driver20configureMessageRateEhhh
+ 1192              		.thumb
+ 1193              		.thumb_func
+ 1194              		.type	_ZN5ublox6Driver20configureMessageRateEhhh, %function
+ 1195              	_ZN5ublox6Driver20configureMessageRateEhhh:
+ 1196              		@ args = 0, pretend = 0, frame = 16
+ 1197              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/cct1mH4m.s 			page 22
+
+
+ 1198 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 1199 0002 0446     		mov	r4, r0
+ 1200 0004 8DF80110 		strb	r1, [sp, #1]
+ 1201 0008 8DF80220 		strb	r2, [sp, #2]
+ 1202 000c 01A8     		add	r0, sp, #4
+ 1203 000e 0021     		movs	r1, #0
+ 1204 0010 0C22     		movs	r2, #12
+ 1205 0012 8DF80330 		strb	r3, [sp, #3]
+ 1206 0016 FFF7FEFF 		bl	memset
+ 1207 001a 0623     		movs	r3, #6
+ 1208 001c 8DF80430 		strb	r3, [sp, #4]
+ 1209 0020 0123     		movs	r3, #1
+ 1210 0022 8DF80530 		strb	r3, [sp, #5]
+ 1211 0026 0323     		movs	r3, #3
+ 1212 0028 ADF80C30 		strh	r3, [sp, #12]	@ movhi
+ 1213 002c 2046     		mov	r0, r4
+ 1214 002e 0DF10103 		add	r3, sp, #1
+ 1215 0032 01A9     		add	r1, sp, #4
+ 1216 0034 C822     		movs	r2, #200
+ 1217 0036 0293     		str	r3, [sp, #8]
+ 1218 0038 FFF7FEFF 		bl	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+ 1219 003c 04B0     		add	sp, sp, #16
+ 1220              		@ sp needed
+ 1221 003e 10BD     		pop	{r4, pc}
+ 1222              		.size	_ZN5ublox6Driver20configureMessageRateEhhh, .-_ZN5ublox6Driver20configureMessageRateEhhh
+ 1223              		.global	__aeabi_fadd
+ 1224              		.global	__aeabi_f2uiz
+ 1225              		.global	__aeabi_fcmpgt
+ 1226              		.section	.text._ZN5ublox6Driver17configureMessagesEv,"ax",%progbits
+ 1227              		.align	1
+ 1228              		.global	_ZN5ublox6Driver17configureMessagesEv
+ 1229              		.thumb
+ 1230              		.thumb_func
+ 1231              		.type	_ZN5ublox6Driver17configureMessagesEv, %function
+ 1232              	_ZN5ublox6Driver17configureMessagesEv:
+ 1233              		@ args = 0, pretend = 0, frame = 0
+ 1234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1235 0000 0121     		movs	r1, #1
+ 1236 0002 70B5     		push	{r4, r5, r6, lr}
+ 1237 0004 0722     		movs	r2, #7
+ 1238 0006 0B46     		mov	r3, r1
+ 1239 0008 0446     		mov	r4, r0
+ 1240 000a FFF7FEFF 		bl	_ZN5ublox6Driver20configureMessageRateEhhh
+ 1241 000e 0028     		cmp	r0, #0
+ 1242 0010 46D0     		beq	.L167
+ 1243 0012 0121     		movs	r1, #1
+ 1244 0014 2046     		mov	r0, r4
+ 1245 0016 2022     		movs	r2, #32
+ 1246 0018 0B46     		mov	r3, r1
+ 1247 001a FFF7FEFF 		bl	_ZN5ublox6Driver20configureMessageRateEhhh
+ 1248 001e 0028     		cmp	r0, #0
+ 1249 0020 3ED0     		beq	.L167
+ 1250 0022 D4F86414 		ldr	r1, [r4, #1124]	@ float
+ 1251 0026 D4F86004 		ldr	r0, [r4, #1120]	@ float
+ 1252 002a FFF7FEFF 		bl	__aeabi_fdiv
+ 1253 002e 4FF07C51 		mov	r1, #1056964608
+ 1254 0032 FFF7FEFF 		bl	__aeabi_fadd
+ARM GAS  /tmp/cct1mH4m.s 			page 23
+
+
+ 1255 0036 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1256 003a FF28     		cmp	r0, #255
+ 1257 003c 28BF     		it	cs
+ 1258 003e FF20     		movcs	r0, #255
+ 1259 0040 0346     		mov	r3, r0
+ 1260 0042 0128     		cmp	r0, #1
+ 1261 0044 38BF     		it	cc
+ 1262 0046 0123     		movcc	r3, #1
+ 1263 0048 2046     		mov	r0, r4
+ 1264 004a 0121     		movs	r1, #1
+ 1265 004c 0422     		movs	r2, #4
+ 1266 004e DBB2     		uxtb	r3, r3
+ 1267 0050 FFF7FEFF 		bl	_ZN5ublox6Driver20configureMessageRateEhhh
+ 1268 0054 20B3     		cbz	r0, .L167
+ 1269 0056 D4F86454 		ldr	r5, [r4, #1124]	@ float
+ 1270 005a 4FF07E51 		mov	r1, #1065353216
+ 1271 005e 2846     		mov	r0, r5
+ 1272 0060 D4F86064 		ldr	r6, [r4, #1120]	@ float
+ 1273 0064 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1274 0068 08B1     		cbz	r0, .L170
+ 1275 006a 4FF07E55 		mov	r5, #1065353216
+ 1276              	.L170:
+ 1277 006e 2946     		mov	r1, r5
+ 1278 0070 3046     		mov	r0, r6
+ 1279 0072 FFF7FEFF 		bl	__aeabi_fdiv
+ 1280 0076 4FF07C51 		mov	r1, #1056964608
+ 1281 007a FFF7FEFF 		bl	__aeabi_fadd
+ 1282 007e FFF7FEFF 		bl	__aeabi_f2uiz
+ 1283 0082 FF28     		cmp	r0, #255
+ 1284 0084 28BF     		it	cs
+ 1285 0086 FF20     		movcs	r0, #255
+ 1286 0088 0346     		mov	r3, r0
+ 1287 008a 0128     		cmp	r0, #1
+ 1288 008c 38BF     		it	cc
+ 1289 008e 0123     		movcc	r3, #1
+ 1290 0090 2046     		mov	r0, r4
+ 1291 0092 BDE87040 		pop	{r4, r5, r6, lr}
+ 1292 0096 0121     		movs	r1, #1
+ 1293 0098 3522     		movs	r2, #53
+ 1294 009a DBB2     		uxtb	r3, r3
+ 1295 009c FFF7FEBF 		b	_ZN5ublox6Driver20configureMessageRateEhhh
+ 1296              	.L167:
+ 1297 00a0 0020     		movs	r0, #0
+ 1298 00a2 70BD     		pop	{r4, r5, r6, pc}
+ 1299              		.size	_ZN5ublox6Driver17configureMessagesEv, .-_ZN5ublox6Driver17configureMessagesEv
+ 1300              		.section	.text._ZN5ublox6Driver4spinEj,"ax",%progbits
+ 1301              		.align	1
+ 1302              		.global	_ZN5ublox6Driver4spinEj
+ 1303              		.thumb
+ 1304              		.thumb_func
+ 1305              		.type	_ZN5ublox6Driver4spinEj, %function
+ 1306              	_ZN5ublox6Driver4spinEj:
+ 1307              		@ args = 0, pretend = 0, frame = 0
+ 1308              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1309              		@ link register save eliminated.
+ 1310 0000 FFF7FEBF 		b	_ZN5ublox9IOManager4spinEj
+ 1311              		.size	_ZN5ublox6Driver4spinEj, .-_ZN5ublox6Driver4spinEj
+ARM GAS  /tmp/cct1mH4m.s 			page 24
+
+
+ 1312              		.section	.text._ZNK5ublox6Driver13areRatesValidEv,"ax",%progbits
+ 1313              		.align	1
+ 1314              		.global	_ZNK5ublox6Driver13areRatesValidEv
+ 1315              		.thumb
+ 1316              		.thumb_func
+ 1317              		.type	_ZNK5ublox6Driver13areRatesValidEv, %function
+ 1318              	_ZNK5ublox6Driver13areRatesValidEv:
+ 1319              		@ args = 0, pretend = 0, frame = 0
+ 1320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1321 0000 10B5     		push	{r4, lr}
+ 1322 0002 0446     		mov	r4, r0
+ 1323 0004 0068     		ldr	r0, [r0]
+ 1324 0006 0368     		ldr	r3, [r0]
+ 1325 0008 5B69     		ldr	r3, [r3, #20]
+ 1326 000a 9847     		blx	r3
+ 1327 000c 0B4B     		ldr	r3, .L188
+ 1328 000e 1A68     		ldr	r2, [r3]
+ 1329 0010 D207     		lsls	r2, r2, #31
+ 1330 0012 05D4     		bmi	.L183
+ 1331 0014 0A4A     		ldr	r2, .L188+4
+ 1332 0016 C2E90001 		strd	r0, [r2]
+ 1333 001a 9460     		str	r4, [r2, #8]
+ 1334 001c 0122     		movs	r2, #1
+ 1335 001e 1A60     		str	r2, [r3]
+ 1336              	.L183:
+ 1337 0020 04F58E60 		add	r0, r4, #1136
+ 1338 0024 D4F86014 		ldr	r1, [r4, #1120]	@ float
+ 1339 0028 FFF7FEFF 		bl	_ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14
+ 1340 002c 28B1     		cbz	r0, .L184
+ 1341 002e 04F5A260 		add	r0, r4, #1296
+ 1342 0032 D4F86414 		ldr	r1, [r4, #1124]	@ float
+ 1343 0036 FFF7FEFF 		bl	_ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14
+ 1344              	.L184:
+ 1345 003a 10BD     		pop	{r4, pc}
+ 1346              	.L189:
+ 1347              		.align	2
+ 1348              	.L188:
+ 1349 003c 00000000 		.word	.LANCHOR3
+ 1350 0040 00000000 		.word	.LANCHOR0
+ 1351              		.size	_ZNK5ublox6Driver13areRatesValidEv, .-_ZNK5ublox6Driver13areRatesValidEv
+ 1352              		.section	.text._ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j,"axG",%progbits,_ZN5ublox9IOManag
+ 1353              		.align	1
+ 1354              		.weak	_ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j
+ 1355              		.thumb
+ 1356              		.thumb_func
+ 1357              		.type	_ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j, %function
+ 1358              	_ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j:
+ 1359              		@ args = 0, pretend = 0, frame = 48
+ 1360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1361 0000 2DE97043 		push	{r4, r5, r6, r8, r9, lr}
+ 1362 0004 0646     		mov	r6, r0
+ 1363 0006 0068     		ldr	r0, [r0]
+ 1364 0008 8CB0     		sub	sp, sp, #48
+ 1365 000a 0368     		ldr	r3, [r0]
+ 1366 000c 0C46     		mov	r4, r1
+ 1367 000e 5B69     		ldr	r3, [r3, #20]
+ 1368 0010 9847     		blx	r3
+ARM GAS  /tmp/cct1mH4m.s 			page 25
+
+
+ 1369 0012 4FF47A73 		mov	r3, #1000
+ 1370 0016 E3FB0401 		umlal	r0, r1, r3, r4
+ 1371 001a 0C22     		movs	r2, #12
+ 1372 001c 8046     		mov	r8, r0
+ 1373 001e 8946     		mov	r9, r1
+ 1374 0020 01A8     		add	r0, sp, #4
+ 1375 0022 0021     		movs	r1, #0
+ 1376 0024 FFF7FEFF 		bl	memset
+ 1377 0028 0A23     		movs	r3, #10
+ 1378 002a 8DF80430 		strb	r3, [sp, #4]
+ 1379 002e 3046     		mov	r0, r6
+ 1380 0030 2823     		movs	r3, #40
+ 1381 0032 01A9     		add	r1, sp, #4
+ 1382 0034 8DF80530 		strb	r3, [sp, #5]
+ 1383 0038 06F10805 		add	r5, r6, #8
+ 1384 003c FFF7FEFF 		bl	_ZN5ublox9IOManager4sendERKNS_7MessageE
+ 1385 0040 04AC     		add	r4, sp, #16
+ 1386 0042 0021     		movs	r1, #0
+ 1387 0044 2022     		movs	r2, #32
+ 1388 0046 04A8     		add	r0, sp, #16
+ 1389 0048 FFF7FEFF 		bl	memset
+ 1390 004c 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 1391 004e 0FC5     		stmia	r5!, {r0, r1, r2, r3}
+ 1392 0050 94E80F00 		ldmia	r4, {r0, r1, r2, r3}
+ 1393 0054 85E80F00 		stmia	r5, {r0, r1, r2, r3}
+ 1394              	.L195:
+ 1395 0058 3068     		ldr	r0, [r6]
+ 1396 005a 0368     		ldr	r3, [r0]
+ 1397 005c 5B69     		ldr	r3, [r3, #20]
+ 1398 005e 9847     		blx	r3
+ 1399 0060 4945     		cmp	r1, r9
+ 1400 0062 08BF     		it	eq
+ 1401 0064 4045     		cmpeq	r0, r8
+ 1402 0066 0CD2     		bcs	.L196
+ 1403 0068 3046     		mov	r0, r6
+ 1404 006a 0021     		movs	r1, #0
+ 1405 006c FFF7FEFF 		bl	_ZN5ublox9IOManager4spinEj
+ 1406 0070 42F60A03 		movw	r3, #10250
+ 1407 0074 3289     		ldrh	r2, [r6, #8]
+ 1408 0076 9A42     		cmp	r2, r3
+ 1409 0078 EED1     		bne	.L195
+ 1410 007a F068     		ldr	r0, [r6, #12]
+ 1411 007c 0028     		cmp	r0, #0
+ 1412 007e EBD0     		beq	.L195
+ 1413 0080 00E0     		b	.L192
+ 1414              	.L196:
+ 1415 0082 0020     		movs	r0, #0
+ 1416              	.L192:
+ 1417 0084 0CB0     		add	sp, sp, #48
+ 1418              		@ sp needed
+ 1419 0086 BDE87083 		pop	{r4, r5, r6, r8, r9, pc}
+ 1420              		.size	_ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j, .-_ZN5ublox9IOManager4pollINS_3msg8MON_GN
+ 1421              		.global	__aeabi_fcmplt
+ 1422              		.section	.text._ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE,"ax",%progbits
+ 1423              		.align	1
+ 1424              		.global	_ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE
+ 1425              		.thumb
+ARM GAS  /tmp/cct1mH4m.s 			page 26
+
+
+ 1426              		.thumb_func
+ 1427              		.type	_ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE, %function
+ 1428              	_ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE:
+ 1429              		@ args = 0, pretend = 0, frame = 16
+ 1430              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1431 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 1432 0004 0446     		mov	r4, r0
+ 1433 0006 87B0     		sub	sp, sp, #28
+ 1434 0008 0846     		mov	r0, r1
+ 1435 000a 8946     		mov	r9, r1
+ 1436 000c FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1437 0010 D4F86014 		ldr	r1, [r4, #1120]	@ float
+ 1438 0014 4248     		ldr	r0, .L209
+ 1439 0016 FFF7FEFF 		bl	__aeabi_fdiv
+ 1440 001a 4FF07E51 		mov	r1, #1065353216
+ 1441 001e 0746     		mov	r7, r0
+ 1442 0020 FFF7FEFF 		bl	__aeabi_fcmplt
+ 1443 0024 30B9     		cbnz	r0, .L204
+ 1444 0026 3846     		mov	r0, r7
+ 1445 0028 3E49     		ldr	r1, .L209+4
+ 1446 002a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1447 002e 18B1     		cbz	r0, .L198
+ 1448 0030 3C4F     		ldr	r7, .L209+4
+ 1449 0032 01E0     		b	.L198
+ 1450              	.L204:
+ 1451 0034 4FF07E57 		mov	r7, #1065353216
+ 1452              	.L198:
+ 1453 0038 04F12806 		add	r6, r4, #40
+ 1454 003c 3346     		mov	r3, r6
+ 1455 003e 04F58568 		add	r8, r4, #1064
+ 1456              	.L199:
+ 1457 0042 0025     		movs	r5, #0
+ 1458 0044 03F8015B 		strb	r5, [r3], #1
+ 1459 0048 4345     		cmp	r3, r8
+ 1460 004a FAD1     		bne	.L199
+ 1461 004c 84F82C50 		strb	r5, [r4, #44]
+ 1462 0050 84F82D50 		strb	r5, [r4, #45]
+ 1463 0054 3846     		mov	r0, r7
+ 1464 0056 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1465 005a 0123     		movs	r3, #1
+ 1466 005c 2946     		mov	r1, r5
+ 1467 005e 2085     		strh	r0, [r4, #40]	@ unaligned
+ 1468 0060 84F82A30 		strb	r3, [r4, #42]
+ 1469 0064 84F82B50 		strb	r5, [r4, #43]
+ 1470 0068 0C22     		movs	r2, #12
+ 1471 006a 03A8     		add	r0, sp, #12
+ 1472 006c FFF7FEFF 		bl	memset
+ 1473 0070 0822     		movs	r2, #8
+ 1474 0072 0623     		movs	r3, #6
+ 1475 0074 8DF80D20 		strb	r2, [sp, #13]
+ 1476 0078 2046     		mov	r0, r4
+ 1477 007a 03A9     		add	r1, sp, #12
+ 1478 007c C822     		movs	r2, #200
+ 1479 007e 8DF80C30 		strb	r3, [sp, #12]
+ 1480 0082 ADF81430 		strh	r3, [sp, #20]	@ movhi
+ 1481 0086 0496     		str	r6, [sp, #16]
+ 1482 0088 FFF7FEFF 		bl	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+ARM GAS  /tmp/cct1mH4m.s 			page 27
+
+
+ 1483 008c 0546     		mov	r5, r0
+ 1484 008e 08B9     		cbnz	r0, .L200
+ 1485 0090 2548     		ldr	r0, .L209+8
+ 1486 0092 3EE0     		b	.L208
+ 1487              	.L200:
+ 1488 0094 4846     		mov	r0, r9
+ 1489 0096 FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1490 009a 2046     		mov	r0, r4
+ 1491 009c C821     		movs	r1, #200
+ 1492 009e FFF7FEFF 		bl	_ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j
+ 1493 00a2 0546     		mov	r5, r0
+ 1494 00a4 08B9     		cbnz	r0, .L202
+ 1495 00a6 2148     		ldr	r0, .L209+12
+ 1496 00a8 33E0     		b	.L208
+ 1497              	.L202:
+ 1498 00aa C378     		ldrb	r3, [r0, #3]	@ zero_extendqisi2
+ 1499 00ac 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 1500 00ae 8278     		ldrb	r2, [r0, #2]	@ zero_extendqisi2
+ 1501 00b0 0079     		ldrb	r0, [r0, #4]	@ zero_extendqisi2
+ 1502 00b2 0090     		str	r0, [sp]
+ 1503 00b4 1E48     		ldr	r0, .L209+16
+ 1504 00b6 FFF7FEFF 		bl	lowsyslog
+ 1505 00ba 4846     		mov	r0, r9
+ 1506 00bc FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1507 00c0 3346     		mov	r3, r6
+ 1508              	.L203:
+ 1509 00c2 0025     		movs	r5, #0
+ 1510 00c4 03F8015B 		strb	r5, [r3], #1
+ 1511 00c8 4345     		cmp	r3, r8
+ 1512 00ca FAD1     		bne	.L203
+ 1513 00cc 2427     		movs	r7, #36
+ 1514 00ce 2946     		mov	r1, r5
+ 1515 00d0 3A46     		mov	r2, r7
+ 1516 00d2 3046     		mov	r0, r6
+ 1517 00d4 FFF7FEFF 		bl	memset
+ 1518 00d8 0123     		movs	r3, #1
+ 1519 00da 84F82830 		strb	r3, [r4, #40]
+ 1520 00de 0723     		movs	r3, #7
+ 1521 00e0 2946     		mov	r1, r5
+ 1522 00e2 84F82950 		strb	r5, [r4, #41]
+ 1523 00e6 84F82A30 		strb	r3, [r4, #42]
+ 1524 00ea 0C22     		movs	r2, #12
+ 1525 00ec 03A8     		add	r0, sp, #12
+ 1526 00ee FFF7FEFF 		bl	memset
+ 1527 00f2 0623     		movs	r3, #6
+ 1528 00f4 2046     		mov	r0, r4
+ 1529 00f6 03A9     		add	r1, sp, #12
+ 1530 00f8 C822     		movs	r2, #200
+ 1531 00fa 8DF80C30 		strb	r3, [sp, #12]
+ 1532 00fe 8DF80D70 		strb	r7, [sp, #13]
+ 1533 0102 ADF81470 		strh	r7, [sp, #20]	@ movhi
+ 1534 0106 0496     		str	r6, [sp, #16]
+ 1535 0108 FFF7FEFF 		bl	_ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+ 1536 010c 0546     		mov	r5, r0
+ 1537 010e 10B9     		cbnz	r0, .L201
+ 1538 0110 0848     		ldr	r0, .L209+20
+ 1539              	.L208:
+ARM GAS  /tmp/cct1mH4m.s 			page 28
+
+
+ 1540 0112 FFF7FEFF 		bl	lowsyslog
+ 1541              	.L201:
+ 1542 0116 2846     		mov	r0, r5
+ 1543 0118 07B0     		add	sp, sp, #28
+ 1544              		@ sp needed
+ 1545 011a BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 1546              	.L210:
+ 1547 011e 00BF     		.align	2
+ 1548              	.L209:
+ 1549 0120 00007A44 		.word	1148846080
+ 1550 0124 00FE7F47 		.word	1199570432
+ 1551 0128 07010000 		.word	.LC8
+ 1552 012c 1F010000 		.word	.LC9
+ 1553 0130 3F010000 		.word	.LC10
+ 1554 0134 83010000 		.word	.LC11
+ 1555              		.size	_ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE, .-_ZN5ublox6Driver13confi
+ 1556              		.section	.text._ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EE
+ 1557              		.align	1
+ 1558              		.weak	_ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_
+ 1559              		.thumb
+ 1560              		.thumb_func
+ 1561              		.type	_ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_
+ 1562              	_ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_Placeho
+ 1563              		@ args = 0, pretend = 0, frame = 40
+ 1564              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1565 0000 0B46     		mov	r3, r1
+ 1566 0002 70B5     		push	{r4, r5, r6, lr}
+ 1567 0004 8AB0     		sub	sp, sp, #40
+ 1568 0006 03AD     		add	r5, sp, #12
+ 1569 0008 0446     		mov	r4, r0
+ 1570 000a 03C9     		ldmia	r1, {r0, r1}
+ 1571 000c 9E68     		ldr	r6, [r3, #8]
+ 1572 000e 85E80300 		stmia	r5, {r0, r1}
+ 1573 0012 0023     		movs	r3, #0
+ 1574 0014 0C20     		movs	r0, #12
+ 1575 0016 0893     		str	r3, [sp, #32]
+ 1576 0018 FFF7FEFF 		bl	_Znwj
+ 1577 001c 0346     		mov	r3, r0
+ 1578 001e 95E80300 		ldmia	r5, {r0, r1}
+ 1579 0022 83E80300 		stmia	r3, {r0, r1}
+ 1580 0026 9E60     		str	r6, [r3, #8]
+ 1581 0028 0693     		str	r3, [sp, #24]
+ 1582 002a 01AA     		add	r2, sp, #4
+ 1583 002c 06AB     		add	r3, sp, #24
+ 1584 002e 93E80300 		ldmia	r3, {r0, r1}
+ 1585 0032 82E80300 		stmia	r2, {r0, r1}
+ 1586 0036 94E80300 		ldmia	r4, {r0, r1}
+ 1587 003a 83E80300 		stmia	r3, {r0, r1}
+ 1588 003e 92E80300 		ldmia	r2, {r0, r1}
+ 1589 0042 094A     		ldr	r2, .L216
+ 1590 0044 A568     		ldr	r5, [r4, #8]
+ 1591 0046 A260     		str	r2, [r4, #8]
+ 1592 0048 E268     		ldr	r2, [r4, #12]
+ 1593 004a 84E80300 		stmia	r4, {r0, r1}
+ 1594 004e 0992     		str	r2, [sp, #36]
+ 1595 0050 064A     		ldr	r2, .L216+4
+ 1596 0052 0895     		str	r5, [sp, #32]
+ARM GAS  /tmp/cct1mH4m.s 			page 29
+
+
+ 1597 0054 E260     		str	r2, [r4, #12]
+ 1598 0056 1DB1     		cbz	r5, .L212
+ 1599 0058 1846     		mov	r0, r3
+ 1600 005a 1946     		mov	r1, r3
+ 1601 005c 0322     		movs	r2, #3
+ 1602 005e A847     		blx	r5
+ 1603              	.L212:
+ 1604 0060 2046     		mov	r0, r4
+ 1605 0062 0AB0     		add	sp, sp, #40
+ 1606              		@ sp needed
+ 1607 0064 70BD     		pop	{r4, r5, r6, pc}
+ 1608              	.L217:
+ 1609 0066 00BF     		.align	2
+ 1610              	.L216:
+ 1611 0068 00000000 		.word	_ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessage
+ 1612 006c 00000000 		.word	_ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7
+ 1613              		.size	_ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_
+ 1614              		.weak	_ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_
+ 1615              		.thumb_set _ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_
+ 1616              		.section	.text._ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE,"ax",%pro
+ 1617              		.align	1
+ 1618              		.global	_ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE
+ 1619              		.thumb
+ 1620              		.thumb_func
+ 1621              		.type	_ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE, %function
+ 1622              	_ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE:
+ 1623              		@ args = 0, pretend = 0, frame = 16
+ 1624              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1625 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1626 0002 0446     		mov	r4, r0
+ 1627 0004 85B0     		sub	sp, sp, #20
+ 1628 0006 1046     		mov	r0, r2
+ 1629 0008 0E46     		mov	r6, r1
+ 1630 000a 1546     		mov	r5, r2
+ 1631 000c FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1632 0010 D4F85834 		ldr	r3, [r4, #1112]
+ 1633 0014 43B9     		cbnz	r3, .L219
+ 1634 0016 2A4A     		ldr	r2, .L234
+ 1635 0018 04F58A60 		add	r0, r4, #1104
+ 1636 001c 01A9     		add	r1, sp, #4
+ 1637 001e 0192     		str	r2, [sp, #4]
+ 1638 0020 0293     		str	r3, [sp, #8]
+ 1639 0022 0394     		str	r4, [sp, #12]
+ 1640 0024 FFF7FEFF 		bl	_ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_Pla
+ 1641              	.L219:
+ 1642 0028 96E80300 		ldmia	r6, {r0, r1}
+ 1643 002c 04F58C63 		add	r3, r4, #1120
+ 1644 0030 83E80300 		stmia	r3, {r0, r1}
+ 1645 0034 D4F86064 		ldr	r6, [r4, #1120]	@ float
+ 1646 0038 4FF07C51 		mov	r1, #1056964608
+ 1647 003c 3046     		mov	r0, r6
+ 1648 003e FFF7FEFF 		bl	__aeabi_fcmplt
+ 1649 0042 08B1     		cbz	r0, .L220
+ 1650 0044 4FF07C56 		mov	r6, #1056964608
+ 1651              	.L220:
+ 1652 0048 D4F86474 		ldr	r7, [r4, #1124]	@ float
+ 1653 004c C4F86064 		str	r6, [r4, #1120]	@ float
+ARM GAS  /tmp/cct1mH4m.s 			page 30
+
+
+ 1654 0050 3846     		mov	r0, r7
+ 1655 0052 1C49     		ldr	r1, .L234+4
+ 1656 0054 FFF7FEFF 		bl	__aeabi_fcmplt
+ 1657 0058 00B1     		cbz	r0, .L221
+ 1658 005a 1A4F     		ldr	r7, .L234+4
+ 1659              	.L221:
+ 1660 005c 3046     		mov	r0, r6
+ 1661 005e 3946     		mov	r1, r7
+ 1662 0060 FFF7FEFF 		bl	__aeabi_fcmplt
+ 1663 0064 00B9     		cbnz	r0, .L222
+ 1664 0066 3E46     		mov	r6, r7
+ 1665              	.L222:
+ 1666 0068 2846     		mov	r0, r5
+ 1667 006a C4F86464 		str	r6, [r4, #1124]	@ float
+ 1668 006e FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1669 0072 2046     		mov	r0, r4
+ 1670 0074 2946     		mov	r1, r5
+ 1671 0076 FFF7FEFF 		bl	_ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE
+ 1672 007a 08B9     		cbnz	r0, .L223
+ 1673              	.L225:
+ 1674 007c 0026     		movs	r6, #0
+ 1675 007e 1CE0     		b	.L224
+ 1676              	.L223:
+ 1677 0080 2846     		mov	r0, r5
+ 1678 0082 FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1679 0086 2046     		mov	r0, r4
+ 1680 0088 2946     		mov	r1, r5
+ 1681 008a FFF7FEFF 		bl	_ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE
+ 1682 008e 0028     		cmp	r0, #0
+ 1683 0090 F4D0     		beq	.L225
+ 1684 0092 2846     		mov	r0, r5
+ 1685 0094 FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1686 0098 2046     		mov	r0, r4
+ 1687 009a FFF7FEFF 		bl	_ZN5ublox6Driver17configureMessagesEv
+ 1688 009e 0646     		mov	r6, r0
+ 1689 00a0 0028     		cmp	r0, #0
+ 1690 00a2 EBD0     		beq	.L225
+ 1691 00a4 2068     		ldr	r0, [r4]
+ 1692 00a6 04F58D64 		add	r4, r4, #1128
+ 1693 00aa 0368     		ldr	r3, [r0]
+ 1694 00ac 5B69     		ldr	r3, [r3, #20]
+ 1695 00ae 9847     		blx	r3
+ 1696 00b0 C4E90001 		strd	r0, [r4]
+ 1697 00b4 2846     		mov	r0, r5
+ 1698 00b6 FFF7FEFF 		bl	_ZN13zubax_chibios8watchdog5Timer5resetEv
+ 1699              	.L224:
+ 1700 00ba 3046     		mov	r0, r6
+ 1701 00bc 05B0     		add	sp, sp, #20
+ 1702              		@ sp needed
+ 1703 00be F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1704              	.L235:
+ 1705              		.align	2
+ 1706              	.L234:
+ 1707 00c0 00000000 		.word	_ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE
+ 1708 00c4 CDCCCC3D 		.word	1036831949
+ 1709              		.size	_ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE, .-_ZN5ublox6Drive
+ 1710              		.global	_ZN5ublox9IOManager14ValidBaudRatesE
+ARM GAS  /tmp/cct1mH4m.s 			page 31
+
+
+ 1711              		.global	_ZN5ublox15MessageReceiver18InvalidClassValuesE
+ 1712              		.section	.rodata._ZN5ublox15MessageReceiver18InvalidClassValuesE,"a",%progbits
+ 1713              		.type	_ZN5ublox15MessageReceiver18InvalidClassValuesE, %object
+ 1714              		.size	_ZN5ublox15MessageReceiver18InvalidClassValuesE, 2
+ 1715              	_ZN5ublox15MessageReceiver18InvalidClassValuesE:
+ 1716 0000 00       		.byte	0
+ 1717 0001 FF       		.byte	-1
+ 1718              		.section	.rodata._ZZN5ublox9IOManager4sendERKNS_7MessageEE6Header,"a",%progbits
+ 1719              		.set	.LANCHOR1,. + 0
+ 1720              		.type	_ZZN5ublox9IOManager4sendERKNS_7MessageEE6Header, %object
+ 1721              		.size	_ZZN5ublox9IOManager4sendERKNS_7MessageEE6Header, 2
+ 1722              	_ZZN5ublox9IOManager4sendERKNS_7MessageEE6Header:
+ 1723 0000 B5       		.byte	-75
+ 1724 0001 62       		.byte	98
+ 1725              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 1726              	.LC0:
+ 1727 0000 75626C6F 		.ascii	"ublox: Msg too long %d\012\000"
+ 1727      783A204D 
+ 1727      73672074 
+ 1727      6F6F206C 
+ 1727      6F6E6720 
+ 1728              	.LC1:
+ 1729 0018 75626C6F 		.ascii	"ublox: Invalid checksum\012\000"
+ 1729      783A2049 
+ 1729      6E76616C 
+ 1729      69642063 
+ 1729      6865636B 
+ 1730              	.LC2:
+ 1731 0031 75626C6F 		.ascii	"ublox: NAK 0x%02x 0x%02x\012\000"
+ 1731      783A204E 
+ 1731      414B2030 
+ 1731      78253032 
+ 1731      78203078 
+ 1732              	.LC3:
+ 1733 004b 75626C6F 		.ascii	"ublox: Trying baudrate %u...\012\000"
+ 1733      783A2054 
+ 1733      7279696E 
+ 1733      67206261 
+ 1733      75647261 
+ 1734              	.LC4:
+ 1735 0069 75626C6F 		.ascii	"ublox: Baudrate match %u\012\000"
+ 1735      783A2042 
+ 1735      61756472 
+ 1735      61746520 
+ 1735      6D617463 
+ 1736              	.LC5:
+ 1737 0083 4661696C 		.ascii	"Failed to detect baudrate\012\000"
+ 1737      65642074 
+ 1737      6F206465 
+ 1737      74656374 
+ 1737      20626175 
+ 1738              	.LC6:
+ 1739 009e 75626C6F 		.ascii	"ublox: NAV-SAT of unsupported version %i\012\000"
+ 1739      783A204E 
+ 1739      41562D53 
+ 1739      4154206F 
+ 1739      6620756E 
+ARM GAS  /tmp/cct1mH4m.s 			page 32
+
+
+ 1740              	.LC7:
+ 1741 00c8 75626C6F 		.ascii	"ublox: Unknown message: class=0x%02x id=0x%02x payl"
+ 1741      783A2055 
+ 1741      6E6B6E6F 
+ 1741      776E206D 
+ 1741      65737361 
+ 1742 00fb 6F61645F 		.ascii	"oad_len=%d\012\000"
+ 1742      6C656E3D 
+ 1742      25640A00 
+ 1743              	.LC8:
+ 1744 0107 75626C6F 		.ascii	"ublox: CFG-RATE failed\012\000"
+ 1744      783A2043 
+ 1744      46472D52 
+ 1744      41544520 
+ 1744      6661696C 
+ 1745              	.LC9:
+ 1746 011f 75626C6F 		.ascii	"ublox: Failed to poll MON-GNSS\012\000"
+ 1746      783A2046 
+ 1746      61696C65 
+ 1746      6420746F 
+ 1746      20706F6C 
+ 1747              	.LC10:
+ 1748 013f 75626C6F 		.ascii	"ublox: MON-GNSS supported=%u default=%u enabled=%u "
+ 1748      783A204D 
+ 1748      4F4E2D47 
+ 1748      4E535320 
+ 1748      73757070 
+ 1749 0172 73696D75 		.ascii	"simultaneous=%u\012\000"
+ 1749      6C74616E 
+ 1749      656F7573 
+ 1749      3D25750A 
+ 1749      00
+ 1750              	.LC11:
+ 1751 0183 75626C6F 		.ascii	"ublox: CFG-NAV5 failed\012\000"
+ 1751      783A2043 
+ 1751      46472D4E 
+ 1751      41563520 
+ 1751      6661696C 
+ 1752              		.section	.bss._ZGVZNK5ublox6Driver13areRatesValidEvE8validate,"aw",%nobits
+ 1753              		.align	2
+ 1754              		.set	.LANCHOR3,. + 0
+ 1755              		.type	_ZGVZNK5ublox6Driver13areRatesValidEvE8validate, %object
+ 1756              		.size	_ZGVZNK5ublox6Driver13areRatesValidEvE8validate, 4
+ 1757              	_ZGVZNK5ublox6Driver13areRatesValidEvE8validate:
+ 1758 0000 00000000 		.space	4
+ 1759              		.section	.rodata._ZN5ublox9IOManager14ValidBaudRatesE,"a",%progbits
+ 1760              		.align	2
+ 1761              		.set	.LANCHOR2,. + 0
+ 1762              		.type	_ZN5ublox9IOManager14ValidBaudRatesE, %object
+ 1763              		.size	_ZN5ublox9IOManager14ValidBaudRatesE, 24
+ 1764              	_ZN5ublox9IOManager14ValidBaudRatesE:
+ 1765 0000 80250000 		.word	9600
+ 1766 0004 00C20100 		.word	115200
+ 1767 0008 00E10000 		.word	57600
+ 1768 000c 00960000 		.word	38400
+ 1769 0010 004B0000 		.word	19200
+ 1770 0014 C0120000 		.word	4800
+ARM GAS  /tmp/cct1mH4m.s 			page 33
+
+
+ 1771              		.section	.bss._ZZNK5ublox6Driver13areRatesValidEvE8validate,"aw",%nobits
+ 1772              		.align	3
+ 1773              		.set	.LANCHOR0,. + 0
+ 1774              		.type	_ZZNK5ublox6Driver13areRatesValidEvE8validate, %object
+ 1775              		.size	_ZZNK5ublox6Driver13areRatesValidEvE8validate, 16
+ 1776              	_ZZNK5ublox6Driver13areRatesValidEvE8validate:
+ 1777 0000 00000000 		.space	16
+ 1777      00000000 
+ 1777      00000000 
+ 1777      00000000 
+ 1778              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cct1mH4m.s 			page 34
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 ublox.cpp
+     /tmp/cct1mH4m.s:16     .text._ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessageEEEPS4_St12_PlaceholderILi1EEEEE10_M_managerERSt9_Any_dataRKSH_St18_Manager_operation:0000000000000000 $t
+     /tmp/cct1mH4m.s:21     .text._ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessageEEEPS4_St12_PlaceholderILi1EEEEE10_M_managerERSt9_Any_dataRKSH_St18_Manager_operation:0000000000000000 _ZNSt14_Function_base13_Base_managerISt5_BindIFSt7_Mem_fnIMN5ublox6DriverEFvRKNS3_9RxMessageEEEPS4_St12_PlaceholderILi1EEEEE10_M_managerERSt9_Any_dataRKSH_St18_Manager_operation
+     /tmp/cct1mH4m.s:56     .text._ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14:0000000000000000 $t
+     /tmp/cct1mH4m.s:60     .text._ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14:0000000000000000 _ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14
+     /tmp/cct1mH4m.s:111    .text._ZZNK5ublox6Driver13areRatesValidEvENKUlRKNS_10TimestampsEfE_clES3_f.constprop.14:0000000000000070 $d
+     /tmp/cct1mH4m.s:117    .text._ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7_St12_PlaceholderILi1EEEEE9_M_invokeERKSt9_Any_dataS3_:0000000000000000 $t
+     /tmp/cct1mH4m.s:122    .text._ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7_St12_PlaceholderILi1EEEEE9_M_invokeERKSt9_Any_dataS3_:0000000000000000 _ZNSt17_Function_handlerIFvRKN5ublox9RxMessageEESt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS7_St12_PlaceholderILi1EEEEE9_M_invokeERKSt9_Any_dataS3_
+     /tmp/cct1mH4m.s:141    .text._ZN13zubax_chibios8watchdog5Timer5resetEv:0000000000000000 $t
+     /tmp/cct1mH4m.s:146    .text._ZN13zubax_chibios8watchdog5Timer5resetEv:0000000000000000 _ZN13zubax_chibios8watchdog5Timer5resetEv
+     /tmp/cct1mH4m.s:154    .text._ZN5ublox16ChecksumComputer3addEh:0000000000000000 $t
+     /tmp/cct1mH4m.s:159    .text._ZN5ublox16ChecksumComputer3addEh:0000000000000000 _ZN5ublox16ChecksumComputer3addEh
+     /tmp/cct1mH4m.s:173    .text._ZN5ublox16ChecksumComputer3addEPKhj:0000000000000000 $t
+     /tmp/cct1mH4m.s:178    .text._ZN5ublox16ChecksumComputer3addEPKhj:0000000000000000 _ZN5ublox16ChecksumComputer3addEPKhj
+     /tmp/cct1mH4m.s:196    .text._ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh:0000000000000000 $t
+     /tmp/cct1mH4m.s:201    .text._ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh:0000000000000000 _ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh
+     /tmp/cct1mH4m.s:212    .text._ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh:0000000000000010 $d
+     /tmp/cct1mH4m.s:326    .text._ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh:00000000000000fc $d
+     /tmp/cct1mH4m.s:330    .text._ZNK5ublox15MessageReceiver14getReadLenHintEv:0000000000000000 $t
+     /tmp/cct1mH4m.s:335    .text._ZNK5ublox15MessageReceiver14getReadLenHintEv:0000000000000000 _ZNK5ublox15MessageReceiver14getReadLenHintEv
+     /tmp/cct1mH4m.s:353    .text._ZNK5ublox15MessageReceiver18getReceivedMessageEv:0000000000000000 $t
+     /tmp/cct1mH4m.s:358    .text._ZNK5ublox15MessageReceiver18getReceivedMessageEv:0000000000000000 _ZNK5ublox15MessageReceiver18getReceivedMessageEv
+     /tmp/cct1mH4m.s:383    .text._ZN5ublox15MessageReceiver5resetEv:0000000000000000 $t
+     /tmp/cct1mH4m.s:388    .text._ZN5ublox15MessageReceiver5resetEv:0000000000000000 _ZN5ublox15MessageReceiver5resetEv
+     /tmp/cct1mH4m.s:397    .text._ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE:0000000000000000 $t
+     /tmp/cct1mH4m.s:402    .text._ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE:0000000000000000 _ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE
+     /tmp/cct1mH4m.s:437    .text._ZN5ublox9IOManager21handleReceivedMessageERKNS_9RxMessageE:000000000000003c $d
+     /tmp/cct1mH4m.s:440    .text._ZN5ublox9IOManager4spinEj:0000000000000000 $t
+     /tmp/cct1mH4m.s:445    .text._ZN5ublox9IOManager4spinEj:0000000000000000 _ZN5ublox9IOManager4spinEj
+     /tmp/cct1mH4m.s:528    .text._ZN5ublox9IOManager4sendERKNS_7MessageE:0000000000000000 $t
+     /tmp/cct1mH4m.s:533    .text._ZN5ublox9IOManager4sendERKNS_7MessageE:0000000000000000 _ZN5ublox9IOManager4sendERKNS_7MessageE
+     /tmp/cct1mH4m.s:606    .text._ZN5ublox9IOManager4sendERKNS_7MessageE:00000000000000a4 $d
+     /tmp/cct1mH4m.s:609    .text._ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj:0000000000000000 $t
+     /tmp/cct1mH4m.s:614    .text._ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj:0000000000000000 _ZN5ublox9IOManager14sendAndWaitAckERKNS_7MessageEj
+     /tmp/cct1mH4m.s:658    .text._ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE:0000000000000000 $t
+     /tmp/cct1mH4m.s:663    .text._ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE:0000000000000000 _ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE
+     /tmp/cct1mH4m.s:767    .text._ZN5ublox9IOManager9configureERN13zubax_chibios8watchdog5TimerE:00000000000000f4 $d
+     /tmp/cct1mH4m.s:779    .text._ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE:0000000000000000 $t
+     /tmp/cct1mH4m.s:784    .text._ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE:0000000000000000 _ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE
+     /tmp/cct1mH4m.s:877    .text._ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE:0000000000000116 $d
+     /tmp/cct1mH4m.s:881    .text._ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE:000000000000011a $t
+     /tmp/cct1mH4m.s:963    .text._ZN5ublox6Driver9handlePVTERKNS_10TimestampsERKNS_3msg7NAV_PVTE:00000000000001c8 $d
+     /tmp/cct1mH4m.s:970    .text._ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE:0000000000000000 $t
+     /tmp/cct1mH4m.s:975    .text._ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE:0000000000000000 _ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE
+     /tmp/cct1mH4m.s:1031   .text._ZN5ublox6Driver9handleDOPERKNS_10TimestampsERKNS_3msg7NAV_DOPE:0000000000000098 $d
+     /tmp/cct1mH4m.s:1034   .text._ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE:0000000000000000 $t
+     /tmp/cct1mH4m.s:1039   .text._ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE:0000000000000000 _ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE
+     /tmp/cct1mH4m.s:1084   .text._ZN5ublox6Driver9handleSATERKNS_10TimestampsERKNS_3msg7NAV_SATE:0000000000000064 $d
+     /tmp/cct1mH4m.s:1087   .text._ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE:0000000000000000 $t
+     /tmp/cct1mH4m.s:1092   .text._ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE:0000000000000000 _ZN5ublox6Driver13handleTIMEGPSERKNS_10TimestampsERKNS_3msg11NAV_TIMEGPSE
+     /tmp/cct1mH4m.s:1136   .text._ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE:0000000000000000 $t
+     /tmp/cct1mH4m.s:1141   .text._ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE:0000000000000000 _ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE
+     /tmp/cct1mH4m.s:1187   .text._ZN5ublox6Driver21handleReceivedMessageERKNS_9RxMessageE:0000000000000060 $d
+     /tmp/cct1mH4m.s:1190   .text._ZN5ublox6Driver20configureMessageRateEhhh:0000000000000000 $t
+     /tmp/cct1mH4m.s:1195   .text._ZN5ublox6Driver20configureMessageRateEhhh:0000000000000000 _ZN5ublox6Driver20configureMessageRateEhhh
+     /tmp/cct1mH4m.s:1227   .text._ZN5ublox6Driver17configureMessagesEv:0000000000000000 $t
+ARM GAS  /tmp/cct1mH4m.s 			page 35
+
+
+     /tmp/cct1mH4m.s:1232   .text._ZN5ublox6Driver17configureMessagesEv:0000000000000000 _ZN5ublox6Driver17configureMessagesEv
+     /tmp/cct1mH4m.s:1301   .text._ZN5ublox6Driver4spinEj:0000000000000000 $t
+     /tmp/cct1mH4m.s:1306   .text._ZN5ublox6Driver4spinEj:0000000000000000 _ZN5ublox6Driver4spinEj
+     /tmp/cct1mH4m.s:1313   .text._ZNK5ublox6Driver13areRatesValidEv:0000000000000000 $t
+     /tmp/cct1mH4m.s:1318   .text._ZNK5ublox6Driver13areRatesValidEv:0000000000000000 _ZNK5ublox6Driver13areRatesValidEv
+     /tmp/cct1mH4m.s:1349   .text._ZNK5ublox6Driver13areRatesValidEv:000000000000003c $d
+     /tmp/cct1mH4m.s:1353   .text._ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j:0000000000000000 $t
+     /tmp/cct1mH4m.s:1358   .text._ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j:0000000000000000 _ZN5ublox9IOManager4pollINS_3msg8MON_GNSSEEEPKT_j
+     /tmp/cct1mH4m.s:1423   .text._ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE:0000000000000000 $t
+     /tmp/cct1mH4m.s:1428   .text._ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE:0000000000000000 _ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE
+     /tmp/cct1mH4m.s:1549   .text._ZN5ublox6Driver13configureGnssERN13zubax_chibios8watchdog5TimerE:0000000000000120 $d
+     /tmp/cct1mH4m.s:1557   .text._ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IISt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IISt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_:0000000000000000 $t
+     /tmp/cct1mH4m.s:1562   .text._ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IISt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IISt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_:0000000000000000 _ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IISt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IISt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_
+     /tmp/cct1mH4m.s:1611   .text._ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IISt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IISt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_:0000000000000068 $d
+     /tmp/cct1mH4m.s:1562   .text._ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IISt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IISt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_:0000000000000000 _ZNSt8functionIFvRKN5ublox9RxMessageEEEaSISt5_BindIFSt7_Mem_fnIMNS0_6DriverEFvS3_EEPS9_St12_PlaceholderILi1EEEEEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt7is_sameINSt5decayIT_E4typeES5_EESt5__or_IJSt7is_voidIvESt14is_convertibleIDTclcl18__callable_functorcl7declvalIRSP_EEEcl7declvalIS3_EEEEvEEEEE5valueERS5_E4typeEOSN_
+     /tmp/cct1mH4m.s:1617   .text._ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE:0000000000000000 $t
+     /tmp/cct1mH4m.s:1622   .text._ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE:0000000000000000 _ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE
+     /tmp/cct1mH4m.s:1707   .text._ZN5ublox6Driver9configureERKNS_6ConfigERN13zubax_chibios8watchdog5TimerE:00000000000000c0 $d
+     /tmp/cct1mH4m.s:1764   .rodata._ZN5ublox9IOManager14ValidBaudRatesE:0000000000000000 _ZN5ublox9IOManager14ValidBaudRatesE
+     /tmp/cct1mH4m.s:1715   .rodata._ZN5ublox15MessageReceiver18InvalidClassValuesE:0000000000000000 _ZN5ublox15MessageReceiver18InvalidClassValuesE
+     /tmp/cct1mH4m.s:1722   .rodata._ZZN5ublox9IOManager4sendERKNS_7MessageEE6Header:0000000000000000 _ZZN5ublox9IOManager4sendERKNS_7MessageEE6Header
+     /tmp/cct1mH4m.s:1753   .bss._ZGVZNK5ublox6Driver13areRatesValidEvE8validate:0000000000000000 $d
+     /tmp/cct1mH4m.s:1757   .bss._ZGVZNK5ublox6Driver13areRatesValidEvE8validate:0000000000000000 _ZGVZNK5ublox6Driver13areRatesValidEvE8validate
+     /tmp/cct1mH4m.s:1760   .rodata._ZN5ublox9IOManager14ValidBaudRatesE:0000000000000000 $d
+     /tmp/cct1mH4m.s:1772   .bss._ZZNK5ublox6Driver13areRatesValidEvE8validate:0000000000000000 $d
+     /tmp/cct1mH4m.s:1776   .bss._ZZNK5ublox6Driver13areRatesValidEvE8validate:0000000000000000 _ZZNK5ublox6Driver13areRatesValidEvE8validate
+     /tmp/cct1mH4m.s:221    .text._ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh:0000000000000019 $d
+     /tmp/cct1mH4m.s:221    .text._ZN5ublox15MessageReceiver8nextByteERKNS_10TimestampsEh:000000000000001a $t
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZdlPv
+__aeabi_f2d
+__aeabi_ddiv
+__aeabi_dadd
+__aeabi_d2ulz
+watchdogReset
+lowsyslog
+memset
+__aeabi_i2d
+__aeabi_i2f
+__aeabi_fdiv
+__aeabi_ui2f
+__aeabi_fmul
+memcpy
+mktime
+__aeabi_fadd
+__aeabi_f2uiz
+__aeabi_fcmpgt
+__aeabi_fcmplt

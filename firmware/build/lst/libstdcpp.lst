@@ -1,0 +1,615 @@
+ARM GAS  /tmp/ccKj7s2C.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"libstdcpp.cpp"
+  15              		.section	.text._Znwj,"ax",%progbits
+  16              		.align	1
+  17              		.global	_Znwj
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_Znwj, %function
+  21              	_Znwj:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 FFF7FEBF 		b	chCoreAlloc
+  26              		.size	_Znwj, .-_Znwj
+  27              		.section	.text._Znaj,"ax",%progbits
+  28              		.align	1
+  29              		.global	_Znaj
+  30              		.thumb
+  31              		.thumb_func
+  32              		.type	_Znaj, %function
+  33              	_Znaj:
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		@ link register save eliminated.
+  37 0000 FFF7FEBF 		b	chCoreAlloc
+  38              		.size	_Znaj, .-_Znaj
+  39              		.section	.text._ZdlPv,"ax",%progbits
+  40              		.align	1
+  41              		.global	_ZdlPv
+  42              		.thumb
+  43              		.thumb_func
+  44              		.type	_ZdlPv, %function
+  45              	_ZdlPv:
+  46              		@ Volatile: function does not return.
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49 0000 08B5     		push	{r3, lr}
+  50 0002 0148     		ldr	r0, .L4
+  51 0004 FFF7FEFF 		bl	sysPanic
+  52              	.L5:
+  53              		.align	2
+  54              	.L4:
+  55 0008 00000000 		.word	.LC0
+  56              		.size	_ZdlPv, .-_ZdlPv
+  57              		.section	.text._ZdaPv,"ax",%progbits
+ARM GAS  /tmp/ccKj7s2C.s 			page 2
+
+
+  58              		.align	1
+  59              		.global	_ZdaPv
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	_ZdaPv, %function
+  63              	_ZdaPv:
+  64              		@ Volatile: function does not return.
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 08B5     		push	{r3, lr}
+  68 0002 0148     		ldr	r0, .L7
+  69 0004 FFF7FEFF 		bl	sysPanic
+  70              	.L8:
+  71              		.align	2
+  72              	.L7:
+  73 0008 00000000 		.word	.LC0
+  74              		.size	_ZdaPv, .-_ZdaPv
+  75              		.section	.text._ZSt21__throw_bad_exceptionv,"ax",%progbits
+  76              		.align	1
+  77              		.global	_ZSt21__throw_bad_exceptionv
+  78              		.thumb
+  79              		.thumb_func
+  80              		.type	_ZSt21__throw_bad_exceptionv, %function
+  81              	_ZSt21__throw_bad_exceptionv:
+  82              		@ Volatile: function does not return.
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85 0000 08B5     		push	{r3, lr}
+  86 0002 0148     		ldr	r0, .L10
+  87 0004 FFF7FEFF 		bl	sysPanic
+  88              	.L11:
+  89              		.align	2
+  90              	.L10:
+  91 0008 07000000 		.word	.LC1
+  92              		.size	_ZSt21__throw_bad_exceptionv, .-_ZSt21__throw_bad_exceptionv
+  93              		.section	.text._ZSt17__throw_bad_allocv,"ax",%progbits
+  94              		.align	1
+  95              		.global	_ZSt17__throw_bad_allocv
+  96              		.thumb
+  97              		.thumb_func
+  98              		.type	_ZSt17__throw_bad_allocv, %function
+  99              	_ZSt17__throw_bad_allocv:
+ 100              		@ Volatile: function does not return.
+ 101              		@ args = 0, pretend = 0, frame = 0
+ 102              		@ frame_needed = 0, uses_anonymous_args = 0
+ 103 0000 08B5     		push	{r3, lr}
+ 104 0002 0148     		ldr	r0, .L13
+ 105 0004 FFF7FEFF 		bl	sysPanic
+ 106              	.L14:
+ 107              		.align	2
+ 108              	.L13:
+ 109 0008 07000000 		.word	.LC1
+ 110              		.size	_ZSt17__throw_bad_allocv, .-_ZSt17__throw_bad_allocv
+ 111              		.section	.text._ZSt16__throw_bad_castv,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	_ZSt16__throw_bad_castv
+ 114              		.thumb
+ARM GAS  /tmp/ccKj7s2C.s 			page 3
+
+
+ 115              		.thumb_func
+ 116              		.type	_ZSt16__throw_bad_castv, %function
+ 117              	_ZSt16__throw_bad_castv:
+ 118              		@ Volatile: function does not return.
+ 119              		@ args = 0, pretend = 0, frame = 0
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121 0000 08B5     		push	{r3, lr}
+ 122 0002 0148     		ldr	r0, .L16
+ 123 0004 FFF7FEFF 		bl	sysPanic
+ 124              	.L17:
+ 125              		.align	2
+ 126              	.L16:
+ 127 0008 07000000 		.word	.LC1
+ 128              		.size	_ZSt16__throw_bad_castv, .-_ZSt16__throw_bad_castv
+ 129              		.section	.text._ZSt18__throw_bad_typeidv,"ax",%progbits
+ 130              		.align	1
+ 131              		.global	_ZSt18__throw_bad_typeidv
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.type	_ZSt18__throw_bad_typeidv, %function
+ 135              	_ZSt18__throw_bad_typeidv:
+ 136              		@ Volatile: function does not return.
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139 0000 08B5     		push	{r3, lr}
+ 140 0002 0148     		ldr	r0, .L19
+ 141 0004 FFF7FEFF 		bl	sysPanic
+ 142              	.L20:
+ 143              		.align	2
+ 144              	.L19:
+ 145 0008 07000000 		.word	.LC1
+ 146              		.size	_ZSt18__throw_bad_typeidv, .-_ZSt18__throw_bad_typeidv
+ 147              		.section	.text._ZSt19__throw_logic_errorPKc,"ax",%progbits
+ 148              		.align	1
+ 149              		.global	_ZSt19__throw_logic_errorPKc
+ 150              		.thumb
+ 151              		.thumb_func
+ 152              		.type	_ZSt19__throw_logic_errorPKc, %function
+ 153              	_ZSt19__throw_logic_errorPKc:
+ 154              		@ Volatile: function does not return.
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157 0000 08B5     		push	{r3, lr}
+ 158 0002 0148     		ldr	r0, .L22
+ 159 0004 FFF7FEFF 		bl	sysPanic
+ 160              	.L23:
+ 161              		.align	2
+ 162              	.L22:
+ 163 0008 07000000 		.word	.LC1
+ 164              		.size	_ZSt19__throw_logic_errorPKc, .-_ZSt19__throw_logic_errorPKc
+ 165              		.section	.text._ZSt20__throw_domain_errorPKc,"ax",%progbits
+ 166              		.align	1
+ 167              		.global	_ZSt20__throw_domain_errorPKc
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.type	_ZSt20__throw_domain_errorPKc, %function
+ 171              	_ZSt20__throw_domain_errorPKc:
+ARM GAS  /tmp/ccKj7s2C.s 			page 4
+
+
+ 172              		@ Volatile: function does not return.
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175 0000 08B5     		push	{r3, lr}
+ 176 0002 0148     		ldr	r0, .L25
+ 177 0004 FFF7FEFF 		bl	sysPanic
+ 178              	.L26:
+ 179              		.align	2
+ 180              	.L25:
+ 181 0008 07000000 		.word	.LC1
+ 182              		.size	_ZSt20__throw_domain_errorPKc, .-_ZSt20__throw_domain_errorPKc
+ 183              		.section	.text._ZSt24__throw_invalid_argumentPKc,"ax",%progbits
+ 184              		.align	1
+ 185              		.global	_ZSt24__throw_invalid_argumentPKc
+ 186              		.thumb
+ 187              		.thumb_func
+ 188              		.type	_ZSt24__throw_invalid_argumentPKc, %function
+ 189              	_ZSt24__throw_invalid_argumentPKc:
+ 190              		@ Volatile: function does not return.
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193 0000 08B5     		push	{r3, lr}
+ 194 0002 0148     		ldr	r0, .L28
+ 195 0004 FFF7FEFF 		bl	sysPanic
+ 196              	.L29:
+ 197              		.align	2
+ 198              	.L28:
+ 199 0008 07000000 		.word	.LC1
+ 200              		.size	_ZSt24__throw_invalid_argumentPKc, .-_ZSt24__throw_invalid_argumentPKc
+ 201              		.section	.text._ZSt20__throw_length_errorPKc,"ax",%progbits
+ 202              		.align	1
+ 203              		.global	_ZSt20__throw_length_errorPKc
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.type	_ZSt20__throw_length_errorPKc, %function
+ 207              	_ZSt20__throw_length_errorPKc:
+ 208              		@ Volatile: function does not return.
+ 209              		@ args = 0, pretend = 0, frame = 0
+ 210              		@ frame_needed = 0, uses_anonymous_args = 0
+ 211 0000 08B5     		push	{r3, lr}
+ 212 0002 0148     		ldr	r0, .L31
+ 213 0004 FFF7FEFF 		bl	sysPanic
+ 214              	.L32:
+ 215              		.align	2
+ 216              	.L31:
+ 217 0008 07000000 		.word	.LC1
+ 218              		.size	_ZSt20__throw_length_errorPKc, .-_ZSt20__throw_length_errorPKc
+ 219              		.section	.text._ZSt20__throw_out_of_rangePKc,"ax",%progbits
+ 220              		.align	1
+ 221              		.global	_ZSt20__throw_out_of_rangePKc
+ 222              		.thumb
+ 223              		.thumb_func
+ 224              		.type	_ZSt20__throw_out_of_rangePKc, %function
+ 225              	_ZSt20__throw_out_of_rangePKc:
+ 226              		@ Volatile: function does not return.
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccKj7s2C.s 			page 5
+
+
+ 229 0000 08B5     		push	{r3, lr}
+ 230 0002 0148     		ldr	r0, .L34
+ 231 0004 FFF7FEFF 		bl	sysPanic
+ 232              	.L35:
+ 233              		.align	2
+ 234              	.L34:
+ 235 0008 07000000 		.word	.LC1
+ 236              		.size	_ZSt20__throw_out_of_rangePKc, .-_ZSt20__throw_out_of_rangePKc
+ 237              		.section	.text._ZSt21__throw_runtime_errorPKc,"ax",%progbits
+ 238              		.align	1
+ 239              		.global	_ZSt21__throw_runtime_errorPKc
+ 240              		.thumb
+ 241              		.thumb_func
+ 242              		.type	_ZSt21__throw_runtime_errorPKc, %function
+ 243              	_ZSt21__throw_runtime_errorPKc:
+ 244              		@ Volatile: function does not return.
+ 245              		@ args = 0, pretend = 0, frame = 0
+ 246              		@ frame_needed = 0, uses_anonymous_args = 0
+ 247 0000 08B5     		push	{r3, lr}
+ 248 0002 0148     		ldr	r0, .L37
+ 249 0004 FFF7FEFF 		bl	sysPanic
+ 250              	.L38:
+ 251              		.align	2
+ 252              	.L37:
+ 253 0008 07000000 		.word	.LC1
+ 254              		.size	_ZSt21__throw_runtime_errorPKc, .-_ZSt21__throw_runtime_errorPKc
+ 255              		.section	.text._ZSt19__throw_range_errorPKc,"ax",%progbits
+ 256              		.align	1
+ 257              		.global	_ZSt19__throw_range_errorPKc
+ 258              		.thumb
+ 259              		.thumb_func
+ 260              		.type	_ZSt19__throw_range_errorPKc, %function
+ 261              	_ZSt19__throw_range_errorPKc:
+ 262              		@ Volatile: function does not return.
+ 263              		@ args = 0, pretend = 0, frame = 0
+ 264              		@ frame_needed = 0, uses_anonymous_args = 0
+ 265 0000 08B5     		push	{r3, lr}
+ 266 0002 0148     		ldr	r0, .L40
+ 267 0004 FFF7FEFF 		bl	sysPanic
+ 268              	.L41:
+ 269              		.align	2
+ 270              	.L40:
+ 271 0008 07000000 		.word	.LC1
+ 272              		.size	_ZSt19__throw_range_errorPKc, .-_ZSt19__throw_range_errorPKc
+ 273              		.section	.text._ZSt22__throw_overflow_errorPKc,"ax",%progbits
+ 274              		.align	1
+ 275              		.global	_ZSt22__throw_overflow_errorPKc
+ 276              		.thumb
+ 277              		.thumb_func
+ 278              		.type	_ZSt22__throw_overflow_errorPKc, %function
+ 279              	_ZSt22__throw_overflow_errorPKc:
+ 280              		@ Volatile: function does not return.
+ 281              		@ args = 0, pretend = 0, frame = 0
+ 282              		@ frame_needed = 0, uses_anonymous_args = 0
+ 283 0000 08B5     		push	{r3, lr}
+ 284 0002 0148     		ldr	r0, .L43
+ 285 0004 FFF7FEFF 		bl	sysPanic
+ARM GAS  /tmp/ccKj7s2C.s 			page 6
+
+
+ 286              	.L44:
+ 287              		.align	2
+ 288              	.L43:
+ 289 0008 07000000 		.word	.LC1
+ 290              		.size	_ZSt22__throw_overflow_errorPKc, .-_ZSt22__throw_overflow_errorPKc
+ 291              		.section	.text._ZSt23__throw_underflow_errorPKc,"ax",%progbits
+ 292              		.align	1
+ 293              		.global	_ZSt23__throw_underflow_errorPKc
+ 294              		.thumb
+ 295              		.thumb_func
+ 296              		.type	_ZSt23__throw_underflow_errorPKc, %function
+ 297              	_ZSt23__throw_underflow_errorPKc:
+ 298              		@ Volatile: function does not return.
+ 299              		@ args = 0, pretend = 0, frame = 0
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301 0000 08B5     		push	{r3, lr}
+ 302 0002 0148     		ldr	r0, .L46
+ 303 0004 FFF7FEFF 		bl	sysPanic
+ 304              	.L47:
+ 305              		.align	2
+ 306              	.L46:
+ 307 0008 07000000 		.word	.LC1
+ 308              		.size	_ZSt23__throw_underflow_errorPKc, .-_ZSt23__throw_underflow_errorPKc
+ 309              		.section	.text._ZSt19__throw_ios_failurePKc,"ax",%progbits
+ 310              		.align	1
+ 311              		.global	_ZSt19__throw_ios_failurePKc
+ 312              		.thumb
+ 313              		.thumb_func
+ 314              		.type	_ZSt19__throw_ios_failurePKc, %function
+ 315              	_ZSt19__throw_ios_failurePKc:
+ 316              		@ Volatile: function does not return.
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319 0000 08B5     		push	{r3, lr}
+ 320 0002 0148     		ldr	r0, .L49
+ 321 0004 FFF7FEFF 		bl	sysPanic
+ 322              	.L50:
+ 323              		.align	2
+ 324              	.L49:
+ 325 0008 07000000 		.word	.LC1
+ 326              		.size	_ZSt19__throw_ios_failurePKc, .-_ZSt19__throw_ios_failurePKc
+ 327              		.section	.text._ZSt20__throw_system_errori,"ax",%progbits
+ 328              		.align	1
+ 329              		.global	_ZSt20__throw_system_errori
+ 330              		.thumb
+ 331              		.thumb_func
+ 332              		.type	_ZSt20__throw_system_errori, %function
+ 333              	_ZSt20__throw_system_errori:
+ 334              		@ Volatile: function does not return.
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337 0000 08B5     		push	{r3, lr}
+ 338 0002 0148     		ldr	r0, .L52
+ 339 0004 FFF7FEFF 		bl	sysPanic
+ 340              	.L53:
+ 341              		.align	2
+ 342              	.L52:
+ARM GAS  /tmp/ccKj7s2C.s 			page 7
+
+
+ 343 0008 07000000 		.word	.LC1
+ 344              		.size	_ZSt20__throw_system_errori, .-_ZSt20__throw_system_errori
+ 345              		.section	.text._ZSt20__throw_future_errori,"ax",%progbits
+ 346              		.align	1
+ 347              		.global	_ZSt20__throw_future_errori
+ 348              		.thumb
+ 349              		.thumb_func
+ 350              		.type	_ZSt20__throw_future_errori, %function
+ 351              	_ZSt20__throw_future_errori:
+ 352              		@ Volatile: function does not return.
+ 353              		@ args = 0, pretend = 0, frame = 0
+ 354              		@ frame_needed = 0, uses_anonymous_args = 0
+ 355 0000 08B5     		push	{r3, lr}
+ 356 0002 0148     		ldr	r0, .L55
+ 357 0004 FFF7FEFF 		bl	sysPanic
+ 358              	.L56:
+ 359              		.align	2
+ 360              	.L55:
+ 361 0008 07000000 		.word	.LC1
+ 362              		.size	_ZSt20__throw_future_errori, .-_ZSt20__throw_future_errori
+ 363              		.section	.text._ZSt25__throw_bad_function_callv,"ax",%progbits
+ 364              		.align	1
+ 365              		.global	_ZSt25__throw_bad_function_callv
+ 366              		.thumb
+ 367              		.thumb_func
+ 368              		.type	_ZSt25__throw_bad_function_callv, %function
+ 369              	_ZSt25__throw_bad_function_callv:
+ 370              		@ Volatile: function does not return.
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373 0000 08B5     		push	{r3, lr}
+ 374 0002 0148     		ldr	r0, .L58
+ 375 0004 FFF7FEFF 		bl	sysPanic
+ 376              	.L59:
+ 377              		.align	2
+ 378              	.L58:
+ 379 0008 07000000 		.word	.LC1
+ 380              		.size	_ZSt25__throw_bad_function_callv, .-_ZSt25__throw_bad_function_callv
+ 381              		.section	.text._ZN9__gnu_cxx27__verbose_terminate_handlerEv,"ax",%progbits
+ 382              		.align	1
+ 383              		.global	_ZN9__gnu_cxx27__verbose_terminate_handlerEv
+ 384              		.thumb
+ 385              		.thumb_func
+ 386              		.type	_ZN9__gnu_cxx27__verbose_terminate_handlerEv, %function
+ 387              	_ZN9__gnu_cxx27__verbose_terminate_handlerEv:
+ 388              		@ Volatile: function does not return.
+ 389              		@ args = 0, pretend = 0, frame = 0
+ 390              		@ frame_needed = 0, uses_anonymous_args = 0
+ 391 0000 08B5     		push	{r3, lr}
+ 392 0002 0148     		ldr	r0, .L61
+ 393 0004 FFF7FEFF 		bl	sysPanic
+ 394              	.L62:
+ 395              		.align	2
+ 396              	.L61:
+ 397 0008 0D000000 		.word	.LC2
+ 398              		.size	_ZN9__gnu_cxx27__verbose_terminate_handlerEv, .-_ZN9__gnu_cxx27__verbose_terminate_handlerEv
+ 399              		.section	.text.__aeabi_atexit,"ax",%progbits
+ARM GAS  /tmp/ccKj7s2C.s 			page 8
+
+
+ 400              		.align	1
+ 401              		.global	__aeabi_atexit
+ 402              		.thumb
+ 403              		.thumb_func
+ 404              		.type	__aeabi_atexit, %function
+ 405              	__aeabi_atexit:
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 408              		@ link register save eliminated.
+ 409 0000 0020     		movs	r0, #0
+ 410 0002 7047     		bx	lr
+ 411              		.size	__aeabi_atexit, .-__aeabi_atexit
+ 412              		.section	.text.__cxa_atexit,"ax",%progbits
+ 413              		.align	1
+ 414              		.global	__cxa_atexit
+ 415              		.thumb
+ 416              		.thumb_func
+ 417              		.type	__cxa_atexit, %function
+ 418              	__cxa_atexit:
+ 419              		@ args = 0, pretend = 0, frame = 0
+ 420              		@ frame_needed = 0, uses_anonymous_args = 0
+ 421              		@ link register save eliminated.
+ 422 0000 7047     		bx	lr
+ 423              		.size	__cxa_atexit, .-__cxa_atexit
+ 424              		.section	.text.__cxa_guard_acquire,"ax",%progbits
+ 425              		.align	1
+ 426              		.global	__cxa_guard_acquire
+ 427              		.thumb
+ 428              		.thumb_func
+ 429              		.type	__cxa_guard_acquire, %function
+ 430              	__cxa_guard_acquire:
+ 431              		@ args = 0, pretend = 0, frame = 0
+ 432              		@ frame_needed = 0, uses_anonymous_args = 0
+ 433              		@ link register save eliminated.
+ 434 0000 0068     		ldr	r0, [r0]
+ 435 0002 B0FA80F0 		clz	r0, r0
+ 436 0006 4009     		lsrs	r0, r0, #5
+ 437 0008 7047     		bx	lr
+ 438              		.size	__cxa_guard_acquire, .-__cxa_guard_acquire
+ 439              		.section	.text.__cxa_guard_release,"ax",%progbits
+ 440              		.align	1
+ 441              		.global	__cxa_guard_release
+ 442              		.thumb
+ 443              		.thumb_func
+ 444              		.type	__cxa_guard_release, %function
+ 445              	__cxa_guard_release:
+ 446              		@ args = 0, pretend = 0, frame = 0
+ 447              		@ frame_needed = 0, uses_anonymous_args = 0
+ 448              		@ link register save eliminated.
+ 449 0000 0123     		movs	r3, #1
+ 450 0002 0360     		str	r3, [r0]
+ 451 0004 7047     		bx	lr
+ 452              		.size	__cxa_guard_release, .-__cxa_guard_release
+ 453              		.section	.text.__cxa_guard_abort,"ax",%progbits
+ 454              		.align	1
+ 455              		.global	__cxa_guard_abort
+ 456              		.thumb
+ARM GAS  /tmp/ccKj7s2C.s 			page 9
+
+
+ 457              		.thumb_func
+ 458              		.type	__cxa_guard_abort, %function
+ 459              	__cxa_guard_abort:
+ 460              		@ args = 0, pretend = 0, frame = 0
+ 461              		@ frame_needed = 0, uses_anonymous_args = 0
+ 462              		@ link register save eliminated.
+ 463 0000 7047     		bx	lr
+ 464              		.size	__cxa_guard_abort, .-__cxa_guard_abort
+ 465              		.section	.text.__cxa_pure_virtual,"ax",%progbits
+ 466              		.align	1
+ 467              		.global	__cxa_pure_virtual
+ 468              		.thumb
+ 469              		.thumb_func
+ 470              		.type	__cxa_pure_virtual, %function
+ 471              	__cxa_pure_virtual:
+ 472              		@ Volatile: function does not return.
+ 473              		@ args = 0, pretend = 0, frame = 0
+ 474              		@ frame_needed = 0, uses_anonymous_args = 0
+ 475 0000 08B5     		push	{r3, lr}
+ 476 0002 0148     		ldr	r0, .L69
+ 477 0004 FFF7FEFF 		bl	sysPanic
+ 478              	.L70:
+ 479              		.align	2
+ 480              	.L69:
+ 481 0008 17000000 		.word	.LC3
+ 482              		.size	__cxa_pure_virtual, .-__cxa_pure_virtual
+ 483              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 484              	.LC0:
+ 485 0000 64656C65 		.ascii	"delete\000"
+ 485      746500
+ 486              	.LC1:
+ 487 0007 7468726F 		.ascii	"throw\000"
+ 487      7700
+ 488              	.LC2:
+ 489 000d 7465726D 		.ascii	"terminate\000"
+ 489      696E6174 
+ 489      6500
+ 490              	.LC3:
+ 491 0017 70757265 		.ascii	"pure virtual\000"
+ 491      20766972 
+ 491      7475616C 
+ 491      00
+ 492              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccKj7s2C.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 libstdcpp.cpp
+     /tmp/ccKj7s2C.s:16     .text._Znwj:0000000000000000 $t
+     /tmp/ccKj7s2C.s:21     .text._Znwj:0000000000000000 _Znwj
+     /tmp/ccKj7s2C.s:28     .text._Znaj:0000000000000000 $t
+     /tmp/ccKj7s2C.s:33     .text._Znaj:0000000000000000 _Znaj
+     /tmp/ccKj7s2C.s:40     .text._ZdlPv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:45     .text._ZdlPv:0000000000000000 _ZdlPv
+     /tmp/ccKj7s2C.s:55     .text._ZdlPv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:58     .text._ZdaPv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:63     .text._ZdaPv:0000000000000000 _ZdaPv
+     /tmp/ccKj7s2C.s:73     .text._ZdaPv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:76     .text._ZSt21__throw_bad_exceptionv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:81     .text._ZSt21__throw_bad_exceptionv:0000000000000000 _ZSt21__throw_bad_exceptionv
+     /tmp/ccKj7s2C.s:91     .text._ZSt21__throw_bad_exceptionv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:94     .text._ZSt17__throw_bad_allocv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:99     .text._ZSt17__throw_bad_allocv:0000000000000000 _ZSt17__throw_bad_allocv
+     /tmp/ccKj7s2C.s:109    .text._ZSt17__throw_bad_allocv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:112    .text._ZSt16__throw_bad_castv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:117    .text._ZSt16__throw_bad_castv:0000000000000000 _ZSt16__throw_bad_castv
+     /tmp/ccKj7s2C.s:127    .text._ZSt16__throw_bad_castv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:130    .text._ZSt18__throw_bad_typeidv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:135    .text._ZSt18__throw_bad_typeidv:0000000000000000 _ZSt18__throw_bad_typeidv
+     /tmp/ccKj7s2C.s:145    .text._ZSt18__throw_bad_typeidv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:148    .text._ZSt19__throw_logic_errorPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:153    .text._ZSt19__throw_logic_errorPKc:0000000000000000 _ZSt19__throw_logic_errorPKc
+     /tmp/ccKj7s2C.s:163    .text._ZSt19__throw_logic_errorPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:166    .text._ZSt20__throw_domain_errorPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:171    .text._ZSt20__throw_domain_errorPKc:0000000000000000 _ZSt20__throw_domain_errorPKc
+     /tmp/ccKj7s2C.s:181    .text._ZSt20__throw_domain_errorPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:184    .text._ZSt24__throw_invalid_argumentPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:189    .text._ZSt24__throw_invalid_argumentPKc:0000000000000000 _ZSt24__throw_invalid_argumentPKc
+     /tmp/ccKj7s2C.s:199    .text._ZSt24__throw_invalid_argumentPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:202    .text._ZSt20__throw_length_errorPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:207    .text._ZSt20__throw_length_errorPKc:0000000000000000 _ZSt20__throw_length_errorPKc
+     /tmp/ccKj7s2C.s:217    .text._ZSt20__throw_length_errorPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:220    .text._ZSt20__throw_out_of_rangePKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:225    .text._ZSt20__throw_out_of_rangePKc:0000000000000000 _ZSt20__throw_out_of_rangePKc
+     /tmp/ccKj7s2C.s:235    .text._ZSt20__throw_out_of_rangePKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:238    .text._ZSt21__throw_runtime_errorPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:243    .text._ZSt21__throw_runtime_errorPKc:0000000000000000 _ZSt21__throw_runtime_errorPKc
+     /tmp/ccKj7s2C.s:253    .text._ZSt21__throw_runtime_errorPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:256    .text._ZSt19__throw_range_errorPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:261    .text._ZSt19__throw_range_errorPKc:0000000000000000 _ZSt19__throw_range_errorPKc
+     /tmp/ccKj7s2C.s:271    .text._ZSt19__throw_range_errorPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:274    .text._ZSt22__throw_overflow_errorPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:279    .text._ZSt22__throw_overflow_errorPKc:0000000000000000 _ZSt22__throw_overflow_errorPKc
+     /tmp/ccKj7s2C.s:289    .text._ZSt22__throw_overflow_errorPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:292    .text._ZSt23__throw_underflow_errorPKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:297    .text._ZSt23__throw_underflow_errorPKc:0000000000000000 _ZSt23__throw_underflow_errorPKc
+     /tmp/ccKj7s2C.s:307    .text._ZSt23__throw_underflow_errorPKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:310    .text._ZSt19__throw_ios_failurePKc:0000000000000000 $t
+     /tmp/ccKj7s2C.s:315    .text._ZSt19__throw_ios_failurePKc:0000000000000000 _ZSt19__throw_ios_failurePKc
+     /tmp/ccKj7s2C.s:325    .text._ZSt19__throw_ios_failurePKc:0000000000000008 $d
+     /tmp/ccKj7s2C.s:328    .text._ZSt20__throw_system_errori:0000000000000000 $t
+     /tmp/ccKj7s2C.s:333    .text._ZSt20__throw_system_errori:0000000000000000 _ZSt20__throw_system_errori
+     /tmp/ccKj7s2C.s:343    .text._ZSt20__throw_system_errori:0000000000000008 $d
+ARM GAS  /tmp/ccKj7s2C.s 			page 11
+
+
+     /tmp/ccKj7s2C.s:346    .text._ZSt20__throw_future_errori:0000000000000000 $t
+     /tmp/ccKj7s2C.s:351    .text._ZSt20__throw_future_errori:0000000000000000 _ZSt20__throw_future_errori
+     /tmp/ccKj7s2C.s:361    .text._ZSt20__throw_future_errori:0000000000000008 $d
+     /tmp/ccKj7s2C.s:364    .text._ZSt25__throw_bad_function_callv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:369    .text._ZSt25__throw_bad_function_callv:0000000000000000 _ZSt25__throw_bad_function_callv
+     /tmp/ccKj7s2C.s:379    .text._ZSt25__throw_bad_function_callv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:382    .text._ZN9__gnu_cxx27__verbose_terminate_handlerEv:0000000000000000 $t
+     /tmp/ccKj7s2C.s:387    .text._ZN9__gnu_cxx27__verbose_terminate_handlerEv:0000000000000000 _ZN9__gnu_cxx27__verbose_terminate_handlerEv
+     /tmp/ccKj7s2C.s:397    .text._ZN9__gnu_cxx27__verbose_terminate_handlerEv:0000000000000008 $d
+     /tmp/ccKj7s2C.s:400    .text.__aeabi_atexit:0000000000000000 $t
+     /tmp/ccKj7s2C.s:405    .text.__aeabi_atexit:0000000000000000 __aeabi_atexit
+     /tmp/ccKj7s2C.s:413    .text.__cxa_atexit:0000000000000000 $t
+     /tmp/ccKj7s2C.s:418    .text.__cxa_atexit:0000000000000000 __cxa_atexit
+     /tmp/ccKj7s2C.s:425    .text.__cxa_guard_acquire:0000000000000000 $t
+     /tmp/ccKj7s2C.s:430    .text.__cxa_guard_acquire:0000000000000000 __cxa_guard_acquire
+     /tmp/ccKj7s2C.s:440    .text.__cxa_guard_release:0000000000000000 $t
+     /tmp/ccKj7s2C.s:445    .text.__cxa_guard_release:0000000000000000 __cxa_guard_release
+     /tmp/ccKj7s2C.s:454    .text.__cxa_guard_abort:0000000000000000 $t
+     /tmp/ccKj7s2C.s:459    .text.__cxa_guard_abort:0000000000000000 __cxa_guard_abort
+     /tmp/ccKj7s2C.s:466    .text.__cxa_pure_virtual:0000000000000000 $t
+     /tmp/ccKj7s2C.s:471    .text.__cxa_pure_virtual:0000000000000000 __cxa_pure_virtual
+     /tmp/ccKj7s2C.s:481    .text.__cxa_pure_virtual:0000000000000008 $d
+
+UNDEFINED SYMBOLS
+chCoreAlloc
+sysPanic

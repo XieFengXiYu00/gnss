@@ -1,0 +1,303 @@
+ARM GAS  /tmp/cc9yorRH.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"sys_console.c"
+  15              		.section	.text.writeExpandingCrLf,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	writeExpandingCrLf, %function
+  20              	writeExpandingCrLf:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 38B5     		push	{r3, r4, r5, lr}
+  24 0002 0446     		mov	r4, r0
+  25 0004 0D46     		mov	r5, r1
+  26              	.L2:
+  27 0006 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+  28 0008 6BB1     		cbz	r3, .L6
+  29 000a 0A2B     		cmp	r3, #10
+  30 000c 04D1     		bne	.L3
+  31 000e 2368     		ldr	r3, [r4]
+  32 0010 2046     		mov	r0, r4
+  33 0012 9B68     		ldr	r3, [r3, #8]
+  34 0014 0D21     		movs	r1, #13
+  35 0016 9847     		blx	r3
+  36              	.L3:
+  37 0018 2368     		ldr	r3, [r4]
+  38 001a 2046     		mov	r0, r4
+  39 001c 9B68     		ldr	r3, [r3, #8]
+  40 001e 15F8011B 		ldrb	r1, [r5], #1	@ zero_extendqisi2
+  41 0022 9847     		blx	r3
+  42 0024 EFE7     		b	.L2
+  43              	.L6:
+  44 0026 38BD     		pop	{r3, r4, r5, pc}
+  45              		.size	writeExpandingCrLf, .-writeExpandingCrLf
+  46              		.section	.text.genericPrint,"ax",%progbits
+  47              		.align	1
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	genericPrint, %function
+  51              	genericPrint:
+  52              		@ args = 0, pretend = 0, frame = 24
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  55 0002 0F46     		mov	r7, r1
+  56 0004 1646     		mov	r6, r2
+  57 0006 0546     		mov	r5, r0
+ARM GAS  /tmp/cc9yorRH.s 			page 2
+
+
+  58 0008 0E4C     		ldr	r4, .L8
+  59 000a 87B0     		sub	sp, sp, #28
+  60 000c 01A8     		add	r0, sp, #4
+  61 000e 2146     		mov	r1, r4
+  62 0010 0023     		movs	r3, #0
+  63 0012 4FF48072 		mov	r2, #256
+  64 0016 FFF7FEFF 		bl	msObjectInit
+  65 001a 3246     		mov	r2, r6
+  66 001c 01A8     		add	r0, sp, #4
+  67 001e 3946     		mov	r1, r7
+  68 0020 FFF7FEFF 		bl	chvprintf
+  69 0024 019B     		ldr	r3, [sp, #4]
+  70 0026 0021     		movs	r1, #0
+  71 0028 9B68     		ldr	r3, [r3, #8]
+  72 002a 01A8     		add	r0, sp, #4
+  73 002c 9847     		blx	r3
+  74 002e 0648     		ldr	r0, .L8+4
+  75 0030 FFF7FEFF 		bl	chMtxLock
+  76 0034 2846     		mov	r0, r5
+  77 0036 2146     		mov	r1, r4
+  78 0038 FFF7FEFF 		bl	writeExpandingCrLf
+  79 003c FFF7FEFF 		bl	chMtxUnlock
+  80 0040 07B0     		add	sp, sp, #28
+  81              		@ sp needed
+  82 0042 F0BD     		pop	{r4, r5, r6, r7, pc}
+  83              	.L9:
+  84              		.align	2
+  85              	.L8:
+  86 0044 00000000 		.word	.LANCHOR0
+  87 0048 00000000 		.word	.LANCHOR1
+  88              		.size	genericPrint, .-genericPrint
+  89              		.section	.text.lowsyslog,"ax",%progbits
+  90              		.align	1
+  91              		.global	lowsyslog
+  92              		.thumb
+  93              		.thumb_func
+  94              		.type	lowsyslog, %function
+  95              	lowsyslog:
+  96              		@ args = 4, pretend = 16, frame = 8
+  97              		@ frame_needed = 0, uses_anonymous_args = 1
+  98 0000 0FB4     		push	{r0, r1, r2, r3}
+  99 0002 07B5     		push	{r0, r1, r2, lr}
+ 100 0004 04AA     		add	r2, sp, #16
+ 101 0006 52F8041B 		ldr	r1, [r2], #4
+ 102 000a 0448     		ldr	r0, .L11
+ 103 000c 0192     		str	r2, [sp, #4]
+ 104 000e FFF7FEFF 		bl	genericPrint
+ 105 0012 03B0     		add	sp, sp, #12
+ 106              		@ sp needed
+ 107 0014 5DF804EB 		ldr	lr, [sp], #4
+ 108 0018 04B0     		add	sp, sp, #16
+ 109 001a 7047     		bx	lr
+ 110              	.L12:
+ 111              		.align	2
+ 112              	.L11:
+ 113 001c 00000000 		.word	SD2
+ 114              		.size	lowsyslog, .-lowsyslog
+ARM GAS  /tmp/cc9yorRH.s 			page 3
+
+
+ 115              		.section	.text.printf,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	printf
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	printf, %function
+ 121              	printf:
+ 122              		@ args = 4, pretend = 16, frame = 8
+ 123              		@ frame_needed = 0, uses_anonymous_args = 1
+ 124 0000 0FB4     		push	{r0, r1, r2, r3}
+ 125 0002 13B5     		push	{r0, r1, r4, lr}
+ 126 0004 04AA     		add	r2, sp, #16
+ 127 0006 52F8044B 		ldr	r4, [r2], #4
+ 128 000a 074B     		ldr	r3, .L14
+ 129 000c 2146     		mov	r1, r4
+ 130 000e 1868     		ldr	r0, [r3]
+ 131 0010 0192     		str	r2, [sp, #4]
+ 132 0012 FFF7FEFF 		bl	genericPrint
+ 133 0016 2046     		mov	r0, r4
+ 134 0018 FFF7FEFF 		bl	strlen
+ 135 001c 02B0     		add	sp, sp, #8
+ 136              		@ sp needed
+ 137 001e BDE81040 		pop	{r4, lr}
+ 138 0022 04B0     		add	sp, sp, #16
+ 139 0024 7047     		bx	lr
+ 140              	.L15:
+ 141 0026 00BF     		.align	2
+ 142              	.L14:
+ 143 0028 00000000 		.word	.LANCHOR2
+ 144              		.size	printf, .-printf
+ 145              		.section	.text.vprintf,"ax",%progbits
+ 146              		.align	1
+ 147              		.global	vprintf
+ 148              		.thumb
+ 149              		.thumb_func
+ 150              		.type	vprintf, %function
+ 151              	vprintf:
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0000 10B5     		push	{r4, lr}
+ 155 0002 0446     		mov	r4, r0
+ 156 0004 054B     		ldr	r3, .L17
+ 157 0006 0A46     		mov	r2, r1
+ 158 0008 1868     		ldr	r0, [r3]
+ 159 000a 2146     		mov	r1, r4
+ 160 000c FFF7FEFF 		bl	genericPrint
+ 161 0010 2046     		mov	r0, r4
+ 162 0012 BDE81040 		pop	{r4, lr}
+ 163 0016 FFF7FEBF 		b	strlen
+ 164              	.L18:
+ 165 001a 00BF     		.align	2
+ 166              	.L17:
+ 167 001c 00000000 		.word	.LANCHOR2
+ 168              		.size	vprintf, .-vprintf
+ 169              		.section	.text.puts,"ax",%progbits
+ 170              		.align	1
+ 171              		.global	puts
+ARM GAS  /tmp/cc9yorRH.s 			page 4
+
+
+ 172              		.thumb
+ 173              		.thumb_func
+ 174              		.type	puts, %function
+ 175              	puts:
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+ 178 0000 38B5     		push	{r3, r4, r5, lr}
+ 179 0002 0446     		mov	r4, r0
+ 180 0004 094D     		ldr	r5, .L20
+ 181 0006 0A48     		ldr	r0, .L20+4
+ 182 0008 FFF7FEFF 		bl	chMtxLock
+ 183 000c 2868     		ldr	r0, [r5]
+ 184 000e 2146     		mov	r1, r4
+ 185 0010 FFF7FEFF 		bl	writeExpandingCrLf
+ 186 0014 0749     		ldr	r1, .L20+8
+ 187 0016 2868     		ldr	r0, [r5]
+ 188 0018 FFF7FEFF 		bl	writeExpandingCrLf
+ 189 001c FFF7FEFF 		bl	chMtxUnlock
+ 190 0020 2046     		mov	r0, r4
+ 191 0022 FFF7FEFF 		bl	strlen
+ 192 0026 0230     		adds	r0, r0, #2
+ 193 0028 38BD     		pop	{r3, r4, r5, pc}
+ 194              	.L21:
+ 195 002a 00BF     		.align	2
+ 196              	.L20:
+ 197 002c 00000000 		.word	.LANCHOR2
+ 198 0030 00000000 		.word	.LANCHOR1
+ 199 0034 00000000 		.word	.LC0
+ 200              		.size	puts, .-puts
+ 201              		.section	.text.sysSetStdOutStream,"ax",%progbits
+ 202              		.align	1
+ 203              		.global	sysSetStdOutStream
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.type	sysSetStdOutStream, %function
+ 207              	sysSetStdOutStream:
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 0, uses_anonymous_args = 0
+ 210              		@ link register save eliminated.
+ 211 0000 014B     		ldr	r3, .L23
+ 212 0002 1860     		str	r0, [r3]
+ 213 0004 7047     		bx	lr
+ 214              	.L24:
+ 215 0006 00BF     		.align	2
+ 216              	.L23:
+ 217 0008 00000000 		.word	.LANCHOR2
+ 218              		.size	sysSetStdOutStream, .-sysSetStdOutStream
+ 219              		.section	.bss._buffer,"aw",%nobits
+ 220              		.set	.LANCHOR0,. + 0
+ 221              		.type	_buffer, %object
+ 222              		.size	_buffer, 256
+ 223              	_buffer:
+ 224 0000 00000000 		.space	256
+ 224      00000000 
+ 224      00000000 
+ 224      00000000 
+ 224      00000000 
+ARM GAS  /tmp/cc9yorRH.s 			page 5
+
+
+ 225              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 226              	.LC0:
+ 227 0000 0A00     		.ascii	"\012\000"
+ 228              		.section	.data._stdout_stream,"aw",%progbits
+ 229              		.align	2
+ 230              		.set	.LANCHOR2,. + 0
+ 231              		.type	_stdout_stream, %object
+ 232              		.size	_stdout_stream, 4
+ 233              	_stdout_stream:
+ 234 0000 00000000 		.word	SD2
+ 235              		.section	.data._mutex,"aw",%progbits
+ 236              		.align	2
+ 237              		.set	.LANCHOR1,. + 0
+ 238              		.type	_mutex, %object
+ 239              		.size	_mutex, 16
+ 240              	_mutex:
+ 241 0000 00000000 		.word	_mutex
+ 242 0004 00000000 		.word	_mutex
+ 243 0008 00000000 		.word	0
+ 244 000c 00000000 		.word	0
+ 245              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc9yorRH.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 sys_console.c
+     /tmp/cc9yorRH.s:16     .text.writeExpandingCrLf:0000000000000000 $t
+     /tmp/cc9yorRH.s:20     .text.writeExpandingCrLf:0000000000000000 writeExpandingCrLf
+     /tmp/cc9yorRH.s:47     .text.genericPrint:0000000000000000 $t
+     /tmp/cc9yorRH.s:51     .text.genericPrint:0000000000000000 genericPrint
+     /tmp/cc9yorRH.s:86     .text.genericPrint:0000000000000044 $d
+     /tmp/cc9yorRH.s:90     .text.lowsyslog:0000000000000000 $t
+     /tmp/cc9yorRH.s:95     .text.lowsyslog:0000000000000000 lowsyslog
+     /tmp/cc9yorRH.s:113    .text.lowsyslog:000000000000001c $d
+     /tmp/cc9yorRH.s:116    .text.printf:0000000000000000 $t
+     /tmp/cc9yorRH.s:121    .text.printf:0000000000000000 printf
+     /tmp/cc9yorRH.s:143    .text.printf:0000000000000028 $d
+     /tmp/cc9yorRH.s:146    .text.vprintf:0000000000000000 $t
+     /tmp/cc9yorRH.s:151    .text.vprintf:0000000000000000 vprintf
+     /tmp/cc9yorRH.s:167    .text.vprintf:000000000000001c $d
+     /tmp/cc9yorRH.s:170    .text.puts:0000000000000000 $t
+     /tmp/cc9yorRH.s:175    .text.puts:0000000000000000 puts
+     /tmp/cc9yorRH.s:197    .text.puts:000000000000002c $d
+     /tmp/cc9yorRH.s:202    .text.sysSetStdOutStream:0000000000000000 $t
+     /tmp/cc9yorRH.s:207    .text.sysSetStdOutStream:0000000000000000 sysSetStdOutStream
+     /tmp/cc9yorRH.s:217    .text.sysSetStdOutStream:0000000000000008 $d
+     /tmp/cc9yorRH.s:223    .bss._buffer:0000000000000000 _buffer
+     /tmp/cc9yorRH.s:224    .bss._buffer:0000000000000000 $d
+     /tmp/cc9yorRH.s:229    .data._stdout_stream:0000000000000000 $d
+     /tmp/cc9yorRH.s:233    .data._stdout_stream:0000000000000000 _stdout_stream
+     /tmp/cc9yorRH.s:236    .data._mutex:0000000000000000 $d
+     /tmp/cc9yorRH.s:240    .data._mutex:0000000000000000 _mutex
+
+UNDEFINED SYMBOLS
+msObjectInit
+chvprintf
+chMtxLock
+chMtxUnlock
+SD2
+strlen

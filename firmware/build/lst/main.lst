@@ -1,0 +1,950 @@
+ARM GAS  /tmp/ccwhMVmM.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.cpp"
+  15              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev,"axG",%progbits,_ZN6uavcan22GlobalData
+  16              		.align	1
+  17              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, %function
+  21              	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 7047     		bx	lr
+  26              		.size	_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev, .-_ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+  27              		.weak	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+  28              		.thumb_set _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev,_ZN6uavcan22GlobalDataTypeRegistry5EntryD2
+  29              		.section	.text.startup.main,"ax",%progbits
+  30              		.align	1
+  31              		.global	main
+  32              		.thumb
+  33              		.thumb_func
+  34              		.type	main, %function
+  35              	main:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  39 0002 FFF7FEFF 		bl	_ZN20bootloader_interface4initEv
+  40 0006 FFF7FEFF 		bl	_ZN5board4initEv
+  41 000a FFF7FEFF 		bl	_ZN4node4initEv
+  42 000e FFF7FEFF 		bl	_ZN10air_sensor4initEv
+  43 0012 FFF7FEFF 		bl	_ZN4gnss4initEv
+  44 0016 FFF7FEFF 		bl	_ZN12magnetometer4initEv
+  45 001a 40F24C40 		movw	r0, #1100
+  46 001e FFF7FEFF 		bl	watchdogCreate
+  47 0022 061E     		subs	r6, r0, #0
+  48 0024 06DA     		bge	.L3
+  49 0026 244A     		ldr	r2, .L13
+  50 0028 244B     		ldr	r3, .L13+4
+  51 002a 1A60     		str	r2, [r3]
+  52 002c FFF7FEFF 		bl	sysHaltHook_
+  53 0030 FFF7FEFF 		bl	port_halt
+  54              	.L3:
+  55 0034 FFF7FEFF 		bl	_ZN3cli4initEv
+  56 0038 0220     		movs	r0, #2
+  57 003a FFF7FEFF 		bl	_ZN10chibios_rt10BaseThread11setPriorityEm
+ARM GAS  /tmp/ccwhMVmM.s 			page 2
+
+
+  58              	.L4:
+  59 003e FFF7FEFF 		bl	_ZN4node24hasPendingRestartRequestEv
+  60 0042 78BB     		cbnz	r0, .L12
+  61 0044 FFF7FEFF 		bl	_ZN4node7getNodeEv
+  62 0048 00F5EF50 		add	r0, r0, #7648
+  63 004c 437B     		ldrb	r3, [r0, #13]	@ zero_extendqisi2
+  64 004e 4BB9     		cbnz	r3, .L7
+  65 0050 FFF7FEFF 		bl	_ZN4node7getNodeEv
+  66 0054 00F5EF50 		add	r0, r0, #7648
+  67 0058 037B     		ldrb	r3, [r0, #12]	@ zero_extendqisi2
+  68 005a 3BB1     		cbz	r3, .L8
+  69 005c 012B     		cmp	r3, #1
+  70 005e 08D0     		beq	.L9
+  71 0060 6424     		movs	r4, #100
+  72 0062 07E0     		b	.L10
+  73              	.L7:
+  74 0064 4FF4FA74 		mov	r4, #500
+  75 0068 2546     		mov	r5, r4
+  76 006a 04E0     		b	.L5
+  77              	.L8:
+  78 006c 4FF46174 		mov	r4, #900
+  79 0070 00E0     		b	.L10
+  80              	.L9:
+  81 0072 C824     		movs	r4, #200
+  82              	.L10:
+  83 0074 6425     		movs	r5, #100
+  84              	.L5:
+  85 0076 4FF47A77 		mov	r7, #1000
+  86 007a 0120     		movs	r0, #1
+  87 007c FFF7FEFF 		bl	_ZN5board12setStatusLedEb
+  88 0080 07FB05F0 		mul	r0, r7, r5
+  89 0084 FFF7FEFF 		bl	usleep
+  90 0088 3046     		mov	r0, r6
+  91 008a FFF7FEFF 		bl	watchdogReset
+  92 008e 0020     		movs	r0, #0
+  93 0090 FFF7FEFF 		bl	_ZN5board12setStatusLedEb
+  94 0094 07FB04F0 		mul	r0, r7, r4
+  95 0098 FFF7FEFF 		bl	usleep
+  96 009c 3046     		mov	r0, r6
+  97 009e FFF7FEFF 		bl	watchdogReset
+  98 00a2 CCE7     		b	.L4
+  99              	.L12:
+ 100 00a4 0120     		movs	r0, #1
+ 101 00a6 FFF7FEFF 		bl	_ZN5board12setStatusLedEb
+ 102 00aa 0548     		ldr	r0, .L13+8
+ 103 00ac FFF7FEFF 		bl	usleep
+ 104 00b0 FFF7FEFF 		bl	_ZN5board7restartEv
+ 105 00b4 0020     		movs	r0, #0
+ 106 00b6 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 107              	.L14:
+ 108              		.align	2
+ 109              	.L13:
+ 110 00b8 00000000 		.word	.LC0
+ 111 00bc 00000000 		.word	dbg_panic_msg
+ 112 00c0 20A10700 		.word	500000
+ 113              		.size	main, .-main
+ 114              		.section	.text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSig
+ARM GAS  /tmp/ccwhMVmM.s 			page 3
+
+
+ 115              		.align	1
+ 116              		.weak	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 117              		.thumb
+ 118              		.thumb_func
+ 119              		.type	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE, 
+ 120              	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:
+ 121              		@ args = 0, pretend = 0, frame = 0
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123 0000 08B5     		push	{r3, lr}
+ 124 0002 03A3     		adr	r3, .L16
+ 125 0004 D3E90023 		ldrd	r2, [r3]
+ 126 0008 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 127 000c 08BD     		pop	{r3, pc}
+ 128              	.L17:
+ 129 000e 00BF     		.align	3
+ 130              	.L16:
+ 131 0010 30598E00 		.word	9328944
+ 132 0014 3EA72094 		.word	-1809799362
+ 133              		.size	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE, 
+ 134              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ 135              		.align	1
+ 136              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 140              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registratio
+ 141              		@ args = 0, pretend = 0, frame = 40
+ 142              		@ frame_needed = 0, uses_anonymous_args = 0
+ 143 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 144 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 145 0004 8BB0     		sub	sp, sp, #44
+ 146 0006 0646     		mov	r6, r0
+ 147 0008 0F46     		mov	r7, r1
+ 148 000a 002B     		cmp	r3, #0
+ 149 000c 53D1     		bne	.L21
+ 150 000e 344A     		ldr	r2, .L24+32
+ 151 0010 3448     		ldr	r0, .L24+36
+ 152 0012 1368     		ldr	r3, [r2]
+ 153 0014 13F00103 		ands	r3, r3, #1
+ 154 0018 10D1     		bne	.L20
+ 155 001a 3349     		ldr	r1, .L24+40
+ 156 001c 0360     		str	r3, [r0]
+ 157 001e 0375     		strb	r3, [r0, #20]
+ 158 0020 4FF0FF33 		mov	r3, #-1
+ 159 0024 0024     		movs	r4, #0
+ 160 0026 0025     		movs	r5, #0
+ 161 0028 8361     		str	r3, [r0, #24]
+ 162 002a 0123     		movs	r3, #1
+ 163 002c 0161     		str	r1, [r0, #16]
+ 164 002e 1360     		str	r3, [r2]
+ 165 0030 C0E90245 		strd	r4, [r0, #8]
+ 166 0034 2D49     		ldr	r1, .L24+44
+ 167 0036 2E4A     		ldr	r2, .L24+48
+ 168 0038 FFF7FEFF 		bl	__aeabi_atexit
+ 169              	.L20:
+ 170 003c 3046     		mov	r0, r6
+ 171 003e 2949     		ldr	r1, .L24+36
+ARM GAS  /tmp/ccwhMVmM.s 			page 4
+
+
+ 172 0040 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 173 0044 0446     		mov	r4, r0
+ 174 0046 0028     		cmp	r0, #0
+ 175 0048 36D1     		bne	.L19
+ 176 004a 1DA3     		adr	r3, .L24
+ 177 004c D3E90023 		ldrd	r2, [r3]
+ 178 0050 0AAD     		add	r5, sp, #40
+ 179 0052 65E90A23 		strd	r2, [r5, #-40]!
+ 180 0056 1CA3     		adr	r3, .L24+8
+ 181 0058 D3E90023 		ldrd	r2, [r3]
+ 182 005c 2846     		mov	r0, r5
+ 183 005e FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 184 0062 1BA3     		adr	r3, .L24+16
+ 185 0064 D3E90023 		ldrd	r2, [r3]
+ 186 0068 2846     		mov	r0, r5
+ 187 006a FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 188 006e 1AA3     		adr	r3, .L24+24
+ 189 0070 D3E90023 		ldrd	r2, [r3]
+ 190 0074 2846     		mov	r0, r5
+ 191 0076 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 192 007a DDE90023 		ldrd	r2, [sp]
+ 193 007e CDE90423 		strd	r2, [sp, #16]
+ 194 0082 1C4B     		ldr	r3, .L24+52
+ 195 0084 8DF81C40 		strb	r4, [sp, #28]
+ 196 0088 0294     		str	r4, [sp, #8]
+ 197 008a 164C     		ldr	r4, .L24+36
+ 198 008c 0693     		str	r3, [sp, #24]
+ 199 008e 0897     		str	r7, [sp, #32]
+ 200 0090 02AD     		add	r5, sp, #8
+ 201 0092 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 202 0094 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 203 0096 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 204 009a 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 205 009e 3046     		mov	r0, r6
+ 206 00a0 A4F11001 		sub	r1, r4, #16
+ 207 00a4 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 208 00a8 30B9     		cbnz	r0, .L19
+ 209 00aa 3046     		mov	r0, r6
+ 210 00ac A4F11001 		sub	r1, r4, #16
+ 211 00b0 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 212 00b4 00E0     		b	.L19
+ 213              	.L21:
+ 214 00b6 0320     		movs	r0, #3
+ 215              	.L19:
+ 216 00b8 0BB0     		add	sp, sp, #44
+ 217              		@ sp needed
+ 218 00ba F0BD     		pop	{r4, r5, r6, r7, pc}
+ 219              	.L25:
+ 220 00bc AFF30080 		.align	3
+ 221              	.L24:
+ 222 00c0 85E65350 		.word	1347675781
+ 223 00c4 99C80DA8 		.word	-1475491687
+ 224 00c8 F1C6A7C1 		.word	-1045969167
+ 225 00cc D068080F 		.word	252209360
+ 226 00d0 A1FE2765 		.word	1697119905
+ 227 00d4 37FD46DD 		.word	-582550217
+ 228 00d8 C4A0F433 		.word	871669956
+ARM GAS  /tmp/ccwhMVmM.s 			page 5
+
+
+ 229 00dc C9C4D50A 		.word	181781705
+ 230 00e0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 231 00e4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 232 00e8 36000000 		.word	.LC1
+ 233 00ec 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 234 00f0 00000000 		.word	__dso_handle
+ 235 00f4 37000000 		.word	.LC2
+ 236              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Regi
+ 237              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_
+ 238              		.align	1
+ 239              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 240              		.thumb
+ 241              		.thumb_func
+ 242              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 243              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Registr
+ 244              		@ args = 0, pretend = 0, frame = 40
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 247 0002 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 248 0004 8BB0     		sub	sp, sp, #44
+ 249 0006 0646     		mov	r6, r0
+ 250 0008 0F46     		mov	r7, r1
+ 251 000a 002B     		cmp	r3, #0
+ 252 000c 46D1     		bne	.L29
+ 253 000e 284A     		ldr	r2, .L32+8
+ 254 0010 2848     		ldr	r0, .L32+12
+ 255 0012 1368     		ldr	r3, [r2]
+ 256 0014 13F00103 		ands	r3, r3, #1
+ 257 0018 10D1     		bne	.L28
+ 258 001a 2749     		ldr	r1, .L32+16
+ 259 001c 0360     		str	r3, [r0]
+ 260 001e 0375     		strb	r3, [r0, #20]
+ 261 0020 4FF0FF33 		mov	r3, #-1
+ 262 0024 0024     		movs	r4, #0
+ 263 0026 0025     		movs	r5, #0
+ 264 0028 8361     		str	r3, [r0, #24]
+ 265 002a 0123     		movs	r3, #1
+ 266 002c 0161     		str	r1, [r0, #16]
+ 267 002e 1360     		str	r3, [r2]
+ 268 0030 C0E90245 		strd	r4, [r0, #8]
+ 269 0034 2149     		ldr	r1, .L32+20
+ 270 0036 224A     		ldr	r2, .L32+24
+ 271 0038 FFF7FEFF 		bl	__aeabi_atexit
+ 272              	.L28:
+ 273 003c 3046     		mov	r0, r6
+ 274 003e 1D49     		ldr	r1, .L32+12
+ 275 0040 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 276 0044 0446     		mov	r4, r0
+ 277 0046 50BB     		cbnz	r0, .L27
+ 278 0048 17A3     		adr	r3, .L32
+ 279 004a D3E90023 		ldrd	r2, [r3]
+ 280 004e 0AAD     		add	r5, sp, #40
+ 281 0050 65E90A23 		strd	r2, [r5, #-40]!
+ 282 0054 2846     		mov	r0, r5
+ 283 0056 FFF7FEFF 		bl	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ 284 005a 2846     		mov	r0, r5
+ 285 005c FFF7FEFF 		bl	_ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+ARM GAS  /tmp/ccwhMVmM.s 			page 6
+
+
+ 286 0060 DDE90023 		ldrd	r2, [sp]
+ 287 0064 CDE90423 		strd	r2, [sp, #16]
+ 288 0068 164B     		ldr	r3, .L32+28
+ 289 006a 8DF81C40 		strb	r4, [sp, #28]
+ 290 006e 0294     		str	r4, [sp, #8]
+ 291 0070 104C     		ldr	r4, .L32+12
+ 292 0072 0693     		str	r3, [sp, #24]
+ 293 0074 0897     		str	r7, [sp, #32]
+ 294 0076 02AD     		add	r5, sp, #8
+ 295 0078 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 296 007a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 297 007c 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 298 0080 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 299 0084 3046     		mov	r0, r6
+ 300 0086 A4F11001 		sub	r1, r4, #16
+ 301 008a FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 302 008e 30B9     		cbnz	r0, .L27
+ 303 0090 3046     		mov	r0, r6
+ 304 0092 A4F11001 		sub	r1, r4, #16
+ 305 0096 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 306 009a 00E0     		b	.L27
+ 307              	.L29:
+ 308 009c 0320     		movs	r0, #3
+ 309              	.L27:
+ 310 009e 0BB0     		add	sp, sp, #44
+ 311              		@ sp needed
+ 312 00a0 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 313              	.L33:
+ 314 00a2 00BFAFF3 		.align	3
+ 314      0080
+ 315              	.L32:
+ 316 00a8 FC248DF6 		.word	-158522116
+ 317 00ac C93DC988 		.word	-2000077367
+ 318 00b0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 319 00b4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 320 00b8 36000000 		.word	.LC1
+ 321 00bc 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 322 00c0 00000000 		.word	__dso_handle
+ 323 00c4 53000000 		.word	.LC3
+ 324              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18
+ 325              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage
+ 326              		.align	1
+ 327              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 328              		.thumb
+ 329              		.thumb_func
+ 330              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 331              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18
+ 332              		@ args = 0, pretend = 0, frame = 40
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334 0000 2DE97043 		push	{r4, r5, r6, r8, r9, lr}
+ 335 0004 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 336 0006 8AB0     		sub	sp, sp, #40
+ 337 0008 0646     		mov	r6, r0
+ 338 000a 0D46     		mov	r5, r1
+ 339 000c 002B     		cmp	r3, #0
+ 340 000e 48D1     		bne	.L37
+ 341 0010 2B4A     		ldr	r2, .L40+16
+ARM GAS  /tmp/ccwhMVmM.s 			page 7
+
+
+ 342 0012 2C48     		ldr	r0, .L40+20
+ 343 0014 1368     		ldr	r3, [r2]
+ 344 0016 13F00103 		ands	r3, r3, #1
+ 345 001a 12D1     		bne	.L36
+ 346 001c 2A49     		ldr	r1, .L40+24
+ 347 001e 0360     		str	r3, [r0]
+ 348 0020 0375     		strb	r3, [r0, #20]
+ 349 0022 4FF0FF33 		mov	r3, #-1
+ 350 0026 4FF00008 		mov	r8, #0
+ 351 002a 4FF00009 		mov	r9, #0
+ 352 002e 8361     		str	r3, [r0, #24]
+ 353 0030 0123     		movs	r3, #1
+ 354 0032 0161     		str	r1, [r0, #16]
+ 355 0034 1360     		str	r3, [r2]
+ 356 0036 C0E90289 		strd	r8, [r0, #8]
+ 357 003a 2449     		ldr	r1, .L40+28
+ 358 003c 244A     		ldr	r2, .L40+32
+ 359 003e FFF7FEFF 		bl	__aeabi_atexit
+ 360              	.L36:
+ 361 0042 3046     		mov	r0, r6
+ 362 0044 1F49     		ldr	r1, .L40+20
+ 363 0046 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 364 004a 0446     		mov	r4, r0
+ 365 004c 50BB     		cbnz	r0, .L35
+ 366 004e 18A3     		adr	r3, .L40
+ 367 0050 D3E90023 		ldrd	r2, [r3]
+ 368 0054 0AA8     		add	r0, sp, #40
+ 369 0056 60E90A23 		strd	r2, [r0, #-40]!
+ 370 005a 17A3     		adr	r3, .L40+8
+ 371 005c D3E90023 		ldrd	r2, [r3]
+ 372 0060 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 373 0064 DDE90023 		ldrd	r2, [sp]
+ 374 0068 CDE90423 		strd	r2, [sp, #16]
+ 375 006c 194B     		ldr	r3, .L40+36
+ 376 006e 0294     		str	r4, [sp, #8]
+ 377 0070 0693     		str	r3, [sp, #24]
+ 378 0072 144C     		ldr	r4, .L40+20
+ 379 0074 0123     		movs	r3, #1
+ 380 0076 0895     		str	r5, [sp, #32]
+ 381 0078 8DF81C30 		strb	r3, [sp, #28]
+ 382 007c 02AD     		add	r5, sp, #8
+ 383 007e 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 384 0080 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 385 0082 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 386 0086 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 387 008a 3046     		mov	r0, r6
+ 388 008c A4F11001 		sub	r1, r4, #16
+ 389 0090 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 390 0094 30B9     		cbnz	r0, .L35
+ 391 0096 3046     		mov	r0, r6
+ 392 0098 A4F11001 		sub	r1, r4, #16
+ 393 009c FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 394 00a0 00E0     		b	.L35
+ 395              	.L37:
+ 396 00a2 0320     		movs	r0, #3
+ 397              	.L35:
+ 398 00a4 0AB0     		add	sp, sp, #40
+ARM GAS  /tmp/ccwhMVmM.s 			page 8
+
+
+ 399              		@ sp needed
+ 400 00a6 BDE87083 		pop	{r4, r5, r6, r8, r9, pc}
+ 401              	.L41:
+ 402 00aa 00BFAFF3 		.align	3
+ 402      0080
+ 403              	.L40:
+ 404 00b0 BA6287D3 		.word	-746102086
+ 405 00b4 782B86E9 		.word	-377083016
+ 406 00b8 462357AF 		.word	-1353243834
+ 407 00bc 41F11B71 		.word	1897656641
+ 408 00c0 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 409 00c4 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 410 00c8 36000000 		.word	.LC1
+ 411 00cc 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 412 00d0 00000000 		.word	__dso_handle
+ 413 00d4 73000000 		.word	.LC4
+ 414              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEE
+ 415              		.section	.text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStat
+ 416              		.align	1
+ 417              		.weak	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 418              		.thumb
+ 419              		.thumb_func
+ 420              		.type	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 421              	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Regis
+ 422              		@ args = 0, pretend = 0, frame = 40
+ 423              		@ frame_needed = 0, uses_anonymous_args = 0
+ 424 0000 2DE97043 		push	{r4, r5, r6, r8, r9, lr}
+ 425 0004 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 426 0006 8AB0     		sub	sp, sp, #40
+ 427 0008 0646     		mov	r6, r0
+ 428 000a 0D46     		mov	r5, r1
+ 429 000c 002B     		cmp	r3, #0
+ 430 000e 47D1     		bne	.L45
+ 431 0010 294A     		ldr	r2, .L48+16
+ 432 0012 2A48     		ldr	r0, .L48+20
+ 433 0014 1368     		ldr	r3, [r2]
+ 434 0016 13F00103 		ands	r3, r3, #1
+ 435 001a 12D1     		bne	.L44
+ 436 001c 2849     		ldr	r1, .L48+24
+ 437 001e 0360     		str	r3, [r0]
+ 438 0020 0375     		strb	r3, [r0, #20]
+ 439 0022 4FF0FF33 		mov	r3, #-1
+ 440 0026 4FF00008 		mov	r8, #0
+ 441 002a 4FF00009 		mov	r9, #0
+ 442 002e 8361     		str	r3, [r0, #24]
+ 443 0030 0123     		movs	r3, #1
+ 444 0032 0161     		str	r1, [r0, #16]
+ 445 0034 1360     		str	r3, [r2]
+ 446 0036 C0E90289 		strd	r8, [r0, #8]
+ 447 003a 2249     		ldr	r1, .L48+28
+ 448 003c 224A     		ldr	r2, .L48+32
+ 449 003e FFF7FEFF 		bl	__aeabi_atexit
+ 450              	.L44:
+ 451 0042 3046     		mov	r0, r6
+ 452 0044 1D49     		ldr	r1, .L48+20
+ 453 0046 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 454 004a 0446     		mov	r4, r0
+ARM GAS  /tmp/ccwhMVmM.s 			page 9
+
+
+ 455 004c 48BB     		cbnz	r0, .L43
+ 456 004e 16A3     		adr	r3, .L48
+ 457 0050 D3E90023 		ldrd	r2, [r3]
+ 458 0054 0AA8     		add	r0, sp, #40
+ 459 0056 60E90A23 		strd	r2, [r0, #-40]!
+ 460 005a 15A3     		adr	r3, .L48+8
+ 461 005c D3E90023 		ldrd	r2, [r3]
+ 462 0060 FFF7FEFF 		bl	_ZN6uavcan17DataTypeSignature6extendES0_
+ 463 0064 DDE90023 		ldrd	r2, [sp]
+ 464 0068 CDE90423 		strd	r2, [sp, #16]
+ 465 006c 174B     		ldr	r3, .L48+36
+ 466 006e 8DF81C40 		strb	r4, [sp, #28]
+ 467 0072 0294     		str	r4, [sp, #8]
+ 468 0074 114C     		ldr	r4, .L48+20
+ 469 0076 0895     		str	r5, [sp, #32]
+ 470 0078 0693     		str	r3, [sp, #24]
+ 471 007a 02AD     		add	r5, sp, #8
+ 472 007c 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 473 007e 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 474 0080 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
+ 475 0084 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 476 0088 3046     		mov	r0, r6
+ 477 008a A4F11001 		sub	r1, r4, #16
+ 478 008e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 479 0092 30B9     		cbnz	r0, .L43
+ 480 0094 3046     		mov	r0, r6
+ 481 0096 A4F11001 		sub	r1, r4, #16
+ 482 009a FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 483 009e 00E0     		b	.L43
+ 484              	.L45:
+ 485 00a0 0320     		movs	r0, #3
+ 486              	.L43:
+ 487 00a2 0AB0     		add	sp, sp, #40
+ 488              		@ sp needed
+ 489 00a4 BDE87083 		pop	{r4, r5, r6, r8, r9, pc}
+ 490              	.L49:
+ 491              		.align	3
+ 492              	.L48:
+ 493 00a8 B3611B53 		.word	1394303411
+ 494 00ac 54F6C731 		.word	835188308
+ 495 00b0 50A34CC4 		.word	-1001610416
+ 496 00b4 F006B113 		.word	330368752
+ 497 00b8 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 498 00bc 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 499 00c0 36000000 		.word	.LC1
+ 500 00c4 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 501 00c8 00000000 		.word	__dso_handle
+ 502 00cc 94000000 		.word	.LC5
+ 503              		.size	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_
+ 504              		.section	.text.startup._GLOBAL__sub_I_main,"ax",%progbits
+ 505              		.align	1
+ 506              		.thumb
+ 507              		.thumb_func
+ 508              		.type	_GLOBAL__sub_I_main, %function
+ 509              	_GLOBAL__sub_I_main:
+ 510              		@ args = 0, pretend = 0, frame = 0
+ 511              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccwhMVmM.s 			page 10
+
+
+ 512 0000 2DE97043 		push	{r4, r5, r6, r8, r9, lr}
+ 513 0004 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 514 0008 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 515 000a 0646     		mov	r6, r0
+ 516 000c 002B     		cmp	r3, #0
+ 517 000e 34D1     		bne	.L54
+ 518 0010 4D4A     		ldr	r2, .L68+16
+ 519 0012 4E48     		ldr	r0, .L68+20
+ 520 0014 1368     		ldr	r3, [r2]
+ 521 0016 13F00103 		ands	r3, r3, #1
+ 522 001a 10D1     		bne	.L52
+ 523 001c 4C49     		ldr	r1, .L68+24
+ 524 001e 0360     		str	r3, [r0]
+ 525 0020 0375     		strb	r3, [r0, #20]
+ 526 0022 4FF0FF33 		mov	r3, #-1
+ 527 0026 0024     		movs	r4, #0
+ 528 0028 0025     		movs	r5, #0
+ 529 002a 8361     		str	r3, [r0, #24]
+ 530 002c 0123     		movs	r3, #1
+ 531 002e 0161     		str	r1, [r0, #16]
+ 532 0030 1360     		str	r3, [r2]
+ 533 0032 C0E90245 		strd	r4, [r0, #8]
+ 534 0036 4749     		ldr	r1, .L68+28
+ 535 0038 474A     		ldr	r2, .L68+32
+ 536 003a FFF7FEFF 		bl	__aeabi_atexit
+ 537              	.L52:
+ 538 003e 434D     		ldr	r5, .L68+20
+ 539 0040 3046     		mov	r0, r6
+ 540 0042 2946     		mov	r1, r5
+ 541 0044 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 542 0048 A8B9     		cbnz	r0, .L64
+ 543 004a 3BA3     		adr	r3, .L68
+ 544 004c D3E90023 		ldrd	r2, [r3]
+ 545 0050 C5E90223 		strd	r2, [r5, #8]
+ 546 0054 414B     		ldr	r3, .L68+36
+ 547 0056 2860     		str	r0, [r5]
+ 548 0058 2B61     		str	r3, [r5, #16]
+ 549 005a 0123     		movs	r3, #1
+ 550 005c 2B75     		strb	r3, [r5, #20]
+ 551 005e 40F25513 		movw	r3, #341
+ 552 0062 3046     		mov	r0, r6
+ 553 0064 AB61     		str	r3, [r5, #24]
+ 554 0066 2946     		mov	r1, r5
+ 555 0068 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 556 006c 18B9     		cbnz	r0, .L64
+ 557 006e 3046     		mov	r0, r6
+ 558 0070 2946     		mov	r1, r5
+ 559 0072 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 560              	.L64:
+ 561 0076 0446     		mov	r4, r0
+ 562 0078 10B1     		cbz	r0, .L53
+ 563              	.L54:
+ 564 007a 3948     		ldr	r0, .L68+40
+ 565 007c FFF7FEFF 		bl	_ZN6uavcan16handleFatalErrorEPKc
+ 566              	.L53:
+ 567 0080 0126     		movs	r6, #1
+ 568 0082 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ARM GAS  /tmp/ccwhMVmM.s 			page 11
+
+
+ 569 0086 3146     		mov	r1, r6
+ 570 0088 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registr
+ 571 008c 0028     		cmp	r0, #0
+ 572 008e F4D1     		bne	.L54
+ 573 0090 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 574 0094 0221     		movs	r1, #2
+ 575 0096 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Reg
+ 576 009a 0028     		cmp	r0, #0
+ 577 009c EDD1     		bne	.L54
+ 578 009e FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 579 00a2 43F6FF71 		movw	r1, #16383
+ 580 00a6 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS
+ 581 00aa 0028     		cmp	r0, #0
+ 582 00ac E5D1     		bne	.L54
+ 583 00ae FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 584 00b2 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 585 00b4 0546     		mov	r5, r0
+ 586 00b6 002B     		cmp	r3, #0
+ 587 00b8 DFD1     		bne	.L54
+ 588 00ba 2A4B     		ldr	r3, .L68+44
+ 589 00bc 2A48     		ldr	r0, .L68+48
+ 590 00be 1A68     		ldr	r2, [r3]
+ 591 00c0 12F0010F 		tst	r2, #1
+ 592 00c4 11D1     		bne	.L59
+ 593 00c6 224A     		ldr	r2, .L68+24
+ 594 00c8 4FF00008 		mov	r8, #0
+ 595 00cc 4FF00009 		mov	r9, #0
+ 596 00d0 0261     		str	r2, [r0, #16]
+ 597 00d2 4FF0FF32 		mov	r2, #-1
+ 598 00d6 8261     		str	r2, [r0, #24]
+ 599 00d8 0460     		str	r4, [r0]
+ 600 00da C0E90289 		strd	r8, [r0, #8]
+ 601 00de 0475     		strb	r4, [r0, #20]
+ 602 00e0 1C49     		ldr	r1, .L68+28
+ 603 00e2 1D4A     		ldr	r2, .L68+32
+ 604 00e4 1E60     		str	r6, [r3]
+ 605 00e6 FFF7FEFF 		bl	__aeabi_atexit
+ 606              	.L59:
+ 607 00ea 1F4C     		ldr	r4, .L68+48
+ 608 00ec 2846     		mov	r0, r5
+ 609 00ee 2146     		mov	r1, r4
+ 610 00f0 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 611 00f4 98B9     		cbnz	r0, .L58
+ 612 00f6 12A3     		adr	r3, .L68+8
+ 613 00f8 D3E90023 		ldrd	r2, [r3]
+ 614 00fc C4E90223 		strd	r2, [r4, #8]
+ 615 0100 1A4B     		ldr	r3, .L68+52
+ 616 0102 2060     		str	r0, [r4]
+ 617 0104 2361     		str	r3, [r4, #16]
+ 618 0106 0523     		movs	r3, #5
+ 619 0108 2075     		strb	r0, [r4, #20]
+ 620 010a A361     		str	r3, [r4, #24]
+ 621 010c 2846     		mov	r0, r5
+ 622 010e 2146     		mov	r1, r4
+ 623 0110 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+ 624 0114 18B9     		cbnz	r0, .L58
+ 625 0116 2846     		mov	r0, r5
+ARM GAS  /tmp/ccwhMVmM.s 			page 12
+
+
+ 626 0118 2146     		mov	r1, r4
+ 627 011a FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+ 628              	.L58:
+ 629 011e 0028     		cmp	r0, #0
+ 630 0120 ABD1     		bne	.L54
+ 631 0122 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+ 632 0126 0421     		movs	r1, #4
+ 633 0128 FFF7FEFF 		bl	_ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18R
+ 634 012c 0028     		cmp	r0, #0
+ 635 012e A4D1     		bne	.L54
+ 636 0130 BDE87083 		pop	{r4, r5, r6, r8, r9, pc}
+ 637              	.L69:
+ 638 0134 AFF30080 		.align	3
+ 639              	.L68:
+ 640 0138 F1C6A7C1 		.word	-1045969167
+ 641 013c D068080F 		.word	252209360
+ 642 0140 F017304A 		.word	1244665840
+ 643 0144 39059E56 		.word	1453196601
+ 644 0148 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 645 014c 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 646 0150 36000000 		.word	.LC1
+ 647 0154 00000000 		.word	_ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+ 648 0158 00000000 		.word	__dso_handle
+ 649 015c B6000000 		.word	.LC6
+ 650 0160 D1000000 		.word	.LC7
+ 651 0164 00000000 		.word	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 652 0168 00000000 		.word	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 653 016c E1000000 		.word	.LC8
+ 654              		.size	_GLOBAL__sub_I_main, .-_GLOBAL__sub_I_main
+ 655              		.section	.init_array,"aw",%init_array
+ 656              		.align	2
+ 657 0000 00000000 		.word	_GLOBAL__sub_I_main(target1)
+ 658              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 659              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStat
+ 660              		.align	3
+ 661              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 662              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0
+ 663              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Regi
+ 664 0000 00000000 		.space	32
+ 664      00000000 
+ 664      00000000 
+ 664      00000000 
+ 664      00000000 
+ 665              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 666              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEEN
+ 667              		.align	3
+ 668              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 669              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Reg
+ 670              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Registrati
+ 671 0000 00000000 		.space	32
+ 671      00000000 
+ 671      00000000 
+ 671      00000000 
+ 671      00000000 
+ 672              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 673              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage
+ 674              		.align	3
+ARM GAS  /tmp/ccwhMVmM.s 			page 13
+
+
+ 675              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 676              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEE
+ 677              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_1
+ 678 0000 00000000 		.space	32
+ 678      00000000 
+ 678      00000000 
+ 678      00000000 
+ 678      00000000 
+ 679              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 680              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_
+ 681              		.align	3
+ 682              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 683              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_1
+ 684              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Regist
+ 685 0000 00000000 		.space	32
+ 685      00000000 
+ 685      00000000 
+ 685      00000000 
+ 685      00000000 
+ 686              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 687              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEEN
+ 688              		.align	3
+ 689              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 690              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Reg
+ 691              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registrati
+ 692 0000 00000000 		.space	32
+ 692      00000000 
+ 692      00000000 
+ 692      00000000 
+ 692      00000000 
+ 693              		.weak	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 694              		.section	.bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0E
+ 695              		.align	3
+ 696              		.type	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 697              		.size	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_
+ 698              	_ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Regis
+ 699 0000 00000000 		.space	32
+ 699      00000000 
+ 699      00000000 
+ 699      00000000 
+ 699      00000000 
+ 700              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 701              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportSt
+ 702              		.align	2
+ 703              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 704              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEEN
+ 705              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18Re
+ 706 0000 00000000 		.space	4
+ 707              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 708              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EE
+ 709              		.align	2
+ 710              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 711              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18R
+ 712              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18Registra
+ 713 0000 00000000 		.space	4
+ 714              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 715              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessa
+ARM GAS  /tmp/ccwhMVmM.s 			page 14
+
+
+ 716              		.align	2
+ 717              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 718              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0E
+ 719              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0
+ 720 0000 00000000 		.space	4
+ 721              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 722              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInf
+ 723              		.align	2
+ 724              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 725              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0
+ 726              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18Regi
+ 727 0000 00000000 		.space	4
+ 728              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 729              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EE
+ 730              		.align	2
+ 731              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 732              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18R
+ 733              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18Registra
+ 734 0000 00000000 		.space	4
+ 735              		.weak	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 736              		.section	.bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi
+ 737              		.align	2
+ 738              		.type	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 739              		.size	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS
+ 740              	_ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18Reg
+ 741 0000 00000000 		.space	4
+ 742              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 743              	.LC0:
+ 744 0000 7A756261 		.ascii	"zubax_chibios//zubax_chibios/watchdog/watchdog.hpp:"
+ 744      785F6368 
+ 744      6962696F 
+ 744      732F2F7A 
+ 744      75626178 
+ 745 0033 333000   		.ascii	"30\000"
+ 746              	.LC1:
+ 747 0036 00       		.ascii	"\000"
+ 748              	.LC2:
+ 749 0037 75617663 		.ascii	"uavcan.protocol.GetNodeInfo\000"
+ 749      616E2E70 
+ 749      726F746F 
+ 749      636F6C2E 
+ 749      4765744E 
+ 750              	.LC3:
+ 751 0053 75617663 		.ascii	"uavcan.protocol.GetDataTypeInfo\000"
+ 751      616E2E70 
+ 751      726F746F 
+ 751      636F6C2E 
+ 751      47657444 
+ 752              	.LC4:
+ 753 0073 75617663 		.ascii	"uavcan.protocol.debug.LogMessage\000"
+ 753      616E2E70 
+ 753      726F746F 
+ 753      636F6C2E 
+ 753      64656275 
+ 754              	.LC5:
+ 755 0094 75617663 		.ascii	"uavcan.protocol.GetTransportStats\000"
+ 755      616E2E70 
+ARM GAS  /tmp/ccwhMVmM.s 			page 15
+
+
+ 755      726F746F 
+ 755      636F6C2E 
+ 755      47657454 
+ 756              	.LC6:
+ 757 00b6 75617663 		.ascii	"uavcan.protocol.NodeStatus\000"
+ 757      616E2E70 
+ 757      726F746F 
+ 757      636F6C2E 
+ 757      4E6F6465 
+ 758              	.LC7:
+ 759 00d1 54797065 		.ascii	"Type reg failed\000"
+ 759      20726567 
+ 759      20666169 
+ 759      6C656400 
+ 760              	.LC8:
+ 761 00e1 75617663 		.ascii	"uavcan.protocol.RestartNode\000"
+ 761      616E2E70 
+ 761      726F746F 
+ 761      636F6C2E 
+ 761      52657374 
+ 762              		.hidden	__dso_handle
+ 763              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccwhMVmM.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.cpp
+     /tmp/ccwhMVmM.s:16     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 $t
+     /tmp/ccwhMVmM.s:21     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev
+     /tmp/ccwhMVmM.s:21     .text._ZN6uavcan22GlobalDataTypeRegistry5EntryD2Ev:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD1Ev
+     /tmp/ccwhMVmM.s:30     .text.startup.main:0000000000000000 $t
+     /tmp/ccwhMVmM.s:35     .text.startup.main:0000000000000000 main
+     /tmp/ccwhMVmM.s:110    .text.startup.main:00000000000000b8 $d
+     /tmp/ccwhMVmM.s:115    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000000 $t
+     /tmp/ccwhMVmM.s:120    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000000 _ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE
+     /tmp/ccwhMVmM.s:131    .text._ZN6uavcan8protocol13DataTypeKind_ILi0EE23extendDataTypeSignatureERNS_17DataTypeSignatureE:0000000000000010 $d
+     /tmp/ccwhMVmM.s:135    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccwhMVmM.s:140    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccwhMVmM.s:222    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:00000000000000c0 $d
+     /tmp/ccwhMVmM.s:733    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:691    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:238    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccwhMVmM.s:243    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccwhMVmM.s:316    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDE:00000000000000a8 $d
+     /tmp/ccwhMVmM.s:726    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:684    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:326    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccwhMVmM.s:331    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccwhMVmM.s:404    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDE:00000000000000b0 $d
+     /tmp/ccwhMVmM.s:719    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:677    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:416    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 $t
+     /tmp/ccwhMVmM.s:421    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE
+     /tmp/ccwhMVmM.s:493    .text._ZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDE:00000000000000a8 $d
+     /tmp/ccwhMVmM.s:705    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:663    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:505    .text.startup._GLOBAL__sub_I_main:0000000000000000 $t
+     /tmp/ccwhMVmM.s:509    .text.startup._GLOBAL__sub_I_main:0000000000000000 _GLOBAL__sub_I_main
+     /tmp/ccwhMVmM.s:640    .text.startup._GLOBAL__sub_I_main:0000000000000138 $d
+     /tmp/ccwhMVmM.s:740    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:698    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:712    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:670    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 _ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry
+     /tmp/ccwhMVmM.s:656    .init_array:0000000000000000 $d
+     /tmp/ccwhMVmM.s:660    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:667    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:674    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:681    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:688    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:695    .bss._ZZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:702    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol18GetTransportStats_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:709    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12RestartNode_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:716    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol5debug11LogMessage_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:723    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol16GetDataTypeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:730    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol12GetNodeInfo_EEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+     /tmp/ccwhMVmM.s:737    .bss._ZGVZN6uavcan22GlobalDataTypeRegistry16registerDataTypeINS_8protocol11NodeStatus_ILi0EEEEENS0_18RegistrationResultENS_10DataTypeIDEE5entry:0000000000000000 $d
+                           .group:0000000000000000 _ZN6uavcan22GlobalDataTypeRegistry5EntryD5Ev
+
+UNDEFINED SYMBOLS
+_ZN20bootloader_interface4initEv
+_ZN5board4initEv
+_ZN4node4initEv
+ARM GAS  /tmp/ccwhMVmM.s 			page 17
+
+
+_ZN10air_sensor4initEv
+_ZN4gnss4initEv
+_ZN12magnetometer4initEv
+watchdogCreate
+sysHaltHook_
+port_halt
+_ZN3cli4initEv
+_ZN10chibios_rt10BaseThread11setPriorityEm
+_ZN4node24hasPendingRestartRequestEv
+_ZN4node7getNodeEv
+_ZN5board12setStatusLedEb
+usleep
+watchdogReset
+_ZN5board7restartEv
+dbg_panic_msg
+_ZN6uavcan17DataTypeSignature6extendES0_
+__aeabi_atexit
+_ZN6uavcan22GlobalDataTypeRegistry6removeEPNS0_5EntryE
+_ZN6uavcan22GlobalDataTypeRegistry10registImplEPNS0_5EntryE
+__dso_handle
+_ZN6uavcan22GlobalDataTypeRegistry8instanceEv
+_ZN6uavcan16handleFatalErrorEPKc

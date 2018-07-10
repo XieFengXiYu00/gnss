@@ -1,0 +1,843 @@
+ARM GAS  /tmp/ccLOXjaK.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_can_acceptance_filter_configurator.cpp"
+  15              		.section	.text._ZN6uavcan5INode13getDispatcherEv,"axG",%progbits,_ZN6uavcan5INode13getDispatcherEv
+  16              		.align	1
+  17              		.weak	_ZN6uavcan5INode13getDispatcherEv
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan5INode13getDispatcherEv, %function
+  21              	_ZN6uavcan5INode13getDispatcherEv:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 08B5     		push	{r3, lr}
+  25 0002 0368     		ldr	r3, [r0]
+  26 0004 DB68     		ldr	r3, [r3, #12]
+  27 0006 9847     		blx	r3
+  28 0008 0830     		adds	r0, r0, #8
+  29 000a 08BD     		pop	{r3, pc}
+  30              		.size	_ZN6uavcan5INode13getDispatcherEv, .-_ZN6uavcan5INode13getDispatcherEv
+  31              		.section	.text._ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv,"ax",%progbits
+  32              		.align	1
+  33              		.global	_ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv
+  34              		.thumb
+  35              		.thumb_func
+  36              		.type	_ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv, %function
+  37              	_ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  41 0004 0746     		mov	r7, r0
+  42 0006 0068     		ldr	r0, [r0]
+  43 0008 FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+  44 000c 4FF6FF74 		movw	r4, #65535
+  45 0010 D0F80880 		ldr	r8, [r0, #8]
+  46 0014 0025     		movs	r5, #0
+  47              	.L3:
+  48 0016 3868     		ldr	r0, [r7]
+  49 0018 FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+  50 001c 90F89830 		ldrb	r3, [r0, #152]	@ zero_extendqisi2
+  51 0020 EEB2     		uxtb	r6, r5
+  52 0022 B342     		cmp	r3, r6
+  53 0024 12D9     		bls	.L9
+  54 0026 D8F80030 		ldr	r3, [r8]
+  55 002a 4046     		mov	r0, r8
+  56 002c 9B68     		ldr	r3, [r3, #8]
+  57 002e 3146     		mov	r1, r6
+ARM GAS  /tmp/ccLOXjaK.s 			page 2
+
+
+  58 0030 9847     		blx	r3
+  59 0032 98B1     		cbz	r0, .L6
+  60 0034 0368     		ldr	r3, [r0]
+  61 0036 0135     		adds	r5, r5, #1
+  62 0038 5B69     		ldr	r3, [r3, #20]
+  63 003a 9847     		blx	r3
+  64 003c 2028     		cmp	r0, #32
+  65 003e 28BF     		it	cs
+  66 0040 2020     		movcs	r0, #32
+  67 0042 80B2     		uxth	r0, r0
+  68 0044 8442     		cmp	r4, r0
+  69 0046 28BF     		it	cs
+  70 0048 0446     		movcs	r4, r0
+  71 004a E4E7     		b	.L3
+  72              	.L9:
+  73 004c 4FF6FF70 		movw	r0, #65535
+  74 0050 8442     		cmp	r4, r0
+  75 0052 14BF     		ite	ne
+  76 0054 2046     		movne	r0, r4
+  77 0056 0020     		moveq	r0, #0
+  78 0058 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  79              	.L6:
+  80 005c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  81              		.size	_ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv, .-_ZNK6uavcan31CanAcceptanceF
+  82              		.section	.text._ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_
+  83              		.align	1
+  84              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_
+  85              		.thumb
+  86              		.thumb_func
+  87              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_, %functi
+  88              	_ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_:
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91 0000 5368     		ldr	r3, [r2, #4]
+  92 0002 30B5     		push	{r4, r5, lr}
+  93 0004 0C68     		ldr	r4, [r1]
+  94 0006 4968     		ldr	r1, [r1, #4]
+  95 0008 1940     		ands	r1, r1, r3
+  96 000a 1368     		ldr	r3, [r2]
+  97 000c 6340     		eors	r3, r3, r4
+  98 000e 21EA0303 		bic	r3, r1, r3
+  99 0012 4360     		str	r3, [r0, #4]
+ 100 0014 2340     		ands	r3, r3, r4
+ 101 0016 0360     		str	r3, [r0]
+ 102 0018 30BD     		pop	{r4, r5, pc}
+ 103              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_, .-_ZN6u
+ 104              		.section	.text._ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm, %function
+ 110              	_ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm:
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113              		@ link register save eliminated.
+ 114 0000 0346     		mov	r3, r0
+ARM GAS  /tmp/ccLOXjaK.s 			page 3
+
+
+ 115 0002 0022     		movs	r2, #0
+ 116              	.L12:
+ 117 0004 D0B2     		uxtb	r0, r2
+ 118 0006 0132     		adds	r2, r2, #1
+ 119 0008 13B1     		cbz	r3, .L14
+ 120 000a 591E     		subs	r1, r3, #1
+ 121 000c 0B40     		ands	r3, r3, r1
+ 122 000e F9E7     		b	.L12
+ 123              	.L14:
+ 124 0010 7047     		bx	lr
+ 125              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm, .-_ZN6uavcan31CanAcceptanceFilterCo
+ 126              		.section	.text._ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv,"axG",%progbits,_ZNK6uavcan8M
+ 127              		.align	1
+ 128              		.weak	_ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	_ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv, %function
+ 132              	_ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv:
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135 0000 10B5     		push	{r4, lr}
+ 136 0002 0368     		ldr	r3, [r0]
+ 137 0004 0020     		movs	r0, #0
+ 138              	.L16:
+ 139 0006 5BB1     		cbz	r3, .L18
+ 140 0008 1A46     		mov	r2, r3
+ 141 000a 03F13001 		add	r1, r3, #48
+ 142              	.L17:
+ 143 000e 5468     		ldr	r4, [r2, #4]
+ 144 0010 0C32     		adds	r2, r2, #12
+ 145 0012 002C     		cmp	r4, #0
+ 146 0014 18BF     		it	ne
+ 147 0016 0130     		addne	r0, r0, #1
+ 148 0018 8A42     		cmp	r2, r1
+ 149 001a F8D1     		bne	.L17
+ 150 001c 1B68     		ldr	r3, [r3]
+ 151 001e F2E7     		b	.L16
+ 152              	.L18:
+ 153 0020 10BD     		pop	{r4, pc}
+ 154              		.size	_ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv, .-_ZNK6uavcan8MultisetINS_15CanFilter
+ 155              		.section	.text._ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj,"axG",%progbits,_ZN6uavcan
+ 156              		.align	1
+ 157              		.weak	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+ 158              		.thumb
+ 159              		.thumb_func
+ 160              		.type	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj, %function
+ 161              	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj:
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164 0000 30B5     		push	{r4, r5, lr}
+ 165 0002 0068     		ldr	r0, [r0]
+ 166              	.L21:
+ 167 0004 80B1     		cbz	r0, .L31
+ 168 0006 0468     		ldr	r4, [r0]
+ 169 0008 0023     		movs	r3, #0
+ 170              	.L24:
+ 171 000a 0C22     		movs	r2, #12
+ARM GAS  /tmp/ccLOXjaK.s 			page 4
+
+
+ 172 000c 02FB0302 		mla	r2, r2, r3, r0
+ 173 0010 5268     		ldr	r2, [r2, #4]
+ 174 0012 22B1     		cbz	r2, .L22
+ 175 0014 4D1E     		subs	r5, r1, #1
+ 176 0016 09B9     		cbnz	r1, .L26
+ 177 0018 1046     		mov	r0, r2
+ 178 001a 30BD     		pop	{r4, r5, pc}
+ 179              	.L26:
+ 180 001c 2946     		mov	r1, r5
+ 181              	.L22:
+ 182 001e 0133     		adds	r3, r3, #1
+ 183 0020 042B     		cmp	r3, #4
+ 184 0022 F2D1     		bne	.L24
+ 185 0024 2046     		mov	r0, r4
+ 186 0026 EDE7     		b	.L21
+ 187              	.L31:
+ 188 0028 30BD     		pop	{r4, r5, pc}
+ 189              		.size	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj, .-_ZN6uavcan8MultisetINS_15CanFilt
+ 190              		.section	.text._ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv
+ 193              		.thumb
+ 194              		.thumb_func
+ 195              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv, %function
+ 196              	_ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv:
+ 197              		@ args = 0, pretend = 0, frame = 256
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 200 0004 0646     		mov	r6, r0
+ 201 0006 C0B0     		sub	sp, sp, #256
+ 202 0008 0023     		movs	r3, #0
+ 203              	.L33:
+ 204 000a 0024     		movs	r4, #0
+ 205 000c 4DF80340 		str	r4, [sp, r3]
+ 206 0010 0DEB0302 		add	r2, sp, r3
+ 207 0014 0833     		adds	r3, r3, #8
+ 208 0016 B3F5807F 		cmp	r3, #256
+ 209 001a 5460     		str	r4, [r2, #4]
+ 210 001c F5D1     		bne	.L33
+ 211 001e 06F10408 		add	r8, r6, #4
+ 212 0022 4046     		mov	r0, r8
+ 213 0024 FFF7FEFF 		bl	_ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv
+ 214 0028 2028     		cmp	r0, #32
+ 215 002a 0746     		mov	r7, r0
+ 216 002c 34D8     		bhi	.L41
+ 217              	.L35:
+ 218 002e A5B2     		uxth	r5, r4
+ 219 0030 BD42     		cmp	r5, r7
+ 220 0032 04F10104 		add	r4, r4, #1
+ 221 0036 0BD2     		bcs	.L43
+ 222 0038 2946     		mov	r1, r5
+ 223 003a 4046     		mov	r0, r8
+ 224 003c FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+ 225 0040 0DEBC503 		add	r3, sp, r5, lsl #3
+ 226 0044 90E80600 		ldmia	r0, {r1, r2}
+ 227 0048 4DF83510 		str	r1, [sp, r5, lsl #3]
+ 228 004c 5A60     		str	r2, [r3, #4]
+ARM GAS  /tmp/ccLOXjaK.s 			page 5
+
+
+ 229 004e EEE7     		b	.L35
+ 230              	.L43:
+ 231 0050 3068     		ldr	r0, [r6]
+ 232 0052 FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+ 233 0056 D0F80880 		ldr	r8, [r0, #8]
+ 234 005a 0024     		movs	r4, #0
+ 235              	.L37:
+ 236 005c 3068     		ldr	r0, [r6]
+ 237 005e FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+ 238 0062 90F89830 		ldrb	r3, [r0, #152]	@ zero_extendqisi2
+ 239 0066 E5B2     		uxtb	r5, r4
+ 240 0068 AB42     		cmp	r3, r5
+ 241 006a 13D9     		bls	.L44
+ 242 006c D8F80030 		ldr	r3, [r8]
+ 243 0070 4046     		mov	r0, r8
+ 244 0072 9B68     		ldr	r3, [r3, #8]
+ 245 0074 2946     		mov	r1, r5
+ 246 0076 9847     		blx	r3
+ 247 0078 10B9     		cbnz	r0, .L38
+ 248              	.L39:
+ 249 007a 4FF6FC70 		movw	r0, #65532
+ 250 007e 0DE0     		b	.L34
+ 251              	.L38:
+ 252 0080 0368     		ldr	r3, [r0]
+ 253 0082 6946     		mov	r1, sp
+ 254 0084 1B69     		ldr	r3, [r3, #16]
+ 255 0086 BAB2     		uxth	r2, r7
+ 256 0088 9847     		blx	r3
+ 257 008a 0028     		cmp	r0, #0
+ 258 008c 04F10104 		add	r4, r4, #1
+ 259 0090 E4DA     		bge	.L37
+ 260 0092 F2E7     		b	.L39
+ 261              	.L44:
+ 262 0094 0020     		movs	r0, #0
+ 263 0096 01E0     		b	.L34
+ 264              	.L41:
+ 265 0098 4FF6F670 		movw	r0, #65526
+ 266              	.L34:
+ 267 009c 00B2     		sxth	r0, r0
+ 268 009e 40B0     		add	sp, sp, #256
+ 269              		@ sp needed
+ 270 00a0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 271              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv, .-_ZN6uavcan31CanAcceptan
+ 272              		.section	.text._ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv,"axG",%progbits,_ZN6uavca
+ 273              		.align	1
+ 274              		.weak	_ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv
+ 275              		.thumb
+ 276              		.thumb_func
+ 277              		.type	_ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv, %function
+ 278              	_ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv:
+ 279              		@ args = 0, pretend = 0, frame = 0
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281              		@ link register save eliminated.
+ 282 0000 0368     		ldr	r3, [r0]
+ 283 0002 53B1     		cbz	r3, .L45
+ 284 0004 0346     		mov	r3, r0
+ 285 0006 0022     		movs	r2, #0
+ARM GAS  /tmp/ccLOXjaK.s 			page 6
+
+
+ 286 0008 43F8042B 		str	r2, [r3], #4
+ 287 000c 0C30     		adds	r0, r0, #12
+ 288              	.L47:
+ 289 000e 8342     		cmp	r3, r0
+ 290 0010 03D0     		beq	.L45
+ 291 0012 0022     		movs	r2, #0
+ 292 0014 03F8012B 		strb	r2, [r3], #1
+ 293 0018 F9E7     		b	.L47
+ 294              	.L45:
+ 295 001a 7047     		bx	lr
+ 296              		.size	_ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv, .-_ZN6uavcan8MultisetINS_15CanFil
+ 297              		.section	.text._ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_
+ 298              		.align	1
+ 299              		.weak	_ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_
+ 300              		.thumb
+ 301              		.thumb_func
+ 302              		.type	_ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_, %functi
+ 303              	_ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_:
+ 304              		@ args = 0, pretend = 0, frame = 0
+ 305              		@ frame_needed = 0, uses_anonymous_args = 0
+ 306              		@ link register save eliminated.
+ 307 0000 0368     		ldr	r3, [r0]
+ 308 0002 6BB1     		cbz	r3, .L50
+ 309 0004 61B1     		cbz	r1, .L50
+ 310 0006 8B42     		cmp	r3, r1
+ 311 0008 03D1     		bne	.L53
+ 312 000a 1B68     		ldr	r3, [r3]
+ 313 000c 0360     		str	r3, [r0]
+ 314 000e 7047     		bx	lr
+ 315              	.L55:
+ 316 0010 1346     		mov	r3, r2
+ 317              	.L53:
+ 318 0012 1A68     		ldr	r2, [r3]
+ 319 0014 22B1     		cbz	r2, .L50
+ 320 0016 8A42     		cmp	r2, r1
+ 321 0018 FAD1     		bne	.L55
+ 322 001a 0A68     		ldr	r2, [r1]
+ 323 001c 1A60     		str	r2, [r3]
+ 324 001e 7047     		bx	lr
+ 325              	.L50:
+ 326 0020 7047     		bx	lr
+ 327              		.size	_ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_, .-_ZN6u
+ 328              		.section	.text._ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_,"axG",%progbits,_ZN6
+ 329              		.align	1
+ 330              		.weak	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_
+ 331              		.thumb
+ 332              		.thumb_func
+ 333              		.type	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_, %function
+ 334              	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_:
+ 335              		@ args = 0, pretend = 0, frame = 8
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337 0000 2DE9F341 		push	{r0, r1, r4, r5, r6, r7, r8, lr}
+ 338 0004 0746     		mov	r7, r0
+ 339 0006 E846     		mov	r8, sp
+ 340 0008 8DE80600 		stmia	sp, {r1, r2}
+ 341 000c 0468     		ldr	r4, [r0]
+ 342              	.L63:
+ARM GAS  /tmp/ccLOXjaK.s 			page 7
+
+
+ 343 000e 54B1     		cbz	r4, .L66
+ 344 0010 231D     		adds	r3, r4, #4
+ 345 0012 04F13402 		add	r2, r4, #52
+ 346              	.L65:
+ 347 0016 1968     		ldr	r1, [r3]
+ 348 0018 1E46     		mov	r6, r3
+ 349 001a 41B3     		cbz	r1, .L64
+ 350 001c 0C33     		adds	r3, r3, #12
+ 351 001e 9342     		cmp	r3, r2
+ 352 0020 F9D1     		bne	.L65
+ 353 0022 2468     		ldr	r4, [r4]
+ 354 0024 F3E7     		b	.L63
+ 355              	.L66:
+ 356 0026 7868     		ldr	r0, [r7, #4]
+ 357 0028 3421     		movs	r1, #52
+ 358 002a 0368     		ldr	r3, [r0]
+ 359 002c 9B68     		ldr	r3, [r3, #8]
+ 360 002e 9847     		blx	r3
+ 361 0030 0546     		mov	r5, r0
+ 362 0032 10B3     		cbz	r0, .L80
+ 363 0034 0646     		mov	r6, r0
+ 364 0036 00F11003 		add	r3, r0, #16
+ 365 003a 46F8044B 		str	r4, [r6], #4
+ 366 003e 00F14001 		add	r1, r0, #64
+ 367              	.L70:
+ 368 0042 0022     		movs	r2, #0
+ 369 0044 43F80C2C 		str	r2, [r3, #-12]
+ 370 0048 A3F10802 		sub	r2, r3, #8
+ 371              	.L68:
+ 372 004c 9A42     		cmp	r2, r3
+ 373 004e 03D0     		beq	.L81
+ 374 0050 0020     		movs	r0, #0
+ 375 0052 02F8010B 		strb	r0, [r2], #1
+ 376 0056 F9E7     		b	.L68
+ 377              	.L81:
+ 378 0058 02F10C03 		add	r3, r2, #12
+ 379 005c 8B42     		cmp	r3, r1
+ 380 005e F0D1     		bne	.L70
+ 381 0060 3846     		mov	r0, r7
+ 382 0062 2946     		mov	r1, r5
+ 383 0064 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_
+ 384 0068 3B68     		ldr	r3, [r7]
+ 385 006a 2B60     		str	r3, [r5]
+ 386 006c 3D60     		str	r5, [r7]
+ 387              	.L64:
+ 388 006e 341D     		adds	r4, r6, #4
+ 389 0070 98E80300 		ldmia	r8, {r0, r1}
+ 390 0074 84E80300 		stmia	r4, {r0, r1}
+ 391 0078 3460     		str	r4, [r6]
+ 392              	.L80:
+ 393 007a 2046     		mov	r0, r4
+ 394 007c 02B0     		add	sp, sp, #8
+ 395              		@ sp needed
+ 396 007e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 397              		.size	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_, .-_ZN6uavcan8MultisetINS_15C
+ 398              		.section	.text._ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv,"axG",%progbits,_ZN6uavcan8Mul
+ 399              		.align	1
+ARM GAS  /tmp/ccLOXjaK.s 			page 8
+
+
+ 400              		.weak	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv
+ 401              		.thumb
+ 402              		.thumb_func
+ 403              		.type	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv, %function
+ 404              	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv:
+ 405              		@ args = 0, pretend = 0, frame = 0
+ 406              		@ frame_needed = 0, uses_anonymous_args = 0
+ 407 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 408 0004 0646     		mov	r6, r0
+ 409 0006 0468     		ldr	r4, [r0]
+ 410              	.L83:
+ 411 0008 04B3     		cbz	r4, .L93
+ 412 000a 2346     		mov	r3, r4
+ 413 000c D4F80090 		ldr	r9, [r4]
+ 414 0010 04F13002 		add	r2, r4, #48
+ 415              	.L85:
+ 416 0014 5968     		ldr	r1, [r3, #4]
+ 417 0016 B9B9     		cbnz	r1, .L84
+ 418 0018 0C33     		adds	r3, r3, #12
+ 419 001a 9342     		cmp	r3, r2
+ 420 001c FAD1     		bne	.L85
+ 421 001e 3046     		mov	r0, r6
+ 422 0020 2146     		mov	r1, r4
+ 423 0022 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_
+ 424 0026 7768     		ldr	r7, [r6, #4]
+ 425 0028 04F10408 		add	r8, r4, #4
+ 426 002c 04F13405 		add	r5, r4, #52
+ 427              	.L88:
+ 428 0030 4545     		cmp	r5, r8
+ 429 0032 04D0     		beq	.L87
+ 430 0034 0C3D     		subs	r5, r5, #12
+ 431 0036 2846     		mov	r0, r5
+ 432 0038 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv
+ 433 003c F8E7     		b	.L88
+ 434              	.L87:
+ 435 003e 3B68     		ldr	r3, [r7]
+ 436 0040 3846     		mov	r0, r7
+ 437 0042 DB68     		ldr	r3, [r3, #12]
+ 438 0044 2146     		mov	r1, r4
+ 439 0046 9847     		blx	r3
+ 440              	.L84:
+ 441 0048 4C46     		mov	r4, r9
+ 442 004a DDE7     		b	.L83
+ 443              	.L93:
+ 444 004c BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 445              		.size	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv, .-_ZN6uavcan8MultisetINS_15CanFilterCo
+ 446              		.section	.text._ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv,"ax",%progbits
+ 447              		.align	1
+ 448              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv
+ 449              		.thumb
+ 450              		.thumb_func
+ 451              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv, %function
+ 452              	_ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv:
+ 453              		@ args = 0, pretend = 0, frame = 32
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 456 0004 89B0     		sub	sp, sp, #36
+ARM GAS  /tmp/ccLOXjaK.s 			page 9
+
+
+ 457 0006 8246     		mov	r10, r0
+ 458 0008 FFF7FEFF 		bl	_ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv
+ 459 000c 8146     		mov	r9, r0
+ 460 000e 0028     		cmp	r0, #0
+ 461 0010 73D0     		beq	.L120
+ 462              	.L96:
+ 463 0012 0AF10406 		add	r6, r10, #4
+ 464 0016 3046     		mov	r0, r6
+ 465 0018 FFF7FEFF 		bl	_ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv
+ 466 001c 8145     		cmp	r9, r0
+ 467 001e 0746     		mov	r7, r0
+ 468 0020 69D2     		bcs	.L121
+ 469 0022 0025     		movs	r5, #0
+ 470 0024 AC46     		mov	ip, r5
+ 471 0026 AB46     		mov	fp, r5
+ 472 0028 A846     		mov	r8, r5
+ 473 002a BBB2     		uxth	r3, r7
+ 474 002c 0093     		str	r3, [sp]
+ 475              	.L97:
+ 476 002e BAB2     		uxth	r2, r7
+ 477 0030 ABB2     		uxth	r3, r5
+ 478 0032 013A     		subs	r2, r2, #1
+ 479 0034 9342     		cmp	r3, r2
+ 480 0036 27DA     		bge	.L122
+ 481 0038 6C1C     		adds	r4, r5, #1
+ 482 003a E4B2     		uxtb	r4, r4
+ 483              	.L98:
+ 484 003c 009A     		ldr	r2, [sp]
+ 485 003e 9442     		cmp	r4, r2
+ 486 0040 20D2     		bcs	.L123
+ 487 0042 A9B2     		uxth	r1, r5
+ 488 0044 3046     		mov	r0, r6
+ 489 0046 0393     		str	r3, [sp, #12]
+ 490 0048 CDF808C0 		str	ip, [sp, #8]
+ 491 004c FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+ 492 0050 2146     		mov	r1, r4
+ 493 0052 0190     		str	r0, [sp, #4]
+ 494 0054 3046     		mov	r0, r6
+ 495 0056 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+ 496 005a 0199     		ldr	r1, [sp, #4]
+ 497 005c 0246     		mov	r2, r0
+ 498 005e 06A8     		add	r0, sp, #24
+ 499 0060 FFF7FEFF 		bl	_ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_
+ 500 0064 0798     		ldr	r0, [sp, #28]
+ 501 0066 FFF7FEFF 		bl	_ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm
+ 502 006a DDF808C0 		ldr	ip, [sp, #8]
+ 503 006e 039B     		ldr	r3, [sp, #12]
+ 504 0070 6045     		cmp	r0, ip
+ 505 0072 88BF     		it	hi
+ 506 0074 A346     		movhi	fp, r4
+ 507 0076 04F10104 		add	r4, r4, #1
+ 508 007a 84BF     		itt	hi
+ 509 007c 8446     		movhi	ip, r0
+ 510 007e 9846     		movhi	r8, r3
+ 511 0080 A4B2     		uxth	r4, r4
+ 512 0082 DBE7     		b	.L98
+ 513              	.L123:
+ARM GAS  /tmp/ccLOXjaK.s 			page 10
+
+
+ 514 0084 0135     		adds	r5, r5, #1
+ 515 0086 D2E7     		b	.L97
+ 516              	.L122:
+ 517 0088 5946     		mov	r1, fp
+ 518 008a 3046     		mov	r0, r6
+ 519 008c FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+ 520 0090 4146     		mov	r1, r8
+ 521 0092 0446     		mov	r4, r0
+ 522 0094 3046     		mov	r0, r6
+ 523 0096 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+ 524 009a 04AD     		add	r5, sp, #16
+ 525 009c 0146     		mov	r1, r0
+ 526 009e 2246     		mov	r2, r4
+ 527 00a0 2846     		mov	r0, r5
+ 528 00a2 FFF7FEFF 		bl	_ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_
+ 529 00a6 95E80300 		ldmia	r5, {r0, r1}
+ 530 00aa 84E80300 		stmia	r4, {r0, r1}
+ 531 00ae 3046     		mov	r0, r6
+ 532 00b0 4146     		mov	r1, r8
+ 533 00b2 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+ 534 00b6 0746     		mov	r7, r0
+ 535 00b8 DAF80430 		ldr	r3, [r10, #4]
+ 536 00bc 0022     		movs	r2, #0
+ 537              	.L102:
+ 538 00be A3B1     		cbz	r3, .L124
+ 539 00c0 1D68     		ldr	r5, [r3]
+ 540 00c2 A2B9     		cbnz	r2, .L103
+ 541 00c4 03F1300E 		add	lr, r3, #48
+ 542              	.L106:
+ 543 00c8 5968     		ldr	r1, [r3, #4]
+ 544 00ca 03F1040C 		add	ip, r3, #4
+ 545 00ce 39B1     		cbz	r1, .L104
+ 546 00d0 3868     		ldr	r0, [r7]
+ 547 00d2 0C68     		ldr	r4, [r1]
+ 548 00d4 8442     		cmp	r4, r0
+ 549 00d6 03D1     		bne	.L104
+ 550 00d8 4C68     		ldr	r4, [r1, #4]
+ 551 00da 7968     		ldr	r1, [r7, #4]
+ 552 00dc 8C42     		cmp	r4, r1
+ 553 00de 0FD0     		beq	.L105
+ 554              	.L104:
+ 555 00e0 0C33     		adds	r3, r3, #12
+ 556 00e2 7345     		cmp	r3, lr
+ 557 00e4 F0D1     		bne	.L106
+ 558              	.L110:
+ 559 00e6 2B46     		mov	r3, r5
+ 560 00e8 E9E7     		b	.L102
+ 561              	.L124:
+ 562 00ea 002A     		cmp	r2, #0
+ 563 00ec 91D0     		beq	.L96
+ 564              	.L103:
+ 565 00ee 3046     		mov	r0, r6
+ 566 00f0 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv
+ 567 00f4 8DE7     		b	.L96
+ 568              	.L121:
+ 569 00f6 0020     		movs	r0, #0
+ 570 00f8 07E0     		b	.L95
+ARM GAS  /tmp/ccLOXjaK.s 			page 11
+
+
+ 571              	.L120:
+ 572 00fa 4FF6FC70 		movw	r0, #65532
+ 573 00fe 04E0     		b	.L95
+ 574              	.L105:
+ 575 0100 6046     		mov	r0, ip
+ 576 0102 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv
+ 577 0106 0122     		movs	r2, #1
+ 578 0108 EDE7     		b	.L110
+ 579              	.L95:
+ 580 010a 00B2     		sxth	r0, r0
+ 581 010c 09B0     		add	sp, sp, #36
+ 582              		@ sp needed
+ 583 010e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 584              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv, .-_ZN6uavcan31CanAccept
+ 585              		.section	.text._ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17Anonymous
+ 586              		.align	1
+ 587              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessage
+ 588              		.thumb
+ 589              		.thumb_func
+ 590              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE
+ 591              	_ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE:
+ 592              		@ args = 0, pretend = 0, frame = 16
+ 593              		@ frame_needed = 0, uses_anonymous_args = 0
+ 594 0000 2DE9FF47 		push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, lr}
+ 595 0004 0746     		mov	r7, r0
+ 596 0006 8946     		mov	r9, r1
+ 597 0008 4368     		ldr	r3, [r0, #4]
+ 598 000a 061D     		adds	r6, r0, #4
+ 599 000c 4FF00008 		mov	r8, #0
+ 600              	.L126:
+ 601 0010 83B1     		cbz	r3, .L146
+ 602 0012 1C46     		mov	r4, r3
+ 603 0014 54F804AB 		ldr	r10, [r4], #4
+ 604 0018 03F13405 		add	r5, r3, #52
+ 605              	.L128:
+ 606 001c 2368     		ldr	r3, [r4]
+ 607 001e 23B1     		cbz	r3, .L127
+ 608 0020 2046     		mov	r0, r4
+ 609 0022 08F10108 		add	r8, r8, #1
+ 610 0026 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv
+ 611              	.L127:
+ 612 002a 0C34     		adds	r4, r4, #12
+ 613 002c AC42     		cmp	r4, r5
+ 614 002e F5D1     		bne	.L128
+ 615 0030 5346     		mov	r3, r10
+ 616 0032 EDE7     		b	.L126
+ 617              	.L146:
+ 618 0034 B8F1000F 		cmp	r8, #0
+ 619 0038 02D0     		beq	.L130
+ 620 003a 3046     		mov	r0, r6
+ 621 003c FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv
+ 622              	.L130:
+ 623 0040 B9F1000F 		cmp	r9, #0
+ 624 0044 0BD1     		bne	.L131
+ 625 0046 FF23     		movs	r3, #255
+ 626 0048 0393     		str	r3, [sp, #12]
+ 627 004a CDF80890 		str	r9, [sp, #8]
+ARM GAS  /tmp/ccLOXjaK.s 			page 12
+
+
+ 628 004e 04AB     		add	r3, sp, #16
+ 629 0050 3046     		mov	r0, r6
+ 630 0052 13E90600 		ldmdb	r3, {r1, r2}
+ 631 0056 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_
+ 632 005a 0028     		cmp	r0, #0
+ 633 005c 31D0     		beq	.L137
+ 634              	.L131:
+ 635 005e 3868     		ldr	r0, [r7]
+ 636 0060 0368     		ldr	r3, [r0]
+ 637 0062 1B69     		ldr	r3, [r3, #16]
+ 638 0064 9847     		blx	r3
+ 639 0066 90F8E430 		ldrb	r3, [r0, #228]	@ zero_extendqisi2
+ 640 006a 4FF4FF42 		mov	r2, #32640
+ 641 006e 1B02     		lsls	r3, r3, #8
+ 642 0070 0192     		str	r2, [sp, #4]
+ 643 0072 43F08003 		orr	r3, r3, #128
+ 644 0076 04AA     		add	r2, sp, #16
+ 645 0078 42F8103D 		str	r3, [r2, #-16]!
+ 646 007c 3046     		mov	r0, r6
+ 647 007e 06CA     		ldmia	r2, {r1, r2}
+ 648 0080 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_
+ 649 0084 E8B1     		cbz	r0, .L137
+ 650 0086 3868     		ldr	r0, [r7]
+ 651 0088 FFF7FEFF 		bl	_ZN6uavcan5INode13getDispatcherEv
+ 652 008c D0F8C840 		ldr	r4, [r0, #200]
+ 653              	.L134:
+ 654 0090 74B1     		cbz	r4, .L147
+ 655 0092 A368     		ldr	r3, [r4, #8]
+ 656 0094 3046     		mov	r0, r6
+ 657 0096 1B8A     		ldrh	r3, [r3, #16]
+ 658 0098 1B02     		lsls	r3, r3, #8
+ 659 009a 0293     		str	r3, [sp, #8]
+ 660 009c 0C4B     		ldr	r3, .L148
+ 661 009e 0393     		str	r3, [sp, #12]
+ 662 00a0 04AB     		add	r3, sp, #16
+ 663 00a2 13E90600 		ldmdb	r3, {r1, r2}
+ 664 00a6 FFF7FEFF 		bl	_ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_
+ 665 00aa 50B1     		cbz	r0, .L137
+ 666 00ac 6468     		ldr	r4, [r4, #4]
+ 667 00ae EFE7     		b	.L134
+ 668              	.L147:
+ 669 00b0 3046     		mov	r0, r6
+ 670 00b2 FFF7FEFF 		bl	_ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv
+ 671 00b6 0028     		cmp	r0, #0
+ 672 00b8 4FF6F670 		movw	r0, #65526
+ 673 00bc 18BF     		it	ne
+ 674 00be 0020     		movne	r0, #0
+ 675 00c0 01E0     		b	.L133
+ 676              	.L137:
+ 677 00c2 4FF6FD70 		movw	r0, #65533
+ 678              	.L133:
+ 679 00c6 00B2     		sxth	r0, r0
+ 680 00c8 04B0     		add	sp, sp, #16
+ 681              		@ sp needed
+ 682 00ca BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 683              	.L149:
+ 684 00ce 00BF     		.align	2
+ARM GAS  /tmp/ccLOXjaK.s 			page 13
+
+
+ 685              	.L148:
+ 686 00d0 80FFFF00 		.word	16777088
+ 687              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE
+ 688              		.section	.text._ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessag
+ 689              		.align	1
+ 690              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessagesE
+ 691              		.thumb
+ 692              		.thumb_func
+ 693              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessagesE, %fun
+ 694              	_ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessagesE:
+ 695              		@ args = 0, pretend = 0, frame = 0
+ 696              		@ frame_needed = 0, uses_anonymous_args = 0
+ 697 0000 38B5     		push	{r3, r4, r5, lr}
+ 698 0002 0446     		mov	r4, r0
+ 699 0004 0D46     		mov	r5, r1
+ 700 0006 FFF7FEFF 		bl	_ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv
+ 701 000a 10B9     		cbnz	r0, .L151
+ 702              	.L155:
+ 703 000c 6FF00300 		mvn	r0, #3
+ 704 0010 38BD     		pop	{r3, r4, r5, pc}
+ 705              	.L151:
+ 706 0012 2046     		mov	r0, r4
+ 707 0014 2946     		mov	r1, r5
+ 708 0016 FFF7FEFF 		bl	_ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE
+ 709 001a 40B9     		cbnz	r0, .L152
+ 710 001c 2046     		mov	r0, r4
+ 711 001e FFF7FEFF 		bl	_ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv
+ 712 0022 20B9     		cbnz	r0, .L152
+ 713 0024 2046     		mov	r0, r4
+ 714 0026 FFF7FEFF 		bl	_ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv
+ 715 002a 0028     		cmp	r0, #0
+ 716 002c EED1     		bne	.L155
+ 717              	.L152:
+ 718 002e 38BD     		pop	{r3, r4, r5, pc}
+ 719              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessagesE, .-_Z
+ 720              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE
+ 721              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE
+ 722              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE
+ 723              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE
+ 724              		.global	_ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE
+ 725              		.section	.rodata._ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE,"a",%progbits
+ 726              		.align	2
+ 727              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE, %object
+ 728              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE, 4
+ 729              	_ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE:
+ 730 0000 80FFFF00 		.word	16777088
+ 731              		.section	.rodata._ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE,"a",%progb
+ 732              		.align	2
+ 733              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE, %object
+ 734              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE, 4
+ 735              	_ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE:
+ 736 0000 807F0000 		.word	32640
+ 737              		.section	.rodata._ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE,"a",%progbit
+ 738              		.align	2
+ 739              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE, %object
+ 740              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE, 4
+ 741              	_ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE:
+ARM GAS  /tmp/ccLOXjaK.s 			page 14
+
+
+ 742 0000 80000000 		.word	128
+ 743              		.section	.rodata._ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE,"a",%progbits
+ 744              		.align	2
+ 745              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE, %object
+ 746              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE, 4
+ 747              	_ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE:
+ 748 0000 00000000 		.space	4
+ 749              		.section	.rodata._ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE,"a",%progbits
+ 750              		.align	2
+ 751              		.type	_ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE, %object
+ 752              		.size	_ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE, 4
+ 753              	_ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE:
+ 754 0000 FF000000 		.word	255
+ 755              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccLOXjaK.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_can_acceptance_filter_configurator.cpp
+     /tmp/ccLOXjaK.s:16     .text._ZN6uavcan5INode13getDispatcherEv:0000000000000000 $t
+     /tmp/ccLOXjaK.s:21     .text._ZN6uavcan5INode13getDispatcherEv:0000000000000000 _ZN6uavcan5INode13getDispatcherEv
+     /tmp/ccLOXjaK.s:32     .text._ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv:0000000000000000 $t
+     /tmp/ccLOXjaK.s:37     .text._ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv:0000000000000000 _ZNK6uavcan31CanAcceptanceFilterConfigurator13getNumFiltersEv
+     /tmp/ccLOXjaK.s:83     .text._ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_:0000000000000000 $t
+     /tmp/ccLOXjaK.s:88     .text._ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator12mergeFiltersERNS_15CanFilterConfigES2_
+     /tmp/ccLOXjaK.s:105    .text._ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm:0000000000000000 $t
+     /tmp/ccLOXjaK.s:110    .text._ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator9countBitsEm
+     /tmp/ccLOXjaK.s:127    .text._ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv:0000000000000000 $t
+     /tmp/ccLOXjaK.s:132    .text._ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv:0000000000000000 _ZNK6uavcan8MultisetINS_15CanFilterConfigEE7getSizeEv
+     /tmp/ccLOXjaK.s:156    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj:0000000000000000 $t
+     /tmp/ccLOXjaK.s:161    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj:0000000000000000 _ZN6uavcan8MultisetINS_15CanFilterConfigEE10getByIndexEj
+     /tmp/ccLOXjaK.s:191    .text._ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv:0000000000000000 $t
+     /tmp/ccLOXjaK.s:196    .text._ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator18applyConfigurationEv
+     /tmp/ccLOXjaK.s:273    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv:0000000000000000 $t
+     /tmp/ccLOXjaK.s:278    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv:0000000000000000 _ZN6uavcan8MultisetINS_15CanFilterConfigEE4Item7destroyEv
+     /tmp/ccLOXjaK.s:298    .text._ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_:0000000000000000 $t
+     /tmp/ccLOXjaK.s:303    .text._ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_:0000000000000000 _ZN6uavcan14LinkedListRootINS_8MultisetINS_15CanFilterConfigEE5ChunkEE6removeEPKS4_
+     /tmp/ccLOXjaK.s:329    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_:0000000000000000 $t
+     /tmp/ccLOXjaK.s:334    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_:0000000000000000 _ZN6uavcan8MultisetINS_15CanFilterConfigEE7emplaceIS1_EEPS1_T_
+     /tmp/ccLOXjaK.s:399    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv:0000000000000000 $t
+     /tmp/ccLOXjaK.s:404    .text._ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv:0000000000000000 _ZN6uavcan8MultisetINS_15CanFilterConfigEE7compactEv
+     /tmp/ccLOXjaK.s:447    .text._ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv:0000000000000000 $t
+     /tmp/ccLOXjaK.s:452    .text._ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator20computeConfigurationEv
+     /tmp/ccLOXjaK.s:586    .text._ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE:0000000000000000 $t
+     /tmp/ccLOXjaK.s:591    .text._ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE
+     /tmp/ccLOXjaK.s:686    .text._ZN6uavcan31CanAcceptanceFilterConfigurator22loadInputConfigurationENS0_17AnonymousMessagesE:00000000000000d0 $d
+     /tmp/ccLOXjaK.s:689    .text._ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessagesE:0000000000000000 $t
+     /tmp/ccLOXjaK.s:694    .text._ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessagesE:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator16configureFiltersENS0_17AnonymousMessagesE
+     /tmp/ccLOXjaK.s:747    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE
+     /tmp/ccLOXjaK.s:753    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE
+     /tmp/ccLOXjaK.s:735    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE
+     /tmp/ccLOXjaK.s:741    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE
+     /tmp/ccLOXjaK.s:729    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE:0000000000000000 _ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE
+     /tmp/ccLOXjaK.s:726    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator20DefaultFilterMsgMaskE:0000000000000000 $d
+     /tmp/ccLOXjaK.s:732    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator24DefaultFilterServiceMaskE:0000000000000000 $d
+     /tmp/ccLOXjaK.s:738    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator22DefaultFilterServiceIDE:0000000000000000 $d
+     /tmp/ccLOXjaK.s:744    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator16DefaultAnonMsgIDE:0000000000000000 $d
+     /tmp/ccLOXjaK.s:750    .rodata._ZN6uavcan31CanAcceptanceFilterConfigurator18DefaultAnonMsgMaskE:0000000000000000 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,361 @@
+ARM GAS  /tmp/ccMbGqHv.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"watchdog_stm32.c"
+  15              		.section	.text.watchdogInit,"ax",%progbits
+  16              		.align	1
+  17              		.global	watchdogInit
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	watchdogInit, %function
+  21              	watchdogInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 38B5     		push	{r3, r4, r5, lr}
+  25 0002 264B     		ldr	r3, .L13
+  26 0004 1B68     		ldr	r3, [r3]
+  27 0006 33B1     		cbz	r3, .L2
+  28 0008 254A     		ldr	r2, .L13+4
+  29 000a 264B     		ldr	r3, .L13+8
+  30 000c 1A60     		str	r2, [r3]
+  31 000e FFF7FEFF 		bl	sysHaltHook_
+  32 0012 FFF7FEFF 		bl	port_halt
+  33              	.L2:
+  34 0016 244B     		ldr	r3, .L13+12
+  35 0018 5A6A     		ldr	r2, [r3, #36]
+  36 001a 1C46     		mov	r4, r3
+  37 001c 12F0010F 		tst	r2, #1
+  38 0020 06D1     		bne	.L4
+  39 0022 224A     		ldr	r2, .L13+16
+  40 0024 1F4B     		ldr	r3, .L13+8
+  41 0026 1A60     		str	r2, [r3]
+  42 0028 FFF7FEFF 		bl	sysHaltHook_
+  43 002c FFF7FEFF 		bl	port_halt
+  44              	.L4:
+  45 0030 636A     		ldr	r3, [r4, #36]
+  46 0032 1D4D     		ldr	r5, .L13+12
+  47 0034 9B07     		lsls	r3, r3, #30
+  48 0036 FBD5     		bpl	.L4
+  49 0038 6B6A     		ldr	r3, [r5, #36]
+  50 003a 1D4C     		ldr	r4, .L13+20
+  51 003c 13F0005F 		tst	r3, #536870912
+  52 0040 18D0     		beq	.L5
+  53 0042 1C48     		ldr	r0, .L13+24
+  54 0044 FFF7FEFF 		bl	lowsyslog
+  55 0048 696A     		ldr	r1, [r5, #36]
+  56 004a 1B48     		ldr	r0, .L13+28
+  57 004c FFF7FEFF 		bl	lowsyslog
+ARM GAS  /tmp/ccMbGqHv.s 			page 2
+
+
+  58 0050 94E80600 		ldmia	r4, {r1, r2}
+  59 0054 1948     		ldr	r0, .L13+32
+  60 0056 FFF7FEFF 		bl	lowsyslog
+  61 005a 2023     		movs	r3, #32
+  62              	@ 62 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+  63 005c 83F31188 		msr     BASEPRI, r3                    
+  64 0060 62B6     		cpsie   i
+  65              	@ 0 "" 2
+  66              		.thumb
+  67 0062 6B6A     		ldr	r3, [r5, #36]
+  68 0064 43F08073 		orr	r3, r3, #16777216
+  69 0068 6B62     		str	r3, [r5, #36]
+  70 006a 0023     		movs	r3, #0
+  71              	@ 64 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+  72 006c 83F31188 		msr     BASEPRI, r3                    
+  73 0070 62B6     		cpsie   i
+  74              	@ 0 "" 2
+  75              		.thumb
+  76 0072 02E0     		b	.L6
+  77              	.L5:
+  78 0074 1248     		ldr	r0, .L13+36
+  79 0076 FFF7FEFF 		bl	lowsyslog
+  80              	.L6:
+  81 007a 0022     		movs	r2, #0
+  82 007c 2260     		str	r2, [r4]
+  83 007e 6260     		str	r2, [r4, #4]
+  84 0080 2023     		movs	r3, #32
+  85              	@ 71 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+  86 0082 83F31188 		msr     BASEPRI, r3                    
+  87 0086 62B6     		cpsie   i
+  88              	@ 0 "" 2
+  89              		.thumb
+  90 0088 0E49     		ldr	r1, .L13+40
+  91 008a 4B68     		ldr	r3, [r1, #4]
+  92 008c 43F48073 		orr	r3, r3, #256
+  93 0090 4B60     		str	r3, [r1, #4]
+  94 0092 1346     		mov	r3, r2
+  95              	@ 73 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+  96 0094 83F31188 		msr     BASEPRI, r3                    
+  97 0098 62B6     		cpsie   i
+  98              	@ 0 "" 2
+  99              		.thumb
+ 100 009a 38BD     		pop	{r3, r4, r5, pc}
+ 101              	.L14:
+ 102              		.align	2
+ 103              	.L13:
+ 104 009c 00000000 		.word	.LANCHOR0
+ 105 00a0 00000000 		.word	.LC0
+ 106 00a4 00000000 		.word	dbg_panic_msg
+ 107 00a8 00100240 		.word	1073876992
+ 108 00ac 3B000000 		.word	.LC1
+ 109 00b0 00000000 		.word	.LANCHOR1
+ 110 00b4 76000000 		.word	.LC2
+ 111 00b8 A6000000 		.word	.LC3
+ 112 00bc C0000000 		.word	.LC4
+ 113 00c0 EB000000 		.word	.LC5
+ 114 00c4 002004E0 		.word	-536600576
+ARM GAS  /tmp/ccMbGqHv.s 			page 3
+
+
+ 115              		.size	watchdogInit, .-watchdogInit
+ 116              		.section	.text.watchdogCreate,"ax",%progbits
+ 117              		.align	1
+ 118              		.global	watchdogCreate
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.type	watchdogCreate, %function
+ 122              	watchdogCreate:
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 011E     		subs	r1, r0, #0
+ 126 0002 70B5     		push	{r4, r5, r6, lr}
+ 127 0004 3FDD     		ble	.L19
+ 128 0006 2023     		movs	r3, #32
+ 129              	@ 83 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+ 130 0008 83F31188 		msr     BASEPRI, r3                    
+ 131 000c 62B6     		cpsie   i
+ 132              	@ 0 "" 2
+ 133              		.thumb
+ 134 000e 204B     		ldr	r3, .L21
+ 135 0010 5C68     		ldr	r4, [r3, #4]
+ 136 0012 1E2C     		cmp	r4, #30
+ 137 0014 04DD     		ble	.L17
+ 138 0016 0023     		movs	r3, #0
+ 139              	@ 85 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+ 140 0018 83F31188 		msr     BASEPRI, r3                    
+ 141 001c 62B6     		cpsie   i
+ 142              	@ 0 "" 2
+ 143              		.thumb
+ 144 001e 32E0     		b	.L19
+ 145              	.L17:
+ 146 0020 621C     		adds	r2, r4, #1
+ 147 0022 5A60     		str	r2, [r3, #4]
+ 148 0024 0122     		movs	r2, #1
+ 149 0026 02FA04F0 		lsl	r0, r2, r4
+ 150 002a 1A68     		ldr	r2, [r3]
+ 151 002c 0243     		orrs	r2, r2, r0
+ 152 002e 1A60     		str	r2, [r3]
+ 153 0030 0023     		movs	r3, #0
+ 154              	@ 91 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+ 155 0032 83F31188 		msr     BASEPRI, r3                    
+ 156 0036 62B6     		cpsie   i
+ 157              	@ 0 "" 2
+ 158              		.thumb
+ 159 0038 164B     		ldr	r3, .L21+4
+ 160 003a 1A68     		ldr	r2, [r3]
+ 161 003c 1D46     		mov	r5, r3
+ 162 003e 9142     		cmp	r1, r2
+ 163 0040 23DD     		ble	.L16
+ 164 0042 0620     		movs	r0, #6
+ 165 0044 40F6FF73 		movw	r3, #4095
+ 166 0048 91FBF0F0 		sdiv	r0, r1, r0
+ 167 004c 4AF6AA22 		movw	r2, #43690
+ 168 0050 9842     		cmp	r0, r3
+ 169 0052 A8BF     		it	ge
+ 170 0054 1846     		movge	r0, r3
+ 171 0056 104B     		ldr	r3, .L21+8
+ARM GAS  /tmp/ccMbGqHv.s 			page 4
+
+
+ 172 0058 1A60     		str	r2, [r3]
+ 173 005a 1A46     		mov	r2, r3
+ 174              	.L18:
+ 175 005c D668     		ldr	r6, [r2, #12]
+ 176 005e 0E4B     		ldr	r3, .L21+8
+ 177 0060 002E     		cmp	r6, #0
+ 178 0062 FBD1     		bne	.L18
+ 179 0064 45F25552 		movw	r2, #21845
+ 180 0068 1A60     		str	r2, [r3]
+ 181 006a 0622     		movs	r2, #6
+ 182 006c 5A60     		str	r2, [r3, #4]
+ 183 006e 4AF6AA22 		movw	r2, #43690
+ 184 0072 9860     		str	r0, [r3, #8]
+ 185 0074 1A60     		str	r2, [r3]
+ 186 0076 4CF6CC42 		movw	r2, #52428
+ 187 007a 0848     		ldr	r0, .L21+12
+ 188 007c 1A60     		str	r2, [r3]
+ 189 007e 2960     		str	r1, [r5]
+ 190 0080 FFF7FEFF 		bl	lowsyslog
+ 191 0084 01E0     		b	.L16
+ 192              	.L19:
+ 193 0086 4FF0FF34 		mov	r4, #-1
+ 194              	.L16:
+ 195 008a 2046     		mov	r0, r4
+ 196 008c 70BD     		pop	{r4, r5, r6, pc}
+ 197              	.L22:
+ 198 008e 00BF     		.align	2
+ 199              	.L21:
+ 200 0090 00000000 		.word	.LANCHOR1
+ 201 0094 00000000 		.word	.LANCHOR0
+ 202 0098 00300040 		.word	1073754112
+ 203 009c 20010000 		.word	.LC6
+ 204              		.size	watchdogCreate, .-watchdogCreate
+ 205              		.section	.text.watchdogReset,"ax",%progbits
+ 206              		.align	1
+ 207              		.global	watchdogReset
+ 208              		.thumb
+ 209              		.thumb_func
+ 210              		.type	watchdogReset, %function
+ 211              	watchdogReset:
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214              		@ link register save eliminated.
+ 215 0000 2023     		movs	r3, #32
+ 216              	@ 105 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+ 217 0002 83F31188 		msr     BASEPRI, r3                    
+ 218 0006 62B6     		cpsie   i
+ 219              	@ 0 "" 2
+ 220              		.thumb
+ 221 0008 0C49     		ldr	r1, .L25
+ 222 000a 0123     		movs	r3, #1
+ 223 000c 0A68     		ldr	r2, [r1]
+ 224 000e 03FA00F0 		lsl	r0, r3, r0
+ 225 0012 0243     		orrs	r2, r2, r0
+ 226 0014 4868     		ldr	r0, [r1, #4]
+ 227 0016 0A60     		str	r2, [r1]
+ 228 0018 8340     		lsls	r3, r3, r0
+ARM GAS  /tmp/ccMbGqHv.s 			page 5
+
+
+ 229 001a 013B     		subs	r3, r3, #1
+ 230 001c 1A40     		ands	r2, r2, r3
+ 231 001e 9A42     		cmp	r2, r3
+ 232 0020 01BF     		itttt	eq
+ 233 0022 4AF6AA22 		movweq	r2, #43690
+ 234 0026 064B     		ldreq	r3, .L25+4
+ 235 0028 1A60     		streq	r2, [r3]
+ 236 002a 0023     		moveq	r3, #0
+ 237 002c 08BF     		it	eq
+ 238 002e 0B60     		streq	r3, [r1]
+ 239 0030 0023     		movs	r3, #0
+ 240              	@ 112 "zubax_chibios///zubax_chibios/watchdog/watchdog_stm32.c" 1
+ 241 0032 83F31188 		msr     BASEPRI, r3                    
+ 242 0036 62B6     		cpsie   i
+ 243              	@ 0 "" 2
+ 244              		.thumb
+ 245 0038 7047     		bx	lr
+ 246              	.L26:
+ 247 003a 00BF     		.align	2
+ 248              	.L25:
+ 249 003c 00000000 		.word	.LANCHOR1
+ 250 0040 00300040 		.word	1073754112
+ 251              		.size	watchdogReset, .-watchdogReset
+ 252              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 253              	.LC0:
+ 254 0000 7A756261 		.ascii	"zubax_chibios///zubax_chibios/watchdog/watchdog_stm"
+ 254      785F6368 
+ 254      6962696F 
+ 254      732F2F2F 
+ 254      7A756261 
+ 255 0033 33322E63 		.ascii	"32.c:54\000"
+ 255      3A353400 
+ 256              	.LC1:
+ 257 003b 7A756261 		.ascii	"zubax_chibios///zubax_chibios/watchdog/watchdog_stm"
+ 257      785F6368 
+ 257      6962696F 
+ 257      732F2F2F 
+ 257      7A756261 
+ 258 006e 33322E63 		.ascii	"32.c:55\000"
+ 258      3A353500 
+ 259              	.LC2:
+ 260 0076 57617463 		.ascii	"Watchdog: RESET WAS CAUSED BY WATCHDOG TIMEOUT\012\000"
+ 260      68646F67 
+ 260      3A205245 
+ 260      53455420 
+ 260      57415320 
+ 261              	.LC3:
+ 262 00a6 57617463 		.ascii	"Watchdog: RCC_CSR=0x%08x\012\000"
+ 262      68646F67 
+ 262      3A205243 
+ 262      435F4353 
+ 262      523D3078 
+ 263              	.LC4:
+ 264 00c0 57617463 		.ascii	"Watchdog: LAST STATE: mask=0x%08x, num=%d\012\000"
+ 264      68646F67 
+ 264      3A204C41 
+ 264      53542053 
+ARM GAS  /tmp/ccMbGqHv.s 			page 6
+
+
+ 264      54415445 
+ 265              	.LC5:
+ 266 00eb 57617463 		.ascii	"Watchdog: Reset was not caused by watchdog, it's OK"
+ 266      68646F67 
+ 266      3A205265 
+ 266      73657420 
+ 266      77617320 
+ 267 011e 0A00     		.ascii	"\012\000"
+ 268              	.LC6:
+ 269 0120 57617463 		.ascii	"Watchdog: Global timeout set to %i ms\012\000"
+ 269      68646F67 
+ 269      3A20476C 
+ 269      6F62616C 
+ 269      2074696D 
+ 270              		.section	.noinit,"aw",%progbits
+ 271              		.align	2
+ 272              		.set	.LANCHOR1,. + 0
+ 273              		.type	_mask, %object
+ 274              		.size	_mask, 4
+ 275              	_mask:
+ 276 0000 00000000 		.space	4
+ 277              		.type	_num_watchdogs, %object
+ 278              		.size	_num_watchdogs, 4
+ 279              	_num_watchdogs:
+ 280 0004 00000000 		.space	4
+ 281              		.section	.bss._wdg_timeout_ms,"aw",%nobits
+ 282              		.align	2
+ 283              		.set	.LANCHOR0,. + 0
+ 284              		.type	_wdg_timeout_ms, %object
+ 285              		.size	_wdg_timeout_ms, 4
+ 286              	_wdg_timeout_ms:
+ 287 0000 00000000 		.space	4
+ 288              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccMbGqHv.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 watchdog_stm32.c
+     /tmp/ccMbGqHv.s:16     .text.watchdogInit:0000000000000000 $t
+     /tmp/ccMbGqHv.s:21     .text.watchdogInit:0000000000000000 watchdogInit
+     /tmp/ccMbGqHv.s:104    .text.watchdogInit:000000000000009c $d
+     /tmp/ccMbGqHv.s:117    .text.watchdogCreate:0000000000000000 $t
+     /tmp/ccMbGqHv.s:122    .text.watchdogCreate:0000000000000000 watchdogCreate
+     /tmp/ccMbGqHv.s:200    .text.watchdogCreate:0000000000000090 $d
+     /tmp/ccMbGqHv.s:206    .text.watchdogReset:0000000000000000 $t
+     /tmp/ccMbGqHv.s:211    .text.watchdogReset:0000000000000000 watchdogReset
+     /tmp/ccMbGqHv.s:249    .text.watchdogReset:000000000000003c $d
+     /tmp/ccMbGqHv.s:271    .noinit:0000000000000000 $d
+     /tmp/ccMbGqHv.s:275    .noinit:0000000000000000 _mask
+     /tmp/ccMbGqHv.s:279    .noinit:0000000000000004 _num_watchdogs
+     /tmp/ccMbGqHv.s:282    .bss._wdg_timeout_ms:0000000000000000 $d
+     /tmp/ccMbGqHv.s:286    .bss._wdg_timeout_ms:0000000000000000 _wdg_timeout_ms
+
+UNDEFINED SYMBOLS
+sysHaltHook_
+port_halt
+lowsyslog
+dbg_panic_msg

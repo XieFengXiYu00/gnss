@@ -1,0 +1,145 @@
+ARM GAS  /tmp/ccsOBHiz.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chvt.c"
+  15              		.section	.text._vt_init,"ax",%progbits
+  16              		.align	1
+  17              		.global	_vt_init
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_vt_init, %function
+  21              	_vt_init:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 044B     		ldr	r3, .L2
+  26 0002 4FF0FF32 		mov	r2, #-1
+  27 0006 9A60     		str	r2, [r3, #8]
+  28 0008 0022     		movs	r2, #0
+  29 000a 5B60     		str	r3, [r3, #4]
+  30 000c 1B60     		str	r3, [r3]
+  31 000e DA60     		str	r2, [r3, #12]
+  32 0010 7047     		bx	lr
+  33              	.L3:
+  34 0012 00BF     		.align	2
+  35              	.L2:
+  36 0014 00000000 		.word	.LANCHOR0
+  37              		.size	_vt_init, .-_vt_init
+  38              		.section	.text.chVTSetI,"ax",%progbits
+  39              		.align	1
+  40              		.global	chVTSetI
+  41              		.thumb
+  42              		.thumb_func
+  43              		.type	chVTSetI, %function
+  44              	chVTSetI:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47 0000 10B5     		push	{r4, lr}
+  48 0002 C260     		str	r2, [r0, #12]
+  49 0004 0A4A     		ldr	r2, .L10
+  50 0006 0361     		str	r3, [r0, #16]
+  51 0008 1368     		ldr	r3, [r2]
+  52              	.L5:
+  53 000a 9C68     		ldr	r4, [r3, #8]
+  54 000c 8C42     		cmp	r4, r1
+  55 000e 02D2     		bcs	.L9
+  56 0010 091B     		subs	r1, r1, r4
+  57 0012 1B68     		ldr	r3, [r3]
+ARM GAS  /tmp/ccsOBHiz.s 			page 2
+
+
+  58 0014 F9E7     		b	.L5
+  59              	.L9:
+  60 0016 5C68     		ldr	r4, [r3, #4]
+  61 0018 0360     		str	r3, [r0]
+  62 001a 4460     		str	r4, [r0, #4]
+  63 001c 9342     		cmp	r3, r2
+  64 001e 5860     		str	r0, [r3, #4]
+  65 0020 2060     		str	r0, [r4]
+  66 0022 8160     		str	r1, [r0, #8]
+  67 0024 1EBF     		ittt	ne
+  68 0026 9A68     		ldrne	r2, [r3, #8]
+  69 0028 511A     		subne	r1, r2, r1
+  70 002a 9960     		strne	r1, [r3, #8]
+  71 002c 10BD     		pop	{r4, pc}
+  72              	.L11:
+  73 002e 00BF     		.align	2
+  74              	.L10:
+  75 0030 00000000 		.word	.LANCHOR0
+  76              		.size	chVTSetI, .-chVTSetI
+  77              		.section	.text.chVTResetI,"ax",%progbits
+  78              		.align	1
+  79              		.global	chVTResetI
+  80              		.thumb
+  81              		.thumb_func
+  82              		.type	chVTResetI, %function
+  83              	chVTResetI:
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86              		@ link register save eliminated.
+  87 0000 0368     		ldr	r3, [r0]
+  88 0002 074A     		ldr	r2, .L14
+  89 0004 9342     		cmp	r3, r2
+  90 0006 1FBF     		itttt	ne
+  91 0008 9968     		ldrne	r1, [r3, #8]
+  92 000a 8268     		ldrne	r2, [r0, #8]
+  93 000c 5218     		addne	r2, r2, r1
+  94 000e 9A60     		strne	r2, [r3, #8]
+  95 0010 4268     		ldr	r2, [r0, #4]
+  96 0012 1360     		str	r3, [r2]
+  97 0014 0368     		ldr	r3, [r0]
+  98 0016 5A60     		str	r2, [r3, #4]
+  99 0018 0023     		movs	r3, #0
+ 100 001a C360     		str	r3, [r0, #12]
+ 101 001c 7047     		bx	lr
+ 102              	.L15:
+ 103 001e 00BF     		.align	2
+ 104              	.L14:
+ 105 0020 00000000 		.word	.LANCHOR0
+ 106              		.size	chVTResetI, .-chVTResetI
+ 107              		.global	vtlist
+ 108              		.section	.bss.vtlist,"aw",%nobits
+ 109              		.align	2
+ 110              		.set	.LANCHOR0,. + 0
+ 111              		.type	vtlist, %object
+ 112              		.size	vtlist, 16
+ 113              	vtlist:
+ 114 0000 00000000 		.space	16
+ARM GAS  /tmp/ccsOBHiz.s 			page 3
+
+
+ 114      00000000 
+ 114      00000000 
+ 114      00000000 
+ 115              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccsOBHiz.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chvt.c
+     /tmp/ccsOBHiz.s:16     .text._vt_init:0000000000000000 $t
+     /tmp/ccsOBHiz.s:21     .text._vt_init:0000000000000000 _vt_init
+     /tmp/ccsOBHiz.s:36     .text._vt_init:0000000000000014 $d
+     /tmp/ccsOBHiz.s:39     .text.chVTSetI:0000000000000000 $t
+     /tmp/ccsOBHiz.s:44     .text.chVTSetI:0000000000000000 chVTSetI
+     /tmp/ccsOBHiz.s:75     .text.chVTSetI:0000000000000030 $d
+     /tmp/ccsOBHiz.s:78     .text.chVTResetI:0000000000000000 $t
+     /tmp/ccsOBHiz.s:83     .text.chVTResetI:0000000000000000 chVTResetI
+     /tmp/ccsOBHiz.s:105    .text.chVTResetI:0000000000000020 $d
+     /tmp/ccsOBHiz.s:113    .bss.vtlist:0000000000000000 vtlist
+     /tmp/ccsOBHiz.s:109    .bss.vtlist:0000000000000000 $d
+
+NO UNDEFINED SYMBOLS

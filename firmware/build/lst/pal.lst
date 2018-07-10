@@ -1,0 +1,90 @@
+ARM GAS  /tmp/ccHVwAOz.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"pal.c"
+  15              		.section	.text.palReadBus,"ax",%progbits
+  16              		.align	1
+  17              		.global	palReadBus
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	palReadBus, %function
+  21              	palReadBus:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0368     		ldr	r3, [r0]
+  26 0002 8268     		ldr	r2, [r0, #8]
+  27 0004 9B68     		ldr	r3, [r3, #8]
+  28 0006 4068     		ldr	r0, [r0, #4]
+  29 0008 D340     		lsrs	r3, r3, r2
+  30 000a 1840     		ands	r0, r0, r3
+  31 000c 7047     		bx	lr
+  32              		.size	palReadBus, .-palReadBus
+  33              		.section	.text.palWriteBus,"ax",%progbits
+  34              		.align	1
+  35              		.global	palWriteBus
+  36              		.thumb
+  37              		.thumb_func
+  38              		.type	palWriteBus, %function
+  39              	palWriteBus:
+  40              		@ args = 0, pretend = 0, frame = 0
+  41              		@ frame_needed = 0, uses_anonymous_args = 0
+  42 0000 4368     		ldr	r3, [r0, #4]
+  43 0002 30B5     		push	{r4, r5, lr}
+  44 0004 0468     		ldr	r4, [r0]
+  45 0006 8068     		ldr	r0, [r0, #8]
+  46 0008 23EA0102 		bic	r2, r3, r1
+  47 000c 00F11005 		add	r5, r0, #16
+  48 0010 0B40     		ands	r3, r3, r1
+  49 0012 AA40     		lsls	r2, r2, r5
+  50 0014 8340     		lsls	r3, r3, r0
+  51 0016 1343     		orrs	r3, r3, r2
+  52 0018 2361     		str	r3, [r4, #16]
+  53 001a 30BD     		pop	{r4, r5, pc}
+  54              		.size	palWriteBus, .-palWriteBus
+  55              		.section	.text.palSetBusMode,"ax",%progbits
+  56              		.align	1
+  57              		.global	palSetBusMode
+ARM GAS  /tmp/ccHVwAOz.s 			page 2
+
+
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	palSetBusMode, %function
+  61              	palSetBusMode:
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              		@ link register save eliminated.
+  65 0000 0A46     		mov	r2, r1
+  66 0002 0BC8     		ldmia	r0, {r0, r1, r3}
+  67 0004 9940     		lsls	r1, r1, r3
+  68 0006 FFF7FEBF 		b	_pal_lld_setgroupmode
+  69              		.size	palSetBusMode, .-palSetBusMode
+  70              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccHVwAOz.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 pal.c
+     /tmp/ccHVwAOz.s:16     .text.palReadBus:0000000000000000 $t
+     /tmp/ccHVwAOz.s:21     .text.palReadBus:0000000000000000 palReadBus
+     /tmp/ccHVwAOz.s:34     .text.palWriteBus:0000000000000000 $t
+     /tmp/ccHVwAOz.s:39     .text.palWriteBus:0000000000000000 palWriteBus
+     /tmp/ccHVwAOz.s:56     .text.palSetBusMode:0000000000000000 $t
+     /tmp/ccHVwAOz.s:61     .text.palSetBusMode:0000000000000000 palSetBusMode
+
+UNDEFINED SYMBOLS
+_pal_lld_setgroupmode

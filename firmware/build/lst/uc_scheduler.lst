@@ -1,0 +1,595 @@
+ARM GAS  /tmp/ccjafYUD.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_scheduler.cpp"
+  15              		.section	.text._ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE, %function
+  21              	_ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0068     		ldr	r0, [r0]
+  26              	.L2:
+  27 0002 18B1     		cbz	r0, .L7
+  28 0004 8842     		cmp	r0, r1
+  29 0006 02D0     		beq	.L5
+  30 0008 4068     		ldr	r0, [r0, #4]
+  31 000a FAE7     		b	.L2
+  32              	.L7:
+  33 000c 7047     		bx	lr
+  34              	.L5:
+  35 000e 0120     		movs	r0, #1
+  36 0010 7047     		bx	lr
+  37              		.size	_ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE, .-_ZNK6uavcan17DeadlineSch
+  38              		.section	.text._ZNK6uavcan15DeadlineHandler9isRunningEv,"ax",%progbits
+  39              		.align	1
+  40              		.global	_ZNK6uavcan15DeadlineHandler9isRunningEv
+  41              		.thumb
+  42              		.thumb_func
+  43              		.type	_ZNK6uavcan15DeadlineHandler9isRunningEv, %function
+  44              	_ZNK6uavcan15DeadlineHandler9isRunningEv:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		@ link register save eliminated.
+  48 0000 0146     		mov	r1, r0
+  49 0002 0069     		ldr	r0, [r0, #16]
+  50 0004 0430     		adds	r0, r0, #4
+  51 0006 FFF7FEBF 		b	_ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE
+  52              		.size	_ZNK6uavcan15DeadlineHandler9isRunningEv, .-_ZNK6uavcan15DeadlineHandler9isRunningEv
+  53              		.section	.text._ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv,"ax",%progbits
+  54              		.align	1
+  55              		.global	_ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv
+  56              		.thumb
+  57              		.thumb_func
+ARM GAS  /tmp/ccjafYUD.s 			page 2
+
+
+  58              		.type	_ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv, %function
+  59              	_ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv:
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              		@ link register save eliminated.
+  63 0000 0B68     		ldr	r3, [r1]
+  64 0002 0246     		mov	r2, r0
+  65 0004 2BB1     		cbz	r3, .L10
+  66 0006 0833     		adds	r3, r3, #8
+  67 0008 93E80300 		ldmia	r3, {r0, r1}
+  68 000c 82E80300 		stmia	r2, {r0, r1}
+  69 0010 05E0     		b	.L9
+  70              	.L10:
+  71 0012 4FF0FF30 		mov	r0, #-1
+  72 0016 4FF0FF31 		mov	r1, #-1
+  73 001a C2E90001 		strd	r0, [r2]
+  74              	.L9:
+  75 001e 1046     		mov	r0, r2
+  76 0020 7047     		bx	lr
+  77              		.size	_ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv, .-_ZNK6uavcan17DeadlineScheduler19get
+  78              		.section	.text._ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_,"axG",%pro
+  79              		.align	1
+  80              		.weak	_ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_
+  81              		.thumb
+  82              		.thumb_func
+  83              		.type	_ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_, %function
+  84              	_ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_:
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87 0000 0CCA     		ldmia	r2, {r2-r3}
+  88 0002 002A     		cmp	r2, #0
+  89 0004 F0B5     		push	{r4, r5, r6, r7, lr}
+  90 0006 73F10004 		sbcs	r4, r3, #0
+  91 000a D1E90045 		ldrd	r4, [r1]
+  92 000e 09DA     		bge	.L13
+  93 0010 5642     		rsbs	r6, r2, #0
+  94 0012 63EB4307 		sbc	r7, r3, r3, lsl #1
+  95 0016 BD42     		cmp	r5, r7
+  96 0018 08BF     		it	eq
+  97 001a B442     		cmpeq	r4, r6
+  98 001c 0ED2     		bcs	.L14
+  99 001e 0022     		movs	r2, #0
+ 100 0020 0023     		movs	r3, #0
+ 101 0022 0DE0     		b	.L16
+ 102              	.L13:
+ 103 0024 A618     		adds	r6, r4, r2
+ 104 0026 45EB0307 		adc	r7, r5, r3
+ 105 002a AF42     		cmp	r7, r5
+ 106 002c 08BF     		it	eq
+ 107 002e A642     		cmpeq	r6, r4
+ 108 0030 04D2     		bcs	.L14
+ 109 0032 4FF0FF32 		mov	r2, #-1
+ 110 0036 4FF0FF33 		mov	r3, #-1
+ 111 003a 01E0     		b	.L16
+ 112              	.L14:
+ 113 003c 1219     		adds	r2, r2, r4
+ 114 003e 6B41     		adcs	r3, r3, r5
+ARM GAS  /tmp/ccjafYUD.s 			page 3
+
+
+ 115              	.L16:
+ 116 0040 C0E90023 		strd	r2, [r0]
+ 117 0044 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 118              		.size	_ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_, .-_ZNK6uavcan8Time
+ 119              		.section	.text._ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE,"ax",%prog
+ 120              		.align	1
+ 121              		.global	_ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE
+ 122              		.thumb
+ 123              		.thumb_func
+ 124              		.type	_ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE, %function
+ 125              	_ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE:
+ 126              		@ args = 0, pretend = 0, frame = 8
+ 127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128 0000 2DE9F743 		push	{r0, r1, r2, r4, r5, r6, r7, r8, r9, lr}
+ 129 0004 9146     		mov	r9, r2
+ 130 0006 0C46     		mov	r4, r1
+ 131 0008 8046     		mov	r8, r0
+ 132 000a 0431     		adds	r1, r1, #4
+ 133 000c 6846     		mov	r0, sp
+ 134 000e FFF7FEFF 		bl	_ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv
+ 135 0012 D9E90067 		ldrd	r6, [r9]
+ 136 0016 DDE90001 		ldrd	r0, [sp]
+ 137 001a 8F42     		cmp	r7, r1
+ 138 001c 08BF     		it	eq
+ 139 001e 8642     		cmpeq	r6, r0
+ 140 0020 28BF     		it	cs
+ 141 0022 E946     		movcs	r9, sp
+ 142 0024 D4F8A810 		ldr	r1, [r4, #168]
+ 143 0028 6846     		mov	r0, sp
+ 144 002a D9E90067 		ldrd	r6, [r9]
+ 145 002e 0B68     		ldr	r3, [r1]
+ 146 0030 9B68     		ldr	r3, [r3, #8]
+ 147 0032 9847     		blx	r3
+ 148 0034 DDE90023 		ldrd	r2, [sp]
+ 149 0038 BB42     		cmp	r3, r7
+ 150 003a 08BF     		it	eq
+ 151 003c B242     		cmpeq	r2, r6
+ 152 003e 0FD2     		bcs	.L19
+ 153 0040 D4E93C01 		ldrd	r0, [r4, #240]
+ 154 0044 B21A     		subs	r2, r6, r2
+ 155 0046 67EB0303 		sbc	r3, r7, r3
+ 156 004a 9042     		cmp	r0, r2
+ 157 004c 71EB0303 		sbcs	r3, r1, r3
+ 158 0050 06DA     		bge	.L19
+ 159 0052 4046     		mov	r0, r8
+ 160 0054 6946     		mov	r1, sp
+ 161 0056 04F1F002 		add	r2, r4, #240
+ 162 005a FFF7FEFF 		bl	_ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_
+ 163 005e 01E0     		b	.L17
+ 164              	.L19:
+ 165 0060 C8E90067 		strd	r6, [r8]
+ 166              	.L17:
+ 167 0064 4046     		mov	r0, r8
+ 168 0066 03B0     		add	sp, sp, #12
+ 169              		@ sp needed
+ 170 0068 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 171              		.size	_ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE, .-_ZNK6uavcan9Sche
+ARM GAS  /tmp/ccjafYUD.s 			page 4
+
+
+ 172              		.section	.text._ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm,"ax",%progbits
+ 173              		.align	1
+ 174              		.global	_ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm
+ 175              		.thumb
+ 176              		.thumb_func
+ 177              		.type	_ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm, %function
+ 178              	_ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm:
+ 179              		@ args = 0, pretend = 0, frame = 16
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 182 0002 0646     		mov	r6, r0
+ 183 0004 0C46     		mov	r4, r1
+ 184 0006 D0F8FC30 		ldr	r3, [r0, #252]
+ 185 000a D0F8F800 		ldr	r0, [r0, #248]
+ 186 000e 0132     		adds	r2, r2, #1
+ 187 0010 A0FB0201 		umull	r0, r1, r0, r2
+ 188 0014 02FB0311 		mla	r1, r2, r3, r1
+ 189 0018 85B0     		sub	sp, sp, #20
+ 190 001a 06F1E807 		add	r7, r6, #232
+ 191 001e 02AD     		add	r5, sp, #8
+ 192 0020 CDE90201 		strd	r0, [sp, #8]
+ 193 0024 2A46     		mov	r2, r5
+ 194 0026 6846     		mov	r0, sp
+ 195 0028 3946     		mov	r1, r7
+ 196 002a FFF7FEFF 		bl	_ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_
+ 197 002e D4E90023 		ldrd	r2, [r4]
+ 198 0032 DDE90001 		ldrd	r0, [sp]
+ 199 0036 9942     		cmp	r1, r3
+ 200 0038 08BF     		it	eq
+ 201 003a 9042     		cmpeq	r0, r2
+ 202 003c 0CD2     		bcs	.L22
+ 203 003e 94E80300 		ldmia	r4, {r0, r1}
+ 204 0042 87E80300 		stmia	r7, {r0, r1}
+ 205 0046 94E80300 		ldmia	r4, {r0, r1}
+ 206 004a 85E80300 		stmia	r5, {r0, r1}
+ 207 004e 06F10800 		add	r0, r6, #8
+ 208 0052 2946     		mov	r1, r5
+ 209 0054 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE
+ 210              	.L22:
+ 211 0058 05B0     		add	sp, sp, #20
+ 212              		@ sp needed
+ 213 005a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 214              		.size	_ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm, .-_ZN6uavcan9Scheduler11pollCleanupE
+ 215              		.section	.text._ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_,"axG",%progbits,_ZN6
+ 216              		.align	1
+ 217              		.weak	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_
+ 218              		.thumb
+ 219              		.thumb_func
+ 220              		.type	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_, %function
+ 221              	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_:
+ 222              		@ args = 0, pretend = 0, frame = 0
+ 223              		@ frame_needed = 0, uses_anonymous_args = 0
+ 224              		@ link register save eliminated.
+ 225 0000 0368     		ldr	r3, [r0]
+ 226 0002 6BB1     		cbz	r3, .L24
+ 227 0004 61B1     		cbz	r1, .L24
+ 228 0006 8B42     		cmp	r3, r1
+ARM GAS  /tmp/ccjafYUD.s 			page 5
+
+
+ 229 0008 03D1     		bne	.L27
+ 230 000a 5B68     		ldr	r3, [r3, #4]
+ 231 000c 0360     		str	r3, [r0]
+ 232 000e 7047     		bx	lr
+ 233              	.L29:
+ 234 0010 1346     		mov	r3, r2
+ 235              	.L27:
+ 236 0012 5A68     		ldr	r2, [r3, #4]
+ 237 0014 22B1     		cbz	r2, .L24
+ 238 0016 8A42     		cmp	r2, r1
+ 239 0018 FAD1     		bne	.L29
+ 240 001a 4A68     		ldr	r2, [r1, #4]
+ 241 001c 5A60     		str	r2, [r3, #4]
+ 242 001e 7047     		bx	lr
+ 243              	.L24:
+ 244 0020 7047     		bx	lr
+ 245              		.size	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_, .-_ZN6uavcan14LinkedListRoot
+ 246              		.section	.text._ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE,"ax",%progbits
+ 247              		.align	1
+ 248              		.global	_ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE
+ 249              		.thumb
+ 250              		.thumb_func
+ 251              		.type	_ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE, %function
+ 252              	_ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE:
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 256 0002 D1E90245 		ldrd	r4, [r1, #8]
+ 257 0006 0746     		mov	r7, r0
+ 258 0008 0E46     		mov	r6, r1
+ 259 000a FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_
+ 260 000e 3B68     		ldr	r3, [r7]
+ 261 0010 93B1     		cbz	r3, .L37
+ 262 0012 D3E90201 		ldrd	r0, [r3, #8]
+ 263 0016 8D42     		cmp	r5, r1
+ 264 0018 08BF     		it	eq
+ 265 001a 8442     		cmpeq	r4, r0
+ 266 001c 0CD3     		bcc	.L37
+ 267              	.L40:
+ 268 001e 5A68     		ldr	r2, [r3, #4]
+ 269 0020 3AB1     		cbz	r2, .L39
+ 270 0022 D2E90201 		ldrd	r0, [r2, #8]
+ 271 0026 8D42     		cmp	r5, r1
+ 272 0028 08BF     		it	eq
+ 273 002a 8442     		cmpeq	r4, r0
+ 274 002c 01D3     		bcc	.L39
+ 275 002e 1346     		mov	r3, r2
+ 276 0030 F5E7     		b	.L40
+ 277              	.L39:
+ 278 0032 7260     		str	r2, [r6, #4]
+ 279 0034 5E60     		str	r6, [r3, #4]
+ 280 0036 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 281              	.L37:
+ 282 0038 7360     		str	r3, [r6, #4]
+ 283 003a 3E60     		str	r6, [r7]
+ 284 003c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 285              		.size	_ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE, .-_ZN6uavcan17DeadlineScheduler3ad
+ARM GAS  /tmp/ccjafYUD.s 			page 6
+
+
+ 286              		.section	.text._ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE,"ax",%progbits
+ 287              		.align	1
+ 288              		.global	_ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE
+ 289              		.thumb
+ 290              		.thumb_func
+ 291              		.type	_ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE, %function
+ 292              	_ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE:
+ 293              		@ args = 0, pretend = 0, frame = 0
+ 294              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295 0000 08B5     		push	{r3, lr}
+ 296 0002 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_
+ 297 0006 08BD     		pop	{r3, pc}
+ 298              		.size	_ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE, .-_ZN6uavcan17DeadlineScheduler
+ 299              		.section	.text._ZN6uavcan15DeadlineHandler4stopEv,"ax",%progbits
+ 300              		.align	1
+ 301              		.global	_ZN6uavcan15DeadlineHandler4stopEv
+ 302              		.thumb
+ 303              		.thumb_func
+ 304              		.type	_ZN6uavcan15DeadlineHandler4stopEv, %function
+ 305              	_ZN6uavcan15DeadlineHandler4stopEv:
+ 306              		@ args = 0, pretend = 0, frame = 0
+ 307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 308 0000 08B5     		push	{r3, lr}
+ 309 0002 0146     		mov	r1, r0
+ 310 0004 0069     		ldr	r0, [r0, #16]
+ 311 0006 0430     		adds	r0, r0, #4
+ 312 0008 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_
+ 313 000c 08BD     		pop	{r3, pc}
+ 314              		.size	_ZN6uavcan15DeadlineHandler4stopEv, .-_ZN6uavcan15DeadlineHandler4stopEv
+ 315              		.section	.text._ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE,"ax",%progbits
+ 316              		.align	1
+ 317              		.global	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+ 318              		.thumb
+ 319              		.thumb_func
+ 320              		.type	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE, %function
+ 321              	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE:
+ 322              		@ args = 0, pretend = 0, frame = 0
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324 0000 38B5     		push	{r3, r4, r5, lr}
+ 325 0002 0446     		mov	r4, r0
+ 326 0004 0D46     		mov	r5, r1
+ 327 0006 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler4stopEv
+ 328 000a 95E80300 		ldmia	r5, {r0, r1}
+ 329 000e 04F10803 		add	r3, r4, #8
+ 330 0012 83E80300 		stmia	r3, {r0, r1}
+ 331 0016 2069     		ldr	r0, [r4, #16]
+ 332 0018 2146     		mov	r1, r4
+ 333 001a BDE83840 		pop	{r3, r4, r5, lr}
+ 334 001e 0430     		adds	r0, r0, #4
+ 335 0020 FFF7FEBF 		b	_ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE
+ 336              		.size	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE, .-_ZN6uavcan15DeadlineHa
+ 337              		.section	.text._ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE,"ax",%progbits
+ 338              		.align	1
+ 339              		.global	_ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE
+ 340              		.thumb
+ 341              		.thumb_func
+ 342              		.type	_ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE, %function
+ARM GAS  /tmp/ccjafYUD.s 			page 7
+
+
+ 343              	_ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE:
+ 344              		@ args = 0, pretend = 0, frame = 16
+ 345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 346 0000 30B5     		push	{r4, r5, lr}
+ 347 0002 0D46     		mov	r5, r1
+ 348 0004 0446     		mov	r4, r0
+ 349 0006 0369     		ldr	r3, [r0, #16]
+ 350 0008 85B0     		sub	sp, sp, #20
+ 351 000a D3F8A810 		ldr	r1, [r3, #168]
+ 352 000e 6846     		mov	r0, sp
+ 353 0010 0B68     		ldr	r3, [r1]
+ 354 0012 9B68     		ldr	r3, [r3, #8]
+ 355 0014 9847     		blx	r3
+ 356 0016 02A8     		add	r0, sp, #8
+ 357 0018 6946     		mov	r1, sp
+ 358 001a 2A46     		mov	r2, r5
+ 359 001c FFF7FEFF 		bl	_ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_
+ 360 0020 2046     		mov	r0, r4
+ 361 0022 02A9     		add	r1, sp, #8
+ 362 0024 FFF7FEFF 		bl	_ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+ 363 0028 05B0     		add	sp, sp, #20
+ 364              		@ sp needed
+ 365 002a 30BD     		pop	{r4, r5, pc}
+ 366              		.size	_ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE, .-_ZN6uavcan15DeadlineH
+ 367              		.section	.text._ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE,"ax",%pr
+ 368              		.align	1
+ 369              		.global	_ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE
+ 370              		.thumb
+ 371              		.thumb_func
+ 372              		.type	_ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE, %function
+ 373              	_ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE:
+ 374              		@ args = 0, pretend = 0, frame = 16
+ 375              		@ frame_needed = 0, uses_anonymous_args = 0
+ 376 0000 2DE9FF47 		push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, lr}
+ 377 0004 8046     		mov	r8, r0
+ 378 0006 8946     		mov	r9, r1
+ 379 0008 9246     		mov	r10, r2
+ 380              	.L54:
+ 381 000a D9F80040 		ldr	r4, [r9]
+ 382 000e DAF80030 		ldr	r3, [r10]
+ 383 0012 24B9     		cbnz	r4, .L51
+ 384 0014 9B68     		ldr	r3, [r3, #8]
+ 385 0016 4046     		mov	r0, r8
+ 386 0018 5146     		mov	r1, r10
+ 387 001a 9847     		blx	r3
+ 388 001c 1FE0     		b	.L50
+ 389              	.L51:
+ 390 001e 6846     		mov	r0, sp
+ 391 0020 5146     		mov	r1, r10
+ 392 0022 9B68     		ldr	r3, [r3, #8]
+ 393 0024 9847     		blx	r3
+ 394 0026 D4E90201 		ldrd	r0, [r4, #8]
+ 395 002a DDE90067 		ldrd	r6, [sp]
+ 396 002e 8F42     		cmp	r7, r1
+ 397 0030 08BF     		it	eq
+ 398 0032 8642     		cmpeq	r6, r0
+ 399 0034 04D2     		bcs	.L53
+ARM GAS  /tmp/ccjafYUD.s 			page 8
+
+
+ 400 0036 9DE80300 		ldmia	sp, {r0, r1}
+ 401 003a 88E80300 		stmia	r8, {r0, r1}
+ 402 003e 0EE0     		b	.L50
+ 403              	.L53:
+ 404 0040 4846     		mov	r0, r9
+ 405 0042 2146     		mov	r1, r4
+ 406 0044 FFF7FEFF 		bl	_ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_
+ 407 0048 9DE80300 		ldmia	sp, {r0, r1}
+ 408 004c 2368     		ldr	r3, [r4]
+ 409 004e 9A68     		ldr	r2, [r3, #8]
+ 410 0050 02AB     		add	r3, sp, #8
+ 411 0052 83E80300 		stmia	r3, {r0, r1}
+ 412 0056 2046     		mov	r0, r4
+ 413 0058 1946     		mov	r1, r3
+ 414 005a 9047     		blx	r2
+ 415 005c D5E7     		b	.L54
+ 416              	.L50:
+ 417 005e 4046     		mov	r0, r8
+ 418 0060 04B0     		add	sp, sp, #16
+ 419              		@ sp needed
+ 420 0062 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 421              		.size	_ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE, .-_ZN6uavcan17De
+ 422              		.section	.text._ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE,"ax",%progbits
+ 423              		.align	1
+ 424              		.global	_ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE
+ 425              		.thumb
+ 426              		.thumb_func
+ 427              		.type	_ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE, %function
+ 428              	_ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE:
+ 429              		@ args = 0, pretend = 0, frame = 24
+ 430              		@ frame_needed = 0, uses_anonymous_args = 0
+ 431 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 432 0004 90F80031 		ldrb	r3, [r0, #256]	@ zero_extendqisi2
+ 433 0008 87B0     		sub	sp, sp, #28
+ 434 000a 0546     		mov	r5, r0
+ 435 000c 8946     		mov	r9, r1
+ 436 000e ABBB     		cbnz	r3, .L59
+ 437 0010 0123     		movs	r3, #1
+ 438 0012 80F80031 		strb	r3, [r0, #256]
+ 439              	.L58:
+ 440 0016 04AC     		add	r4, sp, #16
+ 441 0018 99E80300 		ldmia	r9, {r0, r1}
+ 442 001c 2246     		mov	r2, r4
+ 443 001e 84E80300 		stmia	r4, {r0, r1}
+ 444 0022 6846     		mov	r0, sp
+ 445 0024 2946     		mov	r1, r5
+ 446 0026 FFF7FEFF 		bl	_ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE
+ 447 002a 9DE80300 		ldmia	sp, {r0, r1}
+ 448 002e 84E80300 		stmia	r4, {r0, r1}
+ 449 0032 05F10800 		add	r0, r5, #8
+ 450 0036 2146     		mov	r1, r4
+ 451 0038 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE
+ 452 003c B0F10008 		subs	r8, r0, #0
+ 453 0040 17DB     		blt	.L57
+ 454 0042 02AE     		add	r6, sp, #8
+ 455 0044 3046     		mov	r0, r6
+ 456 0046 291D     		adds	r1, r5, #4
+ARM GAS  /tmp/ccjafYUD.s 			page 9
+
+
+ 457 0048 D5F8A820 		ldr	r2, [r5, #168]
+ 458 004c FFF7FEFF 		bl	_ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE
+ 459 0050 96E80300 		ldmia	r6, {r0, r1}
+ 460 0054 4246     		mov	r2, r8
+ 461 0056 84E80300 		stmia	r4, {r0, r1}
+ 462 005a 2846     		mov	r0, r5
+ 463 005c 2146     		mov	r1, r4
+ 464 005e FFF7FEFF 		bl	_ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm
+ 465 0062 D9E90023 		ldrd	r2, [r9]
+ 466 0066 DDE90267 		ldrd	r6, [sp, #8]
+ 467 006a 9F42     		cmp	r7, r3
+ 468 006c 08BF     		it	eq
+ 469 006e 9642     		cmpeq	r6, r2
+ 470 0070 D1D3     		bcc	.L58
+ 471              	.L57:
+ 472 0072 0023     		movs	r3, #0
+ 473 0074 85F80031 		strb	r3, [r5, #256]
+ 474 0078 4046     		mov	r0, r8
+ 475 007a 01E0     		b	.L56
+ 476              	.L59:
+ 477 007c 6FF00800 		mvn	r0, #8
+ 478              	.L56:
+ 479 0080 07B0     		add	sp, sp, #28
+ 480              		@ sp needed
+ 481 0082 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 482              		.size	_ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE, .-_ZN6uavcan9Scheduler4spinENS_13MonotonicTim
+ 483              		.section	.text._ZN6uavcan9Scheduler8spinOnceEv,"ax",%progbits
+ 484              		.align	1
+ 485              		.global	_ZN6uavcan9Scheduler8spinOnceEv
+ 486              		.thumb
+ 487              		.thumb_func
+ 488              		.type	_ZN6uavcan9Scheduler8spinOnceEv, %function
+ 489              	_ZN6uavcan9Scheduler8spinOnceEv:
+ 490              		@ args = 0, pretend = 0, frame = 16
+ 491              		@ frame_needed = 0, uses_anonymous_args = 0
+ 492 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 493 0002 90F80031 		ldrb	r3, [r0, #256]	@ zero_extendqisi2
+ 494 0006 0446     		mov	r4, r0
+ 495 0008 E3B9     		cbnz	r3, .L63
+ 496 000a 0123     		movs	r3, #1
+ 497 000c 80F80031 		strb	r3, [r0, #256]
+ 498 0010 0830     		adds	r0, r0, #8
+ 499 0012 FFF7FEFF 		bl	_ZN6uavcan10Dispatcher8spinOnceEv
+ 500 0016 051E     		subs	r5, r0, #0
+ 501 0018 0FDB     		blt	.L62
+ 502 001a 6846     		mov	r0, sp
+ 503 001c 211D     		adds	r1, r4, #4
+ 504 001e D4F8A820 		ldr	r2, [r4, #168]
+ 505 0022 FFF7FEFF 		bl	_ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE
+ 506 0026 9DE80300 		ldmia	sp, {r0, r1}
+ 507 002a 02AB     		add	r3, sp, #8
+ 508 002c 83E80300 		stmia	r3, {r0, r1}
+ 509 0030 2A46     		mov	r2, r5
+ 510 0032 2046     		mov	r0, r4
+ 511 0034 1946     		mov	r1, r3
+ 512 0036 FFF7FEFF 		bl	_ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm
+ 513              	.L62:
+ARM GAS  /tmp/ccjafYUD.s 			page 10
+
+
+ 514 003a 0023     		movs	r3, #0
+ 515 003c 84F80031 		strb	r3, [r4, #256]
+ 516 0040 2846     		mov	r0, r5
+ 517 0042 01E0     		b	.L61
+ 518              	.L63:
+ 519 0044 6FF00800 		mvn	r0, #8
+ 520              	.L61:
+ 521 0048 04B0     		add	sp, sp, #16
+ 522              		@ sp needed
+ 523 004a 70BD     		pop	{r4, r5, r6, pc}
+ 524              		.size	_ZN6uavcan9Scheduler8spinOnceEv, .-_ZN6uavcan9Scheduler8spinOnceEv
+ 525              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccjafYUD.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_scheduler.cpp
+     /tmp/ccjafYUD.s:16     .text._ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE:0000000000000000 $t
+     /tmp/ccjafYUD.s:21     .text._ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE:0000000000000000 _ZNK6uavcan17DeadlineScheduler9doesExistEPKNS_15DeadlineHandlerE
+     /tmp/ccjafYUD.s:39     .text._ZNK6uavcan15DeadlineHandler9isRunningEv:0000000000000000 $t
+     /tmp/ccjafYUD.s:44     .text._ZNK6uavcan15DeadlineHandler9isRunningEv:0000000000000000 _ZNK6uavcan15DeadlineHandler9isRunningEv
+     /tmp/ccjafYUD.s:54     .text._ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv:0000000000000000 $t
+     /tmp/ccjafYUD.s:59     .text._ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv:0000000000000000 _ZNK6uavcan17DeadlineScheduler19getEarliestDeadlineEv
+     /tmp/ccjafYUD.s:79     .text._ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_:0000000000000000 $t
+     /tmp/ccjafYUD.s:84     .text._ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_:0000000000000000 _ZNK6uavcan8TimeBaseINS_13MonotonicTimeENS_17MonotonicDurationEEplERKS2_
+     /tmp/ccjafYUD.s:120    .text._ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccjafYUD.s:125    .text._ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE:0000000000000000 _ZNK6uavcan9Scheduler29computeDispatcherSpinDeadlineENS_13MonotonicTimeE
+     /tmp/ccjafYUD.s:173    .text._ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm:0000000000000000 $t
+     /tmp/ccjafYUD.s:178    .text._ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm:0000000000000000 _ZN6uavcan9Scheduler11pollCleanupENS_13MonotonicTimeEm
+     /tmp/ccjafYUD.s:216    .text._ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_:0000000000000000 $t
+     /tmp/ccjafYUD.s:221    .text._ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_:0000000000000000 _ZN6uavcan14LinkedListRootINS_15DeadlineHandlerEE6removeEPKS1_
+     /tmp/ccjafYUD.s:247    .text._ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE:0000000000000000 $t
+     /tmp/ccjafYUD.s:252    .text._ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE:0000000000000000 _ZN6uavcan17DeadlineScheduler3addEPNS_15DeadlineHandlerE
+     /tmp/ccjafYUD.s:287    .text._ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE:0000000000000000 $t
+     /tmp/ccjafYUD.s:292    .text._ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE:0000000000000000 _ZN6uavcan17DeadlineScheduler6removeEPNS_15DeadlineHandlerE
+     /tmp/ccjafYUD.s:300    .text._ZN6uavcan15DeadlineHandler4stopEv:0000000000000000 $t
+     /tmp/ccjafYUD.s:305    .text._ZN6uavcan15DeadlineHandler4stopEv:0000000000000000 _ZN6uavcan15DeadlineHandler4stopEv
+     /tmp/ccjafYUD.s:316    .text._ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccjafYUD.s:321    .text._ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan15DeadlineHandler17startWithDeadlineENS_13MonotonicTimeE
+     /tmp/ccjafYUD.s:338    .text._ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE:0000000000000000 $t
+     /tmp/ccjafYUD.s:343    .text._ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE:0000000000000000 _ZN6uavcan15DeadlineHandler14startWithDelayENS_17MonotonicDurationE
+     /tmp/ccjafYUD.s:368    .text._ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE:0000000000000000 $t
+     /tmp/ccjafYUD.s:373    .text._ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE:0000000000000000 _ZN6uavcan17DeadlineScheduler23pollAndGetMonotonicTimeERNS_12ISystemClockE
+     /tmp/ccjafYUD.s:423    .text._ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE:0000000000000000 $t
+     /tmp/ccjafYUD.s:428    .text._ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE:0000000000000000 _ZN6uavcan9Scheduler4spinENS_13MonotonicTimeE
+     /tmp/ccjafYUD.s:484    .text._ZN6uavcan9Scheduler8spinOnceEv:0000000000000000 $t
+     /tmp/ccjafYUD.s:489    .text._ZN6uavcan9Scheduler8spinOnceEv:0000000000000000 _ZN6uavcan9Scheduler8spinOnceEv
+
+UNDEFINED SYMBOLS
+_ZN6uavcan10Dispatcher7cleanupENS_13MonotonicTimeE
+_ZN6uavcan10Dispatcher4spinENS_13MonotonicTimeE
+_ZN6uavcan10Dispatcher8spinOnceEv

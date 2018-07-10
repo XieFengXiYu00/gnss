@@ -1,0 +1,699 @@
+ARM GAS  /tmp/ccvNYRR0.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"stm32_dma.c"
+  15              		.section	.text.Vector6C,"ax",%progbits
+  16              		.align	1
+  17              		.global	Vector6C
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	Vector6C, %function
+  21              	Vector6C:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 08B5     		push	{r3, lr}
+  25 0002 074B     		ldr	r3, .L7
+  26 0004 074A     		ldr	r2, .L7+4
+  27 0006 1968     		ldr	r1, [r3]
+  28 0008 01F00F01 		and	r1, r1, #15
+  29 000c 5960     		str	r1, [r3, #4]
+  30 000e 1368     		ldr	r3, [r2]
+  31 0010 0BB1     		cbz	r3, .L2
+  32 0012 5068     		ldr	r0, [r2, #4]
+  33 0014 9847     		blx	r3
+  34              	.L2:
+  35 0016 BDE80840 		pop	{r3, lr}
+  36 001a FFF7FEBF 		b	_port_irq_epilogue
+  37              	.L8:
+  38 001e 00BF     		.align	2
+  39              	.L7:
+  40 0020 00000240 		.word	1073872896
+  41 0024 00000000 		.word	.LANCHOR0
+  42              		.size	Vector6C, .-Vector6C
+  43              		.section	.text.Vector70,"ax",%progbits
+  44              		.align	1
+  45              		.global	Vector70
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	Vector70, %function
+  49              	Vector70:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52 0000 08B5     		push	{r3, lr}
+  53 0002 074B     		ldr	r3, .L14
+  54 0004 1968     		ldr	r1, [r3]
+  55 0006 C1F30311 		ubfx	r1, r1, #4, #4
+  56 000a 0A01     		lsls	r2, r1, #4
+  57 000c 5A60     		str	r2, [r3, #4]
+ARM GAS  /tmp/ccvNYRR0.s 			page 2
+
+
+  58 000e 054A     		ldr	r2, .L14+4
+  59 0010 9368     		ldr	r3, [r2, #8]
+  60 0012 0BB1     		cbz	r3, .L10
+  61 0014 D068     		ldr	r0, [r2, #12]
+  62 0016 9847     		blx	r3
+  63              	.L10:
+  64 0018 BDE80840 		pop	{r3, lr}
+  65 001c FFF7FEBF 		b	_port_irq_epilogue
+  66              	.L15:
+  67              		.align	2
+  68              	.L14:
+  69 0020 00000240 		.word	1073872896
+  70 0024 00000000 		.word	.LANCHOR0
+  71              		.size	Vector70, .-Vector70
+  72              		.section	.text.Vector74,"ax",%progbits
+  73              		.align	1
+  74              		.global	Vector74
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	Vector74, %function
+  78              	Vector74:
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81 0000 08B5     		push	{r3, lr}
+  82 0002 074B     		ldr	r3, .L21
+  83 0004 1968     		ldr	r1, [r3]
+  84 0006 C1F30321 		ubfx	r1, r1, #8, #4
+  85 000a 0A02     		lsls	r2, r1, #8
+  86 000c 5A60     		str	r2, [r3, #4]
+  87 000e 054A     		ldr	r2, .L21+4
+  88 0010 1369     		ldr	r3, [r2, #16]
+  89 0012 0BB1     		cbz	r3, .L17
+  90 0014 5069     		ldr	r0, [r2, #20]
+  91 0016 9847     		blx	r3
+  92              	.L17:
+  93 0018 BDE80840 		pop	{r3, lr}
+  94 001c FFF7FEBF 		b	_port_irq_epilogue
+  95              	.L22:
+  96              		.align	2
+  97              	.L21:
+  98 0020 00000240 		.word	1073872896
+  99 0024 00000000 		.word	.LANCHOR0
+ 100              		.size	Vector74, .-Vector74
+ 101              		.section	.text.Vector78,"ax",%progbits
+ 102              		.align	1
+ 103              		.global	Vector78
+ 104              		.thumb
+ 105              		.thumb_func
+ 106              		.type	Vector78, %function
+ 107              	Vector78:
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110 0000 08B5     		push	{r3, lr}
+ 111 0002 074B     		ldr	r3, .L28
+ 112 0004 1968     		ldr	r1, [r3]
+ 113 0006 C1F30331 		ubfx	r1, r1, #12, #4
+ 114 000a 0A03     		lsls	r2, r1, #12
+ARM GAS  /tmp/ccvNYRR0.s 			page 3
+
+
+ 115 000c 5A60     		str	r2, [r3, #4]
+ 116 000e 054A     		ldr	r2, .L28+4
+ 117 0010 9369     		ldr	r3, [r2, #24]
+ 118 0012 0BB1     		cbz	r3, .L24
+ 119 0014 D069     		ldr	r0, [r2, #28]
+ 120 0016 9847     		blx	r3
+ 121              	.L24:
+ 122 0018 BDE80840 		pop	{r3, lr}
+ 123 001c FFF7FEBF 		b	_port_irq_epilogue
+ 124              	.L29:
+ 125              		.align	2
+ 126              	.L28:
+ 127 0020 00000240 		.word	1073872896
+ 128 0024 00000000 		.word	.LANCHOR0
+ 129              		.size	Vector78, .-Vector78
+ 130              		.section	.text.Vector7C,"ax",%progbits
+ 131              		.align	1
+ 132              		.global	Vector7C
+ 133              		.thumb
+ 134              		.thumb_func
+ 135              		.type	Vector7C, %function
+ 136              	Vector7C:
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139 0000 08B5     		push	{r3, lr}
+ 140 0002 074B     		ldr	r3, .L35
+ 141 0004 1968     		ldr	r1, [r3]
+ 142 0006 C1F30341 		ubfx	r1, r1, #16, #4
+ 143 000a 0A04     		lsls	r2, r1, #16
+ 144 000c 5A60     		str	r2, [r3, #4]
+ 145 000e 054A     		ldr	r2, .L35+4
+ 146 0010 136A     		ldr	r3, [r2, #32]
+ 147 0012 0BB1     		cbz	r3, .L31
+ 148 0014 506A     		ldr	r0, [r2, #36]
+ 149 0016 9847     		blx	r3
+ 150              	.L31:
+ 151 0018 BDE80840 		pop	{r3, lr}
+ 152 001c FFF7FEBF 		b	_port_irq_epilogue
+ 153              	.L36:
+ 154              		.align	2
+ 155              	.L35:
+ 156 0020 00000240 		.word	1073872896
+ 157 0024 00000000 		.word	.LANCHOR0
+ 158              		.size	Vector7C, .-Vector7C
+ 159              		.section	.text.Vector80,"ax",%progbits
+ 160              		.align	1
+ 161              		.global	Vector80
+ 162              		.thumb
+ 163              		.thumb_func
+ 164              		.type	Vector80, %function
+ 165              	Vector80:
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ 168 0000 08B5     		push	{r3, lr}
+ 169 0002 074B     		ldr	r3, .L42
+ 170 0004 1968     		ldr	r1, [r3]
+ 171 0006 C1F30351 		ubfx	r1, r1, #20, #4
+ARM GAS  /tmp/ccvNYRR0.s 			page 4
+
+
+ 172 000a 0A05     		lsls	r2, r1, #20
+ 173 000c 5A60     		str	r2, [r3, #4]
+ 174 000e 054A     		ldr	r2, .L42+4
+ 175 0010 936A     		ldr	r3, [r2, #40]
+ 176 0012 0BB1     		cbz	r3, .L38
+ 177 0014 D06A     		ldr	r0, [r2, #44]
+ 178 0016 9847     		blx	r3
+ 179              	.L38:
+ 180 0018 BDE80840 		pop	{r3, lr}
+ 181 001c FFF7FEBF 		b	_port_irq_epilogue
+ 182              	.L43:
+ 183              		.align	2
+ 184              	.L42:
+ 185 0020 00000240 		.word	1073872896
+ 186 0024 00000000 		.word	.LANCHOR0
+ 187              		.size	Vector80, .-Vector80
+ 188              		.section	.text.Vector84,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	Vector84
+ 191              		.thumb
+ 192              		.thumb_func
+ 193              		.type	Vector84, %function
+ 194              	Vector84:
+ 195              		@ args = 0, pretend = 0, frame = 0
+ 196              		@ frame_needed = 0, uses_anonymous_args = 0
+ 197 0000 08B5     		push	{r3, lr}
+ 198 0002 074B     		ldr	r3, .L49
+ 199 0004 1968     		ldr	r1, [r3]
+ 200 0006 C1F30361 		ubfx	r1, r1, #24, #4
+ 201 000a 0A06     		lsls	r2, r1, #24
+ 202 000c 5A60     		str	r2, [r3, #4]
+ 203 000e 054A     		ldr	r2, .L49+4
+ 204 0010 136B     		ldr	r3, [r2, #48]
+ 205 0012 0BB1     		cbz	r3, .L45
+ 206 0014 506B     		ldr	r0, [r2, #52]
+ 207 0016 9847     		blx	r3
+ 208              	.L45:
+ 209 0018 BDE80840 		pop	{r3, lr}
+ 210 001c FFF7FEBF 		b	_port_irq_epilogue
+ 211              	.L50:
+ 212              		.align	2
+ 213              	.L49:
+ 214 0020 00000240 		.word	1073872896
+ 215 0024 00000000 		.word	.LANCHOR0
+ 216              		.size	Vector84, .-Vector84
+ 217              		.section	.text.Vector120,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	Vector120
+ 220              		.thumb
+ 221              		.thumb_func
+ 222              		.type	Vector120, %function
+ 223              	Vector120:
+ 224              		@ args = 0, pretend = 0, frame = 0
+ 225              		@ frame_needed = 0, uses_anonymous_args = 0
+ 226 0000 08B5     		push	{r3, lr}
+ 227 0002 074B     		ldr	r3, .L56
+ 228 0004 074A     		ldr	r2, .L56+4
+ARM GAS  /tmp/ccvNYRR0.s 			page 5
+
+
+ 229 0006 1968     		ldr	r1, [r3]
+ 230 0008 01F00F01 		and	r1, r1, #15
+ 231 000c 5960     		str	r1, [r3, #4]
+ 232 000e 936B     		ldr	r3, [r2, #56]
+ 233 0010 0BB1     		cbz	r3, .L52
+ 234 0012 D06B     		ldr	r0, [r2, #60]
+ 235 0014 9847     		blx	r3
+ 236              	.L52:
+ 237 0016 BDE80840 		pop	{r3, lr}
+ 238 001a FFF7FEBF 		b	_port_irq_epilogue
+ 239              	.L57:
+ 240 001e 00BF     		.align	2
+ 241              	.L56:
+ 242 0020 00040240 		.word	1073873920
+ 243 0024 00000000 		.word	.LANCHOR0
+ 244              		.size	Vector120, .-Vector120
+ 245              		.section	.text.Vector124,"ax",%progbits
+ 246              		.align	1
+ 247              		.global	Vector124
+ 248              		.thumb
+ 249              		.thumb_func
+ 250              		.type	Vector124, %function
+ 251              	Vector124:
+ 252              		@ args = 0, pretend = 0, frame = 0
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254 0000 08B5     		push	{r3, lr}
+ 255 0002 074B     		ldr	r3, .L63
+ 256 0004 1968     		ldr	r1, [r3]
+ 257 0006 C1F30311 		ubfx	r1, r1, #4, #4
+ 258 000a 0A01     		lsls	r2, r1, #4
+ 259 000c 5A60     		str	r2, [r3, #4]
+ 260 000e 054A     		ldr	r2, .L63+4
+ 261 0010 136C     		ldr	r3, [r2, #64]
+ 262 0012 0BB1     		cbz	r3, .L59
+ 263 0014 506C     		ldr	r0, [r2, #68]
+ 264 0016 9847     		blx	r3
+ 265              	.L59:
+ 266 0018 BDE80840 		pop	{r3, lr}
+ 267 001c FFF7FEBF 		b	_port_irq_epilogue
+ 268              	.L64:
+ 269              		.align	2
+ 270              	.L63:
+ 271 0020 00040240 		.word	1073873920
+ 272 0024 00000000 		.word	.LANCHOR0
+ 273              		.size	Vector124, .-Vector124
+ 274              		.section	.text.Vector128,"ax",%progbits
+ 275              		.align	1
+ 276              		.global	Vector128
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.type	Vector128, %function
+ 280              	Vector128:
+ 281              		@ args = 0, pretend = 0, frame = 0
+ 282              		@ frame_needed = 0, uses_anonymous_args = 0
+ 283 0000 08B5     		push	{r3, lr}
+ 284 0002 074B     		ldr	r3, .L70
+ 285 0004 1968     		ldr	r1, [r3]
+ARM GAS  /tmp/ccvNYRR0.s 			page 6
+
+
+ 286 0006 C1F30321 		ubfx	r1, r1, #8, #4
+ 287 000a 0A02     		lsls	r2, r1, #8
+ 288 000c 5A60     		str	r2, [r3, #4]
+ 289 000e 054A     		ldr	r2, .L70+4
+ 290 0010 936C     		ldr	r3, [r2, #72]
+ 291 0012 0BB1     		cbz	r3, .L66
+ 292 0014 D06C     		ldr	r0, [r2, #76]
+ 293 0016 9847     		blx	r3
+ 294              	.L66:
+ 295 0018 BDE80840 		pop	{r3, lr}
+ 296 001c FFF7FEBF 		b	_port_irq_epilogue
+ 297              	.L71:
+ 298              		.align	2
+ 299              	.L70:
+ 300 0020 00040240 		.word	1073873920
+ 301 0024 00000000 		.word	.LANCHOR0
+ 302              		.size	Vector128, .-Vector128
+ 303              		.section	.text.Vector12C,"ax",%progbits
+ 304              		.align	1
+ 305              		.global	Vector12C
+ 306              		.thumb
+ 307              		.thumb_func
+ 308              		.type	Vector12C, %function
+ 309              	Vector12C:
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 312 0000 08B5     		push	{r3, lr}
+ 313 0002 074B     		ldr	r3, .L77
+ 314 0004 1968     		ldr	r1, [r3]
+ 315 0006 C1F30331 		ubfx	r1, r1, #12, #4
+ 316 000a 0A03     		lsls	r2, r1, #12
+ 317 000c 5A60     		str	r2, [r3, #4]
+ 318 000e 054A     		ldr	r2, .L77+4
+ 319 0010 136D     		ldr	r3, [r2, #80]
+ 320 0012 0BB1     		cbz	r3, .L73
+ 321 0014 506D     		ldr	r0, [r2, #84]
+ 322 0016 9847     		blx	r3
+ 323              	.L73:
+ 324 0018 BDE80840 		pop	{r3, lr}
+ 325 001c FFF7FEBF 		b	_port_irq_epilogue
+ 326              	.L78:
+ 327              		.align	2
+ 328              	.L77:
+ 329 0020 00040240 		.word	1073873920
+ 330 0024 00000000 		.word	.LANCHOR0
+ 331              		.size	Vector12C, .-Vector12C
+ 332              		.section	.text.Vector130,"ax",%progbits
+ 333              		.align	1
+ 334              		.global	Vector130
+ 335              		.thumb
+ 336              		.thumb_func
+ 337              		.type	Vector130, %function
+ 338              	Vector130:
+ 339              		@ args = 0, pretend = 0, frame = 0
+ 340              		@ frame_needed = 0, uses_anonymous_args = 0
+ 341 0000 08B5     		push	{r3, lr}
+ 342 0002 074B     		ldr	r3, .L84
+ARM GAS  /tmp/ccvNYRR0.s 			page 7
+
+
+ 343 0004 1968     		ldr	r1, [r3]
+ 344 0006 C1F30341 		ubfx	r1, r1, #16, #4
+ 345 000a 0A04     		lsls	r2, r1, #16
+ 346 000c 5A60     		str	r2, [r3, #4]
+ 347 000e 054A     		ldr	r2, .L84+4
+ 348 0010 936D     		ldr	r3, [r2, #88]
+ 349 0012 0BB1     		cbz	r3, .L80
+ 350 0014 D06D     		ldr	r0, [r2, #92]
+ 351 0016 9847     		blx	r3
+ 352              	.L80:
+ 353 0018 BDE80840 		pop	{r3, lr}
+ 354 001c FFF7FEBF 		b	_port_irq_epilogue
+ 355              	.L85:
+ 356              		.align	2
+ 357              	.L84:
+ 358 0020 00040240 		.word	1073873920
+ 359 0024 00000000 		.word	.LANCHOR0
+ 360              		.size	Vector130, .-Vector130
+ 361              		.section	.text.dmaInit,"ax",%progbits
+ 362              		.align	1
+ 363              		.global	dmaInit
+ 364              		.thumb
+ 365              		.thumb_func
+ 366              		.type	dmaInit, %function
+ 367              	dmaInit:
+ 368              		@ args = 0, pretend = 0, frame = 0
+ 369              		@ frame_needed = 0, uses_anonymous_args = 0
+ 370              		@ link register save eliminated.
+ 371 0000 0A4A     		ldr	r2, .L89
+ 372 0002 0023     		movs	r3, #0
+ 373 0004 1360     		str	r3, [r2]
+ 374              	.L87:
+ 375 0006 0C22     		movs	r2, #12
+ 376 0008 5A43     		muls	r2, r3, r2
+ 377 000a 0949     		ldr	r1, .L89+4
+ 378 000c 5158     		ldr	r1, [r2, r1]
+ 379 000e 0022     		movs	r2, #0
+ 380 0010 0A60     		str	r2, [r1]
+ 381 0012 0849     		ldr	r1, .L89+8
+ 382 0014 41F83320 		str	r2, [r1, r3, lsl #3]
+ 383 0018 0133     		adds	r3, r3, #1
+ 384 001a 0C2B     		cmp	r3, #12
+ 385 001c F3D1     		bne	.L87
+ 386 001e 064A     		ldr	r2, .L89+12
+ 387 0020 4FF0FF33 		mov	r3, #-1
+ 388 0024 5360     		str	r3, [r2, #4]
+ 389 0026 C2F80434 		str	r3, [r2, #1028]
+ 390 002a 7047     		bx	lr
+ 391              	.L90:
+ 392              		.align	2
+ 393              	.L89:
+ 394 002c 00000000 		.word	.LANCHOR1
+ 395 0030 00000000 		.word	.LANCHOR2
+ 396 0034 00000000 		.word	.LANCHOR0
+ 397 0038 00000240 		.word	1073872896
+ 398              		.size	dmaInit, .-dmaInit
+ 399              		.section	.text.dmaStreamAllocate,"ax",%progbits
+ARM GAS  /tmp/ccvNYRR0.s 			page 8
+
+
+ 400              		.align	1
+ 401              		.global	dmaStreamAllocate
+ 402              		.thumb
+ 403              		.thumb_func
+ 404              		.type	dmaStreamAllocate, %function
+ 405              	dmaStreamAllocate:
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 408 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 409 0002 1D4F     		ldr	r7, .L103
+ 410 0004 467A     		ldrb	r6, [r0, #9]	@ zero_extendqisi2
+ 411 0006 3C68     		ldr	r4, [r7]
+ 412 0008 0125     		movs	r5, #1
+ 413 000a 05FA06FE 		lsl	lr, r5, r6
+ 414 000e 1EEA040F 		tst	lr, r4
+ 415 0012 2CD1     		bne	.L95
+ 416 0014 194D     		ldr	r5, .L103+4
+ 417 0016 45F83620 		str	r2, [r5, r6, lsl #3]
+ 418 001a 05EBC605 		add	r5, r5, r6, lsl #3
+ 419 001e 6B60     		str	r3, [r5, #4]
+ 420 0020 4EEA0403 		orr	r3, lr, r4
+ 421 0024 5C06     		lsls	r4, r3, #25
+ 422 0026 18BF     		it	ne
+ 423 0028 154D     		ldrne	r5, .L103+8
+ 424 002a 3B60     		str	r3, [r7]
+ 425 002c 1EBF     		ittt	ne
+ 426 002e 6C69     		ldrne	r4, [r5, #20]
+ 427 0030 44F00104 		orrne	r4, r4, #1
+ 428 0034 6C61     		strne	r4, [r5, #20]
+ 429 0036 13F4786F 		tst	r3, #3968
+ 430 003a 18BF     		it	ne
+ 431 003c 104C     		ldrne	r4, .L103+8
+ 432 003e 4568     		ldr	r5, [r0, #4]
+ 433 0040 1EBF     		ittt	ne
+ 434 0042 6369     		ldrne	r3, [r4, #20]
+ 435 0044 43F00203 		orrne	r3, r3, #2
+ 436 0048 6361     		strne	r3, [r4, #20]
+ 437 004a 0368     		ldr	r3, [r0]
+ 438 004c 1C68     		ldr	r4, [r3]
+ 439 004e 24F00F04 		bic	r4, r4, #15
+ 440 0052 1C60     		str	r4, [r3]
+ 441 0054 067A     		ldrb	r6, [r0, #8]	@ zero_extendqisi2
+ 442 0056 0F24     		movs	r4, #15
+ 443 0058 B440     		lsls	r4, r4, r6
+ 444 005a 2C60     		str	r4, [r5]
+ 445 005c 0024     		movs	r4, #0
+ 446 005e 1C60     		str	r4, [r3]
+ 447 0060 3AB1     		cbz	r2, .L96
+ 448 0062 807A     		ldrb	r0, [r0, #10]	@ zero_extendqisi2
+ 449 0064 0901     		lsls	r1, r1, #4
+ 450 0066 FFF7FEFF 		bl	nvicEnableVector
+ 451 006a 2046     		mov	r0, r4
+ 452 006c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 453              	.L95:
+ 454 006e 2846     		mov	r0, r5
+ 455 0070 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 456              	.L96:
+ARM GAS  /tmp/ccvNYRR0.s 			page 9
+
+
+ 457 0072 1046     		mov	r0, r2
+ 458 0074 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 459              	.L104:
+ 460 0076 00BF     		.align	2
+ 461              	.L103:
+ 462 0078 00000000 		.word	.LANCHOR1
+ 463 007c 00000000 		.word	.LANCHOR0
+ 464 0080 00100240 		.word	1073876992
+ 465              		.size	dmaStreamAllocate, .-dmaStreamAllocate
+ 466              		.section	.text.dmaStreamRelease,"ax",%progbits
+ 467              		.align	1
+ 468              		.global	dmaStreamRelease
+ 469              		.thumb
+ 470              		.thumb_func
+ 471              		.type	dmaStreamRelease, %function
+ 472              	dmaStreamRelease:
+ 473              		@ args = 0, pretend = 0, frame = 0
+ 474              		@ frame_needed = 0, uses_anonymous_args = 0
+ 475 0000 10B5     		push	{r4, lr}
+ 476 0002 0E4C     		ldr	r4, .L108
+ 477 0004 427A     		ldrb	r2, [r0, #9]	@ zero_extendqisi2
+ 478 0006 0123     		movs	r3, #1
+ 479 0008 03FA02F2 		lsl	r2, r3, r2
+ 480 000c 2368     		ldr	r3, [r4]
+ 481 000e 807A     		ldrb	r0, [r0, #10]	@ zero_extendqisi2
+ 482 0010 23EA0203 		bic	r3, r3, r2
+ 483 0014 2360     		str	r3, [r4]
+ 484 0016 FFF7FEFF 		bl	nvicDisableVector
+ 485 001a 2268     		ldr	r2, [r4]
+ 486 001c 5306     		lsls	r3, r2, #25
+ 487 001e 01BF     		itttt	eq
+ 488 0020 0749     		ldreq	r1, .L108+4
+ 489 0022 4B69     		ldreq	r3, [r1, #20]
+ 490 0024 23F00103 		biceq	r3, r3, #1
+ 491 0028 4B61     		streq	r3, [r1, #20]
+ 492 002a 12F4786F 		tst	r2, #3968
+ 493 002e 01BF     		itttt	eq
+ 494 0030 034A     		ldreq	r2, .L108+4
+ 495 0032 5369     		ldreq	r3, [r2, #20]
+ 496 0034 23F00203 		biceq	r3, r3, #2
+ 497 0038 5361     		streq	r3, [r2, #20]
+ 498 003a 10BD     		pop	{r4, pc}
+ 499              	.L109:
+ 500              		.align	2
+ 501              	.L108:
+ 502 003c 00000000 		.word	.LANCHOR1
+ 503 0040 00100240 		.word	1073876992
+ 504              		.size	dmaStreamRelease, .-dmaStreamRelease
+ 505              		.global	_stm32_dma_streams
+ 506              		.section	.bss.dma_isr_redir,"aw",%nobits
+ 507              		.align	2
+ 508              		.set	.LANCHOR0,. + 0
+ 509              		.type	dma_isr_redir, %object
+ 510              		.size	dma_isr_redir, 96
+ 511              	dma_isr_redir:
+ 512 0000 00000000 		.space	96
+ 512      00000000 
+ARM GAS  /tmp/ccvNYRR0.s 			page 10
+
+
+ 512      00000000 
+ 512      00000000 
+ 512      00000000 
+ 513              		.section	.rodata._stm32_dma_streams,"a",%progbits
+ 514              		.align	2
+ 515              		.set	.LANCHOR2,. + 0
+ 516              		.type	_stm32_dma_streams, %object
+ 517              		.size	_stm32_dma_streams, 144
+ 518              	_stm32_dma_streams:
+ 519 0000 08000240 		.word	1073872904
+ 520 0004 04000240 		.word	1073872900
+ 521 0008 00       		.byte	0
+ 522 0009 00       		.byte	0
+ 523 000a 0B       		.byte	11
+ 524 000b 00       		.space	1
+ 525 000c 1C000240 		.word	1073872924
+ 526 0010 04000240 		.word	1073872900
+ 527 0014 04       		.byte	4
+ 528 0015 01       		.byte	1
+ 529 0016 0C       		.byte	12
+ 530 0017 00       		.space	1
+ 531 0018 30000240 		.word	1073872944
+ 532 001c 04000240 		.word	1073872900
+ 533 0020 08       		.byte	8
+ 534 0021 02       		.byte	2
+ 535 0022 0D       		.byte	13
+ 536 0023 00       		.space	1
+ 537 0024 44000240 		.word	1073872964
+ 538 0028 04000240 		.word	1073872900
+ 539 002c 0C       		.byte	12
+ 540 002d 03       		.byte	3
+ 541 002e 0E       		.byte	14
+ 542 002f 00       		.space	1
+ 543 0030 58000240 		.word	1073872984
+ 544 0034 04000240 		.word	1073872900
+ 545 0038 10       		.byte	16
+ 546 0039 04       		.byte	4
+ 547 003a 0F       		.byte	15
+ 548 003b 00       		.space	1
+ 549 003c 6C000240 		.word	1073873004
+ 550 0040 04000240 		.word	1073872900
+ 551 0044 14       		.byte	20
+ 552 0045 05       		.byte	5
+ 553 0046 10       		.byte	16
+ 554 0047 00       		.space	1
+ 555 0048 80000240 		.word	1073873024
+ 556 004c 04000240 		.word	1073872900
+ 557 0050 18       		.byte	24
+ 558 0051 06       		.byte	6
+ 559 0052 11       		.byte	17
+ 560 0053 00       		.space	1
+ 561 0054 08040240 		.word	1073873928
+ 562 0058 04040240 		.word	1073873924
+ 563 005c 00       		.byte	0
+ 564 005d 07       		.byte	7
+ 565 005e 38       		.byte	56
+ 566 005f 00       		.space	1
+ARM GAS  /tmp/ccvNYRR0.s 			page 11
+
+
+ 567 0060 1C040240 		.word	1073873948
+ 568 0064 04040240 		.word	1073873924
+ 569 0068 04       		.byte	4
+ 570 0069 08       		.byte	8
+ 571 006a 39       		.byte	57
+ 572 006b 00       		.space	1
+ 573 006c 30040240 		.word	1073873968
+ 574 0070 04040240 		.word	1073873924
+ 575 0074 08       		.byte	8
+ 576 0075 09       		.byte	9
+ 577 0076 3A       		.byte	58
+ 578 0077 00       		.space	1
+ 579 0078 44040240 		.word	1073873988
+ 580 007c 04040240 		.word	1073873924
+ 581 0080 0C       		.byte	12
+ 582 0081 0A       		.byte	10
+ 583 0082 3B       		.byte	59
+ 584 0083 00       		.space	1
+ 585 0084 58040240 		.word	1073874008
+ 586 0088 04040240 		.word	1073873924
+ 587 008c 10       		.byte	16
+ 588 008d 0B       		.byte	11
+ 589 008e 3C       		.byte	60
+ 590 008f 00       		.space	1
+ 591              		.section	.bss.dma_streams_mask,"aw",%nobits
+ 592              		.align	2
+ 593              		.set	.LANCHOR1,. + 0
+ 594              		.type	dma_streams_mask, %object
+ 595              		.size	dma_streams_mask, 4
+ 596              	dma_streams_mask:
+ 597 0000 00000000 		.space	4
+ 598              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccvNYRR0.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32_dma.c
+     /tmp/ccvNYRR0.s:16     .text.Vector6C:0000000000000000 $t
+     /tmp/ccvNYRR0.s:21     .text.Vector6C:0000000000000000 Vector6C
+     /tmp/ccvNYRR0.s:40     .text.Vector6C:0000000000000020 $d
+     /tmp/ccvNYRR0.s:44     .text.Vector70:0000000000000000 $t
+     /tmp/ccvNYRR0.s:49     .text.Vector70:0000000000000000 Vector70
+     /tmp/ccvNYRR0.s:69     .text.Vector70:0000000000000020 $d
+     /tmp/ccvNYRR0.s:73     .text.Vector74:0000000000000000 $t
+     /tmp/ccvNYRR0.s:78     .text.Vector74:0000000000000000 Vector74
+     /tmp/ccvNYRR0.s:98     .text.Vector74:0000000000000020 $d
+     /tmp/ccvNYRR0.s:102    .text.Vector78:0000000000000000 $t
+     /tmp/ccvNYRR0.s:107    .text.Vector78:0000000000000000 Vector78
+     /tmp/ccvNYRR0.s:127    .text.Vector78:0000000000000020 $d
+     /tmp/ccvNYRR0.s:131    .text.Vector7C:0000000000000000 $t
+     /tmp/ccvNYRR0.s:136    .text.Vector7C:0000000000000000 Vector7C
+     /tmp/ccvNYRR0.s:156    .text.Vector7C:0000000000000020 $d
+     /tmp/ccvNYRR0.s:160    .text.Vector80:0000000000000000 $t
+     /tmp/ccvNYRR0.s:165    .text.Vector80:0000000000000000 Vector80
+     /tmp/ccvNYRR0.s:185    .text.Vector80:0000000000000020 $d
+     /tmp/ccvNYRR0.s:189    .text.Vector84:0000000000000000 $t
+     /tmp/ccvNYRR0.s:194    .text.Vector84:0000000000000000 Vector84
+     /tmp/ccvNYRR0.s:214    .text.Vector84:0000000000000020 $d
+     /tmp/ccvNYRR0.s:218    .text.Vector120:0000000000000000 $t
+     /tmp/ccvNYRR0.s:223    .text.Vector120:0000000000000000 Vector120
+     /tmp/ccvNYRR0.s:242    .text.Vector120:0000000000000020 $d
+     /tmp/ccvNYRR0.s:246    .text.Vector124:0000000000000000 $t
+     /tmp/ccvNYRR0.s:251    .text.Vector124:0000000000000000 Vector124
+     /tmp/ccvNYRR0.s:271    .text.Vector124:0000000000000020 $d
+     /tmp/ccvNYRR0.s:275    .text.Vector128:0000000000000000 $t
+     /tmp/ccvNYRR0.s:280    .text.Vector128:0000000000000000 Vector128
+     /tmp/ccvNYRR0.s:300    .text.Vector128:0000000000000020 $d
+     /tmp/ccvNYRR0.s:304    .text.Vector12C:0000000000000000 $t
+     /tmp/ccvNYRR0.s:309    .text.Vector12C:0000000000000000 Vector12C
+     /tmp/ccvNYRR0.s:329    .text.Vector12C:0000000000000020 $d
+     /tmp/ccvNYRR0.s:333    .text.Vector130:0000000000000000 $t
+     /tmp/ccvNYRR0.s:338    .text.Vector130:0000000000000000 Vector130
+     /tmp/ccvNYRR0.s:358    .text.Vector130:0000000000000020 $d
+     /tmp/ccvNYRR0.s:362    .text.dmaInit:0000000000000000 $t
+     /tmp/ccvNYRR0.s:367    .text.dmaInit:0000000000000000 dmaInit
+     /tmp/ccvNYRR0.s:394    .text.dmaInit:000000000000002c $d
+     /tmp/ccvNYRR0.s:400    .text.dmaStreamAllocate:0000000000000000 $t
+     /tmp/ccvNYRR0.s:405    .text.dmaStreamAllocate:0000000000000000 dmaStreamAllocate
+     /tmp/ccvNYRR0.s:462    .text.dmaStreamAllocate:0000000000000078 $d
+     /tmp/ccvNYRR0.s:467    .text.dmaStreamRelease:0000000000000000 $t
+     /tmp/ccvNYRR0.s:472    .text.dmaStreamRelease:0000000000000000 dmaStreamRelease
+     /tmp/ccvNYRR0.s:502    .text.dmaStreamRelease:000000000000003c $d
+     /tmp/ccvNYRR0.s:518    .rodata._stm32_dma_streams:0000000000000000 _stm32_dma_streams
+     /tmp/ccvNYRR0.s:507    .bss.dma_isr_redir:0000000000000000 $d
+     /tmp/ccvNYRR0.s:511    .bss.dma_isr_redir:0000000000000000 dma_isr_redir
+     /tmp/ccvNYRR0.s:514    .rodata._stm32_dma_streams:0000000000000000 $d
+     /tmp/ccvNYRR0.s:592    .bss.dma_streams_mask:0000000000000000 $d
+     /tmp/ccvNYRR0.s:596    .bss.dma_streams_mask:0000000000000000 dma_streams_mask
+
+UNDEFINED SYMBOLS
+_port_irq_epilogue
+nvicEnableVector
+ARM GAS  /tmp/ccvNYRR0.s 			page 13
+
+
+nvicDisableVector

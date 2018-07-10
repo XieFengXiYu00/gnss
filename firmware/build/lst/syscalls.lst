@@ -1,0 +1,188 @@
+ARM GAS  /tmp/cc6AGRno.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"syscalls.c"
+  15              		.section	.text._read_r,"ax",%progbits
+  16              		.align	1
+  17              		.global	_read_r
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_read_r, %function
+  21              	_read_r:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 3BB1     		cbz	r3, .L2
+  26 0002 31B9     		cbnz	r1, .L2
+  27 0004 1146     		mov	r1, r2
+  28 0006 0548     		ldr	r0, .L10
+  29 0008 1A46     		mov	r2, r3
+  30 000a 4FF0FF33 		mov	r3, #-1
+  31 000e FFF7FEBF 		b	chIQReadTimeout
+  32              	.L2:
+  33 0012 1623     		movs	r3, #22
+  34 0014 0360     		str	r3, [r0]
+  35 0016 4FF0FF30 		mov	r0, #-1
+  36 001a 7047     		bx	lr
+  37              	.L11:
+  38              		.align	2
+  39              	.L10:
+  40 001c 0C000000 		.word	SD2+12
+  41              		.size	_read_r, .-_read_r
+  42              		.section	.text._lseek_r,"ax",%progbits
+  43              		.align	1
+  44              		.global	_lseek_r
+  45              		.thumb
+  46              		.thumb_func
+  47              		.type	_lseek_r, %function
+  48              	_lseek_r:
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52 0000 0020     		movs	r0, #0
+  53 0002 7047     		bx	lr
+  54              		.size	_lseek_r, .-_lseek_r
+  55              		.section	.text._write_r,"ax",%progbits
+  56              		.align	1
+  57              		.global	_write_r
+ARM GAS  /tmp/cc6AGRno.s 			page 2
+
+
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	_write_r, %function
+  61              	_write_r:
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 0129     		cmp	r1, #1
+  65 0002 10B5     		push	{r4, lr}
+  66 0004 1C46     		mov	r4, r3
+  67 0006 04D0     		beq	.L14
+  68 0008 1623     		movs	r3, #22
+  69 000a 0360     		str	r3, [r0]
+  70 000c 4FF0FF30 		mov	r0, #-1
+  71 0010 10BD     		pop	{r4, pc}
+  72              	.L14:
+  73 0012 1146     		mov	r1, r2
+  74 0014 0348     		ldr	r0, .L16
+  75 0016 1A46     		mov	r2, r3
+  76 0018 4FF0FF33 		mov	r3, #-1
+  77 001c FFF7FEFF 		bl	chOQWriteTimeout
+  78 0020 2046     		mov	r0, r4
+  79 0022 10BD     		pop	{r4, pc}
+  80              	.L17:
+  81              		.align	2
+  82              	.L16:
+  83 0024 30000000 		.word	SD2+48
+  84              		.size	_write_r, .-_write_r
+  85              		.section	.text._close_r,"ax",%progbits
+  86              		.align	1
+  87              		.global	_close_r
+  88              		.thumb
+  89              		.thumb_func
+  90              		.type	_close_r, %function
+  91              	_close_r:
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              		@ link register save eliminated.
+  95 0000 0020     		movs	r0, #0
+  96 0002 7047     		bx	lr
+  97              		.size	_close_r, .-_close_r
+  98              		.section	.text._sbrk_r,"ax",%progbits
+  99              		.align	1
+ 100              		.global	_sbrk_r
+ 101              		.thumb
+ 102              		.thumb_func
+ 103              		.type	_sbrk_r, %function
+ 104              	_sbrk_r:
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 10B5     		push	{r4, lr}
+ 108 0002 0446     		mov	r4, r0
+ 109 0004 0846     		mov	r0, r1
+ 110 0006 FFF7FEFF 		bl	chCoreAlloc
+ 111 000a 18B9     		cbnz	r0, .L20
+ 112 000c 0C23     		movs	r3, #12
+ 113 000e 2360     		str	r3, [r4]
+ 114 0010 4FF0FF30 		mov	r0, #-1
+ARM GAS  /tmp/cc6AGRno.s 			page 3
+
+
+ 115              	.L20:
+ 116 0014 10BD     		pop	{r4, pc}
+ 117              		.size	_sbrk_r, .-_sbrk_r
+ 118              		.section	.text._fstat_r,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	_fstat_r
+ 121              		.thumb
+ 122              		.thumb_func
+ 123              		.type	_fstat_r, %function
+ 124              	_fstat_r:
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127 0000 10B5     		push	{r4, lr}
+ 128 0002 1446     		mov	r4, r2
+ 129 0004 1046     		mov	r0, r2
+ 130 0006 0021     		movs	r1, #0
+ 131 0008 3C22     		movs	r2, #60
+ 132 000a FFF7FEFF 		bl	memset
+ 133 000e 4FF40053 		mov	r3, #8192
+ 134 0012 6360     		str	r3, [r4, #4]
+ 135 0014 0020     		movs	r0, #0
+ 136 0016 10BD     		pop	{r4, pc}
+ 137              		.size	_fstat_r, .-_fstat_r
+ 138              		.section	.text._isatty_r,"ax",%progbits
+ 139              		.align	1
+ 140              		.global	_isatty_r
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.type	_isatty_r, %function
+ 144              	_isatty_r:
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147              		@ link register save eliminated.
+ 148 0000 0120     		movs	r0, #1
+ 149 0002 7047     		bx	lr
+ 150              		.size	_isatty_r, .-_isatty_r
+ 151              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc6AGRno.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 syscalls.c
+     /tmp/cc6AGRno.s:16     .text._read_r:0000000000000000 $t
+     /tmp/cc6AGRno.s:21     .text._read_r:0000000000000000 _read_r
+     /tmp/cc6AGRno.s:40     .text._read_r:000000000000001c $d
+     /tmp/cc6AGRno.s:43     .text._lseek_r:0000000000000000 $t
+     /tmp/cc6AGRno.s:48     .text._lseek_r:0000000000000000 _lseek_r
+     /tmp/cc6AGRno.s:56     .text._write_r:0000000000000000 $t
+     /tmp/cc6AGRno.s:61     .text._write_r:0000000000000000 _write_r
+     /tmp/cc6AGRno.s:83     .text._write_r:0000000000000024 $d
+     /tmp/cc6AGRno.s:86     .text._close_r:0000000000000000 $t
+     /tmp/cc6AGRno.s:91     .text._close_r:0000000000000000 _close_r
+     /tmp/cc6AGRno.s:99     .text._sbrk_r:0000000000000000 $t
+     /tmp/cc6AGRno.s:104    .text._sbrk_r:0000000000000000 _sbrk_r
+     /tmp/cc6AGRno.s:119    .text._fstat_r:0000000000000000 $t
+     /tmp/cc6AGRno.s:124    .text._fstat_r:0000000000000000 _fstat_r
+     /tmp/cc6AGRno.s:139    .text._isatty_r:0000000000000000 $t
+     /tmp/cc6AGRno.s:144    .text._isatty_r:0000000000000000 _isatty_r
+
+UNDEFINED SYMBOLS
+chIQReadTimeout
+SD2
+chOQWriteTimeout
+chCoreAlloc
+memset

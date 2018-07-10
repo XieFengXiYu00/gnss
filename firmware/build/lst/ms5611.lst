@@ -1,0 +1,398 @@
+ARM GAS  /tmp/ccZa9k9d.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"ms5611.c"
+  15              		.section	.text.convertDx,"ax",%progbits
+  16              		.align	1
+  17              		.thumb
+  18              		.thumb_func
+  19              		.type	convertDx, %function
+  20              	convertDx:
+  21              		@ args = 0, pretend = 0, frame = 8
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  24 0004 0746     		mov	r7, r0
+  25 0006 86B0     		sub	sp, sp, #24
+  26 0008 0E46     		mov	r6, r1
+  27 000a 09B9     		cbnz	r1, .L2
+  28              	.L4:
+  29 000c 0020     		movs	r0, #0
+  30 000e 45E0     		b	.L3
+  31              	.L2:
+  32 0010 0025     		movs	r5, #0
+  33 0012 2448     		ldr	r0, .L6
+  34 0014 06AC     		add	r4, sp, #24
+  35 0016 8DF81550 		strb	r5, [sp, #21]
+  36 001a 8DF81650 		strb	r5, [sp, #22]
+  37 001e 8DF81750 		strb	r5, [sp, #23]
+  38 0022 FFF7FEFF 		bl	i2cAcquireBus
+  39 0026 04F8047D 		strb	r7, [r4, #-4]!
+  40 002a 0195     		str	r5, [sp, #4]
+  41 002c 0DF11507 		add	r7, sp, #21
+  42 0030 0525     		movs	r5, #5
+  43 0032 0097     		str	r7, [sp]
+  44 0034 0295     		str	r5, [sp, #8]
+  45 0036 1B48     		ldr	r0, .L6
+  46 0038 7721     		movs	r1, #119
+  47 003a 2246     		mov	r2, r4
+  48 003c 0123     		movs	r3, #1
+  49 003e FFF7FEFF 		bl	i2cMasterTransmitTimeout
+  50 0042 8046     		mov	r8, r0
+  51 0044 1748     		ldr	r0, .L6
+  52 0046 FFF7FEFF 		bl	i2cReleaseBus
+  53 004a B8F1000F 		cmp	r8, #0
+  54 004e DDD1     		bne	.L4
+  55 0050 0A20     		movs	r0, #10
+  56 0052 FFF7FEFF 		bl	chThdSleep
+  57 0056 1348     		ldr	r0, .L6
+ARM GAS  /tmp/ccZa9k9d.s 			page 2
+
+
+  58 0058 FFF7FEFF 		bl	i2cAcquireBus
+  59 005c 0323     		movs	r3, #3
+  60 005e 0193     		str	r3, [sp, #4]
+  61 0060 2246     		mov	r2, r4
+  62 0062 0097     		str	r7, [sp]
+  63 0064 0295     		str	r5, [sp, #8]
+  64 0066 0F48     		ldr	r0, .L6
+  65 0068 7721     		movs	r1, #119
+  66 006a 0123     		movs	r3, #1
+  67 006c 8DF81480 		strb	r8, [sp, #20]
+  68 0070 FFF7FEFF 		bl	i2cMasterTransmitTimeout
+  69 0074 0446     		mov	r4, r0
+  70 0076 0B48     		ldr	r0, .L6
+  71 0078 FFF7FEFF 		bl	i2cReleaseBus
+  72 007c 002C     		cmp	r4, #0
+  73 007e C5D1     		bne	.L4
+  74 0080 9DF81600 		ldrb	r0, [sp, #22]	@ zero_extendqisi2
+  75 0084 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+  76 0088 0002     		lsls	r0, r0, #8
+  77 008a 40EA0340 		orr	r0, r0, r3, lsl #16
+  78 008e 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+  79 0092 1843     		orrs	r0, r0, r3
+  80 0094 3060     		str	r0, [r6]
+  81 0096 0030     		adds	r0, r0, #0
+  82 0098 18BF     		it	ne
+  83 009a 0120     		movne	r0, #1
+  84              	.L3:
+  85 009c 06B0     		add	sp, sp, #24
+  86              		@ sp needed
+  87 009e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  88              	.L7:
+  89 00a2 00BF     		.align	2
+  90              	.L6:
+  91 00a4 00000000 		.word	I2CD2
+  92              		.size	convertDx, .-convertDx
+  93              		.section	.text.ms5611ReadPT,"ax",%progbits
+  94              		.align	1
+  95              		.global	ms5611ReadPT
+  96              		.thumb
+  97              		.thumb_func
+  98              		.type	ms5611ReadPT, %function
+  99              	ms5611ReadPT:
+ 100              		@ args = 0, pretend = 0, frame = 24
+ 101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 102 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 103 0004 87B0     		sub	sp, sp, #28
+ 104 0006 4FF0000B 		mov	fp, #0
+ 105 000a 8246     		mov	r10, r0
+ 106 000c 0291     		str	r1, [sp, #8]
+ 107 000e 4820     		movs	r0, #72
+ 108 0010 04A9     		add	r1, sp, #16
+ 109 0012 0392     		str	r2, [sp, #12]
+ 110 0014 CDF810B0 		str	fp, [sp, #16]
+ 111 0018 CDF814B0 		str	fp, [sp, #20]
+ 112 001c FFF7FEFF 		bl	convertDx
+ 113 0020 08B9     		cbnz	r0, .L9
+ 114              	.L11:
+ARM GAS  /tmp/ccZa9k9d.s 			page 3
+
+
+ 115 0022 0020     		movs	r0, #0
+ 116 0024 8AE0     		b	.L10
+ 117              	.L9:
+ 118 0026 5820     		movs	r0, #88
+ 119 0028 05A9     		add	r1, sp, #20
+ 120 002a FFF7FEFF 		bl	convertDx
+ 121 002e 0028     		cmp	r0, #0
+ 122 0030 F7D0     		beq	.L11
+ 123 0032 BAF80A30 		ldrh	r3, [r10, #10]	@ unaligned
+ 124 0036 059A     		ldr	r2, [sp, #20]
+ 125 0038 BAF80C40 		ldrh	r4, [r10, #12]	@ unaligned
+ 126 003c A2EB0322 		sub	r2, r2, r3, lsl #8
+ 127 0040 82FB0445 		smull	r4, r5, r2, r4
+ 128 0044 BAF80660 		ldrh	r6, [r10, #6]	@ unaligned
+ 129 0048 E30D     		lsrs	r3, r4, #23
+ 130 004a 82FB0667 		smull	r6, r7, r2, r6
+ 131 004e BAF80240 		ldrh	r4, [r10, #2]	@ unaligned
+ 132 0052 4FF00009 		mov	r9, #0
+ 133 0056 A4B2     		uxth	r4, r4
+ 134 0058 4FEAC438 		lsl	r8, r4, #15
+ 135 005c 340A     		lsrs	r4, r6, #8
+ 136 005e 44EA0764 		orr	r4, r4, r7, lsl #24
+ 137 0062 18EB0406 		adds	r6, r8, r4
+ 138 0066 43EA4523 		orr	r3, r3, r5, lsl #9
+ 139 006a 4FEA2725 		asr	r5, r7, #8
+ 140 006e 49EB0507 		adc	r7, r9, r5
+ 141 0072 CDE90067 		strd	r6, [sp]
+ 142 0076 4F46     		mov	r7, r9
+ 143 0078 BAF80880 		ldrh	r8, [r10, #8]	@ unaligned
+ 144 007c BAF80440 		ldrh	r4, [r10, #4]	@ unaligned
+ 145 0080 82FB0889 		smull	r8, r9, r2, r8
+ 146 0084 2604     		lsls	r6, r4, #16
+ 147 0086 4FEAD814 		lsr	r4, r8, #7
+ 148 008a 44EA4964 		orr	r4, r4, r9, lsl #25
+ 149 008e 16EB040A 		adds	r10, r6, r4
+ 150 0092 03F5FA61 		add	r1, r3, #2000
+ 151 0096 4FEAE915 		asr	r5, r9, #7
+ 152 009a 47EB050B 		adc	fp, r7, r5
+ 153 009e B1F5FA6F 		cmp	r1, #2000
+ 154 00a2 35DA     		bge	.L12
+ 155 00a4 B1F5FA66 		subs	r6, r1, #2000
+ 156 00a8 4FF0050E 		mov	lr, #5
+ 157 00ac A6FB0E45 		umull	r4, r5, r6, lr
+ 158 00b0 4FEAE177 		asr	r7, r1, #31
+ 159 00b4 47F1FF37 		adc	r7, r7, #-1
+ 160 00b8 0EFB0755 		mla	r5, lr, r7, r5
+ 161 00bc 5243     		muls	r2, r2, r2
+ 162 00be 5FEA6509 		movs	r9, r5, asr #1
+ 163 00c2 4FEA3408 		mov	r8, r4, rrx
+ 164 00c6 A608     		lsrs	r6, r4, #2
+ 165 00c8 1E4C     		ldr	r4, .L17
+ 166 00ca D217     		asrs	r2, r2, #31
+ 167 00cc A142     		cmp	r1, r4
+ 168 00ce 46EA8576 		orr	r6, r6, r5, lsl #30
+ 169 00d2 4FEAA507 		asr	r7, r5, #2
+ 170 00d6 0EDA     		bge	.L13
+ 171 00d8 03F6AC54 		addw	r4, r3, #3500
+ARM GAS  /tmp/ccZa9k9d.s 			page 4
+
+
+ 172 00dc 04FB04F3 		mul	r3, r4, r4
+ 173 00e0 0724     		movs	r4, #7
+ 174 00e2 C4FB0389 		smlal	r8, r9, r4, r3
+ 175 00e6 0B24     		movs	r4, #11
+ 176 00e8 83FB0445 		smull	r4, r5, r3, r4
+ 177 00ec 6D10     		movs	r5, r5, asr #1
+ 178 00ee 4FEA3404 		mov	r4, r4, rrx
+ 179 00f2 3619     		adds	r6, r6, r4
+ 180 00f4 6F41     		adcs	r7, r7, r5
+ 181              	.L13:
+ 182 00f6 BAEB080A 		subs	r10, r10, r8
+ 183 00fa A1EB0201 		sub	r1, r1, r2
+ 184 00fe 6BEB090B 		sbc	fp, fp, r9
+ 185 0102 DDE90023 		ldrd	r2, [sp]
+ 186 0106 921B     		subs	r2, r2, r6
+ 187 0108 63EB0703 		sbc	r3, r3, r7
+ 188 010c CDE90023 		strd	r2, [sp]
+ 189              	.L12:
+ 190 0110 049C     		ldr	r4, [sp, #16]
+ 191 0112 009B     		ldr	r3, [sp]
+ 192 0114 019D     		ldr	r5, [sp, #4]
+ 193 0116 A4FB0323 		umull	r2, r3, r4, r3
+ 194 011a 04FB0533 		mla	r3, r4, r5, r3
+ 195 011e 540D     		lsrs	r4, r2, #21
+ 196 0120 44EAC324 		orr	r4, r4, r3, lsl #11
+ 197 0124 5D15     		asrs	r5, r3, #21
+ 198 0126 B4EB0A04 		subs	r4, r4, r10
+ 199 012a 65EB0B05 		sbc	r5, r5, fp
+ 200 012e E30B     		lsrs	r3, r4, #15
+ 201 0130 029A     		ldr	r2, [sp, #8]
+ 202 0132 43EA4543 		orr	r3, r3, r5, lsl #17
+ 203 0136 1360     		str	r3, [r2]
+ 204 0138 039B     		ldr	r3, [sp, #12]
+ 205 013a 1960     		str	r1, [r3]
+ 206              	.L10:
+ 207 013c 07B0     		add	sp, sp, #28
+ 208              		@ sp needed
+ 209 013e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 210              	.L18:
+ 211 0142 00BF     		.align	2
+ 212              	.L17:
+ 213 0144 24FAFFFF 		.word	-1500
+ 214              		.size	ms5611ReadPT, .-ms5611ReadPT
+ 215              		.section	.text.ms5611Reset,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	ms5611Reset
+ 218              		.thumb
+ 219              		.thumb_func
+ 220              		.type	ms5611Reset, %function
+ 221              	ms5611Reset:
+ 222              		@ args = 0, pretend = 0, frame = 8
+ 223              		@ frame_needed = 0, uses_anonymous_args = 0
+ 224 0000 70B5     		push	{r4, r5, r6, lr}
+ 225 0002 104D     		ldr	r5, .L20
+ 226 0004 86B0     		sub	sp, sp, #24
+ 227 0006 06AC     		add	r4, sp, #24
+ 228 0008 1E23     		movs	r3, #30
+ARM GAS  /tmp/ccZa9k9d.s 			page 5
+
+
+ 229 000a 2846     		mov	r0, r5
+ 230 000c 04F8013D 		strb	r3, [r4, #-1]!
+ 231 0010 0526     		movs	r6, #5
+ 232 0012 FFF7FEFF 		bl	i2cAcquireBus
+ 233 0016 0023     		movs	r3, #0
+ 234 0018 2246     		mov	r2, r4
+ 235 001a 7721     		movs	r1, #119
+ 236 001c 0094     		str	r4, [sp]
+ 237 001e 0193     		str	r3, [sp, #4]
+ 238 0020 0296     		str	r6, [sp, #8]
+ 239 0022 0123     		movs	r3, #1
+ 240 0024 2846     		mov	r0, r5
+ 241 0026 FFF7FEFF 		bl	i2cMasterTransmitTimeout
+ 242 002a 0446     		mov	r4, r0
+ 243 002c 2846     		mov	r0, r5
+ 244 002e FFF7FEFF 		bl	i2cReleaseBus
+ 245 0032 3046     		mov	r0, r6
+ 246 0034 FFF7FEFF 		bl	chThdSleep
+ 247 0038 B4FA84F0 		clz	r0, r4
+ 248 003c F040     		lsrs	r0, r0, r6
+ 249 003e 06B0     		add	sp, sp, #24
+ 250              		@ sp needed
+ 251 0040 70BD     		pop	{r4, r5, r6, pc}
+ 252              	.L21:
+ 253 0042 00BF     		.align	2
+ 254              	.L20:
+ 255 0044 00000000 		.word	I2CD2
+ 256              		.size	ms5611Reset, .-ms5611Reset
+ 257              		.section	.text.ms5611GetProm,"ax",%progbits
+ 258              		.align	1
+ 259              		.global	ms5611GetProm
+ 260              		.thumb
+ 261              		.thumb_func
+ 262              		.type	ms5611GetProm, %function
+ 263              	ms5611GetProm:
+ 264              		@ args = 0, pretend = 0, frame = 8
+ 265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 266 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 267 0002 0546     		mov	r5, r0
+ 268 0004 87B0     		sub	sp, sp, #28
+ 269 0006 0026     		movs	r6, #0
+ 270              	.L25:
+ 271 0008 06F15003 		add	r3, r6, #80
+ 272 000c 5B00     		lsls	r3, r3, #1
+ 273 000e 0024     		movs	r4, #0
+ 274 0010 2D48     		ldr	r0, .L36
+ 275 0012 8DF81530 		strb	r3, [sp, #21]
+ 276 0016 8DF81640 		strb	r4, [sp, #22]
+ 277 001a 8DF81740 		strb	r4, [sp, #23]
+ 278 001e FFF7FEFF 		bl	i2cAcquireBus
+ 279 0022 0DF11603 		add	r3, sp, #22
+ 280 0026 0093     		str	r3, [sp]
+ 281 0028 0223     		movs	r3, #2
+ 282 002a 0193     		str	r3, [sp, #4]
+ 283 002c 0523     		movs	r3, #5
+ 284 002e 0293     		str	r3, [sp, #8]
+ 285 0030 2548     		ldr	r0, .L36
+ARM GAS  /tmp/ccZa9k9d.s 			page 6
+
+
+ 286 0032 7721     		movs	r1, #119
+ 287 0034 0DF11502 		add	r2, sp, #21
+ 288 0038 0123     		movs	r3, #1
+ 289 003a FFF7FEFF 		bl	i2cMasterTransmitTimeout
+ 290 003e 0746     		mov	r7, r0
+ 291 0040 2148     		ldr	r0, .L36
+ 292 0042 FFF7FEFF 		bl	i2cReleaseBus
+ 293 0046 0FB1     		cbz	r7, .L23
+ 294 0048 2046     		mov	r0, r4
+ 295 004a 3BE0     		b	.L24
+ 296              	.L23:
+ 297 004c 9DF81620 		ldrb	r2, [sp, #22]	@ zero_extendqisi2
+ 298 0050 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ 299 0054 43EA0223 		orr	r3, r3, r2, lsl #8
+ 300 0058 25F81630 		strh	r3, [r5, r6, lsl #1]	@ unaligned
+ 301 005c 0136     		adds	r6, r6, #1
+ 302 005e 082E     		cmp	r6, #8
+ 303 0060 D2D1     		bne	.L25
+ 304 0062 EC89     		ldrh	r4, [r5, #14]
+ 305 0064 3846     		mov	r0, r7
+ 306 0066 24F0FF03 		bic	r3, r4, #255
+ 307 006a EB81     		strh	r3, [r5, #14]	@ movhi
+ 308 006c 3B46     		mov	r3, r7
+ 309              	.L31:
+ 310 006e 02B2     		sxth	r2, r0
+ 311 0070 10F0010F 		tst	r0, #1
+ 312 0074 4FEA6202 		asr	r2, r2, #1
+ 313 0078 05D0     		beq	.L26
+ 314 007a 15F81220 		ldrb	r2, [r5, r2, lsl #1]	@ zero_extendqisi2
+ 315 007e 5340     		eors	r3, r3, r2
+ 316              	.L35:
+ 317 0080 9BB2     		uxth	r3, r3
+ 318 0082 0822     		movs	r2, #8
+ 319 0084 04E0     		b	.L27
+ 320              	.L26:
+ 321 0086 35F81220 		ldrh	r2, [r5, r2, lsl #1]
+ 322 008a 83EA1223 		eor	r3, r3, r2, lsr #8
+ 323 008e F7E7     		b	.L35
+ 324              	.L27:
+ 325 0090 13F4004F 		tst	r3, #32768
+ 326 0094 4FEA4303 		lsl	r3, r3, #1
+ 327 0098 18BF     		it	ne
+ 328 009a 83F44053 		eorne	r3, r3, #12288
+ 329 009e 02F1FF32 		add	r2, r2, #-1
+ 330 00a2 18BF     		it	ne
+ 331 00a4 9BB2     		uxthne	r3, r3
+ 332 00a6 12F0FF02 		ands	r2, r2, #255
+ 333 00aa 9BB2     		uxth	r3, r3
+ 334 00ac F0D1     		bne	.L27
+ 335 00ae 0130     		adds	r0, r0, #1
+ 336 00b0 1028     		cmp	r0, #16
+ 337 00b2 DCD1     		bne	.L31
+ 338 00b4 EC81     		strh	r4, [r5, #14]	@ movhi
+ 339 00b6 C3F30F33 		ubfx	r3, r3, #12, #16
+ 340 00ba 04F00F04 		and	r4, r4, #15
+ 341 00be E31A     		subs	r3, r4, r3
+ 342 00c0 5842     		rsbs	r0, r3, #0
+ARM GAS  /tmp/ccZa9k9d.s 			page 7
+
+
+ 343 00c2 5841     		adcs	r0, r0, r3
+ 344              	.L24:
+ 345 00c4 07B0     		add	sp, sp, #28
+ 346              		@ sp needed
+ 347 00c6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 348              	.L37:
+ 349              		.align	2
+ 350              	.L36:
+ 351 00c8 00000000 		.word	I2CD2
+ 352              		.size	ms5611GetProm, .-ms5611GetProm
+ 353              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccZa9k9d.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 ms5611.c
+     /tmp/ccZa9k9d.s:16     .text.convertDx:0000000000000000 $t
+     /tmp/ccZa9k9d.s:20     .text.convertDx:0000000000000000 convertDx
+     /tmp/ccZa9k9d.s:91     .text.convertDx:00000000000000a4 $d
+     /tmp/ccZa9k9d.s:94     .text.ms5611ReadPT:0000000000000000 $t
+     /tmp/ccZa9k9d.s:99     .text.ms5611ReadPT:0000000000000000 ms5611ReadPT
+     /tmp/ccZa9k9d.s:213    .text.ms5611ReadPT:0000000000000144 $d
+     /tmp/ccZa9k9d.s:216    .text.ms5611Reset:0000000000000000 $t
+     /tmp/ccZa9k9d.s:221    .text.ms5611Reset:0000000000000000 ms5611Reset
+     /tmp/ccZa9k9d.s:255    .text.ms5611Reset:0000000000000044 $d
+     /tmp/ccZa9k9d.s:258    .text.ms5611GetProm:0000000000000000 $t
+     /tmp/ccZa9k9d.s:263    .text.ms5611GetProm:0000000000000000 ms5611GetProm
+     /tmp/ccZa9k9d.s:351    .text.ms5611GetProm:00000000000000c8 $d
+
+UNDEFINED SYMBOLS
+i2cAcquireBus
+i2cMasterTransmitTimeout
+i2cReleaseBus
+chThdSleep
+I2CD2

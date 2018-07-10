@@ -1,0 +1,112 @@
+ARM GAS  /tmp/cczaJt1U.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_scalar_codec.cpp"
+  15              		.section	.text._ZN6uavcan11ScalarCodec13swapByteOrderEPhj,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN6uavcan11ScalarCodec13swapByteOrderEPhj
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan11ScalarCodec13swapByteOrderEPhj, %function
+  21              	_ZN6uavcan11ScalarCodec13swapByteOrderEPhj:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 10B5     		push	{r4, lr}
+  25 0002 0139     		subs	r1, r1, #1
+  26 0004 0023     		movs	r3, #0
+  27              	.L2:
+  28 0006 8B42     		cmp	r3, r1
+  29 0008 06D2     		bcs	.L5
+  30 000a C25C     		ldrb	r2, [r0, r3]	@ zero_extendqisi2
+  31 000c 445C     		ldrb	r4, [r0, r1]	@ zero_extendqisi2
+  32 000e C454     		strb	r4, [r0, r3]
+  33 0010 4254     		strb	r2, [r0, r1]
+  34 0012 0133     		adds	r3, r3, #1
+  35 0014 0139     		subs	r1, r1, #1
+  36 0016 F6E7     		b	.L2
+  37              	.L5:
+  38 0018 10BD     		pop	{r4, pc}
+  39              		.size	_ZN6uavcan11ScalarCodec13swapByteOrderEPhj, .-_ZN6uavcan11ScalarCodec13swapByteOrderEPhj
+  40              		.section	.text._ZN6uavcan11ScalarCodec15encodeBytesImplEPhj,"ax",%progbits
+  41              		.align	1
+  42              		.global	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+  43              		.thumb
+  44              		.thumb_func
+  45              		.type	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj, %function
+  46              	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj:
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49 0000 5307     		lsls	r3, r2, #29
+  50 0002 30B5     		push	{r4, r5, lr}
+  51 0004 1FBF     		itttt	ne
+  52 0006 D508     		lsrne	r5, r2, #3
+  53 0008 4B5D     		ldrbne	r3, [r1, r5]	@ zero_extendqisi2
+  54 000a 5442     		rsbne	r4, r2, #0
+  55 000c 04F00704 		andne	r4, r4, #7
+  56 0010 1CBF     		itt	ne
+  57 0012 A340     		lslne	r3, r3, r4
+ARM GAS  /tmp/cczaJt1U.s 			page 2
+
+
+  58 0014 4B55     		strbne	r3, [r1, r5]
+  59 0016 0068     		ldr	r0, [r0]
+  60 0018 BDE83040 		pop	{r4, r5, lr}
+  61 001c FFF7FEBF 		b	_ZN6uavcan9BitStream5writeEPKhj
+  62              		.size	_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj, .-_ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+  63              		.section	.text._ZN6uavcan11ScalarCodec15decodeBytesImplEPhj,"ax",%progbits
+  64              		.align	1
+  65              		.global	_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+  66              		.thumb
+  67              		.thumb_func
+  68              		.type	_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj, %function
+  69              	_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj:
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72 0000 38B5     		push	{r3, r4, r5, lr}
+  73 0002 0068     		ldr	r0, [r0]
+  74 0004 0D46     		mov	r5, r1
+  75 0006 1446     		mov	r4, r2
+  76 0008 FFF7FEFF 		bl	_ZN6uavcan9BitStream4readEPhj
+  77 000c 0028     		cmp	r0, #0
+  78 000e 09DD     		ble	.L12
+  79 0010 6307     		lsls	r3, r4, #29
+  80 0012 1FBF     		itttt	ne
+  81 0014 E208     		lsrne	r2, r4, #3
+  82 0016 AB5C     		ldrbne	r3, [r5, r2]	@ zero_extendqisi2
+  83 0018 6442     		rsbne	r4, r4, #0
+  84 001a 04F00704 		andne	r4, r4, #7
+  85 001e 1CBF     		itt	ne
+  86 0020 2341     		asrne	r3, r3, r4
+  87 0022 AB54     		strbne	r3, [r5, r2]
+  88              	.L12:
+  89 0024 38BD     		pop	{r3, r4, r5, pc}
+  90              		.size	_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj, .-_ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+  91              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cczaJt1U.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_scalar_codec.cpp
+     /tmp/cczaJt1U.s:16     .text._ZN6uavcan11ScalarCodec13swapByteOrderEPhj:0000000000000000 $t
+     /tmp/cczaJt1U.s:21     .text._ZN6uavcan11ScalarCodec13swapByteOrderEPhj:0000000000000000 _ZN6uavcan11ScalarCodec13swapByteOrderEPhj
+     /tmp/cczaJt1U.s:41     .text._ZN6uavcan11ScalarCodec15encodeBytesImplEPhj:0000000000000000 $t
+     /tmp/cczaJt1U.s:46     .text._ZN6uavcan11ScalarCodec15encodeBytesImplEPhj:0000000000000000 _ZN6uavcan11ScalarCodec15encodeBytesImplEPhj
+     /tmp/cczaJt1U.s:64     .text._ZN6uavcan11ScalarCodec15decodeBytesImplEPhj:0000000000000000 $t
+     /tmp/cczaJt1U.s:69     .text._ZN6uavcan11ScalarCodec15decodeBytesImplEPhj:0000000000000000 _ZN6uavcan11ScalarCodec15decodeBytesImplEPhj
+
+UNDEFINED SYMBOLS
+_ZN6uavcan9BitStream5writeEPKhj
+_ZN6uavcan9BitStream4readEPhj

@@ -1,0 +1,182 @@
+ARM GAS  /tmp/cc5qrYOi.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"uc_bit_stream.cpp"
+  15              		.section	.text._ZN6uavcan9BitStream5writeEPKhj,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN6uavcan9BitStream5writeEPKhj
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_ZN6uavcan9BitStream5writeEPKhj, %function
+  21              	_ZN6uavcan9BitStream5writeEPKhj:
+  22              		@ args = 0, pretend = 0, frame = 24
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  25 0004 4368     		ldr	r3, [r0, #4]
+  26 0006 88B0     		sub	sp, sp, #32
+  27 0008 03F00703 		and	r3, r3, #7
+  28 000c DC1D     		adds	r4, r3, #7
+  29 000e 1444     		add	r4, r4, r2
+  30 0010 E408     		lsrs	r4, r4, #3
+  31 0012 1546     		mov	r5, r2
+  32 0014 04F1FF38 		add	r8, r4, #-1
+  33 0018 08AA     		add	r2, sp, #32
+  34 001a 08AF     		add	r7, sp, #32
+  35 001c 9044     		add	r8, r8, r2
+  36 001e 0022     		movs	r2, #0
+  37 0020 08F8112C 		strb	r2, [r8, #-17]
+  38 0024 07F8112D 		strb	r2, [r7, #-17]!
+  39 0028 3A46     		mov	r2, r7
+  40 002a 0646     		mov	r6, r0
+  41 002c 3819     		adds	r0, r7, r4
+  42              	.L2:
+  43 002e 8242     		cmp	r2, r0
+  44 0030 04D0     		beq	.L10
+  45 0032 4FF0000E 		mov	lr, #0
+  46 0036 02F801EB 		strb	lr, [r2], #1
+  47 003a F8E7     		b	.L2
+  48              	.L10:
+  49 003c 0846     		mov	r0, r1
+  50 003e 2A46     		mov	r2, r5
+  51 0040 0093     		str	r3, [sp]
+  52 0042 0021     		movs	r1, #0
+  53 0044 3B46     		mov	r3, r7
+  54 0046 FFF7FEFF 		bl	_ZN6uavcan12bitarrayCopyEPKhjjPhj
+  55 004a 327A     		ldrb	r2, [r6, #8]	@ zero_extendqisi2
+  56 004c 7168     		ldr	r1, [r6, #4]
+  57 004e 9DF80F30 		ldrb	r3, [sp, #15]	@ zero_extendqisi2
+ARM GAS  /tmp/cc5qrYOi.s 			page 2
+
+
+  58 0052 0D44     		add	r5, r5, r1
+  59 0054 1343     		orrs	r3, r3, r2
+  60 0056 8DF80F30 		strb	r3, [sp, #15]
+  61 005a 15F00703 		ands	r3, r5, #7
+  62 005e 18BF     		it	ne
+  63 0060 18F8113C 		ldrbne	r3, [r8, #-17]	@ zero_extendqisi2
+  64 0064 3068     		ldr	r0, [r6]
+  65 0066 3372     		strb	r3, [r6, #8]
+  66 0068 0368     		ldr	r3, [r0]
+  67 006a C908     		lsrs	r1, r1, #3
+  68 006c D3F80CC0 		ldr	ip, [r3, #12]
+  69 0070 3A46     		mov	r2, r7
+  70 0072 2346     		mov	r3, r4
+  71 0074 E047     		blx	ip
+  72 0076 0028     		cmp	r0, #0
+  73 0078 04DB     		blt	.L5
+  74 007a A042     		cmp	r0, r4
+  75 007c 26BF     		itte	cs
+  76 007e 7560     		strcs	r5, [r6, #4]
+  77 0080 0120     		movcs	r0, #1
+  78 0082 0020     		movcc	r0, #0
+  79              	.L5:
+  80 0084 08B0     		add	sp, sp, #32
+  81              		@ sp needed
+  82 0086 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  83              		.size	_ZN6uavcan9BitStream5writeEPKhj, .-_ZN6uavcan9BitStream5writeEPKhj
+  84              		.section	.text._ZN6uavcan9BitStream4readEPhj,"ax",%progbits
+  85              		.align	1
+  86              		.global	_ZN6uavcan9BitStream4readEPhj
+  87              		.thumb
+  88              		.thumb_func
+  89              		.type	_ZN6uavcan9BitStream4readEPhj, %function
+  90              	_ZN6uavcan9BitStream4readEPhj:
+  91              		@ args = 0, pretend = 0, frame = 24
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  94 0002 0F46     		mov	r7, r1
+  95 0004 4168     		ldr	r1, [r0, #4]
+  96 0006 0646     		mov	r6, r0
+  97 0008 01F00704 		and	r4, r1, #7
+  98 000c 0068     		ldr	r0, [r0]
+  99 000e 0734     		adds	r4, r4, #7
+ 100 0010 0368     		ldr	r3, [r0]
+ 101 0012 1444     		add	r4, r4, r2
+ 102 0014 89B0     		sub	sp, sp, #36
+ 103 0016 E408     		lsrs	r4, r4, #3
+ 104 0018 D3F808C0 		ldr	ip, [r3, #8]
+ 105 001c 1546     		mov	r5, r2
+ 106 001e C908     		lsrs	r1, r1, #3
+ 107 0020 0DF10F02 		add	r2, sp, #15
+ 108 0024 2346     		mov	r3, r4
+ 109 0026 E047     		blx	ip
+ 110 0028 0028     		cmp	r0, #0
+ 111 002a 1CDB     		blt	.L12
+ 112 002c A042     		cmp	r0, r4
+ 113 002e 19D3     		bcc	.L16
+ 114 0030 3A46     		mov	r2, r7
+ARM GAS  /tmp/cc5qrYOi.s 			page 3
+
+
+ 115 0032 EB1D     		adds	r3, r5, #7
+ 116 0034 07EBD303 		add	r3, r7, r3, lsr #3
+ 117              	.L13:
+ 118 0038 9A42     		cmp	r2, r3
+ 119 003a 4FF00000 		mov	r0, #0
+ 120 003e 02D0     		beq	.L17
+ 121 0040 02F8010B 		strb	r0, [r2], #1
+ 122 0044 F8E7     		b	.L13
+ 123              	.L17:
+ 124 0046 7168     		ldr	r1, [r6, #4]
+ 125 0048 0090     		str	r0, [sp]
+ 126 004a 2A46     		mov	r2, r5
+ 127 004c 0DF10F00 		add	r0, sp, #15
+ 128 0050 3B46     		mov	r3, r7
+ 129 0052 01F00701 		and	r1, r1, #7
+ 130 0056 FFF7FEFF 		bl	_ZN6uavcan12bitarrayCopyEPKhjjPhj
+ 131 005a 7368     		ldr	r3, [r6, #4]
+ 132 005c 0120     		movs	r0, #1
+ 133 005e 1D44     		add	r5, r5, r3
+ 134 0060 7560     		str	r5, [r6, #4]
+ 135 0062 00E0     		b	.L12
+ 136              	.L16:
+ 137 0064 0020     		movs	r0, #0
+ 138              	.L12:
+ 139 0066 09B0     		add	sp, sp, #36
+ 140              		@ sp needed
+ 141 0068 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 142              		.size	_ZN6uavcan9BitStream4readEPhj, .-_ZN6uavcan9BitStream4readEPhj
+ 143              		.global	_ZN6uavcan9BitStream12MaxBitsPerRWE
+ 144              		.global	_ZN6uavcan9BitStream13MaxBytesPerRWE
+ 145              		.section	.rodata._ZN6uavcan9BitStream13MaxBytesPerRWE,"a",%progbits
+ 146              		.align	2
+ 147              		.type	_ZN6uavcan9BitStream13MaxBytesPerRWE, %object
+ 148              		.size	_ZN6uavcan9BitStream13MaxBytesPerRWE, 4
+ 149              	_ZN6uavcan9BitStream13MaxBytesPerRWE:
+ 150 0000 10000000 		.word	16
+ 151              		.section	.rodata._ZN6uavcan9BitStream12MaxBitsPerRWE,"a",%progbits
+ 152              		.align	2
+ 153              		.type	_ZN6uavcan9BitStream12MaxBitsPerRWE, %object
+ 154              		.size	_ZN6uavcan9BitStream12MaxBitsPerRWE, 4
+ 155              	_ZN6uavcan9BitStream12MaxBitsPerRWE:
+ 156 0000 80000000 		.word	128
+ 157              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/cc5qrYOi.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 uc_bit_stream.cpp
+     /tmp/cc5qrYOi.s:16     .text._ZN6uavcan9BitStream5writeEPKhj:0000000000000000 $t
+     /tmp/cc5qrYOi.s:21     .text._ZN6uavcan9BitStream5writeEPKhj:0000000000000000 _ZN6uavcan9BitStream5writeEPKhj
+     /tmp/cc5qrYOi.s:85     .text._ZN6uavcan9BitStream4readEPhj:0000000000000000 $t
+     /tmp/cc5qrYOi.s:90     .text._ZN6uavcan9BitStream4readEPhj:0000000000000000 _ZN6uavcan9BitStream4readEPhj
+     /tmp/cc5qrYOi.s:155    .rodata._ZN6uavcan9BitStream12MaxBitsPerRWE:0000000000000000 _ZN6uavcan9BitStream12MaxBitsPerRWE
+     /tmp/cc5qrYOi.s:149    .rodata._ZN6uavcan9BitStream13MaxBytesPerRWE:0000000000000000 _ZN6uavcan9BitStream13MaxBytesPerRWE
+     /tmp/cc5qrYOi.s:146    .rodata._ZN6uavcan9BitStream13MaxBytesPerRWE:0000000000000000 $d
+     /tmp/cc5qrYOi.s:152    .rodata._ZN6uavcan9BitStream12MaxBitsPerRWE:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+_ZN6uavcan12bitarrayCopyEPKhjjPhj

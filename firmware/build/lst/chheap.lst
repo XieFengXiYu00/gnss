@@ -1,0 +1,283 @@
+ARM GAS  /tmp/ccZ0u0JR.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chheap.c"
+  15              		.section	.text._heap_init,"ax",%progbits
+  16              		.align	1
+  17              		.global	_heap_init
+  18              		.thumb
+  19              		.thumb_func
+  20              		.type	_heap_init, %function
+  21              	_heap_init:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0548     		ldr	r0, .L2
+  26 0002 064B     		ldr	r3, .L2+4
+  27 0004 1030     		adds	r0, r0, #16
+  28 0006 40F8103C 		str	r3, [r0, #-16]
+  29 000a 0023     		movs	r3, #0
+  30 000c 40F8083C 		str	r3, [r0, #-8]
+  31 0010 40F8043C 		str	r3, [r0, #-4]
+  32 0014 FFF7FEBF 		b	chMtxInit
+  33              	.L3:
+  34              		.align	2
+  35              	.L2:
+  36 0018 00000000 		.word	.LANCHOR0
+  37 001c 00000000 		.word	chCoreAlloc
+  38              		.size	_heap_init, .-_heap_init
+  39              		.section	.text.chHeapInit,"ax",%progbits
+  40              		.align	1
+  41              		.global	chHeapInit
+  42              		.thumb
+  43              		.thumb_func
+  44              		.type	chHeapInit, %function
+  45              	chHeapInit:
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 0023     		movs	r3, #0
+  50 0002 083A     		subs	r2, r2, #8
+  51 0004 0360     		str	r3, [r0]
+  52 0006 8160     		str	r1, [r0, #8]
+  53 0008 C360     		str	r3, [r0, #12]
+  54 000a 0B60     		str	r3, [r1]
+  55 000c 4A60     		str	r2, [r1, #4]
+  56 000e 1030     		adds	r0, r0, #16
+  57 0010 FFF7FEBF 		b	chMtxInit
+ARM GAS  /tmp/ccZ0u0JR.s 			page 2
+
+
+  58              		.size	chHeapInit, .-chHeapInit
+  59              		.section	.text.chHeapAlloc,"ax",%progbits
+  60              		.align	1
+  61              		.global	chHeapAlloc
+  62              		.thumb
+  63              		.thumb_func
+  64              		.type	chHeapAlloc, %function
+  65              	chHeapAlloc:
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  69 0002 1E4D     		ldr	r5, .L20
+  70 0004 0731     		adds	r1, r1, #7
+  71 0006 0028     		cmp	r0, #0
+  72 0008 18BF     		it	ne
+  73 000a 0546     		movne	r5, r0
+  74 000c 05F11000 		add	r0, r5, #16
+  75 0010 21F00704 		bic	r4, r1, #7
+  76 0014 05F10806 		add	r6, r5, #8
+  77 0018 FFF7FEFF 		bl	chMtxLock
+  78              	.L7:
+  79 001c 3068     		ldr	r0, [r6]
+  80 001e D8B1     		cbz	r0, .L19
+  81 0020 4368     		ldr	r3, [r0, #4]
+  82 0022 A342     		cmp	r3, r4
+  83 0024 16D3     		bcc	.L14
+  84 0026 04F10802 		add	r2, r4, #8
+  85 002a 0768     		ldr	r7, [r0]
+  86 002c 9342     		cmp	r3, r2
+  87 002e 21BF     		itttt	cs
+  88 0030 8750     		strcs	r7, [r0, r2]
+  89 0032 8118     		addcs	r1, r0, r2
+  90 0034 6FF00702 		mvncs	r2, #7
+  91 0038 121B     		subcs	r2, r2, r4
+  92 003a 21BF     		itttt	cs
+  93 003c 9B18     		addcs	r3, r3, r2
+  94 003e 4B60     		strcs	r3, [r1, #4]
+  95 0040 3160     		strcs	r1, [r6]
+  96 0042 4460     		strcs	r4, [r0, #4]
+  97 0044 0446     		mov	r4, r0
+  98 0046 38BF     		it	cc
+  99 0048 3760     		strcc	r7, [r6]
+ 100 004a 44F8085B 		str	r5, [r4], #8
+ 101 004e FFF7FEFF 		bl	chMtxUnlock
+ 102 0052 10E0     		b	.L10
+ 103              	.L14:
+ 104 0054 0646     		mov	r6, r0
+ 105 0056 E1E7     		b	.L7
+ 106              	.L19:
+ 107 0058 FFF7FEFF 		bl	chMtxUnlock
+ 108 005c 2B68     		ldr	r3, [r5]
+ 109 005e 0BB9     		cbnz	r3, .L12
+ 110              	.L13:
+ 111 0060 0024     		movs	r4, #0
+ 112 0062 08E0     		b	.L10
+ 113              	.L12:
+ 114 0064 04F10800 		add	r0, r4, #8
+ARM GAS  /tmp/ccZ0u0JR.s 			page 3
+
+
+ 115 0068 9847     		blx	r3
+ 116 006a 0028     		cmp	r0, #0
+ 117 006c F8D0     		beq	.L13
+ 118 006e 4460     		str	r4, [r0, #4]
+ 119 0070 0560     		str	r5, [r0]
+ 120 0072 00F10804 		add	r4, r0, #8
+ 121              	.L10:
+ 122 0076 2046     		mov	r0, r4
+ 123 0078 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 124              	.L21:
+ 125 007a 00BF     		.align	2
+ 126              	.L20:
+ 127 007c 00000000 		.word	.LANCHOR0
+ 128              		.size	chHeapAlloc, .-chHeapAlloc
+ 129              		.section	.text.chHeapFree,"ax",%progbits
+ 130              		.align	1
+ 131              		.global	chHeapFree
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.type	chHeapFree, %function
+ 135              	chHeapFree:
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138 0000 70B5     		push	{r4, r5, r6, lr}
+ 139 0002 0446     		mov	r4, r0
+ 140 0004 A0F10805 		sub	r5, r0, #8
+ 141 0008 50F8080C 		ldr	r0, [r0, #-8]
+ 142 000c 00F10806 		add	r6, r0, #8
+ 143 0010 1030     		adds	r0, r0, #16
+ 144 0012 FFF7FEFF 		bl	chMtxLock
+ 145 0016 3346     		mov	r3, r6
+ 146              	.L28:
+ 147 0018 B342     		cmp	r3, r6
+ 148 001a 1A68     		ldr	r2, [r3]
+ 149 001c 01D0     		beq	.L23
+ 150 001e 9D42     		cmp	r5, r3
+ 151 0020 27D9     		bls	.L24
+ 152              	.L23:
+ 153 0022 0AB1     		cbz	r2, .L25
+ 154 0024 9542     		cmp	r5, r2
+ 155 0026 24D2     		bcs	.L24
+ 156              	.L25:
+ 157 0028 54F8040C 		ldr	r0, [r4, #-4]
+ 158 002c 44F8082C 		str	r2, [r4, #-8]
+ 159 0030 1D60     		str	r5, [r3]
+ 160 0032 00F10801 		add	r1, r0, #8
+ 161 0036 54F8086C 		ldr	r6, [r4, #-8]
+ 162 003a 6A18     		adds	r2, r5, r1
+ 163 003c B242     		cmp	r2, r6
+ 164 003e 01BF     		itttt	eq
+ 165 0040 5268     		ldreq	r2, [r2, #4]
+ 166 0042 1218     		addeq	r2, r2, r0
+ 167 0044 0832     		addeq	r2, r2, #8
+ 168 0046 44F8042C 		streq	r2, [r4, #-4]
+ 169 004a 5868     		ldr	r0, [r3, #4]
+ 170 004c 08BF     		it	eq
+ 171 004e 6A58     		ldreq	r2, [r5, r1]
+ARM GAS  /tmp/ccZ0u0JR.s 			page 4
+
+
+ 172 0050 00F10801 		add	r1, r0, #8
+ 173 0054 1944     		add	r1, r1, r3
+ 174 0056 08BF     		it	eq
+ 175 0058 44F8082C 		streq	r2, [r4, #-8]
+ 176 005c 8D42     		cmp	r5, r1
+ 177 005e 0AD1     		bne	.L27
+ 178 0060 54F8042C 		ldr	r2, [r4, #-4]
+ 179 0064 0244     		add	r2, r2, r0
+ 180 0066 0832     		adds	r2, r2, #8
+ 181 0068 5A60     		str	r2, [r3, #4]
+ 182 006a 54F8082C 		ldr	r2, [r4, #-8]
+ 183 006e 1A60     		str	r2, [r3]
+ 184 0070 01E0     		b	.L27
+ 185              	.L24:
+ 186 0072 1346     		mov	r3, r2
+ 187 0074 D0E7     		b	.L28
+ 188              	.L27:
+ 189 0076 BDE87040 		pop	{r4, r5, r6, lr}
+ 190 007a FFF7FEBF 		b	chMtxUnlock
+ 191              		.size	chHeapFree, .-chHeapFree
+ 192              		.section	.text.chHeapStatus,"ax",%progbits
+ 193              		.align	1
+ 194              		.global	chHeapStatus
+ 195              		.thumb
+ 196              		.thumb_func
+ 197              		.type	chHeapStatus, %function
+ 198              	chHeapStatus:
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201 0000 38B5     		push	{r3, r4, r5, lr}
+ 202 0002 0C4C     		ldr	r4, .L41
+ 203 0004 0D46     		mov	r5, r1
+ 204 0006 0028     		cmp	r0, #0
+ 205 0008 18BF     		it	ne
+ 206 000a 0446     		movne	r4, r0
+ 207 000c 04F11000 		add	r0, r4, #16
+ 208 0010 FFF7FEFF 		bl	chMtxLock
+ 209 0014 0023     		movs	r3, #0
+ 210 0016 04F10800 		add	r0, r4, #8
+ 211 001a 1C46     		mov	r4, r3
+ 212              	.L34:
+ 213 001c 0068     		ldr	r0, [r0]
+ 214 001e 18B1     		cbz	r0, .L40
+ 215 0020 4268     		ldr	r2, [r0, #4]
+ 216 0022 0134     		adds	r4, r4, #1
+ 217 0024 1344     		add	r3, r3, r2
+ 218 0026 F9E7     		b	.L34
+ 219              	.L40:
+ 220 0028 05B1     		cbz	r5, .L36
+ 221 002a 2B60     		str	r3, [r5]
+ 222              	.L36:
+ 223 002c FFF7FEFF 		bl	chMtxUnlock
+ 224 0030 2046     		mov	r0, r4
+ 225 0032 38BD     		pop	{r3, r4, r5, pc}
+ 226              	.L42:
+ 227              		.align	2
+ 228              	.L41:
+ARM GAS  /tmp/ccZ0u0JR.s 			page 5
+
+
+ 229 0034 00000000 		.word	.LANCHOR0
+ 230              		.size	chHeapStatus, .-chHeapStatus
+ 231              		.section	.bss.default_heap,"aw",%nobits
+ 232              		.align	3
+ 233              		.set	.LANCHOR0,. + 0
+ 234              		.type	default_heap, %object
+ 235              		.size	default_heap, 32
+ 236              	default_heap:
+ 237 0000 00000000 		.space	32
+ 237      00000000 
+ 237      00000000 
+ 237      00000000 
+ 237      00000000 
+ 238              		.ident	"GCC: (15:4.9.3+svn231177-1) 4.9.3 20150529 (prerelease)"
+ARM GAS  /tmp/ccZ0u0JR.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 chheap.c
+     /tmp/ccZ0u0JR.s:16     .text._heap_init:0000000000000000 $t
+     /tmp/ccZ0u0JR.s:21     .text._heap_init:0000000000000000 _heap_init
+     /tmp/ccZ0u0JR.s:36     .text._heap_init:0000000000000018 $d
+     /tmp/ccZ0u0JR.s:40     .text.chHeapInit:0000000000000000 $t
+     /tmp/ccZ0u0JR.s:45     .text.chHeapInit:0000000000000000 chHeapInit
+     /tmp/ccZ0u0JR.s:60     .text.chHeapAlloc:0000000000000000 $t
+     /tmp/ccZ0u0JR.s:65     .text.chHeapAlloc:0000000000000000 chHeapAlloc
+     /tmp/ccZ0u0JR.s:127    .text.chHeapAlloc:000000000000007c $d
+     /tmp/ccZ0u0JR.s:130    .text.chHeapFree:0000000000000000 $t
+     /tmp/ccZ0u0JR.s:135    .text.chHeapFree:0000000000000000 chHeapFree
+     /tmp/ccZ0u0JR.s:193    .text.chHeapStatus:0000000000000000 $t
+     /tmp/ccZ0u0JR.s:198    .text.chHeapStatus:0000000000000000 chHeapStatus
+     /tmp/ccZ0u0JR.s:229    .text.chHeapStatus:0000000000000034 $d
+     /tmp/ccZ0u0JR.s:232    .bss.default_heap:0000000000000000 $d
+     /tmp/ccZ0u0JR.s:236    .bss.default_heap:0000000000000000 default_heap
+
+UNDEFINED SYMBOLS
+chMtxInit
+chCoreAlloc
+chMtxLock
+chMtxUnlock
